@@ -1,0 +1,992 @@
+#+STARTUP: indent
+* Exporting :export:
+- Export options: Per-file export settings
+- The export dispatcher: How to access exporter commands
+- ASCII/Latin-1/UTF-8 export: Exporting to flat files with encoding
+- HTML export: Exporting to HTML
+- LaTeX and PDF export: Exporting to LaTeX, and processing to PDF
+- iCalendar export: Exporting to iCalendar 
+C-c C- e t   #Cinsert template of export option
+- markdown
+   M-x customize-option and then org-export-backends and then arrow down to the checkbox to the left of 'md' and press enter to enable it (or just click on it, if running emacs graphically). Then arrow back up and over to 'Apply and Save' 
+
+** LaTeX and PDF export
+C-c C-e l l
+    Export as LaTeX file myfile.tex.
+C-c C-e l p
+    Export as LaTeX and then process to PDF.
+C-c C-e l o
+
+    Export as LaTeX and then process to PDF, then open the resulting PDF file. 
+
+C-c C-e l l
+
+    Export as LaTeX file myfile.tex.
+
+C-c C-e l p
+
+    Export as LaTeX and then process to PDF.
+
+C-c C-e l o
+
+
+    Export as LaTeX and then process to PDF, then open the resulting PDF file. 
+* Configuration
+three ways to extend and personalize your Emacs environment:
+
+-    By installing packages that change Emacs’ behavior or add new features.
+-    Using the built-in customize facility.
+-     By editing your Emacs configuration scripts by hand.
+
+https://blog.aaronbieber.com/2015/07/05/a-gentle-introduction-to-emacs-configuration.html
+
+* Basic
+mark up rules
+** Emphasis and monospace in Org
+*bold*, /italic/, _underlined_, =verbatim=, ~code~, +strike-through+
+
+
+To open a file: 
+select all
+** Chinese input and output
+keywords:
+Emacs Unicode Encoding
+chinese support in Emacs
+
+To set the input language to Chinese:
+
+   ~M-x set-input-method~ or ~C-x C-m C-\~
+    
+    ~chinese-py~
+
+
+To switch back to English:
+
+    ~C-\~  # toggle the input method on and off
+
+
+To save the chinese, use set-keyboard-coding-system:
+
+    ~C-x C-s~  
+    
+    ~chinese-iso-8bit~
+
+** indentation :indentation:
+
+*** org-indent-mode
+1. To globally turn on *org-indent-mode* for all files, customize the variable =org-startup-indented=.
+
+2.  To turn on indenting for individual files, use ‘STARTUP’ keyword as follows:
+
+    ~#+STARTUP: indent~
+
+   http://orgmode.org/manual/Clean-View.html#index-Indent-mode
+ 
+hello
+  indentation
+
+ 
+*** 4 space indent in Emacs
+
+add the following commands in your =.emacs= file
+
+https://stackoverflow.com/questions/11623189/how-to-bind-keys-to-indent-unindent-region-in-emacs#
+
+method 1:
+#+BEGIN_src Emacs
+(defun my-indent-region (N)
+  (interactive "p")
+  (if (use-region-p)
+      (progn (indent-rigidly (region-beginning) (region-end) (* N 4))
+             (setq deactivate-mark nil))
+    (self-insert-command N)))
+
+(defun my-unindent-region (N)
+  (interactive "p")
+  (if (use-region-p)
+      (progn (indent-rigidly (region-beginning) (region-end) (* N -4))
+             (setq deactivate-mark nil))
+    (self-insert-command N)))
+
+(global-set-key ">" 'my-indent-region)
+(global-set-key "<" 'my-unindent-region)
+#+END_src
+
+method 2
+
+
+- setq-default :: (command)  sets values only in buffers that do not have their own local values for the variable. 
+
+*** ref
+https://dougie.io/emacs/indentation/
+https://stackoverflow.com/questions/69934/set-4-space-indent-in-emacs-in-text-mode?rq=1
+   
+* blog 							       :blog:
+http://www.john2x.com/blog/blogging-with-orgmode.html
+** export as HTML
+1. setup Org-html-themes
+add the following at the begining of the org file:
+
+~#+SETUPFILE: theme-bigblow.setup~
+
+2. Export the  org file to html 
+
+> C-c C-e h h
+3.  copy and paste html file
+
+*** [[https://github.com/fniessen/org-html-themes][Org-html-themes]]
+types of themes
+- Bigblow
+- ReadTheOrg
+
+How to?
+0) clone the Org-HTML themes *setup files* (Bigblow, ReadTheOrg) in the same folder of Org files
+1)  include the CSS and  javaScript files in your *org file*
+To add a ~#+SETUPFILE:~ directive in the *preamble* of *org file* :
+
+#+SETUPFILE: theme-bigblow.setup
+
+2) export your Org mode file to HTML
+
+C-c C-e h h
+
+*** theme-bigblow.setup
+; add the content of the setup file at the beginning of your Org file 
+# -*- mode: org; -*-
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+
+
+** method 2:
+i.e.
+[[https://github.com/org2blog/org2blog][org2blog]]
+
+https://orgmode.org/worg/org-blog-wiki.html
+* Dates and times
+** timestamps
+<2019-04-18>
+* table
+Any line with "|"  as the first nonwhitespace character is considered part of a table. 
+ "|"  is also the column separator
+
+refer [[http://orgmode.org/manual/Images-and-tables.html][images and tables]] for more detail
+#+BEGIN_EXAMPLE
+#+CAPTION: This is the caption for the next table (or link)
+ #+NAME:   tab:basic-data (for cross-reference)
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+
+To refer the table, use [[tab:basic-data]]
+#+END_EXAMPLE
+
+#+CAPTION: This is the caption for the next table (or link)
+
+#+NAME:   tab:basic-data
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+- A table is re-aligned automatically each time you press TAB  _inside_ the table.
+you can refer the table  [[tab:basic-data]]
+
+Multiple rows in a column
+
+** org as a spreadsheet system
+[[http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][a short introduction]]
+~C-c ?~ get cell location
+~:=~   #cell/field formulas
+~=~    #column formulas
+
+i.e. line @2, col $4, ref @2$4 or D2
+
+Org comes with a fast and intuitive table editor. Spreadsheet-like calculations are supported using the Emacs calc package (see Calc).
+
+**    Built-in table editor: Simple tables
+**  Column width and alignment: Overrule the automatic settings
+
+|----------------+--------------|
+| <14>           | <12>         |
+| this           | is           |
+| s slfjsa'gggihello world ht |              |
+|                |              |
+
+#+STARTUP: align
+To set column width: ~<N>~  where ‘N’ is an integer specifying the width of the column in characters.
+**    Column groups: Grouping to trigger vertical lines
+**  Orgtbl mode: The table editor as minor mode
+**     The spreadsheet: The table editor has spreadsheet capabilities
+**     Org-Plot: Plotting from org tables
+* Tag
+Goal: implement =labels= and =contexts= for /cross-correlating informations/
+- Every *headline* can contain a list of tags
+- Tag naming rules:
+  + includes letters, numbers, ‘_’, and ‘@’
+  + no space for tag name
+
+- add at the end of headlines
+
+format:
+~:tag:~   # add ":" before and behind tags
+
+~C-c \~   # search tag
+
+multiple tag for a heading:
+~:tag1::tag2:~
+** tag inheritance
+If a heading has a certain tag,
+all subheadings will inherit the tag as well. 
+* math
+inline math:
+display math:
+
+** integral
+line integral
+\[
+\int_{\partial V} f(\xi) \cdot \nu 
+\]
+
+surface integral
+~\iint~
+
+volume intetral:
+~\iiint~
+
+** Greek symbols
+To Show Greek letter\\
+    ~C-c C-x \~      #display as UTF8 characters\\
+
+** Equation
+ ~\( a+b \)~   #inline equation
+~\[ a+b \]~   #unnumbered equation
+~\begin{equation}... \end{equation}~   #numbered equation
+boxed equation
+#+begin_src
+\[
+\boxed{a+b=c}
+\]
+#+end_src
+\[
+\boxed{a+b=c}
+\]
+
+*[[http://ehneilsen.net/notebook/orgExamples/org-examples.html#sec-9-1][aligned sets of equations*]]
+~\begin{eqnarray} ... \end{eqnarray}~   #equation array
+i.e.
+#+begin_example
+\begin{eqnarray*}
+\hat{f}(x) & \propto & \sum_{\nu} \frac{|F(\nu)H(\nu)|^2}{|N(\nu)|^2}  
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} \frac{|F(\nu)|^2}{|N(\nu)|^2} H(\nu) H^*(\nu) 
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} H^*(\nu) G(\nu) e^{\frac{2 \pi i \nu x}{N}}
+\end{eqnarray*}
+#+end_example
+
+\begin{eqnarray*}
+\hat{f}(x) & \propto & \sum_{\nu} \frac{|F(\nu)H(\nu)|^2}{|N(\nu)|^2}  
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} \frac{|F(\nu)|^2}{|N(\nu)|^2} H(\nu) H^*(\nu) 
+           \frac{G(\nu)}{H(\nu)} e^{\frac{2 \pi i \nu x}{N}}\\
+           & \propto & \sum_{\nu} H^*(\nu) G(\nu) e^{\frac{2 \pi i \nu x}{N}}
+\end{eqnarray*}
+
+#+BEGIN_EXAMPLE
+\[
+ \partial \rho/t + \nabla \cdot \mathbf{v}=0
+\]
+#+END_EXAMPLE
+or 
+\begin{verbatim}
+\[
+ \partial \rho/t + \nabla \cdot \mathbf{v}=0
+\]
+\end{verbatim}
+
+\[
+ \partial \rho/t + \nabla \cdot \mathbf{v}=0
+\]
+*** sequenced equations
+#+begin_example
+#+NAME: eqn:1
+\begin{equation}
+    f(x) =  \sum\limits_0^\infty(f^{(n)}(x)|_{x=0} \cdot x)
+\end{equation}
+
+And this is an equation [[eqn:1]]
+
+#+NAME: eqn:2
+\begin{equation}
+a+b=c
+\end{equation}
+
+And this is an equation [[eqn:2]]
+#+end_example
+it shows like this when exported to LaTex
+
+*** preivew equations
+#+BEGIN_EXAMPLE
+Latex preview
+	C-c C-x C-l 
+Undo latex preview
+	C-c C-c 
+#+END_EXAMPLE
+
+* TODO items
+https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+
+** TODO basics: Marking and displaying TODO entries
+| C-c C-t   | org-todo                  | Rotate the TODO state of the current item among |
+| S-M-<RET> | (org-insert-todo-heading) | Insert a new TODO entry below the current one.  |
+| C-c / t   | org-show-todo-tree        | View TODO items in a sparse tree                |
+|           |                           |                                                 |
+
+
+
+
+**  TODO extensions: Workflow and assignments
+** Progress logging: Dates and notes for progress
+**  Priorities: Some things are more important than others
+** Breaking down tasks: Splitting a task into manageable pieces
+** Checkboxes: Tick-off lists 
+* FAQ
+** user-error: Unable to resolve link 
+when export org to HTML, the error happens
+
+* image :plotting:
+** Org format
+image is inserted as a file, see [[Links]]
+#+BEGIN_EXAMPLE
+#+NAME: fig.super   
+#+CAPTION: Superman and a galaxy cluster
+[[file:superman_cluster.gif]]
+#+END_EXAMPLE
+~fig.super~ is a /tag/ for cross-reference
+
+To refer the image tagged as ~fig.super~:
+#+BEGIN_EXAMPLE
+[[fig.super]]
+#+END_EXAMPLE
+
+To add reference citation
+
+file path: 
+error message:
+
+*cann't display image: invalid image specification nil*
+
+*** Side by Side
+[[http://kitchingroup.cheme.cmu.edu/blog/2016/01/17/Side-by-side-figures-in-org-mode-for-different-export-outputs/][side by side figures in org-mode]] (the kitchin research group)
+
+** Image in Latex format
+#+BEGIN_SRC
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.25]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-vs-tsr-no-wave.png}
+	\caption{(a) The tip speed ratio variation of the time-averaged coefficient of power with no surface waves and (b) the time variation of the instantaneous coefficient of power for TSR=5.5, surface wave of 4 cm amplitude and a time period of1.78 s that are plotted for the model HAMCT of Luznik et al }
+	\label{cp-vs-time}
+\end{figure}
+#+END_SRC
+To cite the above figure, use  ~\ref{cp-vs-time}~
+
+Note:\\
+- for address, use */* rather than *\*, cause *\* is regarded as command in Latex.
+- use relative path
+
+
+*** two figures side by side 
+- define the width of figure, using ~\textwidth~
+- use ~\subfigure~ 
+#+BEGIN_SRC
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-vs-tsr-no-wave.png}
+        \caption{$TSR=4$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-history-exp-bem.png}
+        \caption{$TSR=5.5$}
+   \end{subfigure}
+  \caption{(a) The tip speed ratio variation of the time-averaged coefficient of power with no surface waves and (b) the time variation of the instantaneous coefficient of power for TSR=5.5, surface wave of 4 cm amplitude and a time period of1.78 s that are plotted for the model HAMCT of Luznik et al }
+  \label{cp-vs-time}
+\end{figure}
+#+END_SRC
+*** image formats
+png ok
+pdf, bmp not ok
+** Drag and drop images into org file
+using package /[[https://github.com/abo-abo/org-download][org-download]]/
+
+*** how to install org-download?\\
+ search the package using command ~M-x list-packages~, then filter the package list with ~f~, type "images" or "download" as the keyward\\
+~q~ #restore the full package list\\
+
+** embed plotting, diagram                                          :diagram:
+use embed data to generate a image (easier to update)
+
+*** [[http://plantuml.com/][PlantUML]]
+
+[[file:doc/PlantUML_Language_Reference_Guide.pdf][PlantUML language reference guide]]
+
+*** [[https://github.com/erocarrera/pydot][dot]]
+https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-dot.html
+*** Graphviz
+
+
+
+*** [[http://kitchingroup.cheme.cmu.edu/blog/category/plotting/][Embedding Python or gnuplot]]
+[[http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-gnuplot.html][org-babel-gnuplot]]
+- Goal/function: execute gunplot code directly within Org-mode\\
+
+*Requirements*
+- gnuplot
+- [[https://github.com/rudi/gnuplot-el][gnuplot.el]]
+    + You can install gnuplot.el with ELPA
+
+** Position 
+* Dired  :Directory Editor:                                                  
+- a computer program for editing file system directories
+https://www.masteringemacs.org/article/working-multiple-files-dired
+
+* Glossary
+- Buffer :: a place in a computer's memory for storing information temporarily
+
+* install packages
+** how to install packages?\\
+ search the package using command ~M-x list-packages~, then filter the package list with ~f~, type "images" or "download" as the keyward\\
+~q~ #restore the full package list\\
+
+* source code
+#+BEGIN_SRC ubuntu
+sudo apt install git
+#+END_SRC 
+* no markup
+For text that should not be subjected to markup, i.e. source code
+#+BEGIN_EXAMPLE
+Some example from a text file.
+#+END_EXAMPLE
+
+* Paragraphs, line breaks, and quoting
+paragrahs asre sepatated by _one empty line_ or line break ='\\'=
+
+
+quotation
+
+#+BEGIN_QUOTE
+     Everything should be made as simple as possible,
+     but not any simpler -- Albert Einstein
+#+END_QUOTE
+
+*** center some text
+   #+BEGIN_CENTER
+     Everything should be made as simple as possible, \\
+     but not any simpler
+   #+END_CENTER
+
+* input language
+[[https://www.emacswiki.org/emacs/EimForChinese][Chinese]]
+
+* emphasis 
+
+
+** [[https://emacs.stackexchange.com/questions/27142/how-to-put-boxes-around-quotes-in-org-mode][How to put boxes around quotes in Org mode]]
+
+[[http://orgmode.org/guide/][** compact Org-mode Guide]]
+
+
+C-<chr>  # hold the Ctrl key while typing the character <chr>
+
+M-<chr>  # hold the Alt key while typing the character <chr>
+
+S-<chr>  # hold the Shift key while typing the character <chr>
+
+Dired # the file manager mode
+
+C-x C-c, #end the Emacs session
+
+C-g, #quit a partially entered command
+Alt + w  # copy
+
+
+Pasting=yanking
+
+Cutting=killing* Document structureote
+Example
+The Org homepage[fn:1] now looks a lot better than it used to.\\
+     ...
+[fn:1] The link is: http://orgmode.org
+
+
+*Syntax*:\\
+leave two empty lines after footnote definition \\
+~[fn:1]~ #footnote marker, *square brackets* in column 0, _no indentation_ allowed.\\
+
+
+** lists
+*** bullet lists
+ - bullet lists can be created like this (start a line with one or
+   more space and a -
+ - pressing M-RET gives you a new bullet
+ - we might also like nested bullets
+   - like this one (I pressed M-RET TAB to indent it)
+   - and another (M-RET now indents to the new level)
+ - the nice thing is that for long lines of text, emacs wraps them
+   so that they line up with the bullet
+ - you can also reorder list items and change indentation using
+   M-up or M-down just like with section headings
+ - you can change bullet style using S-left and S-right
+*** bullets
+~-, +, *~   #bullets
+ ~M-RET~  new bullet/heading
+~M-RET TAB~  #indent bullet
+~S-left or S-right~  #change bullet style
+~M-up/down~   #reorder list 
+
+*** numbered lists
+ 1) numbered lists are also possible
+ 2) M-RET gives me a new number
+
+[[http://orgmode.org/manual/Plain-lists.html][plain lists]] in org manual
+
+
+
+items start with a numeral followed by either a *period* or a *right parenthesis*, such as -F｡1.｢ or ｡1)\\-A
+If you want a list to start with a different value (e.g., 20), start the text of the item with [@20]\\
+*** description
+useful for definition\\
+Description list items are unordered list items, and contain the separator -F｡ :: ｢ to distinguish the description /term/ from the /description/. \\-A
+*** Examples
+#+begin_example
+ Lord of the Rings
+        My favorite scenes are (in this order)
+        1. The attack of the Rohirrim
+        2. Eowyn's fight with the witch king
+           + this was already my favorite scene in the book
+           + I really like Miranda Otto.
+        3. Peter Jackson being shot by Legolas
+           - on DVD only
+           He makes a really funny face when it happens.
+        But in the end, no individual scenes matter but the film as a whole.
+        Important actors in this film are:
+        - Elijah Wood :: He plays Frodo
+        - Sean Astin :: He plays Sam, Frodo's friend.  I still remember
+          him very well from his role as Mikey Walsh in The Goonies.
+#+end_example
+
+* [[http://orgmode.org/manual/Dates-and-Times.html][Dates and times]]
+
+
+**    Timestamps: Assigning a time to a tree entry 
+
+** Creating timestamps: Commands which insert timestamps
+~C-c .~   create a timestamp
+
+**     Deadlines and scheduling: Planning your work
+C-c C-d     (org-deadline)
+**     Clocking work time: Tracking how long you spend on a task
+
+**     Effort estimates: Planning work effort in advance
+
+**     Relative timer: Notes with a running timer
+
+**     Countdown timer: Starting a countdown timer for a task
+
+* document structure
+** outline
+- Org is implemented on top of *Outline mode*.
+- *Outlines* allow a document to be organized
+in a *hierarchical structure*.
+~Tab~  #org-cycle, by folding (hiding) files
+** headlines
+Headlines define the structure of an outline tree
+
+only the first three outline levels will be used as headings. Deeper levels will become itemized lists.\\
+you can customize it via the following commands:\\
+~#+OPTIONS: H:4~  org-export-headline-levels (4 in this example)
+** visibility cycling
+~Tab~   #subgree cycling
+~C-u TAB~  # Global cycling
+~S-TAB~  # Global cycling
+** motion
+- jump to other headlines
+- ~C-c C-n~ next heading
+- ~C-c C-p~ previous heading
+- ~C-c C-f~  next heading same level
+- ~C-c C-b~ Previous heading same level
+- ~C-c C-u~  backward to higher level heading
+
+** initial visibility
+When Emacs first visits an Org file, the global state is set to OVERVIEW, i.e., only the
+top level headlines are visible.
+
+initial visibility can be set with the following commands:
+~#+STARTUP: overview~
+~#+STARTUP: content~
+~#+STARTUP: showall~
+~#+STARTUP: showeverything~
+* Reference and Citation                                 :Reference:Citation:
+[[https://github.com/jkitchin/org-ref][org-ref]] is for *LaTeX export* and *scientific publication*.
+- Org-ref doesn't work well on Windows OS
+[[https://www.gnu.org/software/emacs/manual/html_node/reftex/][RefTeX]] is a package for managing Labels, References, Citations and index entries with GNU Emacs. 
+** Org-ref :Org_ref:
+~Lisp~ code to setup bibliography, cite, ref and label org-mode links.
+Also sets up ~[[https://www.gnu.org/software/auctex/reftex.html][reftex]]~ and ~helm~ for org-mode citations.  The links are
+clickable and do things that are useful.
+
+The default setup uses helm-bibtex.
+
+You should really read org-ref.org in this package for details.
+** RefTEX-References, labels. citations
+
+
+
+** cross reference
+cross reference is achieved via  [[internal link]]
+
+* Links
+- Format:
+#+BEGIN_EXAMPLE
+[[https://www.google.co.uk/][google]]
+#+END_EXAMPLE
+ [[https://www.google.co.uk/][google]]
+
+or
+#+BEGIN_EXAMPLE
+[[https://www.google.co.uk/]]
+#+END_EXAMPLE
+[[https://www.google.co.uk/]]
+
+- Links could be /files/, /URL/ and /location/[fn:link]
+- a figure or image is inserted as a file
+- A link should be enclosed in double brackets and may contain a descriptive text to be displayed instead of the URL
+- enclose the link in an *example block* which prevents org-mode from trying to interpret as a real link
+- Edit Inserted link: C-c C-l
+- toggle-inline-images, C-c C-x C-v
+
+absolute vs relative path:
+- absolute path,i.e.file:/Users/exw692/Pictures/cook/dough.png
+- relative path, 
+  + =../=  : relative to the current directory
+  + =~/=  :: home directory
+
+** internal link
+-link to headline, ~#+name:~  or dedicated target (preferred)
+- dedicated target :: the same string in double angular brackets, like ‘<<My Target>>’.
+- dedicated target will not show when exported to Latex pdf
+*Example*
+#+begin_example
+[[link target][discription]]
+#+name: link target
+
+
+the following example shows that link prefer to dedicated target
+
+[[wind turbine][discription ]]
+#+name: wind turbine
+<<wind turbine>>
+#+end_example
+
+
+
+
+refer to [[http://orgmode.org/manual/Internal-links.html][internal link]]
+If the link does not look like a URL, it is considered to be internal in the current file.
+*Goal*: link to other items in the current file.\\
+*Format*: =[[target]]=, or =[[target][description]]=
+*Target*:
+- a headline
+- a place in the document with a #+NAME: target line
+- an item with a :CUSTOM_ID: property
+*shortkeys*:
+C-c C-l  #edit link
+C-C C-o  #follow link
+C-c &    #return to previous position
+*** export internal link
+During export, internal links will be used to mark objects and assign them a number.\\
+source code
+#+begin_example
+[[internal link]]
+*** internal link
+
+LaTex display
+file:C:\Users\exw692\Dropbox\Emacs\figures\internal-link-latex.png
+
+
+** naming
+Naming is done with the ~#+NAME~ keyword, which has to be put in the line before the element it refers to, as in the following example.
+#+BEGIN_SRC
+#+NAME: My Target
+     | a  | table      |
+     |----+------------|
+     | of | four cells |
+#+END_SRC
+During export, internal links will be used to mark objects and assign them a *number*.
+file:C:\Users\exw692\Dropbox\Emacs\figures\math_example.png
+
+
+* Meeting with the French group                                        :work:
+**  Summary by Frank                                             :boss:notes:
+***  TODO Prepare slides for him                                     :action:
+
+#+END_SRC
+
+the final heading will have the tags ‘:work:’, ‘:boss:’, ‘:notes:’, and ‘:action:’
+
+
+* load path
+~~/~ #home directory
+
+* presentation
+- Beamer
+  + a LaTeX package for writing presentations
+  + [[http://orgmode.org/worg/exporters/beamer/tutorial.html][Writing Beamer presentations in org-mode]]
+** [[http://orgmode.org/worg/org-tutorials/non-beamer-presentations.html][non beamer]]
+why?
+ lighter-weight simpler option
+
+- Epresent
+- S5
+- org-tree-slide
+- org-reveal
+
+* toturials	
+http://www.star.bris.ac.uk/bjm/org-basics.html
+http://ehneilsen.net/notebook/orgExamples/org-examples.html#sec-1
+http://www.xiangji.me/2015/07/13/a-few-of-my-org-mode-customizations/
+	http://home.fnal.gov/~neilsen/notebook/orgExamples/org-examples.html#sec-11
+	https://www.youtube.com/watch?v=bzZ09dAbLEE
+	http://pragmaticemacs.com/emacs/org-mode-basics-iii-add-links-and-images-to-you-notes/
+	https://turbmodels.larc.nasa.gov/naca0012numerics_grids.html
+	
+	http://orgmode.org/worg/org-blog-wiki.html
+	
+	https://justin.abrah.ms/emacs/orgmode_static_site_generator.html
+
+* Emacs Org vs LaTex
+Cons of Emacs: 
+no syntax for page formatting, and thus can't create a perfectly formatted title page. 
+no un-numbered sections
+no numbered equations. 
+include all the chapters in one big file
+
+Pros of Emacs:
+Org is more readable than Tex
+inclusion of code fragments, easy to update/create a new image
+
+From <http://bastibe.de/2014-11-19-writing-a-thesis-in-org-mode.html> 
+
+* Latex
+** latex fragments
+[[http://orgmode.org/manual/LaTeX-fragments.html#LaTeX-fragments][LaTeX fragments]]
+**  Embedded LaTeX
+refer to [[http://orgmode.org/guide/Embedded-LaTeX.html][embedded latex]]
+
+Goal : insert math symbols and equations
+supported LaTeX source code:\\
+- Environments
+- Text within the usual Latex math delimeters. $(Bqw$(A$f)I閭ｶVk笊ｳ;H!Q\$(Be`*5(B(...\)$(Bqw$(A$f辟ｦ$(BiiTgｨ$(Ahw(B as inline math delimiters. \\-A
+
+Org mode supports *embedding* LaTeX code into its files
+
+$\alpha$ is a greek letter
+\begin{equation}
+  x=\sqrt{b}
+\end{equation}
+
+
+If $a^2=b$ and \( b=2 \), then the solution must be either
+ $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+
+\cite{}
+
+#+STARTUP: latexpreview
+CDLaTeX mode: Speed up entering of formulas 
+** LaTex and PDF export
+C-c C-e l l\\
+	Export as LaTeX file myfile.tex. \\
+C-c C-e l p\\
+	Export as LaTeX and then process to PDF. \\
+C-c C-e l o\\
+	Export as LaTeX and then process to PDF, then open the resulting PDF file. \\
+
+* wiki mode
+
+
+** Org-mode
+*Org-mode* already has many features 
+that makes it suitable to create a desktop wiki 
+and store knowledge like:
+•Render Latex formulas.
+•Block codes (org-babel).
+•Fast navigation and editing
+•Support for tables
+•Ability to export to html and other formats.
+•Links to files, images, system commands and Elisp commands.
+** web-based wiki
+allows you to download a page from a remote wiki, edit it using Emacs, and submit it back to the wiki.
+** desktop wiki
+ allows you to treat local files as a local wiki without using a browser.
+ Usually these modes allow you to publish the local wiki as a set of static HTML pages.
+e.g. org-wiki
+[[https://github.com/caiorss/org-wiki][*** org-wiki]]
+each page is a org-mode file
+
+Features:
+•A wiki system for Emacs.
+•Search wiki pages quickly.
+•Create new wiki pages fast.
+•Command to export all pages to html without block Emacs. M-x  M-x org-wiki/export-html-async 
+•Search wiki pages by its content. (grep)
+•org-mode protocol to create and open wiki pages.
+•org-mode protocol to open attachment/asset files with default system application.
+•Automatic download of attachment files with: ◦ M-x org-wiki-asset-download-insert1 
+◦ M-x org-wiki-asset-download-insert2 
+
+* capture
+Goal: 
+- capture new ideas and tasks, and to associate reference material with them
+- add attachment in a specific directory
+where is the capture idea from?\\
+inspired by John Wiegley excellent =remember.el= package.
+
+* font size
+C-x C-+ #increase
+C-x C- -  # decrease
+
+
+
+> (set-face-attribute 'default nil :height 100)
+
+The value is in 1/10pt, so 100 will give you 10pt, etc.
+
+
+* Recovery After a Crash
+~M-x recover-session~
+
+* Inserting and deleting
+C-u #repeat
+C-u 3 C-p	#Back 3 lines
+
+C-u followed by a number and a movement command repeats that command the specified number of times
+If you use C-u without specifying a digit, the default is 4
+
+M-d # kill the word after the cursor
+C-k # kill from the cursor position to end of line
+M-k # kill to the end of the current sentence
+Killing =/=deleting
+C-/ # undo the changes made by one command
+
+C-x C-f # find file
+C-x c-s # save file
+C-x s # save some buffers
+C-x C-b # list buffers
+C-x b # switch buffer
+C-x k bufname <RET>  # kill buffer /bufname/
+C-x C-c # quit Emacs
+C-x u # undo
+C-z # exit Emacs temporarily so that you can come back afterward
+fg# resume Emacs
+%emacs # resume Emacs
+
+** Searching
+C-s # forward search
+C-r # reverse search
+
+** Multiple windows
+Windows=frames\\
+C-x o # move the cursor to the other window\\
+C-y # Yanks last killed text\\
+M-y # Replace yanked text with previously killed text\\
+M- up arrow # move line up\\
+M-RightArrow # Indent Bullet Point\\
+M-Enter # Create new bullet Point (*)M-UpArrow # Move Bullet Point Up\\
+S-RightArrow # Mark Bullet Point as TODOC-c # add Tag to Bullet Point
+\\
+
+* Footnotes
+
+[fn:motion] http://orgmode.org/manual/Motion.html#Motion
+
+[fn:link] http://pragmaticemacs.com/emacs/org-mode-basics-iii-add-links-and-images-to-you-notes/
+
+* Language environment
+[[http://www.gnu.org/software/emacs/manual/html_node/emacs/Language-Environments.html][language environment]]
+M-x set-language-environment    #select a language environment.\\
+
+ M-x prefer-coding-system    # alter the coding system priority list\\
+ M-x pref RET  #prefer-coding-system\\
+~'(current-language-environment "UTF-8")~ 
+** available Chinese language environment
+Chinese-GB18030, Chinese-GBK, Chinese-GB
+
+To display the script(s) used by your language environment on a graphical display, you need to have suitable fonts. See Fontsets, for more details about setting up your fonts. 
+** fontsets
+   [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Fontsets.html#Fontsets][Fontsets]]
+fontsets types: the standard fontset, the start up fontset and the default fontset
+If no fontset is specified for use, then Emacs uses an ASCII font
+To show the information about a specific fontset, use the ~M-x describe-fontset~ command
+
+*** Defining a fontset under Lisp program control
+- Function: *create-fontset-from-fontset-spec* fontset-spec &optional style-variant-p noerror.
+ fontset-spec  #specification string, format is as follows:
+
+    /fontpattern, [charset:font].../
+
+
+
+[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifying-Fontsets.html#Modifying-Fontsets][Modify Fontsets]]
+Setup for chinese characters\\
+ (create-fontset-from-fontset-spec  "-unknown-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-fontset-myfontset")
+ (set-fontset-font "fontset-myfontset" 'han "WenQuanYi Micro Hei Mono")
+ (add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
+
+* character  encoding
+ Character encoding: translate the character set of your language's writing system into
+ a sequence of 1s and 0s.
+
+*  encoding system
+
+ The most popular encoding systems used today are:\\
+-  ASCII. For *English*. Most widely used before year 2000.
+-  UTF-8 of *Unicode* (used in *Linux* by default, and much of the *Internet*)
+-  UTF-16 of Unicode (used by *Microsoft Windows* and Mac OS X's file systems, Java programing language, $(Bqw$(A$f)I閭ｶVk笊ｳ;$(B5j(B)-A
+-  GB 18030 (Used in *China*, contains all Unicode chars).
+-  EUC (Extended Unix Code). Used in *Japan*.
+-  IEC 8859 series (used for most *European* langs)
+
+/M-x C-x RET r/      #revert-buffer-with-coding-system\\
+/Alt+x describe-coding-system RET/  #current coding system \\
+** alter the coding system priority list
+~M-x prefer-coding-system~ 
+** Chinese coding system in Ubuntu
+ chinese-iso-8bit (alias: cn-gb-2312 euc-china euc-cn cn-gb gb2312)
+[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Coding.html][** Specifying a Coding System for File Text]]
+ For example, to read and write all =-F｡.txt｢= files using the coding system ~chinese-iso-8bit~, you can execute this Lisp expression:-A
+
+     ~(modify-coding-system-alist 'file "\\.txt\\'" 'chinese-iso-8bit)~
+annotation:\\
+The *first argument* should be /file/, the *second* argument should be a /regular expression/ that determines which files this applies to,
+ and the *third* argument says /which coding system to use for these files./
+* completion
+in-buffer [[http://orgmode.org/manual/Completion.html#Completion][completions]].  Depending on the context and the keys, Org will offer different types of completions\\
+
+ ~C-M-i~ (Windows) \\
+ ~M-<TAB>~ (Linux)\\
+
