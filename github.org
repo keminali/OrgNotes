@@ -1,0 +1,57 @@
+* account
+username: keminali
+kaiming.ai@outlook.com
+hui**8**1
+* Tutorials
+
+** [[http://jmcglone.com/guides/github-pages/][Creating and Hosting a Personal Site on GitHub]]
+- Jekyll :: a simple, blog-aware, static *site generator* for personal, 
+project, or organization sites
+
+- written in Ruby by Tom Preston-Werner
+
+ 15 minute, hands-on web tutorial on using Git.
+
+1. create your project's repository
+2. Name your repository username.github.io
+
+
+* Github pages--a static site hosting service
+- GitHub pages :: a static site hosting service
+
+- Usage limits: 1GB
+
+Platforms:
+- online, Jekyll THeme Chooser
+- Github Desktop, command line
+
+
+https://pages.github.com/
+** first try
+Clone the repository
+
+Go to the *folder* where you want to store your project, and clone the new repository:
+
+#+BEGIN_SRC
+    >> git clone https://github.com/keminali/keminali.github.io
+#+END_SRC
+
+Enter the project folder and add an *index.html* file:
+
+#+BEGIN_SRC
+    cd keminali.github.io
+
+    echo "Hello World" > index.html
+#+END_SRC
+
+Add, commit, and push your changes:
+
+git add test.html  #Add file contents to the index
+
+* adding an existing project to GitHub using the command line
+
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+
+* References
+https://help.github.com/categories/github-pages-basics/
