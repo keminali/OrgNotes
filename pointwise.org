@@ -1,0 +1,3805 @@
+*  download
+https://www.pointwise.com/downloads/pointwise-rlm.html
+
+* Installation
+** on Windows
+** on Ubuntu
+
+** 18. R3  instructions
+ SolidSQUAD-SSQ
+0. Un-install all previous Pointwise license servers
+
+1. Install Pointwise
+
+2. If SolidSQUAD Unified License Server has never been installed  on the computer, unzip as administrator (root) the contents of 
+   *SolidSQUAD_UnifiedLicenseServerCore_XXXXXXXX.7z* to:
+
+	X:\ for Windows (the path will be X:\SolidSQUAD_License_Servers)
+
+	/opt/ for GNU/Linux (the path will be /opt/SolidSQUAD_License_Servers)
+
+	/Applications/ for MacOSX (the path will be /Applications/SolidSQUAD_License_Servers)
+
+   If SolidSQUAD Unified License Server is already installed, skip this step.
+
+3. Unzip the contents of *SSQ_UnifiedLicenseServerVendor_Pointwise_XXXXXXXX.7z*
+   to <SolidSQUAD_UnifiedLicenseServer_folder> with overwrite:
+
+	X:\SolidSQUAD_License_Servers for Windows
+
+	/opt/SolidSQUAD_License_Servers for GNU/Linux
+
+	/Applications/SolidSQUAD_License_Servers for MacOSX
+
+4. As administrator (root) run the *install_or_update* script of Unified License Server:
+
+	X:\SolidSQUAD_License_Servers\install_or_update.bat for Windows
+
+	sh /opt/SolidSQUAD_License_Servers/install_or_update.sh for GNU/Linux
+
+	sh /Applications/SolidSQUAD_License_Servers/install_or_update.sh for MacOSX
+
+   This	will install and start license servers for all the daemons available
+
+5. Start Pointwise and select "localhost" as License Server and  "26800" as port
+
+6. Block website "pointwise.com"
+
+Go to  "C:\Windows\System32\drivers\etc\hosts" of your OS. If not add this line to file C:\Windows\System32\drivers\etc\hosts:
+
+   127.0.0.1 pointwise.com
+
+** Connection refused at server (-111)
+Communications error with license server (-17)
+ 
+solution:
+run "install_or_update.bat" again
+
+
+
+**     The specified service does not exist as an installed service.
+
+Universal License Server Installer
+    2017 TeAM SolidSQUAD-SSQ
+
+[SC] OpenService FAILED 1060:
+
+The specified service does not exist as an installed service.
+
+Can't open service!
+OpenService(): The specified service does not exist as an installed service.
+
+
+Unified License Server Installer by TeAM SolidSQUAD-SSQ
+
+Service "SSQ rlm Server" installed successfully!
+
+SERVICE_NAME: SSQ rlm Server
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 2  START_PENDING
+                                (NOT_STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x7d0
+        PID                : 235976
+        FLAGS              :
+
+All done! Enjoy!
+
+Press any key to continue . . .
+** log
+
+Universal License Server Installer
+    2017 TeAM SolidSQUAD-SSQ
+    
+The system cannot find the path specified.
+
+Unified License Server Installer by TeAM SolidSQUAD-SSQ
+
+Service "SSQ rlm Server" installed successfully!
+
+SERVICE_NAME: SSQ rlm Server
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 2  START_PENDING
+                                (NOT_STOPPABLE, NOT_PAUSABLE, IGNORES_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x7d0
+        PID                : 15696
+        FLAGS              :
+
+All done! Enjoy!
+
+
+**  error '"C:\pointwiseservers\Bin/uninstall_services.bat"' is not recognized as an internal or external command, operable program or batch file.
+
+
+** can't display pointwise on windows 7
+OpenGL 2.0 or greater required.
+
+Download intel Graphics Driver
+https://downloadcenter.intel.com/download/27441/Graphics-Intel-Graphics-Driver-for-Windows-7-8-1-15-36-
+
+** Update
+** Release Notes
+-  PluginSDK now supports grid import. SU2, FUN3D, CRUNCH, CFD++, CFX, Fluent, and OpenFOAM are included in the current release. For all others, a user can use the PluginSDK to create an importer for their preferred CAE format.
+The license server has been updated to RLM 12.3.
+- A data filter/probe for individual cells has been added to Examine.
+- The Examine feature has been expanded and improved in a number of ways:
+  + The cut plane position can now be set by clicking a point.
+  + Cell Type is now available for domains
+  + A Zoom and Align button has been added to the Extrema tab that will orient the view to the normal of the max/min cell.
+  + Filters can be created to highlight cells that meet (or violate) a set of criteria.
+  + Filtered cells can be used to create a Source Point Cloud.
+
+- Blocks can now be built based upon the selection of entities. This can be used to create an unstructured farfield or blocks of type Voxel, Structured, or Unstructured for overset grid refinement.
+- Unstructured domain cells can now be aligned with a source.
+-  Any two connectors in an unstructured domain can now be joined.
+    The Growth distribution has been improved to allow different specifications for the interior of a connector.
+    The user manual is now online and can be accessed through the menu or by hitting the F1 key. Context-sensitivity has also been added. For example, if the Create, Build Blocks panel is open and the F1 key is hit, then user manual will open to the Create, Build Blocks page.
+    Several T-Rex improvements including:
+        The T-Rex mesh can now be saved even if the isotropic mesh fails to be generated.
+        Maximum height can now be set as a factor of isotropic height
+        The algorithm has improved handling for quad dominant and/or structured domains.
+        Match domains between T-Rex fronts of differing heights now use a weighted average of the front heights.
+    A user defined view can now be assigned by holding CTRL and clicking the view shortcut.
+    A native file can now be dragged and dropped on the GUI to be opened.
+    CGNS can now be exported in either HDF5 or ADF file formats using the Solver Attributes menu.
+    The Draw Shapes tool now includes creating grid entities rather than just databases or sources.
+    Persistent Cut Planes can be created that exist outside of the Examine function. These planes can be created from within Examine or through the Create menu and have their own panel.
+    A new utility for overset grid creation, Frameworks, has been introduced. This tool allows the user to create hierarchies of grid entities using local coordinates. Each hierarchy is called a Framework and can be transformed to other locations using attachment points or standard transform methodologies.
+    Pointwise on OS/X has multiple improvements:
+        OS/X 10.10 (Yosemite) and XCode 6.4 are now supported.
+        A launch script is now available.
+        The keyboard shortcut for split has been changed to CTRL+Q to avoid conflict with system-wide shortcuts.
+    Domains of all types can now have cell density influenced by sources.
+    Unstructured blocks can now be split. This includes blocks that utilize T-Rex. The splits can be a specified distance from the boundary or based upon the layers of a T-Rex front
+    A glyph command has been introduced that can control verbosity.
+    UGRID hybrid cells and volumes can now be imported.
+    SUGGAR++ has been added as a CAE export format.
+
+
+
+
+
+
+
+
+
+
+* Tutorials
+** hub extrusion
+https://www.youtube.com/watch?v=kPpeQ7UO_1M
+** hemisphere
+Here the APDL script:
+finish
+/clear
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! PARAMETERS !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! GEOMETRY
+*set, r, 0.2
+*set, perc_r, 0.50
+*set, thickness, 0.001
+!
+! MESH
+*set, ele_numb_rad_dir, 5
+*set, ele_numb_circ_dir, 10
+!
+! MATERIAL
+*set, E, 130000.
+*set, nu, 0.33
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! SETTINGS !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/pnum, kp, 1
+/pnum, line, 1
+/pnum, area, 1
+!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! PREPROCESSING !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/PREP7
+!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! MATERIAL !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+mptemp,,,,,,,,
+mptemp, 1, 0
+mpdata, ex, 1, , E
+mpdata, prxy, 1, ,nu
+!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! GEOMETRY !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+k, 1, 0, 0, 0
+k, 2, 0, -r, 0
+circle, 1, r, 2, , 90, 1
+arotat, 1, , , , , , 1, 4, 45
+nummrg, all, , , , low
+k, 6, perc_r*r, 0, 0
+k, 7, perc_r*r, 0, 2*r
+k, 8, 0, perc_r*r, 0
+k, 9, 0, perc_r*r, 2*r
+l, 6, 7
+l, 7, 9
+l, 8, 9
+l, 8, 6
+al, 4, 5, 6, 7
+asba, 1, 2
+numcmp, all
+lesize, 5, , , ele_numb_circ_dir
+lesize, 6, , , ele_numb_circ_dir
+lesize, 1, , , ele_numb_rad_dir
+lesize, 4, , , ele_numb_rad_dir
+cskp, 11, 0, 1, 5, 4, 1, 1
+csys, 11
+arsym, z, all, , , , 0, 0
+nummrg, all, , , , low
+csys, 0
+arsym, x, all, , , , 0, 0
+nummrg, all, , , , low
+arsym, y, all, , , , 0, 0
+nummrg, all, , , , low
+!
+adele, 3
+adele, 7
+al, 3, 9, 18, 7
+ldele, 8
+!
+adele, 1
+adele, 9
+al, 17, 21, 4, 3
+ldele, 2
+!
+adele, 11
+adele, 15
+al, 29, 35, 26, 17
+ldele, 25
+!
+adele, 5
+adele, 13
+al, 31, 29, 7, 13
+ldele, 11
+nummrg, all, , , , low
+lesize, 3, , , ele_numb_rad_dir
+lesize, 7, , , ele_numb_rad_dir
+lesize, 29, , , ele_numb_rad_dir
+lesize, 17, , , ele_numb_rad_dir
+!
+!
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! MESHING !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+et, 1, shell281
+keyopt, 1, 1, 0
+keyopt, 1, 8, 0
+keyopt, 1, 9, 0
+keyopt, 1, 10, 0
+r, 1, thickness
+amesh, all
+nummrg, node, , , , low
+numcmp, all
+eplot
+! CHECKING FOR MESH GAPS
+!/edge, 1, 1
+!/device, vector, 1
+!
+/eof
+https://www.researchgate.net/post/How_does_one_mesh_a_solid_shell_hemisphere_in_hexdominant_environment_either_by_sweep_or_mapped_meshing_in_ANSYS_APDL
+** hull cone
+https://www.youtube.com/watch?v=KMDarWx9RkU
+0:00:00 - [[Introduction ]]
+0:02:35 - [[Creating Connectors on the Hull ]]
+0:11:00 - Smoothing Hull Domains with Elliptic Solver 
+0:17:00 - Create Topology for Hull Blocks with Surfaces and Connectors 
+0:34:00 - Assemble Hull Blocks (O-O-H topology) 
+0:40:40 - Improve Quality at Sharp Stern Point 
+0:47:20 - Create Topology for Farfield Blocks 
+0:57:45 - Use Bezier Curves for Complex Block Topologies 
+1:01:35 - Assemble Farfield Blocks (C-O-H topology) 
+1:08:55 - Tips for Improving Quality on Complex Domains 
+1:17:05 - Clean up and Organization 
+1:20:35 - Examine the Final Mesh 
+1:23:02 - Closing Comments
+*** Introduction
+*** Creating Connectors on the Hull 
+
+** Hexa Blade
+Highlight
+Steps:
+1. blade surface mesh (domain) 
+    domain on database, cluster on tip, root, LE, TE
+2. Blade domain normal extrude
+3. Periodic Boundary domain mesh
+4. Split block 
+5. add connector, assemble shroud and hub domains
+- Normal extrude >> blade Boundary extrusion
+- Elliptical solver >> smoothing mesh
+
+>> Multiblock Structured Mesh for a High Stagger Angle Axial Rotor
+https://www.youtube.com/watch?v=ziAyzWjyZnw
+https://www.youtube.com/watch?v=OCF70TGwMA8
+http://www.pointwise.com/workshops/2015-11-Germany/Strategies-Multiblock-Structured-Meshing-Turbine-Blades.html
+https://www.youtube.com/watch?v=y-TuNk_3y_o
+** wing/sailplane
+ Automatically create unstructured quad-dominant surface meshes
+   Extrude flow-aligned, hex-dominant boundary layer resolved cells using T-Rex
+   Easily generate shapes to define farfield boundaries and sources
+    Define off-body volumetric refinement regions using sources
+http://www.pointwise.com/webinars/2016-12/Unstructured-Quad-Hex-Meshing-Using-Pointwise.html
+
+** wind energy
+http://www.pointwise.com/wind-energy/
+** propeller, impeller
+hybrid 
+surface mesh: hexa
+T-rex
+Grigoriev, Mikhail, et al. "Higher Order Finite Element Meshes for Centrifugal Impeller Blade Analyses Using Pointwise." ASME Turbo Expo 2014: Turbine Technical Conference and Exposition. American Society of Mechanical Engineers, 2014
+http://www.pointwise.com/theconnector/2014-May/Simulation-Unsteady-Propeller-Blade-Loads-Using-OpenFOAM.html
+** Setting Unstructured Domain and Block Defaults
+https://www.youtube.com/watch?v=Paj-wIGafPA
+To use preset defaults setting, save the settting:
+> file/save enviroment as
+> 
+** O grid airfoil
+https://www.youtube.com/watch?v=SwLkbrZMYMo
+
+
+** Resolving the Wake
+
+** unstructured 2d domain form 2d surface (quilt) database
+create connector
+setup number of nodes and distribution function on connector 
+create domain using "domains on database entities"
+- The *Connectors on Database Entities* and Domains on Data-base Entities commands require a default connector Dimension or Average Δs be set before they can be used.
+** hybrid wind turbine
+https://www.youtube.com/watch?v=KOvWlgBEzo4
+** unstructured 3D block from domain(2d mesh)
+	Create/assemble special/block
+	Select one face and then Select/select all adjacent (C+S+A)
+	Select all faces composing the block(3d mesh)
+initialize
+>[[https://www.youtube.com/watch?v=3ph8Nzhur9w][How to Create an Unstructured Block with an Internal Face]]
+- orange arrow implies the domain is open
+*** pick a domain to add to the first face. the first face should be the outer face and must be a closed face
+
+** Toggling Visibility of Various Entity Types
+view
+
+** growth ratio on  connector
+keywords: distribution fucntions
+file:figures\pw\distribution-function.jpeg
+
+** split entities
+C+Q
+edit/split
+
+From <https://www.youtube.com/watch?v=o9KGvYUYReM> 
+** Dimension Connectors From Spacings
+- Goal:  dimension a set of connectors based on prescribed beginning, ending, and max allowable spacing between grid point parameters.
+* Error
+** Could not create a block with the selected faces. The last face will be removed
+this message indicates a problem with the structured grid's topology. Most often the cause is one of these:
+
+1) *coincident connectors* on the edges of adjacent faces. Use the "Grid/Merge" command to resolve this.
+   + set a tolerance smaller than min spacing  and Pointwise will find adjacent connectors and nodes that lie within this specified tolerance. 
+Once highlighted, you can opt to merge them. Alternatively, you can simply replace one with the other by selecting the first, and then the second entity.
+
+2) The faces do not form a computationally I*J*K block. Check the number of nodes on edges. 
+https://www.cfd-online.com/Forums/pointwise/108684-structured-meshing-using-pointwise.html
+
+** Undefined block 
+
+** export to ICEM CFD
+format:CGNS
+
+error message:
+Not able to open file.  array size exceeds that for a 32-bit integer
+
+** Error:   The surface triangulation could not be recovered
+
+** Error: Could not find any valid file types for pw::GridExporter getFileTypes!
+
+* FAQ
+**  redimension structured grids
+select a connector
+> Grid/dimension, or C+W
+set number of 
+http://www.pointwise.com/doc/user-manual/grid/dimension/index.html
+** move a node of a selected connector
+edit/tweak
+http://www.pointwise.com/doc/user-manual/edit/tweak.html
+
+** Setting Rotation Points
+C+S + RM (right mouse), and then move 
+
+** Pyramids setting
+- change aspect ratio
+https://www.youtube.com/watch?v=T96ab4JpF3o
+
+goal:  controlling the shape of pyramids that may get created when initializing unstructured blocks. 
+function of pyramid cell : adjacent to any quadrilateral cell on the faces of an unstructured block
+
+>grid/solve/attribute/pyramid
+>> 9.6.3.2 Pyramid
+
+** Remesh a similar model
+parametric analysis
+
+> Localized Remeshing Strategies for Parametric Models in Pointwise, https://www.youtube.com/watch?v=syWiDDwz4Z0
+    
+    + Take advantage of Pointwise’s native CAD file import capabilities to have existing surface meshes 
+automatically mapped to changes in underlying CAD surfaces
+ - Effectively manage projects using layers to help organize and exchange parts within an assembly
+ - Combine component grids quickly using auto merge 
+-Copy, paste, and transform components to easily re-use parts that are already meshed 
+-Use T-Rex (anisotropic tetrahedral extrusion) features to match cell spacing at interface boundaries when making localized changes to your volume mesh
+Scenarios
+- These models are typically similar to each other with only slight variations in shape of the underlying CAD surfaces. 
+Other times these models consist of several components or parts that can be mixed and matched in a variety of configurations. 
+
+** delete a node to make two connector to one
+join, C+j
+
+** Setting Unstructured Domain and Block Defaults
+unstructured Volume mesh (block) setting
+- growth ratio
+- boundary decay: high value, more volume number, smoothing transition
+
+
+- Boundary Decay :: a powerful tool for clustering or decimating areas of your volume grid based on their *surface cell sizes*. 
+Be careful when setting the Boundary Decay since it can add a significant number of cells at higher values.
+> https://www.youtube.com/watch?v=Paj-wIGafPA
+>> Unstructured Domain Boundary Decay, https://www.youtube.com/watch?v=bxD5Tklmy1g
+** link between mesh and geometry
+
+** node distribution  for structured/unstrucutured mesh
+A default *Dimension* is usually better
+suited to structured grid generation.
+
+ A default *Average \delta S* works better for unstructured grids, along with Max Angle
+and Deviation clustering controls.
+** remove spacing constraint
+
+**  get the coordinates of a point
+C+S+middle mouse
+** Redimension nodes on a connector Structured Grids 
+
+** Grid distribution for structued and unstructured mesh
+- define connectors using "average \delta s" rather than number of nodes ( good for hexa/structured)
+https://www.youtube.com/watch?v=Sb0tlhIdMso
+** check grid spacing of unstructured mesh
+
+** check preset spacing contraint
+
+** show internal volume mesh
+grid/
+use "cut plane"
+> exame/maximum included angle/
+cuts tab
+
+** edge(connector) spacing
+methods: 
+- number of points(dimension
+- spacing constraint( first/end node spacing)
+* Glossar
+   Area ratio , volume ratio
+ Volume Ratio and Area Ratio are available when blocks or domains are selected, respectively, for Examine. 
+They are both calculated in the same manner as follows:
+
+max [Size(i)/minSizeAdj(j), maxSizeAdj(j)/Size(i)]
+
+where:
+Size(i) = area or volume of the cell i
+minSizeAdj(j) = minimum area or volume of the adjacent cell j
+maxSizeAdj(j) = maximum area or volume of the adjacent cell j
+
+These functions are calculated across entity boundaries when adjacent entities are also selected for Examine.
+ 
+
+Tip: The Volume Ratio and Area Ratio functions are excellent diagnostics for finding cell size discontinuities at block and domain interfaces.
+
+
+-  Database :: Pointwise makes a distinction between the geometry model (what Pointwise calls the database or DB) and the mesh generated on it. The database and mesh are two completely separate classes of entities.
+
+Connectors, Domains, and Blocks: Pointwise's mesh entities are connectors (curve meshes), domains (surface meshes), and blocks (volume meshes). Connectors and domains can adhere and conform to the database's shape.
+
+- Curves and Surfaces :: Geometric representations in the most widely used mechanical computer aided design (MCAD) systems
+ are based on mathematical representations known as *NURBS*: non-uniform rational B-Splines. This is also how Pointwise internally represents geometry.
+
+Trimmed Surfaces: Curves and surfaces are further sculpted using a topological technique called trimming. For example, consider an aircraft's wing that is drawn in the MCAD software so that it pierces the fuselage. The two components' surfaces can be intersected and the intersection curve used both to cut a hole in the fuselage and cut off the portion of the wing inside the fuselage. In other words, trimming removes the unrealistic portions of the geometry.
+
+Quilts: Trimmed surfaces are wrapped in entities called quilts. Furthermore, individual quilts can be joined together to make a composite quilt. The benefit of creating composite quilts is that they will be meshed with a single domain.
+
+
+Solid Models: All of the quilts in a single body can be joined topologically to form a solid model, also known simply as a model. The adjective “solid” conveys that the entity is watertight because the seams between its constituent quilts are closed (in a topological sense). For example, a single model can be created from the union of the trimmed wing and fuselage described above. Models can be open (e.g. hemisphere) or closed (e.g. sphere). 
+- Subgrid :: a /subset of the grid/ for structured surface and volume grids
+goal: This allows focused application of the solver on problem areas without effecting the rest of the grid.
+http://www.pointwise.com/doc/user-manual/grid/solve/structured-domains-and-blocks/subgrids.html
+
+- Aspect ratio :: for quadrialteral,  average length/ (average width)
+Quadrilateral cell aspect ratio is computed from the ratio of the average length and average width. The aspect ratio is always greater than or equal to 1 with a value of 1 representing a square.
+
+Hexahedral cell aspect ratio is computed from the ratio of the maximum of the length, width, and height and the minimum of the length, width, and height. The aspect ratio is always greater than or equal to 1 with a value of 1 representing a cube.
+
+*Triangular cell* aspect ratio is computed as the long edge of the triangle divided by the short edge.
+
+*Tetrahedral cell* aspect ratio is computed as the ratio of the radius of the cell's circumscribing sphere to 3 times the radius of the inscribed sphere. 
+
+Prism aspect ratio is the ratio of the average height of the prism and the average length of the base's (triangle) edges. 
+The aspect ratio of a prism can be less than 1.
+
+Pyramid aspect ratio is the ratio of the *height* of the pyramid and the *average length* of the base's (quadrilateral) edges.
+ The aspect ratio of a pyramid can be less than1..
+
+- free surface :: a surface that is not associated with any trimmed surfaces in the file. It can be a
+B-spline surface, surface of revolution, ruled surface, and so on. 
+Note that free surface planes are not included, since they do not have natural boundaries.
+
+- Number of Layers
+- Entity ::  An entity is an individual grid or database element.
+Connector - A connector is a 1D grid element which forms
+the foundation for all other grid hierarchy.
+
+- Domain ::  - A domain is a 2D grid element which can be
+structured or unstructured.
+
+Block - A block is a 3D grid element which can be structured,
+unstructured or hybrid.
+
+
+Database：几何模型数据，用来定义被划分网格的目标形状 
+
+Database - The database is CAD geometry imported from
+other sources or created directly within Pointwise. Used to
+control the shape of grid elements, but not necessary for
+mesh creation.
+
+Spacing Constraint - The user defined grid point spacings
+adjacent to connector nodes.
+
+Dimension - The number of grid points assigned to a connector.
+
+Control Point - A control point is a user defined point
+specifying the shape of curve entities (connector or data
+base).
+
+Node - The *first and last control points* defining a connector are represented as filled circles called nodes.
+
+- Edge :: The boundary of a domain is referred to as an edge. There are exactly four edges bounding a structured domain.
+
+Unstructured domains have a single perimeter edge, and any
+interior holes will be additional edges.
+
+- Face :: - The boundary of a block is referred to as a face.
+There are exactly six faces bounding a structured block.
+Unstructured blocks will have a single perimeter face which
+is closed, and any interior holes will be additional faces.
+
+- point placement :: point location/coordiantes
+- Entity :: An entity is an individual grid or database element.
+Entities : 数据类型 (includes, i.e. database, connectors, domains and blocks)
+Entity –An individual grid or database element.
+
+Connectors：线网格 
+Connector –1D Grid element. Foundation for all other grid hierarchy.
+
+Domains：面网格 
+Domain –2D Grid element (surface). Can be structured or unstructured.
+
+Blocks：体网格 
+Block –3D Grid element. Can be structured, unstructured or hybrid.
+
+（Control Point） 控制点 – 用户指定的点，用来定义曲线的形状。 
+
+Dimension – 分配给一个线网格的网格点数目。 
+Dimension - The number of grid points assigned to a connector.
+
+
+
+Connectors：线网格 
+Connector –1D Grid element. Foundation for all other grid hierarchy.
+
+Domains：面网格 
+Domain –2D Grid element (surface). Can be structured or unstructured.
+Blocks：体网格 
+
+Block –3D Grid element. Can be structured, unstructured or hybrid.
+控制点（Control Point）– 用户指定的点，用来定义曲线的形状。 
+节点（Node） – 定义一条线网格的起点和终点。必须满足节点误差（ Node Tolerance ）才能形成一个面网格 
+
+Dimension – 分配给一个线网格的网格点数目。 
+Dimension - The number of grid points assigned to a connector.
+边（Edge ）– 一个面网格的边界。对于结构网格是四个；对于非结构网格是一个或多个。 
+面（Face） – 一个体网格的边界。对于结构网格是六个；对于非结构网格是一个或多个 
+
+•	创建网格并不需要一个几何体，几何模型是用于描述网格形状。 
+•	几何体也并不一定要是封闭的，可以有间隙或者重叠等。 
+model
+- Models :: a watertight meshing region.
+are topological CAD entities that allow for watertight meshing over gaps and cracks in the underlying geometry.
+Model Size tolerance
+e ）– 一个面网格的边界。对于结构网格是四个；对于非结构网格是一个或多个。 
+面（Face） – 一个体网格的边界。对于结构网格是六个；对于非结构网格是一个或多个 
+
+创建网格并不需要一个几何体，几何模型是用于描述网格形状。 
+几何体也并不一定要是封闭的，可以有间隙或者重叠等。 
+
+* Reading and Writing Files from Pointwise
+* Database: Geometry model
+- The database and mesh are two completely separate classes of entities. 
+- Note that each *trimmed surface* imported from geometry data will automatically be put into a quilt
+ and the original trimmed surface will be hidden.
+** Using Automatic Assembly when Importing Database Entities
+file/import/database
+- Build Models From Free Surfaces ::  automatically promote each *free surface* into a quilt and to assemble each quilt into a model
+** curve on database entities
+
+** Database types:
+- B-spline  curve
+- Line
+- Circle
+- Quilt :: groups of surfaces typically representing mesh topological regions 
+
+> 8.5.3 Quilts
+   Quilts are Trimmed surfaces are wrapped in entities called quilts. 
+Furthermore, individual quilts can be joined together to make a composite quilt.
+ The benefit of creating composite quilts is that they will be meshed with a single domain. 
+http://www.pointwise.com/theconnector/2012-May/Quilting-Make-Meshing-Easier.html
+
+- (solid) model :: All of the *quilts* in a single body can be joined topologically to form a *solid model*, also known simply as a model
+The adjective “solid” conveys that the entity is *watertight* because the seams between its constituent quilts are closed (in a topological sense).
+http://www.pointwise.com/theconnector/2012-May/Quilting-Make-Meshing-Easier.html
+
+- Curves and Surfaces :: Geometric representations in the most widely used *mechanical computer aided design* (MCAD) systems
+ are based on mathematical representations known as *NURBS*: *non-uniform rational B-Splines*.
+ This is also how Pointwise internally represents geometry. 
+
+- Trimmed Surfaces :: Curves and surfaces are further /sculpted/ using a topological technique called /trimming/. 
+For example, consider an aircraft's wing that is drawn in the MCAD software so that it pierces the fuselage. 
+The two components' surfaces can be intersected and the intersection curve used both to cut a hole in the fuselage and cut off the portion of the wing inside the fuselage. In other words, trimming removes the unrealistic portions of the geometry. 
+* Connectors
+** curved connectors
+edit/curve
+http://www.pointwise.com/doc/user-manual/edit/curve/changing-segment-types.html
+** connector length
+>examine/edge length
+
+1. select the connector
+> C+G, spacing, probe
+
+Examining Length
+https://www.youtube.com/watch?v=pp5HV2HuRb0
+
+* Overset
+https://www.youtube.com/watch?v=Y0Pb7mtPHjU&list=PLA767151284E4BA3E
+
+* Merge
+>grid/merge
+http://www.pointwise.com/doc/user-manual/grid/merge/index.html
+Using the Merge command to
+eliminate duplicate connectors
+is a better strategy that
+adjusting the Connector
+tolerance in File, Properties. The
+Merge command gives you the
+ability to decide what will and
+will not be merged. Adjusting
+the Connector tolerance affects
+the entire mesh.
+** Connector topology  :free connectors:
+*Free connectors* are used by a single domain or none.
+
+Manifold connectors are used by two domains.
+
+Non-Manifold connectors are used by more than two domains
+
+* Nodes
+two ways to give nodes distrubitons:
+- No. of nodes
+- averaging spacing
+
+To move interior nodes >> edit/tweak, http://www.pointwise.com/doc/user-manual/edit/tweak.html
+
+* Shortcuts: accelerators
+	F2   #zoom to fit
+	Shift + Right Mouse  # pan
+	Shift + Middle Mouse  # zoom in/out
+	C + RM  # Rotate
+	Ctrl-A  Select All
+	 Alt-1 (-6)Save View 1 (-6)
+	Ctrl-D Unselect All 
+	Ctrl-Z Undo     
+	Ctrl-1 (-6)Recall View 1 (-6)
+	Ctrl-C  Copy 
+	Ctrl-Y Redo
+	Ctrl-R Reset View
+	Ctrl-V Paste 
+	Ctrl-N File New
+	Ctrl-Enter OK
+	Ctrl-X Cut
+	 Ctrl-O File Open
+	Ctrl-F “Generate mesh”
+k
+* Elliptic Solver : smoothing mesh :solve:
+> grid/solve
+
+Strategies-Multiblock-Structured-Meshing-Turbine-Blades.pdf
+9.6.1 Solve for Structured Domains and Blocks
+
+
+** Solve for structured Domains and Blocks
+- match spacing constraint before smoothing
+- Subgrids can be used to isolate problem areas
+** Attributes Tab
+*** Interior Control Functions
+
+*Thomas-Middlecoff* is better than Laplace 
+
+*Laplace interior*  control functions provide a very smooth distribution
+of grid points in the grid interior, but provide no degree of *orthogonality* or clustering.
+
+*Thomas-Middlecoff* (Ref. 36) 
+
+ Pointwise's default option
+
+will cluster
+grid points on the grid's interior based on how the grid points are
+clustered on the boundaries. This method is very reliable and stable for
+a wide range of applications and is
+
+
+
+
+** Edge Attributes Tab
+*** Boudary conditions
+
+- Fixed: Grid points and curves are static.
+- Floating: Grid points and curves are both free to adjust*.
+- Orthogonal: Grid points may adjust; grid curves cannot.
+
+** attributes
+
+* Unit
+pointwise is dimensionless
+* TODO  Errors
+** Mesh boundary triangulation failed during domain initialization
+* Extrude
+
+>create/extrude
+
+1D edge -->> 2D domain
+2D domain -->> 3D block
+** translate
+step size options
+- equal
+- subconnector
+   + have your extrusion follow the distribut ion of points along a given subconnector(s) .
+
+** path extrusion
+https://www.youtube.com/watch?v=o1faHm2hGYw
+
+** Boundary  conditions tab
+- *Adjacent Grid*  forces selected domain boundaries to lie on an adjacent,
+connected structured domain. e.g.  hub extrude with a predefined blade domain.
+
+ Arbitrary Plane automatically determines a plane in which each
+boundary connector of an unstructured domain lies and forces that
+boundary to remain in plane during prism extrusion.
+ Database Constrained forces selected domain boundaries to lie on an adjacent database surface.
+ Constant X, Y, Z holds the corresponding coordinate direction constant
+for all points on the selected boundary.
+ Splay causes the selected boundaries to move outward as extrusion
+proceeds. Not available for unstructured domains.
+ Symmetry X, Y, Z keeps the grid symmetric in the corresponding
+coordinate direction on the selected boundary.
+https://www.youtube.com/watch?v=yZhmqN5i7BQ
+
+* Project
+*Project Points* allows you to project not only the shape but also the
+grid points of a connector on the target database surface. This option
+is disabled if the entity to be projected is a database curve.
+
+*Project Shape* allows you to project only the shape of a connector
+on the target database surface while retaining its original grid point
+distribution function. This option is disabled if the entity to be projected
+is a database curve.
+
+*Interior Only* allows you to project only the interior points of a
+domain or connector on only the interior of a database surface. 
+If, for
+example, your domain's connectors are already database constrained
+(e.g., Line on DB segment types) you should probably check this
+option. Otherwise, your Line on DB segments will be replaced by General
+segments.
+
+* Pyramids
+used to link quadrilateral to iso-tetra
+aspect ratio of quadrilateral base < 10
+
+* T- Rex :T-Rex:
+** Surface mesh quality for T-rex
+the surface  area ratio < 4 
+the maximum included angle < 150 
+** Basic
+file:figures/pw/T-rex.png
+*what is T-Rex?*
+- T-Rex: anisoTropic *tetRahedral* _ex_trusion (T-Rex)
+-  isotropic  :: adj.  invariant with respect to direction
+
+*why?*
+- Designed to grow high-quality anisotropic tetra cells from watertight quadrilateral and triangular surface mesh
+
+- extruding regular layers of high-quality tetrahedra from boundaries.
+
+- Resulting boundary layer mesh transitions to isotropy where it interfaces 
+with a modified delaunay volume mesher.
+
+*User setting:*
+- wall spacing 
+- growth rate
+- number of layers
+- skewness Criteria
+
+Pre requirement?
+- unstructured block
+> Grid/T-rex
+
+
+
+** tutorial
+2D T-Rex Meshing, tutorial workbook
+Intake Port and Valve, tutorial workbook
+1 T-Rex-to-Generate-Unstructured-Hexahedra-for-an-Automotive-Intake
+Tutorial 13. DLR F-6 Aircraft: Anisotropic Tetrahedral Meshing in the Gridgen Tutorial Manual
+http://www.pointwise.com/T-Rex
+
+** Reference
+> Construction of Prism and Hex Layers from Anisotropic Tetrahedra, (AIAA-2015-2296) 
+> Anisotropic Tetrahedral Meshing Based on Surface Deformation Techniques AIAA paper no. 2007-0554
+* Unstructured domain  
+** algorithm
+- Delaunay
+- Advancing Front
+- Advancing Front Ortho
+ 
+the *Delaunay*, and advancing front populate surface grids with equilateral triangles, the
+Advancing Front Ortho algorithm, on the other hand, tends to populate
+them with right-angled triangles.
+
+* Connectors, Domains, and Blocks:
+Pointwise's *mesh* entities are connectors (curve meshes), domains (surface meshes), and blocks (volume meshes). Connectors and domains can adhere and conform to the database's shape.
+** Hexa Domains
+A structured domain must have exactly four edges forming a computationally rectangular region. A singular edge will be represented by a Pole connector.
+Use Auto Next Edge when your edges will be made up of exactly one connector.
+Auto complete will attempt to complete the domain once the first two edges have been defined.
+A computational diagram is presented of the domain under construction.
+
+* Layer management
+- display control: put database and grid entities into different parts (layers) 
+
+Benefit ?
+isolate the portion of a complex database or grid you need for
+the task at hand and turn off the remaining entities so they do not clutter the
+
+Display window.
+Organizing Your Project Using the Layer Manager, https://www.youtube.com/watch?v=6mwT2kNoDdY
+** layer assignment
+- select database/grid
+- layer/specify layer number
+
+** Add to Selection
+allows you to add all non-hidden
+entities in the layer or layers selected in the panel to the current selection in
+the Display window
+* Examine: check :mesh-quality:
+
+1. Centroid skewness < 0.8
+2. Equiangle Skewness < 0.8
+3. max included angle, < 165
+
+- Centroid skewness (Pointwise)= 1- orthogonal quality (fluent),  max 0.8
+# the value doesnot follow exactly, max skewness centroid (PW) =/= 1- orthogonal quality (Fluent)
+- Centroid Skewness  :: 1 - the maximum *dot product* between the cell face normal and the vector connecting the cell centroid and the face centroid. 
+Values range from 0 (no-skew) to 1 (collapsed cell).
+
+- Equiangle Skewness : 0 is good  and 1 bad, below 0.8 for a good grid; values below 0.9 are acceptable
+- Equiangle skewness (pointwise) = ortho skew(Fluent)
+
+- max included angle, < 170
+
+** surface Mesh quality for hybrid mesh (surface hexa + T-Rex + tetra)
+area ratio < 4
+max included angle < 160
+
+
+
+
+
+
+
+
+
+
+
+
+** How to ?
+http://www.pointwise.com/doc/user-manual/examine/
+Examining Cell Area and Volume, https://www.youtube.com/watch?v=nox2n24bsI4
+Using the Color Bar and Histogram When Examining Mesh Quality, https://www.youtube.com/watch?v=kbO-SJ3Ro6Y
+Examining Skewness, https://www.youtube.com/watch?v=sR28z2fhTss
+** Show low quality mesh part
+Using the Color Bar and Histogram When Examining Mesh Quality, https://www.youtube.com/watch?v=kbO-SJ3Ro6Y
+** cuts
+
+*** extrema: display max/min value
+
+*** Saved Cuts
+
+
+
+To determine if your mesh is of
+reasonable quality for your chosen CAE solver, you should
+be aware of which grid quality
+metrics are important to your
+solver and what the maximum
+thresholds should be. 
+
+Once you have determined this information, you should evaluate your final *volume mesh* in the Examine command 
+to see if it satisfies the requirements. 
+If it does not, you may need to adjust your T-Rex settings or regions of your surface grid to meet the criteria before exporting your grid to be used in a simulation
+** Aspect ratio
+for pyramid mesh, keep aspect ratio < 10
+
+Examining aspect ratio
+https://www.youtube.com/watch?v=v-VKap7Q4FE
+
+
+** Reference
+> 6.11 examine, tutorial workbook
+* Accuracy, Convergence and Mesh Quality
+** advantages to using a structured grid:
+
+    Time and memory. You can fill the same volume with fewer hexes than tets, thereby lowering the cell count and your CFD computation time and memory usage. Structured grids generally have a different topology than unstructured grids, so it is difficult to make a direct cell count comparison. At its simplest, each hexahedron can be decomposed into 5 tetrahedra that share its edges, giving a 5:1 reduction in cell count for the same flowfield resolution. The benefit to reducing cell count becomes very apparent when generating a mesh with a wide variation in resolved length scales; you will use many more tets than you would hexes.
+    Resolution. Flow of a fluid will often exhibit strong gradients in one direction with milder gradients in the transverse directions (e.g. boundary layers, shear layers, wakes). In these instances, high quality cells are easily generated on a hex grid with high aspect ratio (on the order of one thousand or more). It is much more difficult to generate accurate CFD solutions on highly stretched tetrahedra. (Plus, not all stretched tets are equal depending on the maximum included angles.)
+    Alignment. CFD solvers converge better and can produce more accurate results when the grid is aligned with the predominant flow direction. Alignment in a structured grid is achieved almost implicitly because grid lines follow the contours of the geometry (as does the flow), whereas there's no such alignment in an unstructured mesh.
+    Definable normals. Application of boundary conditions and turbulence models work well when there is a well-defined computational direction normal to a feature such as a wall or wake. Transverse normals are easily defined in a structured grid.
+
+** workshops 
+Mesh Quality/Resolution, Practice, Current Research, and Future Directions Workshop
+ Dayton 
+hosted by the DoD High Performance Computing Modernization Program (HPCMO) 
+organized by the PETTT Program (User Productivity, Enhancement, Technology Transfer and Training) 
+AIAA's MVCE Technical Committee (Meshing, Visualization, and Computational Environments).
+
+
+***   Workshop presentations
+        Stephen Alter, NASA Langley, “A Structured-Grid Quality Measure”
+        John Dannehoffer, Syracuse University, “On Grid Quality and Validity”
+        Christopher Roy, Virginia Tech, “Discretization Error”
+        Vinit Gupta, Metacomp Technologies, “CFD++ Perspective on Mesh Quality”
+        Konstantine Kourbataski, ANSYS, “Assessment of Mesh Quality in ANSYS CFD”
+        David McDaniel, University of Alabama at Birmingham, “Kestrel/CREATE-AV Perspective on Mesh Quality”
+        Alan Mueller, CD-adapco, “A CD-adapco Perspective on Mesh Quality”
+        John Steinbenner and Nick Wyman, Pointwise, “Solution Independent Metrics”
+        Presentations from the Mesh Quality Workshop are available by email request to pettt-requests@drc.com.
+    Thornburg, Hugh J., “Overview of the PETTT Workshop on Mesh Quality/Resolution, Practice, Current Research, and Future Directions”, AIAA paper no. 2012-0606, Jan. 2012.
+    Stimpson, C.J. et al, “The Verdict Geometric Quality Library”, Sandia Report 2007-1751, 2007.
+    Mavriplis, Dimitri J., “Grid Quality and Resolution Issues from the Drag Prediction Workshop Series”, AIAA paper 2008-930, Jan. 2008.
+    Roache, P.J., “Quantification of Uncertainty in Computational Fluid Dynamics”, Annual Review of Fluid Mechanics Vol. 29, 1997, pp. 123-160.
+    Knupp, Patrick M., “Remarks on Mesh Quality”, AIAA, Jan. 2007.
+
+* Transform
+https://www.youtube.com/watch?v=RiEYK5S1drQ
+- Anchor :: refers to the *fixed point* about which the selected entity or
+entities will be scaled.
+- Begin Point :: refers to the beginning coordinates of the scaling vector.
+- End Point ::  refers to the ending coordinates of the scaling vector.
+
+** translate
+
+* File formats
+
+ .gg  #Gridgen
+* Grid
+** Distribute  function
+- Equal Spacing command ::  a shortcut used to quickly unconstrain
+both ends of a subconnector by setting both values to zero. It also sets the distribution function back to the default: hyperbolic tangent.
+https://www.youtube.com/watch?v=LNMmq5EDq8o
+*** Break Points
+
+*** tanh
+- If the spacing is unconstrained at both ends, grid points will be distributed uniformly
+
+- If the spacing is unconstrained at only one end, an alternative one-sided hyperbolic tangent distribution function is used.
+
+*** Geometric
+- *one-sided* distribution function
+- fixed growth ratio.
+- Only one spacing constraint on a subconnector can be set with this function type.
+- If no spacing constraints are specified, the grid points will be distributed uniformly
+
+*** Growth distribution parameters
+- Goal: modify a connector or subconnector to match the desired T-Rex parameters
+- what is it?
+  + applies the geometric function to the boundary layer (“growth”) portion of a connector while the hyperbolic tangent function to the non-growth portion
+
+three options
+- Number of Layers and Growth Rate, 
+- Total Height and Growth Rate, 
+-  Number of Layers and Total Height.
+
+Tutorial
+> 2.12 Apply Growth Distribution 
+
+* Mesh size
+cell size
+- use "Size Field diagnostic function"
+1. Check the Block mask.
+2. Select the block.
+3. Examine, Size Field* Grid source
+A grid source allows you to create a *preset shape* (such as a a sphere, box, or cylinder) or an arbitrary polygonal shape in which you wish to have further control over the size of the isotropic tetrahedra in the volume.
+
+* Connector
+you cans set averaging spacing, number of nodes, first element size (spacing constraint)
+but growth ratio along a connector isn't available
+** types
+*** Tanh: default hyerpbolic tangent
+
+*** Geometric
+Geometric - This is a one-sided distribution function
+** edit curve
+change the shape of the line:
+select the control point 
+> Ctrl +left mouse click  and drag the control point
+
+
+** edge length
+C+S+middle mouse
+
+* Block
+- assemble :: automated assembly of *domain* and *block* grid entities and assembly of model and quilt database entities.
+A structured block is defined by six faces.
+manually select domains and save face.
+http://www.pointwise.com/doc/user-manual/create/assemble-special/block/structured.html
+
+ An unstructured block is defined by at least one outer face and possibly many more interior faces.
+ Furthermore, it is important to understand that each face can contain multiple domains. 
+manual assembly = Assemble Special
+- Assemble Special should be used when the automated Assemble command
+fails to create the desired result.
+
+* Source
+Sources are a separate type of entity which can be used to control *grid density* in the *isotropic*, not T-Rex layers,
+region of *unstructured blocks*.
+
+* shortcuts/Accelerators
+C+A  # select all
+C+ C  # copy
+C + V # paste
+Alt + RMB  # point probe accelerator
+
+Ctrl+W  #Grid, Dimension 
+Ctrl+G  # grid, distribute
+
+* update nodes on connectors
+reset dimension of connector using ~ctrl+w~。然后一起更新，包括domain 和block。
+
+* setup  BCs 
+> 5.14 BCs and Export, workbook
+
+>> CAE/Set Boundary conditions
+
+- add to selection : add 
+https://www.youtube.com/watch?v=ssyJTB9hqP8
+
+tips:
+create groups before  setup BCs
+
+** Create a Group
+Benefit: easier to select domains for BC setups
+
+- combine groups
+   + select groups>> create/group
+https://www.youtube.com/watch?v=1LaAbJba76A
+
+Note:
+don't delete Groups, you will lose domains and blocks if you delete groups
+
+** Periodic Boundaries
+- nodes should be matched in the periodicic boundary
+-  rotational periodic domains
+- The adjacent grid boundary condition is used for the extrusion to ensure that it is point matched with the periodic domains
+
+how to setup Periodicity?
+> create/periodic
+•Use Create, Periodicto define a periodic pair of connectors or domains through translation or rotation.
+•Afterward, saved changes to either of the pair will be automatically and instantly reflected in the other.
+•These pairings can be used to enforce periodic boundaries commonly used as boundary conditions in turbine type analyses.
+
+* Orient
+Tip: If you notice that your block appears to have all negative jacobians during examination, this is a sure sign that the computational orientation of your block is left-handed. Use the Edit, Orient command to correct the orientation and ensure that all of your blocks are right handed before exporting your mesh. 
+
+* Export
+> 3.12 user manual
+>> file/export
+
+Two options: Grid/CAE
+
+- database
+- CAE : export grid, boundary condition, and other solver data in the native format of the currently selected CAE solver.
+- overset : export all of your blocks to PLOT3D format
+
+** Grid
+*** Error
+export/grid
+format, CGNS
+
+Error: Error: opening file C:/Users/exw692/kaiming/tutorials/pointwise/e387new/a7_out.cgns\n
+Error Object: #f
+
+
+** CAE Export
+1. Select *all blocks*.
+2. File, Export, CAE
+3. Specify the CGNS file using the file browser.
+4. Select format options from the Export CAE panel.
+5. OK
+
+select the appropriate CAE solver in Pointwise. From the CAE menu select the Select Solver... command. 
+This opens the CAE panel where you can select ANSYS Fluent from the list of supported CAE software. 
+Click OK to save your selection and close the CAE panel. Also from the CAE menu you can set the dimension to 2-D via the Set Dimension sub-menu.
+
+Next, once you are finished with your mesh you will want to set the boundary conditions specific to ANSYS Fluent on the edges of your 2-D domain(s). Select Set Boundary Conditions... also in the CAE menu. This opens the Set BC panel. Here you can create new boundary conditions with the New button, give them descriptive names by double-clicking in the name field and typing in a new name, and then set their type from the pull-down list that appears when you double-click the CAE Type field.
+
+Once you have created the new boundary condition, you will want to select the edges of your domain(s) that correspond to that boundary condition type which you have just created in either the Display window or List panel. Once you have selected these edges, then click the check box next to the boundary condition's name listed in the Set BC panel to apply that boundary condition to the selected edges. You will see that the number next to the check box should update to indicate the number of edges to which this boundary condition has been applied.
+
+Once you have applied all of your boundary conditions for Fluent in this manner, then you can exit the Set BC panel by clicking OK. One last thing you will want to do for 2-D meshes that consist of multiple domains is that their normals are all aligned. To do this, select all of your domains using either the Display window or List panel, and select Orient... from the Edit menu. This opens the Orient panel which will look and behave differently depending on whether you're working with structured or unstructured domains. Use this short YouTube video to help you orient your domains appropriately.
+
+Lastly, you will export your mesh to an ANSYS Fluent case file (*.cas) which can be read-in by Fluent. Select all of the domains that you wish to export from either the Display window or List panel, and then from the File menu select CAE... from the Export sub-menu. An Open/Save dialog window will open where you can provide a name and location for where you want to save the *.cas file on your local filesystem. Click Save to save the *.cas file. This file can be imported directly into Fluent. Hope this helps 
+
+* hardware 
+130 MB of RAM per 1M cells.
+
+* Glyph2 Script
+[[http://www.pointwise.com/glyph2/files/Glyph/cxx/GgGlyph-cxx.html][Glyph2]] : an extension of the tcl programming language
+
+
+Glyph2 is the scripting language for Pointwise
+** Circle
+#https://github.com/pointwise/CreateOH/blob/master/CreateOH.glf
+# This sample Pointwise script is not supported by Pointwise, Inc.
+# It is provided freely for demonstration purposes only.
+# SEE THE WARRANTY DISCLAIMER AT THE BOTTOM OF THIS FILE.
+#
+
+#############################################################################
+##
+## CreateOH.glf
+##
+## CREATE OH TOPOLOGY FROM FOUR SELECTED CONNECTORS
+## 
+## This script automates the creation of an OH topology from four user-specified
+## connectors. In addition to creating the new topology, the elliptic solver can
+## be run for 10 iterations, allowing the newly generate geometry to relax to an
+## optimal configuration.
+## 
+#############################################################################
+
+package require PWI_Glyph 2.3
+
+set cwd [file dirname [info script]]
+
+## Default values for variables also visible in TK widget
+set input(solveGrid) 1
+set input(alpha) 0.6
+set input(sDim) 11
+
+## Switch that interpolates gridline angles on outer edges, should remain 
+## set to 1 for most applications.
+set interpAngles 1
+
+## Check that four connectors form singly-connected loop
+proc isLoop { conList } {
+    set order [list 0]
+    
+    ## Pick first connector
+    set con1 [lindex $conList 0]
+    
+    ## Find ends of first connector
+    set node0 [$con1 getNode Begin]
+    set node1 [$con1 getNode End]
+    
+    ## Identify connectors adjacent to end of first connector (node1)
+    set adjCon1 [$node1 getConnectors]
+    
+    ## Remove first connector from list for cross-referencing
+    set t1 [lreplace $conList 0 0]
+    
+    ## Check list of adjacent connectors to find next connector in loop
+    set chkCon 0
+    foreach con $adjCon1 {
+        set intersect [lsearch $t1 $con]
+        if {$intersect != -1} {
+            set chkCon [expr $chkCon + 1]
+            set ind2 $intersect
+        }
+    }
+    
+    ## Error checking
+    if {$chkCon > 1} {
+        puts "Degenerate junction"
+        return -1
+    } elseif {$chkCon == 0} {
+        puts "Bad connectivity"
+        return -1
+    }
+    
+    ## Identify second connector
+    set con2 [lindex $t1 $ind2]
+    set ind2 [lsearch $conList $con2]
+    set beginNode2 [$con2 getNode Begin]
+    set endNode2 [$con2 getNode End]
+    if {$beginNode2 == $node1} {
+        set node2 $endNode2
+    } else {
+        set node2 $beginNode2
+    }
+    
+    ## Identify connectors adjacent to end of second connector (node2)
+    set adjCon2 [$node2 getConnectors]
+    
+    ## Remove second connector from list for cross-referencing
+    set t2 [lreplace $conList $ind2 $ind2]
+    
+    ## Check list of adjacent connectors to find next connector in loop
+    set chkCon 0
+    foreach con $adjCon2 {
+        set intersect [lsearch $t2 $con]
+        if {$intersect != -1} {
+            set chkCon [expr $chkCon + 1]
+            set ind3 $intersect
+        }
+    }
+    
+    ## Error checking
+    if {$chkCon > 1} {
+        puts "Degenerate junction"
+        return -1
+    } elseif {$chkCon == 0} {
+        puts "Bad connectivity"
+        return -1
+    } elseif {[lindex $t2 $ind3] == $con1} {
+        puts "Two-connector loop."
+        return -1
+    }
+
+    ## Identify third connector
+    set con3 [lindex $t2 $ind3]
+    set ind3 [lsearch $conList $con3]
+    set beginNode3 [$con3 getNode Begin]
+    set endNode3 [$con3 getNode End]
+    if {$beginNode3 == $node2} {
+        set node3 $endNode3
+    } else {
+        set node3 $beginNode3
+    }
+    
+    set adjCon3 [$node3 getConnectors]
+    
+    set t3 [lreplace $conList $ind3 $ind3]
+    
+    set chkCon 0
+    foreach con $adjCon3 {
+        set intersect [lsearch $t3 $con]
+        if {$intersect != -1} {
+            set chkCon [expr $chkCon + 1]
+            set ind4 $intersect
+        }
+    }
+    
+    ## Error checking
+    if {$chkCon > 1} {
+        puts "Degenerate junction"
+        return -1
+    } elseif {$chkCon == 0} {
+        puts "Bad connectivity"
+    } elseif {[lindex $t3 $ind3] == $con1} {
+        puts "Three-connector loop."
+        return -1
+    }
+    
+    set con4 [lindex $t3 $ind4]
+    
+    ## Return ordered list of nodes and connectors
+    set nodes [list $node0 $node1 $node2 $node3]
+    set cons [list $con1 $con2 $con3 $con4]
+    
+    return [list $nodes $cons]
+}
+
+## Remove existing domain, if it exists between specified connectors
+proc clearDom { cons } {
+    set existDoms [pw::Domain getDomainsFromConnectors \
+        [lindex $cons 0]]
+    
+    foreach con [lrange $cons 1 3] {
+        set tempExist [list]
+        set tempDoms [pw::Domain getDomainsFromConnectors $con]
+        foreach tD $tempDoms {
+            if {[lsearch $existDoms $tD] != -1} {
+                lappend tempExist $tD
+            }
+        }
+        set existDoms $tempExist
+    }
+    
+    if { [llength $existDoms]==1 } {
+        puts "Deleting existing H-grid."
+        pw::Entity delete $existDoms
+    }
+    
+    return
+}
+
+## Create two point connector given two points
+proc createTwoPt { pt1 pt2 } {
+    set creator [pw::Application begin Create]
+        set con [pw::Connector create]
+        set seg [pw::SegmentSpline create]
+        $seg addPoint $pt1
+        $seg addPoint $pt2
+        $con addSegment $seg
+    $creator end
+    return $con
+}
+
+## Create structured domain from list of four connectors
+proc makeStructDom { conList } {
+    set NCons [llength $conList]
+    if {$NCons != 4} {  
+        puts "Incorrect number of connectors"
+        exit
+    } else {
+        set DomCreate [pw::Application begin Create]
+            set dom [pw::DomainStructured create]
+            foreach CL $conList {
+                set edge [pw::Edge create]
+                foreach c $CL {
+                    $edge addConnector $c
+                }
+                $dom addEdge $edge
+            }
+        $DomCreate end
+        return $dom
+    }
+}
+
+## Find geometric center of four nodes
+proc getCenter { nodes } {
+    set pt0 [[lindex $nodes 0] getXYZ]
+    set pt1 [[lindex $nodes 1] getXYZ]
+    set pt2 [[lindex $nodes 2] getXYZ]
+    set pt3 [[lindex $nodes 3] getXYZ]
+    
+    set temp1 [pwu::Vector3 add $pt0 $pt1]
+    set temp2 [pwu::Vector3 add $pt2 $pt3]
+    set cntr [pwu::Vector3 divide \
+        [pwu::Vector3 add $temp1 $temp2] 4.0]
+    
+    return $cntr
+}
+
+## Find weighted average of two points
+proc avgPoint { pt1 pt2 } {
+    global input
+    
+    set offset [pwu::Vector3 scale \
+        [pwu::Vector3 subtract $pt2 $pt1] [expr 1-$input(alpha)]]
+    
+    return [pwu::Vector3 add $offset $pt1]
+}
+
+## Find locations and create new nodes and connectors for OH topology
+proc newTopo { nodes } {
+    puts "Creating new topology."
+
+    set centerPt [getCenter $nodes]
+    
+    set pt0 [[lindex $nodes 0] getXYZ]
+    set pt1 [[lindex $nodes 1] getXYZ]
+    set pt2 [[lindex $nodes 2] getXYZ]
+    set pt3 [[lindex $nodes 3] getXYZ]
+    
+    set np0 [avgPoint $pt0 $centerPt]
+    set np1 [avgPoint $pt1 $centerPt]
+    set np2 [avgPoint $pt2 $centerPt]
+    set np3 [avgPoint $pt3 $centerPt]
+
+    set con0 [createTwoPt $np0 $np1]
+    set con1 [createTwoPt $np1 $np2]
+    set con2 [createTwoPt $np2 $np3]
+    set con3 [createTwoPt $np3 $np0]
+    
+    set square [list $con0 $con1 $con2 $con3]
+    
+    set con4 [createTwoPt $np0 $pt0]
+    set con5 [createTwoPt $np1 $pt1]
+    set con6 [createTwoPt $np2 $pt2]
+    set con7 [createTwoPt $np3 $pt3]
+    
+    set spokes [list $con4 $con5 $con6 $con7]
+    
+    return [list $square $spokes]
+    
+}
+
+## Run elliptic solver for 10 interations with floating BC on interior lines to 
+## smooth grid
+proc solve_Grid { doms } {
+    global interpAngles
+    
+    set solver_mode [pw::Application begin EllipticSolver $doms]
+        for {set ii 0} {$ii<5} {incr ii} {
+            set temp_dom [lindex $doms $ii]
+            if {$ii != 0} {
+                set inds [list 2 3 4]
+            } else {
+                set inds [list 1 2 3 4]
+            }
+            set temp_list [list]
+            for {set jj 0} {$jj < [llength $inds] } {incr jj} {
+                lappend temp_list [list $temp_dom]
+            }
+            foreach ent $temp_list bc $inds {
+                $ent setEllipticSolverAttribute -edge $bc \
+                    EdgeConstraint Floating
+            }
+        }
+        
+        if {$interpAngles == 1} {
+            set edgeDoms [lreplace $doms 0 0]
+            foreach ent $edgeDoms bc [list 1 1 1 1] {
+                $ent setEllipticSolverAttribute -edge $bc \
+                    EdgeAngleCalculation Interpolate
+            }
+        }
+        
+        $solver_mode run 10
+    $solver_mode end
+}
+
+## Main process called by TK widget to select connectors and create topology
+proc selectCons {} {
+    global w input pickedCons curSelection infoMessage
+    
+    wm withdraw .
+
+    set text1 "Please select four connectors to create OH topology."
+    set mask [pw::Display createSelectionMask -requireConnector {}]
+    set N_con 0
+    
+    puts "Select connectors and press Done."
+
+    while {$N_con != 4} {
+        set picked [pw::Display selectEntities -description $text1 \
+            -selectionmask $mask curSelection]
+
+        set N_con [llength $curSelection(Connectors)]
+        
+        if {$picked} {
+            if {$N_con != 4} {
+                puts "$N_con connectors selected. Please select 4."
+            }
+        } else {
+            puts "No connectors selected, click Cancel to quit or \
+                select 4 connectors."
+            set infoMessage "Invalid loop, press Pick Connectors"
+            wm deiconify .
+            return
+        }
+    }
+
+    set temp [isLoop $curSelection(Connectors)]
+    set curSelection(nodes) [lindex $temp 0]
+    set curSelection(cons) [lindex $temp 1]
+
+    if {$curSelection(nodes) == -1} {
+        puts "No loop present, please select a closed loop of 4 connectors."
+        set infoMessage "Invalid loop, press Pick Connectors"
+        wm deiconify .
+    } else {
+        wm deiconify .
+        set pickedCons 1
+        $w(EntryDimension) configure -state normal
+        $w(EntryExtent) configure -state normal
+        $w(EntrySolve) configure -state normal
+        updateButtons
+    }
+}
+
+## Process called by TK widget to create topology
+proc createOH {} {
+    global input curSelection
+    
+    wm withdraw .
+
+    clearDom $curSelection(Connectors)
+
+    set newCons [newTopo $curSelection(nodes) ]
+
+    set square [lindex $newCons 0]
+    set spokes [lindex $newCons 1]
+
+    for {set ii 0} {$ii < 4} {incr ii} {
+        set outerDim [[lindex $curSelection(cons) $ii] getDimension]
+        [lindex $square $ii] setDimension $outerDim
+        [lindex $spokes $ii] setDimension $input(sDim)
+    }
+
+    set con(1) [lindex $curSelection(cons) 0]
+    set con(2) [lindex $curSelection(cons) 1]
+    set con(3) [lindex $curSelection(cons) 2]
+    set con(4) [lindex $curSelection(cons) 3]
+
+    set con(5) [lindex $square 0]
+    set con(6) [lindex $square 1]
+    set con(7) [lindex $square 2]
+    set con(8) [lindex $square 3]
+
+    set con(9) [lindex $spokes 0]
+    set con(10) [lindex $spokes 1]
+    set con(11) [lindex $spokes 2]
+    set con(12) [lindex $spokes 3]
+
+    ## Create new domains from newly created connectors
+    set dom(1) [makeStructDom $square]
+    set dom(2) [makeStructDom [list $con(1) $con(10) \
+        $con(5) $con(9)]]
+    set dom(3) [makeStructDom [list $con(2) $con(11) \
+        $con(6) $con(10)]]
+    set dom(4) [makeStructDom [list $con(3) $con(12) \
+        $con(7) $con(11)]]
+    set dom(5) [makeStructDom [list $con(4) $con(9) \
+        $con(8) $con(12)]]
+
+    set doms [list]
+    for {set ii 1} {$ii < 6} { incr ii} {
+        lappend doms [list $dom($ii)]
+    }
+        
+    ## If solveGrid is not set to 1, ask if the grid should be smoothed
+    if {$input(solveGrid) == 1} {
+        solve_Grid $doms
+    }
+
+    exit
+}
+
+###########################################################################
+## GUI 
+###########################################################################
+## Load TK
+pw::Script loadTk
+
+# Initialize globals
+set infoMessage ""
+set pickedCons -1
+
+set color(Valid)   "white"
+set color(Invalid) "misty rose"
+
+set w(LabelTitle)           .title
+set w(FrameMain)          .main
+  set w(ButtonSelect)       $w(FrameMain).select
+  set w(LabelDimension)     $w(FrameMain).ldim
+  set w(EntryDimension)     $w(FrameMain).edim
+  set w(LabelExtent)          $w(FrameMain).lext
+  set w(EntryExtent)          $w(FrameMain).eext
+  set w(LabelSolve)            $w(FrameMain).lslv
+  set w(EntrySolve)            $w(FrameMain).eslv
+  set w(ButtoncOH)            $w(FrameMain).doit
+set w(FrameButtons)      .fbuttons
+  set w(Logo)                   $w(FrameButtons).pwlogo
+  set w(ButtonCancel)        $w(FrameButtons).bcancel
+set w(Message)             .msg
+
+# dimension field validation
+proc validateDim { dim widget } {
+  global w color
+  if { [string is integer -strict $dim] && ($dim == 0 || $dim > 1) } {
+    $w($widget) configure -background $color(Valid)
+  } else {
+    $w($widget) configure -background $color(Invalid)
+  }
+  updateButtons
+  return 1
+}
+
+# extent field validation
+proc validateAlpha { alpha widget } {
+  global w color
+  if { [string is double -strict $alpha] && ($alpha > 0 && $alpha < 1) } {
+    $w($widget) configure -background $color(Valid)
+  } else {
+    $w($widget) configure -background $color(Invalid)
+  }
+  updateButtons
+  return 1
+}
+
+# return true if none of the entry fields are marked invalid
+proc canCreate { } {
+  global w color pickedCons
+  return [expr \
+    [string equal -nocase [$w(EntryDimension) cget -background] $color(Valid)] \
+        && [string equal -nocase [$w(EntryExtent) cget -background] \
+        $color(Valid)] && $pickedCons==1]
+}
+
+# enable/disable action buttons based on current settings
+proc updateButtons { } {
+  global w infoMessage
+
+  if { [canCreate] } {
+    $w(ButtoncOH) configure -state normal
+    set infoMessage "Press Create OH"
+  } else {
+    $w(ButtoncOH) configure -state disabled
+    set infoMessage "Invalid parameter"
+  }
+  update
+}
+
+# set the font for the input widget to be bold and 1.5 times larger than
+# the default font
+proc setTitleFont { l } {
+  global titleFont
+  if { ! [info exists titleFont] } {
+    set fontSize [font actual TkCaptionFont -size]
+    set titleFont [font create -family [font actual TkCaptionFont -family] \
+        -weight bold -size [expr {int(1.5 * $fontSize)}]]
+  }
+  $l configure -font $titleFont
+}
+
+###############################################################################
+# pwLogo: Define pointwise logo
+###############################################################################
+proc pwLogo {} {
+  set logoData {
+R0lGODlheAAYAIcAAAAAAAICAgUFBQkJCQwMDBERERUVFRkZGRwcHCEhISYmJisrKy0tLTIyMjQ0
+NDk5OT09PUFBQUVFRUpKSk1NTVFRUVRUVFpaWlxcXGBgYGVlZWlpaW1tbXFxcXR0dHp6en5+fgBi
+qQNkqQVkqQdnrApmpgpnqgpprA5prBFrrRNtrhZvsBhwrxdxsBlxsSJ2syJ3tCR2siZ5tSh6tix8
+ti5+uTF+ujCAuDODvjaDvDuGujiFvT6Fuj2HvTyIvkGKvkWJu0yUv2mQrEOKwEWNwkaPxEiNwUqR
+xk6Sw06SxU6Uxk+RyVKTxlCUwFKVxVWUwlWWxlKXyFOVzFWWyFaYyFmYx16bwlmZyVicyF2ayFyb
+zF2cyV2cz2GaxGSex2GdymGezGOgzGSgyGWgzmihzWmkz22iymyizGmj0Gqk0m2l0HWqz3asznqn
+ynuszXKp0XKq1nWp0Xaq1Hes0Xat1Hmt1Xyt0Huw1Xux2IGBgYWFhYqKio6Ojo6Xn5CQkJWVlZiY
+mJycnKCgoKCioqKioqSkpKampqmpqaurq62trbGxsbKysrW1tbi4uLq6ur29vYCu0YixzYOw14G0
+1oaz14e114K124O03YWz2Ie12oW13Im10o621Ii22oi23Iy32oq52Y252Y+73ZS51Ze81JC625G7
+3JG825K83Je72pW93Zq92Zi/35G+4aC90qG+15bA3ZnA3Z7A2pjA4Z/E4qLA2KDF3qTA2qTE3avF
+36zG3rLM3aPF4qfJ5KzJ4LPL5LLM5LTO4rbN5bLR6LTR6LXQ6r3T5L3V6cLCwsTExMbGxsvLy8/P
+z9HR0dXV1dbW1tjY2Nra2tzc3N7e3sDW5sHV6cTY6MnZ79De7dTg6dTh69Xi7dbj7tni793m7tXj
+8Nbk9tjl9N3m9N/p9eHh4eTk5Obm5ujo6Orq6u3t7e7u7uDp8efs8uXs+Ozv8+3z9vDw8PLy8vL0
+9/b29vb5+/f6+/j4+Pn6+/r6+vr6/Pn8/fr8/Pv9/vz8/P7+/gAAACH5BAMAAP8ALAAAAAB4ABgA
+AAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNqZCioo0dC0Q7Sy2btlitisrjpK4io4yF/
+yjzKRIZPIDSZOAUVmubxGUF88Aj2K+TxnKKOhfoJdOSxXEF1OXHCi5fnTx5oBgFo3QogwAalAv1V
+yyUqFCtVZ2DZceOOIAKtB/pp4Mo1waN/gOjSJXBugFYJBBflIYhsq4F5DLQSmCcwwVZlBZvppQtt
+D6M8gUBknQxA879+kXixwtauXbhheFph6dSmnsC3AOLO5TygWV7OAAj8u6A1QEiBEg4PnA2gw7/E
+uRn3M7C1WWTcWqHlScahkJ7NkwnE80dqFiVw/Pz5/xMn7MsZLzUsvXoNVy50C7c56y6s1YPNAAAC
+CYxXoLdP5IsJtMBWjDwHHTSJ/AENIHsYJMCDD+K31SPymEFLKNeM880xxXxCxhxoUKFJDNv8A5ts
+W0EowFYFBFLAizDGmMA//iAnXAdaLaCUIVtFIBCAjP2Do1YNBCnQMwgkqeSSCEjzzyJ/BFJTQfNU
+WSU6/Wk1yChjlJKJLcfEgsoaY0ARigxjgKEFJPec6J5WzFQJDwS9xdPQH1sR4k8DWzXijwRbHfKj
+YkFO45dWFoCVUTqMMgrNoQD08ckPsaixBRxPKFEDEbEMAYYTSGQRxzpuEueTQBlshc5A6pjj6pQD
+wf9DgFYP+MPHVhKQs2Js9gya3EB7cMWBPwL1A8+xyCYLD7EKQSfEF1uMEcsXTiThQhmszBCGC7G0
+QAUT1JS61an/pKrVqsBttYxBxDGjzqxd8abVBwMBOZA/xHUmUDQB9OvvvwGYsxBuCNRSxidOwFCH
+J5dMgcYJUKjQCwlahDHEL+JqRa65AKD7D6BarVsQM1tpgK9eAjjpa4D3esBVgdFAB4DAzXImiDY5
+vCFHESko4cMKSJwAxhgzFLFDHEUYkzEAG6s6EMgAiFzQA4rBIxldExBkr1AcJzBPzNDRnFCKBpTd
+gCD/cKKKDFuYQoQVNhhBBSY9TBHCFVW4UMkuSzf/fe7T6h4kyFZ/+BMBXYpoTahB8yiwlSFgdzXA
+5JQPIDZCW1FgkDVxgGKCFCywEUQaKNitRA5UXHGFHN30PRDHHkMtNUHzMAcAA/4gwhUCsB63uEF+
+bMVB5BVMtFXWBfljBhhgbCFCEyI4EcIRL4ChRgh36LBJPq6j6nS6ISPkslY0wQbAYIr/ahCeWg2f
+ufFaIV8QNpeMMAkVlSyRiRNb0DFCFlu4wSlWYaL2mOp13/tY4A7CL63cRQ9aEYBT0seyfsQjHedg
+xAG24ofITaBRIGTW2OJ3EH7o4gtfCIETRBAFEYRgC06YAw3CkIqVdK9cCZRdQgCVAKWYwy/FK4i9
+3TYQIboE4BmR6wrABBCUmgFAfgXZRxfs4ARPPCEOZJjCHVxABFAA4R3sic2bmIbAv4EvaglJBACu
+IxAMAKARBrFXvrhiAX8kEWVNHOETE+IPbzyBCD8oQRZwwIVOyAAXrgkjijRWxo4BLnwIwUcCJvgP
+ZShAUfVa3Bz/EpQ70oWJC2mAKDmwEHYAIxhikAQPeOCLdRTEAhGIQKL0IMoGTGMgIBClA9QxkA3U
+0hkKgcy9HHEQDcRyAr0ChAWWucwNMIJZ5KilNGvpADtt5JrYzKY2t8nNbnrzm+B8SEAAADs=}
+
+  return [image create photo -format GIF -data $logoData]
+}
+
+# Build the user interface
+proc makeWindow { } {
+  global w input color
+
+  # Ceate the widgets
+  label $w(LabelTitle) -text "Create OH\nInput Parameters"
+  setTitleFont $w(LabelTitle)
+
+  frame $w(FrameMain)
+
+  button $w(ButtonSelect) -text "Pick Connectors" -command { selectCons }
+
+  label $w(LabelDimension) -text "Radial dimension:" -anchor e
+  entry $w(EntryDimension) -width 6 -bd 2 -textvariable input(sDim)
+  $w(EntryDimension) configure -background $color(Valid)
+  $w(EntryDimension) configure -state disabled
+
+  label $w(LabelExtent) -text "Radial extent:" -padx 2 -anchor e
+  entry $w(EntryExtent) -width 10 -bd 2 -textvariable input(alpha)
+  $w(EntryExtent) configure -background $color(Valid)
+  $w(EntryExtent) configure -state disabled
+
+  label $w(LabelSolve) -text "Run solver?" -padx 2 -anchor e
+  checkbutton $w(EntrySolve) -variable input(solveGrid)
+  $w(EntrySolve) configure -state disabled
+  
+  button $w(ButtoncOH) -text "Create OH" -command { createOH }
+  $w(ButtoncOH) configure -state disabled
+
+  message $w(Message) -textvariable infoMessage -background beige \
+                      -bd 2 -relief sunken -padx 5 -pady 5 -anchor w \
+                      -justify left -width 300
+
+  frame $w(FrameButtons) -relief sunken
+
+  button $w(ButtonCancel) -text "Cancel" -command { destroy . }
+  label $w(Logo) -image [pwLogo] -bd 0 -relief flat
+
+  # set up validation after all widgets are created so that they all exist when
+  # validation fires the first time; if they don't all exist, updateButtons
+  # will fail
+  $w(EntryDimension) configure -validate key \
+    -vcmd { validateDim %P EntryDimension }
+  $w(EntryExtent) configure -validate key \
+    -vcmd { validateAlpha %P EntryExtent }
+
+  # lay out the form
+  pack $w(LabelTitle) -side top
+  pack [frame .sp -bd 1 -height 2 -relief sunken] -pady 4 -side top -fill x
+  pack $w(FrameMain) -side top -fill both -expand 1
+
+  # lay out the form in a grid
+  grid $w(ButtonSelect) -columnspan 2 -pady 3
+  grid $w(LabelDimension) $w(EntryDimension) -sticky ew -pady 3 -padx 3
+  grid $w(LabelExtent) $w(EntryExtent) -sticky ew -pady 3 -padx 3
+  grid $w(LabelSolve) $w(EntrySolve) -sticky ew -pady 3 -padx 3
+  grid $w(ButtoncOH) -columnspan 2 -pady 3
+
+  # give all extra space to the second (last) column
+  grid columnconfigure $w(FrameMain) 1 -weight 1
+
+  pack $w(Message) -side bottom -fill x -anchor s
+  pack $w(FrameButtons) -fill x -side bottom -padx 2 -pady 4 -anchor s
+  pack $w(ButtonCancel) -side right -padx 2
+  pack $w(Logo) -side left -padx 5
+
+  bind . <Key-Escape> { $w(ButtonCancel) invoke }
+  bind . <Control-Key-Return> { $w(ButtonSelect) invoke }
+  bind . <Control-Key-f> { $w(ButtoncOH) invoke }
+  bind $w(EntryExtent) <Key-Return> { $w(ButtoncOH) invoke }
+
+  # move keyboard focus to the first entry
+  focus $w(ButtonSelect)
+  raise .
+}
+
+makeWindow
+
+tkwait window .
+
+#
+# DISCLAIMER:
+# TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, POINTWISE DISCLAIMS
+# ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED
+# TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE, WITH REGARD TO THIS SCRIPT. TO THE MAXIMUM EXTENT PERMITTED
+# BY APPLICABLE LAW, IN NO EVENT SHALL POINTWISE BE LIABLE TO ANY PARTY
+# FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
+# WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF
+# BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE
+# USE OF OR INABILITY TO USE THIS SCRIPT EVEN IF POINTWISE HAS BEEN
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF THE
+# FAULT OR NEGLIGENCE OF POINTWISE.
+#
+** SqueezeCon
+
+A Glyph script that automatically copies connector and scales it to fit between two selected points
+** Operation
+
+This script allows the user to select a connector and two points.
+ The selected connector is copied, translated, and scaled to fit within the two points selected.
+ The connector can be selected either prior to script execution (in versions of Pointwise >= 17.2R2) or during execution of the script.
+Disclaimer
+** code
+## squeezeCon.glf
+##
+## COPY CONNECTOR AND SCALE TO FIT BETWEEN TWO POINTS
+## 
+## Allows you to copy a connector and specify the desired final endpoints.
+## 0. Choose connector (can be done prior to executing the script)
+## 1. Choose first point for beginning of new connector
+## 2. Choose second point for end of new connector
+##
+## Replaces two-step (multi-click) process of 1) Copy-Paste-Translate, Accept, 
+## and 2) Edit-Transform-Scale. Script is necessary since the endpoint of the  
+## temporary translated connector in the paste mode is not a pickable point. 
+## Also, this script will take account for planar curves scaled in 3D, which
+## is not handled by the scale operation alone.
+## 
+## As a general rule, avoid scaling arcs that define >90 degrees of a circle.
+## 
+#############################################################################
+
+package require PWI_Glyph 2
+
+## Select single connector to copy, translate and scale
+proc selectCon {} {
+    ## Set Info label
+    set text1 "Please select connector to copy."
+    ## Set selection mask
+    set mask [pw::Display createSelectionMask -requireConnector {}]
+    
+    ###############################################
+    ## This script uses the getSelectedEntities command added in 17.2R2
+    ## Catch statement should check for previous versions
+    if { [catch {pw::Display getSelectedEntities -selectionmask $mask curSelection}] } {
+        set picked [pw::Display selectEntities -description $text1 -single\
+            -selectionmask $mask curSelection]
+        
+        if {!$picked} {
+            puts "Script aborted."
+            exit
+        }
+    } elseif { [llength $curSelection(Connectors)] > 1 } {
+        puts "Please select one connector."
+        exit
+    } elseif { [llength $curSelection(Connectors)] == 0 } {
+        set picked [pw::Display selectEntities -description $text1 -single\
+            -selectionmask $mask curSelection]
+        
+        if {!$picked} {
+            puts "Script aborted."
+            exit
+        }
+    }
+    ###############################################
+    
+    return $curSelection(Connectors)
+}
+
+## Copy, Paste, Translate, and Scale selected connector to fit specified points
+## Scale was used in place of stretch for more stable behavior, particularly 
+## for circular arcs.
+proc squeezeCon {con} {
+
+    if { [catch {set pt2 [pw::Display selectPoint -description \
+        "Select first point." -connector [list]]}]} {
+
+        puts "Script aborted."
+        exit
+    }
+    
+    if { [catch {set pt3 [pw::Display selectPoint -description \
+        "Select second point." -connector [list]]}]} {
+
+        puts "Script aborted."
+        exit
+    }
+    
+    ## Find end of connector closest to the first point picked
+    set pt1_a [$con getXYZ -arc 0.0]
+    set pt1_b [$con getXYZ -arc 1.0]
+    set diff_a [pwu::Vector3 length [pwu::Vector3 subtract $pt1_a $pt2]]
+    set diff_b [pwu::Vector3 length [pwu::Vector3 subtract $pt1_b $pt2]]
+    if {$diff_a <= $diff_b} {
+        set pt1 $pt1_a
+    } else {
+        set pt1 $pt1_b
+    }
+    
+    ## Define translation vector
+    set transVec [pwu::Vector3 subtract $pt2 $pt1]
+    
+    ## Find out whether or not the connector chose is planar in the model 
+    ## coordinate system
+    set conExtents [$con getExtents]
+    set chks1 [pwu::Vector3 subtract [lindex $conExtents 0] [lindex $conExtents 1]]
+    set chks2 [pwu::Vector3 subtract $pt3 [lindex $conExtents 0]]
+    
+    ## If connector is planar and requires a 3D scale, compute random rotation
+    ## angle (5-10 deg) to transform coordinate system prior to scale operation
+    set rotationAngles [list]
+    for {set ii 0} {$ii < 3} {incr ii} {
+        if { [expr abs([lindex $chks1 $ii])] < 1e-4 && \
+            [expr abs([lindex $chks2 $ii])] > 1e-4 } {
+            lappend rotationAngles [expr 5+rand()*5.]
+        } else {
+            lappend rotationAngles 0.
+        }
+    }
+    
+    if {[pwu::Vector3 length $rotationAngles] > 0} {
+        puts "Planar curve, implementing rotational transform..."
+    }
+    
+    ## Set up paste command
+    pw::Application clearClipboard
+    pw::Application setClipboard [list $con]
+    
+    set pasteMode [pw::Application begin Paste]
+        set modEnts [$pasteMode getEntities]
+        set modMode [pw::Application begin Modify $modEnts]
+            ## Translate connector
+            pw::Entity transform [pwu::Transform translation $transVec] $modEnts
+            ## Get the translated connector
+            set newCon [lindex $modEnts 0]
+            ## Get beginning point of new connector
+            set pt4 [$newCon getPosition -arc 0]
+            set pt2a [$newCon getPosition -arc 0.99]
+            ## Make sure pt4 is set to the end of pasted connector opposite pt2
+            if {[pwu::Vector3 equal -tolerance 1e-6 $pt2 $pt4]} {
+                set pt4 [$newCon getPosition -arc 1]
+                set pt2a [$newCon getPosition -arc 0.01]
+            }
+
+            set rightVec [pwu::Vector3 subtract $pt2a $pt2]
+            set transformMatrix [pwu::Transform identity]
+
+            set ii 0
+            foreach ang $rotationAngles {
+                set upVec {0 0 0}
+                set upVec [lreplace $upVec $ii $ii 1]
+                if {$ang != 0} {
+                    set axis [pwu::Vector3 cross $rightVec $upVec]
+                    set rotationMatrix [pwu::Transform rotation \
+                        -anchor $pt2 $axis $ang]
+                    set transformMatrix [pwu::Transform multiply \
+                        $transformMatrix $rotationMatrix]
+                }
+                incr ii
+            }
+            
+            pw::Entity transform $transformMatrix $newCon
+
+            set inverseTransformMatrix [pwu::Transform inverse $transformMatrix]
+            
+            ## Transform points to handle 3D scaling of planar curves
+            set pt3_t [pwu::Transform apply $transformMatrix $pt3]
+            set pt4_t [pwu::Transform apply $transformMatrix $pt4]
+            
+            ## Scale pasted connector
+            pw::Entity transform [pwu::Transform calculatedScaling $pt2 $pt4_t \
+                $pt3_t [pw::Grid getNodeTolerance]] $newCon
+            
+            ## In some cases, you may want to stretch rather than scale
+            #~ pw::Entity transform [pwu::Transform stretching $pt2 $pt4_t \
+                #~ $pt3_t ] $newCon
+                
+            ## Transform back to model coordinate system
+            pw::Entity transform $inverseTransformMatrix $newCon
+        
+        $modMode end
+    $pasteMode end
+
+    pw::Application clearClipboard
+    
+}
+
+## Call each process
+set con [selectCon]
+squeezeCon $con
+
+** Grid refinement
+> https://www.youtube.com/watch?v=YzAxrdtTad4
+This script allows users to automatically generate a family of grids from a baseline mesh for the purposes of a grid refinement study.
+ The user need only specify a refinement factor, the baseline grid file name, and whether any existing unstructured blocks should be initialized. These parameters are changed by editing the script file.
+
+The user specified refinement factor modifies connectors, domains, and blocks. More specifically, it refines:
+
+    Connector spacing and dimension
+    Domain min or max triangle edge length
+    Diagonalized structured domains
+    T-Rex wall initial spacing
+
+Run either interactively or from the command line, it provides progress information and even additional block diagnostics, assuming block initialization was turned on. When the script finishes, the refined surface and volume grids are saved to the current working directory.
+
+Note: A refinement factor of 1 or lower will abort the script. However, this script can be used to initialize large unstructured blocks in batch mode by setting refinementFactor = 1 and volMesh = "YES".
+> https://github.com/pointwise/GridRefine/blob/master/gridRefine.glf
+*** code
+
+Skip to content
+
+    Features
+    Business
+    Explore
+    Marketplace
+    Pricing
+
+This repository
+Sign in or Sign up
+
+4
+1
+
+    3
+
+pointwise/GridRefine
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Insights
+GridRefine/gridRefine.glf
+f9ef265 on 23 Sep 2016
+@traviscarrigan traviscarrigan Unset unsSolver variable only when unstructured solver is called
+1013 lines (854 sloc) 29.7 KB
+#
+# Copyright 2013 (c) Pointwise, Inc.
+# All rights reserved.
+# 
+# This sample script is not supported by Pointwise, Inc.
+# It is provided freely for demonstration purposes only.  
+# SEE THE WARRANTY DISCLAIMER AT THE BOTTOM OF THIS FILE.
+#
+
+# ==========================================================================
+# GRID REFINEMENT SCRIPT - POINTWISE
+# ==========================================================================
+# Written by Travis Carrigan & Claudio Pita
+#
+#
+
+# --------------------------------------------------------------------------
+# User Defined Parameters
+# --------------------------------------------------------------------------
+# Refinement factor
+set refinementFactor 2
+
+# Pointwise file name, please include .pw file extension
+set pwFile "TestGrid.pw"
+
+# Whether to create volume mesh, YES or NO
+set volMesh "YES"
+# --------------------------------------------------------------------------
+
+
+
+# Load Pointwise Glyph package
+package require PWI_Glyph
+
+# --------------------------------------------------------------------------
+# Unstructure solver attribute names
+set unsSolverAttsNames { BoundaryDecay EdgeMaximumLength EdgeMinimumLength \
+  PyramidMaximumHeight PyramidMinimumHeight PyramidAspectRatio \
+  InitialMemorySize IterationCount TRexMaximumLayers TRexFullLayers \
+  TRexGrowthRate TRexPushAttributes TRexSpacingSmoothing \
+  TRexSpacingRelaxationFactor TRexIsotropicSeedLayers TRexCollisionBuffer \
+  TRexAnisotropicIsotropicBlend TRexSkewCriteriaDelayLayers \
+  TRexSkewCriteriaMaximumAngle TRexSkewCriteriaEquivolume \
+  TRexSkewCriteriaEquiangle TRexSkewCriteriaCentroid \
+  TRexCheckCombinedElementQuality TRexVolumeFunction TetMesher }
+
+# --------------------------------------------------------------------------
+# Remove element from list
+proc removeFromList { list values } {
+  foreach val $values {
+    set idx [lsearch $list $val]
+    set list [lreplace $list $idx $idx]
+  }
+  return $list
+}
+
+# --------------------------------------------------------------------------
+# Compare lists
+proc compareLists { a b } {
+  set la [llength $a]
+  set lb [llength $b]
+  if {$la != $lb} {
+    return 0
+  } else {
+    set i 0
+    foreach ae $a be $b {
+      if {![string equal $ae $be]} {
+        return 0
+      }
+      incr i
+    }
+  }
+  return 1
+}
+
+# --------------------------------------------------------------------------
+# Get connectors used by a domain
+proc getConnectors { domain } {
+  set conns [list]
+  set edgeCount [$domain getEdgeCount]
+  for {set i 1} {$i <= $edgeCount} {incr i} {
+    set edge [$domain getEdge $i]
+    set connectorCount [$edge getConnectorCount]
+    for {set j 1} {$j <= $connectorCount} {incr j} {
+      lappend conns [$edge getConnector $j]
+    }
+  }
+  return $conns
+}
+
+# --------------------------------------------------------------------------
+# Get domains used by a block
+proc getDomains { block } {
+  set doms [list]
+  set faceCount [$block getFaceCount]
+  for {set i 1} {$i <= $faceCount} {incr i} {
+    set face [$block getFace $i]
+    set domainCount [$face getDomainCount]
+    for {set j 1} {$j <= $domainCount} {incr j} {
+      lappend doms [$face getDomain $j]
+    }
+  }
+  return $doms
+}
+
+# --------------------------------------------------------------------------
+# Get boundary conditions
+proc getBoundaryConditions {} {
+  global boundaryConditions
+
+  # Get list of boundary condition names
+  set condsNames [pw::BoundaryCondition getNames]
+
+  # Loop through all the condition names
+  foreach name $condsNames {
+    # Getcondition object from its name
+    set condition [pw::BoundaryCondition getByName $name]
+
+    # If condition exist, cache it
+    if { $condition ne ""  && [$condition getPhysicalType] ne "Unspecified"} {
+      set boundaryConditions($name) $condition
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Get and redimension TRex conditions
+proc getAndRedimensionTRexConditions {} {
+  global refinementFactor
+  global trexConditions
+
+  # Get list of TRex condition names
+  set condsNames [pw::TRexCondition getNames]
+
+  # Loop through all the condition names
+  foreach name $condsNames {
+    # Get condition object from its name
+    set condition [pw::TRexCondition getByName $name]
+
+    # If condition exist, adjust spacing (if necessary) and cache it
+    if { $condition ne "" && [$condition getType] ne "Off" } {
+      if { [$condition getType] eq "Wall" } {
+        # Get spacing
+        set spc [$condition getSpacing]
+
+        # Refine spacing
+        set newSpc [expr (1.0 / $refinementFactor) * $spc]
+
+        # Set new spacing
+        $condition setSpacing $newSpc
+      }
+
+      # Cache it
+      set trexConditions($name) $condition
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Get volume conditions
+proc getVolumeConditions {} {
+  global volumeConditions
+
+  # Get list of volume condition names
+  set condsNames [pw::VolumeCondition getNames]
+
+  # Loop through all the condition names
+  foreach name $condsNames {
+    # Get condition object from its name
+    set condition [pw::VolumeCondition getByName $name]
+
+    # If condition exist, cache it
+    if { $condition ne ""  && [$condition getPhysicalType] ne "Unspecified"} {
+      set volumeConditions($name) $condition
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Get and redimension unstructured solver attributes for the block
+proc getAndRedimensionUnstructuredSolverAttributes { blk } {
+  global refinementFactor
+  global unsSolverAttsNames
+
+  set attributes [dict create]
+  foreach name $unsSolverAttsNames {
+    set value [$blk getUnstructuredSolverAttribute $name]
+
+    # Redimension certain attributes
+    switch $name {
+      EdgeMinimumLength -
+      EdgeMaximumLength {
+        if { $value ne "Boundary" } {
+          set value [expr {$value / $refinementFactor}]
+        }
+      }
+      PyramidMinimumHeight -
+      PyramidMaximumHeight {
+        if { $value > 0 } {
+          set value [expr {$value / $refinementFactor}]
+        }
+      }
+    }
+    dict set attributes $name $value
+  }
+  return $attributes
+}
+
+# --------------------------------------------------------------------------
+# Match diagonalized domains with their structured counterpart
+proc findMatchedOrigDiagDomains { } {
+  global strDomList
+  global blksRegenData
+  global diagDomNameToOrigDom
+
+  set blksRegenData(names) ""
+  array set diagDomNameToOrigDom {}
+
+  # Loop through all structured domains to find their diagonalized counterpart
+  if { [llength $strDomList] > 0 } {
+    foreach dom $strDomList {
+      # Get list of connectors used by this domain
+      set conList [getConnectors $dom]
+
+      # Get list of domains adjacent to this domain
+      set adjDomList [pw::Domain getAdjacentDomains $dom]
+      foreach adjDom $adjDomList {
+        # The diagonalized domain is unstructured
+        if { [$adjDom isOfType "pw::DomainUnstructured"] } {
+          # Get list of connectors used by this domain
+          set adjConList [getConnectors $adjDom]
+
+          # If the lists of connectos match then adjDom is the diagonalized
+          # version of dom.
+          if { [compareLists $conList $adjConList] } {
+            # Add matching pair to the map
+            set diagDomNameToOrigDom([$adjDom getName]) $dom
+
+            # Cache data to regenerate unstructured blocks using the diagonalized
+            # domain
+            set blkList [pw::Block getBlocksFromDomains $adjDom]
+            foreach blk $blkList {
+              if { [$blk isOfType "pw::BlockUnstructured"] } {
+                set domList [getDomains $blk]
+                cacheBlockRegenerationData $adjDom $domList $blk
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Cache data necessary for block regeneration
+proc cacheBlockRegenerationData { domRegenerate domList blk } {
+  global blksRegenData
+  global boundaryConditions
+  global trexConditions
+
+  set domName [$domRegenerate getName]
+  set blkName [$blk getName]
+
+  if { [lsearch -exact $blksRegenData(names) $blkName] == -1 } {
+    # Name
+    lappend blksRegenData(names) $blkName
+
+    # Layer
+    lappend blksRegenData($blkName,layer) [$blk getLayer]
+
+    # Domain list (this list does not contain the diagonalized domain to be
+    # regenerated)
+    set domList [removeFromList $domList $domRegenerate]
+    set blksRegenData($blkName,domains,keep) $domList
+
+    # Domain names list (diagonalized domains to be regenerated)
+    set blksRegenData($blkName,domains,regenerate) $domName
+
+    # Attributes
+    set blksRegenData($blkName,attributes) \
+      [getAndRedimensionUnstructuredSolverAttributes $blk]
+
+    # Boundary conditions
+    cacheBoundaryConditions "boundary" $blk
+
+    # TRex conditions
+    cacheBoundaryConditions "trex" $blk
+
+    # Volume conditions
+    cacheVolumeConditions "volume" $blk
+  } else {
+    # Domain names list (diagonalized domains to be regenerated)
+    if { [lsearch -exact $blksRegenData($blkName,domains,regenerate) \
+         $domName] == -1 } {
+      set domList $blksRegenData($blkName,domains,keep)
+      set domList [removeFromList $domList $domRegenerate]
+      set blksRegenData($blkName,domains,keep) $domList
+      lappend blksRegenData($blkName,domains,regenerate) $domName
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Cache boundary conditions (boundary, TRex)
+proc cacheBoundaryConditions { type blk } {
+  global blksRegenData
+  global boundaryConditions
+  global trexConditions
+
+  switch $type {
+    boundary { array set conditions [array get boundaryConditions] }
+    trex { array set conditions [array get trexConditions] }
+  }
+
+  if { [array size conditions] > 0 } {
+    foreach {name condition} [array get conditions] {
+      set add 0
+      set registers [$condition getRegisters]
+      set blkName [$blk getName]
+      foreach reg $registers {
+        set highLevelEntity [lindex $reg 0]
+        if { $highLevelEntity eq $blk } {
+          # Boundary condition applied to this block, cache it
+          set add 1
+          set data [list [[lindex $reg 1] getName] [lindex $reg 2]]
+          lappend blksRegenData($blkName,${type}Conditions,$name) $data
+        }
+      }
+      if { $add == 1 } {
+        lappend blksRegenData($blkName,${type}Conditions,names) $name
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Apply boundary conditions (boundary, TRex)
+proc applyBoundaryConditions { type blk } {
+  global blksRegenData
+  global boundaryConditions
+  global trexConditions
+
+  set blkName [$blk getName]
+
+  if {$type eq "boundary"}  {
+    array set conditions [array get boundaryConditions]
+  } elseif {$type eq "trex"} {
+    array set conditions [array get trexConditions]
+  }
+
+  set argument "$blkName,${type}Conditions"
+  if { [array names blksRegenData -exact $argument,names] ne "" } {
+    foreach condName $blksRegenData($argument,names) {
+      # Get BC
+      set condition $conditions($condName)
+      set bcData $blksRegenData($argument,$condName)
+
+      # Build register
+      foreach data $bcData {
+        set orient [lindex $data 1]
+        set domName [lindex $data 0]
+        set dom [pw::GridEntity getByName [lindex $data 0]]
+        set register [list $blk $dom $orient]
+        $condition apply $register
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Cache volume conditions
+proc cacheVolumeConditions { type blk } {
+  global blksRegenData
+  global volumeConditions
+
+  if { [array size volumeConditions] > 0 } {
+    foreach {name condition} [array get volumeConditions] {
+      set entities [$condition getEntities]
+      foreach entity $entities {
+        if { $entity eq $blk } {
+          set blkName [$blk getName]
+          set blksRegenData($blkName,volumeCondition) $name
+        }
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Apply volume conditions
+proc applyVolumeConditions { blk } {
+  global blksRegenData
+  global volumeConditions
+
+  set blkName [$blk getName]
+
+  set argument "$blkName,volumeCondition"
+  if { [array names blksRegenData -exact $argument] ne "" } {
+    set condName $blksRegenData($argument)
+    # Get VC
+    set condition $volumeConditions($condName)
+    $condition apply $blk
+  }
+}
+
+# --------------------------------------------------------------------------
+# Redimension balanced connectors
+proc redimensionBalancedConnectors {} {
+  global refinementFactor
+  global strDomList
+  global conList
+
+  set refinedConList ""
+
+  # Loop over structured domains, redimension connectors, and check for edge
+  # dimension balance
+  foreach domain $strDomList {
+    set edgeDims {0 0}
+    for {set i 1} {$i <= 4} {incr i} {
+      set tmpConList ""
+      set edge [$domain getEdge $i]
+      set connectorCount [$edge getConnectorCount]
+      for {set j 1} {$j <= $connectorCount} {incr j} {
+        set connector [$edge getConnector $j]
+        if { [lsearch -exact $refinedConList $connector] == -1 } {
+          # Add connector to a temporary list of connectors to be refined now
+          lappend tmpConList $connector
+        }
+      }
+
+      # Refine connectors in this edge
+      redimensionConnectors $tmpConList
+
+      # Append to the list of refined connectors
+      lappend refinedConList $tmpConList
+      set refinedConList [join $refinedConList]
+
+      # Remove from the list of connectors that still need to be refined
+      set conList [removeFromList $conList $tmpConList]
+
+      # A balanced structured domain requires edge_1 to be balanced with edge_3
+      # and edge_2 to be balanced with edge_4. If edge is not balanced with its
+      # opposing edge, attempt to balance them
+      set idx [expr $i - 1]
+      set edgeDim [$edge getDimension]
+      if { $i <= 2 } {
+        set edgeDims [lreplace $edgeDims $idx $idx $edgeDim]
+      } elseif { $edgeDim != [lindex $edgeDims [expr $idx - 2]] } {
+        balanceEdge [lindex $edgeDims [expr $idx - 2]] $edgeDim $tmpConList \
+          $domain
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Redimension connectors
+proc redimensionConnectors { conList } {
+  global refinementFactor
+  global numCons
+  global conCnt
+
+  set conMode [pw::Application begin Modify $conList]
+  foreach con $conList {
+    # Progress information
+    incr conCnt
+    puts ""
+    puts "Refining connector $conCnt of $numCons..."
+    puts "      ...connector [$con getName]"
+    puts ""
+
+    # Get connector distribution type
+    set conDist [$con getDistribution 1]
+
+    # Check if distribution is of type growth
+    if { [$conDist isOfType "pw::DistributionGrowth"] } {
+      # Decrease grid point spacing
+      $conDist setBeginSpacing [expr {(1.0 / $refinementFactor) * \
+        [[$conDist getBeginSpacing] getValue]}]
+      $conDist setEndSpacing [expr {(1.0 / $refinementFactor) * \
+        [[$conDist getEndSpacing] getValue]}]
+
+      # Set optimal connector dimension
+      $con setDimensionFromDistribution
+    } else {
+      # Increase connector dimension in 3 steps ...
+      # 1) Store refined subconnector dimensions
+      set totalDim 0
+      set subConnCount [$con getSubConnectorCount]
+      for {set i 1} {$i <= $subConnCount} {incr i} {
+        set dim [expr {round($refinementFactor * \
+          [$con getSubConnectorDimension $i] - 1)}]
+        lappend conSubDim $dim
+        incr totalDim $dim
+      }
+
+      # 2) Redimension connector
+      $con setDimension [expr {$totalDim - ($subConnCount - 1)}]
+
+      # 3) Adjust subconnector dimension
+      if { $subConnCount > 1 } {
+        $con setSubConnectorDimension $conSubDim
+      }
+      catch {unset conSubDim}
+
+      # Decrease grid point spacing
+      for {set i 1} {$i <= $subConnCount} {incr i} {
+        set conDist [$con getDistribution $i]
+        $conDist setBeginSpacing [expr (1.0 / $refinementFactor)* \
+          [[$conDist getBeginSpacing] getValue]]
+        $conDist setEndSpacing [expr (1.0 / $refinementFactor)* \
+          [[$conDist getEndSpacing] getValue]]
+      }
+    }
+  }
+  $conMode end
+  catch {unset conMode}
+}
+
+# --------------------------------------------------------------------------
+# Balance the edges of free standing structured domains.
+# Note: this function balnces free-standing structured domains only (basically
+# structured domains used to create diagonalized unstructured domains
+# that are not being used by any block)
+proc balanceEdge { edgeBalancedDimension edgeDimension conList domain } {
+  if { [llength [pw::Block getBlocksFromDomains $domain]] == 0 } {
+    # How many points do we need to add/remove?
+    set deltaPoints [expr abs($edgeBalancedDimension - $edgeDimension)]
+
+    # Sort connectors according to their dimension
+    set dimensionData [dict create]
+    foreach con $conList {
+      dict lappend dimensionData [$con getDimension] $con
+    }
+    set sortedDims [lsort -integer -decreasing [dict keys $dimensionData]]
+
+    # Modify dimension
+    # Note: The grid points are added to or removed from connectors with the
+    # larger dimension first.
+    foreach dim $sortedDims {
+      # Get list of connectors with this dimension
+      set conSubList [dict get $dimensionData $dim]
+
+      # Set new dimension
+      if { $edgeBalancedDimension > $edgeDimension } {
+        incr dim 1
+      } else {
+        incr dim -1
+      }
+
+      # Redimension connectors
+      foreach con $conSubList {
+        $con setDimension $dim
+        incr deltaPoints -1
+        if { $deltaPoints == 0 } {
+          # No more points need to be added/removed, return
+          return
+        }
+      }
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Redimension unstructured domains
+proc redimensionDomains {} {
+  global refinementFactor
+  global domList
+  global numDoms
+  global domCnt
+
+  foreach dom $domList {
+    # Progress information
+    incr domCnt
+    puts ""
+    puts "Refining domain $domCnt of $numDoms..."
+    puts "      ...domain [$dom getName]"
+    puts ""
+
+    # Refine interior triangles of unstructured domains if necessary. Do not refine
+    # diagonalized domains, they will be regenerated
+    if { [$dom isOfType "pw::DomainUnstructured"] &&
+         [array get diagDomNameToOrigDom $dom] eq "" } {
+      set domMinEdgeLen [$dom getUnstructuredSolverAttribute EdgeMinimumLength]
+      set domMaxEdgeLen [$dom getUnstructuredSolverAttribute EdgeMaximumLength]
+
+      # Refine min. and max. edge length (if necessary)
+      if { $domMinEdgeLen ne "Boundary" } {
+        $dom setUnstructuredSolverAttribute EdgeMinimumLength \
+          [expr {$domMinEdgeLen / $refinementFactor}]
+      }
+      if { $domMaxEdgeLen ne "Boundary" } {
+        $dom setUnstructuredSolverAttribute EdgeMaximumLength \
+          [expr {$domMaxEdgeLen / $refinementFactor}]
+      }
+
+      # Refine
+      set unsSolver [pw::Application begin UnstructuredSolver $dom]
+        if [catch {$unsSolver run Refine}] {
+        lappend domError [$dom getName]
+        $unsSolver end
+        continue
+      }
+     $unsSolver end
+    }
+  }
+  catch {unset unsSolver}
+
+  # Write out unstructured domains that could not be refined due to solver error
+  if { [info exists domError] } {
+    set errMsg "Error refining [llength $domError] domain"
+    printErrorInformation $domError $errMsg
+  }
+}
+
+# --------------------------------------------------------------------------
+# Regenerate diagonalized domains
+proc regenerateDiagDomains {} {
+  global diagDomNameToOrigDom
+  global diagDomNameToDiagDom
+
+  # Generate new diagonalized domains and delete old ones
+  foreach {diagDomName origDom} [array get diagDomNameToOrigDom] {
+    if { [catch {set newDiagDom [$origDom triangulate Aligned]}] } {
+      if { [catch {set newDiagDom [$origDom triangulate]}] } {
+        # Error during triangularization
+        lappend domError $diagDomName
+        continue
+      }
+    }
+    set oldDiagDom [pw::GridEntity getByName $diagDomName]
+    set oldDiagDomLayer [$oldDiagDom getLayer]
+    $oldDiagDom delete -force
+    $newDiagDom setName $diagDomName
+    $newDiagDom setLayer $oldDiagDomLayer
+    set diagDomNameToDiagDom($diagDomName) $newDiagDom
+  }
+
+  # Write out unstructured domains that could not be re-diagonalized
+  if { [info exists domError] } {
+    set errMsg "Error re-diagonalizing [llength $domError] domain"
+    printErrorInformation $domError $errMsg
+  }
+}
+
+# --------------------------------------------------------------------------
+# Regenerate unstructured blocks
+proc regenerateUnstructuredBlocks {} {
+  global blksRegenData
+  global diagDomNameToDiagDom
+  global unsSolverAttsNames
+  global trexConditions
+
+  if { [array get blksRegenData names] ne "" } {
+    set blkNameList $blksRegenData(names)
+
+    foreach blkName $blkNameList {
+
+      set domList $blksRegenData($blkName,domains,keep)
+      # Add regenerated domains to the list. If there was an error
+      # re-diagonalizing the domain, the old domain is already in
+      # the list, no need to add it again
+      foreach name $blksRegenData($blkName,domains,regenerate) {
+        set dom [pw::GridEntity getByName $name]
+        if { [lsearch -exact $domList $dom] == -1 } {
+          # The domain was re-diagonalized
+          lappend domList $dom
+        }
+      }
+
+      # Create block
+      if { [catch {set blk [pw::BlockUnstructured createFromDomains -reject \
+           unused $domList]}] || [llength $unused] > 0 } {
+        # Error during block generation
+        lappend blkError $blkName
+      } else {
+        # Name
+        if { [$blk getName] ne $blkName } {
+          $blk setName $blkName
+        }
+
+        # Attributes
+        set attributes $blksRegenData($blkName,attributes)
+        foreach name [dict keys $attributes] {
+          set value [dict get $attributes $name]
+          if { $name ne "" && $value ne "" } {
+            $blk setUnstructuredSolverAttribute $name $value
+          }
+        }
+
+        # Boundary conditions
+        applyBoundaryConditions "boundary" $blk
+
+        # TRex conditions
+        applyBoundaryConditions "trex" $blk
+
+        # Volume conditions
+        applyVolumeConditions $blk
+
+        # Layer
+        $blk setLayer $blksRegenData($blkName,layer)
+      }
+    }
+
+    # Write out unstructured blocks that could not be regenerated
+    if { [info exists blkError] } {
+      set errMsg "Error re-generating [llength $blkError] block"
+      printErrorInformation $blkError $errMsg
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Initialize unstructured blocks
+proc initializeUnstructuredBlocks {} {
+  global refinementFactor
+  global unsBlkList
+
+  foreach unsBlk $unsBlkList {
+    set unsSolver [pw::Application begin UnstructuredSolver $unsBlk]
+    if [catch {$unsSolver run Initialize}] {
+      lappend blkError [$unsBlk getName]
+      $unsSolver end
+      continue
+    }
+    $unsSolver end
+    unset unsSolver
+  }
+
+  # Write out unstructured blocks that could not be initialized due to solver error
+  if { [info exists blkError] } {
+    set errMsg "Error initializing [llength $blkError] block"
+    printErrorInformation $blkError $errMsg
+  }
+}
+
+# --------------------------------------------------------------------------
+# Print error information
+proc printErrorInformation { entityList errMsg } {
+  if { [ llength $entityList] > 0 } {
+    # Print out error information
+    if { [llength $entityList] == 1 } {
+      set errMsg "${errMsg}:"
+    } else {
+      set errMsg "${errMsg}s:"
+    }
+    puts $errMsg
+    foreach entity $entityList {
+      puts "$entity"
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Print block information
+proc printBlockInformation {} {
+  global blkList
+
+  foreach blk $blkList {
+    if { [$blk isOfType "pw::BlockStructured"] } {
+      puts ""
+      puts "Block [$blk getName]"
+      puts "--------------------"
+      puts "Block Type: Structured"
+      puts "Total Cell Count: [$blk getCellCount]"
+      puts ""
+    } elseif {[$blk isOfType "pw::BlockUnstructured"]} {
+      puts ""
+      puts "Block [$blk getName]"
+      puts "--------------------"
+      puts "Block Type: Unstructured"
+      if {[$blk getTRexCellCount]>0} {
+        puts "Full TRex Layers:  [$blk getTRexFullLayerCount]"
+        puts "Total TRex Layers: [$blk getTRexTotalLayerCount]"
+        puts "Total TRex Cells:  [$blk getTRexCellCount]"
+        puts "Total Cell Count:  [$blk getCellCount]"
+        puts ""
+      } else {
+        puts "Total Cell Count: [$blk getCellCount]"
+      }
+    } elseif {[$blk isOfType "pw::BlockExtruded"]} {
+      puts ""
+      puts "Block [$blk getName]"
+      puts "--------------------"
+      puts "Block Type: Extruded"
+      puts "Total Cell Count: [$blk getCellCount]"
+      puts ""
+    } else {
+      puts ""
+      puts "Block [$blk getName] type not supported by this script."
+      puts ""
+    }
+  }
+}
+
+# --------------------------------------------------------------------------
+# Save volume mesh
+proc saveVolumeMesh { volStartTime volEndTime } {
+  global refinementFactor
+  global cwd
+  global fileRoot
+
+  set fileExport "$fileRoot-Volume-$refinementFactor.pw"
+  puts ""
+  puts "Writing $fileExport file..."
+  puts "Volume initialization completed in [expr {$volEndTime-$volStartTime}] \
+      seconds"
+  puts ""
+  pw::Application save [file join $cwd $fileExport]
+}
+
+# --------------------------------------------------------------------------
+# Main script body
+
+# Start timer
+set startTime [clock seconds]
+
+# Setup Pointwise and define working directory
+pw::Application reset
+pw::Application clearModified
+set cwd [file dirname [info script]]
+
+# File root
+set fileRoot [file rootname $pwFile]
+
+# Output Pointwise version information
+puts ""
+puts "[pw::Application getVersion]"
+puts ""
+puts "Refinement factor is set to $refinementFactor"
+puts ""
+
+# Check if refinement factor is lower or equal than 1
+if { $refinementFactor <= 1 } {
+  if { $volMesh eq "YES" } {
+    # Load Pointwise file
+    pw::Application load [file join $cwd $pwFile]
+
+    # Save surface mesh
+    set fileExport "$fileRoot-Surface-$refinementFactor.pw"
+
+    puts ""
+    puts "Writing $fileExport file..."
+    puts ""
+    pw::Application save [file join $cwd $fileExport]
+
+    puts ""
+    puts "Initializing volume mesh..."
+    puts ""
+
+    # Start timer
+    set volStartTime [clock seconds]
+
+    # Gather all blocks
+    set blkList [pw::Grid getAll -type pw::Block]
+
+    # Gather all unstructured blocks
+    set unsBlkList [pw::Grid getAll -type pw::BlockUnstructured]
+
+    # Initialize unstructured blocks
+    initializeUnstructuredBlocks
+
+    # End timer
+    set volEndTime [clock seconds]
+
+    # Print block information
+    printBlockInformation
+
+    # Save volume mesh
+    saveVolumeMesh $volStartTime $volEndTime
+
+    # End timer
+    set endTime [clock seconds]
+    puts ""
+    puts "Pointwise script executed in [expr $endTime-$startTime] seconds"
+    puts ""
+    exit
+  } else {
+    puts ""
+    puts "Refinement factor is 1 or lower, nothing to do..."
+    puts ""
+    exit
+  }
+}
+
+# Load Pointwise file
+pw::Application load [file join $cwd $pwFile]
+
+# Start timer
+set surfStartTime [clock seconds]
+
+# Get current layer
+set currentLayer [pw::Display getCurrentLayer]
+
+# Gather all connectors
+set conList [pw::Grid getAll -type pw::Connector]
+set numCons [llength $conList]
+set conCnt  0
+
+# Gather all domains
+set domList [pw::Grid getAll -type pw::Domain]
+set numDoms [llength $domList]
+set domCnt  0
+
+# Gather all structured domains
+set strDomList [pw::Grid getAll -type pw::DomainStructured]
+
+# Gather all blocks
+set blkList [pw::Grid getAll -type pw::Block]
+
+# Gather all unstructured blocks
+set unsBlkList [pw::Grid getAll -type pw::BlockUnstructured]
+
+# Get boundary conditions
+getBoundaryConditions
+
+# Get and redimension TRex conditions
+getAndRedimensionTRexConditions
+
+# Get volume conditions
+getVolumeConditions
+
+# Match diagonalized domains with their structured counterpart
+findMatchedOrigDiagDomains
+
+# Redimension balanced connectors
+redimensionBalancedConnectors
+
+# Redimension connectors
+redimensionConnectors $conList
+
+# Redimension domains
+redimensionDomains
+
+# Regenerate diagonalized domains
+regenerateDiagDomains
+
+# Save surface mesh
+set fileExport "$fileRoot-Surface-$refinementFactor.pw"
+
+# End timer
+set surfEndTime [clock seconds]
+
+# Regenerate unstructured blocks
+regenerateUnstructuredBlocks
+
+puts ""
+puts "Writing $fileExport file..."
+puts "Surface refinement completed in [expr {$surfEndTime-$surfStartTime}]\
+  seconds"
+puts ""
+pw::Application save [file join $cwd $fileExport]
+
+# Initialize volume mesh if required
+if { $volMesh eq "YES" } {
+  puts ""
+  puts "Initializing volume mesh..."
+  puts ""
+
+  # Start timer
+  set volStartTime [clock seconds]
+
+  # Unstructured blocks could have been regenerated, gather all blocks (again)
+  set blkList [pw::Grid getAll -type pw::Block]
+
+  # Unstructured blocks could have been regenerated, gather all unstructured \
+  # blocks (again)
+  set unsBlkList [pw::Grid getAll -type pw::BlockUnstructured]
+
+  # Initialize unstructured blocks
+  initializeUnstructuredBlocks
+
+  # End timer
+  set volEndTime [clock seconds]
+
+  # Print block information
+  printBlockInformation
+
+  # Save volume mesh
+  saveVolumeMesh $volStartTime $volEndTime
+}
+
+# Restore current layer
+pw::Display setCurrentLayer $currentLayer
+
+# End timer
+set endTime [clock seconds]
+
+puts ""
+puts "Pointwise script executed in [expr $endTime-$startTime] seconds"
+puts ""
+
+#
+# END SCRIPT
+#
+
+#
+# DISCLAIMER:
+# TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, POINTWISE DISCLAIMS
+# ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED
+# TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE, WITH REGARD TO THIS SCRIPT.  TO THE MAXIMUM EXTENT PERMITTED 
+# BY APPLICABLE LAW, IN NO EVENT SHALL POINTWISE BE LIABLE TO ANY PARTY 
+# FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES 
+# WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF 
+# BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE 
+# USE OF OR INABILITY TO USE THIS SCRIPT EVEN IF POINTWISE HAS BEEN 
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF THE 
+# FAULT OR NEGLIGENCE OF POINTWISE.
+#
+
+
+** cone
+https://github.com/pointwise/SqueezeCon
+#+BEGIN_SRC
+#
+# Copyright 2014 (c) Pointwise, Inc.
+# All rights reserved.
+# 
+# This sample Pointwise script is not supported by Pointwise, Inc.
+# It is provided freely for demonstration purposes only.  
+# SEE THE WARRANTY DISCLAIMER AT THE BOTTOM OF THIS FILE.
+#
+
+#############################################################################
+##
+## squeezeCon.glf
+##
+## COPY CONNECTOR AND SCALE TO FIT BETWEEN TWO POINTS
+## 
+## Allows you to copy a connector and specify the desired final endpoints.
+## 0. Choose connector (can be done prior to executing the script)
+## 1. Choose first point for beginning of new connector
+## 2. Choose second point for end of new connector
+##
+## Replaces two-step (multi-click) process of 1) Copy-Paste-Translate, Accept, 
+## and 2) Edit-Transform-Scale. Script is necessary since the endpoint of the  
+## temporary translated connector in the paste mode is not a pickable point. 
+## Also, this script will take account for planar curves scaled in 3D, which
+## is not handled by the scale operation alone.
+## 
+## As a general rule, avoid scaling arcs that define >90 degrees of a circle.
+## 
+#############################################################################
+
+package require PWI_Glyph 2
+
+## Select single connector to copy, translate and scale
+proc selectCon {} {
+    ## Set Info label
+    set text1 "Please select connector to copy."
+    ## Set selection mask
+    set mask [pw::Display createSelectionMask -requireConnector {}]
+    
+    ###############################################
+    ## This script uses the getSelectedEntities command added in 17.2R2
+    ## Catch statement should check for previous versions
+    if { [catch {pw::Display getSelectedEntities -selectionmask $mask curSelection}] } {
+        set picked [pw::Display selectEntities -description $text1 -single\
+            -selectionmask $mask curSelection]
+        
+        if {!$picked} {
+            puts "Script aborted."
+            exit
+        }
+    } elseif { [llength $curSelection(Connectors)] > 1 } {
+        puts "Please select one connector."
+        exit
+    } elseif { [llength $curSelection(Connectors)] == 0 } {
+        set picked [pw::Display selectEntities -description $text1 -single\
+            -selectionmask $mask curSelection]
+        
+        if {!$picked} {
+            puts "Script aborted."
+            exit
+        }
+    }
+    ###############################################
+    
+    return $curSelection(Connectors)
+}
+
+## Copy, Paste, Translate, and Scale selected connector to fit specified points
+## Scale was used in place of stretch for more stable behavior, particularly 
+## for circular arcs.
+proc squeezeCon {con} {
+
+    if { [catch {set pt2 [pw::Display selectPoint -description \
+        "Select first point." -connector [list]]}]} {
+
+        puts "Script aborted."
+        exit
+    }
+    
+    if { [catch {set pt3 [pw::Display selectPoint -description \
+        "Select second point." -connector [list]]}]} {
+
+        puts "Script aborted."
+        exit
+    }
+    
+    ## Find end of connector closest to the first point picked
+    set pt1_a [$con getXYZ -arc 0.0]
+    set pt1_b [$con getXYZ -arc 1.0]
+    set diff_a [pwu::Vector3 length [pwu::Vector3 subtract $pt1_a $pt2]]
+    set diff_b [pwu::Vector3 length [pwu::Vector3 subtract $pt1_b $pt2]]
+    if {$diff_a <= $diff_b} {
+        set pt1 $pt1_a
+    } else {
+        set pt1 $pt1_b
+    }
+    
+    ## Define translation vector
+    set transVec [pwu::Vector3 subtract $pt2 $pt1]
+    
+    ## Find out whether or not the connector chose is planar in the model 
+    ## coordinate system
+    set conExtents [$con getExtents]
+    set chks1 [pwu::Vector3 subtract [lindex $conExtents 0] [lindex $conExtents 1]]
+    set chks2 [pwu::Vector3 subtract $pt3 [lindex $conExtents 0]]
+    
+    ## If connector is planar and requires a 3D scale, compute random rotation
+    ## angle (5-10 deg) to transform coordinate system prior to scale operation
+    set rotationAngles [list]
+    for {set ii 0} {$ii < 3} {incr ii} {
+        if { [expr abs([lindex $chks1 $ii])] < 1e-4 && \
+            [expr abs([lindex $chks2 $ii])] > 1e-4 } {
+            lappend rotationAngles [expr 5+rand()*5.]
+        } else {
+            lappend rotationAngles 0.
+        }
+    }
+    
+    if {[pwu::Vector3 length $rotationAngles] > 0} {
+        puts "Planar curve, implementing rotational transform..."
+    }
+    
+    ## Set up paste command
+    pw::Application clearClipboard
+    pw::Application setClipboard [list $con]
+    
+    set pasteMode [pw::Application begin Paste]
+        set modEnts [$pasteMode getEntities]
+        set modMode [pw::Application begin Modify $modEnts]
+            ## Translate connector
+            pw::Entity transform [pwu::Transform translation $transVec] $modEnts
+            ## Get the translated connector
+            set newCon [lindex $modEnts 0]
+            ## Get beginning point of new connector
+            set pt4 [$newCon getPosition -arc 0]
+            set pt2a [$newCon getPosition -arc 0.99]
+            ## Make sure pt4 is set to the end of pasted connector opposite pt2
+            if {[pwu::Vector3 equal -tolerance 1e-6 $pt2 $pt4]} {
+                set pt4 [$newCon getPosition -arc 1]
+                set pt2a [$newCon getPosition -arc 0.01]
+            }
+
+            set rightVec [pwu::Vector3 subtract $pt2a $pt2]
+            set transformMatrix [pwu::Transform identity]
+
+            set ii 0
+            foreach ang $rotationAngles {
+                set upVec {0 0 0}
+                set upVec [lreplace $upVec $ii $ii 1]
+                if {$ang != 0} {
+                    set axis [pwu::Vector3 cross $rightVec $upVec]
+                    set rotationMatrix [pwu::Transform rotation \
+                        -anchor $pt2 $axis $ang]
+                    set transformMatrix [pwu::Transform multiply \
+                        $transformMatrix $rotationMatrix]
+                }
+                incr ii
+            }
+            
+            pw::Entity transform $transformMatrix $newCon
+
+            set inverseTransformMatrix [pwu::Transform inverse $transformMatrix]
+            
+            ## Transform points to handle 3D scaling of planar curves
+            set pt3_t [pwu::Transform apply $transformMatrix $pt3]
+            set pt4_t [pwu::Transform apply $transformMatrix $pt4]
+            
+            ## Scale pasted connector
+            pw::Entity transform [pwu::Transform calculatedScaling $pt2 $pt4_t \
+                $pt3_t [pw::Grid getNodeTolerance]] $newCon
+            
+            ## In some cases, you may want to stretch rather than scale
+            #~ pw::Entity transform [pwu::Transform stretching $pt2 $pt4_t \
+                #~ $pt3_t ] $newCon
+                
+            ## Transform back to model coordinate system
+            pw::Entity transform $inverseTransformMatrix $newCon
+        
+        $modMode end
+    $pasteMode end
+
+    pw::Application clearClipboard
+    
+}
+
+## Call each process
+set con [selectCon]
+squeezeCon $con
+
+#
+# DISCLAIMER:
+# TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, POINTWISE DISCLAIMS
+# ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED
+# TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE, WITH REGARD TO THIS SCRIPT.  TO THE MAXIMUM EXTENT PERMITTED 
+# BY APPLICABLE LAW, IN NO EVENT SHALL POINTWISE BE LIABLE TO ANY PARTY 
+# FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES 
+# WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF 
+# BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE 
+# USE OF OR INABILITY TO USE THIS SCRIPT EVEN IF POINTWISE HAS BEEN 
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF THE 
+# FAULT OR NEGLIGENCE OF POINTWISE.
+#
+#+END_SRC
+** 2D VAWT    
+
+#+BEGIN_SRC
+#
+# Copyright 2011 (c) Pointwise, Inc.
+# All rights reserved.
+# 
+# This sample Pointwise script is not supported by Pointwise, Inc.
+# It is provided freely for demonstration purposes only.  
+#
+# ===============================================
+# HYBRID MESH GENERATION SCRIPT FOR A
+# VERTICAL AXIS WIND TURBINE
+# ===============================================
+# Written by Travis Carrigan
+#
+
+
+# Initialization
+package require PWI_Glyph 2.4
+pw::Script loadTk
+pw::Application reset
+pw::Application setUndoMaximumLevels 10
+
+# Directory from which script is run
+set cwd [file dirname [info script]]
+
+
+# AIRFOIL GUI CREATION
+# -----------------------------------------------
+wm title . "VAWT Mesh Generator"
+grid [ttk::frame .c -padding "5 5 5 5"] -column 0 -row 0 -columnspan 1 -sticky nwes
+grid columnconfigure . 0 -weight 1; grid rowconfigure . 0 -weight 1
+
+# Default airfoil parameters
+set naca    0015
+set afsol   1.5
+set numblds 3
+
+# Create notebook
+grid [ttk::notebook .c.nb -padding "5 5 5 5"] -column 0 -row 0 -columnspan 2
+    .c.nb add [ttk::frame .c.nb.f1 -padding "5 5 5 5"] -text "Step 1"
+    .c.nb add [ttk::frame .c.nb.f2 -padding "5 5 5 5"] -text "Step 2"
+    .c.nb add [ttk::frame .c.nb.f3 -padding "5 5 5 5"] -text "Step 3"
+
+# Airfoil labels
+grid [ttk::label .c.nb.f1.l1 -text "VAWT Airfoil Generator" -font {-underline 1}] -column 0 -row 0 -columnspan 2 -stick w
+grid [ttk::label .c.nb.f1.nacal    -text "NACA 4-Series Cross-Section" -width 25] -column 0 -row 1 -sticky w
+grid [ttk::label .c.nb.f1.afsoll   -text "Wind Turbine Solidity"       -width 25] -column 0 -row 2 -sticky w
+grid [ttk::label .c.nb.f1.numbldsl -text "Number of Blades"            -width 25] -column 0 -row 3 -sticky w
+
+# Airfoil entry boxes
+grid [ttk::entry  .c.nb.f1.nacae    -width 8 -textvariable naca     ] -column 1 -row 1 -sticky e
+grid [ttk::entry  .c.nb.f1.afsole   -width 8 -textvariable afsol    ] -column 1 -row 2 -sticky e
+grid [ttk::entry  .c.nb.f1.numbldse -width 8 -textvariable numblds  ] -column 1 -row 3 -sticky e
+grid [ttk::button .c.nb.f1.gob      -text "Create" -command coordGen] -column 1 -row 4 -sticky e
+
+# Default boundary layer parameters
+set initds 0.0001
+set cellgr 1.2
+set bldist 0.2
+set numpts 100
+
+# Boundary layer labels
+grid [ttk::label .c.nb.f2.l2 -text "Boundary Layer Parameters" -font {-underline 1}] -column 0 -row 0 -columnspan 2 -sticky w
+grid [ttk::label .c.nb.f2.initdsl   -text "Initial Cell Height"   -width 25] -column 0 -row 1 -sticky w
+grid [ttk::label .c.nb.f2.cellgrl   -text "Cell Growth Rate"      -width 25] -column 0 -row 2 -sticky w
+grid [ttk::label .c.nb.f2.numlayerl -text "Boundary Layer Height" -width 25] -column 0 -row 3 -sticky w
+grid [ttk::label .c.nb.f2.numptsl   -text "Points Around Airfoil" -width 25] -column 0 -row 4 -sticky w
+
+# Boundary layer entry boxes
+grid [ttk::entry  .c.nb.f2.initdse   -width 8 -textvariable initds ] -column 1 -row 1 -sticky e
+grid [ttk::entry  .c.nb.f2.cellgre   -width 8 -textvariable cellgr ] -column 1 -row 2 -sticky e
+grid [ttk::entry  .c.nb.f2.numlayere -width 8 -textvariable bldist ] -column 1 -row 3 -sticky e
+grid [ttk::entry  .c.nb.f2.numptse   -width 8 -textvariable numpts ] -column 1 -row 4 -sticky e
+grid [ttk::button .c.nb.f2.gob       -text "Create" -command blMesh] -column 1 -row 5 -sticky e
+
+# Default farfield parameters
+set rotdomdia 50
+set rotdomdim 40
+set ffdomdia  100
+set ffdomdim  50
+
+# Farfield labels
+grid [ttk::label .c.nb.f3.l3 -text "Farfield Boundary Parameters" -font {-underline 1}] -column 0 -row 0 -columnspan 2 -sticky w
+grid [ttk::label .c.nb.f3.rotdomdial -text "Rotational Domain Diameter" -width 25] -column 0 -row 1 -sticky w
+grid [ttk::label .c.nb.f3.rotdomdiml -text "Rotational Domain Points"   -width 25] -column 0 -row 2 -sticky w
+grid [ttk::label .c.nb.f3.ffdomdial  -text "Farfield Domain Diameter"   -width 25] -column 0 -row 3 -sticky w
+grid [ttk::label .c.nb.f3.ffdomdiml  -text "Farfield Domain Points"     -width 25] -column 0 -row 4 -sticky w
+
+# Farfield entry boxes
+grid [ttk::entry  .c.nb.f3.rotdomdiae -width 8 -textvariable rotdomdia] -column 1 -row 1 -sticky e
+grid [ttk::entry  .c.nb.f3.rotdomdime -width 8 -textvariable rotdomdim] -column 1 -row 2 -sticky e
+grid [ttk::entry  .c.nb.f3.ffdomdiae  -width 8 -textvariable ffdomdia ] -column 1 -row 3 -sticky e
+grid [ttk::entry  .c.nb.f3.ffdomdime  -width 8 -textvariable ffdomdim ] -column 1 -row 4 -sticky e
+grid [ttk::button .c.nb.f3.gob        -text "Create" -command ffMesh  ] -column 1 -row 5 -sticky e
+
+# Notes
+grid [ttk::labelframe .c.lf4 -padding "5 5 5 5" -text "Notes"] -column 0 -row 3 -columnspan 2
+grid [ttk::label      .c.lf4.l -width 25] -column 0 -row 0
+grid [tk::text .c.lf4.t -width 29 -height 8 -wrap word] -column 0 -row 0 -columnspan 2
+.c.lf4.t insert 1.0 "The initial cell height and boundary layer height are factors of the airfoil chord length.\n\nAll farfield boundary dimensions are factors of the VAWT radius (R = 1)."
+.c.lf4.t configure -state disabled
+
+# Restart and done button
+grid [ttk::button .c.lf4.und -text "Undo"    -command undo] -column 0 -row 4 -sticky w
+grid [ttk::button .c.lf4.res -text "Restart" -command rest] -column 0 -row 4 -columnspan 2 
+grid [ttk::button .c.lf4.gob -text "Done"    -command exit] -column 1 -row 4 -sticky e
+
+# Clean up spacing
+foreach w [winfo children .c    ]   {grid configure $w -padx 5 -pady 5}
+foreach w [winfo children .c.nb.f1] {grid configure $w -padx 5 -pady 5}
+foreach w [winfo children .c.nb.f2] {grid configure $w -padx 5 -pady 5}
+foreach w [winfo children .c.nb.f3] {grid configure $w -padx 5 -pady 5}
+foreach w [winfo children .c.lf4]   {grid configure $w -padx 5 -pady 5}
+
+focus .c.nb.f1.nacae
+::tk::PlaceWindow . widget
+
+
+# PROCEDURE FOR GENERATING AIRFOIL COORDINATES
+# -----------------------------------------------
+proc coordGen {} {
+
+# AIRFOIL INPUTS
+# -----------------------------------------------
+# m = maximum camber 
+# p = maximum camber location 
+# t = maximum thickness
+set m [expr {[string index $::naca 0]/100.0}]  
+set p [expr {[string index $::naca 1]/10.0}] 
+set a [string index $::naca 2]
+set b [string index $::naca 3]
+set c "$a$b"
+set t [expr {$c/100.0}]
+
+# GENERATE AIRFOIL COORDINATES
+# -----------------------------------------------
+# Initialize Arrays
+set x {}
+set xu {}
+set xl {}
+set yu {}
+set yl {}
+set yc {0}
+set yt {}
+
+# Airfoil step size
+set ds 0.001
+
+# Check if airfoil is symmetric or cambered
+if {$m == 0 && $p == 0 || $m == 0 || $p == 0} {set symm 1} else {set symm 0}
+
+# Get x coordinates
+for {set i 0} {$i < [expr {1+$ds}]} {set i [expr {$i+$ds}]} {lappend x $i}
+
+# Calculate mean camber line and thickness distribution
+foreach xx $x {
+
+	# Mean camber line definition for symmetric geometry
+	if {$symm == 1} {lappend yc 0}
+
+	# Mean camber line definition for cambered geometry
+	if {$symm == 0 && $xx <= $p} {
+		lappend yc [expr {($m/($p**2))*(2*$p*$xx-$xx**2)}]
+	} elseif {$symm == 0 && $xx > $p} {
+		lappend yc [expr {($m/((1-$p)**2)*(1-2*$p+2*$p*$xx-$xx**2))}]
+	}
+
+	# Thickness distribution
+	lappend yt [expr {($t/0.20)*(0.29690*sqrt($xx)-0.12600*$xx- \
+	                  0.35160*$xx**2+0.28430*$xx**3-0.10150*$xx**4)}]
+
+	# Theta
+	set dy [expr {[lindex $yc end] - [lindex $yc end-1]}]
+	set th [expr {atan($dy/$ds)}]
+
+	# Upper x and y coordinates
+	lappend xu [expr {$xx-[lindex $yt end]*sin($th)}]
+	lappend yu [expr {[lindex $yc end]+[lindex $yt end]*cos($th)}]
+
+	# Lower x and y coordinates
+	lappend xl [expr {$xx+[lindex $yt end]*sin($th)}]
+	lappend yl [expr {[lindex $yc end]-[lindex $yt end]*cos($th)}]
+
+}
+
+# GENERATE AIRFOIL GEOMETRY
+# -----------------------------------------------
+# Create upper airfoil surface
+set airUpper [pw::Application begin Create]
+set airUpperPts [pw::SegmentSpline create]
+
+for {set i 0} {$i < [llength $x]} {incr i} {
+	$airUpperPts addPoint [list [lindex $xu $i] [lindex $yu $i] 0]
+}
+
+set airUpperCurve [pw::Curve create]
+	$airUpperCurve addSegment $airUpperPts
+$airUpper end
+
+# Create lower airfoil surface
+set airLower [pw::Application begin Create]
+set airLowerPts [pw::SegmentSpline create]
+
+for {set i 0} {$i < [llength $x]} {incr i} {
+	$airLowerPts addPoint [list [lindex $xl $i] [lindex $yl $i] 0]
+}
+
+set airLowerCurve [pw::Curve create]
+	$airLowerCurve addSegment $airLowerPts
+$airLower end
+
+# Create flat trailing edge
+set airTrail [pw::Application begin Create]
+set airTrailPts [pw::SegmentSpline create]
+	$airTrailPts addPoint [list [lindex $xu end] [lindex $yu end] 0]
+	$airTrailPts addPoint [list [lindex $xl end] [lindex $yl end] 0]
+set airTrailCurve [pw::Curve create]
+	$airTrailCurve addSegment $airTrailPts
+$airTrail end
+
+# Scale airfoil based on solidity
+set afSol   $::afsol
+set numBlds $::numblds
+set scale   [expr ($afSol*2)/$numBlds]
+set afdb    [pw::Database getAll]
+
+pw::Entity transform [pwu::Transform scaling -anchor {0 0 0} \
+[list "$scale" "$scale" "$scale"]] $afdb
+
+# Mark and undo level
+pw::Application markUndoLevel {coord}
+
+# Zoom to airfoil
+pw::Display resetView
+
+}
+
+
+# PROCEDURE FOR GENERATING BOUNDARY LAYER MESH
+# -----------------------------------------------
+proc blMesh {} {
+
+# BOUNDARY LAYER INPUTS
+# -----------------------------------------------
+# afSol    = airfoil solidity
+# numbBlds = number of blades
+# chord    = airfoil chord length
+# initDs   = initial cell height
+# cellGr   = cell growth rate
+# blDist   = boundary layer distance
+# numPts   = number of points around airfoil
+set afSol   $::afsol
+set numBlds $::numblds
+set chord   [expr ($afSol*2)/$numBlds]
+set initDs  [expr $::initds*$chord]
+set cellGr  $::cellgr
+set blDist  [expr $::bldist*$chord]
+set numPts  $::numpts
+
+# CONNECTOR CREATION, DIMENSIONING, AND SPACING
+# -----------------------------------------------
+# Get all database entities
+set dbEnts [pw::Database getAll]
+
+# Create connectors on database entities
+set cons [pw::Connector createOnDatabase $dbEnts]
+set upperSurfCon [lindex $cons 0]
+set lowerSurfCon [lindex $cons 1]
+set trailSurfCon [lindex $cons 2]
+
+# Calculate main airfoil connector dimensions
+foreach con $cons {lappend conLen [$con getLength -arc 1]}
+set upperSurfConLen [lindex $conLen 0]
+set lowerSurfConLen [lindex $conLen 1]
+set trailSurfConLen [lindex $conLen 2]
+set conDim [expr int($numPts/2)]
+
+# Dimension upper and lower airfoil surface connectors
+$upperSurfCon setDimension $conDim
+$lowerSurfCon setDimension $conDim
+
+# Dimension trailing edge airfoil connector
+set teDim [expr int($trailSurfConLen/(10*$initDs))+2]
+$trailSurfCon setDimension $teDim
+
+# Set leading and trailing edge connector spacings
+set ltDs [expr 10*$initDs]
+
+set upperSurfConDis [$upperSurfCon getDistribution 1]
+set lowerSurfConDis [$lowerSurfCon getDistribution 1]
+set trailSurfConDis [$trailSurfCon getDistribution 1]
+
+$upperSurfConDis setBeginSpacing $ltDs
+$upperSurfConDis setEndSpacing $ltDs
+$lowerSurfConDis setBeginSpacing $ltDs
+$lowerSurfConDis setEndSpacing $ltDs
+
+# Create edges for structured boundary layer extrusion
+set afEdge [pw::Edge createFromConnectors -single $cons]
+set afDom [pw::DomainStructured create]
+$afDom addEdge $afEdge
+
+# Extrude boundary layer using normal hyperbolic extrusion method
+set afExtrude [pw::Application begin ExtrusionSolver $afDom]
+	$afDom setExtrusionSolverAttribute NormalInitialStepSize $initDs
+	$afDom setExtrusionSolverAttribute SpacingGrowthFactor $cellGr
+	$afDom setExtrusionSolverAttribute NormalMarchingVector {0 0 -1}
+	$afDom setExtrusionSolverAttribute NormalKinseyBarthSmoothing 3
+	$afDom setExtrusionSolverAttribute NormalVolumeSmoothing 0.3
+	$afDom setExtrusionSolverAttribute StopAtHeight $blDist
+	$afExtrude run 1000
+$afExtrude end
+
+# CREATE THE THREE BLADES OF THE VAWT
+# -----------------------------------------------
+# Calculate half chord
+set hlfChord [expr $chord/2]
+
+# Cut, paste, translate blade to desired radius
+set gridEnts [pw::Grid getAll]
+set afEnts [join [list $dbEnts $gridEnts]]
+pw::Application setClipboard $afEnts
+set rotPt [list [expr -$hlfChord] 1 0]
+pw::Entity transform [pwu::Transform translation $rotPt] $afEnts
+pw::Application clearClipboard
+
+# Copy, paste, rotate to create blades
+for {set i 1} {$i < $numBlds} {incr i} {
+
+	set rotAngle [expr 360/$numBlds]
+
+	pw::Application setClipboard $afEnts
+	set afMeshRot [pw::Application begin Paste]
+	set afEntsRot [$afMeshRot getEntities]
+	set afBegRot [pw::Application begin Modify $afEntsRot]
+	pw::Entity transform [pwu::Transform rotation -anchor {0 0 0} {0 0 1} \
+                             [expr $i*$rotAngle]] [$afBegRot getEntities]
+	$afBegRot end
+	$afMeshRot end
+
+	pw::Application clearClipboard
+
+}
+
+# Mark and undo level
+pw::Application markUndoLevel {bl}
+
+# Zoom to blades
+pw::Display resetView
+
+}
+
+
+# PROCEDURE FOR GENERATING FARFIELD MESH
+# -----------------------------------------------
+proc ffMesh {} {
+
+# FARFIELD INPUTS
+# -----------------------------------------------
+# numBlds   = number of blades
+# rotDomDia = rotational domain diameter
+# rotDomDim = points around rotational domain
+# ffDomDia  = farfield domain diameter
+# ffDomDim  = points around farfield domain
+set numBlds   $::numblds
+set rotDomDia $::rotdomdia
+set rotDomDim $::rotdomdim
+set ffDomDia  $::ffdomdia
+set ffDomDim  $::ffdomdim
+
+# CREATE ROTATIONAL DOMAIN
+# -----------------------------------------------
+# Create inner circle connectors
+set createInnerCircle [pw::Application begin Create]
+set innerCircle [pw::SegmentCircle create]
+	$innerCircle addPoint [list [expr $rotDomDia/2] 0 0]
+	$innerCircle addPoint {0 0 0}
+	$innerCircle setEndAngle 360 {0 0 1}
+set innerCircleCon [pw::Connector create]
+	$innerCircleCon addSegment $innerCircle
+	$createInnerCircle end
+
+# Split circle connector at midpoint
+set innerCircleConSplit [$innerCircleCon split 0.5]
+
+# Dimension connectors
+set innerCircleCon1 [lindex $innerCircleConSplit 0]
+set innerCircleCon2 [lindex $innerCircleConSplit 1]
+
+$innerCircleCon1 setDimension $rotDomDim
+$innerCircleCon2 setDimension $rotDomDim
+
+# Create interior rotational domain
+set gridEnts [pw::Grid getAll]
+foreach ent $gridEnts {
+        if {[$ent isOfType pw::DomainStructured]} {
+                lappend blCons [[$ent getEdge JMaximum] getConnector 1]
+        }
+}
+
+set createInnerDom [pw::Application begin Create]
+set innerDomCircleEdge [pw::Edge create]
+	$innerDomCircleEdge addConnector $innerCircleCon1
+	$innerDomCircleEdge addConnector $innerCircleCon2
+
+for {set i 0} {$i < $numBlds} {incr i} {
+	set innerDomBladeEdge($i) [pw::Edge create]
+	$innerDomBladeEdge($i) addConnector [lindex $blCons $i]
+}
+
+set innerDom [pw::DomainUnstructured create]
+	$innerDom addEdge $innerDomCircleEdge
+	for {set i 0} {$i < $numBlds} {incr i} {$innerDom addEdge $innerDomBladeEdge($i)}
+
+$createInnerDom end
+
+set innerDomSolve [pw::Application begin UnstructuredSolver $innerDom]
+	$innerDom setUnstructuredSolverAttribute BoundaryDecay 0.985
+	$innerDomSolve run Initialize
+$innerDomSolve end
+
+# CREATE FARFIELD DOMAIN
+# -----------------------------------------------
+# Create outer circle connectors
+set createOuterCircle [pw::Application begin Create]
+set outerCircle [pw::SegmentCircle create]
+	$outerCircle addPoint [list 0 [expr $ffDomDia/2] 0]
+	$outerCircle addPoint {0 0 0}
+	$outerCircle setEndAngle 360 {0 0 1}
+set outerCircleCon [pw::Connector create]
+	$outerCircleCon addSegment $outerCircle
+$createOuterCircle end
+
+# Split connector at midpoint
+set outerCircleConSplit [$outerCircleCon split 0.5]
+
+# Dimension connectors
+set outerCircleCon1 [lindex $outerCircleConSplit 0]
+set outerCircleCon2 [lindex $outerCircleConSplit 1]
+
+$outerCircleCon1 setDimension $ffDomDim
+$outerCircleCon2 setDimension $ffDomDim
+
+# Create outer domains inner overlapping connectors
+set createInnerOverCircle [pw::Application begin Create]
+set innerOverCircle [pw::SegmentCircle create]
+	$innerOverCircle addPoint [list 0 [expr $rotDomDia/2] 0]
+	$innerOverCircle addPoint {0 0 0}
+	$innerOverCircle setEndAngle 360 {0 0 1}
+set innerOverCircleCon [pw::Connector create]
+	$innerOverCircleCon addSegment $innerOverCircle
+$createInnerOverCircle end
+
+# Split connector at midpoint
+set innerOverCircleConSplit [$innerOverCircleCon split 0.5]
+
+# Dimension connectors
+set innerOverCircleCon1 [lindex $innerOverCircleConSplit 0]
+set innerOverCircleCon2 [lindex $innerOverCircleConSplit 1]
+
+$innerOverCircleCon1 setDimension $rotDomDim
+$innerOverCircleCon2 setDimension $rotDomDim
+
+# Create farfield domain
+set createOuterDom [pw::Application begin Create]
+set outerDomOuterEdge [pw::Edge create]
+	$outerDomOuterEdge addConnector $outerCircleCon1
+	$outerDomOuterEdge addConnector $outerCircleCon2
+
+set outerDomInnerEdge [pw::Edge create]
+	$outerDomInnerEdge addConnector $innerOverCircleCon1
+	$outerDomInnerEdge addConnector $innerOverCircleCon2
+$outerDomInnerEdge reverse
+
+set outerDom [pw::DomainUnstructured create]
+	$outerDom addEdge $outerDomOuterEdge
+	$outerDom addEdge $outerDomInnerEdge
+$createOuterDom end
+
+set outerDomSolve [pw::Application begin UnstructuredSolver $outerDom]
+	$outerDom setUnstructuredSolverAttribute BoundaryDecay 0.985
+	$outerDomSolve run Initialize
+$outerDomSolve end
+
+# Mark and undo level
+pw::Application markUndoLevel {ff}
+
+# Zoom out
+pw::Display resetView
+
+}
+
+
+# PROCEDURE FOR UNDOING LAST ACTION
+# -----------------------------------------------
+proc undo {} {
+
+pw::Application undo
+
+pw::Display resetView
+
+}
+
+
+# PROCEDURE FOR RESTARTING POINTWISE
+# -----------------------------------------------
+proc rest {} {
+
+pw::Application reset
+
+pw::Display resetView
+
+}
+
+
+
+
+
+# END SCRIPT
+
+
+#+END_SRC
+https://github.com/traviscarrigan/VAWTMesh
+* References
+
+John Steinbrenner’s Construction of Prism and Hex Layers from Anisotropic Tetrahedra 
+which describes T-Rex and more specifically the evolution of cell combination techniques.
+ I’m also reading Aeroacoustic Simulations of a Nose Landing Gear using FUN3D on Pointwise Unstructured Grids 
+by V.N. Vatsa, M.R. Khorrami, J. Rhoads, and D.P. Lockard. Both papers will be presented at AIAA Aviation. While working on the DrivAer grids and simulations I’ve been reading Experimental and Numerical Investigation of the DrivAer Model by A.I. Heft, T. Indinger, and N.A. Adams.
+oneline user guide, http://www.pointwise.com/doc/user-manual/
+http://www.gmgworkshop.com/gmgw1/GMGW1-Participant-Woeber.pdf
+http://www.gmgworkshop.com/resources.shtml
