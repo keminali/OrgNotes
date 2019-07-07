@@ -1,0 +1,128 @@
+*  一线大城市里，有哪些是相对便宜但又比较有意思，还不会显得寒酸的约会方式？
+ikea
+* The document could not be printed :printing:
+
+Causes:
+
+    Data corruption in the PDF.
+    Damaged installation of Adobe Reader/Acrobat.
+    Corrupted DWG file.
+
+Solution:
+To potentially repair a PDF file so that it no longer produces the errors:
+
+    Open the PDF in Adobe Acrobat (or another PDF editing program).
+    Do Save As to PDF/A format.
+
+  To work around the errors in Adobe Reader/Acrobat, do one of the following:
+
+Print the PDF as an image:
+
+    In the Adobe Reader/Acrobat print window, click the Advanced button.
+    Select the "Print as Image" checkbox.
+
+
+https://knowledge.autodesk.com/support/autocad/troubleshooting/caas/sfdcarticles/sfdcarticles/Error-The-document-could-not-be-printed-when-printing-a-PDF-created-by-Autodesk-software.html
+
+
+* you are currently using a free version of TeamViewer on your business network.
+teamviewer
+
+you are currently using a free version of TeamViewer on your business network. 
+Teamviewer is fre for personal use only.
+connection blocked after timeout
+
+*** solution
+fill a Commercial Use Suspected form
+* Global CFD Market in Aerospace and :market share:
+Defense Industry 2016-2020
+Publication ID: TNV1116008
+Publication
+Date:
+November 2, 2016
+Pages: 58
+Publisher: TechNavio
+
+
+* Mobile workstation
+HP ZBook Studio
+thinkpad w
+
+* web crawler
+https://www.benlcollins.com/spreadsheets/google-sheet-web-scraper/
+基本的爬虫工作原理基本的http抓取工具，scrapyBloom Filter: Bloom Filters by Example如果需要大规模网页抓取，你需要学习分布式爬虫的概念。其实没那么玄乎，你只要学会怎样维护一个所有集群机器能够有效分享的分布式队列就好。最简单的实现是python-rq: https://github.com/nvie/rqrq和Scrapy的结合：darkrho/scrapy-redis · GitHub后续处理，网页析取(grangier/python-goose · GitHub)，存储(Mongodb)
+
+
+链接：https://www.zhihu.com/question/20899988/answer/24923424
+
+
+* scale/normalize data
+use R programming
+* Read AICII delimited file of numeric data into matrix
+~dlmread~ function
+* Unsteady BEM
+** Why  need Unsteady analysis?
+amospheric turbulence, wind shear, and presence of the tower induce transient behavior
+
+* Pressure vs viscous force
+for large Re, viscous force is negiable
+for 387 hydroturbine (luska model), RANS result shows that viscous force account for less than 1% of pressure force
+
+* accepted Grid Convergence Index (GCI) value?
+Grid Convergence Index less than 5%
+* What  quantites  are used for vortex shedding description?
+* solution manual for textbooks
+official web
+http://www.chegg.com/books
+https://www.scribd.com/
+
+* Best textbook
+book scan [[http://1dollarscan.com/][1DollarScan]]
+
+* book stores
+[[https://www.bookdepository.com/][Book Depository]]
+Amazon
+[[https://www.alibris.com/][Alibris]]
+* ebook
+http://avxhome.se/ebooks/
+
+http://tuebl.ca/books/
+
+http://audiobookbay.pw/
+
+http://forum.mobilism.org/
+
+http://rutracker.org/
+
+http://bookzz.org/
+
+http://gutenberg.org/
+
+http://en.bookfi.org/
+
+http://mediafire.com/
+
+http://ipmart-forum.com/
+
+http://ebook3000.com/
+
+www.4shared.com/
+
+http://freebookspot.es/
+
+http://kickass.to/
+
+http://demonoid.ph/
+
+http://ebookee.org/
+
+http://libgen.in/
+
+http://librs.net/
+* university course
+Open Syllabus Project : online database of university course syllabi 
+MIT open course
+
+
+* Postgraduate training 
+http://www.maths.qmul.ac.uk/~beheshti/PGR_Training#template

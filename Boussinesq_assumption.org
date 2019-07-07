@@ -1,0 +1,16 @@
+* Boussinesq Eddy Viscosity Assumption
+ Boussinesq eddy viscosity assumption=Boussinesq hypothesis/approximation. 
+Boussinesq postulated the /momentum transfer caused by turbulent eddies/ can be modeled with an /eddy viscosity/. 
+This is in analogy with how the /momentum transfer caused by the molecular motion/ in a gas can be described by a /molecular viscosity/. 
+The Boussinesq assumption states that the *Reynolds stress tensor* is proportional
+ to the *trace-less mean strain rate tensor*, and can be written in the following way
+
+\begin{equation}
+\tau_{ij} = 2 \, \mu_t \, S_{ij}^* - \frac{2}{3} k \delta_{ij}
+\end{equation}
+ 
+or 
+\begin{equation}
+-\rho \overline{u'_i u'_j} = \mu_t \, \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} - \frac{2}{3} \frac{\partial u_k}{\partial x_k} \delta_{ij} \right) - \frac{2}{3} k \delta_{ij}
+\end{equation}
+

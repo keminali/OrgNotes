@@ -1,0 +1,7 @@
+* ref
+A good C++ reference is a necessity. Here are some suggestions:
+
+    A good reference of the language and standard library is available at http://en.cppreference.com/.
+    A more tutorial-based approach is available at http://www.learncpp.com/. This spends more time teaching, rather than acting solely as a reference.
+    If you like physical books, Ira Pohl’s C++ Distilled is a good option.
+https://courses.physics.illinois.edu/cs225/sp2018/info/syllabus/#c-reference

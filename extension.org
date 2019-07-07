@@ -1,0 +1,64 @@
+* Evidence of your completed work to date: 
+** data collected and to be collected
+| Chapters  | data collected                                                     | data missed                                                         |
+| Chapter 4 | Cp of e387, A7 and optimised e387 A7 using BEM; steady RANS Fluent | Cp of optimal Geometry using Fluent                                 |
+| Chapter 5 | SPL vs frequency of e387 using FWH Fluent                          | A7 FWH results; e387 and A7 analysis using Gutin's acoustic methods |
+| Chapter 6 | Unsteady BEM analysis performance of e387                          | RANS one phase approximation ( UDF); Two phase VOF analysis         |
+| chapter 7 |                                                                    |       URANS analysis of the effect of hub, pylon and sea floor on the HAMT  ;URANS analysis of the effect of the free surface waves on the full HAMT ;acoustic analysis                                          |
+
+
+
+
+
+	
+
+* Chapter outline
+
+1. Introduction
+	a. Background and motivation
+	b. Research questions
+	c. Objectives
+	d. Accomplishments
+	e. Structure of the thesis
+2. Literature review
+[You can put here reviews on marine power, marine turbines, blade hydro-aerodynamics]
+
+3. Computational hydrodynamic methodology
+	a Rapid solvers for the the horizontal axis marine turbine (HAMT) rotor in free space
+		1) The steady BEM method
+		2) The unsteady BEM method
+	b  CFD 
+		1) Turbulent flow simulation brief review[only brief review on DNS, LES and DES, as you have not used them in the project]
+		2) Turbulent flow modelling
+			a) RANS and URANS
+			b) The global rotating grid and local sliding grid approaches
+                                 [The global rotating grid is good for free space problems involving only the rotor and the sliding grid is more general and good for simulating the rotor+pylon and in confined space as including free surface waves and sea floor,
+                                   but requires more computational resources]
+			c) Water wave modelling: The VOF approach and the one phase approximation [using UDF]
+
+4. Hydrodynamic performance of the HAMT rotor in free space
+	a. BEM and RANS analysis of HAMT rotor based on the common E387 and the re-designed 	A7 profiles [new]
+	b. Optimal hydrodynamic behaviour analysis for the HAMT rotor [new]
+
+5. Acoustic performance of the HAMT rotor in free space
+	a. The FWH and Gutin’s acoustic methodology
+	b. Analysis of the E387 and A7 rotors [new]
+
+6.  Free surface water effects
+	a. The water waves analytical description
+	b. Unsteady BEM and the RANS *one phase* approximation analysis [new]
+	c. The *two phase VOF* [or level set] analysis [If you can get results, new]
+
+7. The HAMT in confined space
+	a. URANS analysis of the effect of hub, pylon and sea floor on the HAMT 
+	b. URANS analysis of the effect of the free surface waves on the full HAMT 
+[using the single phase approximation with UDF and/or the two phase approximation, new]
+	c.  Acoustic analysis using URANS results [new]
+
+8. Summary and future work
+             a. summary
+             b. further works
+
+	
+
+*  Proposed timetable for completion if the extension is granted

@@ -1,0 +1,92 @@
+* Volume of fluid                                                       :VOF:
+definition:what is VOF?
+
+ categories
+ - Navier-Stokes equation model with Turbulence
+     + more computational resources
+ - Potential flow model without Turbulence
+
+
+%	Interface tracking >	Marker and cell method
+% For Interface capturing method,  there are two sub- methods: Volume of fluid and Level set method
+%\subsection{Level Set Method}
+
+% 1. roadmap:
+%% introduction, problem ans solution proposal
+%% defintions
+%% assumptions, governing eqs
+%% historical develoment
+%% advantages and limits
+%% further research and alternative/advanced methods
+
+
+%% introduction, problem ans solution proposal
+
+
+% Eulerian method 
+%Eulerian methods include interface tracking and capturing. the Volume of fluid a typical interface capturing method. 
+%The volume of fluid (VOF) model is one of the Euler-Euler multiphase models which are suitable for slug or free surface flows where different phases are immiscible \cite{fluent2017theory}. It was proposed by Hirt and Nichols in 1981.
+%% assumptions, governing eqs
+% concept of volume fraction
+The volume fraction is the basic concept in the VOF model. The sum of volume fractions is as follows: \ref{eq:volumeFraction}.
+\begin{equation}
+\sum_{i=0}^{n} \alpha _q =1
+\label{eq:volumeFraction}
+\end{equation}
+Where \(\alpha_q\) is the volume fraction of the \(q^{th}\) fluid.
+For multiphase flows, the volume fraction of a phase is a new variable in the computational cell and some physical quantities are volumed averaged.
+For example, the volume averaged density of an n-phase flow can be written as:
+\begin{equation}
+\rho_{av} = \sum_{i=0}^{n} \alpha _q \rho_q
+\end{equation}
+% continuity Eq
+The continuity equation for the  \(q^{th}\) fluid can be written as:
+\begin{equation}
+\frac{1}{\rho _q}[\frac{\partial}{\partial t}(\alpha _q \rho _q) + \nabla \cdot(\alpha _q \rho _q u_q)]=S_{\alpha_q} + \sum_{p=1}^{n} (\dot{m}_{pq}-\dot{m}_{qp})
+\end{equation}
+
+Where \( \dot{m}_{pq} \) denotes the mass transfer from phase \(q\) to phase \(p\), and vice versa. \(S_{\alpha_q}\) is a source term, which is zero by default. This equation can be calculated in either explicit or implicit time methods.
+% moomentum Eqs
+The momentum equation for multiphase flow takes the same form as its single phase counterpart. However, the \(\rho \) and \(\mu \) are volume averaged values in the momentum equation. The volume of fluid  model solve a single set of momentum equations and the resulting velocity and pressure quantities are the same by all fluid phases. 
+% volume fraction equation >> interface tracking
+% interpolation near the interface
+ Fluent provides two approaches for data interpolation near the fluid-gas or fluid-fluid interface, namely the geometric reconstruction and donor-acceptor methods, as seen in Fig. \ref{Fig:FreeSurfaceInterface}.	The geometric reconstruction approach, proposed by Youngs \cite{youngs1982time}, adopts a piecewise-linear method and is used as a default scheme in many computational software including ANSYS Fluent. A linear slope at the interface between two fluids is assumed in this interpolation scheme.
+ % donor acceptor scheme
+ The donor-acceptor method, proposed by Hirt and Nichols \cite{Hirt1981Volume}, has either a horizontal or vertical interface which is determined by the orientation of the volume fraction gradient of the \(q^{th}\) phase with the computational cell.
+ % geometric reconstruction vs donor acceptor 
+ In general, the geometric reconstruction approach is more accurate and suitable for unstructured meshes than the donor-acceptor method. 
+% fiure:interpolation_interface.png
+
+%% source: Fig 17.2 interface calculations, theory guide fluent
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{interpolation_interface.png}
+	\caption{The 2D fluid interface and its interpolations\cite{fluent2017theory}}
+	\label{Fig:FreeSurfaceInterface}
+\end{figure}
+
+% energy equations
+% surface tension and adhension
+The surface tension effects can also be modeled in the VOF model, but its influence is very little and can be ignored for free surface wave in the open channel or oceans.
+%% historical develoment
+% application
+The VOF model can be used for modeling of jet breakup, large bubbles in a liquid, dam break, and free surface.
+%% advantages and limits
+The VOF model is only available for the pressure-based solver in ANSYS Fluent.
+It assumes  computational cell zones are occupied by either a single fluid phase or a mixture of phases, and void regions are ignored. Meanwhile, this  model is not compatible with the second-order implicit time stepping approach or the steam-wise periodic boundary condition.
+%% further research and alternative/advanced methods
+
+
+**  references
+%% xinbai thesis
+%% 2.4, free surface modelling, Best practice guidelines for marine applications of computational fluid dynamics
+%% multiphase flows, theory guide, fluent
+* Level set method
+% roadmap:
+%% introduction, problem ans solution proposal
+%% defintions
+%% assumptions, governing eqs
+%% historical develoment
+%% advantages and limits
+%% further research and alternative/advanced methods

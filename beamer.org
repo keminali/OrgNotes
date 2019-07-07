@@ -1,0 +1,197 @@
+* Basics
+for presentation, the =ducumentclass= is *beamer*
+
+   ~\documentclass{beamer}~
+
+#+BEGIN_SRC
+\mode<presentation>
+{
+  \usetheme{default}
+  \usecolortheme{default}
+  \usefonttheme{default}
+}
+
+\tableofcontents[currentsection]
+
+\begin{block}
+\end{block}
+
+#+END_SRC
+
+** To define a frame
+
+#+BEGIN_SRC
+\begin{frame}{Hydrodynamic assessment of a dual-rotor horizontal axis marine current turbine}  % frame title
+	 \begin{minipage}{0.45\linewidth}
+	 	\begin{figure}
+	 		\begin{center}
+	 			\includegraphics[width=\textwidth]{figure/examples_tidal_turbine.png}
+	 		\end{center}
+	 	\end{figure}
+	 \end{minipage}
+	 \begin{minipage}{0.45\linewidth}
+	 	\begin{itemize}
+	 		\item	horizontal axis
+	 		\item	vertical axis
+	 		\item	ducted MCT
+	 		\item tidal kite
+	 		\item oscillating hydrofoil
+	 		\item archimedes' screw
+	 	\end{itemize}
+	 \end{minipage}
+\end{frame}
+#+END_SRC
+** minipage
+
+#+BEGIN_SRC
+\begin{minipage}{0.45\linewidth}
+
+\end{minipage}
+#+END_SRC
+** block
+\begin{block}{Examples}
+Some examples of commonly used commands and features are included, to help you get started.
+\end{block}
+* section-- group frames for outline
+To generate an outline, use the *\tableofcontents*
+e.g.
+
+>>> tableofcontents[currentsection]
+* multiple columns
+
+\begin{frame}{multiple column}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\begin{itemize}
+				\item use the columns
+				\item the argument
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+				\begin{itemize}
+					\item item 1
+					\item item 2
+				\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+* make the title page
+ add a logo, highlight important points, make a table of contents and add effects to the presentation
+* Two images side by side
+
+* Reference
+https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_3)
+https://www.overleaf.com/gallery/tagged/presentation
+
+an interactive introduction to LaTex
+Part3 not just paper: Presentation and More
+Dr. John D. Lees-Miller
+University of Bristol
+
+https://www.overleaf.com/static/latex/learn/free-online-introduction-to-latex-part-3.pdf
+
+* templates
+** themes
+ For more themes, color themes and font themes, see:
+ http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+
+** a example
+#+BEGIN_SRC
+
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\title[Your Short Title]{Your Presentation}
+\author{You}
+\institute{Where You're From}
+\date{Date of Presentation}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+
+\begin{itemize}
+  \item Your introduction goes here!
+  \item Use \texttt{itemize} to organize your main points.
+\end{itemize}
+
+\vskip 1cm
+
+\begin{block}{Examples}
+Some examples of commonly used commands and features are included, to help you get started.
+\end{block}
+
+\end{frame}
+
+\section{Some \LaTeX{} Examples}
+
+\subsection{Tables and Figures}
+
+\begin{frame}{Tables and Figures}
+
+\begin{itemize}
+\item Use \texttt{tabular} for basic tables --- see Table~\ref{tab:widgets}, for example.
+\item You can upload a figure (JPEG, PNG or PDF) using the files menu. 
+\item To include it in your document, use the \texttt{includegraphics} command (see the comment below in the source code).
+\end{itemize}
+
+% Commands to include a figure:
+%\begin{figure}
+%\includegraphics[width=\textwidth]{your-figure's-file-name}
+%\caption{\label{fig:your-figure}Caption goes here.}
+%\end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{l|r}
+Item & Quantity \\\hline
+Widgets & 42 \\
+Gadgets & 13
+\end{tabular}
+\caption{\label{tab:widgets}An example table.}
+\end{table}
+
+\end{frame}
+
+\subsection{Mathematics}
+
+\begin{frame}{Readable Mathematics}
+
+Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+$$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+      = \frac{1}{n}\sum_{i}^{n} X_i$$
+denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+
+\end{frame}
+
+\end{document}
+
+#+END_SRC

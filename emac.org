@@ -1,0 +1,284 @@
+* Glossary
+- Buffer :: a place in a computer's memory for storing information temporarily
+* Installation
+
+https://sourceforge.net/projects/emacsbinw64/
+* configuration
+https://www.seas.upenn.edu/~chaoliu/2017/01/03/emacs_configuration/
+
+* Emacs vs Vim
+https://www.diffen.com/difference/Emacs_vs_Vim
+
+* basics
+C-<chr>  # hold the Ctrl key while typing the character <chr>
+M-<chr>  # hold the Alt key while typing the character <chr>
+S-<chr>  # hold the Shift key while typing the character <chr>
+Dired    # the file manager mode
+C-x C-c, #end the Emacs session
+C-g, #quit a partially entered command
+Buffer # a place in a computer's memory for storing information temporarily
+Pasting=yanking
+Cutting=killing
+
+** help
+
+C-h C-h #help
+C-h t # official tutorial
+** Move around
+C-p     # previous *line*\\
+C-n     # next line\\
+C-b    # backward a character\\
+C-f     # forward a *character*\\
+M-f    # Forward one *word*\\
+C-a    # *beginning* of line\\
+C-e    # move to end of line\\
+M- a #move back to beginning of sentence\\
+M-e #move forward to end of sentence\\
+C-v, #view next *screen*\\
+M-v #view previous screen\\
+M-< #Beginning of buffer\\
+M-> #the end of the whole text\\
+C-x 1 #one window, kill all other windows\\
+C-g #cancel the comand\\
+C-c C-n  #  Next heading   (org-next-visible-heading)[fn:motion]\\
+C-c C-p  # Previous heading (org-previous-visible-heading)\\
+C-c C-f  #Next heading same level.  (org-forward-same-level)\\
+
+
+
+
+
+
+Multiple windows\\
+Windows=frames\\
+C-x o # move the cursor to the other window\\
+
+
+C-y	Yanks last killed text\\
+M-y	Replace yanked text with previously killed text\\
+
+From <https://www.gnu.org/software/emacs/tour/> 
+
+
+M- up arrow # move line up
+
+M-RightArrow # Indent Bullet Point
+M-Enter # Create new bullet Point (*)
+M-UpArrow # Move Bullet Point Up
+S-RightArrow # Mark Bullet Point as TODO
+C-c # add Tag to Bullet Point
+
+C-x: Character eXtend.  Followed by one character.
+M-x:	Named command eXtend.  Followed by a long na
+
+
+
+select a region of text
+
+region: The text between point and the mark.
+
+To specify the text for such a command to operate on, you set the mark at one end of it, and move point to the other end.
+
+The buffer is the basic editing unit; one buffer corresponds to one text being
+edited.
+
+From <https://kb.iu.edu/d/aiuf> 
+
+Scale-Model Experiments for the Surface Wave Influence on a Submerged Floating Ocean-Current Turbine
+
+
+file name is case sensitive
+C-<chr>  # hold the *Ctrl* key while typing the character <chr>
+M-<chr>  # hold the _Alt_ key while typing the character <chr>
+S-<chr>  # hold the *Shift* key while typing the character <chr>
+[[https://www.emacswiki.org/emacs/EmacsNewbieKeyReference][Newbie Key Reference]]
+Dired # the file manager mode
+C-x C-c, #end the Emacs session
+C-g, #quit a partially entered command
+
+
+C-x C-f	 #Find file\\
+C-x C-s	 #Save file\\
+C-u                    #repeat\\
+C-u 3 C-p	#Back 3 lines\\
+C-u followed by a number and a movement command repeats that command the specified number of times\\
+If you use C-u without specifying a digit, the default is 4\\
+M-d     # kill the word after the cursor\\
+C-k      # kill from the cursor position to end of line\\
+M-k     # kill to the end of the current sentence\\
+Killing =/=deleting\\
+C-/     # undo the changes made by one command\\
+C-x C-c     # quit Emacs\\
+C-x u     # undo\\
+C-z     # exit Emacs temporarily so that you can come back afterward\\
+fg    # resume Emacs\\
+%emacs     # resume Emacs\\
+** Move around
+C-p # previous line
+C-n # next line
+C-b # backward a character
+C-f # forward a character
+C-a #  beginning of line
+C-e # move to end of line
+M-a # move back to beginning of sentence
+M-e # move forward to end of sentence
+C-v #view next screen
+M-> # the end of the whole text
+C-x 1 # one window, kill all other windows
+C-g # cancel the command
+C-a	Beginning of line
+M-f	Forward one word
+M-a	Previous sentence
+M-v	Previous screen
+M-<	Beginning of buffer
+
+
+ 
+** read and write file
+C-x C-f  # find-file: first find filename, if not available, create one
+C-x C-s # save buffer
+C-x C-w #write-named-file: prompts for a new filename and writes the buffer into it
+** Kill (cut) --emacs
+To cut a chunk of text:
+select the text as a region, and use =C-w=
+
+C-k     
+    kill rest of line or one or more lines
+
+
+
+C-<SPC>
+
+    Set the mark at point, and activate it (set-mark-command). 
+
+- point  :: cursor in other programs.
+** Mark -- delimit a region of text
+functions:
+- in conjunction with the point, it defines a region of text
+
+C-space  #set the mark
+
+*To cut n lines*
+1. set the begining of mark point
+
+C+space
+
+2. jump to next n lines
+ C-u n C-n
+
+3. cut the region of text
+C+w
+
+** What's the difference between "<return>" and "RET"?
+"<return>" is the Return %G驤ｫｩ%@ key while emacs runs in a GUI
+
+"RET" is the Return %G驤ｫｩ%@ key while emacs runs in a TUI.
+** buffer
+Buffer     # a place in a computer's memory for storing information *temporarily*\\
+C-x C-c             #end buffer\\
+C-x C-b     # list buffers\\
+C-x b     # switch buffer\\
+~#+~  #in-buffer settings
+** copy and paste
+C-w # cut\\
+M-w #copy\\
+C-y #paste, yanking\\
+Cut/kill text in region between marked and current position\\
+** search and replacement
+|Key| 	Meaning
+|C-s |	Search
+|M-% |	Replace
+|C-M-%| 	Replace Regexp
+
+C-s tells Emacs to start an interactive search. Type a search term at the prompt, and Emacs will move the cursor to the first occurrence. Press C-s again to find additional occurrences.
+
+While at the I-search: prompt, C-s will restart the last search, M-p cycles through previous searches, and M-y yanks (pastes).
+
+To replace text, press M-% (M-S-5). Emacs can also do replacement of regular expressions (C-M-%).
+
+At the prompt, type the string that should be replaced at the prompt, hit enter, type what it will be replaced with, and hit enter again to start the replacement. y replaces the current match, n skips it, and ! replaces all further matches in the buffer. Just like M-x, the up arrow key at the replace prompts cycles through previous entries.
+
+Note: search and replace are case sensitive by default.
+
+After performing a search or replace, C-u C-SPC will jump back to the point in the buffer where it began. This is an example of using prefix arguments, which are explained later.
+*** Incremental Search
+
+C-s       forward search
+C-s C-s #Repeating Incremental Search
+C-r       Reverse search
+RET     Stop
+DEL     Cancels the last character of the search string.
+ESC     abandon the search and return to the place where you started
+M-e     edit the current search string in the minibuffer without replacing it with items from
+the search ring
+
+it begins searching as soon as you type the first character of the search string.
+
+
+
+** split window
+~C-x 1~ # delete-other-windows 
+~C-x 2~
+    #Split the selected window into two windows, one above the other (split-window-below).
+
+~C-x 3~
+    #Split the selected window into two windows, positioned side by side (split-window-right). 
+** change directory
+~cd~
+*** change default directory on GNU emacs
+answer from [[https://stackoverflow.com/questions/60464/changing-the-default-folder-in-emacs][stackoverflow]]
+ Solution 1: Add (cd "C:/Users/Name/Desktop") to the .emacs file
+
+ Solution 2: Add (setq default-directory "C:/Documents and Settings/USER_NAME/Desktop/") to the .emacs file
+
+Solution 3: Right click the Emacs short cut, shortcut>start in (Windows only)
+file:C:\Users\exw692\Dropbox\Emacs\figures\default_directory.png
+
+
+*** using [[https://github.com/bbatsov/projectile][Projectile ]]
+what is Projectile?\\
+ a project interaction library for Emacs\\
+Its goal is to provide a nice set of features operating on a project level without introducing external dependencies \\
+** Glossary
+*** variable
+A variable is a /name/ used in a program to stand for a value.
+ In Lisp, each variable is represented by a Lisp /symbol/.
+** Reference
+http://mally.stanford.edu/~sr/computing/emacs.html
+x
+* helm-- incremetal completions and narrowing selections
+
+http://tuhdo.github.io/helm-intro.html
+https://github.com/emacs-helm/helm
+
+* customizing
+* packages -- .el
+** Install Packages Using MELPA.
+M-x list-packages 
+** Install Emacs Package Manually
+Suppose you downloaded a simple emacs package on the web named 'xyz.el'. 
+To load the package:
+>> Alt + x load-file 
+then give the file path
+
+To activate the package:
+>> xyz
+*** Load File at Startup
+
+If you want emacs to load the file when it starts, 
+put the file in the directory =~/.emacs.d/lisp/=, 
+then put the following in your emacs init file:
+
+#+begin_src emacs lisp
+;; Tell emacs where is your personal elisp lib dir
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;; load the packaged named xyz.
+(load "xyz") ;; best not to include the ending “.el” or “.elc”
+#+end_src
+** ref
+http://ergoemacs.org/emacs/emacs_installing_packages.html
+
+* Running Emacs on Windows
+
+https://www.gnu.org/software/emacs/manual/html_mono/efaq-w32.html#Introduction

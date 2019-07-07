@@ -1,0 +1,11 @@
+
+* How do I call Execute on Demand from the TUI?
+/define/user-defined/
+compiled-functions
+function-hooks
+execute-on-demand /*Execute UDFs on demand.*/
+Answer:
+
+
+
+  

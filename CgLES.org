@@ -1,0 +1,47 @@
+* Programming Language
+
+* notes from Xin Bai
+Please find the attachment for the source code of CgLES.
+I’ve attached three different version of the code:
+
+CgLES 3.1.2 : the recent and updated version including implementation of Immersed Boundary Method, 
+LES models (smagrinsky and MTS model). 
+This version have RK3 in time and finite volume in space. 
+
+The main feature of this version is to use stretched grid as computational domain 
+( uniform at the center and stretched grid towards the boundaries).
+
+CgLES 3.1.1: previous version without RK3 nor stretched grid option.
+CgLES + CLS: one version of the code with Conservative Level Set method, 
+which allows you to simulate two phase/multiphase flows. 
+Please note by changing the code to a two-phase version, 
+you need to specify the density and viscosity for each phase. 
+The initial interface will need to be specified as initial condition as well.
+
+* Suggestions on how to use the code:
+As a new user of the code, I suggest you to test the code by running several small scale simulation first. 
+Depending on the function used, I recommend:
+
+First: DNS simulation of a channel flow (laminar first, then turbulent): 
+With this, you get an idea of how the basic routines of the code, in this simulation you don’t need LES or IBM routine.
+
+Second: Flow around a cylinder in laminar flow. 
+By doing this, you can familiar yourself with IBM routine.
+
+Third: Flow around a cylinder in turbulent flow (DNS and LES).
+You can start testing the LES functions by comparing with the DNS result.
+ Also it would be helpful to re-run the channel test but using LES.
+
+Fourth: Flow around a moving object. 
+As I understand, your project is about simulation of blade profiles. 
+To achieve this, you need a good standing of turbulence (Large Eddy Simulation) 
+and fluid-structure interaction (Immersed Boundary Method). 
+The starting case can be flow around a moving cylinder (cross-flow).
+
+* Papers to read
+Here I recommend to you several papers related to this code, 
+you may find them useful when you have some trouble understanding the code.
+
+1. Turbulent Simulation of Open-Channel Flow at Low-Reynolds-Number', International Journal of Heat and Mass Transfer, 38 (2), 259-66. (An Fortran code previous to CgLES)
+2. Ji, C, Munjiza, A, and Williams, J.J.R. (2012), 'A novel iterative direct-forcing immersed boundary method and its nite volume applications', Journal of Computational Physics, 231 (4), 25. (IBM approach used in this code).
+3. My PhD thesis: where you can find the mathematical background and several validation cases used in the code.

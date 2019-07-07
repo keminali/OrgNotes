@@ -1,0 +1,1412 @@
+#+SETUPFILE: theme-bigblow.setup
+
+* References
+
+\cite{batchelor2000introduction}
+** Notes/Slides
+notes on fluid mechanics
+http://www.cmmacs.ernet.in/cmmacs/Lect_notes/
+
+
+
+** Text books
+- An Introduction to Fluid Dynamics, George K. Batchelor,  Uni. of cambridge,
+- Fluid mechanics, frank white, MGrill hall
+- Fundamental of fluid mechanics, Bruce Munson, John Willey
+- Durbin, Statistical Theory and Modeling for Turbulent Flows
+http://www.tfd.chalmers.se/~lada/postscript_files/solids-and-fluids_turbulent-flow_turbulence-modelling.pdf
+
+an introduction to tubulence and its measurment
+
+** online
+Advanced Fluid Mechanics, MIT
+*** mit course
+Professor Howard Brenner
+Introduces the mechanical principles governing fluid flow. Stress in a fluid. Conservation of mass and momentum, using differential and integral balances. Elementary constitutive equations. Hydrostatics. Exact solutions of the Navier-Stokes equations. Approximate solutions using control volume analysis. Mechanical energy balances and Bernoulli's equations. Dimensional analysis and dynamic similarity. Introduces boundary-layer theory and turbulence.
+
+Professor Kenneth Beers
+, https://stuff.mit.edu/afs/athena/course/10/10.301/www2002/
+*** eFluids: A One-stop Internet Resource for Fluid Dynamics and Flow Engineering (www.efluids.com)
+
+** highly recommended reference
+http://farside.ph.utexas.edu/teaching/336L/Fluid/
+- incompressible flow by Panton  ~\cite{panton2006incompressible}
+- Kundu, P. K., and I. M. Cohen. "Fluid mechanics. 2004." Elsevier Academic Press, San Diego). Two-and three-dimensional self-sustained flow oscillations 307 (2008): 471-476. ~\cite{kundu2008fluid}
+* author and institutes
+[[http://www.hitsz.edu.cn/teacher/view/id-319.html][周裕]]-大洋洲流体力学学会会士
+ + 光纤光栅传感元件用于流致振动测量
+
+* wave
+file:wave.org
+
+* Vector Calculus and Index Notation
+Cartesian Tensors
+refer to 	~\cite{anderson2010fundamentals}
+
+** comma notation
+\[
+A, i \equiv \frac{\partial A }{\partial x_i }
+\]
+** Gradient, divergence, and Curl
+Gradient, *upgrade* order of tensor (increase 1 order of tensor )
+Divergence, downgrade order of tensor (decrease 1 order of tensor)
+
+$\nabla -->> \textbf{Gradient}$
+  + upgrade 1 order of tensor order 
+
+$\nabla \cdot \rightarrow \textbf{Divergence}$
+  + downgrade 1 order of tensor order 
+$\nabla \times \rightarrow \textbf{Curl}$
+
+*** Divergence of velocity (scalar)
+
+physical meaning: time rate of change of the volume of a moving fluid element per unit volume
+
+\begin{equation}
+\nabla \cdot \mathbf{V}=\frac{1}{\delta \hcancel[black]{V}} \frac{D(\delta  \hcancel[black]{V})}{Dt}
+\end{equation}
+
+\begin{equation}
+\nabla \cdot \textbf{v}=div(\textbf{v})=\frac{\partial u_i}{\partial x_i}=u_(i,i)
+\end{equation}
+
+
+*** gradient of velocity (tensor)
+\begin{equation}
+\nabla \textbf{u}=grad(\textbf{u})=\frac{\partial u_i}{\partial x_j}=
+\left(
+\begin{matrix}
+\frac{\partial u}{\partial x} & \frac{\partial v}{\partial x} & \frac{\partial w}{\partial x}\\
+\frac{\partial u}{\partial y} & \frac{\partial v}{\partial y} & \frac{\partial w}{\partial y}\\
+\frac{\partial u}{\partial z} & \frac{\partial v}{\partial z} & \frac{\partial w}{\partial z}
+\end{matrix}
+\right)
+\end{equation}
+
+*** curl of velocity (tensor)
+i component of curl of velocity
+\[
+( \nabla \times \upsilon)_i = \epsilon_{ijk} \frac{\partial u_k }{\partial x_j }
+\]
+
+** transfer coordinate
+
+** dot product
+- /dot product of two vector/ is a *scalar*
+\[
+\vert \overrightarrow{a} \cdot  \overrightarrow{b} \vert  = \vert a \vert  \vert b \vert \cos \theta
+\]
+** symmetric and antisymmetric tensor
+if B is a tensor,
+
+if B_{ij} = B_{ji} \rightarrow symmetric
+if B_{ij} = - B_{ji} \rightarrow symmetric
+
+** cross product
+cross product of two vector is a *vector*
+
+\[
+\vert \overrightarrow{a} \times  \overrightarrow{b} \vert  = \vert a \vert  \vert b \vert \sin \theta
+\]
+
+\[
+\overrightarrow{a} \times ( \overrightarrow{b} \times \overrightarrow{c}) =
+\overrightarrow{b}(\overrightarrow{a} \cdot \overrightarrow{c} )
+- \overrightarrow{c}(\overrightarrow{a} \cdot \overrightarrow{b}) 
+\]
+
+** operator \nabla : gradient Divergence and Curl
+A vector operator is a differential operator used in vector calculus. Vector operators are defined in terms of del, and include the gradient, divergence, and curl:
+
+\(  \operatorname{grad} \equiv \nabla \)
+\(  \operatorname{div} \ \equiv \nabla \cdot \)
+\(  \operatorname{curl} \equiv \nabla \times \)
+
+the *vector operator* "del" is defined as
+\[
+\nabla \equiv \mathbf{a}^1 \frac{\partial}{\partial x_1} +  \mathbf{a}^2 \frac{\partial}{\partial x_2} +  \mathbf{a}^3 \frac{\partial}{\partial x_3}
+=  \mathbf{a}^i \frac{\partial}{\partial x_i}
+
+\]
+
+When operating on a *scalar function* of position φ, it generates the *vector*
+\[
+\nabal \phi =  \mathbf{a}^i \frac{\partial \phi}{\partial x_i}
+\]
+( kuntu)
+*vector identity*
+the divergence of a scalar times a vector = the scalar times the divergence of the vector plus the vector dotted into the gradient of the scalar
+
+\[
+\nabla \dot ( \rho \mathbf{v} = \rho \nabla \dot \mathbf{v}
++ \mathbf{v} \dot \nabla \rho
+\]
+
+** substantial derivative
+total derivative
+
+\[
+ \frac{D}{Dt} \equiv \frac{\partial}{\partial t}+\mathbf{v} \cdot \nabla
+\]
+
+\[
+\nabla \equiv i \frac{\partial}{\partial x} + j \frac{\partial}{\partial y}+ k \frac{\partial}{\partial z}
+\]
+- \( \frac{D}{Dt} \) : substantial derivative
+- \( \frac{\partial}{\partial t} \) :local derivative
+- \(  \mathbf{v} \cdot \nabla \) :convective derivative
+- (\nabla \) :vector operator
+- substantial derivative :: *time rate of change* of any poperty of a fluid element /as it moves with the flow/ (lagrangian frame);
+ rate of change as seen by an observer moving with the fluid velocity
+
+- local derivative :: time rate of change *at a fixed point*
+- convective derivative :: time rate of change (due to the movement of the fluid element 
+from one location to another in the flow field) where the flow properties are *spatially different*.
+
+** References
+Sommerfeld, A. (1964). Mechanics of Deformable Bodies, 
+NewYork: Academic Press. (Chapter 1 contains
+brief but useful coverage of Cartesian tensors.)
+
+Aris, R. (1962). Vectors, Tensors, and the Basic Equations of Fluid Mechanics, Englewood Cliffs, NJ:
+Prentice-Hall. (This book gives a clear and easy treatment of tensors in Cartesian and non-Cartesian
+coordinates, with applications to fluid mechanics.)
+
+Prager, W. (1961). Introduction to Mechanics of Continua, New York: Dover Publications. (Chapters 1
+and 2 contain brief but useful coverage of Cartesian tensors.)
+* list of symbols
+|                 |                                                           |
+| *V*             | velocity vector                                           |
+| *a*             | acceleration                                              |
+| *f*             | body force per unit mass                                  |
+| *n*             | unit vector perpendicular to dS                           |
+| A               | analyticdal solution of partial differential equation     |
+| C               | courant number, C=c \Delta t / \Delta x                   |
+| D               | exact solution of difference equation                     |
+| E_{ij}          | mean strain rate                                          |
+| F               | force vector                                              |
+| N               | numerical solution of difference equation from a computer |
+| N(u_i )         | navier-Stokes operator                                    |
+| P_t             | thermodynamic pressure                                    |
+| S               | control surface                                           |
+| T               | temperature                                               |
+| T               | stress tensor                                             |
+| T_w             | wall temperature                                          |
+| W               | column vector,  W=\{u v\}                                 |
+| [A]             | matrix A                                                  |
+| \( l \)         | mixing length                                             |
+| \delta *        | displacement thickness                                    |
+| \dot{q}         | heat flux                                                 |
+| \epsilon        | round-off error          \epsilon = N-D                   |
+| \epsilon        | rate of dissipation                                       |
+| \mathbf{\omega} | vorticity vector                                          |
+| \mathscr{V}     | control volume                                            |
+| \omega          | specific dissipation rate                                 |
+| \tau^s          | strain rate                                               |
+| \tau_{ij}       | stress vector                                             |
+| \tau_{w}        | wall shear stress                                         |
+| \theta          | momentum thickness                                        |
+| \vert A \vert   | determinant of [A]                                        |
+| c_v             | specific heat at constant volume , e = c_V T              |
+| e               | internal energy per unit mass                             |
+| e_{ij}          | fluctuating strain rate                                   |
+| h               | enthalpy                                                  |
+| k_m             | wave number , k_m = 2 \pi / \lambda                       |
+| m               | mass                                                      |
+| r_{ij}          | rotation tensor                                           |
+| u_e             | velocity at the edge of the boundary layer                |
+* thermodynamics
+** research aspects
+- the analysis of work and energy transfers to a system ( a maeterial region)
+- the relationships between thermodynamic properties
+   + chapter 2, panton
+** equilibrium versus nonequilibrium 
+background: 
+equilibrium and nonequilibrim are discussed in the context of *macroscopic systems*,
+i.e. systems where the size and the scale of the phenomena of interest are much bigger than the molecular
+scale, so that an enormous number of particles are involved.
+
+- equilibrium implies a state of balance
+- equilibrium system :: a system in thermodynamic equilbrium
+
+** systems properties and processes
+- a simple system :: a special kind of control region
+*properties* of a simple system:
+- The matter contained within the region
+is homogeneous, isotropic, chemically inert, and not moving.
+- The system is not subject to gravitational, electric, magnetic, or interfacial effects.
+- may receive work only through the *normal pressure force*.
+- no shear forces
+
+*thermodynamic properties* of the system
+   + internal energy,
+   + entropy,
+   + temperature
+thermodynamic properties are  related to each other, and a change in one property may
+cause changes in the others
+
+*categories* of thermodynamic properties of a system
+- extensive
+- intensive
+
+Definitions
+
+- extensive property :: Any property of the system,  
+X, that is reduced in proportion to the size of the system 
+
+examples: Energy, mole number, and the volume
+
+- intensive property :: Any property  that is unchanged with different volume
+Pressure and temperature are examples of intensive properties
+
+We shall follow the standard practice of using
+*capital letters* for *extensive* properties and *lowercase letters* for *intensive* properties (with
+the exception of temperature).
+** Equations of state
+p = p ( \rho, T )
+e = e( \rho, T )
+- e: internal energy
+
+** laws of thermodynamics
+first law of thermodynamics  -->> internal energy
+
+second law of thermodynamics -->>  entropy
+
+*** first law of thermodynamics -- internal energy
+study object: a system
+
+Net change of total energy in a system = net change of energy by *heat* transer + net change of energy by *work* transer into the system
+
+- Quantities involved:
+  + energy
+  + heat 
+  + work 
+** speed of sound 
+\[
+c^2 = ( \frac{\partial p}{\partial \rho} )_S
+\]
+- partial derivative of p towards \rho at constant entropy (S)
+** thermal expansion coefficient
+\[
+\alpha = \frac{1}{\rho} (\frac{\partial \rho}{\partial T})_p
+\]
+** ideal/ perfect gas
+All *gases* behave as ideal gases when /the pressure is low compared to the critical pressure/
+\[
+p=\rho RT
+\]
+R: gas constant
+
+** References
+1. Thermodynamics: an engineering approach  Çengel, Yunus A; Boles, Michael A, McGraw-Hill series in mechanical engineering, 2008, 6th ed.
+2. Fundamentals of Thermodynamics-Sonntag, R.E, Borgnakke, C & Van Wylen
+3. Fundamentals of Engineering Thermodynamics-Moran, M.J & Saprio, H.N
+* abbreviation
+TKE : turbulent kinetic energy
+
+* Advanced Fluid Mechanics
+
+Slides:
+http://web.iitd.ac.in/~pmvs/course_mcl702.php
+
+Text books:
+Fluid Mechanics for Engineers, A Graduate Textbook, Meinhard T. Schobeiri, 2010.
+http://www.petronet.ir/documents/10180/2324299/Fluid_Mechanics_for_Engineers
+Advanced Fluid Mechanics, W. P. Graebel, 2007.
+www.engmatl.com/...engineering-mechanics/204-advanced-fluid-mechanics
+White, F.M. 1991 Viscous Fluid Flow (second edition), McGraw Hill.
+Boundary Layer Theory, H. Schlichting.
+Sherman, F.S. 1990 Viscous Flow. McGraw Hill.
+McCormack , P.S. & Crane, L.J. 1973 Physical Fluid Dynamics, Academic Press.
+
+* Basic Concepts
+study of fluid dynamics are interested in the statistical average and macroscopic property
+-  Streamline :: resultant fluid velocity is in a direction tangential to the streamline.
+** density
+density of the *fluid* is also governed by a thermodynamic
+equation of state
+
+\[
+\rho = \rho ( p, T )
+\]
+
+** Reynolds number and inertial force
+? why Reynolds number= inertia force/viscous force
+
+** material volume control volume
+
+** Forces
+for applied for control/material volume
+- body forces, gravity, eletric, maganetic
+- surface forces, i.e. pressure and viscous forces
+*** inertia force (physics)
+inertial force is a force that resists a change in *Velocity* of an 
+object.
+
+inertial force is equal to applied force, but inertial force is in the opposite dirrection of 
+applied force.
+
+Origin:
+the concept is based on *Newton's Laws of Motion*, including the *Law of inertia* and the 
+*action-reaction law*
+
+**** Newton's Laws of Motion
+
+    I. Every object in a state of uniform motion tends to remain in that state of motion unless an external force is applied to it (Law of Inertia).
+
+    II. The relationship between an object's mass m, its acceleration a, and the applied force F is: F = ma.
+
+    III. If a force is applied to an object, there is an equal and opposite reaction (Action-Reaction Law).
+
+** stress
+stress tensor
+viscous stress tensor
+** strain
+
+
+
+** power: rate of work
+https://www.khanacademy.org/science/physics/work-and-energy/work-and-energy-tutorial/a/what-is-power
+
+
+
+
+
+** Energy
+
+- kinetic energy, 0.5mv^2
+  + kinetic: relating to movement
+- gravitational potential energy, mgh
+- internal energy,e
+
+
+what is energy?
+forms of energy?
+how is energy transfered?
+energy can be transfered by work or heat
+
+Properties of energy?
+- conserved quantity,  conservation of energy states that energy can be conerted in form but not 
+created or destroyed
+- 
+unit  of energy?
+joule
+
+types of energy?
+- kinetic energy ( moving object)
+- potential energy (stored by an object's position in a force field, such as gravitational, electric, or magnetic)
+- elastic energy (stored by stretching solid objects)
+- chemical energy 
+- radiant energy ( carried by light
+- thermal energy duo to an object's temperature
+
+what is
+-  internal energy :: (thermostatics) the energy stored in a system by molecular
+activity and molecular boding forces. [white frank, fluid mechanics, p18, 8th]
+
+- The potential energy :: -mg *r*, equals the work required to move the system of mass m from
+the origin to a position vector \( r = ix + j y + kz \) against a gravity field *g*.
+the er
+- kinetic energy :: 0.5mv^2,  equals the work required to change the speed of the mass from zero to velocity V
+
+the total stored energy per unit mass in fluid mechanics is the sum of the three terms:
+total energy(fluid mechanics) = internal energy + kinetic energy + potential energy
+\[
+e= \hat{u} + 0.5 v^2 + (-g \dot r) 
+
+\]
+[eq.1.9 white]
+
+** Pressure
+- point quantity
+p is a function of \rho and T
+- dynamic pressure :: q, the kinetic energy per unit volume of a fluid particle.
+  + q=0.5 \rho v^2
+
+** motion of fluid
+linear translation, linear deformation, rigid rotation, angluar deformation
+
+** substantial derivative
+** steamline
+** streamtube visualization
+https://www.cfd-online.com/Forums/paraview/184611-stream-tube-visualization.html
+
+
+
+** static systems and dynamic systems
+ As the names imply, 
+a static system is one in which the fluid is at rest and a dynamic system is on in which the fluid is moving.The pressure measured in a static system is static pressure.The pressure increases with depth in the fluid and acts equally in all directions. The increase in pressure at a deeper depth is essentially the effect of the weight of the fluid above that depth. The pressure in a static liquid can be easily calculated if the density of the liquid is known. The absolute pressure at a depth H in a liquid is defined as:
+Pabs = P + (ρ x g x H); P is the external pressure at the top of the liquid. For most
+open systems this will be atmospheric pressure
+
+** fully developed flow
+spatial variation of the flow along the flow direction
+no change in properties along the flow direction
+
+** strain
+strain=deformation
+cauchy's infinitesimal strain tensor
+\[
+e_{ij} = 0.5( \frac{\partial u_i}{\partial x_j} +  \frac{\partial u_j}{\partial x_i})
+\]
+
+** hydrostatic equilibrium/ balance
+the flow  is at rest, or when the flow velocity at each point is constant over time.( from wiki, https://en.wikipedia.org/wiki/Hydrostatic_equilibrium
+
+** enhalpy
+- h: enthalpy, h=h(T,p)
+
+** von karman vortex street
+the straggerd row of vortices behind a blunt body
+
+** Eulerian description vs lagrangian desciption
+- Eulerian descrition concentrates on what happens at a spatial point
+- Lagrangian description follows the fluid particle
+
+** Strouhal number
+\[
+St = \frac{ f_v D}{U}
+\]
+- f_v : shedding frequency
+- U : free stream velocity
+
+** peclet number
+Peclet number = advective transport rate/ (diffusive transport rate)
+
+\[
+Pe=\frac{\rho u l }{\Gamma}
+
+\]
+
+** mixing layer
+- mixing layer: two fluids moving at different speeds.\\
+
+** streamtube
+*Streamtube*: a bundle of streamlines
+** uniform flow
+- uniform flow :: velocity is only a function of time only,  v=f(t),  the velocity stay the same, in magnitude and direction, throughout the whole of the fluid
+
+- uniform flow is a function of time only. At a instant time, uniform flow has the same velocity at all points in the flow.(Anderson 3.9)
+*** properties of uniform flow
+- zero divergence
+- \phi satisfies Laplace's equation
+
+\[
+ \nabla \cdot \mathbf{v} = 0
+\]
+
+- zero curl, irrotational, no vorticity
+\[
+\nabla \times \mathbf{v} =0
+\]
+
+
+** Boussinesq approximation
+
+-  Boussinesq approximation (buoyancy) 
+for buoyancy-driven flows for small density differences in the fluid
+- Boussinesq approximation (water waves) 
+for long waves propagating on the surface of a fluid layer under the action of gravity
+- Turbulence modeling and eddy viscosity:
+   + modelling the turbulence Reynolds stresses,
+       the Boussinesq approximation results in the use of an eddy viscosity concept
+
+ Boussinesq approximation is used in the field of *buoyancy-driven flow* (natural convection)
+ (where the density is constant except of the buoyancy term)
+It ignores density differences except where they appear in terms multiplied by g, the acceleration due to gravity. 
+18 chapter 4, fluid mechanics, Kund
+the density
+changes in the fluid can be neglected except in the gravity term where ρ is multiplied
+by g. This approximation also treats the other properties of the fluid (such as μ, k, Cp)
+as constants.
+
+** Natural convection
+[[https://en.wikipedia.org/wiki/Natural_convection][natural convection]] is a mechanism, or type of heat transport, 
+in which the fluid motion is not generated by any external source (like a pump, fan, suction device, etc.)
+ but only by density differences in the fluid occurring due to temperature gradients.
+
+- The driving force for natural convection is buoyancy, a result of differences in fluid density
+
+examples of natural convection
+
+** conservative body force
+- Conservative body forces :: Conservative body forces such as gravity act through
+the center of mass of a fluid particle and therefore do not tend to rotate it.
+** Barotropic flow
+- Barotropic flow :: density must be a function of pressure only.
+** circulation
+- circulation :: line integral of tangential velocity component along a closed curve
+
+\[
+\Gamma = \oint_c \upsilon \cdot d \mathbf{S}
+\]
+
+** velocity grandient tensor
+   \( \frac{u_i}{x_j} \)
+   \[
+ \frac{u_i}{x_j} = e_{ij} + \frac{1}{2} r_{ij}
+
+\]
+- \( r_{ij} \) : rotation tensor , \( r_{ij} \equiv \frac{\partial u_i}{\partial x_j} - \frac{\partial u_j}{\partial x_i}  \)
+** eddy vs vortex
+- Vortex :: a region where the flow is spinning about an axis.
+- Eddy ::  the swirling of a fluid, that creates a space devoid of downstream flowing fluid.
+   + devoid: without/lack
+
+
+
+** steady flow
+- stationary flow :: a flow in which the velocity of the fluid at a particular fixed point does not change with time — called also 
+- steady flow :: flow quantity (p, v) don't change with time at a fixed point, \( \partial / \partial t  = 0 \)
+steady flow  depends on the coordinate system. A flow may be steady in one coordinate system and unsteady in another.
+** mean steady flow
+time averaged part is steady
+\(  u(t) = U + u'(t) \)
+U is a time independent of time
+
+** strain rate tensor
+strain includes normal and shear strain
+normal strain = linear strain
+
+strain rate: rate of change of deformation/strain
+
+- E_{ij} or e_{ij} 
+\[ 
+E _{ij} =\frac{1}{2} (\frac{\partial u_j}{\partial x_i}+ \frac{\partial u_i}{\partial x_j})
+\]
+** displacement thickness
+\ ( \delta ^ *\): dispacement thickenss
+
+** Kronecker delta
+a function of two variables, usually just positive integers. The function is 1 if the variables are equal, and 0 otherwise
+\[
+\delta_{ij} = \begin{cases}
+0 &\text{if } i \neq j,   \\
+1 &\text{if } i=j.  \end{cases}
+\]
+
+
+** convection
+convection has two meaning:
+- the motion of fluid (fluid mechanics)[fn:convection]\\
+- heat transfer by convection (thermodynamics)\\
+** convection and diffusion
+- convection(advection) :: transport associated with
+ /the flow of a fluid/
+- diffusion :: transport associated with /random motions of molecules within a fluid/
+*diffusion* has two primary properties:
+- random in nature
+- transport is from regions of high concentration to low concentration,
+ with an equilibrium state of uniform concentration
+
+
+** turbulent dissipation rate
+- \epsilon :: rate  at which turublence kinetic energy is converted into thermal internal
+energy, unit, m^2/s^3
+** incompressible and compressible
+- incompressible :: \( \rho =const \)
+such as, water is incompressible in normal condition
+
+** heat transfer and diffusion
+- heat transfer :: %当流体存在温度差时，温度高的地方向温度低的地方传递热量，此现象为热传导。
+** viscosity
+- viscosity: %流体内部发生相对运动而引起的内部相互作用。流体在静止时，不承担切应力，	流体运动时， 相邻两层流体相互运动，
+** flux
+- flux :: quantity per unit time per unit area, quantity/(time*area) \\
+
+- Quantities that can be fluxed in fluids include fluid mass, momentum, energy, etc. \\
+
+
+There are /three fundamental mechanisms of flux/ of interest in fluid mechanics: 
+- convective flux
+- diffusive flux
+- radiative flux
+
+- Convective flux ::  the quantity is carried with the flow
+
+-  Diffusive flux :: the quantity migrates from zones of high concentration to zones of low concentration 
+by random molecular motion
+
+- Radiative flux :: the quantity (e.g. heat) is carried by waves 
+such as electromagnetic waves (in the infrared spectrum in the case of heat). 
+
+Flux examples:
+- \( \rho \mathbf{v} \) : mass flux
+- \( \rho u \mathbf{v} \):flux of x component of momentum
+- \( \rho v \mathbf{v} \):flux of y component of momentum
+- \( \rho e \mathbf{v} \):flux of internal energy
+- \( \rho (e+\frac{v^2}{2}) \mathbf{v} \):flux of total energy
+
+
+
+- diffusion flux= total flux - convective flux
+
+convective and diffusive flux.ppt
+
+** flux vs vector
+- The flux of a *vector*  is a  *matrix* 
+- The flux of a *scalar* is a *vector*
+**  eignvalue
+Eigenvalues are *a special set of scalars* associated with a /linear system of equations/ (i.e., a matrix equation) 
+** eddy
+- [[https://en.wikipedia.org/wiki/Eddy_(fluid_dynamics)][eddy]] :: an eddy is /the swirling of a fluid/ and the reverse current created when the fluid is in a turbulent flow regime
+- eddy :: the identifiable structures in a turbulent flow
+a large eddy has a size of the order of boundary layer thickness: l ~ \delta
+- turbulent [[eddy]] :: a local /swirling motion/ whose /characteristic dimension/ is the local turbulence scale
+
+*Properties of eddy*:
+- overlap in space, 
+- large ones carrying smaller ones
+#+CAPTION: Large eddies in a turbulent boundary layer
+#+NAME: eddy
+file:C:\Users\exw692\Dropbox\Emacs\figures\eddy.png
+the above figure is from[fn:Corrsin and Kistler (1954)]
+The flow above the boundary layer has a *steady* velocity U; the eddies move at randomly fluctuating
+velocities of the order of *a tenth* of U . The largest eddy size (\ell) is comparable to the boundary-layer thickness (\delta ) . 
+The interface and the flow above the boundary is quite sharp.
+
+
+- quiescent fluid :: stagnant (u_0 = 0) uniform fluid (p_0, \rho_o, s_0, . . .)
+- The relaxation time :: is defined as the time taken by the material to adjust to a new state, 
+and the material undergoes this adjustment through molecular collisions.
+** mach number
+mach number = the flow speed/ the speed of sound in the fluid
+|   Ma | flow types     |
+| <0.3 | incompressible |
+| 0.3-1 | subsonic       |
+|   1-5 | supersonic     |
+|    >5 | hypersonic     | 
+Mach number deternines whether exhange between *kinetic energy of motion* and   *internal degrees of freedom* needs to be considered.
+
+** source and sink 
+source flow
+Anderson 3.9 - 3.12
+physics for scientists and engineers
+- source flow is a physically possible incompressible flow, that is, ∇ · V = 0, at
+every point except the origin, where ∇ · V becomes infinite
+- streamline are straight lines emanating from a central point O
+- velocity vary inversely with distance from point O
+#+CAPTION: source and sink flow
+file:C:\Users\exw692\Dropbox\Emacs\figures\source-sink-flow.png
+the above figure is from Figure 3.20, John D. Anderson
+
+refer to 3.10 source flow, fundamentals of aerodynamics, john D. Anderson
+** irrotational flow
+if \( \omega=0 \), then flow is irrotational, and then velocity could be expressed by a velocity potential ( scalar)
+\[
+u_i \equiv \frac{\partial \phi}{\partial x_i}
+\]
+\( \phi = \phi(\mathbf{x}, t) \)
+
+** potential flow
+- potential flow :: ideal and irrotational
+- ideal :: invisid and imcompressible
+- Diffusion :: molecular transport of mass, heat, or momentum.
+- Advection :: bulk transport of mass, heat, or momentum. 
+This transport could be atmospheric flow, boundary layer flow, buoyant flow, pipe flow, etc.
+- [[https://www.researchgate.net/post/Is_there_a_difference_between_advection_and_convection][Convection]] :: a flow that combines diffusion and advection.
+
+a potential flow is characterized by an *irrotational* velocity field
+[[http://web.mit.edu/2.016/www/handouts/2005Reading4.pdf][potential flow theory-MIT handout]]
+** Froude number
+[[https://en.wikipedia.org/wiki/Froude\_number][Froude number]]
+\begin{equation}
+F_r=\frac{U}{\sqrt{gL} }
+\end{equation}
+
+where $U$ is  characteristic flow velocity, $g$ is in general a characteristic external field, and $L$ is a characteristic length. 
+
+
+
+*** usage:
+- comparing similar objects of different sizes
+- The Froude number has some analogy with the Mach number. 
+
+In *theoretical fluid dynamics* the Froude number is not frequently considered 
+since usually the equations are considered in the high Froude limit of negligible external field, 
+leading to homogeneous equations that preserve the mathematical aspects. 
+For example homogeneous Euler equations are conservation equations.
+
+However, in *naval architecture* the Froude number is a very significant figure 
+used to determine the *resistance* of a partially submerged object moving through water,
+ and permits the comparison of similar objects of different sizes, because /the wave pattern is similar at the same Froude number only/[fn:froude-number-wiki].
+
+** gravity wave
+gravity waves are waves generated in a fluid medium or at the interface between two media
+ when the force of gravity or buoyancy tries to restore equilibrium.
+	
+
+** work
+- dot product of force and distance
+\[
+work = \mathbf{F} \cdot \mathbf{S} 
+\]
+** moment/torque
+- symbol, $\tau$ or $M$
+- cross product of force and distance
+- moment is perpendicular with the plane of fore and distance 
+[[https://en.wikipedia.org/wiki/Torque][torque]] (wikipedia)
+
+\[ \mathbf{F} \times \mathbf{R
+} \]
+- *r*: position vector
+- *F*: force vector
+- \times : cross product
+
+
+
+* Vorticity Dynamics                                        :vortex:
+file:Vorticity_Dynamics.org
+- Vortex :: a mass of air, water, etc. that spins around very fast and pulls things into its centre (Oxford Dictionary)
+- Vortex :: [fn:Haller2005]
+
+
+- vortex line :: a line whose tangent is everywhere parallel to the local vorticity vector
+- vortex filament :: a vortex tube whose cross-section is of infinitesimal dimensions (extremely small).
+
+
+vortex can be quantified by:
+-  *circulation*
+- Q-criterion
+- \lambda-2
+** Vorticity - vector, \omega
+
+- Vorticity ::  twice the angular velocity, \( \nabla \times v \)
+- Angular velocity :: \omega \( \omega = 0.5 \nabla \times v \)
+*physical meaning:*
+- vorticity meansures the *solid body like rotation* of a material point, p', that neighbors the primary material point, p (panton)
+
+*Features*:
+- \nabla \cdot \omega = 0 : vorticity is divergence free
+- \nabla \times \nabla \phi =0
+
+- the existence of vorticity indicates that viscous effects are important
+
+*why does fluid particles rotate?*
+it due to unbalanced shear stress
+
+- Roughly speaking, Vorticity dynamics  offers a method to separate a flow into viscous and  inviscid effects.
+** Q-criterion-- Hunt, Wray & Moin 1988
+
+velocity gradient, \nabla v
+ \nabla v = S + \Omega
+where, S is rate-of-strain tensor, and *\Omega* is vorticity tensor
+
+
+** Vortex shedding from an airfoil in low Re flow
+S. Yarusevych, 2009, J. fluid Mech.
+On vortex shedding from an airfoil in low-Reynolds-number flows
+** Vortex vs Eddy
+- vortices don't necessarily include turbulence
+- eddy is used to describe turbulence
+
+https://www.researchgate.net/post/What_is_the_difference_between_a_vortex_and_an_eddy2
+
+ a good start for learning the subtleties of vortex flow, and the relation to coherent structures (CS).
+- Jeong and Hussain "On the identification of a vortex", J Fluid Mechanics, 285, p69-94 (1995) 
+
+
+
+
+** 2D vortex
+V_\theta = \Gamma /(2 \pi r)
+V_r = 0
+V_z = 0
+
+> Anderson 5.1
+
+** 3D vortex filaments
+vortex-filament.pdf
+
+
+** vortex flow : fourth elementary flow
+
+all the streamlines are concentric circles about a given point
+- the velocity along any given circular streamline be constant
+- velocity vary from one streamline to another inversely with distance from the common center.
+*** Feature/Property
+- *physically possible incompressible at every point*
+\[ 
+\nabla \dot \mathbf{v} = 0
+\]
+- irrotational at every point except the origin
+\[ 
+\nabla \times \mathbf{v} = 0
+\]
+
+- tangental velocity
+\[
+v_{\theta} = \frac{\Gamma}{2\pi r}
+\]
+
+
+
+** Irrotational(Free) vortex
+- potential (free) vortex flow :: a flow with circular paths around a central point
+such that the *velocity* distribution still satisfies the irrotational condition : curl(v)=0
+
+\( \nabla \times \mathbf{v}=0 \) 
+(i.e.
+the fluid particles don't rotate about their own centers but simply move on circular path.
+- no radial velocity
+
+in a cylindrical coordinate ( r, \theta, z)
+For 2D potential vortex, u_z =0, u_r =0
+\[
+u_{\theta} = \frac{1}{r} \frac{\partial \phi}{\partial \theta}
+=\frac{\partial \Psi}{\partial r}
+\]
+#+CAPTION: tangential velocity of potential vortex  vs r
+file:C:\Users\exw692\Dropbox\Emacs\figures\tangential_v_potential_vortex.png
+
+
+The origin (center) of the potential vortex is considered as a singularity point in
+the flow since the velocity goes to infinity at this point
+
+- If the contour encircles the potential vortex origin, the circulation will be non-zero. 
+- If the contour does not encircle any singularities, however, the circulation will be zero.
+
+**  Kelvin's Circulation Theorem
+>   5.2, Kundu
+
+**  Helmhotz's Vortex Theorems
+
+**  Vorticity Equation in a Nonrotating Frame
+
+**  Vortex Sheet
+
+** References
+- 3.14 anderson
+- 2.7 Pope
+- G.Haller,2005,J.Fluid Mech. , an objective definition of a vortex
+
+- Kundu, Pijush K., and Ira M. Cohen. Fluid Mechanics. 6th ed. Academic Press, 2015. ISBN: 9780124059351.
+
+-    Chapter 5: Vorticity Dynamics
+        5.1: Introduction
+      
+        5.3: Helmhotz's Vortex Theorems
+  
+        5.4: Vorticity Equation in a Nonrotating Frame
+
+        5.8: Vortex Sheet
+
+
+
+*** text books for vortex theory
+Chapter 13, incompressible flow, Panton
+3.14, 5.1 Fundamentals of  Aerodynamics, John Anderson
+Milne-Thomsen, 1952
+** footnotes
+[fn:Haller2005] G.Haller,2005,J.Fluid Mech. , an objective definition of a vortex
+* classication of flows
+flow is a function of time and space
+** division of flows with respect to time
+- steady flow- time independent, \partial u/\partial t =0
+- unsteady flow- time dependent
+- Quasi-steady flow - slow changes with time
+** division of flows with respect to space
+- Uniform flow :: – constant velocity at all space at an instant time, flow is space independent, velocity is a function of time only, *u* =f(t).
+- Non-uniform flow – varied velocity at space
+* Dimensional Analysis and Similarity
+Definition
+
+- dimesional analysis :: 
+ Why do we need dimensional analsis?
+- use smaller model in the lab rather than full size Prototype
+x
+
+what, why, how, applicaton?
+** Parameters
+*** Peclet number -- Pe
+Pe = convection strength / diffusion strength = \rho u / \Gamma x
+
+
+*** Froude number
+\begin{equation}
+F_r=\frac{U}{\sqrt{gL} }
+\end{equation}
+where $U$ is  characteristic flow velocity, $g$ is in general a characteristic external field, and $L$ is a characteristic length. 
+
+** Introduction 
+**  The Principle of Dimensional Homogeneity 288
+
+**  The Pi Theorem 294
+
+**  Nondimensionalization of the Basic Equations 304
+
+**  Modeling and Similarity 313
+** Summary 325
+** Problems 325
+** Word Problems 333
+** Fundamentals of Engineering Exam Problems 334
+** Comprehensive Problems 334
+** Design Projects 335
+** References 
+ch5, white Frank fluid mechanics, 8th
+1.7, 1.8  John Anderson
+* FAQ
+
+* Footnotes
+
+
+
+[fn:anderson2010fundamentals] anderson fundamental of aerodynamics, 2010
+
+[fn:convection] https://en.wikipedia.org/wiki/Convection
+[fn:henserson1966] Henderson, F. M., Open Channel Flow, Macmillan, New York, 1966.
+
+[fn:prandtl] Erhard, P., et al. Prandtl-essentials of fluid mechanics. Vol. 158. Springer Science & Business Media, 2010.
+
+[fn:cunge1980] Cunge J, Holly F, Verwey A (1980) Practical aspects of computational river hydraulics. Pitman
+Advanced Publishing Program
+[fn:Corrsin] Corrsin, S. and Kistler, A. L. (1954), "The Free-Stream Boundaries of Turbulent Flows," NACA TN 3133.
+
+[fn:froude-number-wiki] https://en.wikipedia.org/wiki/Froude_number
+
+[fn:potential-flow-wiki] https://en.wikipedia.org/wiki/Potential_flow
+* Governing equations
+** conservation vs non-conservation form
+- convservation form: finite control volume fixed in space
+- non-conservation form : finite control volume of fixed mass moving with the flow
+
+- conservation form \rightarrow flux variables \rightarrow \( \frac{D}{Dt} \)
+- nonconservation form \rightarrow primitive variables \rightarrow  \( \frac{\partial}{\partial t} \)
+non-conservation form of continuity equation
+\[
+\frac{D \rho}{Dt} + \rho \nabla \cdot \mathbf{v} = 0
+\]
+
+
+conservation form:
+\[
+\frac{\partial \rho}{\partial t} +  \nabla \cdot(\rho \mathbf{v})
+ = 0
+\]
+- integral form \rightarrow don't require mathematical continuity
+- differential form \rightarrow assumes amthematical continuity
+- Equations for *viscous flow* \rightarrow Navier-Stokes Equations
+- Equations for *invisid flow* \rightarrow the Euler Equations
+
+** divergence theorem
+- relate *surface* and *volume* integrals of a *vector* field 
+\[
+\oiint_S \mathbf{A} \cdot \mathbf{dS} = \iiint_V (\nabla \cdot \mathbf{A}) \cdot dV
+\]
+** divergence of the velocity
+- divergence of the velocity :: time rate of change of a *moving fluid element* per *unit volume*.
+\[
+\nabla \cdot \mathbf{v}= \frac{1}{\delta V} \frac{D(\delta V)}{D t}
+\]
+- \( V \):volume
+
+
+** mass/continuity equation
+
+% mass equation
+\[
+ div(\rho \mathbf{v})=\nabla \cdot (\rho \mathbf{v}) = \frac{\partial \rho u_i}{\partial x_i}= \frac{\partial (\rho u)}{\partial x} + \frac{\partial (\rho v)}{\partial y}+  \frac{\partial (\rho w)}{\partial z} 
+\]
+\begin{equation}
+  \frac{\partial \rho}{\partial t}+ \nabla \cdot (\rho \mathbf{v}) =m 
+\end{equation}
+or 
+		
+\begin{equation}
+  \frac{\partial \rho}{\partial t}+ \frac{\partial \rho u_i}{\partial x_i} =0
+\end{equation}
+	
+or
+\begin{equation}
+  \frac{\partial \rho}{\partial t}+ \frac{\partial (\rho u)}{\partial x} + \frac{\partial (\rho v)}{\partial y}+  \frac{\partial (\rho w)}{\partial z}  =0
+\end{equation}
+		
+** Momentum Equation
+physical principle : *F* =m *a* ( Newton's second law)
+ sources of force
+force types: body forces and surface forces
+
+Turbulence models could be used to close 
+the Navier-Stokes Equations.
+
+#+CAPTION: Newton's second law in diagramatic form:
+#+NAME: body and surface forces ( Anderson, CFD the basics with application)
+file:C:\Users\exw692\Dropbox\Emacs\figures\body-surface-forces.png
+
+\begin{equation
+\frac{ \partial (\rho \mathbf {v})}{\partial t}+ \nabla \cdot (\rho \mathbf{vv}) = - \nabla p + \nabla \cdot \mathbf{\tau} 
+\end{equation}
+
+\begin{equation}
+  \frac{\partial \rho u_i }{\partial t} + \frac{\partial \rho u_i u_j}{\partial x_j}
+  = -\frac{\partial p}{\partial x_i} +
+ \frac{\partial T_{ij}}{\partial x_j}
++ \rho g_i
+\end{equation}
+
+\begin{equation}
+T_{ij}=\mu ( \tau_{ij} ^s-\frac{2}{3}\mu \delta _{ij} \frac{\partial u_j}{\partial x_j}) 
+\end{equation}		
+(theory guide,fluent)
+
+\begin{equation}
+  \frac{\partial \rho u_i }{\partial t} + \frac{\partial \rho u_i u_j}{\partial x_j}
+  = -\frac{\partial p}{\partial x_i} + \frac{\partial }{\partial x_j}(\mu \tau_{ij} ^s-\frac{2}{3}\mu \delta _{ij} \frac{\partial u_j}{\partial x_j}) + \rho g_i
+\end{equation}
+
+\begin{equation}	
+  \tau ^s _{ij} =(\frac{\partial u_j}{\partial x_i}+ \frac{\partial u_i}{\partial x_j})
+\end{equation}
+
+
+** Energy Equation 
+Rate of change of energy inside fluid element = net /flux of heat/ into element + rate of work done on element
+due to /body/ and /surface/ forces
+
+- heat flux :: energy per unit time per unit area perpendicular to the direction
+- e: internal energy per unit mass
+- v^2/2 :kinetic energy per unit mass
+
+		\begin{equation}
+		\frac{\partial \rho u_i}{\partial t} + \frac{\partial \rho u_i h_o}{\partial x_j} =
+		-\frac{\partial p}{\partial x_i} + \frac{\partial}{\partial x_j}(\lambda \frac{\partial T}{\partial x_j})
+		\end{equation}
+** Bernoulli's Equation	:Bernoulli's equation: 	
+ Bernoulli equation is derived from *Euler equation* ( *momentum* equation for invisid flow)
+*** assumption* of Bernoulli's Equation:
+- invisid
+- no external force ( only body force)
+- constant along streamline for rotational flow ( curl v !=0 )
+- constant at everywhere for irrotational flow
+- incompressible
+- no friction
+** Equation of State for Ideal Gas
+
+** Navier-Stokes equations
+complete Navier-Stokes equations are *elliptic* nautre
+
+*** conservation form
+\begin{equation}
+	\frac{\partial \rho \phi}{\partial t} +div(\rho \mathbf{u}\phi) = div(\Gamma grad \phi) + S
+\end{equation}
+or
+\begin{equation}
+\frac{\partial \rho \phi}{\partial t} +\frac{\partial \rho \phi u}{\partial x} + \frac{\partial \rho \phi v}{\partial y} + \frac{\partial \rho \phi w}{\partial z}= \frac{\partial}{\partial x}(\Gamma \frac{\partial \phi}{\partial x}) + \frac{\partial}{\partial y}(\Gamma \frac{\partial \phi}{\partial y}) + \frac{\partial}{\partial z}(\Gamma \frac{\partial \phi}{\partial z}) + S
+\end{equation}
+
+$\frac{\partial \rho \phi}{\partial t}$, transient term
+
+$ div(\rho \mathbf{u}\phi) $, convective term
+
+$ div(\Gamma grad \phi)  $, diffusive term
+
+table
+
+\begin{tabular}{|c|c|c|c|}
+	Equation & $ \phi $ & $ \Gamma $ & $ S $\\
+	continuity & 1 & 0& 0 \\
+	momentum & $ u_i $ & $ \mu $ & $-\frac{\partial p}{\partial x_i} + S_i  $\\
+	energy & $ T $ & $ \frac{k}{c} $ & $ S_T $\\
+\end{tabular}
+
+*** non-conservation form
+\begin{equation}
+\rho (\frac{\partial \phi}{\partial t}+ u \frac{\partial  \phi }{\partial x} +v \frac{\partial  \phi }{\partial y} + w \frac{\partial \phi }{\partial z})  =div(\Gamma grad \phi) + S
+\end{equation}
+
+
+\( S \), source term
+
+	
+*** Navier Stokes Equations for Incompressible flow
+\begin{equation}
+  \frac{\partial u_i}{\partial x_i} =0
+\end{equation}
+\begin{equation}
+	\frac{\partial  u_i }{\partial t} + u_j \frac{\partial  u_i}{\partial x_j}
+	= -\frac{1}{\rho} \frac{\partial p}{\partial x_i} + g_i + \frac{1}{\rho} \frac{\partial }{\partial x_j}(\mu \frac{\partial u_i}{\partial x_j})
+\end{equation}
+	
+	
+
+
+\section{Turbulence}
+
+
+** Reynolds number and y plus 
+
+Reynolds number = inertial force/viscous force
+
+\begin{equation}
+Re_x=\frac{\rho U_\infty L}{\mu}
+\end{equation}
+
+\begin{equation}
+C_x=\frac{0.026}{Re_x^{1/7}}
+\end{equation}
+
+\begin{equation}
+\tau_{wall}=\frac{\rho C_f U_\infty ^2}{2}
+\end{equation}
+
+\begin{equation}
+U_{fric}=\sqrt{\frac{\tau _{wall}}{\rho}}
+\end{equation}
+
+\begin{equation}
+\Delta S=\frac{y^+\mu}{\rho U_{fric}}
+\end{equation}
+* Ideal flow
+** ideal flow :perfect flow:
+- ideal/perfect fluid :: inviscid, incompressbile [P205, aerodynamics, Anderson]
+- *ideal fluid* should not be confused with *ideal gas*
+ideal fluid != ideal gas
+
+
+ Chapter 18: Ideal Flows in a Plane
+Panton, Ronald L. Incompressible Flow. 4th ed. Wiley, 2013. ISBN: 9781118013434.
+    Chapter 6: Ideal Flow (Kundu)
+        6.1: Relevance of Irrotational Constant-Density Flow Theory
+        6.2: Two-Dimensional Stream Function and Velocity Potential
+        6.3: Construction of Elementary Flows in Two Dimensions
+        6.4: Complex Potential
+        6.5: Forces on a Two-Dimensional Body; Blasius Theorem; Kutta-Zhukhovsky Lift Theorem
+        6.8: Axisymmetric Ideal Flow
+* Incompressible flow-panton
+
+file:incompressible-flow-panton.org
+* Incompressible Inviscid Flow :inviscid_flow:
+*Definition:*
+- Inviscid flow ::  no net viscous forces
+
+invisid flow = Euler flow (cause the Governing Eq of inviscid flow is  Euler Eqs)
+
+
+
+inviscid flow vs vorticity
+- inviscid flows can contain vorticity
+
+** Benefits:
+
+** Limits:
+no shear force, thus not accurate for drag calculation of wing/airfoil
+
+** Reference
+Chapter 3, Anderson, 
+https://en.wikipedia.org/wiki/Inviscid_flow
+http://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node49.html
+* Potential flow
+file:potential-flow.org
+* multiphase flow
+free surface is a sub-domain of multiphase flow
+** reference
+chapter 8, Prandtle-essentials of fluid mechanics [fn:prandtl]
+Fundamentals of Multiphase Flow, Brennen, Christopher Earls (2005) ([[https://authors.library.caltech.edu/25021/][download]])
+** multiphase modelling
+[[http://eis.bris.ac.uk/~memag/Teaching/Multi/Modelling.pdf][multiphase modelling (Uni of Britstol) ]]
+* Ocean Engineering
+[[https://www.worldscientific.com/series/asoe][advanced Series on Ocean Engineering]]
+ Computational Wave Dynamics
+By (author): Hitoshi Gotoh (Kyoto University, Japan), Akio Okayasu (Tokyo University of Marine Science and Technology, Japan), Yasunori Watanabe (Hokkaido University, Japan)
+
+
+Volume 26
+Hydrodynamics Around Cylindrical Structures. Revised Edition
+By (author): B Mutlu Sumer (Technical University of Denmark, Denmark), Jørgen Fredsøe (Technical University of Denmark, Denmark)
+
+
+ Waves and Wave Forces on Coastal and Ocean Structures
+By (author): Robert T Hudspeth (Oregon State University, USA)
+
+ Theory and Applications of Ocean Surface Waves: Part 1: Linear AspectsPart 2: Nonlinear Aspects
+By (author): C Mei Chiang (MIT), Michael Stiassnie (Technion-Israel Institute of Technology, Israel), Dick K-P Yue (MIT)
+
+
+    The Applied Dynamics of Ocean Surface Waves, Wiley-Interscience (1983), World Scientific (1989).
+    Mathematical Analysis in Engineering , Cambridge University Press, (1994).
+    Theory and Applications of Ocean Surface Waves: Part I, Linear Aspects; Part II, Nonlinear Aspects,(expanded edition of The Applied Dynamics of Ocean Surface Waves) , with Michael Stiassnie and Dick K. P. Yue. World Scientific (2005).
+
+Chapters in Books:
+
+    “Basic Gravity Wave Theory”, Chapter 2 in Handbook of Ocean Engineering,(John Herbich, ed.), Gulf Publishing Co., 1990.
+    “Wave-Seabed Interactions” in The Sea – Ocean Engineering Science ,(B. LeMehaute and D. Hanes, eds), Wiley Interscience, 1990.
+    “Longshore Bars and Bragg Resonance” with T. Hara and J.Yu Chap. 20 inGeomorphological Fluid Mechanics(N.J. Balmforth and A. Provenzale, eds.), Springer Verlag, 2001.
+    “Mud Flow – Slow and Fast” with K.-F. Liu and M. Yuhi, Chap. 22 inGeomorphological Fluid Mechanics(N.J. Balmforth and A. Provenzale, eds.), Springer Verlag, 2001.
+
+
+
+Chiang C Mei (MIT USA) the applied Dynamics of ocean surface waves
+water wave mechanics for enginneers and Scientists, Robert G Dean,  (Univ. Florida, USA)
+Mechanics of Coastal sediement transport, Jorgon, Frodsoe, (Tech. Univ. Denmark)
+Coastal Bottom Boundary layers and Sediment transport, Peter Nielsen (Univ. queensland, australia)
+
+* open channel flow
+the book by Cunge et al [fn:cunge1980]  is a /classical reference/ for hydraulic engineers
+note is from book[fn:henserson1966]
+MIT Course note [[https://ocw.mit.edu/courses/earth-atmospheric-and-planetary-sciences/12-090-introduction-to-fluid-motions-sediment-transport-and-current-generated-sedimentary-structures-fall-2006/course-textbook/ch5.pdf][Chapter 5 open channel flow]]
+
+
+** Symbols
+- Q : discharge
+- A : cross section area
+- V : velocity
+** Definitions
+-  discharge :: Q=AV
+- Hydroinformatics :: management of information related to the water sector using ICT tools
+* head drop along open channel flow
+head loss:
+- major losses: friction losses along channel
+- minor losses: channel expansion and contraction
+
+
+** convection and diffusion
+
+- convection(advection) :: transport associated with
+ /the flow of a fluid/
+- diffusion :: transport associated with /random motions of molecules within a fluid/
+*diffusion* has two primary properties:
+- random in nature
+- transport is from regions of high concentration to low concentration,
+ with an equilibrium state of uniform concentration
+
+Quacquarelli Symonds (QS)
+QS World University Rankings
+
+maxim : a well-known phrase
+Deng Xiaoping’s maxim, “hide your strength, bide your time, and never take a lead”
+
+
+SVM synthetic vorton method
+FSM forward stepwise method
+Hull: the bottom of the ship that go into the water
+Ambient: adj, related to surrounding area
+Omni- prefix, everywhere or everything
+Anthropogenic,/ˌæn.θrə.pəˈdʒen.ɪk/ adj, caused by humans or their activities
+- Ambient noise :: sound received by an all directional sensor which is not from the sensor itself or the manner in which it is mounted
+- self-noise :: Noise from the sensor or its mounting
+- stochastic :: adj, random probability
+<> ensemble average
+
+Navier-Stokes > parabolic problem
+\ell 
+- InfiniBand (IB) ::  a computer-networking communications standard used in HPC
+- schedular :: (computing) a program that arranges jobs or a computer's operations into an appropriate order
+GPU: Graphics Processing Units
+
+subsidize
+subsidize somebody/something to give money to somebody or an organization to help pay for something; to give a subsidy
+
+let nature take its course
+to allow someone or something to live or die naturally:
+He could be kept alive artificially, but I think it would be kinder to let nature take its course.
+
+denounce communism 
+Still think Christianity is special? All ideology works the same way, just under different flags.
+shrine
+a place where people come to worship because it is connected with a holy person or event
+Yasukuni Shrine 
+Detective Conan
+
+similar research area: wing, helicopter
+
+- octave :: noun, the distance between two musical notes that are eight notes apart
+
+- trigonometric functions
+ (also called circular/angle/goniometric  functions)
+- trigonometric functions :: functions of an angle, such sine, cosine, and tangent.
+ They relate the angles of a triangle to the lengths of its sides.
+- [[https://en.wikipedia.org/wiki/Trigonometric_functions][Trigonometric functions]] are important in the study of *triangles* and *modeling periodic phenomena*
+
+attenuation, fading (weakening in force or intensity) 
+"attenuation in the volume of the sound
+
+
+compliance
+- compliance (with something) the practice of obeying rules or requests made by people in authority procedures that must be followed to ensure full compliance with the law Safety measures were carried out in compliance with paragraph 6 of the building regulations.
+
+poisson equation
+
+** energy equation for open channel modelling
+** static pressure vs dynamic pressure vs total pressure
+ static pressure=pressure (fluid dynamics)
+- can be identified for every point in a fluid flow field.
+- regardless of whether the fluid is in motion
+- can be measured using an aneroid, Bourdon tube, mercury colum
+
+when referring to pressure in fluid dynamics,
+ many authors use the term static pressure to distinguish it
+ from total pressure and dynamic pressure; 
+
+The concepts of *total pressure* and *dynamic pressure* 
+arise from Bernoulli's equation [fn:static-pressure]
+- Bernoulli's equation is fundamental to the dynamics of incompressible fluids
+changes in elevation are insignificant and can be ignored. With this simplification, Bernoulli’s equation for incompressible flows can be expressed as[8][9][10]
+
+    P + 1/ 2 ρ v^2 = P_0
+
+where:
+- P: static pressure,
+- 1/ 2 ρ v^2 : dynamic pressure
+-  ρ : density
+- v: velocity
+-P_0 :total pressure
+
+Every point in a steadily flowing fluid, regardless of the fluid speed at that point, has its own static pressure P
+ P, dynamic pressure q , and total pressure P_0 
+
+ Static pressure and dynamic pressure are likely to vary significantly throughout the fluid
+ but total pressure is constant along each streamline. 
+In irrotational flow, total pressure is the same on all streamlines and is therefore constant throughout the flow.
+
+The simplified form of Bernoulli's equation can be summarised in the following memorable word equation:[12][13][14]
+
+    static pressure + dynamic pressure = total pressure. 
+
+total/dynamic pressure
+-cannot be measured using an aneroid, Bourdon tube or mercury column
+
+Re for wing is based on mean aerodynamic chord [fn:wing-Re]
+- pressure coefficient
+
+
+** modelling open channel flow
+[[C:\Users\exw692\OneDrive\academic\Projects\open_channel_flow\References\modeling_open_channel_flow.pdf][Saint-Venant Equations for Open Channel Flow]]
+
+appliction area examples:river flow forecasting, canal operations, sewer modeling, etc[fn:cunge1980]
+
+
+
+
+
+* PPT/Slides
+- viscous fluid flow,
+http://web.iitd.ac.in/~pmvs/courses/aml715/
+
+
+* viscous flow
+categories of viscous flow:
+- laminar flow
+- turbulent flow
+
+
+
+* Laminar Flow
+file:LaminarFlow.org
+* Turbulent Flow
+file:turbulence.org
+* Turbulence Modelling
+file:Turbulence_Modelling.org
+
+* units of measurement
+** basic units
+meter \rightarrow length
+kologram \rightarrow mass
+second \rightarrow time
+Kelvin \rightarrow temperature
+* video/Movie/animation
+ITSC (Innovative Technology Solutions Corporation) Fluids Movie Archive, http://www.maths.manchester.ac.uk/~mheil/MATTHIAS/Fluid-Animations/Fluid-Animations.html
+http://www.swl.rwth-aachen.de/en/numerical-simulation/
+
+* Visual Resources
+http://web.mit.edu/hml/ncfmf.html
+http://web.mit.edu/fluids-modules/www/

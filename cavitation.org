@@ -1,0 +1,34 @@
+* theory
+- cavitation ::
+
+*How to quantify it?*
+pressure and velocity near the cavitation location
+which quantities are used for describing cavitation?
+
+** cavitation number
+- \sigma :[[http://authors.library.caltech.edu/25021/1/chap5.pdf][cavitation number]]
+it is conventional to characterize how close the pressure 
+in the liquid flow is to the vapor pressure 
+(and therefore the potential for cavitation) by means of the cavitation number
+\[
+\sigma = \frac{p_\infty - p_V (T_\infty)}{0.5 \rho_L U_\infty^2}
+\]
+ cavitation number expresses the relationship 
+between the difference of a /local absolute pressure/ from /the vapor pressure/ and /the kinetic energy per volume/,
+ and is used to characterize the potential of the flow to cavitate
+
+* cavitation phenomen in hydro-turbine
+keywords: Cavitation, Fluid Machinery, Hydraulic 
+Cavitation is not common for MCT[fn:bahaj2007power]. 
+
+a review on Cavitation in fluid machinery and hydraulic structures[fn:arndt1981cavitation]
+
+* cavitation modeling 
+** using Fluent
+file:C:\akmkemin\Backup\ANSYS Tutorial\Tutorial\Multiphase\lecture_multiphase_flow_ansys_fluent_v16.pdf
+
+* Footnotes
+
+[fn:arndt1981cavitation] Arndt, Roger EA. "Cavitation in fluid machinery and hydraulic structures." Annual Review of Fluid Mechanics 13.1 (1981): 273-326.
+
+[fn:bahaj2007power] Bahaj, A. S., et al. "Power and thrust measurements of marine current turbines under various hydrodynamic flow conditions in a cavitation tunnel and a towing tank." Renewable energy 32.3 (2007): 407-426.

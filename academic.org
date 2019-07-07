@@ -1,0 +1,150 @@
+* note taking
+ Cronell note taking 
+* IF -- impact factor
+https://www.scijournal.org/index.html
+
+http://mjl.clarivate.com/cgi-bin/jrnlst/jlresults.cgi?PC=K&SC=AI
+* [[https://en.wikipedia.org/wiki/Fellow_of_the_Royal_Society][fellow of the royal society]]
+* Databases
+
+-  For paper
+
+Scopus
+
+web of science
+
+知网
+
+万方
+
+arXiv.org
+** others
+Box of Broadcasts (BOB) -- off-air TV and Radio-- only available in the UK
+
+
+
+** ref
+https://www.library.qmul.ac.uk/subject-guides/mathematical-sciences/databases/
+
+** For patent
+Derwent world patents index
+Delphion， Aureka，Dialog，STN，Questl-Orbit，Micropatent的PatentWeb
+** For Engineering
+Wiley-blackwell
+ASCE - america society of cival engineering
+ASME - america society of Mechanical Engnieering
+** For Dissertation
+ProQuest
+PQDD
+
+** accounts and passwords
+
+入口地址： 帐号 密码 http://www.cnki.net whgl whgl
+
+http://g.wanfangdata.com.cn ccbupt ccbupt 
+
+http://www.sgst.cn 注册即可获取全文文献！！免费！
+
+http://library.xartvu.sn.cn/kns50/Navigator.aspx?ID=CJFD 知网镜像，有人数限制！ 
+
+http://cnki.xminfo.net.cn:8080/kns50/single_index.aspx 有人数限制！大家用完自觉退出！
+
+http://library.xartvu.sn.cn/kns50/index.aspx cnki直接入口，直接登录，不用帐号！ 
+
+http://library.xartvu.sn.cn/kns50/ cnki直接入口，2002年后文献 
+
+http://www.cfed.cnki.net/kns50/classical/singledbindex.aspx?ID=9 教育期刊全文文献 
+
+备注：由于免费资源公布后容易失效，我将在下面网址不定期更新帐号信息：免费论文下载 http://fabiaolunwen.org.cn/mianfei.html 
+
+2、免费国外论文资源
+
+入口地址： 帐号 密码 http://proquest.umi.com/pqdweb?RQT=341 proquestpe education
+
+https://slb.mmm.edu/login jmittica Greenland
+
+http://www.ourglocal.com/ 注：学术会议，国内外都有，要发论文的可以关注！ 
+
+http://www.scirus.com/ SCI论文检索！ 
+
+http://www.hznet.com.cn/zwqk/ Internet免费全文科技期刊!
+
+http://highwire.stanford.edu/lists/freeart.dtl 
+
+HighWire Press由斯坦福大学HighWire出版社提供，是世界最大的科学免费期刊库，目前可以提供免费全文期刊1000余种,100万多篇免费全文。
+
+http://www.doaj.org/ 免费期刊指南（Directory of Open Access Journals） 共收录期刊近2000种，其中，500余种现期可以检索、浏览、下载全文，整库包含文章达80000篇(searchable on article level)。 学科范围为综合类。 
+
+http://library.wustl.edu/subjects/life/free.html 全文免费下载！！ 
+
+3、国外硕博毕业论文全文下载 
+
+Nottingham大学硕博论文库 http://etheses.nottingham.ac.uk/ 
+
+Virginia工大免费硕博论文库 http://scholar.lib.vt.edu/theses/ 
+
+Waterloo大学免费硕博论文 http://www.lib.uwaterloo.ca/theses/ 
+
+OhioState大学学位论文库 http://www.ohiolink.edu/etd/search.cgi 
+
+备注：已经尝试过，可全文下载，有的论文附有程序！公网如果网速慢可开出国代理。 
+
+附带转载一免费全文期刊大全电子书，点此下载：免费期刊论文 或者在浏览器直接复制粘贴：http://fabiaolunwen.org.cn/免费全文期刊大全.rar
+
+以及论文期刊查询：http://www.paper.edu.cn/journal.php
+
+* Academic ranking
+
+** CSU
+within 5 years
+
+- lectuator - 18 points 
+- vice prof. - 45 points
+
+| JCR | points |
+| Q1  | 7      |
+| Q2  | 5      |
+| Q3  | 3      |
+| Q4  | 1      |
+
+- you must have one paper in JRC Q1
+* tips
+1. 善用与老师的伙伴关系，不断 Research
+2. 大量阅读和老师提点，进入研究领域: 让他不停的念书、不停的报告，老师也只是不停的开书目
+3. 循序渐进地练习论文写作
+
+4. 研究生如何训练自己
+每天、每周或每个月给自己一个挑战，要每隔一段时间就给自己一个挑战，挑战一个你做不到的东西，你不一定要求自己每次都能顺利克服那个挑战，但是要努力去尝试
+论文的写作是个训练过程，不能苛求完成精典之作
+1. 论文的正式写作
+第一步你必须对所关心的领域中，有用的书籍或是数据非常熟悉。 
+形成你的知识树, 只有一点，就是那重要的五、六本书要读好几遍。
+2. 掌握工具
+3. 突破学科间的界线, 最有创新的部份是发生在学科交会的地方
+4. 论文题目要有延展性
+对一个硕士生或博士生来说，如果选错了题目，就是失败，题目选对了，还有百分之七十胜利的机会。这个问题值得研一、博一的学生好好思考。你的第一年其实就是要花在这上面，你要不断的跟老师商量寻找一个有意义、有延展性的问题，而且不要太难。
+5. 养成遵照学术格式的写作习惯
+6. 善用图书馆
+定期去 browse 新到的书
+7. 留下时间，精致思考
+8. 找到学习的楷模
+把一篇我最喜欢的论文放在旁边，虽然他写的题目跟我写的都没关系，不过我每次都看他如何写，看看他的注脚、读几行，然后我就开始写。学习它里面如何思考、如何构思、如何照顾全体、如何用英文作脚注
+9. 用两条腿走路，练习培养自己的兴趣
+做研究生的时代，固然应该把所有的心思都放在学业上，探索你所要探索的那些问题，可是那只是你的一只脚，另外还有一只脚是要学习培养一、两种兴趣。
+10. 营造卓越的大学，分享学术的氛围
+11. 要追溯就要追溯相关领域的发展进程。站在巨人的肩膀上是很容易进行创新性的科研的。因此，研读他人的论文就显得尤为重要，这项工作一定要在科研前做好。
+选择了好的导师，就是选择了好的出路。他们那里分了几个团队（或比较强的是哪2-3个团队），团队的带头人分别是谁，团队成员中的骨干分别是谁，团队的方向和特色是什么。不要太强调自己的兴趣
+12. 制定计划:第一是要以周为单位；第二是所制定的是以学习内容为主的计划，第三是要留有足够宽裕的时间。
+13. 两个关键: 坚持; 质量. 能用自己的语言对全文进行复述和仅仅知道了论文的大概内容是两个完全不同的境界，我们需要的是前者
+14. 每天坚持看两小时最新文献
+写论文之前一定要重新查一遍文献。
+* 院士、长江、百人、千人、万人、青千、杰青
+https://www.zhihu.com/question/23679630
+
+青千：指中组部千人计划中的青年千人计划；
+
+青拔：指中组部万人计划中的青年拔尖人才；
+
+青长：指教育部长江学者奖励计划中的青年长江学者；
+
+优青：指国家自然科学基金委设立的优秀青年科学基金项目。

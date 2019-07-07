@@ -1,0 +1,265 @@
+* source files
+- transient.case  :: scripts for paraview
+
+- automate naming of files
+  attach =_*= at the end of filename
+
+** transient.case
+FORMAT
+type: ensight gold
+GEOMETRY
+model: solution.pval.unsteady_1.geo
+VARIABLE
+scalar per node: density   solution.pval.unsteady_*.density
+vector per node: v   solution.pval.unsteady_*.v
+scalar per node: pressure   solution.pval.unsteady_*.pressure
+scalar per node: temperature   solution.pval.unsteady_*.temperature
+
+
+TIME
+time set: 1
+number of steps: 1
+filename start number: 61
+filename increment: 1
+time values: 1.8385297551528
+
+
+* How to
+1. 3D video
+2. Q-criteria
+** 3D video
+software: Paraview
+
+***  steps
+1. record all commands
+     
+   ~tool/start traces~
+
+   References:
+     exercise 3.1 creating a Python script trace, tutorial guide
+
+2. get an image 
+
+   a. slip the Computational domain
+   b. change background to white
+c. save an image
+
+   Reference:
+   
+  [[https://blog.kitware.com/exporting-vector-graphics-in-paraview-4-0/][export vector graphics]]
+3. get multiple images with Python scripts
+60 time steps
+
+4.  image >> video
+
+*** Reference video
+[[http://www.eng.cam.ac.uk/profiles/bnu20][Bryn Noel Ubald]]- An instrumented turbine blade – Another unique perspective
+https://www.youtube.com/watch?v=JKJnkYFyskw&index=7&list=PLpzImLbDbsyCrFS2fXlyaiFXb87JdZpm-&pbjreload=10
+
+
+
+*** change contour variable
+
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+# create a new 'EnSight Reader'
+transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient.case')
+transientcase.PointArrays = ['density', 'v', 'pressure', 'temperature']
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+# uncomment following to set a specific view size
+# renderView1.ViewSize = [863, 837]
+
+# get color transfer function/color map for 'density'
+densityLUT = GetColorTransferFunction('density')
+
+# show data in view
+transientcaseDisplay = Show(transientcase, renderView1)
+# trace defaults for the display properties.
+transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+transientcaseDisplay.LookupTable = densityLUT
+transientcaseDisplay.GlyphType = 'Arrow'
+transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+# reset view to fit data
+renderView1.ResetCamera()
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get opacity transfer function/opacity map for 'density'
+densityPWF = GetOpacityTransferFunction('density')
+
+# set scalar coloring
+ColorBy(transientcaseDisplay, ('POINTS', 'v'))
+
+# rescale color and/or opacity maps used to include current data range
+transientcaseDisplay.RescaleTransferFunctionToDataRange(True)
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get color transfer function/color map for 'v'
+vLUT = GetColorTransferFunction('v')
+
+# get opacity transfer function/opacity map for 'v'
+vPWF = GetOpacityTransferFunction('v')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.21849990739250558, 0.0, 0.9661907958485202]
+renderView1.CameraFocalPoint = [-0.21849990739250558, 0.0, 0.0]
+renderView1.CameraParallelScale = 0.25006857916835856
+
+
+**** change contour variable from 'density'  to 'v'
+
+
+# set scalar coloring
+ColorBy(slice1Display, ('POINTS', 'v'))
+
+# rescale color and/or opacity maps used to include current data range
+slice1Display.RescaleTransferFunctionToDataRange(True)
+
+# show color bar/color legend
+slice1Display.SetScalarBarVisibility(renderView1, True)
+
+# get color transfer function/color map for 'v'
+vLUT = GetColorTransferFunction('v')
+
+# get opacity transfer function/opacity map for 'v'
+vPWF = GetOpacityTransferFunction('v')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.24175098022185249, 0.11823180090490217, 1.098500283147858]
+renderView1.CameraFocalPoint = [-0.20832480931184155, 0.12646538877612318, 0.00125895591456612]
+renderView1.CameraViewUp = [8.169175204111794e-05, 0.9999718249271369, 0.007506176013726962]
+renderView1.CameraParallelScale = 0.23481544622305758
+
+#### uncomment the following to render all views
+# RenderAllViews()
+# alternatively, if you want to write images, you can use SaveScreenshot(...).
+
+* Results
+1. 3D video similar to 
+2. Q-criteria
+3. Turbulent BL, shear layer
+
+* Script FAQ
+** camera placement
+# 'renderView1' is the view name
+# current camera placement for renderView1
+# #camera position
+renderView1.CameraPosition = [-0.22126314316421933, 0.12646846135388234, 1.0978252757245606]
+renderView1.CameraFocalPoint = [-0.2082859046961596, 0.12646846135388234, 0.00012075157365905824]
+renderView1.CameraParallelScale = 0.23481544622305758
+
+# at xy plane, zoom change z value only as below:
+left figure:
+
+    renderView1.CameraPosition = [-0.21849990739250558, 0.0, *2.0711157783058827* ]
+
+Right figure:
+
+    renderView1.CameraPosition = [-0.21849990739250558, 0.0, *1.1690908629767092* ]
+file:figures/python/cameraPosition.png
+
+as seen in the above figure, the smaller is z value , the bigger is the figure
+** To load the EnSight files using the  =transient.case= script
+
+#+BEGIN_SRC Python
+## create a new 'EnSight Reader'
+	transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/transient.case')
+	transientcase.PointArrays = ['density', 'v', 'pressure', 'temperature']
+#+END_SRC 
+
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+# create a new 'EnSight Reader'
+transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient.case')
+transientcase.PointArrays = ['v', 'density', 'pressure', 'temperature']
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+# uncomment following to set a specific view size
+# renderView1.ViewSize = [1111, 837]
+
+# get color transfer function/color map for 'density'
+densityLUT = GetColorTransferFunction('density')
+
+# show data in view
+transientcaseDisplay = Show(transientcase, renderView1)
+
+# trace defaults for the display properties.
+transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+transientcaseDisplay.LookupTable = densityLUT
+transientcaseDisplay.GlyphType = 'Arrow'
+transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+# reset view to fit data
+renderView1.ResetCamera()
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get opacity transfer function/opacity map for 'density'
+densityPWF = GetOpacityTransferFunction('density')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.21849990739250558, 0.0, 0.9661907958485202]
+renderView1.CameraFocalPoint = [-0.21849990739250558, 0.0, 0.0]
+renderView1.CameraParallelScale = 0.25006857916835856
+
+#### uncomment the following to render all views
+# RenderAllViews()
+# alternatively, if you want to write images, you can use SaveScreenshot(...).
+
+** NameError: name 'slice1Display_1' is not defined
+Traceback (most recent call last):
+
+solution:
+
+assign =active view= to =renderView1=
+
+    # get active view
+    renderView1 = GetActiveViewOrCreate('RenderView')
+** View
+# get active view and assign it to a variable, "renderView1"
+renderView1 = GetActiveViewOrCreate('RenderView')
+
+# set Background color as 'White'
+renderView1.Background =[1,1,1]
+
+# set image size
+renderView1.ViewSize = [1920, 1080]
+
+** Save screenshot
+
+
+# saving camera placements for all active views
+Version 1  
+
+SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/jet_64.png', view=renderView1, ImageResolution=[1920,1080])
+
+
+Version 2
+
+SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/jet_1.png', magnification=1, quality=100, view=renderView1)
+
+exercise, 2.25 tutorial, V5.6
+
+https://forgeanalytics.io/blog/saving-a-screenshot-in-paraview/
+https://www.paraview.org/Wiki/ParaView/Python/Screenshot
+** legend

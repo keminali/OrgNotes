@@ -1,0 +1,426 @@
+* Glossary
+- center of pressure ::  point about which moment is zero
+- aerodynamic centre :: point about which moment does not change with AOA
+
+* 2D aero
+** Low vs. high Reynolds number airfoils 
+
+
+Low Reynolds number airfoil flows are distinguished principally by the associated flow
+phenomenon termed a laminar separation bubble, which is the leading reason for the
+degradation of low Reynolds number airfoil performance relative to the performance
+of airfoils at higher Reynolds numbers.
+* 3D aero
+
+*  Kutta–Joukowski theorem
+Lift = f( \rho, V_\infty ,\Gamma)
+L=-\rho V_\infty \Gamma
+
+* stall and flow separation
+file:wiki/stall_flow_separation.org
+
+* Laminar separation bubble
+
+** ref
+shen thesis
+
+ Olaf Marxen, 2013, journal of fluid mechanics, Vortex formation and vortex breakup in a laminar separation bubble
+
+* thin airfoil theory
+Cl=2\pi \alpha
+
+C_{m,le} = - C_l /4
+
+
+4.7, anderson, 6th
+
+http://mercury.pr.erau.edu/~hayasd87/AE301/AE301_Group_Assignment_2b.pdf
+https://web.stanford.edu/~cantwell/AA210A_Course_Material/AA210A_Course_Notes/AA210_Fundamentals_of_Compressible_Flow_Ch_14_BJ_Cantwell.pdf
+
+http://www.dept.aoe.vt.edu/~devenpor/aoe5104/19.%20ThinAirfoilTheory.pdf
+* Linear Theory Aerodynamic Design and Analysis
+from the Virginia Tech Aircraft Design Information Sources pages
+
+a) Panel Methods, Lifting Systems
+
+The following references describe the "Standard NASA" methods, primarily developed for the U.S. SST Program;
+
+H.W. Carlson and W.D. Middleton, "A Numerical Method for the Design of Camber Surfaces of Supersonic Wings with Arbitrary Planforms," NASA TN-D-2341, June 1964.
+
+W.D. Middleton and H.W. Carlson, "Numerical Method of Estimating and Optimizing Supersonic Aerodynamic Characteristics of Arbitrary Planform Wings," Journal of Aircraft, Vol. 2, No. 4, Aug. 1965, pp. 261-265.
+
+H.W. Carlson and F.E. McLean, "Current Methods for Prediction and Minimization of Lift -Induced Drag at Supersonic Speeds," NASA TM-X-1275, Oct. 1966.
+
+R.B. Sorrells and D.S. Miller, "A Numerical Method for Design of Minimum-Drag Supersonic Wing Camber with Constraints on Pitching Moment and Surface Deformation," NASA TN D-7097, Dec. 1972.
+
+H.W. Carlson and D.S. Miller, "Numerical Methods for the Design and Analysis of Wings at Supersonic Speeds," NASA TN D-7713, Dec. 1974.
+
+D.S. Miller, H.W. Carlson, and W.D. Middleton, "A Linearized Theory Method of Constrained Optimization for Supersonic Cruise Wing Design," Proc. of the SCAR Conf., NASA CP-001, November 1976.
+
+H.W. Carlson and R.J. Mack, "Estimation of Leading-Edge Thrust for Supersonic Wings of Arbitrary Planform," NASA TP 1270, Oct. 1978.
+
+The following references describe the so-called "Boeing Code," developed for NASA Langley. It uses the methods described above, and the method used in the Harris Wave Drag citation below:
+
+W.D. Middleton, J.L. Lundry, and R.G. Coleman, "A System for Aerodynamic Design and Analysis of Supersonic Aircraft," Dec. 1980,
+
+    Part 1 - General Description and Theoretical Development, NASA CR-3351
+    Part 2 - User's Manual, NASA CR-3352
+    Part 3 - Computer Program Description, NASA CR-3353
+    Part 4 - Test Cases, NASA CR-3354 
+
+The following references highlight the work leading to the PAN AIR Code developed for NASA at Boeing;
+
+F.E. Ehlers, M.A. Epton, F.T. Johnson, A.E. Magnus, and P.E. Rubbert, "An Improved Higher Order Panel Method for Linearized Supersonic Flow," AIAA Paper No. 78-15, Jan. 1978.
+
+E.N. Tinoco, F.T. Johnson, and L.M. Freeman, "The Application of a Higher Order Panel Method to Realistic Supersonic Configurations," AIAA Paper No. 79-0274, Jan. 1979.
+
+A.E. Magnus and M.A. Epton, "PAN AIR - Computer Program for Predicting Subsonic or Supersonic Linear Potential Flows About Arbitrary Configurations Using a Higher Order Panel Method," Vol. I, Theory Document, NASA CR-3251, 1980.
+
+R.L. Carmichael and L.L. Erickson, "PAN AIR - A Higher Order Panel Method for Predicting Subsonic or Supersonic Linear Potential Flows About Arbitrary Configurations," AIAA Paper No. 81-1255, June 1981.
+
+E.N. Tinoco and P.E. Rubbert, "Panel Methods: PAN AIR," ICTS Short Course on "Computational Methods in Potential Aerodynamics," Amalfi, Italy, June 1982.
+
+The following references provide documentation of the Woodward Methods in use at Grumman;
+
+F. Woodward, E.N. Tinoco, and J.W. Larson, "Analysis and Design of Supersonic Wing-Body Combinations, Including Flow Properties in the Near Field," Part I - Theory and Applications, NASA CR-73106, 1967 (this method is known at Grumman as Woodward I).
+
+F.A. Woodward, "An Improved Method for the Aerodynamic Analysis of Wing-Body-Tail Configurations in Subsonic and Supersonic Flow," NASA CR-2228, Parts I and II, 1973 (this method is know at Grumman as Woodward II).
+
+A. Cenko, "Advances in Supersonic Configuration Design," AIAA Paper No. 79-0233, 1979.
+
+A. Cenko, "PAN AIR Applications to Complex Configurations," AIAA Paper No. 83-0007, Jan. 1983.
+
+A. Cenko, E. Tinoco, and J. Tustaniwskyj, "PAN AIR Applications to Mutual Interference Effects Due to Close Proximity," AIAA Paper No. 84-0217, Jan. 1984.
+
+M. Siclari, M. Visich, A. Cenko, B. Rosen, and W.H. Mason, "An Evaluation of NCOREL, PAN AIR and W12SC3 for the Prediction of Pressure on a Supersonic Maneuver Wing," AIAA Paper No. 84-0218, January 1984.
+
+R.E. Melnik and W.H. Mason, "Mass Flux Boundary Conditions in Linear Theory," AIAA J., Vol.22, No.11, November 1984, pp.1691-1692.
+
+b) Wave Drag
+
+M.C. Adams, "Determination of Shapes of Boattail Bodies of Revolution for Minimum Wave Drag," NACA TN 2550, 1951.
+
+W.T. Lord and E. Eminton, "Slender Bodies of Minimum Wave Drag," JAS, Aug. 1954, pp. 569-570.
+
+H.M. Parker, "Minimum-Drag Ducted and Pointed Bodies of Revolution Based on Linearized Supersonic Theory," NACA R-1213, 1954.
+
+K.C. Harder and C. Rennemann, Jr., "On Boattail Bodies of Revolution Having Minimum Wave Drag," NACA R-1271, 1955.
+
+M.A. Ramaswamy and S. Viswanathan, "Some Observations on the Adams Body of Minimum Wave Drag," Journal of Aircraft, Vol. 12, No. 12, Dec. 1975, pp. 1001-1002.
+
+The following two reports describe the extension of the transonic area rule to supersonic speeds. The extension was evidently carried out independently by Jones and Whitcomb simultaneously;
+
+R.T. Whitcomb and J.R. Sevier, Jr., "A Supersonic Area Rule and an Application to the Design of a Wing-Body Combination with High-Lift-Drag Ratios," NASA R-72, 1960.
+
+R.T. Jones, "Theory of Wing-Body Drag at Supersonic Speeds," NACA R-1284, 1956
+
+These references describe the numerical methods currently used to find the wave drag;
+
+E. Eminton, "On the Minimization and Numerical Evaluation of Wave Drag," RAE Report Aero 2564, Nov. 1955.
+
+E. Eminton and W.T. Lord, "Note on the Numerical Evaluation of the Wave Drag of Smooth Slender Bodies Using Optimum Area Distributions for Minimum Wave Drag," Journal of the Royal Aeronautical Society, Jan. 1956, pp. 61-63.
+
+E. Eminton, "On the Numerical Evaluation of the Drag Integral," ARC R&M No. 3341, Oct. 1961.
+
+R.V. Harris, Jr., "An Analysis and Correlation of Aircraft Wave Drag," NASA TMX 947, 1964.
+
+R.V. Harris, Jr., "A Numerical Technique for Analysis of Wave Drag at Lifting Conditions," NASA TN D-3586, May 1966.
+
+return to the table of contents ?
+
+direct comments and suggestions to W.H. Mason, mason@aoe.vt.edu 
+* useful websites
+Organizations and Societies
+Civilian
+Academy of Model Aeronautics
+http://www.modelaircraft.org/
+
+Aerospaceweb.org 
+http://www.aerospaceweb.org/
+
+Aircraft Electronics Association
+http://www.aea.net/
+
+Air Traffic Control Association
+http://www.atca.org
+
+Air Transport Association
+http://www.airlines.org/home/default.aspx
+
+Air Line Pilots Association
+http://www.alpa.org/
+
+American Aviation Historical Society
+http://www.aahs-online.org/
+
+American Helicopter Society (AHS) International
+http://www.vtol.org/index.html
+
+American Institute of Aeronautics and Astronautics http://www.aiaa.org/
+
+Association of Licensed Aircraft Engineers (ALAE)
+http://www.lae.mcmail.com/
+
+The Confederation of European Aerospace Societies (CEAS)
+http://www.ceas.org/
+
+European Space Agency
+http://www.esa.int/esaCP/index.html
+
+Experimental Aircraft Association
+http://www.eaa.org/
+
+General Aviation Manufacturers Association (GAMA)
+http://www.gama.aero/home.php
+
+International Business Aviation Council (IBAC)
+http://www.ibac.org/home.htm
+
+National Aeronautic Association
+http://www.naa.aero/
+
+National Business Aviation Association, Inc.
+http://www.nbaa.org/
+
+The Ninety-Nines, Inc, International Organization of Women Pilots 
+http://www.ninety-nines.org/
+
+Professional Aviation Maintenance Association 
+http://www.pama.org/
+
+Royal Aeronautical Society
+http://www.raes.org.uk/homepage.asp
+
+The Society of British Aerospace Companies (SBAC)
+http://www.sbac.co.uk
+
+Student Pilot Network
+http://www.ufly.com/
+
+Women in Aerospace
+http://www.womeninaerospace.org/
+
+Women in Aviation, International
+http://www.wai.org/
+
+Government/Military
+Air and Space Power Chronicles
+http://www.airpower.maxwell.af.mil/airchronicles/air-chronicles.html
+
+Air Force Link
+http://www.af.mil/
+
+Air Force Reserve
+http://www.afreserve.com/
+
+Air Force Space Command
+http://www.peterson.af.mil/hqafspc/
+
+Air National Guard
+http://www.goang.com/flashhome.aspx
+
+The Blue Angels Website
+http://www.blueangels.navy.mil/flashindex.html
+
+Federal Aviation Administration
+http://www.faa.gov/
+
+National Aeronautics and Space Administration (NASA)
+http://www.nasa.gov/home
+
+United States Air Force
+http://www.airforce.com/
+
+United States Air Force Academy
+http://www.usafa.af.mil/
+
+Manufacturers/Suppliers/Links to Industry
+AAI Corporation
+http://www.aaicorp.com/
+
+Airbus
+http://www.airbus.com/en/
+
+Aviation Engine Service, Inc.
+http://www.aviationengine.com/
+
+Aviotech International
+http://www.aviotech-network.8m.com/
+
+Avnet
+http://www.avnet.com/
+
+Bell Helicopter
+http://www.bellhelicopter.com/
+
+Boeing
+http://www.boeing.com/flash.html
+
+Bombardier
+http://www.bombardier.com/index.jsp
+
+Cessna
+http://www.cessna.com/
+
+Embraer
+http://www.embraer.com/
+
+Eurofighter Typhoon
+http://www.eurofighter.com/Default.asp?Flash=True
+
+General Electric (GE) Aviation
+http://www.ge.com/en/product/business/aviation.htm
+
+Gulfstream
+http://www.gulfstream.com/
+
+Lockheed Martin
+http://www.lockheedmartin.com/
+
+MTU Aero Engines
+http://www.mtu.de/
+
+Pratt and Whitney
+http://www.pratt-whitney.com/
+
+Raytheon Aircraft Company
+http://www.raytheonaircraft.com/home.asp
+
+Rolls Royce
+http://www.rolls-royce.com/index_flash.jsp
+
+Sino Swearingen Aircraft Corporation
+http://www.sj30jet.com/
+
+Careers
+AIRApps: Job Data Base for Pilots
+http://www.airapps.com/
+
+Careers at the Aerospace Corporation
+http://www.aero.org/careers/
+
+Careers in Aerospace FAQ
+http://www.tjhsst.edu/~jleaf/pe/careers/aerospace/faq.htm
+
+Find a Pilot
+http://www.findapilot.com/
+
+Phantom Works: Boeing's Advanced Research and Development Unit
+http://www.boeing.com/employment/whatWeDo/phantomWorks.html
+
+Raytheon
+http://www.rayjobs.com/index.cfm?Option=Splash
+
+Smiths Aerospace
+http://www.smiths-aerospace.com/default.asp?Flash=True
+
+Museums/Links to Aviation History
+Aerospace Education Center
+http://www.aerospaced.org/
+
+The Aviation History Online Museum
+http://www.aviation-history.com/
+
+Dayton Aviation Heritage National Historical Park
+http://www.nps.gov/daav/
+
+Flight-History.com
+http://www.flight-history.com/
+
+Helicopter History Site
+http://www.helis.com/
+
+International Women's Air and Space Museum
+http://www.iwasm.org/about.htm
+
+The International Group for Historic Aircraft Recovery
+http://www.tighar.org/
+
+The Charles A. and Anne Morrow Lindbergh Foundation
+http://www.lindberghfoundation.org/
+
+Ernst Mach
+http://www.bartleby.com/65/ma/Mach-Ern.html
+
+The Jay Miller Aviation History Collection
+http://www.cals.lib.ar.us/miller/
+
+The Museum of Flight
+http://www.museumofflight.org/Portal.asp?Flash=True
+
+Osborne Reynolds
+http://www-groups.dcs.st-and.ac.uk/~history/Mathematicians/Reynolds.html
+
+"To Fly is Everything": A Virtual Museum Covering the Invention of the Airplane
+http://invention.psychology.msstate.edu/
+
+Smithsonian National Air and Space Museum 
+http://www.nasm.si.edu/
+
+United States Centennial of Flight Home Page
+http://www.centennialofflight.gov/
+
+United States Army Aviation Museum
+http://www.armyavnmuseum.org/
+
+The Work of Ludwig Prandtl
+http://www.centennialofflight.gov/essay/Theories_of_Flight/Prandtl/TH10.htm
+
+Wright Brother's National Memorial
+http://www.nps.gov/wrbr/
+
+The Wright Experience
+http://www.wrightexperience.com
+
+The Wright Brother's History
+http://www.centennialofflight.gov/wbh/index.htm
+
+Other
+Aero.com: The Future of Aviation Information
+http://www.aero.com/
+
+Aerospace-Technology.com
+http://www.aerospace-technology.com
+
+Aerodynamics Example: Finding the Critical Mach Number of an Airfoil
+http://www.akiti.ca/Mcrit.html
+
+The Aviation Homepage
+http://www.avhome.com/
+
+Computational Fluid Dynamics (CFD) Online
+http://www.cfd-online.com/
+
+CFD Research Corporation (CFDRC) 
+http://www.cfdrc.com/
+
+CRF Review
+http://www.cfdreview.com/
+
+Great Aviation Quotes
+http://www.skygod.com/quotes/
+
+Global Aviation Navigator
+http://www.globalair.com/
+
+Landings.com
+http://www.landings.com/
+
+National Oceanic and Atmospheric Administration's (NOAA) National Weather Service
+Aviation Weather Center
+http://adds.aviationweather.noaa.gov/
+
+NASA Glenn Research Center
+The Beginner's Guide to Aeronautics 
+http://www.grc.nasa.gov/WWW/K-12/airplane/index.html
+
+Space Educator's Handbook Homepage
+http://www.grc.nasa.gov/WWW/K-12/airplane/index.html
+
+USAF Digital Datcom
+http://www.pdas.com/datcom.htm
+
+* reference
+abbott, Theory of Wing Sections: Including a Summary of Airfoil data
+mechanics of flight, a.c. kermode 10th
+fluid dynamic lift information on lift and its derivatives in air  an in water 1985

@@ -1,0 +1,96 @@
+#+SETUPFILE: theme-bigblow.setup
+
+* Publications
+** Journal papers
+Avital, E.J.,  Ai, K.,  Venkatesan, N., et al. 
+Hydrodynamic assessment of a dual-rotor horizontal axis marine current turbine, 
+International Journal of Engineering and Technology(UAE), Volume 7, Issue 4.10 Special Issue 10, 2018, Pages 455-459
+10.14419/ijet.v7i4.10.21039
+
+
+2. Jielin, L. , Hanwen, L. , Kaiming, A., et al. An nmr-based experimental study on the pore
+structure of the hydration process of mine filling slurry. Advances in Civil Engineering, 2018,
+1-12.
+
+ Kai-Ming AI, Ke-Ping Z , Jian-Hua HU, et al. Experiment on environmental response
+of tailings’ mechanical Properties in cold regions. Mining & Metallurgical Engineering, 2014,
+34(3):4-8.
+
+(艾凯明,周科平,胡建华,李杰林,刘福萍.寒区尾矿力学特性的环境响应试验[J].矿冶工程,2014,34(03):4-8.)
+
+
+4. 周科平, 艾凯明, 张健, et al. 新拌充填料浆核磁共振特征研究[J]. 科技导报, 31(36).
+
+** Conference papers
+Ai,K., Avital, E. J.,Shen, X., et al. Surface Curvature Effects on Performance of a Laboratory Scale Tidal Turbine. Proceedings of the World Congress on Engineering, London, 2018
+
+Ai, K., Avital, E. J., Korakianitis, T.et al.Surface wave effect on marine current turbine, modelling and analysis, International Conference on Mechanical Aerospace Engineering, London, 2016
+
+
+* outline
+    *Synopsis of your PhD* at the beginning or as an appendix;
+    *Research Interests*
+    *Conferences* (including presentations or poster displays)
+    *Publications* in chronological order, but if the most are recent not relevant use a subheading such as "Relevant publications".
+ Other subheadings could include "Peer reviewed", "In Progress", and "Conference Proceedings". A long list of publications could be in an appendix. Make sure that your referencing uses a standard and consistent style.
+    Evidence of *teaching/presenting skills* such as leading seminars or practicals.
+    *Administration experience* such as sitting on committees plus any record in attracting funding
+    *Research Methods and Scientific techniques* e.g. NMR, HPLC etc.
+    *Awards and membership of professional bodies*
+    Evidence of IT, time management, project management and report writing skills
+    For research posts in industry mention contact with industry such as placements
+    More than the usual two referees: At least one from your postgraduate research and one from an employer or other person commenting on personal qualities outside academic performance
+    CVs for research funding proposals should focus a great deal on your publications and also any other funding you have attracted in the past.
+
+https://www.kent.ac.uk/careers/cv/phdcvIT.htm
+
+* Research interests
+*** blade optimization
+*** free surface wave effect on tidal turbine
+***  tidal turbine tip clearance
+- confinement
+* workshops
+- 2016, CFD in fluid dynamics across scales
+- 2015, Founders & Coders Summer Workshop
+
+* Conference attending
+
+7th International Conference on Mechanical and Aerospace Engineering (ICMAE) in 2016.
+The World Congress on Engineering WCE 2018   
+第五届全国低场核磁共振技术与应用研会,2013
+
+* referee
+Dr. Eldad Avital (First Supervisor)  
+	Email:	e.avital@qmul.ac.uk  
+	School of Engineering and Materials Science, Queen Mary University of London
+  
+Prof. Ante Munjiza (Second Supervisor)
+	Email: a.munjiza@qmul.ac.uk	
+	School of Engineering and Materials Science, Queen Mary University of London
+
+Keping Zhou (Master Supervisor)
+School of Resources and Safety Engineering
+ Central South University
+Tel: (86)13973173563
+Email: 
+kpzhou@vip.163.com
+
+
+* Guide
+
+
+- Appointments
+- Research Interests
+- Education
+- Awards
+- Refereed papers
+- Conferences
+- Invited Lectures
+- Books, teaching and online courses
+- Patents
+- PhD students (finished or ongoing)
+* Cover letter
+
+http://hwpi.harvard.edu/files/ocs/files/gsas-cvs-and-cover-letters.pdf
+
+http://coverlettersamples.net/

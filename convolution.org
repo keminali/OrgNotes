@@ -1,0 +1,45 @@
+convolution  卷积(泛函分析)
+* definition
+
+The convolution of *f*  and *g* is written \(f*g \), using an [[asterisk]] or star. 
+
+It is defined as the integral of the product of the two functions after one is reversed and shifted.
+ As such, it is a particular kind of [[integral transform]]:
+
+\begin{equation}
+(f*g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t - \tau) d\tau
+\end{equation}
+
+physical meanning: 系统某一时刻的输出是由多个输入共同作用（叠加）的结果。
+- a mathematical operation on two functions (f,g) to produce a third function that expresses how the shape of one is 
+modified by the other
+
+- convolution is related to Fourier transform
+- 
+*features*
+commutative, f*g=g*f
+
+* derivation
+* historical development
+* application
+* reference
+ch6 Laplace Transforms, Vector Analysis Ordinary Differential Equations And Laplace Transform-Mathematical Methods For Engineers And Scientists (2006)
+
+http://www-structmed.cimr.cam.ac.uk/Course/Convolution/convolution.html
+
+https://en.m.wikipedia.org/wiki/Convolution
+https://open.163.com/movie/2006/1/C/M/M6TUO44DQ_M6TUPUBCM.html
+Oppenheim, Alan V., and A. S. Willsky. Signals and Systems. Prentice Hall, 1982. ISBN: 9780138097318.
+
+
+http://mathworld.wolfram.com/Convolution.html
+
+Bracewell, R. "Convolution" and "Two-Dimensional Convolution." Ch. 3 in The Fourier Transform and Its Applications. New York: McGraw-Hill, pp. 25-50 and 243-244, 1965.
+
+Hirschman, I. I. and Widder, D. V. The Convolution Transform. Princeton, NJ: Princeton University Press, 1955.
+
+Morse, P. M. and Feshbach, H. Methods of Theoretical Physics, Part I. New York: McGraw-Hill, pp. 464-465, 1953.
+
+Press, W. H.; Flannery, B. P.; Teukolsky, S. A.; and Vetterling, W. T. "Convolution and Deconvolution Using the FFT." §13.1 in Numerical Recipes in FORTRAN: The Art of Scientific Computing, 2nd ed. Cambridge, England: Cambridge University Press, pp. 531-537, 1992.
+
+Weisstein, E. W. "Books about Convolution." http://www.ericweisstein.com/encyclopedias/books/Convolution.html. 

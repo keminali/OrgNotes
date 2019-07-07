@@ -1,0 +1,112 @@
+* Authors and Institutes in MCT
+** authors
+| author                 | Institutes              | Research Interests                        | Methods    | Country |
+| [[http://paul-mycek.com/index.html][Paul Mycek]]             |                         | effect of TI on Cp                        |            | France  |
+| xiaoxiao guo           | shanghai jiao tong Uni. | wave frequency effect on floating turbine |            | China   |
+| anna yang              | Cambridge Uni.          | tip clearance                             |            | UK      |
+| Richard Willden        | Oxford Uni.             |                                           |            | UK      |
+| Feng-mei Jing (荆丰梅) | Harbin Eng. Uni.        | Experimental                              |            | China   |
+| 郑源 (1964)            | Hehai Uni.              |                                           |            | China   |
+| Bahaj                  | Uni. of Southsampton    |                                           | Exp., Num. | UK      |
+| huang bin              | Zhejiang Uni.           | dual-rotor in close distance              | exp,RANS   | China   |
+|                        |                         |                                           |            |         |
+
+** 刘臻-- 中国海洋大学工程学院
+0532-66782730
+
+research interest:
+- Wave energy converter
+
+his students
+崔莹
+electrical design for ocean wave and tidal energy system, Ray Alcom and Dara 
+
+
+http://coe.ouc.edu.cn/f9/09/c9091a63753/page.htm
+**  [[http://coe.ouc.edu.cn/f9/0f/c9091a63759/page.htm][王树杰]](1961) --教授- 中国海洋大学工程学院
+publicatons:
+1. 柔性叶片弦向变形对潮流能水轮机轴向载荷影响的研究 - EI - 
+  + exp, numerical (fluent)
+
+** experimental  facilities
+water towing  tunk
+
+- Uni. of south
+- hohai Uni.
+- zhejiang Uni.
+
+** Institutes
+- Uni. of soutsampton
+- [[https://energy.sandia.gov/energy/renewable-energy/water-power/technology-development/tidal-current-modeling-development-and-validation-2/][Sandia]]
+
+*** Chinese institudes 
+No. of papars in order
+
+- Harbin Engineering University
+- Ocean University of China
+- Zhejiang University
+- Hohai University
+- Shanghai Jiao Tong University
+- Dalian University of Technology 
+- Jiangsu University of Science and Technology
+- Tsinghua University
+- Ministry of Education China
+- Shanghai Maritime University 
+
+
+
+
+
+
+
+
+
+** Industry
+
+
+
+Marine Current Turbines Limited's, 
+
+European Marine Energy Centre (EMEC
+
+OpenHydro, atlantis,
+
+Scotrenewable
+
+
+Atlantis turbine: Solon,
+
+Global Ocean Energy Symposium
+
+Alstom
+http://www.atlantiscorp.co.za/marine_projects.htm
+http://www.alstom.com/products-services/product-catalogue/power-generation/renewable-energy/ocean-energy/tidal-energy/tidal-power
+http://www.fp7-cores.eu/
+* authors in fluid mechanics
+院士:
+  - 陈十一
+陈十一作为格子Boltzmann方法的创始人之一，在湍流研究上做出了一系列贡献。
+格子Boltzmann方法结合了统计物理与流体力学的特点求解偏微分方程和模拟流体力学及其它物理化学过程，
+实现高效率的并行计算，是目前国际上流体力学最活跃的研究课题之一
+
+* Conferences
+Asian Wave and Tidal Energy Conference 
+
+International Conference on Ocean, Offshore and Arctic Engineering
+
+
+Offshore Energy Exhibition & Conference 2018
+
+7th International Conference on Ocean Energy 2018
+
+Eleventh International Symposium on Turbulence and Shear Flow Phenomena (TSFP11)
+
+AIAA Computational Fluid Dynamics Conference 
+
+European Wave and Tidal Energy Conference
+
+European Conference on Computational Fluid Dynamics
+
+World Congress on Computational Mechanics
+
+[[https://ukfluidsconference2018.weebly.com/contact.html][uk fluids conference]]

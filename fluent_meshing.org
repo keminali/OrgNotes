@@ -1,0 +1,10 @@
+* fluent meshing
+** application area
+ aerospace and automotive
+
+*Feature*
+1. very high quality, large cell count,hybrid volume meshes for external aerodynamics
+2. a high quality surface mesh externally and use Fluent Meshing for volume mesh growth
+3. legacy Tgrid
+
+

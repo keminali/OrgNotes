@@ -1,0 +1,19 @@
+- Laminar Flow :: the viscous forces are dominant (slow flow, low Re) and surficient enough
+to keep all the fluid particles in line, then the flow is laminar
+
+e.g. in a pipe with D=0.015m, the max veloicty for laminar flow is 0.07m/s
+
+*Features*:
+- smoothing streamline
+- Re is low
+- steady or unsteady
+- Re_2000 (pipe)
+- Dye does not mix with water
+- Fluid particles move in straight lines
+- Simple amthematical analysis possible
+- Rare in practive in water systems
+
+
+*types* of Laminar Flow:
+  - viscous effects are important throughout the whole domain >> Ch9 Kundu
+  - viscous effects are confined to the BL >> Ch10, Kundu

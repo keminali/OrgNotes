@@ -1,0 +1,213 @@
+#+SETUPFILE: theme-bigblow.setup
+* Glossary
+
+http://wiki.inkscape.org/wiki/index.php/Inkscape_glossary
+* Shorts
+C+S+d # document properties
+
+* Line
+S+ f6
+hold Control
+** Stright line with arrow
+
+• Draw a line ( Shift + F6 )
+• Open Fill and Stroke dialog ( Shift + Ctrl + F )
+• Select Stroke Style tab.
+• Choose an arrow for the Start Marker and/or End Marker.
+• Change the stroke width to increase/decrease the size of the arrow.
+• Using the selection tool F1.
+• Click Path > Stroke to Path. ... 
+• Ungroup the line ( Ctrl + Shift + G )
+
+From <https://www.google.co.uk/search?safe=active&client=firefox-b-ab&dcr=0&ei=3sWVWtDUIoPDgAba_b3gDQ&q=inkscape+draw+line+with+arrow&oq=inkscape+line+with+arrow&gs_l=psy-ab.3.1.0j0i22i30k1l5.2088.8322.0.10417.26.24.1.0.0.0.302.2904.8j5j6j1.20.0..2..0...1.1.64.psy-ab..5.21.2905...0i131i273k1j0i273k1j0i131k1j0i131i67k1j0i67k1.0.gHBSssXisPQ> 
+* text-- F8
+** Superscript and subscript
+Inkscape Superscripts and Subscripts
+
+From <https://www.youtube.com/watch?v=hisWehQ7LuE> 
+** greek letter
+Greek letter
+	Greek Unicode and Inkscape
+	 type Ctrl+U and the 4-digit unicode for the desired Greek letter
+	http://kestrel.nmt.edu/~raymond/software/howtos/greekscape.xhtml Text/Glyphs
+
+file:figures/unicode_greek_letter_inkscape.png
+
+* crop
+** Crop a image
+Draw a =rectangular box= containg all the drawing,
+>> F4
+
+To select all
+
+>> C+a
+
+>>Object/clip/set
+
+To set the background canvas the same size as the cropped figure
+
+>>File/document properties/Resize page to drawing or selection
+
+To export:
+
+>> C+S+e
+** Crop multiple images of the same size using inkscape
+
+Select mulpile pngs and drag to inkscape, 
+
+create a box and crop all
+** Cropping multiple images using Mogrify
+keywords: batch image processing
+
+The tools we’ll be using are =GIMP= and =mogrify= (from the *ImageMagick* suite), 
+so make sure that you have them installed. 
+
+>> sudo apt install gimp
+
+We’ll use GIMP to graphically select the area to be cropped 
+and the mogrify tool to automate the cropping, saving us a lot of work. 
+
+Let’s start with the selecting:
+Getting the right cropping values using GIMP
+
+In 5 steps:
+Where to find the cropping values
+1. Open up GIMP.
+2. Open one of the images in GIMP.
+3. Using the *Rectangle Select Tool* (hotkey “R”), 
+select the area you want to be cropped.
+4. Note the X, Y, Width and Height values GIMP gives you 
+(have a look at the picture, you can find them in the GIMP main window).
+5. Close GIMP (or leave it open if you plan to use it again soon).
+
+We now have the values we need to tell the *mogrify* utility what to crop. 
+Let’s go on and write a line that 
+will execute mogrify in such a way that it’ll crop all our images!
+Cropping the images
+
+Now we’ll start working in the terminal. 
+Open up your favourite one and change directory to the directory 
+where the images are located. 
+Note that I strongly recommend having only the images that 
+are to be cropped in the directory, nothing more. 
+
+
+The syntax for cropping is as follows:
+
+
+#+begin_src
+      mogrify -crop {Width}x{Height}+{X}+{Y} image.png
+#+end_src
+
+where, 
+The *width* and *height*  give *the size of the image that remains* after cropping, 
+and x and y in the offset (if present) gives *the location of the top left corner* of the cropped image 
+with respect to the original image.
+
+ where you should put the values you got from GIMP!
+ Note that I use a png file as an example, 
+while mogrify is able to handle over 100 image file types. 
+You don’t have to use png files with it. 
+Anyway, if I’d fill in the values from the screenshot,
+ the mogrify command would look like this:
+
+
+        >> $ mogrify -crop 643×393+7+83 image.png
+
+## not works
+
+here, you crop an area of 643 * 393 pixels, starting at 7 pixels from the *left* and 83 pixels from the *top* of the image
+Ok then. 
+The above command would overwrite image.png with a cropped version. 
+But this still manipulates just a single image. 
+
+*To chop 20 pixels from the bottom*
+
+   >> mogrify -chop 0x20+0+0 -gravity South image.jpg
+
+The easiest way to make mogrify modify all images is just this:
+
+
+          >> $ mogrify -crop 643×393+7+83 *.png
+
+The asterisk makes bash fill in all png files in the current directory, and mogrify will handle them all happily. After a (hopefully short) wait, all the images will have been cropped. If you want to crop images of an other format, just change “*.png” to, for example, “*.jpg” or “*.gif”.
+
+You might want to give the cropped images other names, so that the original images will not be overwritten and it will be clear which images have been cropped and which haven’t. This is more complex, but hey, we’re working on Linux! Everything is possible if you take the time to write it.
+Renaming the cropped images
+
+In order to give the cropped images other names, we’ll use a bash loop. This time, we’ll use the convert utility. It is from the same family as mogrify, but it makes it easier for us to output to an other filename. I won’t explain the whole loop, as most of it is bash knowledge, but I will tell you which things you can/should alter to get the right results. There are loops for two cases, just pick the one of which you like the file naming the most.
+
+    Case 1: You want the output files to be named like this: 
+originalfile.png => cropped_originalfile.png 
+
+The loop should be like this:
+
+
+$ for file in *.png; do convert -crop {Width}x{Height}+{X}+{Y} $file cropped_$file; done
+
+    You should replace “png” with the extension you want (think of jpg, gif, png (of course) and so on), and the “{Width}”, “{Height}” etc with the values you got from GIMP. You may also replace “cropped_” with any prefix you like.
+    Case 2: You want the output files to be named like this: originalfile.png => originalfile_cropped.png (or originalfile.jpg => originalfile_cropped.jpg, you name it). In that case, you should use the following loop:
+
+
+$ for file in *.png; do convert -crop {Width}x{Height}+{X}+{Y} $file ${file%.png}_cropped.png; done
+
+    Again, replace “png” with the extension you want (watch it, there are 3 instances of it) and the “{Width}”, “{Height}” etc with the values you got from GIMP. You can also replace “_cropped” with any suffix you like.
+
+    Note that you can, in this case, easily modify the output format: if you want to output the cropped images in jpg format, you can just replace the third instance of “png” with “jpg”, no matter what format your input files are. The convert utility will detect it and change the image format automatically.
+https://linuxacademy.com/blog/linux/cropping-multiple-images-the-same-way-short-tutorial/
+
+*** bug
+>> mogrify -crop 876×820+152+2 image.png
+
+mogrify: invalid argument for option `876×820+152+2': -crop @ error/mogrify.c/MogrifyImageCommand/4391.
+
+
+TKE_1D_OneRear_tsr5_eldadblade_yplus1
+
+* white background
+File > Document Properties (C+S+d) > Page > General > Background
+
+for white color
+
+- R:255
+- G:255
+- B:255
+- A:255
+
+for Black color
+- R:0
+- G:0
+- B:0
+
+- 
+In InkScape 0.48:
+
+
+
+Move R, G, and B to 0. Adjust A (Alpha) to your preference (experiment to set to your liking).
+
+Note that this approach will set the color you choose as the background for the saved/exported image.
+
+In InkScape 0.92:
+
+File > Document Properties > Page > General > Background > Checkerboard background
+
+Since version 0.92 (January 2017) you can instead choose a checkered background. 
+This won't effect the background of the saved image, but will override the background shown in InkScape.
+
+
+* Rotate -- C+S+M
+object/transform
+
+* Erase part of area in a figure
+1. add figure and cover the erase area with white background
+2. create a rectangular box to crop the wanted area
+3. >> object/clip/set
+4. To set the background canvas the same size as the cropped figure
+>>> File/document properties (Ctrl+shift+D)/Resize page to drawing or selection
+5. export
+>>> C+S+e
+
+* ref
+Tavmjong Bah, inkscape: guide to a vector drawing program
+http://tavmjong.free.fr/INKSCAPE/MANUAL/html/index.html

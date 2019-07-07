@@ -1,0 +1,60 @@
+* Accounts
+j.ali_16@outlook.com
+
+Laoba##you+year,AI******#********8
+Your Wallet ID:  
+46c8b839-e683-4b05-ae7c-0f4f2346df9d
+* Incidents
+?? 硬分叉事件
+* Bitcoin manipulation
+Neil Gandal, Price Manipulation in the Bitcoin Ecosystem
+ JT Hamrick
+Tandy School of Computer Science
+ The University of Tulsa, USA
+ jth563@utulsa.edu
+
+
+
+*Conclusion:*
+
+the suspicious trading activity caused the unprecedented spike in the
+USD-BTC exchange rate in late 2013, when the rate jumped from around $150 to
+more than $1,000 in two months.
+** Reference
+Neil Gandal, Price Manipulation in the Bitcoin Ecosystem
+https://www.nytimes.com/2018/06/13/technology/bitcoin-price-manipulation.html
+
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3195066
+
+* FAQ
+ICO (Initial Coin Offering) 
+** double spending
+* proof of work
+proof of work system is similar to Adam Back's Hashcash
+
+* 货币
+货币的发行本质上是在构建一种共同认知。
+
+技术崇拜。后来有很多无政府主义者
+
+David Chaum，密码学奠基人之一
+total number: 21,000,000
+一种点对点的现金支付系统
+、比特币的最高使命——以技术手段限制政府滥发法币，促进社会的公平与效率
+比特币，正尝试通过货币竞争，限制政府最核心的权力之一——货币发行权。
+哈希运算
+购买比特币后一定要提现到自己的钱包，绝对不要在交易所长时间存币
+
+绝对不要认为某交易所“足够大”就不会倒闭
+use a cell phone to install Bitcoin Wallet
+backup your wallet
+专门存币的手机可以平时一直关机，发币时才开机
+
+比特币是真正的数字货币而不是如支付宝，网银一样属于现实中钞票的映射，比特币的根在数字世
+
+[[http://www.pionline.com/article/20161031/INTERACTIVE/161029928/table-the-worlds-largest-money-managers][The world’s largest money managers]]
+
+* references
+https://www.zhihu.com/question/22076666
+
+

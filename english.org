@@ -1,0 +1,333 @@
+* tense in methods section
+- past
+
+The tests *were* carried out in the cavitation tunnel at QinetiQ, Haslar, Gosport, which
+has the following working section particulars:
+
+A hybrid mesh *is* used in this study, with  tetrahedron mesh used near the blade and hexahedral mesh used further away from the blade surface.
+
+The outlet was specified as pressure outlet with a pressure of 1 atm neglecting the hydrostatic effect. 
+
+old:
+The circumference was set as symmetry boundary condition, and the sides were set as periodic boundaries.
+
+new:
+The symmetry boundary condition was specified at the outer radius and
+ the periodic boundaries were specified at the two sides in  the azimuth.
+ 
+| turbulence inensities | turbulence intensity levels |
+|                       |                             |
+
+* English
+- mitigate :: to make something less harmfull, unpleasant
+- filament :: a long thin piece of something that looks like a thread
+
+It is *encouraging* that you *took the initiative to* write this journal manuscript, but it needs a lot of work as I am afraid that in its current form it is likely to be rejected. 
+
+it is unclear how to mitigate the effects of tourism on the island
+
+** new
+To name just a few
+
+amount of >> uncountable noums
+=numbe of= is used with =countable= nouns
+
+under ** conditions
+
+The main objectives is elaborated in the next section
+
+maslow's hierarchy of needs
+technique >> technology
+ Luznik *has conduced* an experimental study >>  Luznik  *conduced* an experimental study
+interface shape represented by the donor-acceptor scheme
+b
+- interpolation :: the addition of a numer or item into the 
+middle of a series, calcuated based on the numbers or iterms before and after it
+ + e.g. sometimes the data were years apart and interpolatios were made for all
+months in between
+
+- denote :: to mean somthing
+denote=stand for = represents
+
+- and vice verce :: used to say that he opposite of what you havee say is also true.
+  + you can curise from Cario to Aswan or vice versa.
+
+
+limits of UBEM-surface code?
+
+can be achieved by  = be complemented 
+
+the essence of ** is that
+inherent
+
+Governing Equations in unsteady BEM
+
+
+non-linear effects in wave:
+- wave breaking 
+- fragmentation
+
+identical = exactly the same
+
+mineral resources
+consist of something = be composed of something
+- be composed of something :: to be made or formed from several parts, things, or people
+  + The committee is composed mainly of lawyers.
+  + The committee consists of layers
+
+
+- constitute 
+- *tabulated* lift and drag in the BEM code
+- drawback :: a disadvantage or the negative part of a situation
+*One of the drawbacks of* living with someone *is* having to share a bathroom.
+
+
+- elsewhere
+- query :: a question, especially one asking for information
+or expressing a doubt about something
+ + e.g Our assistants will be happy to answer your queries.
+
+** news
+
+*** China Chopstick Debacle Puts Dolce & Gabbana’s Future at Stake
+- put **' future at stake
+[Bloomberg]
+Bloomberg News
+BloombergNovember 23, 2018
+
+(Bloomberg) -- Dolce & Gabbana’s Chinese marketing scandal is fashion’s biggest faux pas since former Christian Dior designer John Galliano’s anti-Semitic rant in 2011, and it’s potentially far more costly.
+
+While Dior got out of that mess by swiftly dismissing Galliano, D&G’s owners initially offered few explanations even as a boycott movement spread through luxury’s biggest growth market. Even after an apology from the Milan-based brand Friday, damage control will be trickier as the firm is still owned and operated by the designers with their names on the door.
+
+“Consumers don’t just buy a product. They buy an idea, an image that has values embedded in it,” luxury consultant Mario Ortelli said. With China’s shoppers making up around two-thirds of the industry’s growth, “everyone needs Chinese trust.”
+
+Almost all major Chinese e-commerce sites including Alibaba Group Holding Ltd.’s Tmall and JD.com Inc. have suspended the sale of D&G products in China since the brand posted an ad showing a Chinese model struggling to eat Italian food with chopsticks, which consumers deemed condescending. The boycott spread to foreign sites, with Richemont’s Yoox Net-A-Porter removing the brand’s items from its Chinese and Hong Kong portals.
+
+The scandal intensified after degrading remarks about Chinese people were sent from co-owner Stefano Gabbana’s Instagram account. On Friday, the founders said sorry in Mandarin in a video clip, apologizing to Chinese people worldwide.
+
+“We will not forget this lesson and this will never happen again,” Gabbana said in the video. “And we must try harder to understand and respect Chinese culture. Finally, we ask from the bottom of our hearts for your forgiveness.”
+
+The fallout also spread offline to bricks-and-mortar retailers on Friday, with Lane Crawford removing D&G items from its department stores in China and Hong Kong.
+
+The marketing videos were taken down between Thursday evening and Friday morning. In their apology clip, the designers didn’t repeat an earlier allegation that their Instagram accounts were hacked. They had earlier said that was the reason for the derogatory comments about Chinese people on Gabbana’s account.
+
+‘Multinational, Multicultural’
+
+Providing evidence the account was hacked could help regain Chinese trust, said Luca Solca, analyst at Exane BNP Paribas.
+
+The crisis shows the need for a “multinational, multicultural, diverse leadership organization, able to perceive and integrate different sensitivities,” Solca said. Dior, controlled by luxury conglomerate LVMH, wasted no time in showing Galliano the door after he hurled anti-Jewish insults at a couple in a Paris bar, and the designer later apologized.
+
+The challenge for D&G is that it’s not a multinational giant but a closely held Italian business run by its two founders -- Gabbana and Domenico Dolce. A tongue-in-cheek, cartoon-ish characterization of Italian identity -- with ad campaigns showing large families touching each other and yelling in public -- has been a staple of D&G’s marketing.
+
+That pitch helped expand the company’s sales to 1.35 billion euros ($1.54 billion) last year, according to Business Insider. D&G is bigger and more profitable than rival Gianni Versace, which Michael Kors Holdings Ltd. is buying for $2.2 billion. But trying to export its ironic marketing tone to China may have been a step too far.
+
+The two founders, who created the brand in 1985, have resisted the trend among family owners of luxury firms to sell to giants like LVMH and Kering SA, the owner of Gucci. As demand for acquisition opportunities among both fashion conglomerates and private equity funds has pushed luxury valuations skyward, Gabbana and Dolce have consistently said they’d never consider selling.
+
+Newspaper Interview
+
+“Once we’re dead, we’re dead,” Gabbana said in an interview with Italian newspaper Corriere della Sera last spring. “I don’t want a Japanese designer to start designing Dolce & Gabbana.”
+
+The brand was able to weather online criticism of that remark. But the latest storm is far more intense. Some Chinese consumers went so far as to post videos of themselves destroying their D&G wares following his remarks.
+
+Ryan Meng, a Paris-based fashion buyer for Chinese boutiques, was one of many to joke online that D&G now stood for “dead and gone” following the incident. “It’s extremely unfortunate for all the Chinese team helping to handle the operation while working for someone like that,” he said.
+ 
+
+
+**  others
+- one of the weak points of he wilcox model is 
+- the contribution of A *to* B
+
+inappropriate use:
+neverless
+
+- surge :: verb, suddenly move very quickly in a particular direction
+
+- singularity :: noun, the quality of being strange/unnatural
+- threshold :: the level at which sth starts to happen: He has a low boredom threshold (= he gets bored easily). ◆ I have a high pain threshold (= I can suffer a lot of pain before I start to react). 
+
+manufacture
+refund=repayment
+take a nap at noon
+
+tax evation
+
+She had been accused in May by a Chinese TV presenter of using “yin-yang contracts” to lighten her tax burden
+The practice refers to celebrities who sign two contracts: one with their actual salary and another with a lower figure that is submitted to tax authorities.
+
+Dream of the red chamber is remarkable for its precise and detailed observation of the life and social structures typical of 18th century Chinese society
+spurious: fake, not valid, false
+Chariot
+an open vehicle with two wheels, pulled by horses, used in ancient times in battle and for racing
+
+* a, an, the
+https://dictionary.cambridge.org/us/grammar/british-grammar/determiners/a-an-and-the
+*the* before a noum shows that what is referred to is *already known* to the speaker,
+listener, writer, and reader
+k
+
+e.g. Where did we park *the* car? (The speaker and the listener know what car is being referred to.)
+- The makes a noun specific
+  Have you been to an ice rink?
+*** Countable nouns
+
+We only use *a/an* with singular countable nouns:
+
+    I have a sister and a brother.
+
+    That was an excellent meal.
+
+We can use *the* with singular and plural countable nouns:
+
+    The lion roared.
+
+	
+
+    The tree fell.
+
+    The lions roared.
+
+	
+
+    The trees fell. 
+
+	
+
+|Have you ever been to any ice rink? |(an doesn’t make the noun ice rink specific)
+| Have you been to the ice rink? | The speaker and listener know the ice rink which is being referred to (e.g. the one in their town/the local one). The makes the noun ice rink specific. |
+|                                |                                                                                                                                                         |
+* emails
+** Job application
+
+** post information
+
+Dear all,
+
+
+It is a pleasure to intoduce our next speaker for our Spring 2019 IoB seminar series, Prof. Michael Dustin from the University of Oxford.
+
+ 
+
+Prof Dustin's research focuses on immune T cell biology and the study of immunological synapses. He is using elegant nanoengineered/nanofabricated systems to study the cascades of molecular events that lead to T cell activation. His talk will be "Nanoscale analysis of immune cell communication" (please see the attached poster).
+
+
+Please join us Wednesday 27th February at 3pm, in the PP1 Lecture Theatre.
+
+ 
+
+This will be followed by tea and coffee at 4pm.
+
+
+Please let me know asap if you would like to speak to Prof. Dustin before the seminar.
+
+ 
+
+Best wishes,
+
+Julien
+
+ 
+
+Dr. Julien Gautrot
+
+Reader in Biomaterials and Biointerfaces,
+
+School of Engineering and Materials Science,
+
+Queen Mary, University of London,
+
+Mile End Road,
+
+London, E1 4NS, UK.
+
+
+http://biointerfaces.qmul.ac.uk/
+
+Tel: (+44) 2078 825 263.
+
+
+
+
+
+
+
+
+* trail
+the smell or series of marks left by a person, animal, or thing as it moves along:
+i.e. The dogs are trained to follow the trail left by the fox.
+* foil
+metal made into very thin sheets that is used for covering or wrapping things, especially food
+- kitchen foil
+* a priori 
+/ˌeɪ praɪˈɔː.raɪ/ , adjective [ before noun ]
+- relating to an argument that suggests the probable effects of a known cause, or using general principles to suggest likely effects: 
+i.e. 
+* context
+context  noun
+
+1 : the words that are used with a certain word or phrase to explain its meaning
+
+2 : the situation in which something happens: the group of conditions that exist where and when something happens
+
+** in the context of 
+
+1) "in the language that surrounds a word or phrase," as in this example:
+
+    In the context of this article, the term progressive refers to....
+
+
+2) "in the conditions that surround an event or situation," as in this example:
+
+    In the context of the current recession, job security is becoming very important.
+- protocol :: [countable] (computing) *a set of rules* that control the way data is sent between computers
+hgemonic, adj
+Ruling or dominant in a political or social context.
+
+* money launderying
+ from legal point of view
+All decisions in their lives are made by gut feelings, without weighing evidence or evaluating the truth of that evidence.
+ status quo
+postulate
+postulate something | postulate that…
+ (formal) to suggest or accept that something is true so that it can be used as the basis for a theory, etc.
+
+stochastic
+A stochastic process or system is connected with random probability.
+grandiose
+seeming very impressive but too large, complicated, expensive, etc. to be practical or possible The grandiose scheme for a journey across the desert came to nothing.
+
+data acquisition
+Maillard reaction (/maɪˈjɑːr/ 
+
+* trace
+1【find somebody/something】
+2【origins】
+  to find the origins of when something began or where it came from
+- *trace sth (back) to sth*
+　They've traced their ancestry to Scotland.
+　The style of these paintings can be traced back to early medieval influences.
+
+3【history/development】
+4【copy】
+5【with your finger】
+- screech :: to make an unpleasant, loud, high noise. 
+She was screeching at him at the top of her voice
+
+tricky, adj : difficult, not to be trusted
+
+trigonometric/ˌtrɪɡənəˈmɛtrɪk/
+
+* hispanic
+ Hispanic (Spanish: hispano or hispánico) broadly refers to the people, nations, and cultures that have a historical link to Spain.
+* Han Chinese
+* affirmative action
+ What is "affirmative action"?
+
+In the UK it is referred to as positive discrimination: it is designed to "level the playing field."
+
+Essentially, it means setting a lower bar for people who have faced challenges to get to where they are, 
+compared to those who have had every advantage in life. 
+
+http://www.telegraph.co.uk/news/worldnews/northamerica/usa/12040823/What-is-affirmative-action-in-American-universities.html
+
+
+

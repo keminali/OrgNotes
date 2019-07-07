@@ -1,0 +1,234 @@
+* CFD
+TEXSTAN: A teaching tool for solving convective transpot of heat, mass and momentum transfer problems
+
+[[https://fun3d.larc.nasa.gov/index.html][Fun3D NASA]], fully unstructured Navier-Stokes
+开源网格生成与处理程序
+
+FreeCAD 三维几何CAD软件
+
+An open-source parametric 3D CAD modeler
+
+LibreCAD 二维CAD软件
+
+Home of LibreCAD, 2D-CAD
+
+CGAL 大型计算几何与网格生成库
+
+The Computational Geometry Algorithms Library
+
+GEOS 几何引擎
+
+GEOS
+
+tetgen 非结构四面体网格生成程序
+
+A Quality Tetrahedral Mesh Generator
+
+netgen 非结构网格生成程序
+
+Netgen Mesh Generator
+
+stellar 非结构网格生成程序
+
+A Tetrahedral Mesh Improvement Program
+
+gmsh 非结构网格生成程序
+
+a three-dimensional finite element mesh generator with built-in pre- and post-processing facilities
+
+openmesh 非结构网格处理库
+
+OpenMesh
+
+libmesh 网格处理库
+
+A C++ Finite Element Library
+
+CGNS CFD数据格式标准
+
+CFD General Notation System
+
+metis 非结构网格分区程序
+
+METIS - Serial Graph Partitioning and Fill-reducing Matrix Ordering
+
+scotch 非结构网格分区程序
+
+Static Mapping, Graph, Mesh and Hypergraph Partitioning, and Parallel and Sequential Sparse Matrix Ordering Package
+
+MGRIDGEN 多重网格聚合程序
+
+Software
+开源CFD程序
+
+CFL3D 大型结构网格CFD程序
+
+nasa/CFL3D
+
+freeCFD
+
+https://www.openhub.net/p/freecfd
+
+SU2 大型非结构CFD/优化程序
+
+SU2, the open-source CFD code
+
+openfoam 大型非结构CFD软件
+
+OpenFOAM | The OpenFOAM Foundation
+
+ISSAC 大型非结构CFD软件
+
+http://isaac-cfd.sourceforge.net/
+
+HIFILES 大涡模拟程序
+
+High Fidelity Large Eddy Simulation
+
+AMROC 二维自适应结构网格CFD程序
+
+http://amroc.sourceforge.net/
+
+mutation++ 化学非平衡输运系数计算程序
+
+Mutation++: Mutation++
+
+Meep FDTD程序
+
+Meep - AbInitio
+
+NLOPT 非线性优化程序
+
+NLopt - AbInitio
+伦敦帝国理工学院PRISM项目组的一些开源程序
+
+Firedrake 偏微分方程求解
+
+The Firedrake project - Firedrake 0.13.0+989.g8d09956 documentation
+
+Fluidity 自适应非结构CFD程序
+
+Home - Fluidity
+
+Nektar++ 谱元方法程序框架
+
+Nektar++ - Spectral/hp Element Framework
+
+PyOP2 非结构网格的并行计算框架
+
+OP2/PyOP2
+
+pyfr 基于python的新一代CFD求解器
+
+PyFR
+开源后处理程序
+
+VTK 可视化库
+
+VTK - The Visualization Toolkit
+
+paraview 后处理
+
+ParaView
+
+digitizer 图像采点软件
+
+Engauge Digitizermarkummitchell/engauge-digitizer
+非开源CFD程序介绍
+
+NASA Lanely中心软件简介
+
+http://aaac.larc.nasa.gov/tsab/cfdlarc/
+
+OVERFLOW 结构重叠网格CFD程序
+
+NASA OVERFLOW CFD Code
+
+FUN3D 非结构网格CFD程序
+
+FUN3D Manual
+
+USM3D(tetUSS) 非结构网格CFD程序
+
+Overview of USM3D
+
+wind-US 非结构网格CFD程序
+
+Wind-US Documentation
+
+TAU 非结构网格CFD程序
+
+DLR - TAU: Startseite
+
+VULCAN 结构网格CFD程序
+
+VULCAN-CFD Home Page
+
+CFL3D 结构网格CFD程序
+
+CFL3D Version 6 Home Page
+并行计算
+
+MPI标准介绍
+
+MPI Forumhttps://computing.llnl.gov/tutorials/mpi/Tutorials · MPI Tutorial
+
+MPICH
+
+MPICH | High-Performance Portable MPI
+
+DeinoMPI
+
+High Performance Parallel Computing for Windows
+
+MVAPICH
+
+http://mvapich.cse.ohio-state.edu/
+
+open-mpi
+
+Open MPI v2.0.0 documentation
+
+intel-MPI
+
+Intel® MPI Library
+
+MS-MPI
+
+Microsoft MPI v5 (archived)
+
+PVM
+
+Parallel Virtual Machine
+
+mpich2介绍
+
+http://www.ualberta.ca/AICT/RESEARCH/LinuxClusters/doc/mpich2/
+
+gfortran使用文档
+
+The GNU Fortran Compiler
+
+MPJ Express java的MPI接口
+
+MPJ Express Project
+
+java的MPI接口：
+
+mpiJava Home PageMapReduce-MPI Library
+
+PETSC 并行框架
+
+PETSc: Home Page
+
+HSA 异构计算标准
+
+HSA Foundation ARM, AMD, Imagination, MediaTek, Qualcomm, Samsung, TI
+
+openMP教程
+
+通过 GCC 学习 OpenMP 框架
+
+** Turbomachinery
+- ANSYS CFX
+- Numerica

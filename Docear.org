@@ -1,0 +1,8 @@
+•	“New child”  press the “INSERT” 
+•	“New sibling” 	press ENTER
+•	“Edit (in-line)”, double click a node, or press F2, to edit a node in-line.
+Import your PDFs and annotations
+Now it’s time to get your PDFs and annotations into Docear. Ensure to have the root node selected, and chose “Re-read monitoring folder” from the menu, or click the refresh icon in the root node. This function will import all PDFs and all annotations that are stored in your literature repository but not yet in any of the library mind maps. This means, whenever you store a new PDF on your hard drive (in your literature repository), or create a new annotation in an existing PDF, Docear will check if this PDF or a annotation is already in your “Literature & Annotation” mind map (or any other mind map in your library), and if not, the PDF or annotation will be added to your “Incoming” node in the “Literature & Annotations” mind map.
+Sort your PDFs and annotations
+In the next step, move your PDFs and annotations into the categories: Select a PDF or annotation you want to move, cut (CTRL+X) or copy (CRTL+C) it, select another node and paste (CTRL+V) your node as child node. To keep the overview, click the little “bubble” at the end of a node in order to fold or unfold it. It’s important to note that Docear does not restrict you to moving PDFs only. You can also move single annotations to any category you like.
+

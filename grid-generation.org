@@ -1,0 +1,10 @@
+* Introduction
+for beginner, refer to 
+Chapter 5, CFD the basics with applications, John, Anderson
+text boof of Thompson(1985) [fn:Thompson1985]
+* References
+Joe F. Thompson, Z. V. A. Warsi, and C. Wayne Mastin, Numerical Grid Generation, North-Holland, New York, 1985
+
+* Footnotes
+
+[fn:Thompson1985] Joe F. Thompson, Z. V. A. Warsi, and C. Wayne Mastin, Numerical Grid Generation, North-Holland, New York, 1985

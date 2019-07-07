@@ -1,0 +1,123 @@
+* AirfoilPrep.py
+AirfoilPrep means Airfoil Prepocess
+- Python Language
+input: 2D aerodynamic airfoil data (i.e., from wind tunnel data or numerical simulation)
+output: cl cd at high AOA
+Process: 3D rotation corrections for wind turbine applications
+- limit:
+   no pitching moment coeff
+** Introduction
+
+AirfoilPrep.py (pronounced Airfoil Preppy) provides functionality to preprocess aerodynamic airfoil data.
+ Essentially, the module is an object oriented version of the AirfoilPrep spreadsheet with additional functionality and
+ is written in the Python language. 
+The intent is to provide the functionality of the AirfoilPrep spreadsheet,
+ but in an easy-to-use format both for stand-alone preprocessing through scripting and for direct implementation within other codes such as blade element momentum methods.
+
+AirfoilPrep.py allows the user to read in two-dimensional (2-D) aerodynamic airfoil data (i.e., from wind tunnel data or numerical simulation), apply three-dimensional (3-D) rotation corrections for wind turbine applications, and extend the data to very large angles of attack. Airfoil data can also be blended together to define intermediate sections between linearly lofted sections. Capabilities unique to the Python version include the ability to read and write to AeroDyn format files directly. The only feature that is contained in the spreadsheet version but is currently missing in AirfoilPrep.py, is handling of pitching moment coefficients.
+
+This document discusses installation, usage, and documentation of the module. Because the theory is simplistic, only a brief overview is provided in the documentation section with corresponding references that contain further detail.
+** Detailed Documentation
+
+For detailed documentation see http://wisdem.github.io/AirfoilPreppy/
+
+** Prerequisites
+
+NumPy
+
+** Installation
+
+If you only intend to use AirfoilPrep.py from the command line then no installation is necessary. Just place the module located at src/airfoilprep.py anywhere in your system path. Alternatively, if you intend to use AirfoilPrep.py from within other Python modules then install it with the following command.
+
+$ python setup.py install
+
+** Unit Tests
+
+To check for successful installation, run the unit tests
+
+$ python test/test_airfoilprep.py
+
+For software issues please use https://github.com/WISDEM/AirfoilPreppy/issues. For functionality and theory related questions and comments please use the NWTC forum for Systems Engineering Software Questions.
+Programming Language:     Wind and Water Tools:
+
+If you want to refer to this website in a report, here is a reference you can use:
+NWTC Information Portal (AirfoilPrep.py).  https://nwtc.nrel.gov/AirfoilPrepPy. Last modified 25-September-2014 ; Accessed 06-April-2018 
+* readme
+This workbook helps with five independent steps to prepare airfoil data for use in an AeroDyn airfoil file.
+
+1)  The "Interpolate" worksheet works from a single table of X-Y values.  
+It generates the equivalent table for a different set of X values by linear interpolation. 
+ This is used to generate CL and CD tables that all use the same list of angles of attack (the form required by the current version of AeroDyn).
+
+2)  The "BlendAirfoils" worksheet calculates 2-D airfoil data as a *weighted average* of two input airfoil tables.
+  For example, S822 and S823 airfoil data tables can be used to generate a 2-D table that represents an airfoil section in the
+ transition span of a blade between a pure S823 and a pure S822.
+
+3)  The "3DStall" worksheet /applies the Selig and Eggars adjustments to CL and CD/ caused by *delayed stall* on a rotating blade.
+
+4)  The _"TableExtrap"_ worksheet extends an airfoil table from the usual limited 
+angle of attack range to the entire ±180° range required by AeroDyn.  
+
+5)  The "DynStall" worksheet calculates parameters required by the dynamic stall routines in AeroDyn. 
+ These parameters appear in the first several lines of an AeroDyn airfoil file
+
+The recommended method for creating an AeroDyn airfoil file is to use the 5 steps listed above in the order they are listed.  
+For a given blade station you must first estimate the 2-D characteristics for the airfoil at that station.  
+All CL and CD values you plan to enter into an AeroDyn airfoil table must be at the same angles of attack. 
+ The first step generates a table at any desired list of angles.  
+Then you use the second step to "blend" two sets of airfoil data (if necessary). 
+ You may be using a "pure" airfoil, in which case no blending is needed and the second step can be skipped.
+  On the other hand, it may be a transition station between two airfoils (or two Reynolds numbers, or surface roughness, etc.).  
+In that case the BlendAirfoils step is needed.
+
+After the 2-D characteristics are established for the correct airfoil section and Reynolds number,
+ the 3-D rotation effects should be accounted for.  
+This is done by copying and pasting the 2-D (blended) table into the 3DStall worksheet, 
+entering the necessary parameters (all shown in red), and running the macro (click on  the yellow 'Calc. 3-D Table' button). 
+ The input table to this calculation should extend to reasonably high angles of attack (30-50°).  
+In some cases you may need to first use the FoilCheck worksheet to develop your table at high angles. 
+ If you do this, you should still repeat the FoilCheck calculation to get the appropriate dynamic stall parameters for the 3-D airfoil table.
+
+This steady, 3-D airfoil table must then be pasted into the TableExtrap worksheet to calculate perform the Viterna extrapolation 
+(see the AeroDyn and FoilCheck users guides for more details on these methods).
+  Finally, the dynamic stall parameters are found using the DynStall sheet.
+
+Marshall Buhl's "Editor Format" worksheet allow you to write the airfoil table from
+ the Table Extrap and DynStall worksheets in a fixed format suitable for viewing in a text editor.
+
+* Important notes:
+
+1)  The *input values* for each worksheet are shown in *red*.  /Do not change cells other than those shown in red./
+2)  The calculations do not occur automatically on any of these worksheets.  You must click on the yellow button to perform the calculations.  Some cells update automatically, but they may not be correct until you click on the button.  One exception is the Editor Format worksheet, which automatically reflects changes in the FoilCheck airfoil table.
+3)  Data are not linked from one worksheet to another.  You must copy and paste your airfoil tables into each worksheet.  I recommend using 'paste values' instead of the normal paste in order to preserve formatting.
+4)  The macros in this file are 'hardwired' to retrieve values from specific cell locations.  Adding or deleting rows or columns, or moving input cells will cause the macros to fail.  For this reason most cells in the workbook are "protected" (see Rev 1.12 in the ChangeLog).
+
+CHansen, Windward Engineering, May, 2004, version 2.0
+
+* Changelog
+Revisions:
+1.1  Added Interpolate worksheet
+1.11 Fixed discontinuity in FoilCheck at alpha = -180+upper matching point (will only occur when matching point is a multiple of 10)
+1.12 Turned on Protection for all worksheets to avoid inadvertent modification of worksheet.  Protection can be turned off by the user for any worksheet, but this should only be done after reading Important Note #4 above.
+1.13 Fixed error--it wasn't writing CDMin to airfoil table in FoilCheck worksheet
+1.14 Set fixed number of digits for results of BlendAirfoils.
+   Put CD check in Foilcheck.  If CD < 0, then CD is set to 0.01.  This is quick fix to Viterna problem that can give negative CD at +/-180°
+   Limited search for CDmin to angles of attack between -20 and +20°.
+   Put option buttons in FoilCheck so it can be used only to calculate CN slope.  If you have an input table with angles of attack outside the range you specify for the Viterna calculation, then the Viterna table may not be correct.
+   Clear CN, CT and FoilCheck output tables before writing to them so old values won't remain when using smaller tables
+   Marshall Buhl created Editor Format worksheet to write airfoil table in fixed format.
+1.15 Split FoilCheck into two worksheets, Table Extrap and DynStall, to resolve problems associated with mixing these two sets of calculations on one worksheet.
+
+2.0  Added option to use either Viterna method or flat plate theory to get CD in TableExtrap worksheet.
+  Added CM calculations to the TableExtrap worksheet.
+2.1  Apparently, Buhl did something to corrupt the v2.0 that was put on the web, so we decided to re-release v2.0 as v2.1.
+2.2 Corrected error in BlendAirfoils worksheet that gave incorrect results at high angles when the number of entries (rows) in table B is greater than size of table A. December 1, 2005.
+2.2.1 Scott Larwood corrected the CM calculation for negative alpha in TableExtrap, released Dec 13, 2012.
+2.2.2 Andrew Ning corrected the CL calculation just below the lowest alpha in TableExtrap, released Mar 14, 2014.
+2.2.3 Jason Jonkman fixed  the macros that were broken with the release of v2.02.02, released Dec 18, 2014.
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+* Cropping multiple images in batch mode
+The tools we’ll be using are =GIMP= and =mogrify= (from the ImageMagick suite),
+so make sure that you have them installed.
+We’ll use GIMP to graphically select the area to be cropped
+and the mogrify tool to automate the cropping, saving us a lot of work. Let’s start with the selecting:
+Getting the right cropping values using GIMP
+
+In 5 steps:
+Where to find the cropping values
+1. Open up GIMP.
+2. Open one of the images in GIMP.
+3. Using the Rectangle Select Tool (hotkey “R”), select the area you want to be cropped.
+4. Note the X, Y, Width and Height values GIMP gives you
+(have a look at the picture, you can find them in the GIMP main window).
+5. Close GIMP (or leave it open if you plan to use it again soon).
+
+We now have the values we need to tell the mogrify utility what to crop.
+Let’s go on and write a line that’ll execute mogrify in such a way that it’ll crop all our images!
+Cropping the images
+
+Now we’ll start working in the terminal.
+Open up your favourite one and change directory to the directory
+where the images are located.
+Note that I strongly recommend having only the images that are to be cropped in the directory, nothing more.
+It saves you a lot of trouble. Well then, let’s start with the mogrify command.
+The syntax for cropping is as follows:
+
+
+      >> mogrify -crop {Width}x{Height}+{X}+{Y} image.png
+
+Now don’t be scared, the {Width}, {Height} and so on simply are the places where you should put the values you got from GIMP! Note that I use a png file as an example, while mogrify is able to handle over 100 image file types. You don’t have to use png files with it. Anyway, if I’d fill in the values from the screenshot, the mogrify command would look like this:
+
+
+         >> mogrify -crop 643×393+7+83 image.png
+
+The logic behind this system is the following:
+crop an area of 643 by 393 pixels, starting at 7 pixels from the left and 83 pixels from the top of the image. Got it?
+Ok then.
+The above command would overwrite image.png with a cropped version.
+But this still manipulates just a single image.
+The easiest way to make mogrify modify all images is just this:
+
+
+          >> mogrify -crop 643×393+7+83 *.png
+
+The =asterisk= makes bash fill in all png files in the current directory, and mogrify will handle them all happily. After a (hopefully short) wait, all the images will have been cropped. If you want to crop images of an other format, just change “*.png” to, for example, “*.jpg” or “*.gif”.
+
+You might want to give the cropped images other names, so that the original images will not be overwritten and it will be clear which images have been cropped and which haven’t. This is more complex, but hey, we’re working on Linux! Everything is possible if you take the time to write it.
+Renaming the cropped images
+
+In order to give the cropped images other names, we’ll use a bash loop. This time, we’ll use the convert utility. It is from the same family as mogrify, but it makes it easier for us to output to an other filename. I won’t explain the whole loop, as most of it is bash knowledge, but I will tell you which things you can/should alter to get the right results. There are loops for two cases, just pick the one of which you like the file naming the most.
+
+    Case 1: You want the output files to be named like this: originalfile.png => cropped_originalfile.png (again, you can insert any of the over 100 supported image formats here, I just like png). The loop should be like this:
+
+
+forfilein∗.png;doconvert−cropWidthxHeight+X+Yfile cropped_file;doneYoushouldreplace“png”withtheextensionyouwant(thinkofjpg,gif,png(ofcourse)andsoon),andthe“Width”,“Height”etcwiththevaluesyougotfromGIMP.Youmayalsoreplace“cropped”withanyprefixyoulike.Case2:Youwanttheoutputfilestobenamedlikethis:originalfile.png=>originalfilecropped.png(ororiginalfile.jpg=>originalfilecropped.jpg,younameit).Inthatcase,youshouldusethefollowingloop: for file in *.png; do convert -crop {Width}x{Height}+{X}+{Y} file{file%.png}_cropped.png; done
+
+    Again, replace “png” with the extension you want (watch it, there are 3 instances of it) and the “{Width}”, “{Height}” etc with the values you got from GIMP. You can also replace “_cropped” with any suffix you like.
+
+    Note that you can, in this case, easily modify the output format: if you want to output the cropped images in jpg format, you can just replace the third instance of “png” with “jpg”, no matter what format your input files are. The convert utility will detect it and change the image format automatically.
+
+* ref
+https://www.w3cschool.cn/imagemagick_use/

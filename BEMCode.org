@@ -1,0 +1,614 @@
+
+
+* Compiling
+
+
+** for surface_bem code:
+#+BEGIN_SRC
+f95 -O3 wake_surf.f dyn_surf.f
+
+./a.out   # ~./~ means current folder
+#+END_SRC
+
+
+#gnuplot plotting
+
+#+BEGIN_SRC
+>>> load 'c_t.gnu'
+
+>>> load 'blade_aero.gnu'
+#+END_SRC
+
+** steady bem code
+>>> f95 -Oa bem_hat.f
+
+>>>  ./a.out
+* Steady BEM code
+
+** Input and output
+input: 
+- cl, cd vs AOA at a given Re
+- chord length at every station 
+- twist angle at every station 
+- TSR
+- blade No.
+
+** Assumptions
+
+The BEM code follows the method of  Hansen "Aerodynamics of Wind Turbine" Chap. 6, 
+except in the rare case when there is no convergence it turns into high speed tip ratio 
+(neglecting the effect of a' on the flow angle \phi).
+
+
+
+However, you can change the blade pitch angle and get the effect very quickly, 
+you can see *the effect of replacing the blade profile with cylindrical beam* 
+near the hub and you can compare to CFD results.
+
+The code is to be run the same way as the old one, but it has a few changes in the input *data.in*:
+~itlf~ now determines whether to use ~tip loss factor~ (please use it, so leave *itlf=1*)
+
+iprant:
+0 - means Goldstein tip loss factor (Eqs (A11)&A(12) in Batten et al (2008)).
+1 - means Prandtl tip loss factor (Page 52 in Hansen's book).
+
+ig:
+0 - means Spera's high a approximation (Eq. 6.38 in Hansen's book)
+1 - means Glauert high a approximation (Eq. 6.37 in Hansen's book).
+
+Take ig = 1, it fits better the experimental results.
+
+When comparing with Batten's results, 
+note that what he calls pitch angle of 15 degs is zero in our case as the hub is twisted by 15 degs.
+
+The agreement with Batten's experimental results is not bad but could be better, 
+taking iprant=0 leads to better agreement at low pitch angles 
+
+and iprant=1 leads to better agreement at high pitch angles. 
+However, we still need ref (21) of that paper.
+
+Because Batten took into account only the momentum theory and
+ did not correct for high a, see his equation (A7), 
+his C_T never goes above one, ours does for high a.
+
+The code also produces *fort files*. These contain the spanwise distribution of alfa, cl, cd, a, a' (called a1 in the code), d(C_T)/dx and d(C_P)/dx.
+ For every tip speed ratio (TSR) there is a fort file. 
+The numbering of the files starts from the first TSR of fort.101 to the last one.
+
+I included in the zip file, *gnuplot* files that you can use to plot the various results, 
+but you are welcome to use whatever graphical software you want. 
+
+Note that the legends in the gnuplot plots (alfa.gnu, cl.gnu,cd.gnu,a.gnu,a1.gnu,dct_dx.gnu and dcp_dc.gnu)
+ using the fort files fit the particular tip speed ratios specified in the current data.in. 
+They will produce *.eps file where the * corresponds to the name of the gnu file, i.e. alfa.gnu will produce alfa.eps. coeff.gnu 
+will produce coeff.eps which is the plot of C_T, C_Q and C_P verse TSR for the entire turbine.
+
+** limits
+Thus it does not account for the effect of the pillar, 
+the floor and in the case of marine turbine the free surface. 
+** comments
+The steady BEM code accounts for *stall delay* due to rotational augmentation (the flow is 3D not 2D). 
+c BEM programme to calculate C_T, C_Q, C_P of a rotor of HAWT or HAMT
+c Options
+c
+c High axial correction factor, CT is of
+c ig = 0 Spera (1994) Eq (6.37) [1], 
+C ig =1 Glauert Eq (6.38) [1]
+c
+C Tip losses:
+c iprant=1 - Prandtl of tip and hub Eq. (7,8,13) [2], (8,9) [3]
+c iprant=0 - Goldstein approx Eq (A11,A12) [4]
+c
+c Rotational effect on cl: Snel's approximation Eq. (4.2) [5]
+c
+c Post stall cl and cd: Viterna equations Eq. (4-10) [6]
+c
+c Yaw and tilt correction  Eq.(17) [2], to be used only as rough estimate
+c
+c Eldad Avital, Profiles data - Kaiming Ai, 2015
+c
+c Refs:
+C [1] Hansen (2005) Aerodynamics of Wind Turbines, 2nd Ed.
+c [2] Moriarty & Hansen (2005) Aerodyn Theory model, NREL/TP-500-36881
+c [3] Liu & Janajreh (2012), Development and applictaion of an improved bem 
+c model on horizonal axis wind turbines, Int J. Ener Environ Eng 3:30
+c [4] Batten et al. (2008) The prediction of the hydrodynamic performnace of 
+c marine current turbines, 33, 1085-1096
+c [5] Lindenburg (2003) Investigation into rotor aerodynamics ECN-C--03-025
+c [6] Tangler & Kocurek (2004), Wind turbine post-stall airfoil performance  characteristics guidelines for BEM methods, NREL/CP-500-36900
+
+** post stall airfoil polar data
+
+cl cd vs. AOA data at high AOA
+- post-stall behaviour is calculated in the BEM code using an experimental
+study that has modified Hoerner's approximations for Cl and Cd.
+
+
+at a fixed Re 
+- for low AOAs before stall angle, lift and drag vs AOA, 
+can be gained from experimental data or Javafoil/Xfoil
+
+- after stall angle, lift and drag profile need to be extrapolated
+AOA from experiental data normally stalled after 15 degree, the AOA data  need to extrapolated 
+casue wind turbine blade station has higher local AOA
+
+ Airfoil polars measured in the wind tunnel 
+or simulated with XFOIL or other CFD software 
+are usually limited to small and medium inflow angles (e.g. -20° to +20° AoA). 
+
+Why is it difficult to get polar of airfoil after stall angle based on experimental wind tunnel test 
+How to validate the numerical results?
+
+However the blades of both VAWTs and HAWTs often operate at high inflow angles. 
+In order for the BEM routines to converge and produce reasonable results 
+it is essential that the airfoil performance polars 
+(Lift, Drag...and Moment coefficients) are extrapolated to a 360° inflow angle range.
+
+
+*** polar extrapolation methods
+
+1. Vitenas' method [fn:2]
+essence:
+- infinite airfoil polar data are replaced by finite wing polar data using empirical relations
+
+- extrapolation tools:  Javafoil, or NREL's AirfoilPrep [fn:1]
+  + extensively used
+
+2. Snel's Method 
+-  extrapolate cl, cd  up to the *stall delay angle* using the method proposed by Snel et al.[fn:21]. 
+Further extrapolations /beyond the stall delay angle/ were achieved using 
+Viterna and Corrigan’s methodology for post stall predictions [fn:22].
+      - empirical correction
+     - used by batten 2008, University of Southampton
+
+
+
+3. Montgonerie's method
+
+author: B. Montgomerie of the Swedish Defense Research Agency [fn:Montgomerie]
+application: used by Qblade
+
+*** Footnotes
+
+[fn:22]  Viterna LA, Corrigan RD. Fixed pitch rotor performance of large horizontal axis wind turbines. DOE/NASA workshop on large horizontal axis wind turbines, Cleveland, Ohio, 1981.
+
+
+[fn:21] Snel H, Houwink R, Bosschers J. Sectional prediction of lift coefficients on rotating wind turbine blades in stall. Report ECNC–
+93-052, Energy research Centre of the Netherlands, 1994.
+
+
+[fn:2] Larry A Viterna and David C Janetzke. Theoretical and experimental power from large horizontal-axiswind turbines. Technical Report NASA TM-82944, National Aeronautics and Space Ad- ministration, 1982.
+
+[fn:1] SA Ning. AirfoilPrep.py Documentation. Technical report, National Renewable Energy Laboratory, 2013.
+[fn:Montgomerie]  MONTGOMERIE, B: Methods for Root Effects, Tip Effects and Extending the Angle of Attack Range to +-100deg, with Application to Aerodynamics for Blades on Wind Turbines and Propellers, FOI Swedish Defense Research Agency, Scien-tific Report FOI-R-1035-SE, 2004
+
+Wind Turbine Post-Stall Airfoil Performance Characteristics Guidelines for Blade-Element Momentum Methods
+
+
+
+
+
+** Files naming
+
+ bem_hat.f     # main code file for solving the BEM equations
+Compiler:  Fortran 
+ data.in   #blade profile, and other setting
+ blade.dat  #blade geometry
+ ~.gnu~   #Plotting: gnuplot
+** data.in
+12., 3, 15
+'blade.dat', 1, 1, 1
+0.2, 0.1
+1., 12., 21
+
+       read(30,*) thet0, nb, nr
+       read(30,*) ifile, itlf,iprant,ig
+       read(30,*) xs,xhub
+       read(30,*) tp_sp_s,tp_sp_e,nt
+
+thet0 - Blade tip's pitch angle (deg)
+nb - number of blades
+nr - number of divisions along the blade (must be less than nxb in incl.for)
+
+ifile - file name containing the geometry of the blade and the file names of the profiles (leave itype =1 in blade.dat)
+itlf = 1 - account for tip losses, 0 - do not account for tip losses
+iprant = 1 - Use Prandtl's, 0 - Use Goldstein's tip loss.
+ig = 0 - Spera's correction (faster).
+ig = 1 - Glauert (Hansen)'s correction for high a(recommended) 
+xs = the lowest r/R to account in the BEM calculation
+xhub =  r/R of hub (must be equal or lower than xs) to calculate hub losses
+tp_sp_s - the lowest tip speed ratio to consider
+tp_sp_e - the highest tip speed ratio to consider
+nt - number of tip speed ratios to consider
+** blade.dat
+*** e387
+# 1st line: no. of sta, 2nd line:x , c/R, theta (deg), profile file, type of profile file (1 or 2)
+4
+0., 0.2174, 20., 'eppler_1.dat', 1
+0.1, 0.2174, 20., 'eppler_1.dat', 1
+0.7, 0.145, 6.7, 'eppler_1.dat', 1
+1.0, 0.1087, 0., 'eppler_2.dat', 1
+
+root station at 0.1R, but the Cp calculation used lift and drag from 0.2R
+
+*** naca63
+# 1st line: no. of sta, 2nd line:x , c/R, theta (deg), profile file, type of profile file (1 or 2)
+18
+0., 0.125, 15., 'naca63-824.dat', 1
+0.2, 0.125, 15., 'naca63-824.dat', 1
+0.25, 0.1203, 12.1, 'naca63-822_5.dat', 1
+0.3, 0.1156, 9.5, 'naca63-820_7.dat', 1
+0.35, 0.1109, 7.6, 'naca63-819_5.dat', 1
+0.4, 0.1063, 6.1, 'naca63-818_7.dat', 1
+0.45, 0.1016, 4.9, 'naca63-818_1.dat', 1
+0.5, 0.0969, 3.9, 'naca63-817_6.dat', 1
+0.55, 0.0922, 3.1, 'naca63-817_1.dat', 1
+0.6, 0.0875, 2.4, 'naca63-816_6.dat', 1
+0.65, 0.0828, 1.9, 'naca63-816_1.dat', 1
+0.7, 0.0781, 1.5, 'naca63-815_6.dat', 1
+0.75, 0.0734, 1.2, 'naca63-815_1.dat', 1
+0.8, 0.0688, 0.9, 'naca63-814_6.dat', 1
+0.85, 0.0641, 0.6, 'naca63-814_1.dat', 1
+0.9, 0.0594, 0.4, 'naca63-813_6.dat', 1
+0.95, 0.0547, 0.2, 'naca63-813_1.dat', 1
+1.0, 0.05, 0., 'naca63-812_6.dat', 1
+
+
+
+
+** ref
+battern,2008
+
+C. Lindenburg, 2003, Investigation into Rotor Blade Aerodynamics
+Analysis of the stationary measurements on the UAE phase-VI rotor
+in the NASA-Ames wind tunnel
+
+unsteady aerodynamics experiments phase - VI
+
+IEA aNNEX --xx project
+
+
+** calculate a new file
+
+	Get profile of airfoil. i.e. Cl vs AOA, Cd vs AOA
+		Cl: lift coefficient
+		Cd :drag coefficient
+		AOA: angle of attack
+
+Change parameters in "data.in" file
+
+* Original contribution
+ The results are not of great original contribution, as Batten already did it in 2008, 
+but they will add good depth to your thesis, 
+the code can be used for other turbines or other pitch angles and this code
+ will be the base for the unsteady BEM that will be a good original contribution. 
+Please check in the literature for the use of *unsteady BEM* or *dynamic wake model* for tidal turbine.
+
+* Unsteady BEM code
+
+
+two unsteady BEM models that can be used
+- wake_tudk.f  :: TUDK as of Hansen's book
+and 
+- wake_gh.f :: Garrad &Hassan model 
+
+Further information is in the *readme_unsteady_bem.pdf*
+
+
+-  *Blade's pitch angle time variation* is determined by the subroutine *find_theta*
+ *TSR time variation* is determined by the subroutine *find_tsr*
+
+The problem with these *scale MCTs* is that the *aerodynamic profile* data is sensitive to Re
+ unlike in large scale MCT, causing mismatch in Cp if the right Re range is not used.
+** Unsteady BEM
+wake models
+  -TUDK model
+  -GH model ( Garrad & Hassan)
+
+*** files
+eppler_1.dat        #2d airfoil lift,drag profile, Cl, Cd vs AOA
+blade_e387.dat   #blade geometry profile: no. of station, 2nd line:x , c/R, theta(pitch angle) (deg), profile file, type of profile file (1 or 2)
+dyn_aero.f          #unsteady aerodynamics
+wake_tudk.f       #TUDK wake model
+wake_gh.f          # GH wake model
+data_wake.in     # user data, which;The tip speed ratio (TSR) and blade pitch angle can vary in time. In order to achieve the required time variation, the use must change the subroutine find_tsr and find_theta for TSR and blade pitch angle respectively.
+a.out                  #executable object code; "a.out" means assembler output
+blade_aero1.plt             #output file which contains interest quantities, i.e. x,alfa,cl,cd,a,a1,d(c_t)/dx,d(c_p)/dx
+coeff_time.plt              #output file,  which contains: time, tip speed ratio, Pitch (deg),C_T, C_Q, C_P
+
+**** data_wake_in
+5., 3, 15, 0.4, 2., 4.
+'blade.dat', 1, 0, 1
+0.2, 0.1
+2., 30., 200
+1
+1
+1., 'blade_aero1.plt'     #instant time which record the blade aerodynamics; output file names which comtains blade aerodynamics
+
+       read(30,*) thet0, nb, nr, rb, v0, tp0
+       read(30,*) ifile, itlf,iprant,ig
+       read(30,*) xs, xhub
+       read(30,*) sf, timeb, nt
+       read(30,*) imarch
+       read(30,*) nprint
+       do i=1,nprint
+         read(30,*) t_print(i),ifilepr(i) 
+       end do
+
+thet0 - Blade tip's pitch angle (deg) at t=0
+nb - number of blades
+nr - number of divisions along the blade (must be less than nxb in incl.for)
+rb - blade length
+v0 - Incoming water speed
+tp0 - Tip speed ratio at t=0
+
+ifile - file name containing the geometry of the blade and the file names of the profiles (leave itype =1 in blade.dat)
+itlf = 1 - account for tip losses, 0 - do not account for tip losses
+iprant = 1 - Use Prandtl's, 0 - Use Goldstein's tip loss.
+ig = 1 - Glauert's correction for high a (more accurate), 0 - Spera's correction (faster).
+xs = the lowest r/R to account in the BEM calculation
+xhub =  r/R of hub (must be equal or lower than xs) to calculate hub losses
+sf = safety factor to determine dt (sf>=1)
+timeb = maximum time of the simulation
+nt = maximum number of time steps
+imarch =(-1,0,1) = (no unsteady aerodynamics, unsteady aerodyanmics lags behind iterative solver, unsteady aerodynamics fully embedded in iterative solver)
+nprint = the number of time stages to record the blade instantaneous aerodynamics
+t_print(i) - the time stage to record the blade aerodynamics
+ifilepr(i) - the name of the file to record the blade instantaneous aerodynamics
+
+*** compiling
+requirement: 
+  fortran compiler ( [[http://www.g95.org/][g95]] (Fortran 95, free), ifort (not free)) is need to compile the source code.
+1. compiling source code
+To compile the source code using ifort compiler and TUDK model:
+~f95 wake_tudk.f dyn_aero.f~  
+To compile using ifort compiler and GH  model:
+~f95 wake_gh.f dyn_aero.f~  
+2. running object code
+after compilation, an object code named "a.out" is generated.
+To run the object code:
+~./a.out~    # "./ " means current directory 
+~./~        #current directory
+~../~  # parent directory
+3. analysing output files
+two output files are generated, i.e. *blade_aero1.plt* and  *coeff_time.plt*
+4. plot *Cp(Ct) vs time* using *gnuplot*
+~gnuplot~    #open gnuplot 
+~load "coeff_tim.gnu~   #load gnuplot file 
+
+
+
+*** input data
+2d airfoil, lift and drag coefficient at different angle of attack, AOA vs Cl vs Cd
+
+blade geometry data
+Blade_ep.dat
+#+BEGIN_SRC
+# 1st line: no. of sta, 2nd line:x , c/R, theta (deg), profile file, type of profile file (1 or 2)
+4
+0., 0.2174, 20., 'eppler_1.dat', 1
+0.1, 0.2174, 20., 'eppler_1.dat', 1
+0.7, 0.145, 6.7, 'eppler_1.dat', 1
+1.0, 0.1087, 0., 'eppler_2.dat', 1
+#+END_SRC
+
+*** variables in the code
+| a1   | tangential induction factor |
+| a    | axial induction factor      |
+| Cp   | power coefficient           |
+| Ct   | thrust coefficient          |
+| C_Q  | torque(moement) coefficient |
+| alfa | angle of attack             |
+| cl   | lift coefficient            |
+
+**  Introduction:
+The unsteady BEM code is based on the assumption of a fully axisymmetric flow and utilizes the
+steady bem code of bem_hat.f. It incorporates a wake model to modify the BEM calculation and
+unsteady aerofoil aerodynamics.
+***  Dynamic wake model:
+Origin:
+the dynamic inflow models applied in helicopter aerodynamics
+
+keywords: helicopter dynamic inflow theory
+
+yaw flow conditions = forward flight
+hover and vertical flight = axisymmetric conditions
+
+Design Idea of Helicopter:
+high thrust at the lowest possbile power consumption, which leads to low
+values for the induction factor \( a=u_i/V^2\)
+
+
+
+
+Two engineering wake models are incorporated; the TUDK model [1,2] developed for wind
+turbines and the Garrad &Hassan (GH) model developed for helicopters and adapted for wind
+turbines [2]. 
+
+- The TUDK model is implemented in the file wake_tudk.f
+- the GH model is implemented in the file wake_gh.f. 
+
+There are some modifications in both models as relative to Refs.
+[1,2].
+
+*The quasi-steady equilibrium induced velocity* is found exactly by iterating the steady BEM
+equations (Eqs. (9.13) and (9.14) in Ref [1]) instead of using the previous time step value.
+
+ This is to remove dependence on the time step in achieving the steady state solution.
+
+
+ The GH model has been
+modified to include the Glauert correction for high axial velocity factor a and tip losses in the
+steady and unsteady momentum terms of Eq. (M.10) in Ref. [2].
+
+*** Unsteady aerodynamics, implemented in the file dyn_aero.f:
+a. Attached flow unsteadiness has been modelled using Theodorsen's approach [3,4]
+b. *Dynamic stall* of *trailing edge separation* has been modelled using 0ye's mode [1,3,4]. The
+dynamic stall calculation start only when the lift curve slope is lower than 0.05 1/deg (if not then at
+the first available angle of attack) [5].
+
+**  Compiling
+In order to compile, one has to use a Fortran compiler as *g95*, *ifort* and so on. For example if one
+wants to use the TUDK model and the ifort compiler, one should compile at the prompt: 
+
+#+begin_src
+ifort wake_tudk.f dyn_aero.f. 
+#+end_src
+
+If the GH model is to be used, then 
+
+#+begin_src
+ifort wake_gh.f dyn_aero.f
+#+end_src
+
+The file *incl.for* must be in the same folder where the compiling takes place.
+
+** Data entering:
+The user data to be entered is through the file data_wake.in. The file contains explanation on the
+variables. The tip speed ratio (TSR) and blade pitch angle can vary in time. In order to achieve the
+required time variation, the use must change the subroutine find_tsr and find_theta for TSR and
+blade pitch angle respectively.
+
+**  Output:
+The code yields instantaneous loading on the blade and other variables at times and in files that
+their names have been specified in data_wake.in. The code also produces the time variation of TSR,
+blade's pitch angle (deg), C_T, C_Q and C_P in the file coeff_time.plt. The gnuplot script
+coeff_time.gnu plotting the time variation of C_T and C_P is supplied (it creates a coeff_time.eps).
+
+** Examples
+Below is shown the effect of changing TSR of Batten's [6] turbine from 4 to 6 at time 2 s and back
+to 4 at time 5s for theta0=5 degs (i.e. the hub is pitched at 20 deg) as shown in Figure 1. The effect
+of changing theta0 from 5 degs to 0 at t=2 s and back to 5 degs at t=5 s is shown in Figure 2 for
+TSR=4. In both cases the TUDK and GH models were computed. As expected the agreement
+between the two models is not perfect, but is from fair to good. One should expect the GH model to
+underestimate the unsteadiness effects as it models those effects only in the momentum equation.
+
+** References:
+[1] Hansen (2005) Aerodynamics of Wind Turbines, 2nd Ed.
+[2] Snel & Schepers (1995) Join investigation of dynamic inflow effects and implementation of an
+engineering method, ECN-C—94-107
+[3] Bjork (2000), DYNSTALL: Subroutine package with a dynamic stall model, FFAP-V-110
+[4] Hansen, Gaunna and Aagaard (2004), A Beddoes-Leishman type dynamic stall model in statespace
+and indicial formulations, RIS0 R 1354
+[5] Hibbs (1986), HAWT performance with dynamic stall, Solar Energy Research Inst, SERI/STR-
+217-2732
+[6] Batten WMJ, Bahaj AS, Molland AF and Chaplin JR (2008), The prediction of the
+hydrodynamics performance of marine current turbines, Ren. Energy 33, 1085-1096
+
+
+
+
+
+
+
+* Email log
+
+The agreement with Batten's experimental results is not bad but could be better, taking iprant=0 ( prantal correction)
+leads to better agreement at low pitch angles and iprant=1 leads to better agreement at high pitch angles. 
+However, we still need ref (21) of that paper.
+
+Because Batten took into account only the momentum theory and did not correct for high a, see his equ (A7),
+ his C_T never goes above one, ours does for high a.
+
+The code also produces *fort files*. 
+These contain the spanwise distribution of alfa, cl, cd, a, a' (called a1 in the code), d(C_T)/dx and d(C_P)/dx. 
+For every tip speed ratio (TSR) there is a fort file. 
+The numbering of the files starts from the first TSR of fort.101 to the last one.
+
+I included in the zip file, *gnuplot* files that you can use to plot the various results, 
+but you are welcome to use whatever graphical software you want. 
+Note that the legends in the gnuplot plots (alfa.gnu, cl.gnu,cd.gnu,a.gnu,a1.gnu,dct_dx.gnu and dcp_dc.gnu) 
+using the fort files fit the particular tip speed ratios specified in the current data.in. 
+They will produce *.eps file where the * corresponds to the name of the gnu file, 
+i.e. alfa.gnu will produce alfa.eps. coeff.gnu will produce coeff.eps 
+which is the plot of C_T, C_Q and C_P verse TSR for the entire turbine.
+
+I also included outside of the zip file, a scan explaining the radial integration that yielded C_T and C_P.
+
+Please run the code and produce results. The code should not have bugs, but if you discover anything let me know. 
+The results are not of great original contribution, as Batten already did it in 2008, but they will add good depth to your thesis, 
+the code can be used for other turbines or other pitch angles 
+and this code will be the base for the unsteady BEM that will be a good original contribution. 
+Please check in the literature for the use of unsteady BEM or dynamic wake model for marine tidal turbine.
+
+Get Cl vs AOA , Cd vs AOA
+
+In order to use those results for your PhD, you should do the following:
+1. Verify javafoil results by looking at a profile that you know its results (Cl and Cd).
+2. Understand the method used by javafoil (panel method and boundary layer correction) and its limitation.
+
+
+For the BEM code that you will get from me, we need the following as already discussed:
+1. Cl: The lift coefficient curve slope, angle of attack at zero lift and angle of stall.
+2. Cd: The drag coefficient at alfa=0 and the values of a second order polynomial approximation of Cd = Cd_0 + Cd_1*alfa + Cd_2*alfa**2. 
+
+If you think you can produce a better function of Cd.vs.alfa than a *second order polynomial*, please do it.
+
+
+ 
+The code is to be run the same way as the old one, but it has a few changes in the input data.in:
+itlf now determines whether to use tip loss factor (please use it, so leave itlf=1, where =itlf= is a variable in the ocde)
+iprant:
+0 - means Goldstein tip loss factor (Eqs (A11)&A(12) in Batten et al (2008)).
+1 - means Prandtl tip loss factor (Page 52 in Hansen's book).
+
+ig:
+0 - means Spera's high a approximation (Eq. 6.38 in Hansen's book)
+1 - means Glauert high a approximation (Eq. 6.37 in Hansen's book).
+ 
+Take ig = 1, it fits better the experimental results.
+ 
+When comparing with Batten's results, note that what he calls pitch angle of 15 degs is zero in our case as the hub is twisted by 15 degs.
+ 
+The agreement with Batten's experimental results is not bad but could be better, taking iprant=0 leads to better agreement at low pitch angles and iprant=1 leads to better agreement at high pitch angles. However, we still need ref (21) of that paper.
+ 
+Because Batten took into account only the momentum theory and did not correct for high a, see his equ (A7), his C_T never goes above one, ours does for high a.
+ 
+The code also produces fort files. These contain the spanwise distribution of alfa, cl, cd, a, a' (called a1 in the code), d(C_T)/dx and d(C_P)/dx. For every tip speed ratio (TSR) there is a fort file. The numbering of the files starts from the first TSR of fort.101 to the last one.
+ 
+I included in the zip file, gnuplot files that you can use to plot the various results, but you are welcome to use whatever graphical software you want. Note that the legends in the gnuplot plots (alfa.gnu, cl.gnu,cd.gnu,a.gnu,a1.gnu,dct_dx.gnu and dcp_dc.gnu) using the fort files fit the particular tip speed ratios specified in the current data.in. They will produce *.eps file where the * corresponds to the name of the gnu file, i.e. alfa.gnu will produce alfa.eps. coeff.gnu will produce coeff.eps which is the plot of C_T, C_Q and C_P verse TSR for the entire turbine.
+ 
+I also included outside of the zip file, a scan explaining the radial integration that yielded C_T and C_P.
+ 
+
+
+You should also continue with your Ansys effort as we already talked.
+ 
+I will be in on Tuesday and can go with you on the running of the code if needed.
+ 
+2
+Please see attached for the latest steady BEM code version (bem_24_12_15). I added Snel's rotational correction (the ref that you asked as interlibrary loan) and hub losses for the prandtl estimate (xhub is r/R of the hub).
+
+It did not make a lot of difference and still usually the best configuration is Goldstein's loss (itlf=1, iprant=0) and use Glauert approx of Hensen's book for high a with tip loss incorporated (ig=1).
+
+The naca*.dat files are only up to angle of attack of 10 degs. 
+We have to increase them to at least 15 degs (or 20 degs as in the Batten's paper) to increase accuracy. 
+See if you can get higher angles of attack up to 20 degs from javafoil and check the accuracy by comparing to Batten's cl.vs.alfa.
+
+* Divergence
+
+solution:
+- vary the number of TSRs between 1 and 8.5 or vary the ends (1 or 8.5) until you get solutions. 
+
+I looked at your blade*.dat file and it looks okay, although the Re is likely to be closer to 200K towards the edge
+ (i.e. use eppler_2.dat at x=0.9 and 1 instead of eppler_1.dat, but it is not that important).
+
+- Equations are non-linear equation 
+
+solver is a *linear iteration* procedure (very similar to that outlined in Chap 6 in Aerodynamics of Wind Turbines by Hansen -Page 50/51 ).
+ Such procedure can diverge if the initial guess is not close to the solution or the non-linear functions fluctuate strongly near the solutions.
+
+The linear iteration procedure can be replaced by a *global procedure of Newton Rapson*, 
+but I do not have the time to code it and it will also not guarantee convergence at any condition. 
+Because this is no solver for a set of two or more non-linear equations that is guaranteed to converge at any condition.
+
+
+You will note that at high TSR it will be more difficult to converge and sometimes the code will go to an approximation. 
+This can be caused by a state of a turbulent wake behind the rotor (C_T>1) or not far from it.
+** solution
+- reduce max TSR
+- increase first station to account to 0.3/0.25
+
+
+* Results
+at high TSRs, the BEM not accurate cause the rotor is in turbulent ring state

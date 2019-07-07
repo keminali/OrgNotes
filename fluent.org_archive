@@ -1,0 +1,16 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file c:/Users/exw692/Dropbox/Emacs/fluent.org
+
+
+*  transient calculation
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2017-12-07 Thu 18:51
+  :ARCHIVE_FILE: c:/Users/exw692/Dropbox/Emacs/fluent.org
+  :ARCHIVE_OLPATH: Solver/solver selection guide
+  :ARCHIVE_CATEGORY: fluent
+  :END:
+- time accurate, SIMPLE
+  + more likely to divergence than Coupled
+- non-time accurate, Coupled

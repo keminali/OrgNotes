@@ -1,0 +1,77 @@
+* aeroacoustic model in ANSYS Fluent
+- Governing Eqs are the Navier Stokes Equations
+- magnitude is several order of  magnitude lower which cause challenge for numerical modelling
+
+Aeroacoustic Noise
+Predict aeroacoustic noise like fan-noise, jet-noise, buffeting, etc.
+
+Steady case the unsteady case
+
+Steady case
+	the FW-H model could be used for a steady-state simulation in the case where your model has a single moving reference frame.
+
+Unsteady case
+	Before you start the acoustics calculation for a transient case, an ANSYS Fluent transient
+	solution should have been run to a point where the transient flow field has become “statistically
+	steady”. In practice, this means that the unsteady flow field under consideration, including
+	all the major flow variables, has become fully developed in such a way that its statistics
+	do not change with time. Monitoring the major flow variables at selected points in the domain
+	is helpful for determining if this condition has been met.
+
+time-step size
+	one way to determine the time-step size for the transient computation is to make it small
+	enough to resolve the smallest characteristic time scale of the flow at hand that can be reproduced by
+	the mesh and turbulence adopted in your model
+	
+Calculation Procedure 
+	
+	Before you start the acoustics calculation for a transient case, an ANSYS Fluent transient
+	solution should have been run to a point where the transient flow field has become “statistically
+	steady”.
+	
+	1. Calculate a converged flow solution. For a transient case, run the transient solution until you obtain a
+	“statistically steady-state” solution.
+	2. Enable the FW-H acoustics model and set the associated model parameters.
+	3. Specify the source surface(s) and choose the options associated with acquisition and saving of the source
+	data. For a steady-state case, specify the rotating surface zone(s) as the source surface(s).
+	4. Specify the receiver location(s).
+	5. Continue the transient solution for a sufficiently long period of time and save the source data (transient
+	cases only).
+	6. Compute and save the sound pressure signals.
+	7. Postprocess the sound pressure signals.
+	
+	
+	Source surfaces:
+	Receiver locations:
+	
+
+Reference: 
+Chapter 23: Predicting Aerodynamically Generated Noise, user guide, fluent
+
+** theory guide
+Aerodynamics & Aeroacoustics with ANSYS CFD.pdf
+15. Aerodynamically Generated Noise, theory guide
+*** direct method
+*** integral method based on Acoustic analogy (FW-H)
+- middle to far-field noise
+- based on the Ffowcs-Williams and Hawkings (FW-H) formulation
+***** validity/limit
+- external flow, such as the flows around ground vehicles and aircraft
+- *not* valid for noise propagation inside *ducts* or *wall-enclosed space*
+
+*** Broadband noise source models
+** ANSYS Solution
+
+    A wide array of validated solutions for direct aeroacoustics noise predictions
+    Acoustic analogy models
+    Broadband noise models
+    Coupling acoustics in ANSYS Mechanical
+    Coupling with LMS Virtual.Lab Acoustics
+
+** Aeroacoustics tutorial
+Advanced training materials, search "[[https://support.ansys.com/AnsysCustomerPortal/en_us/Knowledge%20Resources/Tutorials%20&%20Training%20Materials/Training%20Files/Aeroacoustics+using+ANSYS+Fluent+14.5][Aeroacoustics using ANSYS Fluent]] " 
+or "aeroacoustics" in ANSYS Customer portal, you can find more [[https://support.ansys.com/AnsysCustomerPortal/en_us/Training+&+Support/Advanced+Training+Courses][advanced training courses]].\\
+
+aeroacoustics_2D turbulent flow around a cylinder.pdf
+
+23. Predicting Aerodynamically Generated Noise,  User's Guide. 17.2

@@ -1,0 +1,646 @@
+
+* 程序员怎么记代码?
+* TODO DENM512--	Grad, div and curl: Vector Calculus for Engineering	Dr Henri Huijberts
+Organiser: 	Dr Henri Huijberts
+Deputy Organiser 1: 	Dr Sergey Karabasov
+Deputy Organiser 2: 	Dr Folashade Akinmolayan
+Teaching Associate: 	Dr Elnaz Naghibi
+Overlap: 	DENM512
+Prerequisites: 	DEN4122, DEN4123
+
+Description: 	This module builds on DEN4122/4123 Mathematics and Computing 1/2 
+to provide students with knowledge of 
+more advanced mathematical and computing techniques 
+that are essential for Engineering students. 
+Topics covered are basics of 
+vector calculus, vector and scalar fields, gradient of scalar fields, 
+optimisation, div and curl of vector fields, vector integration, 
+integral theorems, curvilinear coordinates, application to derivation of the Navier-Stokes Equations.
+
+Aims: 	
+To provide students with fundamental mathematical techniques that 
+are essential for the understanding of advanced Engineering concepts.
+
+
+*Objectives:*
+
+The application of optimisation methods based on 
+the *Weierstrass Theorem* and *Lagrange multipliers* in the solution of Engineering problems.
+
+The application of fundamental vector calculus concepts in the formulation of Engineering problems.
+Perform vector operations.
+
+Calculate and explain the meaning of the gradient of a scalar field and the curl and divergence of vector fields.
+
+Use the Weierstrass Theorem and Lagrange multipliers in the solution of constrained optimisation problems.
+
+Formulate and calculate vector integrals.
+
+Use integral theorems to calculate vector integrals.
+
+Formulate and analyse Engineering problems in curvilinear coordinate systems.
+
+Derive the Navier-Stokes Equations using vector calculus techniques.
+
+Use quantitative data confidently and competently.
+
+Apply analytical skills to investigate unfamiliar problems.
+
+
+*Syllabus:* 	
+
+1. Introduction to module
+
+2. Vectors and scalars: vectors, scalars, vector algebra, laws of vector algebra, unit vectors, rectangular unit vectors, components of a vector, scalar fields, vector fields.
+
+3. The dot and cross product: dot products, cross products, triple products.
+
+4. Vector differentiation: ordinary derivatives of vectors, space curves, differentiation formulas, partial derivatives of vectors, differentials of vectors, differential geometry, mechanics.
+
+5. Gradient, divergence and curl: the del operator, gradient, divergence, curl, interpretation of concepts.
+
+6. Optimisation: max and min of multivariable functions, unconstrained optimisation, constrained optimisation, Weierstrass Theorem, Lagrange multipliers.
+
+7. Vector integration: ordinary integrals of vectors, line integrals, surface integrals, volume integrals.
+
+8. Integral theorems: Gauss, Stokes, Green.
+
+9. Curvilinear coordinates: transformation of coordinates, orthogonal curvilinear coordinates, unit vectors in curvilinear systems, gradient, divergence, curl, special orthogonal coordinate systems.
+
+10. The Navier-Stokes equations.
+** FORMULA LISTS (WILL BE PROVIDED IN EXAM)
+
+    DEN5122 Formula List File
+    88.8KB Uploaded 28/09/18, 13:06
+    Facts and Formulae: print version File
+    1.7MB Uploaded 28/09/18, 13:10
+    Facts and Formulae: onscreen version File
+    1.6MB Uploaded 28/09/18, 13:12
+    Facts and Formulae: large print version File
+    696.7KB Uploaded 28/09/18, 13:13
+** PREREQUISITES
+
+    HELM7 Matrices File
+    1.3MB
+
+    Mainly Sections 7.2 and 7.3 relevant for DEN5122.
+    HELM11 Differentiation File
+    1.6MB
+    HELM12 Applications of Differentiation File
+    2MB
+    HELM13 Integration File
+    1.7MB
+    HELM14 Applications of Integration 1 File
+    1.3MB
+
+    Mainly Section 14.1 and 14.4 are relevant for DEN5122.
+    HELM15 Applications of Integration 2 File
+    1.1MB
+
+    Mainly Section 15.1 is relevant for DEN5122.
+** Introduction and Prerequisites
+
+    Introductory Notes File
+    152KB Uploaded 24/09/18, 14:06
+*** Vector prerequisites
+
+    HELM09 Vectors File
+    
+    Lecture Notes on Vectors 1on1 File
+    
+    Lecture Notes on Vectors 4on1 File
+** Functions of several variables prerequisites
+
+    HELM18 Functions of Several Variables File
+    1.5MB
+
+    Sections 18.1-18.3 relevant. Prerequisite from DEN4123.
+** Differential Vector Calculus
+
+    HELM28 Differential Vector Calculus File
+
+
+    All sections relevant.
+    Lecture Notes on Differential Vector Calculus: 1on1 File
+    134.3KB Uploaded 2/10/18, 13:26
+    Lecture Notes on Differential Vector Calculus: 4on1 File
+    74.3KB Uploaded 2/10/18, 13:35
+    Open University Video on grad URL
+    Open University Video on div URL
+    Open University Video on curl
+** Multivariable Optimisation
+
+    Question about local and global extrema File
+    48.8KB
+    Lecture Notes on Multivariable Optimisation: 1on1 File
+    300.5KB Uploaded 9/10/18, 12:39
+    Lecture Notes on Multivariable Optimisation: 4on1 File
+    66.5KB Uploaded 9/10/18, 12:40
+** Multiple Integration
+
+    HELM27 Multiple Integration File
+    1.6MB
+
+    All sections relevant.
+    Lecture Programme Week 4 File
+    123.9KB Uploaded 5/10/18, 14:51
+
+    Relevant notes can be found in HELM 27, as indicated. We will not be looking at change of order of integration. The main new material presented are triple integrals and calculation of multiple integrals using changes of coordinates.
+    Note on calculation of Jacobians File
+    113.1KB Uploaded 7/10/18, 14:10
+
+    This note gives some additional background to HELM27.4.
+    Solutions Week 4 Lectures File
+    192.9KB Uploaded 8/10/18, 10:45
+** Integral Vector Calculus
+
+    HELM29 Integral Vector Calculus File
+    1.4MB
+
+    All sections relevant, except Section 29.1.4.
+    Lecture Programme Week 5 File
+    116.2KB Uploaded 22/10/18, 11:10
+    Solutions Week 5 Lectures File
+    124.3KB Uploaded 22/10/18, 12:32
+    Lecture Notes on Surface Integrals: 1on1 File
+    282.1KB Uploaded 31/10/18, 10:46
+    Lecture Notes on Surface Integrals: 4on1 File
+    127.9KB Uploaded 26/10/18, 10:10
+    Lecture Notes on Integral Theorems: 1on1 File
+    267.5KB
+    Lecture Notes on Integral Theorems: 4on1 File
+    57.1KB
+** The Navier-Stokes Equations
+
+    Supplementary for lecture week 12 File
+    231.2KB
+    Supplementary on N-S equations for revision File
+    85.5KB
+    Navier-Stokes Equations-2018 File
+
+** Exercise classes
+
+    Exercise Classes Week 1 File
+    36.6KB Uploaded 15/09/18, 09:14
+    Solutions Exercise Classes Week 1 File
+    131.2KB
+    Exercise Classes Week 2 File
+    100.3KB Uploaded 22/09/18, 16:18
+    Solutions Exercise Classes Week 2 File
+    6.2MB Uploaded 14/04/19, 09:34
+    Exercise Classes Week 3 File
+    88.9KB Uploaded 28/09/18, 17:15
+    Solutions Exercise Classes Week 3 File
+    204.3KB Uploaded 1/10/18, 08:03
+    Week 3 Exercise Classes Gallery Lightbox Gallery
+
+Exercise Classes Week 4 File
+79.4KB Uploaded 29/09/18, 13:12
+Solutions Exercise Classes Week 4 File
+300.7KB Uploaded 1/10/18, 08:05
+Week 4 Exercise Classes Gallery Lightbox Gallery
+Exercise Classes Week 5 URL
+Solutions Exercise Classes Week 5 URL
+Exercise Classes Week 6 File
+111.1KB Uploaded 31/10/18, 10:48
+Solutions Exercise Classes Week 6 File
+164.2KB Uploaded 22/10/18, 12:23
+Exercise Classes Week 8 File
+108.4KB Uploaded 10/11/18, 10:34
+Solutions Exercise Classes Week 8 File
+317.9KB Uploaded 29/10/18, 12:47
+Exercise Classes Week 9 File
+124.2KB Uploaded 13/11/18, 10:59
+Solutions Exercise Classes Week 9 File
+446KB Uploaded 29/10/18, 16:01
+Exercise Classes Week 10 & 11 File
+788.8KB
+Exercise Classes Week 10 & 11 solutions File
+564.5KB
+Exercise Class Monday Week 12 File
+83KB Uploaded 22/04/19, 13:50
+Solutions Monday Week 12 File
+1.3MB Uploaded 24/12/18, 11:51
+Exercise Class Tuesday Week 12 File
+73.5KB Uploaded 6/12/18, 08:59
+
+Please note that Question 4 is not relevant to the 2019 exam.
+Solutions Tuesday Week 12 File
+3MB Uploaded 6/12/18, 09:30
+Exercises Wednesday Week 12 File
+130.6KB Uploaded 6/12/18, 09:40
+
+Please note that Question 4 is not relevant to the 2019 exam.
+Solutions Wednesday Week 12 File
+473.4KB Uploaded 6/12/18, 09:42
+** Exercises and Worked Examples
+
+    Exercises (update 11/12/16) File
+    111.2KB
+    Worked Examples File
+    265KB Uploaded 13/10/17, 17:03
+    Formula List (will be provided in exam) File
+
+** Homeworks
+
+    Homework 1 File
+    99.3KB Uploaded 31/10/18, 10:51
+    Homework 2 File
+    124.5KB Uploaded 11/11/18, 13:59
+** revision
+DEN5122 1st sit Solutions 2017 File
+3MB Uploaded 6/07/17, 10:21
+DEN5122 1st sit Solutions 2018 File
+473.4KB Uploaded 4/03/19, 12:18
+Standard parametrisations File
+
+* SEMS modules
+** Postgraduate Modules
+Engineering Modules
+Level: 4: Introductory
+DENM122	Essential Mathematics Skills for Engineers	Dr Henri Huijberts	Dr Tomas Lukas
+Level: 5: Intermediate
+DENM109	Engineering Instrumentation	Dr Hasan Shaheed	Dr Pavel Novak
+DENM510	Energy Conversion Analysis	Dr Hicham Adjali	Dr Yi Sui
+DENM512	Grad, div and curl: Vector Calculus for Engineering	Dr Henri Huijberts	Dr Sergey Karabasov
+Level: 6: Final
+DENM029	Principles and Application of Medical Imaging	Prof Elizabeth Tanner	Dr Nuria Gavara
+DENM209	Heat Transfer and Fluid Mechanics 2	Dr Adrian Briggs	Prof Huasheng Wang
+DENM331	Computer Aided Engineering for Solids and Fluids	Dr Andrew Buchan	Dr Jens-Dominik Mueller
+MELM004	Digital Electronics	TBC	
+Level: 7: Masters
+*DENM010	Computational Fluid Dynamics	Dr Sergey Karabasov	Dr Lorenzo Botto*
+DENM001	Advanced Flight Control and Simulation of Aerospace Vehicles	Dr Ranjan Vepa	TBC
+DENM003	Aerospace Research Project	Dr Adrian Briggs	Dr Helena Azevedo
+DENM004	Computational Engineering	Dr Pihua Wen	Dr Tomas Lukas
+DENM006	Biomedical Engineering Project	Dr Adrian Briggs	Dr Helena Azevedo
+
+DENM011	Robotics	Dr Ranjan Vepa	Dr Hasan Shaheed
+DENM012	Advanced Environmental Engineering	Dr Peter Wormleaton	Dr Lorenzo Botto
+DENM014	Research Methods and Experimental Techniques in Engineering	Dr Yousef Zawahreh	Dr Rafael Castrejon-Pita
+Dr Jun Chen
+DENM016	Biomedical Engineering in Urology	Prof Martin Knight	TBC
+DENM021	Advanced Combustion in Reciprocating engines.	Prof Xi Jiang	TBC
+DENM022	Advanced Gas Turbines	Dr Fariborz Motallebi	Prof Xi Jiang
+DENM023	Energy Economics and Management of Sustainable energy	Dr Stuart Peters	Mr Tony Prout
+DENM024	Clinical Measurements	Dr Lei Su	Prof Hazel Screen
+DENM025	Research Project in Sustainable Energy	Dr Adrian Briggs	Dr Helena Azevedo
+DENM026	Numerical Optimisation in Engineering Design	Dr Jens-Dominik Mueller	Prof Vassili Toropov
+DENM027	Research Project in Computational Aided Engineering	Dr Adrian Briggs	Dr Helena Azevedo
+DENM032	Aeroelasticity	Dr Ranjan Vepa	TBC
+DENM033	Vehicular Crashworthiness	Prof Fabian Duddeck	Prof James Busfield
+DENM035	Renewable Energy Sources	Prof Huasheng Wang	TBC
+DENM114	Engineering Methods	Dr Yousef Zawahreh	Dr Jun Chen
+Dr Rafael Castrejon-Pita
+DENM208	Advanced Heat Transfer and Fluid Mechanics	Dr Adrian Briggs	Prof Huasheng Wang
+DENM305	Advanced Aircraft Design	Dr Fariborz Motallebi	Dr Eldad Avital
+DENM311	Tissue Mechanics	Dr Himadri Gupta	Prof Hazel Screen
+Dr Helena Azevedo
+DENM335	Advanced Spacecraft Design: Manoeuvring and Orbital Mechanics	Dr Ranjan Vepa	TBC
+DENM336	Modelling and Control of Mechanical Systems	Dr Henri Huijberts	Dr Guang Li
+DENM405	Advanced High Speed Aerodynamics	Dr Fariborz Motallebi	Dr Sergey Karabasov
+DENM433	Whole System Design in Sustainable Engineering	Dr Stuart Peters	Mr Tony Prout
+DENM600	Energy Storage Engineering	Dr Ana Jorge Sobrido	Dr Joe Briscoe
+DENM601	Introduction to Solar Energy	Dr Joe Briscoe	Dr Ana Jorge Sobrido
+DENM702	Ethics and Regulatory Affairs	Prof David Lee	Prof Elizabeth Tanner
+DENM703	Advanced Mechanical Engineering Research Project	Dr Adrian Briggs	Dr Helena Azevedo
+MELM001	Medical Electronics & Physics Research Project	Dr Adrian Briggs	Dr Henri Huijberts
+MELM003	Surgical Techniques & Safety	Dr Lei Su	
+MELM009	Physiology for Medical Engineers	Prof Pankaj Vadgama	Prof Rob Krams
+Miss Mouna Chetehouna
+MTH739P	Topics in Scientific Computing	L Danon	TBC
+
+** UG -- Engineering  Modules
+Level: 3: Foundation
+MAS002	Elementary Mathematics	TAs	Dr Elnaz Naghibi
+SEF024	Introduction to Engineering	Dr Raza Shah	TBC
+
+Level: 4: Introductory
+DEN107	Thermodynamics 1	Dr Adrian Briggs	Dr Yi Sui
+DEN126	Design Studio	Dr Karen Shoop	Prof Nobuoki Ohtani
+DEN4005	Exploring Aerospace Engineering	Dr Eldad Avital	Prof Vassili Toropov
+Dr Sergey Karabasov
+DEN4006	Energy Conversion Systems	Dr Hicham Adjali	Dr Yi Sui
+DEN4101	Mechanics of Fluids 1	Dr Jens-Dominik Mueller	Dr Rafael Castrejon-Pita
+DEN4102	Engineering Mechanics: Statics	Dr Emiliano Bilotti	Dr Raza Shah
+DEN4108	Engineering Mechanics: Dynamics	Dr Folashade Akinmolayan	Dr Guang Li
+DEN4122	Mathematics and Computing for Engineers 1	Dr Folashade Akinmolayan	Dr Guang Li Dr Henri Huijberts
+DEN4123	Mathematics and Computing for Engineers 2	Dr Henri Huijberts	Dr Elnaz Naghibi
+DEN4226	Practical Design Studio	Prof Nobuoki Ohtani	TBC
+DEN4401	Engineering Chemistry	Dr Remzi Becer	Dr Joe Briscoe
+DEN4402	Student Centred Learning for Chemical Engineers	Dr Han Zhang	Dr Edo Boek
+Dr Petra Szilágyi
+DEN4403	Introduction to Chemical Reaction Design	Dr Roberto Volpe	TBC
+
+Level: 5: Intermediate
+DEN212	Studio Practice Course Year 2	Prof Nobuoki Ohtani	Dr Karen Shoop
+*DEN233	Low Speed Aerodynamics	Dr Fariborz Motallebi	TBC*
+DEN5000	Engineering Study Abroad Year	Dr Adrian Briggs	TBC
+
+DEN5002	Engineering Materials for Design	Dr Yousef Zawahreh	Dr Raza Shah
+
+DEN5101	Design for Manufacture	Dr Raza Shah	TBC
+
+DEN5102	Solid Mechanics	Prof Vassili Toropov	Dr Pihua Wen
+
+DEN5107	Energy Conversion Analysis	Dr Hicham Adjali	Dr Yi Sui
+
+DEN5109	Engineering Instrumentation	Dr Hasan Shaheed	Dr Pavel Novak
+
+DEN5122	grad, div and curl: Vector Calculus for Engineering	Dr Henri Huijberts	Dr Sergey Karabasov
+Dr Folashade Akinmolayan
+
+DEN5200	Control Systems Analysis and Design	Dr Guang Li	Dr Hasan Shaheed
+
+DEN5208	Heat Transfer and Fluids Mechanics 1	Dr Adrian Briggs	Dr Hicham Adjali
+Prof Huasheng Wang
+
+DEN5242	Aerothermodynamics of Fluid Flows	Dr Fariborz Motallebi	TBC
+
+DEN5300	Fluid Mechanics of the Cardiovascular System	Prof Rob Krams	Dr Lorenzo Botto
+
+DEN5302	Neuromuscular Bioelectricity and Biomechanics	Dr Lei Su	Dr Aleksandra Birn-Jeffery
+
+DEN5401	Chemical Reaction Engineering 1	Dr Stoyan Smoukov	Dr Radomir Slavchov
+
+DEN5402	Student Centred Learning for Chemical Engineers 2	Dr Edo Boek	Dr Han Zhang
+Dr Stoyan Smoukov
+Dr Ana Jorge Sobrido
+
+DEN5405	Industrial Chemistry	Dr Edo Boek	TBC
+
+DEN5406	Mass Transfer and Separation Processes 1	Dr Petra Szilágyi 	Dr Stoyan Smoukov
+
+DEN5410	Integrated Chemical Engineering Design	Dr Roberto Volpe	Dr Folashade Akinmolayan
+
+
+Level: 6: Final
+*DEN303	Stability and Control of Aircraft	Dr Eldad Avital	TBC*
+
+DEN306	Aircraft Propulsion	Dr Fariborz Motallebi	Prof Xi Jiang
+
+DEN307	Aerospace Structures	Dr Pihua Wen	Prof Vassili Toropov
+
+DEN318	Individual Project	Dr Nuria Gavara	Dr Henri Huijberts
+
+DEN320	Environmental Engineering	Dr Peter Wormleaton	Dr Lorenzo Botto
+
+DEN324	Principles and Application of Medical Imaging	Prof Elizabeth Tanner	Dr Nuria Gavara
+
+DEN326	Combustion in Automotive Engines	Prof Xi Jiang	TBC
+
+DEN327	Studio Practice Course Year 3 Group Design Project	Prof Nobuoki Ohtani	Dr Karen Shoop
+
+DEN329	Studio Practice Course Year 3 Individual Design Project	Prof Nobuoki Ohtani	Dr Karen Shoop
+
+DEN331	Computer Aided Engineering for Solids and Fluids	Dr Andrew Buchan	Dr Jens-Dominik Mueller
+
+DEN616	Engineering Industrial Experience	Prof James Busfield	Mr Crawford Blagden
+
+DEN6208	Heat Transfer and Fluid Mechanics 2	Dr Adrian Briggs	Prof Huasheng Wang
+
+DEN6305	Aircraft Design	Dr Fariborz Motallebi	Dr Eldad Avital
+
+DEN6311	Tissue Mechanics	Dr Himadri Gupta	Prof Hazel Screen Dr Helena Azevedo
+
+DEN6335	Spacecraft Design: Manoeuvring and Orbital Mechanics	Dr Ranjan Vepa	tbc
+
+DEN6408	Industrial Robotics and Mechatronics	Dr Henri Huijberts	TBC
+DEN6409	Medical Robotics Techniques	TBC	TBC
+DEN6410	Integrated Chemical Engineering Design Project	Dr Roberto Volpe	Dr Edo Boek
+DEN6411	Particle Technology	TBC	TBC
+DEN6412	MASS Transfer and Separation Processes 2	TBC	TBC
+DEN6437	Implant Design	Prof Elizabeth Tanner	Dr Raza Shah
+Level: 7: Masters
+DEN401	Computational Engineering	Dr Pihua Wen	Dr Tomas Lukas
+DEN403	Computational Fluid Dynamics	Dr Sergey Karabasov	Dr Lorenzo Botto
+DEN406	Clinical Measurements	Dr Lei Su	Prof Hazel Screen
+DEN408	Robotics	Dr Ranjan Vepa	Dr Hasan Shaheed
+DEN410	Aeroelasticity	Dr Ranjan Vepa	TBC
+DEN411	Vehicular Crashworthiness	Prof Fabian Duddeck	Prof James Busfield
+DEN412	Surgical Techniques & Safety	Dr Lei Su	
+DEN419	Design and Innovation Year 4 Major Design Project	Prof Nobuoki Ohtani	Dr Karen Shoop
+DEN420	Advanced Environmental Engineering	Dr Peter Wormleaton	Dr Lorenzo Botto
+DEN426	Advanced Combustion in Reciprocating Engines	Prof Xi Jiang	Dr Adrian Briggs
+DEN427	Advanced Gas Turbines	Dr Fariborz Motallebi	Prof Xi Jiang
+DEN430	Bioengineering in Urology	Prof Martin Knight	Prof Elizabeth Tanner
+DEN433	Energy Economics and Management of Sustainable Energy	Dr Stuart Peters	Mr Tony Prout
+DEN438	Renewable Energy Sources	Prof Huasheng Wang	TBC
+DEN7001	Advanced Flight Control & Simulation of Aerospace Vehicles	Dr Ranjan Vepa	TBC
+DEN7020	Ethics and Regulatory Affairs	Prof David Lee	Prof Elizabeth Tanner
+DEN7026	Numerical Optimisation in Engineering Design	Dr Jens-Dominik Mueller	Prof Vassili Toropov
+DEN7208	Advanced Heat Transfer and Fluid Mechanics	Dr Adrian Briggs	Prof Huasheng Wang
+DEN7305	Advanced Aircraft Design	Dr Fariborz Motallebi	Dr Eldad Avital
+DEN7311	Tissue Mechanics	Dr Himadri Gupta	Prof Hazel Screen
+Dr Helena Azevedo
+DEN7335	Advanced Spacecraft Design: Manoeuvring and Orbital Mechanics	Dr Ranjan Vepa	TBC
+DEN7336	Modelling and Control of Mechanical Systems	Dr Henri Huijberts	Dr Guang Li
+DEN7401	Membrane Science and Technology	TBC	TBC
+DEN7402	Utility Systems	TBC	TBC
+DEN7405	Advanced High Speed Aerodynamics	Dr Fariborz Motallebi	Dr Sergey Karabasov
+DEN7433	Whole System Design in Sustainable Engineering	Dr Stuart Peters	Mr Tony Prout
+DEN7600	Energy Storage Engineering	Dr Ana Jorge Sobrido	Dr Joe Briscoe
+DEN7601	Introduction to Solar Energy	Dr Joe Briscoe	Dr Ana Jorge Sobrido
+
+DEN6336	Modelling and Control of Robotic Systems	Dr Ketao Zhang	TBC
+
+DEN6401	Chemical Reaction Engineering 2	TBC	TBC
+
+DEN6402	Process Synthesis	TBC	TBC
+
+DEN6403	Particle Technology and Separation Processes 2	TBC	TBC
+
+DEN6404	Process Fluid Dynamics	TBC	TBC
+
+DEN6405	High Speed Aerodynamics	Dr Fariborz Motallebi	Dr Sergey Karabasov
+
+DEN6407	Intercalated Research Project	Dr Tina Chowdhury	TBC
+
+** ref
+https://admin.sems.qmul.ac.uk/courses/courselist.php?class=U#Engineering
+* DEN331-- CAE for solids and fluids
+** Lecture CFD1: introduction File
+** Lecture CFD2: basics of discretisation File
+
+
+Matlab program example: advection eq with finite differences File
+Spreadsheet for finite difference solution to the advection eq. File
+Matlab/octave program for finite volume approximation to the advection equ. File
+Spreadsheet for finite volume approximation to the advection equ. File
+Lecture CFD3: analysis of discretisation File
+
+updated 18/10/18, added slides on inviscid cylinder flow
+Lecture CFD4: stability, grids, analysis of the solution File
+
+updated 1/11/18
+Overview of aerofoil results for using Fluent File
+Overview of bifurcation results with Fluent
+* HELM -- Help Engineer Learn Math
+** intro
+Production    of    this    2015    edition,    containingcorrections    and    minor    revisionsof    the    2008    edition,was    funded    by    the    sigmaNetwork.   
+ About    the    
+HELMProjectHELM(Helping     Engineers     Learn     Mathematics)    
+ materials     were     the     outcome     of     a     three-­‐year     curriculum    development    project 
+   undertaken    by    a    consortium    of    five    English    universities    led    by    Loughborough    University, 
+   funded    by    the    Higher    Education    Funding    Council    for    England    under    the    Fund    for  
+  the    Development    of    Teaching    and    Learning    for    the    period    October    2002  
+  –September    2005,    with    additional    transferability    funding    October    2005    –September    2006.
+HELMaims    to    enhance    the    mathematical    education    of    engineering    undergraduates    through 
+   flexible    learning    resources,    mainly    these    Workbooks.
+HELMlearning    resources    were    produced    primarily    by    teams    of    writers    at    six    universities:
+    Hull,    Loughborough,    Manchester,    Newcastle,    Reading,    Sunderland.
+
+HELMgratefully    acknowledges    the    valuable    support    of    colleagues   
+ at    the    following    universities    and    colleges    involved    in    the    critical    reading,  
+  trialling,    enhancement    and    revision    of    the    learning    materials:  
+  Aston,    Bournemouth    &    Poole    College,    Cambridge,    City,    Glamorgan,    Glasgow,  
+  Glasgow    Caledonian,    Glenrothes    Institute     of     Applied     Technology,    
+ Harper     Adams,     Hertfordshire,     Leicester,     Liverpool,     London     Metropolitan,   
+ Moray     College,     Northumbria,     Nottingham,     Nottingham     Trent,     Oxford     
+Brookes,     Plymouth,     Portsmouth,    Queens     Belfast,     Robert     Gordon,     Royal 
+    Forest     of     Dean     College,     Salford,     Sligo     Institute     of   
+  Technology,    Southampton,     Southampton     Institute,     Surrey,     Teesside,     Ulster,     
+University     of     Wales     Institute     Cardiff,     West    Kingsway    College    (London),    
+West    Notts    College.HELM    Contacts:Post:HELM,    Mathematics    Education    Centre,    Loughborough    University,    Loughborough,    
+LE11    3TU.
+
+Email:   
+ helm@lboro.ac.uk
+Web:http://helm.lboro.ac.uk
+** ref
+https://learn.lboro.ac.uk/archive/olmp/olmp_resources/pages/wbooks_fulllist.html
+
+** Workbooks    
+1Basic    Algebra26Functions    of    a    Complex    Variable2Basic    Functions27Multiple    Integration3Equations,    Inequalities    &    Partial    Fractions28Differential    Vector    Calculus4Trigonometry29Integral    Vector    Calculus5Functions    and    Modelling30Introduction    to    Numerical    Methods6Exponential    and    Logarithmic    Functions31Numerical    Methods    of    Approximation7Matrices32Numerical    Initial    Value    Problems8Matrix    Solution    of    Equations33Numerical    Boundary    Value    Problems9Vectors34Modelling    Motion10Complex    Numbers35Sets    and    Probability11Differentiation36Descriptive    Statistics12Applications    of    Differentiation37Discrete    Probability    Distributions13Integration38Continuous    Probability    Distributions14Applications    of    Integration    139The    Normal    Distribution15Applications    of    Integration    240Sampling    Distributions    and    Estimation16Sequences    and    Series41Hypothesis    Testing17Conics    and    Polar    Coordinates42Goodness    of    Fit    and    Contingency    Tables18Functions    of    Several    Variables43Regression    and    Correlation19Differential    Equations44Analysis    of    Variance20Laplace    Transforms45Non-­‐parametric    Statistics21z-­‐Transforms46Reliability    and    Quality    Control22Eigenvalues    and    Eigenvectors47Mathematics    and    Physics    Miscellany23Fourier    Series48Engineering    Case    Study24Fourier    Transforms49Student’s    Guide25Partial    Differential    Equations50Tutor’s    Guide
+* DENM122 - Essential Mathematics Skills for Engineers 
+** Arithmetic and Algebraic Skills
+        Unit 1: Arithmetic Skills File
+        196.8KB
+        Unit 2: Algebraic Skills File
+        190.8KB
+**   HELM WORKBOOKS
+        Basic Algebra File
+        1.6MB
+        Basic Functions File
+        2.3MB
+        Equations, Inequalities and Partial Fractions File
+        1.6MB
+        Trigonometry File
+        2MB
+        Exponential and Logarithmic Functions File
+        2.2MB
+        Matrices File
+        1.3MB
+        Matrix Solutions of Equations File
+        1.1MB
+        Vectors File
+        1.7MB
+        Complex Numbers File
+        1.5MB
+        Differentiation File
+        1.6MB
+        Applications of Differentiation File
+        2MB
+        Integration File
+        1.7MB
+        Functions of Several Variables File
+        1.5MB
+        Differential Equations File
+        1.6MB
+        Eigenvalues and Eigenvectors File
+        1.3MB
+
+
+* DEN233-- Low speed aerodynamics
+** Intro
+The course builds on the concepts introduced in Mechanics of Fluids and Aerothermodynamics of Fluid Flows
+ and consists of two parts. 
+The first part is to study inviscid, incompressible flow over aircraft wings. 
+The concepts of stream function, velocity potential, vorticity and circulation are developed and 
+exact solutions of flow over some simple two-dimensional bodies are discussed. 
+From this basis, methods are developed for calculating forces and moments on thin wing sections and finite-span wings in low-speed flow.
+
+In the second part the behaviour of viscous boundary layer over the wing section will be studied. 
+Areas such as laminar-transitional-turbulent boundary layers, flow separation, flow control will be covered.
+Then methods will be developed  to predict flow transion and separation over 2-D wings. 
+The lectures will be concluded by an introduction to the effects of compressiblity on the design of wings. 
+** Laboratory Sheets and Assignments
+
+
+Please find information on Laboratory exercises and tests on this section.
+
+    Marking Criteria DEN233 File
+    9.6KB
+    Experiment 1 - Pressure Distribution and Lift on a Piercy Aerofoil File
+    158KB
+    Version 2 DEN233 Piercy Aerofoil 2018 19 File
+    119KB
+    Experiment 2 - Lift and Drag on a Wing File
+    Version 2 DEN233 Lift and Drag 2018 19 File
+
+**  Reading List:
+
+1-     Lecture Notes
+
+2-     Boundary Layer Theory, Herman Schlichting, Springer
+
+3-     Viscous Fluid Flows, Frank M. White, McGraw Hill
+
+4-     Fluid Mechanics, Frank M. White, McGraw Hill
+
+5-     Fundamentals of Aerodynamics, John D. Anderson, McGraw Hill
+
+6-     Aerodynamics for Engineers, John D. BertinPrentice Hall
+
+* thermo--outlook
+ Part 0 - Module Outline File
+444.8KB
+Part 1 - Definitions and Part 2 - The First Law of Thermodynamics File
+Part 3 - Thermodynamic Properties File
+Part 4 - Ideal Gases File
+Part 5 - Specific Heat Capacity and Perfect Gases File
+476.9KB
+Part 6 - Work and Heat in Ideal Processes
+ Part 7A - Steady Flow Energy Equation - Derivation File
+Part 7B - Steady Flow Energy Equation - Applications File
+473KB
+Part 9A - Power Cycles a) The Carnot Cycle File
+Part 9B - Power Cycles b) Carnot Cycle Analysis File
+Part 9C - Power Cycles c) Non-Ideal Carnot Cycles and The Rankine Cycle File
+Part 8 two phase equilibrium File
+555.3KB
+Part 10 - 2nd law of thermodynamics File
+
+** Problem Sheets and Exam Papers
+
+    Problem Sheet 1 - First Law File
+    Problem Sheet 1 - Solutions File
+    192.8KB
+    Problem Sheet 2 - Thermodynamic Properties File
+    Problem Sheet 2 - Solutions File
+    545.9KB
+    Problem Sheet 3 - Work and Heat File
+    Problem Sheet 3 - Solutions File
+    249.3KB
+    Problem Sheet 4 - Flow Processes File
+    Problem Sheet 4 - Solutions File
+    Problem Sheet 5 - Two-Phase Equilibrium File
+    Problem Sheet 5 - Solutions File
+    198.4KB
+    Problem Sheet 6 - Cycles File
+    Problem Sheet 6 - Solutions File
+    374.6KB
+    Solution to 2018 Exam File
+    729.6KB
+
+** Ideal Gas Laboratory
+    Solution to 2017 Exam Paper
+ DEN107 lab groups 2019 File
+20.9KB
+Ideal Gas Lab Sheet File
+890.9KB
+Lab Lecture File
+848.9KB
+Manufacturers Manual File
+1.5MB
+Ideal gas lab report submission point - groups 1-4

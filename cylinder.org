@@ -1,0 +1,21 @@
+drag and lift force change periodically with time
+- the contribution of the friction drag to the total drag forces is less than 2-3 %
+- if the  blockage ratio is less than 6%, then blockage effect is negiable
+** influence of Reynolds number 
+for flow around a circular cylinder
+Re < 40, steady symmetric
+Re > 40, unsteady, asymmetric, alternative vortex shedding
+** lift and drag coefficient
+- T_v : vortex shedding period
+- C_D : drag coefficient
+- C_L : lift coefficient
+\[
+C_D = \frac{F_D}{\frac{1}{2} \rho D U^2}
+\]
+\[
+C_L = \frac{F_L}{\frac{1}{2} \rho D U^2}
+\]
+ 
+* numerical  modelling of cylinder
+** validation
+- Parameters for validation: lift/drag coefficient, St number

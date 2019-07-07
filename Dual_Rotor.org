@@ -1,0 +1,1160 @@
+#+SETUPFILE: theme-bigblow.setup
+
+* Eldad Avital
+** k fit
+if you wish to improve the manuscript 
+you should also best fit the Park model to the RANS results. 
+
+- Best fit :: it means changing k until it best fits the RANS results.
+
+Many modern plotting software has best fit options. 
+for example in =gnuplot= the following script can be used to best fit the park model:
+
+#+begin_src 
+# write the value of a which is u_inf*(1-sqrt(1-C_T))
+a = .... 
+#write the value of the diameter D
+d = .....
+f(x) = a*d*d/((d+2*k*x)*(d+2*k*x))
+# res.dat is the file containing two columns of x, C_T 
+fit f(x) via k
+plot 'res.dat' with lines lw 1, f(x) lw 3 title "best fitted"
+#+end_src 
+
+Further information can on best fit and least square operations can be found in 'Numerical Recipes for fortran'
+
+
+** may, 10, 2019
+
+
+Hello,
+
+I had time to read the manuscript that you sent me.
+
+It is encouraging that you took the initiative to write this journal manuscript, but it needs a lot of work as I am afraid that in its current form it is likely to be rejected. Besides the style that needs fixing, my main concern is the claim that the CFD gives more credibility the BEM-Park model, which is not correct according to Fig 7. This may be fixed by the following steps:
+1. Numerical methods:
+Eqs (1) to (6) are not numerical methods but definitions. They should appear under Section 2, where you should also add the definition of C_P for the dual rotor (you can join expressions together to reduce the number of equations, e.g. the definitions of dual rotor TSRS are all in one equation separated by commas). Instead there should be a description on the BEM-Park model with an explicit expression of the velocity deficit in Park's model under numerical method. Such description appears in your PhD thesis and you can use it as it is not a journal publication. The CFD paragraph can be broken to 2-3 paragraphs and must also include a paragraph how the dual rotor configuration is modelled.
+2 Grid convergence:
+You should also show convergence in C_P (coefficient of power). It can be for a certain TSR.
+3 Single rotor case:
+What is the C_P for TI=15%? If it is much reduced, it can explain the better velocity recovery behind the rotor. You should look for a ref where they also got reduced C_P from RANS as compared to other results when the blade is mostly in stall in order to better support the reduced C_P from RANS at theta_T=-2 degs.
+4 Dual rotor case:
+Fig 7 is a mess. I do not understand the short lines from RANS. Are they for dual rotor where the front rotor is at theta_T=2 degs and the rear rotor is at theta_T=-2 degs? If yes, then something is very wrong with the RANS calculation, because by Fig 6a RANS gives positive C_P for the rear rotor when TSR<6. In IJET paper the front rotor's C_P line was added to the graph of the dual rotor C_P lines in order to show the benefit of using a dual rotor configuration. You can use the same approach for Fig 7 or even better and just show the lines for a dual rotor configuration. The IJET BEM-Park results are for dual rotor with the same RPM (front and rear) which means the same TSR if normalised by the free stream velocity U_infinity or the same TSR which means the TSRs of Eq (4) and (5) for the front and rear rotors respectively.
+5 Park wake model evaluation:
+By Fig 9(b) it seems that TI=15% case fits pretty well the Park model with k=0.04 (unlike what is written in the text). Can't we get a new k to fit the line of TI=1% and repeat the calculation of BEM-Park model? It will also be of great interest to see the radial distribution of the velocity recovery, i.e. to integrate the velocity over the azimuthal direction. That can be incorporated into the BEM model in a future calculation
+6. Journal:
+I saw that you used Elsevier LaTeX format. What journal do you have in mind?
+7. Authors:
+I saw that you added Jiahuan as a author which is fine. However, please note that SEMS regulations require a SEMS academic to be a corresponding author (there can be more than one corresponding author) particularly when SEMS has put some funding into the project, unless there is a unique reason not to.
+
+My further specific comments are in the attached.
+
+You can deal with all this after the viva and we can talk about it when you come here.
+
+Regards,
+
+Eldad
+* BEM + Park Wake Model
+
+** Cp, Ct 
+***  untwist blade Dual Rotor-Same TSR, X=4D, BEM
+ # ak, distance (norm by D)=   3.99999991E-02   4.00000000    
+ # TSR1,         C_T_tot,       C_P_tot,    omega2/omega1
+   1.000000E+00   2.909236E-01   4.914991E-03   9.545139E-01
+   1.250000E+00   3.199885E-01   9.541197E-03   9.494875E-01
+   1.500000E+00   3.551858E-01   1.635755E-02   9.432595E-01
+   1.750000E+00   3.967970E-01   2.572081E-02   9.356847E-01
+   2.000000E+00   4.452844E-01   3.793438E-02   9.265449E-01
+   2.250000E+00   5.013896E-01   5.322831E-02   9.155067E-01
+   2.500000E+00   5.666941E-01   7.172015E-02   9.019552E-01
+   2.750000E+00   6.400455E-01   1.019114E-01   8.856889E-01
+   3.000000E+00   7.155706E-01   1.245228E-01   8.675593E-01
+   3.250000E+00   8.007743E-01   1.684927E-01   8.450076E-01
+   3.500000E+00   8.826195E-01   1.985777E-01   8.206090E-01
+   3.750000E+00   9.625264E-01   2.452384E-01   7.932066E-01
+   4.000000E+00   1.034679E+00   2.899615E-01   7.639931E-01
+   4.250000E+00   1.095867E+00   3.189223E-01   7.339725E-01
+   4.500000E+00   1.145909E+00   3.504994E-01   7.032983E-01
+   4.750000E+00   1.183768E+00   3.672520E-01   6.732033E-01
+   5.000000E+00   1.210961E+00   3.705721E-01   6.437439E-01
+   5.250000E+00   1.229518E+00   3.669267E-01   6.136749E-01
+   5.500000E+00   1.239214E+00   3.496212E-01   5.854359E-01
+   5.750000E+00   1.241963E+00   3.365996E-01   5.533633E-01
+   6.000000E+00   1.233588E+00   3.182268E-01   5.112253E-01
+   6.250000E+00   1.202477E+00   2.892627E-01   4.528873E-01
+   6.500000E+00   1.206378E+00   2.707369E-01   4.260790E-01
+   6.750000E+00   1.225460E+00   2.484250E-01   4.260790E-01
+   7.000000E+00   1.243969E+00   2.245596E-01   4.260790E-01
+   7.250000E+00   1.263670E+00   2.007530E-01   4.260790E-01
+   7.500000E+00   1.279559E+00   1.729689E-01   4.260790E-01
+   7.750000E+00   1.294799E+00   1.435889E-01   4.260790E-01
+   8.000000E+00   1.309392E+00   1.125503E-01   4.260790E-01
+   8.250000E+00   1.323425E+00   7.991937E-02   4.260790E-01
+   8.500000E+00   1.336993E+00   4.572996E-02   4.260790E-01
+
+***  One Rotor, Front -- BEM
+optimal TSR, 4.75, cP- 0.373, Ct=0.786
+
+ # tip speed ratio, C_T, C_Q, C_P
+   1.000000E+00   1.446881E-01   1.171658E-02   1.171658E-02
+   1.250000E+00   1.593189E-01   1.403597E-02   1.754497E-02
+   1.500000E+00   1.777531E-01   1.686786E-02   2.530178E-02
+   1.750000E+00   2.005118E-01   2.023498E-02   3.541122E-02
+   2.000000E+00   2.284072E-01   2.417262E-02   4.834523E-02
+   2.250000E+00   2.628230E-01   2.873923E-02   6.466328E-02
+   2.500000E+00   3.053085E-01   3.566615E-02   8.916538E-02
+   2.750000E+00   3.519532E-01   4.087200E-02   1.123980E-01
+   3.000000E+00   4.078814E-01   4.974238E-02   1.492271E-01
+   3.250000E+00   4.677559E-01   5.835591E-02   1.896567E-01
+   3.500000E+00   5.296996E-01   6.664367E-02   2.332529E-01
+   3.750000E+00   5.937837E-01   7.917297E-02   2.968986E-01
+   4.000000E+00   6.344659E-01   8.427126E-02   3.370850E-01
+   4.250000E+00   6.629894E-01   8.391095E-02   3.566215E-01
+   4.500000E+00   6.844452E-01   8.155056E-02   3.669775E-01
+   4.750000E+00   7.019190E-01   7.859234E-02   3.733136E-01
+   5.000000E+00   7.133261E-01   7.414687E-02   3.707343E-01
+   5.250000E+00   7.228280E-01   6.991995E-02   3.670797E-01
+   5.500000E+00   7.300519E-01   6.545099E-02   3.599804E-01
+   5.750000E+00   7.360450E-01   6.099119E-02   3.506993E-01
+   6.000000E+00   7.408087E-01   5.655559E-02   3.393335E-01
+   6.250000E+00   7.445496E-01   5.223842E-02   3.264901E-01
+   6.500000E+00   7.472836E-01   4.801953E-02   3.121269E-01
+   6.750000E+00   7.490950E-01   4.389476E-02   2.962897E-01
+   7.000000E+00   7.500650E-01   3.985439E-02   2.789807E-01
+   7.250000E+00   7.502176E-01   3.588388E-02   2.601581E-01
+   7.500000E+00   7.495563E-01   3.197564E-02   2.398173E-01
+   7.750000E+00   7.481063E-01   2.811800E-02   2.179145E-01
+   8.000000E+00   7.457961E-01   2.429791E-02   1.943832E-01
+   8.250000E+00   7.427189E-01   2.049656E-02   1.690966E-01
+   8.500000E+00   7.388816E-01   1.674599E-02   1.423409E-01
+
+** Definition of TSR
+front rotor, \( TSR_front = \omega _front * R/ U \infty \)
+Rear Rotor, TSR_rear = \omega _front * R/ U_w 
+- U_w : velocity a the wake region of the front rotor
+** post stall 
+1. viti emperical formula
+ref: 
+2. dynamic stall (hansen, wind turbine)
+
+
+** NACA0012 polar at Re=135k
+file:figures/naca0012_polar.png
+source
+numerical data from (ch4.xiang shen, QMUL thesis)
+ experimental data from 
+T. Lee and P. Gerontakos. Investigation of flow over an oscillating airfoil.
+Journal of Fluid Mechanics, 512:313–341, 2004.
+
+aoa, lift, drag, lift/drag ratio
+-13	-0.971	0.14	-6.935714286
+-12	-1	0.058	-17.24137931
+-11	-0.941	0.053	-17.75471698
+-10	-0.882	0.041	-21.51219512
+-8	-0.735	0.029	-25.34482759
+-6	-0.559	0.024	-23.29166667
+-4	-0.382	0.021	-18.19047619
+-2	-0.206	0.018	-11.44444444
+0	0	0.015	0
+2	0.206	0.018	11.44444444
+4	0.382	0.021	18.19047619
+6	0.559	0.024	23.29166667
+8	0.735	0.029	25.34482759
+10	0.882	0.041	21.51219512
+11	0.941	0.053	17.75471698
+12	1	0.058	17.24137931
+13	0.971	0.14	6.935714286
+
+** BEM+ park wake model
+what is park wake model?
+mathematical expresssion?
+important figure?
+what problem does park wake model solve?
+why use park wake model?
+who address the park wake model for the first time?
+How is park wake model implemented?
+
+*Limits of the BEM-Park model:*
+-  It neglects swirl in the incoming velocity seen by the rear rotor 
+- it assumes that velocity is uniform (obviously it also assumes no turbulence).
+-  The Park model has an empirical wake decay constant, k, that its value was taken from wind turbines. 
+Is it correct for water turbines with a different Reynolds number? 
+   + k is related with turbulence intensity
+- It neglects the effect of the rear turbine on the front one.
+
+** BEM Compiling
+
+BEM results for comparing NACA0012 and QM13F HAMCT for dual turbine.
+
+Results were already produced and are in the folders naca0012 and qm13f
+
+*Procedure of producing results:*
+1. Run BEM for front rotor and rear rotor separately. 
+the *blade chord length and pitch angle* are in the files ~blade_naca0012.dat~ and ~blade_qm13f.dat~. 
+The 2D hydrofoil profile data ( Cl Cd vs AOA) is in ~naca0012_1.dat~ and ~qm13f_Re_135k.dat~. 
+The code is ~bem_hat.f~ and its input file is ~data.in~
+2. Run ~cpdual.f90~ with the input file ~data_dual.in~ to generate ~coeff_dual.plt~ that contains the C_P and C_T for the dual turbine. 
+Explanation about the input is in ~data_dual.in~
+*** plotting files
+| ~alfa_naca0012.gnu~        | local AOA VS r/R        |
+| ~cl_cd_naca0012_fig3b.gnu~ | hydrodynamic efficiency |
+| ~naca_tsr_rpm.gnu~         | Rotational Speed Ratio (RPM_rear/RPM_front) |
+
+* TODO Q
+cl cd vs aoa in the bem code is higher than experimental data (shedale, 1981)
+
+can i use experimental cl vs aoa data rather than extraperated date?
+* TODO dual rotor result
+How to explain the Cp total is higher than analytical results?
+
+Is cfd accurate for modelling post-stall airfoil/blade?
+
+
+the Mixing Plane Model(Fluent) = the Stage Interface Model(CFX)
+
+* TODO Turbulent windmill state
+the rear totor is in turbulent windmill state
+refer to fig.2.7, Eggleston, 1987, wind turbine engineering design
+
+* TODO Cp one Rear Rotor at Re 1e6 - R=3.5
+Error at Node 10: floating point exception
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 9 cells 
+* TODO Cp one Rear Rotor at Re 1e6 - R=0.6
+C:\Users\kaiming\Documents\ZJU\naca0012_Dual_Rotor\OneRotor_Rear_1M\tsr4
+
+
+** results
+
+| TSR | Cp      | Ct |  Re | U(m/s) | omega(rad/s) | turbulence models |
+|   4 | -0.011  |    | 1e6 |    4.4 |        77.22 |   standard k-e    | 
+|   4 | 0.05    |    | 1e6 |    4.4 |        77.22 |   sst ko          | 
+| 4.5 | - 0.013 |    | 1e6 |    4.4 |        86.87 |                   |
+neRotor_Rear_1M/rear_st_tsr4_ke_7k.dat.gz
+* TODO Cp one Front Rotor at Re 1e6
+
+| Blades   | TSR |   Cp | Ct |  Re | U(m/s) | omega(rad/s) |
+|naca0012  |   4 | 0.37 |    | 1e6 |    4.4 |        77.22 |
+|      e387 |   4 | 0.41 |    | 1e6 |    4.4 |        77.22 |
+
+*e387 vs naca0012*
+at TSR 4, Re 1e6
+e387 has 10% higher Cp than naca
+
+
+xbxbxb
+* Results
+
+*Conclusion*
+- little effect of rear rotor on Cp_1
+- Cp1 is independent of TI
+** TI effect on single-rotor, front, 
+| cp | ct | TI | TSR |
+|    |    | 1  |     |
+|    |    | 15 |     |
+** Dual rotor X=4D, TI 15% -- CFD-RANS
+*Conclusion*
+- less than 1% difference for Cp1, ct1 of front rotor at two different TI levels
+
+# TI 15%, RANS results
+# TSR1 TSR2/TSR1 TSR2	  Cp_1	  Ct_1	 Cp_2	Ct_2
+  5.0   0.730    3.65   0.396   0.824  -0.024  0.289
+  5.0   0.600    3.00   0.397   0.829   0.010  0.284  
+  5.0   0.500    2.50   0.395   0.826   0.005   0.265 
+
+*TI 1%, RANS results*
+
+TSR1 TSR2/TSR1	TSR2	Cp_1	Ct_1	Cp_2	Ct_2
+5	0.733	3.665	0.394	0.82	-0.044	0.229
+5	0.644	3.22	0.393	0.82	-0.02	0.218
+5	0.55	2.75	0.394	0.819	-0.005	0.21
+5	0.5	2.5	0.395	0.82	0.002	0.184
+5	0.45	2.25	0.396	0.821	0.000	0.168
+5	0.4	2	0.396	0.821	-0.004	0.153
+5	0.35	1.75	0.395	0.821	-0.006	0.143
+5	0.2	1	0.396	0.822	-0.004	0.09
+
+
+** Dual X=4D same TSR -- BEM + Park model
+ # ak, distance (norm by D)=   3.99999991E-02   4.00000000    
+ # TSR1, C_T_tot, C_P_tot, omega2/omega1
+   1.000000E+00   2.862664E-01   2.394140E-02   9.567473E-01
+   1.250000E+00   3.237689E-01   4.581533E-02   9.503006E-01
+   1.500000E+00   3.736952E-01   7.827624E-02   9.411572E-01
+   1.750000E+00   4.390565E-01   1.231780E-01   9.281210E-01
+   2.000000E+00   5.195406E-01   1.788598E-01   9.113323E-01
+   2.250000E+00   6.136195E-01   2.441946E-01   8.893722E-01
+   2.500000E+00   7.156332E-01   3.136399E-01   8.634881E-01
+   2.750000E+00   8.213180E-01   3.814463E-01   8.335000E-01
+   3.000000E+00   9.222423E-01   4.392351E-01   8.015752E-01
+   3.250000E+00   1.001631E+00   4.755293E-01   7.784010E-01
+   3.500000E+00   1.065189E+00   4.984458E-01   7.609080E-01
+   3.750000E+00   1.116553E+00   5.122202E-01   7.491560E-01
+   4.000000E+00   1.160889E+00   5.199742E-01   7.404510E-01
+   4.250000E+00   1.196960E+00   5.233117E-01   7.338645E-01
+   4.500000E+00   1.229946E+00   5.234426E-01   7.281728E-01
+   4.750000E+00   1.261175E+00   5.211463E-01   7.232024E-01
+   5.000000E+00   1.291180E+00   5.169932E-01   7.189118E-01
+   5.250000E+00   1.313614E+00   5.118050E-01   7.153068E-01
+   5.500000E+00   1.339595E+00   5.045193E-01   7.123726E-01
+   5.750000E+00   1.359179E+00   4.970232E-01   7.101494E-01
+   6.000000E+00   1.381723E+00   4.874390E-01   7.084185E-01
+   6.250000E+00   1.399795E+00   4.772219E-01   7.073638E-01
+
+
+
+
+** DONE Cp one Rear Rotor at Re 1e6 - R=0.6
+*Flow Features:*
+keywords:
+
+largely stalled)
+High Angle of Attack, naca0012, stall, 
+Goal: performance when naca0012 is stalled
+
+C:\Users\kaiming\Documents\ZJU\naca0012_Dual_Rotor\OneRotor_Rear_1M\tsr4
+
+| TSR | Cp      | Ct |  Re | U(m/s) | omega(rad/s) | turbulence models |
+|   4 | -0.011  |    | 1e6 |    4.4 |        77.22 |   standard k-e    | 
+|   4 | 0.05    |    | 1e6 |    4.4 |        77.22 |   sst ko          | 
+| 4.5 | - 0.013 |    | 1e6 |    4.4 |        86.87 |                   |
+OneRotor_Rear_1M/rear_st_tsr4_ke_7k.dat.gz
+** Wake 
+*** TKE
+refernces:
+N Stergiannis CFD modelling approaches against single wind turbine wake measurements using RANS
+*** velocity contour in the wake
+fig.9 mycek 
+** wake width measurement in CFD?
+iso-surface plot, set variable as: U_x
+
+** Mean axial velocity from CFD  at a given X/D?
+- wake is normal distribution, gaussian 
+? how to get the mean of normal distribution?
+
+- arear averaged axial mean veolocity of wake (Mycek 2014)
+  +  (rotor radius,R)  
+
+reference:
+#+CAPTION:area-averaged velocity (disc diameter=1D) (fig.8b mycek 2014 dual rotor)
+file:figures/post/disc_averaged_axial_velocity_mycek_2014.png
+
+
+
+Area used in my case:
+ circular, r=1.2R (radius of turbine)
+
+How to define the edge of of wake in CFD post processing  at different X/D?
+how to define the edge of wake?
+U_x = 0.99U_\infty
+how to define the "mean" U_x in the wake?
+? is r=1R used by mycek right?
+
+
+*** One Rotor Front, Eldad Blade TSR 5 TI = 1%
+# One Rotor, front, eldad blade
+# TSR 5, TI =1%, \theta_T = 2 deg
+#X/D	X   half width,	Ux	U	Ux/U
+1	0.46	0.288	0.332	0.6	0.553333333
+2	0.92	0.299	0.326	0.6	0.543333333
+3	1.38	0.305	0.337	0.6	0.561666667
+4	1.84	0.311	0.354	0.6	0.59
+5	2.3	0.318	0.374	0.6	0.623333333
+6	2.76	0.326	0.394	0.6	0.656666667
+7	3.22	0.332	0.409	0.6	0.681666667
+8	3.68	0.341	0.437	0.6	0.728333333
+9	4.14	0.35	0.457	0.6	0.761666667
+10	4.59	0.352	0.464	0.6	0.773333333
+*** How to the area average velocity of wake at a given X/D?
+
+1. cacluation wake width (b) at a given X/D
+create a iso-surface plot with U_o, 
+2. get area average in CFDpost
+  + create an expression in CFD post
+~areaAve(Velocity in Stn Frame w)@areaAverage~
+3. change X=2D...
+*** *Turbulence kinetic energy*
+3e-5, 1e-2
+Number of contours, 51
+
+Velocity 
+0.02-0.6
+Number of contours, 31
+
+
+** 3D streamline
+what does 3D streamline means
+
+** k correction
+calibration
+
+| TI (%) |      k | RMS Error |
+|     15 | 0.0190 |    0.0190 |
+|    1   |    0.0075 |     0.0371 |
+
+*** Bayesian Calibration
+- based on exprimental data: overall power
+
+
+(Rathmann 2017)
+variables: hub-height wind speed, wind direction
+math function: probability density function
+reommmended k value: 0.06 offshore and 0.09 onshore
+
+- Rathmann, Ole Steen, et al. "Validation of the Revised WAsP Park Model." WindEurope 2017. 2017.
+-  Rathmann O., Estimation of the Wake Expansion Coefficient from Eddy Diffusivity Theory. Research note, DTU Wind Energy. (2017).
+-  M.C. Kennedy, A. O’Hagan. Bayesian calibration of computer models. Journal of the Royal
+Statistical Society: Series B (Statistical Methodology), 63(3), 425-464. (2001).
+- Murcia, J.P. et al., Uncertainty quantification in wind farm flow models. PhD thesis, DTU Wind
+Energy (2017).
+- Murcia, J.P. et al., Wake Model Calibration Based On SCADA Data Considering Uncertainty In The
+Inflow Conditions. Private communication (2017).
+***  k vs TI
+
+k= 0.4 TI [fn:goccmen2016wind]
+k=0.04 when TI=10%
+k=0.4 TI_h 
+- TI_h : hub height TI
+k=0.4TI = 0.038 at the Sexbierum wind fams [fn:pena2016application]
+[fn:pena2016application] Peña, Alfredo, Pierre‐Elouan Réthoré, and M. Paul van der Laan. "On the application of the Jensen wake model using a turbulence‐dependent wake decay coefficient: the Sexbierum case." Wind Energy 19.4 (2016): 763-776.
+[fn:goccmen2016wind] Göçmen, Tuhfe, et al. "Wind turbine wake models developed at the technical university of Denmark: A review." Renewable and Sustainable Energy Reviews 60 (2016): 752-769.
+
+
+
+*** Pyakurel's method
+- based on CFD data: centre line axial mean velocity
+- Eq (10) in Pyakurel 2017
+- *observed* axial velocity, U_s = *centre line* velocity from CFD RANS (this value is used as experimental data)
+- Predicted axial velocity, U_c = Jensen model in which Ct is also from CFD RANS
+Root mean square error = (U_s - U_c )_rms
+ # limit
+centre line veolocity is lower than the area averaged velocity, thus low centre line velocity as baseline, k is not accurate
+
+
+** Cp of rear rotor 
+
+criteria to difference turbine and propeller
+- direction of tangentidal force on blade
+  + same as rotational direction -->> turbine
+  + opposite as rotational direction -->> propeller
+
+
+* TODO One Rear Rotor
+file:figures/ch5/coeff_naca0012_Re_1M.pdf
+
+Cp,cfd = .5 Cp,bem
+
+Cp is much lower than its One front Rotor case
+
+Cp and Ct vs axial induction factor
+
+the rear rotor is in turbulent windmill stage [fn:eggleston1987]
+[fn:eggleston1987] D. M. Eggleston and F. Stoddard, Wind turbine engineering design. Van Nostrand Reinhold Co. Inc., New York, NY, 1987. 28
+* TODO Turbulent windmill state
+the rear totor is in turbulent windmill state
+refer to fig.2.7, Eggleston, 1987, wind turbine engineering design
+
+* TODO dual rotor result
+How to explain the Cp total is higher than analytical results?
+
+Is cfd accurate for modelling post-stall airfoil/blade?
+
+
+
+
+* TODO Grid Convergence, Single-Rotor front, eldad blade, 2 degree
+|TSR| Cp| Ct | mesh| size
+|5|    0.302 |0.778|  3.3
+|5|    0.370  | 0.791|  5.4
+|5|   0.40  |0.824 | 7.1 
+
+| mesh size |    Cp |    Ct | TSR | iterations |  
+| 5.4M      | 0.370 | 0.791 |   5 | 9k         |  
+|           |       |       |     |            | 
+ 
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  1.34301e-01
+Maximum Aspect Ratio =  1.19170e+02
+
+* DONE Cp one Rear Rotor at Re 1e6 - R=3.5
+Error at Node 10: floating point exception
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 9 cells 
+* Writing
+
+In 1983,  \textcolor{red}{Newman} \cite{newman1983actuator} did
+ analytical study on dual-disc based on the linear momentum theory,
+ and his analysis concluded that the maximum power coefficient could be 16/25,
+ which was 8\% higher than Betz limit (16/27) .
+
+%newman1983actuator
+% what is it and how is it different from glaurt's research
+% the rotors are same diameters
+
+Both rotors were optimally pitched towards the incoming flow and two counter rotating configuration sought to reduce swirl flow losses 
+that are important for the two discs are close to each other \textcolor{red}{(X/D<1)}. In Newman's model (Fig.	\ref{fig:Newman'DoubleDisk}), two same diameter discs are in tandem layout which are enclosed by  two stream tubes. The control volume is 
+decomposed into two stream tubes which are independent from each other. 
+The 1D linear  momentum is applied to both stream tubes  and the fluid across  discs is assumed 
+to be inviscid, incompressible, and steady. 
+Same velocity deficit is assumed in both stream tubes of  the front rotor, 
+but the velocity induction factors are different in the far wake of rear disc.
+
+In 1986, Newman extended his dual-disc model to multiple actuator-disc model, 
+and concluded that the optimal Cp is \(8n(n+1)/[3(2n+1)^2]\) for \(n\) discs in tandem arrangement. The maximum Cp is 2/3 when \(n\) is larger than 6, which is 13\% higher than the maximum Cp of single actuator disk model\cite{newman1986multiple}. Since then, extensional works on dual or multiple rotors have been conducted by many researchers  \cite{sundararaju2017aerodynamics,oprina2016review,clarke2007design,herzog2010performance}. Newman's model has been extended by  Sundararaju et al. \cite{sundararaju2017aerodynamics}, which assumes different axial velocities in inner and outer stream tubes at the front actuator disc (	Fig.	\ref{fig:DualRotorModel}b). %\ref{SundararajuDualDisk}. 
+Based on Sundararaju's model, the max Cp  for dual actuator discs is as high as 0.814 with disc spacing of 2.8D.
+# rotating in the same direction
+ Mycek et al. \cite{mycek2014experimentalb} did experimental tests on  two co-axial turbines in the IFREMER flume tank. The effects of two independent variables, turbulence intensity and rotor spacing, were studied. At low turbulence intensity level (3\%), the maximum power coefficient of rear rotor was only about half of the power coefficient of single rotor, while the maximum power coefficient of rear rotor could reach  roughly 80\% of the single rotor when the turbulence intensity level was high (15\%). As rotor spacing increased, the maximum power coefficient of rear rotor increased as well. The optimum \(TSR\) was as low as 2 at low rotor spacing (X<4D) and low turbulence intensity level (3\%).
+
+
+In the above mentioned analysis, the rotational relations between the front and rear rotors are not specified. There are two types rotational relations, co-rotating and counter-rotating, respectively. 
+% rotating in the same direction
+ Mycek et al. \cite{mycek2014experimentalb} did experimental tests on  two co-axial turbines rotating  in the same direction in the IFREMER flume tank. The effects of two independent variables, turbulence intensity and rotor spacing, were studied. At low turbulence intensity level (3\%), the maximum power coefficient of rear rotor was only about half of the power coefficient of single rotor, while the maximum power coefficient of rear rotor could reach  roughly 80\% of the single rotor when the turbulence intensity level was high (15\%). As rotor spacing increased, the maximum power coefficient of rear rotor increased as well. The optimum \(TSR\) was as low as 2 at low rotor spacing (X<4D) and low turbulence intensity level (3\%).
+* FAQ
+
+** Blade Twist angle in blade design?
+\theta = \theta _T *R/r, where \( \theta _T \) is tip pitch angle, R is rotor  radius, r is riadial position.
+Eq. 12 C_P from stalled blades from Rosen's handout.
+
+** analytical Cp, stall
+
+
+*assumption:*
+-  only account for the contribution of the lift. 
+- no/little variation in the C_{L\alpha} and C_{D0}
+
+
+new in this paper:
+I added the contributor of the drag in the BEM paper 
+(assuming the drag coefficient does not depend on the angle of attack).
+
+** Aviv Rosen handout
+- \overset{above}{main} 
+-\( \overset{=}{A} \)  :lift slope, Cl\alpha
+- \( \mathcal{X} \) : TSR
+- \delta : Cd, drag coefficient
+- \tau : \sigma,local  solidity
+- x=r/R
+- a, axial induction factor
+- Q: Torque
+
+
+file: cp stall aviv rosen.pdf
+* Questions
+
+TI effect on Cp of a single rotor theta =2 ?
+
+Is Cp of front rotor affected ?
+- affect is ignored in the MRF model in fluent
+
+
+However, the high density of the water that makes marine power so advantageous means that noticeable power can be lost by significantly pitching the blades
+
+
+newman model, X< D
+
+BEM + Park Model, X>2D
+
+why e387 has no benefit
+
+co-axial propulsive rotors
+
+swirl effect
+
+turbulent wake
+
+designed TSR
+which prameters affect Cp for a given turbine blade
+reverse design methods
+airfoil lift/drag 2D vs 3D
+rotating effect
+stall delay methods
+Is there other's research on dual rotor
+** Why does the velocity increase along the wake?
+file:figures/post/3d_streamline_after_rear_rotor.png
+- the mixing of the shear layer of wake, there are velocity large gradient, du/dy is large
+
+** total Cp of dual rotor
+Eq 5 and 6 in the published paper
+Where Cp, rear = P/(0.5 ρ (U- \Delta U)^3 A),  and Cp, front = P/(0.5 ρ U^3 A), and U is free stream velocity.
+The Cp  calculated by BEM is relative to the wake velocity seen after the front rotor.
+ If we normalise as relative to the *free stream speed* , the Cp of the rear rotor must be corrected downwards.
+
+* Literature
+keywords: 
+naca0012
+
+counter rotating 
+dual rotor, bi-directional, 
+configuration
+
+dual rotor + wind turbine
+dual rotor +  tidal turbine
+
+
+file: ~literature_dual_rotor.doc~
+
+industrial application
+ak-1000
+
+** quotation
+
+***  clarke-2007
+
+#+BEGIN_QUOTE
+Clarke (Clarke et al., 2007) designed a contra-rotating tidal current turbine 
+using the modified BEMT and conducted the model tests in a towing tank. 
+The testing results demonstrated that a contra-rotating turbine 
+with near-zero reactive torque on the support structure, 
+near-zero swirl in the wake, and 
+high relative inter-rotor rotational speeds can operate successfully. 
+#+END_QUOTE
+
+** Park Model (1983)
+refer to file:wake.org
+Who is the first author?
+ (N.O. Jensen 1983) , Katic 1986  
+
+wake axial velocity U_x ~ X
+
+*Assumptions:*
+- uniform axial velocity in the wake
+
+*Derivation*
+1D momentum theory
+
+The value of k in the park model is related with turbulence intensity, and a relationship of k=0.4TI is used in this case, which is recommended by Pena \cite{pena2016application} and Goccmen \cite{goccmen2016wind}.
+Park wake model, one of the earliest wake models, was proposed by Jenson [76] in 1983.
+ It is widely used for the wind farm power prediction due to its simplicity,
+reasonable accuracy, and easy implementation. Generally, the Park wake model is
+valid for downstream distances of three rotor diameters (3D) or more [77]. A linear
+expansion of wake and uniform axial velocity are assumed in the Park model. An
+empirical wake expansion rate, k , is used in the calculation of induced velocity.
+The recommended value of  k  is 0.04 [78] and 0.075 for offshore and land wind farms,
+while these values may not suitable for marine current turbine. 
+For a marine current turbine operating in a wake region, a turbulence intensity dependent
+ k  was recommended by Pyakurel et al. [79].
+ # k calibration and comment
+A joint *Jensen/Ainslie approach* was proposed to calibrate the  k
+ using the center line velocity and thrust from CFD results.
+The calibrated k  values are 0.0325 (TI=3%), 0.0477 (TI=6%), and 0.0679(TI=9%)
+However, this correction is less accurate because the wake shape behind an isolated
+marine current turbine normally forms a Gaussian shape distribution, and the axial
+mean velocity is minimum at the center line. Calibration based on area-averaged
+axial mean velocity will be a better option.
+
+[76] N. O. Jensen, A note on wind generator interaction, 1983. 31
+[77] P. Beaucage, M. Brower, N. Robinson, and C. Alonge, Overview of six commercial and research wake models for large oshore wind farms,  Proceedings of the European Wind Energy Associate (EWEA), 2012.  31
+of the European Wind Energy Associate (EWEA), 2012. 31
+[78] A. Peña, P.-E. Réthoré, and M. P. van der Laan, On the application of the jensen wake model using a turbulence-dependent wake decay coecient: the sexbierum case,  Wind Energy, vol. 19, no. 4, pp. 763776, 2016. 31, 89
+sexbierum case,  Wind Energy, vol. 19, no. 4, pp. 763-776, 2016. 31, 89
+[79] P. Pyakurel, W. Tian, J. H. VanZwieten, and M. Dhanak, Characterization of the mean flow field in the far wake region behind ocean current turbines, Journal of Ocean Engineering and Marine Energy, vol. 3, no. 2, pp. 113123, 2017. 31
+
+
+** References
+highly related
+Huang, B, 2016, oceaning eng.
+Design and performance enhancement of a bi-directional counter-rotating type horizontal axis tidal turbine." Ocean Engineering (2016): 116-123.
+
+Mycek, Paul, et al. "Experimental study of the turbulence intensity effects on marine current turbines behaviour. Part II: Two interacting turbines." Renewable Energy 68 (2014): 876-892.
+** TODO gap
+Cp of front rotor is not avaiable in Mycek's experimental tests (2014)   [fn:Mycek2014b]
+ [fn:Mycek2014b] Mycek, Paul, et al. "Experimental study of the turbulence intensity effects on marine current turbines behaviour. Part II: Two interacting turbines." Renewable Energy 68 (2014): 876-892.
+** naca0012
+file:naca0012.org
+
+
+
+
+** Papers closely related with yours
+bi-directional dual rotor
+B huang, G. J. Zhu, and Toshiaki Kanemoto. "Design and performance enhancement of a bi-directional counter-rotating type horizontal axis tidal turbine." Ocean Engineering (2016): 116-123.
+
+N Stergiannis CFD modelling approaches against single wind turbine wake measurements using RANS
+
+\cite{koehuan2017investigation}
+Koehuan, V. A., and S. Kamal. "Investigation of Counter-Rotating Wind Turbine Performance using Computational Fluid Dynamics Simulation." IOP Conference Series: Materials Science and Engineering. Vol. 267. No. 1. IOP Publishing, 2017.
+** TI effect on mean Cp and *wake velocity* profile of a single rotor
+experimental data show the mean Cp is slightly affected, but
+wake is deeply influenced. (mycek)
+
+
+** Experimental study of dual rotor
+** Analytical Analysis of dual rotor
+first author is Newman (1986) [fn:newman1986multiple]
+[fn:newman1986multiple]B. G. Newman, “Multiple actuator-disc theory for wind turbines,” J. Wind Eng. Ind. Aerodyn. 24, 215–225 (1986).
+a review on dual-rotor wind turbine [fn:sundararaju2017aerodynamics]
+Sundararaju, Haripriya, et al. "Aerodynamics and CFD analysis of equal size dual-rotor wind turbine." Journal of Renewable and Sustainable Energy 9.4 (2017): 043305.
+
+** Numerical modelling of dual rotor
+
+** Counter Rotating  Dual Rotor
+- front and rear rotors  are optimized in one direction
+- pitch angle of front rotor is  optimized in one direction, 
+while the pitch angle of rear rotor is stalled ( turbulent wake states), no pitch control
+*** AK1000 prototype
+D=18m
+https://simecatlantis.com/2010/08/12/atlantis-unveils-the-worlds-largest-tidal-turbine-the-ak100013/
+ 
+*** Cp of dual rotor vs single rotor
+- prototype, Cp increases 3%
+
+*** Cp Ct of downstream rotor
+*exp data*
+*Steady MRF*
+
+*Unsteady*
+
+
+*** tidal turbine
+Clarke, Joseph Andrew, et al. "Performance evaluation of a dual contra rotating rotor tidal turbine." 7th European Wave and Tidal Energy Conference. 2007.
+
+*** wind turbine
+
+** Parametric study
+*** Turbine operating in the wake region
+TI on Cp of rear rotor
+a higher TI , a faster velocity recovery 
+"Experimental study of the turbulence intensity effects on marine current turbines behaviour. Part II: Two interacting turbines." Renewable Energy 68 (2014): 876-892.
+
+*** effect of spacing
+As streamwise spacing, X, increases, the totoal power increases as well.
+Staggering distribtion is better than co-axis distribution
+As Lateral Spacing decreases, the Cp_total decreases 
+
+
+
+** Visualation
+
+*** naca0012 airfoil
+
+ https://www.youtube.com/watch?v=Bi7t6fTZ1xM
+
+Dynamic Stall
+mach number contour of NACA 0012 Dynamic Stall 
+https://www.youtube.com/watch?v=Ps8u2petuTw
+
+NACA 0012 5deg M=0.4
+  + Q-Criterion iso surfaces, Mach number contours
+  + DNS
+https://www.youtube.com/watch?v=AfAM6mfuN3c
+
+
+*** Dual Rotor turbine
+https://www.youtube.com/watch?time_continue=76&v=jbr7cf5J3A0
+*** Wake of Two turbines operating in-line 
+file:figures/vortex_2turbine.png
+    Georgios Deskos, Department of Earth Science and Engineering, Imperial Collegel London
+    Sylvain Laizet, Department of Aeronautics, Imperial Collegel London
+    Matthew David Piggott, Department of Earth Science and Engineering, Imperial College London
+    Spencer Sherwin, Department of Aeronautics, Imperial Collegel London
+https://www.youtube.com/watch?time_continue=76&v=jbr7cf5J3A0
+https://doi.org/10.1103/APS.DFD.2017.GFM.V0054
+
+Methods:
+LES
+Actuator Line 
+
+Object:
+front Turbine, TSR 6
+Rear Turbine, TSR 4
+Spacing, 3D
+
+** Optimal spacing
+
+** magnitude of Cp and Ct of Dual rotor vs one rotor
+thrust increases 13.3%, Cp increases 7.2% 
+((Wang, Z. Y.2018 An experimental study on the aerodynamic performances and wake characteristics of an innovative dual-rotor wind turbine)
+
+
+22.6% increasement, Each turbine has two rotors, with the first rotor rotating counter-clockwise and the second rotor rotating clockwise.
+ [Vasel 2017 Wind farms with counter-rotating wind turbines]
+
+
+blade root region (approximately 25% of the inboard section) are mainly designed to
+support structural loads such as bending and torsion forces (wang2018)
+* DONE Cl cd ratio -- 012 vs 0018
+file:figures/naca0018/lift_drag_ratio_0012_0018_re1M.pdf
+( source, eldad)
+max Cl/cd is 60 for naca0018, the value is lower than xfoil results which is around 80
+e Rear Rotor
+rear rotor for a dual rotor in line
+
+For a given rotor,
+Cp_rear = f (TI, X, Re, TSR)
+
+- X: rotor spacing
+- TI: turbulence intensity
+
+file:figures/ch5/coeff_naca0012_Re_1M.pdf
+
+Cp,cfd = .5 Cp,bem
+
+Cp is much lower than its One front Rotor case
+
+Cp and Ct vs axial induction factor
+
+the rear rotor is in turbulent windmill stage [fn:eggleston1987]
+[fn:eggleston1987] D. M. Eggleston and F. Stoddard, Wind turbine engineering design. Van Nostrand Reinhold Co. Inc., New York, NY, 1987. 28
+* Presentation
+** Object:
+-small fixed pitch counter rotating dual rotor HAMCT
+
+- check if there are benefit if the rear rotor operates
+** Flow condion:
+- wave and current
+- Bi-direction
+** blade configuration:
+dual rotors
+- each rotor blade is optimally fix-pitched towards its upstream velocity
+- rotational speed control 
+- no pitch and yaw control
+
+Wake assumption:
+- no turbulent wake
+- sufficient distance between the two rotors for the swirl
+to decay and wake veloicty radially uniform.
+** Methods
+- unsteady BEM + CFD-RANS
+
+Results 
+- cP, cT
+
+Parametric Study
+
+1. Rotor spacing, get an optimal Spacing
+2. different rotational speed
+** Conclusion:
+*Cp*
+
+at Re = 135k, 
+(Cp, dual, naca0012) is 4 % higher than (e387, single)
+
+*Cp* Rear of a dual rotor
+
+
+20\% increase of Cp
+Advantages
+- dual rototing wind turbine
+- no yaw, pitch control
+- save one tower
+
+* Abstract
+% roadmap: goal, methods, results, implication
+In this study, CFD RANS is used to simulate a counter-rotating dual-rotor MCT proposed in the previous study.
+The CFD results of performance, thrust coefficents and mean wake axial velocity are compared with
+that of the BEM coupled with Park wake model.
+% Evaluating BEM
+For a single-rotor MCT, small discrepancies are observed for front rotor,
+and larger discrepancies for rear rotor when comparing the CFD and BEM results.
+The mean axial wake veloicty agrees better with the high turbulence intensity (TI), rather than  a low TI.
+CFD results shows that the performance （Cp) of rear rotor depends on the ambient turbulence intensity. The maximum Cp of dual-rotor turbine
+is 4\% higher than that of the original e387 single rotor turbine. 
+Fluid visualization from the CFD provides more details of the flow conditions 
+and vortex behind rotors.
+This numerical simulation give more credibility to the BEM Park model. 
+
+* Introduction
+** goal
+check benefit with rotational control of rear rotor
+
+** Others
+why choose naca0012
+why study dual rotor
+design for small and medium size tidal turbine
+application of medium size turbine
+
+aim: the gain of Cp when operating a dual rotor small-medium size tidal turbine
+
+* Digest
+**   No T, 2009, Ren. energy,   Modeling, control, and simulation of dual rotor wind turbine generator system
+one small + one big
+
+** Xie Y 2018 Field test of a coaxial dual rotor *vertical* axis turbine, Proceedings of the Institution of Mechanical Engineers Part M-Journal of Engineering for the Maritime Environment, 
+10.1177/1475090216683762 
+
+Conclusions:
+- self-starting current velocity of the prototype is from 1.1 to 1.3 m/s.
+- max Cp is 0.28 at TSR 1.8
+
+#+CAPTION: coaxial dual rotor 
+file:figures/coaxial_dual_rotor_xie2017.jpg
+
+Keywords:
+coaxial dual rotor turbine
+vertical axial turbine
+self-starting performance
+
+Challenges in tidal turbine:  self-starting performance and high cost.
+
+object:
+60 degrees shift angle??
+* Review
+
+- blade pitching affects the Cp
+- hard to find the right RMP_rear for a given TSR
+RANS results of one rotor at different TSRs, and dual rotors at TSR =4.25 are attached.
+
+-	For one rotor, the RANS and BEM matches generally.
+-	For Dual, the results are Cp of front rotor only. The Cp is much large than one rotor case.
+
+Max residual 8e-4
+
+At TSR =4.25
+One rotor, Cp =0.35
+Dual rotor, X=2D, mean Cp= 0.47
+Dual rotor, X=2D, mean Cp= 0.53
+
+Also, The Cp of front Rotor at X=4D is almost steady with fluctuation within 1%
+But for X=2D, more than 10% fluctuation of Cp is observed, which suggest the interaction between the front and rear rotor is strong.
+
+Further work focus on unsteady sliding mesh modelling for dual rotor at X=2D
+
+
+Luska’s blade at negative pitch is always propeller
+
+RANS one Rotor front eldad blade match BEM very well
+RANS one Rotor Untwist Blade doesn’t match BEM very well
+RANS, one Rotor Rear, Eldad Blade
+RANS is lower than bem 
+
+RANS Dual Rotor untwist blade 4D:
+Rear rotor is a propeller
+RANS, more fluctuation of Cp for 2D than 4D case
+* Geo
+Diameter
+D=0.46m, same as Luzik
+Diameter of turbine is the same as Luska's model
+** Blade Profile
+blade shape: naca0012
+
+at Tip
+TE thickness: 7.5e-5m
+max thickness 0.12*25mm = 3mm
+yplus = 30, first layer height, 0.3mm = 3e-4m
+
+** Blade twist angle and chord length
+file:figures/ch5/pitch_twist_naca0012_ch5.png
+
+why twist angle design is \theta = \theta _T *R/r?
+
+to achieve Cp for high TSR
+
+
+tip pitch angle, twist and chord length pitched as rosen's methods
+
+
+? is it justifiable for chord length and twist angle distributions?
+according to Burton's model, local pitch angle = \phi - \alpha
+for a given designed TSR,D, the \phi is the same for e387 and naca0012, 
+The  max Cl/Cd of e387 and naca0012 happen at AOA=8
+thus the local pitch angles of e387 and naca0012 are the same
+chord length at each station is based on Luska's model
+
+
+
+Blade pitch angle is redesigned based on a method proposed by rosen
+
+- blade profile >> naca0012
+
+** Highlight
+no pitch control
+
+** FAQ
+Why the pitch angle is re-pitched as rosen's model
+
+Geo is designed for high AOA
+
+assumption and simplifications in rosen's model
+- cd is ignored
+
+This came from the lecture notes "Wind Turbines" given by Prof Aviv Rosen of the Technion, 1987. The relevant section is attached. The solution came from Pages 6-11 and 6-12 (linear aerodynamics, drag is neglected but you can estimate the effect of the drag on C_P through Eq (6-61)).
+
+* Flow Condition
+Rectilinear tidal current of reversing directions
+* Methods
+the Mixing Plane Model(Fluent) = the Stage Interface Model(CFX)
+* CFD setups
+** Geo
+tip, 25mm. trailing edge, 0.126%c, 0.063mm
+root, 0.126mm
+** CD
+shape: 1/3 cylinder
+
+axial, 5D
+length, upstream, 3D, downstream, 6D
+
+** Mesh
+*** mesh size -- one rotor Eldad blade
+global min size: 1e-5m
+mesh size
+total, 3.3 M
+in domain, 3.1 M
+
+Mesh Quality:
+
+Minimum Orthogonal Quality =  5.55496e-02
+Maximum Aspect Ratio =  6.48800e+01
+** periodic zone
+   Periodic zone   7: average rotation angle (deg) = 120.000 (120.000 to 120.000)
+                      stored zone rotation angle (deg)  = 120.000
+                      stored axis  , (0.000000e+00, 0.000000e+00, 1.000000e+00)
+                      stored origin, (0.000000e+00, 0.000000e+00, 0.000000e+00)
+   Periodic zone  12: average rotation angle (deg) = -120.000 (-120.000 to -120.000)
+                      stored zone rotation angle (deg)  = -120.000
+                      stored axis  , (0.000000e+00, 0.000000e+00, 1.000000e+00)
+                      stored origin, (0.000000e+00, 0.000000e+00, 0.000000e+00)
+WARNING: Zone 12 has inconsistent periodic setting. 
+         Please fix the problem with the TUI command '/mesh/repair-improve/repair-periodic'
+
+
+*** one rotor 
+mesh size and quality
+6M 
+328917 mixed cells, zone 3, binary.
+2659961 mixed cells, zone 4, binary.
+
+
+ meshing setups
+ANSYS meshing
+
+Prism 
+	First layer height, 0.03mm, 15 layers
+	Min size, 0.07mm
+
+*Blade surface mesh*
+ main surface, average size, 1.1mm
+Blade tip, 0.5mm
+Blade trailing, 0.08mm
+
+*Hub surface mesh*
+	
+
+*** Dual  X=4D Larger axial Distance
+
+**** mesh quality
+
+Minimum Orthogonal Quality =  1.08182e-01
+Maximum Ortho Skew =  8.91818e-01
+Maximum Aspect Ratio =  1.67825e+02axial CD 6D
+upstream, 3D, downsteam, 10D
+Mesh Quality:
+
+Minimum Orthogonal Quality =  1.05675e-01
+Maximum Ortho Skew =  8.94325e-01
+Maximum Aspect Ratio =  1.60741e+02
+
+
+** Fluent setup
+one rotor, single Reference frame
+dual rotor mixing plane model
+*** Rotational speed of rear rotor
+To keep Same TSR defined by relative velocity seen by the blade
+
+\omega_rear /\omega_front = (U- \delta U)/U <1
+- U: free stream velocity 
+
+** Running time
+running time 
+one rotor , 3M, steady, 64 cores,  4000 iteration, 0.5h
+dual rotor,  64 cores,  4000 iteration, 1.5h
+X=2D, dual rotor, sliding mesh, unsteady, 1000 time steps, 3h
+
+** Post
+refer to fluent.org
+*** Residuals
+
+
+- all residuals < 1e-4
+
+*** mass imbalance
+X=4D
+                  Mass Flow Rate               (kg/s)
+-------------------------------- --------------------
+                           inlet            829.20918
+                          outlet            -829.2092
+                ---------------- --------------------
+                             Net       -1.4813477e-05
+
+
+*** Cp history using Matlab
+Cp=moment * omega /(0.5* \rho * v^3 *A)
+
+*** mesh convergence-- GCI <5%
+refer to grid convergence index
+
+* Conclusions
+- the key is the large discrepancies between bem and CFD for Rear Rotor
+
+- wake decay constant, k, need to be adjusted for application
+RPM2 and TI are important for Cp of rear totor 
+
+
+
+* Data
+
+** Cp, Ct, OneRotor Untwisted , BEM
+ # tip speed ratio, C_T, C_Q, C_P
+   1.000000E+00   1.522286E-01   2.628823E-03   2.628823E-03
+   1.250000E+00   1.682798E-01   4.112611E-03   5.140764E-03
+   1.500000E+00   1.879550E-01   5.929053E-03   8.893579E-03
+   1.750000E+00   2.115680E-01   8.079171E-03   1.413855E-02
+   2.000000E+00   2.395953E-01   1.056418E-02   2.112835E-02
+   2.250000E+00   2.727682E-01   1.338571E-02   3.011785E-02
+   2.500000E+00   3.124824E-01   1.654671E-02   4.136679E-02
+   2.750000E+00   3.586805E-01   2.186645E-02   6.013273E-02
+   3.000000E+00   4.082771E-01   2.511083E-02   7.533250E-02
+   3.250000E+00   4.671859E-01   3.233439E-02   1.050868E-01
+   3.500000E+00   5.274411E-01   3.654295E-02   1.279003E-01
+   3.750000E+00   5.908054E-01   4.362507E-02   1.635940E-01
+   4.000000E+00   6.533363E-01   5.013402E-02   2.005361E-01
+   4.250000E+00   7.121959E-01   5.377698E-02   2.285522E-01
+   4.500000E+00   7.666850E-01   5.778650E-02   2.600392E-01
+   4.750000E+00   8.145928E-01   5.924171E-02   2.813981E-01
+   5.000000E+00   8.561623E-01   5.850654E-02   2.925327E-01
+   5.250000E+00   8.931579E-01   5.677064E-02   2.980459E-01
+   5.500000E+00   9.229030E-01   5.294425E-02   2.911934E-01
+   5.750000E+00   9.508135E-01   5.005709E-02   2.878283E-01
+   6.000000E+00   9.779896E-01   4.678666E-02   2.807200E-01
+   6.250000E+00   9.978181E-01   4.234829E-02   2.646768E-01
+   6.500000E+00   1.021019E+00   3.866131E-02   2.512985E-01
+   6.750000E+00   1.037169E+00   3.416128E-02   2.305886E-01
+   7.000000E+00   1.052834E+00   2.977668E-02   2.084367E-01
+   7.250000E+00   1.069508E+00   2.570197E-02   1.863393E-01
+   7.500000E+00   1.082956E+00   2.140668E-02   1.605501E-01
+   7.750000E+00   1.095854E+00   1.719735E-02   1.332795E-01
+   8.000000E+00   1.108205E+00   1.305867E-02   1.044694E-01
+   8.250000E+00   1.120082E+00   8.991674E-03   7.418131E-02
+   8.500000E+00   1.131565E+00   4.993723E-03   4.244664E-02
+
+** naca 0012 airfoil polar
+-13	-0.971	0.14	-6.93571
+-12	-1	0.058	-17.2414
+-11	-0.941	0.053	-17.7547
+-10	-0.882	0.041	-21.5122
+-8	-0.735	0.029	-25.3448
+-6	-0.559	0.024	-23.2917
+-4	-0.382	0.021	-18.1905
+-2	-0.206	0.018	-11.4444
+0	0	0.015	0
+2	0.206	0.018	11.44444
+4	0.382	0.021	18.19048
+6	0.559	0.024	23.29167
+8	0.735	0.029	25.34483
+10	0.882	0.041	21.5122
+11	0.941	0.053	17.75472
+12	1	0.058	17.24138
+13	0.971	0.14	6.935714
+
+
+
+
+* Limits Further research
+- no structural analysis ( analysis of bending moment on axial beam)
+
+
+- downstream propagating swirl
+- non-radially uniform velocity velocity deficit
+
+* Footnotes
+
+[fn:Stockdill2006]  Stockdill, B., et al. "Simulation of unsteady turbulent flow over a stalled airfoil." Computational Fluid Dynamics Journal 14.4 (2006): 359.

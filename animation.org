@@ -1,0 +1,366 @@
+** get pressure contours at every time step for unsteady flow  animation
+keyword: post-processing, batch mode, for loop, contour
+
+input: N results file
+
+package: Tecplot/Paraview
+
+Method: read data 1 and slice, then save pressure, velocity contours, close data, then do loop for the aforementioned steps.
+***  code
+#+begin_src paraview
+****************************************************************
+
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+for Num in range(36,47):
+    # create a new 'EnSight Reader' and assign it to a variable, 'transientcase'
+    transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient_%i.case' %(Num+1))
+    transientcase.PointArrays = [ 'density','v', 'pressure', 'temperature']
+
+    # get active view
+    renderView1 = GetActiveViewOrCreate('RenderView')
+    # set a specific view size
+    renderView1.ViewSize = [1022, 837]
+
+
+
+    # get color transfer function/color map for 'density'
+    densityLUT = GetColorTransferFunction('density')
+    densityLUT.LockDataRange = 1
+
+
+    # get opacity transfer function/opacity map for 'density'
+    densityPWF = GetOpacityTransferFunction('density')
+
+
+    # show data in view
+    transientcaseDisplay = Show(transientcase, renderView1)
+    # trace defaults for the display properties.
+    transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+    transientcaseDisplay.LookupTable = densityLUT
+    transientcaseDisplay.GlyphType = 'Arrow'
+    transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+    # reset view to fit data
+    renderView1.ResetCamera()
+
+    # show color bar/color legend
+    transientcaseDisplay.SetScalarBarVisibility(renderView1, False)
+
+    # get opacity transfer function/opacity map for 'density'
+    densityPWF = GetOpacityTransferFunction('density')
+
+    # reset view to fit data
+    renderView1.ResetCamera()
+
+
+
+    #################
+    ## slice
+    ################
+    # create a new 'Slice'
+    slice1 = Slice(Input=transientcase)
+    slice1.SliceType = 'Plane'
+    slice1.SliceOffsetValues = [0.0]
+
+    # init the 'Plane' selected for 'SliceType'
+    slice1.SliceType.Origin = [-0.21849990739250558, 0.0, 0.0]
+
+    # Properties modified on slice1.SliceType
+    slice1.SliceType.Origin = [0.0, 0.0, 0.0]
+    slice1.SliceType.Normal = [0.0, 0.0, 1.0]
+
+    # show data in view
+    slice1Display = Show(slice1, renderView1)
+    # trace defaults for the display properties.
+    slice1Display.ColorArrayName = ['POINTS', 'density']
+    slice1Display.LookupTable = densityLUT
+    slice1Display.GlyphType = 'Arrow'
+
+    # hide data in view
+    Hide(transientcase, renderView1)
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, True)
+
+    # set active source
+    SetActiveSource(transientcase)
+
+    # reset view to fit data
+    renderView1.ResetCamera()
+
+
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857916835856
+
+
+    # *****************
+    # change legend layout, and its font color, position
+    # *****************
+
+    # get color legend for 'densityLUT' in view 'renderView1'
+    densityLUTColorBar = GetScalarBar(densityLUT, renderView1)
+
+    # Properties modified on densityLUTColorBar
+    densityLUTColorBar.AutoOrient = 0
+    densityLUTColorBar.RangeLabelFormat = '%.2f'
+    ## legend orientation
+    densityLUTColorBar.Orientation = 'Horizontal'
+
+    ## legend normalized position
+    densityLUTColorBar.Position = [0.3, 0.2]
+
+    # change label color to 'black'
+    densityLUTColorBar.LabelColor = [1.0, 1.0, 1.0]
+
+    #  change titile color to 'black'
+    densityLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+    # ***************
+
+    # set Background color as 'White'
+    renderView1.Background =[1,1,1]
+
+
+    # get layout
+    viewLayout1 = GetLayout()
+        # set a specific view size
+    renderView1.ViewSize = [1022, 837]
+
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857916835856
+
+
+    # save screenshot
+    SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/d_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+
+    #################
+    # pressure contour
+    ##################
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, False)
+
+    # set active source
+    SetActiveSource(slice1)
+
+    # set scalar coloring
+    ColorBy(slice1Display, ('POINTS', 'pressure'))
+
+    # rescale color and/or opacity maps used to include current data range
+    slice1Display.RescaleTransferFunctionToDataRange(True)
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+
+    # get color transfer function/color map for 'pressure'
+
+    pressureLUT = GetColorTransferFunction('pressure')
+    pressureLUT.LockDataRange = 1
+
+
+    # get opacity transfer function/opacity map for 'pressure'
+    pressurePWF = GetOpacityTransferFunction('pressure')
+
+
+
+
+    # set active source
+    SetActiveSource(transientcase)
+    # *****************
+    # change legend layout, and its font color, position
+    # *****************
+
+    # get color legend for 'pressureLUT' in view 'renderView1'
+    pressureLUTColorBar = GetScalarBar(pressureLUT, renderView1)
+
+    # Properties modified on vLUTColorBar
+    pressureLUTColorBar.AutoOrient = 0
+    pressureLUTColorBar.RangeLabelFormat = '%.2f'
+    ## legend orientation
+    pressureLUTColorBar.Orientation = 'Horizontal'
+
+    ## legend normalized position
+    pressureLUTColorBar.Position = [0.3, 0.2]
+
+    # change label color to 'black'
+    pressureLUTColorBar.LabelColor = [1.0, 1.0, 1.0]
+
+    #  change titile color to 'black'
+    pressureLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+    # ***************
+
+
+    # current camera placement for renderView1
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027125790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857916835856
+
+
+
+    # save screenshot
+    SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/p_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+    ######################
+    # #temperature contour
+    ######################
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, False)
+
+    # set active source
+    SetActiveSource(slice1)
+
+    # set scalar coloring
+    ColorBy(slice1Display, ('POINTS', 'temperature'))
+
+    # rescale color and/or opacity maps used to include current data range
+    slice1Display.RescaleTransferFunctionToDataRange(True)
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+
+    # get color transfer function/color map for 'termperature'
+
+    temperatureLUT = GetColorTransferFunction('temperature')
+    temperatureLUT.LockDataRange = 1
+
+
+    # get opacity transfer function/opacity map for 'temperature'
+    temperaturePWF = GetOpacityTransferFunction('temperature')
+
+
+    # ******
+    # legend layout, and its font color, position
+    # *****
+
+    temperatureLUTColorBar = GetScalarBar(temperatureLUT, renderView1)
+
+    # Properties modified on vLUTColorBar
+
+    temperatureLUTColorBar.AutoOrient = 0
+    temperatureLUTColorBar.RangeLabelFormat = '%.2f'
+    ## legend orientation
+    temperatureLUTColorBar.Orientation = 'Horizontal'
+
+    ## legend normalized position
+    temperatureLUTColorBar.Position = [0.3, 0.2]
+
+    # label color to 'black'
+    temperatureLUTColorBar.LabelColor = [1.0, 1.0, 1.0]
+
+    #  change 'titile' color to 'black'
+    temperatureLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+    # *****************
+
+    # set active source
+    SetActiveSource(transientcase)
+
+    # current camera placement for renderView1
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857917835856
+
+    # save screenshot
+    SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/t_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+    # *****************
+    #  Velocity
+    # ****************
+
+    # show color legend
+    slice1Display.SetScalarBarVisibility(renderView1, False)
+
+    # set active source
+    SetActiveSource(slice1)
+
+    # set scalar coloring
+    ColorBy(slice1Display, ('POINTS', 'v'))
+
+    # rescale color and/or opacity maps used to include current data range
+    slice1Display.RescaleTransferFunctionToDataRange(True)
+
+    # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+    # get color transfer function/color map for 'v'
+
+    vLUT = GetColorTransferFunction('v')
+    vLUT.LockDataRange = 1
+
+
+
+    # get opacity transfer function/opacity map for 'v'
+    vPWF = GetOpacityTransferFunction('v')
+
+
+    # *****************
+    # change legend layout, and its font color, position
+    # *****************
+
+    # get color legend for 'densityLUT' in view 'renderView1'
+    vLUTColorBar = GetScalarBar(vLUT, renderView1)
+
+    # Properties modified on vLUTColorBar
+    vLUTColorBar.AutoOrient = 0
+    vLUTColorBar.RangeLabelFormat = '%.2f'
+    ## legend orientation
+    vLUTColorBar.Orientation = 'Horizontal'
+
+    ## legend normalized position
+    vLUTColorBar.Position = [0.3, 0.2]
+
+    # change label color to 'black'
+    vLUTColorBar.LabelColor = [1.0, 1.0, 1.0]
+
+    #  change titile color to 'black'
+    vLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+    # ***************
+
+    # set active source
+    SetActiveSource(transientcase)
+
+    # current camera placement for renderView1
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027125790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857916835856
+
+    # save screenshot
+    SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/v_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+    #### saving camera placements for all active views
+
+    
+        # show color bar/color legend
+    slice1Display.SetScalarBarVisibility(renderView1, False)
+    # current camera placement for renderView1
+    renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+    renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+    renderView1.CameraParallelScale = 0.25006857916835856
+        Disconnect()
+        Connect()
+    #### uncomment the following to render all views
+    # RenderAllViews()
+    # alternatively, if you want to write images, you can use SaveScreenshot(...).
+#+end_src

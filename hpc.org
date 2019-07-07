@@ -1,0 +1,46 @@
+* Glossary
+- Cabinet :: The nodes of a supercomputer are physically mounted into cabinets, 
+(which contain racks), which also contain the networking and cooling systems, much like traditional servers.
+- CLI :: A Command Line Interface is a user interface for computers which uses typed commands 
+rather than buttons or graphical features as would be seen in a Graphical User Interface. 
+For example, Microsoft's DOS and GNU's shell (ie, bash) are CLI's. Command Line Interfaces can also be found in 3rd party programs such as Matlab. 
+** CPU
+    CPU stands for Central Processing Unit, and is the part of a computer which executes software programs. The term is not specific to a particular method of execution: units based on transistors, relays, or vacuum tubes might be considered CPU's. However, for clarity, we will use the term to refer to individual silicon chips, such as Intel's Pentium or AMD's Athlon. Thus, a CPU contains one or more cores, however, an HPC system may contain many CPU's. For example, Kraken contains several thousand AMD Opteron CPU's.
+** Core
+   core= processor
+A core is an individual processor: the part of a computer which actually executes programs. 
+CPUs used to have a single core, and the terms were interchangeable.
+ In recent years, several cores, or processors, have been manufactured on a single CPU chip,
+ which may be referred to as a multiprocessor. 
+It is important to note, however, that the relationship between the cores may vary radically:
+ AMD's Opteron, Intel's Itanium, and IBM's Cell have very distinct setups.
+** [[https://www.nics.tennessee.edu/hpc-glossary][Node]]
+a node can have multiple cores
+
+    In traditional computing, a node is an object on a network. 
+For example, on a home network, your computer, router, and printer might all be nodes.
+ Supercomputers like Kraken are essentially networks, with nodes that communicate with each other to solve a larger problem
+ than any singular computer could in a reasonable amount of time. Kraken contains several types of nodes; compute nodes are the work-horses of the system, and are much like a stripped-down computer. An I/O node is the interface between the compute nodes and other computers, that is, it deals with input and output for the system.
+* introduction
+local PC
+desktop name: hp
+core: 4
+logical processor: 8
+[[https://superuser.com/questions/226552/how-to-tell-how-many-cpus-cores-you-have-on-windows-7][How to check number of cores on Window 7 ?]]
+run the following command  in the command prompt
+~WMIC CPU Get DeviceID,NumberOfCores,NumberOfLogicalProcessors~
+
+Refer to [[https://docs.hpc.qmul.ac.uk/intro/][HPC@QMUL]] for more information\\
+core=processor
+
+[[https://en.wikipedia.org/wiki/Symmetric_multiprocessing][ Symmetric multiprocessing (SMP) ]]
+SMP: two or more identical processors are connected to a single, shared main memory, have full access to all I/O devices, and are controlled by a single operating system 
+
+#+CAPTION: SMP-Symmetric Multiprocessor System
+#+NAME:   SMP
+
+file:C:\Users\exw692\Dropbox\Emacs\figures\SMP_Symmetric_Multiprocessor_System.svg
+
+
+
+

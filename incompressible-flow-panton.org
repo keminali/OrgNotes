@@ -1,0 +1,39 @@
+* list of symbols
+| F             | force vector                                              |
+| m             | mass                                                      |
+| *a*           | acceleration                                              |
+| *V*           | velocity vector                                           |
+| S             | control surface                                           |
+| \mathscr{V}   | control volume                                            |
+| *n*           | unit vector perpendicular to dS                           |
+| \tau_{ij}     | stress vector                                             |
+| *f*           | body force per unit mass                                  |
+| \dot{q}       | heat flux                                                 |
+| e             | internal energy per unit mass                             |
+| c_v           | specific heat at constant volume , e = c_V T              |
+| T             | temperature                                               |
+| T_w           | wall temperature                                          |
+| [A]           | matrix A                                                  |
+| \vert A \vert | determinant of [A]                                        |
+| W             | column vector,  W=\{u v\}                                 |
+| \tau_{w}      | wall shear stress                                         |
+| \epsilon      | round-off error          \epsilon = N-D                   |
+| A             | analyticdal solution of partial differential equation     |
+| D             | exact solution of difference equation                     |
+| N             | numerical solution of difference equation from a computer |
+| k_m           | wave number , k_m = 2 \pi / \lambda                       |
+| C             | courant number, C=c \Delta t / \Delta x                   |
+| \theta        | momentum thickness                                        |
+| \delta *      | displacement thickness                                    |
+| E_{ij}        | mean strain rate                                          |
+| e_{ij}        | fluctuating strain rate                                   |
+| \tau^s        | strain rate                                               |
+| \( l \)       | mixing length                                             |
+| \epsilon      | rate of dissipation                                       |
+| \omega        | specific dissipation rate                                 |
+| N(u_i )       | navier-Stokes operator                                    |
+| u_e           | velocity at the edge of the boundary layer                |
+| h             | enthalpy                                                  |
+| P_t           | thermodynamic pressure                                    |
+|               |                                                           |
+SYSTEMS, PROPERTIES, AND PROCESSES

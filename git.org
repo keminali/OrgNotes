@@ -1,0 +1,94 @@
+* Introduction
+Git--Version Control
+
+git is used for version control
+
+* Book notes
+
+Xcot Chacon and Ben Straub, Pro git 2nd
+** Ch1
+
+This book was written using Git version 2.8.0
+
+
+
+Why running it
+
+- version control :: a system that records changes to a file or set of files over time so that you 
+can recall specific versions later
+
+- Centralized version control systems :: to deal with collaborate with developers on other systems.
+
+
+- Distributed version control systems :: clients don't just check out
+the latest snapshot of the files; rather, they  fully mirror the repository,
+including its full history.
+
+Three states
+- committed :: the data is safely stored in your local database
+- modified :: you have changed the file but have not committed it to your database yet
+- staged :: you have marked a modified file in  its current version to go into your next commit snapshot
+
+
+
+
+
+
+
+*Installation:*
+
+    $ sudo apt install git-all
+
+*First-time git setup*
+
+    - git config :: a tool that lets you get and set /configuration/ variables
+
+  *your identity*
+
+To set your user name and email address
+
+  $ git config --global user.name "kaiming"
+  $ git config --global user.email j.ali_16@outlook.com
+
+Note:
+
+    you need to do this only once if you pass the --global option, because then Git will always
+use that information for anything you do on that system
+
+*your editor*
+
+To specifiy the default text editor
+
+    $ git config --global core.editor emacs
+
+
+note:
+
+Vim, Emacs and Notepad++ are popular text editors often used by developers on Unix-based systems
+
+
+*Checking Your Settings*
+
+   $ git config --list
+
+*getting help*
+
+
+Synatax:
+   
+  $ git help <verb>
+
+or 
+
+  $ man git-<verb>
+
+e.g. ~$ git help config~
+
+
+*summmary*
+
+    By the end of the chapter, you should be able to configure and initialize a 
+repository, begin and stop tracking files and stage and commit changes.
+
+* References
+https://git-scm.com/doc

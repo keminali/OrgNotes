@@ -1,0 +1,798 @@
+https://www.cfd-online.com/Forums/pointwise/139255-high-skewness-when-using-t-rex-fluent.html
+https://www.youtube.com/watch?v=24bKZrpt5E4&feature=youtu.be&t=40m57s
+https://www.sharcnet.ca/Software/TGrid/html/ug/node208.htm
+https://www.cfd-online.com/Forums/pointwise/139000-3d-t-rex-meshing.html
+http://www.orjip.org.uk/projects
+https://www.sciencedirect.com/science/article/pii/S0960148109000561
+
+* Paper digest
+** Hydrodynamic assessment of a dual-rotor horizontal axis marine current turbine
+What problem does this paper solve?
+
+Method: BEM, park wake model
+the effect of the front rotor on the rear rotor >> park wake model
+ 
+the effect of the rear rotor on the front rotor >> ignored
+Limit: 
+   radially independent, 
+   rotor distance > 3-4D, 
+   downstream swirl
+
+* English
+To Westerners, this might seem odd, but one must not forget history is still fresh on Chinese people's minds, and such deep family- and country-destroying wounds do not heal easily.
+ it will be an uphill battle. That's because while the Americans may feel cheated, the Chinese feel much worse. Many truly think, be it true or not, that America is out to contain China or even destroy it.
+* Reciting
+*Surface streamlines* cannot be created on *wall boundaries* as wall velocities are zero. 
+
+the limit streamline is based on the Wall Shear vector. 
+
+
+convection  
+
+(technical) the process in which heat moves through a gas or a liquid as the hotter part rises and the cooler, heavier part sinks: convection currents
+
+near wall treatment
+- wall functions
+- near wall model
+? wall function
+? near wall model
+
+BL theory of Prandtl is derived from *singular perturbation theory* (BL theory, Hermann)
+
+transonic: Ma 0.8-1
+
+ barotropic flow
+
+auxiliary adj (of workers) giving help or support to the main group of workers, 
+e.g.  ancillary auxiliary nurses/workers/services
+
+
+
+
+** static pressure vs dynamic pressure
+The concepts of total pressure and dynamic pressure arise from Bernoulli's equation and are significant in the study of all fluid flows. (These two pressures are not pressures in the usual sense - they cannot be measured using an aneroid, Bourdon tube or mercury column.) 
+In incompressible fluid dynamics dynamic pressure (indicated with q, or Q, and sometimes called velocity pressure) is the quantity defined by
+\[
+q= 0.5 \rho u^2
+\]
+where q is dynamic pressure, u is flow speed
+*** physical meaning of dynamic pressure
+Dynamic pressure is the kinetic energy per unit volume of a fluid particle
+- Dynamic pressure is in fact one of the terms of Bernoulli's equation
+* TODO 
+- Pw Hybrid mesh
+
+
+- pw mesh quality check
+- pw hull
+
+- drag effect on cp ( a7 has lower drag at high TSR) 
+Eq. 5.12a ( smalll wind turbine,analysis) is different from 6-60 Aviv Rosen
+
+
+- P62, wind energy handbook
+- hydroacoustic paper
+- acoustics , tidal acoustic, receiver distances/direction
+- data, strip force, acoustics, moment, thrust
+
+
+https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/1a-overview-and-introduction-to-lisp/
+
+
+
+- surface streamline t stalled tsr 3, 4.25, 5 
+- local sectional streamline at tsr 3, 4.25, 5
+- 
+- backup 15 prism e387 a7 at TSR 3, 4.25, 5, 6,
+
+the use of *unsteady* BEM or *dynamic wake model* for marine tidal turbine.
+
+  tidal speed variation?
+latex >> How to Write a Thesis in LaTeX pt 3 - Figures, Subfigures and Tables
+https://www.youtube.com/watch?v=mYfSRmMduGo
+
+2D e387 sharp/blunt trailing edge, low Re 6e4, 1e5, , comparing Cl and Cd 
+see How cd changes as Re from 6e4 to 1e5
+
+- outflow vs pressure outlet
+
+AIR FOIL
+email Avital >> use velocity in rotational frame for streamline at sectional
+
+- BL velocity profile > https://www.youtube.com/watch?v=aPYB_YZXeYs
+- BL thickness
+
+
+
+
+
+
+
+** Lines of BL Separation
+
+Boundary Layer Characteristics
+theory of wing sections
+Thickness (\delta): distance at which u = 0.99 x U
+Displacement thickness (\delta*): how BL displaces flow
+Momentum Thickness (\theta): loss of momentum in BL
+Shape Factor (H = \delta* / Q): separation tendency
+Skin Friction Coefficient (C_f): viscous drag, transition
+
+
+e387 sharp trailing edge, 
+mesh checklist 
+prism layers, 15-20
+
+pressure at outlet 
+
+
+Using the Fan Noise Macro cfd post
+
+- surface curvature application on wind turbine/ turbomachinery
+T. Korakianitis. Design of airfoils and cascades of airfoils. AIAA
+Journal, Vol.27(4):455–461, April 1989.
+
+20Ahmed F. Nemnem, Mark G. Turner, Kiran Siddappaji, and
+Marshall Galbraith. 
+A smooth curvature-defined meanline section option for a general turbomachinery geometry generator. 
+
+ASME Turbo Expo 2014: Turbine Technical Conference and Ex-
+position, pages V02BT39A026–V02BT39A026.American Society
+of Mechanical Engineers, 2014.
+
+- why study wake?
+- wake model
+- e387 new geo, ansys meshing and fluent have different mesh quality>> fluent divergence
+
+- data analysys in Xinbai/james
+- wake models
+- is e387 thin foil?
+
+** Turbulence intensity effect on tidal turbine?
+input: 3% vs 15% turbulence intensity
+output: Cp, Ct, wake velocity
+Conclusion:  mean of  Cp Ct are little effected by turbulence intensity
+wake velocity is influenced by turbulence intensity
+(Experimental study of the turbulence intensity effects on marine current turbines behaviour. Part I: One single turbine)
+
+
+
+** Can RANS got a vortex magnitude like xinbai paper?
+? vortex magnitude?
+
+** Tetra + Prism wind blade mesh done by others
+
+** parameters affect on lift and drag 2d airfoil
+The coefficients Cl, Cd and Cm are functions of α, Re and Ma
+For wind turbine/slow moving aircraft, Cl, Cd and Cm are only functions of angle of attack and Re.
+
+** wake model
+pitching transients?
+TUDK model
+Eqs. (9.13) and (9.14) >> hansen
+Eq. (M10) >> GH ( Garrad and hassan) model
+
+- turbulenct Parameter user input data >> Fluent for turbine free surface 
+
+- Performance of law Reynolds number airfoil
+- Stokes wave turbine simulation done by others 
+- CD for turbine with Free Surface
+https://blog.pointwise.com/2011/04/07/there%E2%80%99s-more-to-cfd-convergence-than-reading-the-manual/
+
+https://www.engineering.com/DesignSoftware/DesignSoftwareArticles/ArticleID/9296/3-Criteria-for-Assessing-CFD-Convergence.aspx
+solids-and-fluids_turbulent-flow_turbulence-modelling.pdf
+
+** Convective and Diffusive terms in Navier Stokes Equations
+https://physics.stackexchange.com/questions/21776/convective-and-diffusive-terms-in-navier-stokes-equations
+https://www.grc.nasa.gov/www/k-12/airplane/index.html
+
+Does the correct Cp represents power coefficient at infinite condition?
+ Low-Re Corrections
+no surface elevation in tidal turbine?
+
+Turbulence Model for hydroturbine/Tidal turbine?
+
+
+Large-Eddy Simulations for Incompressible Flows: an Introduction
+
+** Steady vs Unsteady 
+assumption in the analysis of the flow in turbomachines
+inherently *unsteady*  flow in the machine can be treated  as  *steady*  when viewed in the rotating  reference frame of each blade row.
+** Angular velocity
+https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/week-3-circular-motion/8.3-angular-velocity/
+
+convection and diffusion
+- convection :: motion of fluid ( properties/variables are transported)
+- diffusion :: random motion of molecules
+
+** Free surface flow modelling using code saturne
+https://www.research.manchester.ac.uk/portal/files/54507179/FULL_TEXT.PDF
+
+* TODO @ home
+https://www.zhihu.com/question/26901116
+* 15/04
+
+http://www.pointwise.com/theconnector/2017-Q3/Report-from-1st-AIAA-Geometry-Mesh-Generation-Workshop.html
+http://energygeckkd.blogspot.co.uk/2013/02/contra-rotating-marine-current-turbine.html
+http://www.pointwise.com/theconnector/2012-July/From-CAD-CFD-Five-Minutes.html
+
+** Project
+Horizon 2020-funded Enabling Future Arrays in Tidal (EnFAIT) project
+
+Use the Maximum Included Angle function rather than Aspect Ratio for examining grids that contain anisotropic cells (T-rex). Such cells are usually long and slim so they may have high aspect ratios.
+** Aspect ratio at Bounary Layer?
+
+** Smoothing in ICEM
+[[https://www.sharcnet.ca/Software/Ansys/15.0.7/en-us/help/icm_help/iedit_smoothhexameshortho.html][Smooth Hexahedral Mesh Orthogonal]] in ICEM CFD
+Smooth Multiblock Domains, https://www.youtube.com/watch?v=6wQPeBpvwCk
+
+** topology
+konstantin Kovalev, 2005, PhD dissertation, Unstructured Hexahedral Non-conformal Mesh Generation
+
+https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/flu_ug/flu_ug_GridExamples.html
+# multi-block hexa mesh, use non-conformal mesh to reduce the aspect ratio
+Introduction to UV mapping
+ aerospace industries >> NX nastran for  structural analysis
+ CATIA for CAD 
+
+
+- A7 PW >> Hybrid, reduce surface aspect ratio < 5
+- change pitch angle, >>Tgrid, 
+- ICEM CFD >> Naca 001 one turbine
+
+
+** [[http://isaac-cfd.sourceforge.net/][ISAAC]]: compressible Euler/Navier-Stokes computational fluid dynamics code.
+
+
+** Meshing wind turbine with Turbogrid
+Meshing a blade with a 0 degree pitch angle using Turbogrid
+Problem: When the pitch angle is 0, hard to mesh using Turbogrid 
+
+Solution:
+	1. Change the pitch angle to a certain degree,  -/+ 5, 
+	2.  meshing with Turbogrid
+	3. Export Turbogird to ICEM CFD
+	4. Change the pitch angle back
+
+
+The OAI Executive:
+Carl Lagoze <lagoze@cs.cornell.edu > -- Cornell University - Computer Science
+Herbert Van de Sompel <herbertv@lanl.gov > -- Los Alamos National Laboratory - Research Library
+
+From the OAI Technical Committee:
+Michael Nelson <m.l.nelson@larc.nasa.gov > -- NASA - Langley Research Center
+Simeon Warner <simeon@cs.cornell.edu > -- Cornell University - Computer Science
+
+http://www.openarchives.org/OAI/openarchivesprotocol.html
+Korea Research Institute of Ships & Ocean Engineering (KRISO) Technology for Ship Propulsion Efficiency Improvement and Propeller Noise Reduction
+
+https://www.youtube.com/watch?v=GP81n0pW9-k
+
+blade tip vortex visualization 
+https://www.youtube.com/watch?v=v4lqlfPiwC4
+** TODO Download highly cited reference based on keywords
+Allan Mason-Jones, The use of Finite Element and Computational Fluid Dynamics to model the strongly coupled fluid-structure interaction of hydrokinetic energy devices.
+ORCA - Online Research @Cardiff is Cardiff University's institutional repository
+Ouro Barba, Pablo 2017. Large eddy simulation of tidal turbines
+EThOS, e-theses online service
+
+
+. PhD Thesis, Cardiff University. 
+
+** Scaling of tidal turbine
+Mason-Jones, A., et al. "Non-dimensional scaling of tidal stream turbines." Energy 44.1 (2012): 820-829.
+
+** PW
+*** Select > All Adjacent
+set "angle limit"
+
+*** [[http://www.pointwise.com/doc/user-manual/edit/curve/editing-existing-control-points.html][edit existing control point]]
+select connector
+>edit/curve
+
+select connector/select point
+ To select a control point, move the cursor over it in the Display window, hold down the Ctrl key and left-click the control point.
+- Once selected, the control point will be displayed as a bold yellow square
+
+The selected control point can now be moved by one of two methods:
+
+-    Left-click on the point and drag it to a new location.
+
+-    Enter the new XYZ coordinates in the Point Placement frame or XYZ Offset in the Point Placement, Advanced frame.
+
+If the new location is not satisfactory, the *Restore* command within the Point Placement frame can be used to move the control point back to its original location.
+ The Delete command will remove the selected point entirely.
+
+
+a hot cup of coffee can perk you up in the morning
+# remote desktop, no problem via Teamview, but pointwise is not rendered correct via Remote desktop Connection
+
+Stata: Data Analysis and Statistical Software
+
+https://www.cfd-online.com/Forums/main/84047-les-vs-rans.html
+https://www.researchgate.net/post/Can_someone_explain_why_turbulent_flow_is_always_3D_and_rotational
+https://www.cfd-online.com/Forums/main/185770-time-required-rans-vs-les-vs-dns.html
+
+** Magnitudes of viscous force and pressure force
+the viscosity is very small and the resulting viscous force sare small compared to the remaining forces (gravitational, pressure force) [XXI, BL theory, Schlichting, 9th]
+** Why the viscous forces have an important effect on the motion of the flow?
+the BL theory was first laid out by Prantal
+The BL theory was first defined by Ludwig Prandtl 
+
+** Questions
+why e387 has no benefit
+rectilinear tidal turbine
+co-axial propulsive rotors
+swirl effect
+turbulent wake
+designed TSR
+which prameters affect Cp for a given turbine blade
+reverse design methods
+airfoil lift/drag 2D vs 3D
+rotating effect
+stall delay methods
+Is there other's research on dual rotor
+
+https://www.tudelft.nl/en/ae/organisation/departments/aerodynamics-wind-energy-flight-performance-and-propulsion/wind-energy/research/
+Q- Criterion
+Q-criterion is an indicator of vortices
+** TODO airfoil used by AK1000
+** Re_c for a wind/tidal turbine blade 
+Re_c defined by Selig,1997 
+\[
+Re_c = [c* sqrt(V_\infty (1-a) + (omega r))]/ \nu
+\] 
+Giguere, Philippe, and Michael S. Selig. "Low Reynolds number airfoils for small horizontal axis wind turbines." Wind Engineering (1997): 367-380.
+
+
+** Relative and absolute motion
+Ch2 relative and abosolute motion,Grant Ingram, Basic Concepts in Turbomachinery,ISBN: 978-87-7681-435-9 
+
+** PROFESSOR PETER WADHAMS
+
+Professor of Ocean Physics,
+and Head of the Polar Ocean Physics Group
+in the Department of Applied Mathematics and Theoretical Physics, University of Cambridge.
+** Marine Scotland Information
+http://marine.gov.scot/datafiles/lot/Hywind/Environmental_Statement/
+
+** EMEC LTD
+*** Underwater Acoustic Monitoring at Wave and Tidal Energy Sites: Guidance Notes for Regulators
+
+
+** tip clearance 
+Amir 2013, Ocean Engineering,  Power measurement of hydrokinetic turbines with free-surface and blockage effect, https://doi.org/10.1016/j.oceaneng.2013.05.023
+- For submerged turbine, power coefficient increases with the water level drop.
+
+** Rotational speed control
+** AK-1000 Tidal Turbine Project, Scotland
+Diameter 18 meter ([[https://www.atlantisresourcesltd.com/2010/08/11/atlantis-unveils-the-worlds-largest-tidal-turbine-the-ak1000/][source]])
+ water velocity of 2.65m/s
+weighs 1300 tonnes and stands at a height of 22.5 meters
+blade length: 7.8 metre,  with a cone diameter of 2.4 metres
+MeyGen tidal energy project
+European Commission's Horizon 2020 programme.
+*** daishan
+Atlantis is providing the turbine and onshore systems for China’s largest tidal current demonstration project, developed by Chine Energy Conservation and Environmental Protection Group (CECEP) as part of a programme funded by China’s State Oceanic Administration (SOA).  The AR1000 turbine is scheduled to be deployed at a grid connected test site near Daishan.  This demonstration project will provide the SOA with data on environmental performance, turbine efficiency and reliability.
+https://www.atlantisresourcesltd.com/projects/daishan/
+
+[[https://github.com/fniessen/org-html-themes][Org-html-themes]]
+
+British national Corpus
+https://corpus.byu.edu/coca/
+advanced series on ocean enginnering
+
+** open questions in hydro
+https://arxiv.org/abs/1409.2336
+** HistCite
+HistCite Pro
+https://zhuanlan.zhihu.com/p/20902898
+** CiteSpace: Visualizing Patterns and Trends in Scientific Literature
+http://cluster.ischool.drexel.edu/~cchen/citespace/download/
+
+** Vorticity
+For *solid objects* we do not speak of *the vorticity of an object* but instead we refer to its *angular velocity*
+vorticity is more useful when discussing rotating objects that deform, such as fluid
+- vortex :: a set of fluid trajectories along which the strain acceleration tensor is indefinite over directions of zero strain (G. haller 2005,J. Fluid Mech. DOI: 10.1017/S0022112004002526)
+
+*** vortex types
+file:figures/vortex/rotational_vortex.gif
+file:figures/vortex/Irrotational_vortex.gif
+*** Reference
+https://uwaterloo.ca/applied-mathematics/current-undergraduates/continuum-and-fluid-mechanics-students/amath-463-students/vorticity
+
+[[http://web.mit.edu/vfrl/www/][Vortical Flow Research Lab]] (MIT) – Study of flows found in nature and part of the Department of Ocean Engineering.
+** Flow visualization
+http://graphics.cs.ucdavis.edu/~joy/ecs277/other-notes/ecs277-5.pdf
+**  Ocean Surface Waves
+**** Advanced Series on Ocean Engineering
+
+    ocean waves and currents
+    ocean acoustics
+    materials for marine structures
+    offshore and coastal structures
+    coastal morphology
+    coastal oceanography
+
+
+
+Dynamics of Floating Offshore Structures
+By (author): Subrata K Chakrabarti (Offshore Structure Analysis, Inc., USA)
+
+
+Turbulence in Coastal and Civil Engineering
+By (author): B Mutlu Sumer 
+(BM SUMER Consultancy & Research, Turkey), David R Fuhrman (Technical University of Denmark, Denmark)
+
+Volume 46
+Tsunami. 2nd Edition: To Survive from Tsunami
+By (author): Susumu Murata (Pacific Consultants Co., Ltd., Japan), Fumihiko Imamura (Tohoku University, Japan), Kazumasa Katoh (ECOH Corporation, Japan), Yoshiaki Kawata (Kansai University, Japan), Shigeo Takahashi (Coastal Development Institute of Technology, Japan), Tomotsuka Takayama (Kyoto University, Japan)
+
+Volume 45
+Ocean Surface Waves. 3rd Edition: Their Physics and Prediction
+By (author): Stanisław R Massel (Institute of Oceanology of the Polish Academy of Sciences, Poland)
+
+Volume 44
+Satellite SAR Detection of Sub-Mesoscale Ocean Dynamic Processes
+By (author): Quanan Zheng (University of Maryland, College Park, USA)
+
+Volume 43
+Japan's Beach Erosion. 2nd Edition: Reality and Future Measures
+By (author): Takaaki Uda (Public Works Research Center, Japan)
+
+Volume 42
+Theory and Applications of Ocean Surface Waves. 3rd Edition: (In 2 Volumes)
+By (author): Chiang C Mei (MIT), Michael Aharon Stiassnie (Technion-Israel Institute of Technology, Israel), Dick K-P Yue (MIT)
+
+
+
+Volume 40
+Design and Construction of Berm Breakwaters
+By (author): Jentsje van der Meer (Van der Meer Consulting BV, The Netherlands & UNESCO-IHE, The Netherlands), Sigurdur Sigurdarson (IceBreak Consulting Engineers ehf, Iceland)
+
+Volume 39
+Liquefaction Around Marine Structures: (With CD-ROM)
+By (author): B Mutlu Sumer (Technical University of Denmark, Denmark)
+
+Volume 38
+An Introduction to Hydraulics of Fine Sediment Transport
+By (author): Ashish J Mehta (University of Florida, USA)
+
+Volume 37
+Computational Wave Dynamics
+By (author): Hitoshi Gotoh (Kyoto University, Japan), Akio Okayasu (Tokyo University of Marine Science and Technology, Japan), Yasunori Watanabe (Hokkaido University, Japan)
+
+Volume 36
+Ocean Surface Waves. 2nd Edition: Their Physics and Prediction
+By (author): Stanisław R Massel (Institute of Oceanology of the Polish Academy of Sciences, Sopot, Poland)
+
+Volume 35
+Dynamics of Water Waves: Selected Papers of Michael Longuet-HigginsVolumes 1–3
+Edited by: S G Sajjadi (Embry-Riddle Aeronautical University, USA)
+
+Volume 34
+Coastal Dynamics
+By (author): Willem T Bakker (Delft Hydraulics, Netherlands)
+
+Volume 33
+Random Seas and Design of Maritime Structures. 3rd Edition
+By (author): Yoshimi Goda (Yokohama National University, Japan)
+
+Volume 32
+Tsunami: To Survive from Tsunami
+By (author): Susumu Murata (Coastal Development Institute of Technology, Japan), Fumihiko Imamura (Tohoku University, Japan), Kazumasa Katoh (Musashi Institute of Technology, Japan), Yoshiaki Kawata (Kyoto University, Japan), Shigeo Takahashi (Port and Airport Research Institute, Japan), Tomotsuka Takayama (Kyoto University, Japan)
+
+Volume 31
+Japan's Beach Erosion: Reality and Future Measures
+By (author): Takaaki Uda (Public Works Research Center, Japan)
+
+
+
+Volume 29
+Coastal and Estuarine Processes
+By (author): Peter Nielsen (The University of Queensland, Australia)
+
+Volume 28
+Coastal Processes: Concepts in Coastal Engineering and Their Applications to Multifarious Environments
+By (author): Tomoya Shibayama (Yokohama National University, Japan)
+
+Volume 27
+Nonlinear Waves and Offshore Structures
+By (author): Cheung Hun Kim (Texas A&M University, USA)
+
+Volume 26
+Hydrodynamics Around Cylindrical Structures. Revised Edition
+By (author): B Mutlu Sumer (Technical University of Denmark, Denmark), Jørgen Fredsøe (Technical University of Denmark, Denmark)
+
+Volume 25
+Dynamics of Coastal Systems
+By (author): Job Dronkers (Rijkswaterstaat, The Netherlands)
+
+Volume 24
+
+Introduction to Nearshore Hydrodynamics
+By (author): Ib A Svendsen (University of Delaware, USA)
+
+Volume 23
+Theory and Applications of Ocean Surface Waves
+ Part 1: Linear AspectsPart 2: Nonlinear Aspects
+By (author): C Mei Chiang (MIT), Michael Stiassnie (Technion-Israel Institute of Technology, Israel), Dick K-P Yue (MIT)
+
+Volume 22
+The Dynamics of Marine Craft: Maneuvering and Seakeeping
+By (author): Edward M Lewandowski (BMT Designers & Planners, VAArlington, USA)
+
+Volume 21
+Waves and Wave Forces on Coastal and Ocean Structures
+By (author): Robert T Hudspeth (Oregon State University, USA)
+
+Volume 20
+The Theory and Practice of Hydrodynamics and Vibration
+By (author): Subrata K Chakrabarti (Offshore Structure Analysis, Inc, Illinois, USA)
+
+Volume 19
+Saving America's Beaches: The Causes of and Solutions to Beach Erosion
+By (author): Scott L Douglass (University of South Alabama, USA)
+
+Volume 18
+Beach Nourishment: Theory and Practice
+By (author): Robert G Dean (University of Florida, USA)
+
+Volume 17
+The Mechanics of Scour in the Marine Environment
+By (author): B Mutlu Sumer (Technical University of Denmark), Jørgen Fredsøe (Technical University of Denmark)
+
+Volume 16
+Introduction to Coastal Engineering and Management
+By (author): J William Kamphuis (Queen's University, Canada)
+
+Volume 15
+Random Seas and Design of Maritime Structures. 2nd Edition
+By (author): Y Goda (Yokohama National University)
+
+Volume 14
+Coastal Stabilization
+By (author): Richard Silvester (Univ. of Western Australia), John R C Hsu (Univ. of Western Australia)
+
+Volume 13
+Water Wave Propagation Over Uneven Bottoms: (In 2 Parts)
+By (author): Maarten W Dingemans (Delft Hydraulics, The Netherlands)
+
+Volume 12
+Hydrodynamics Around Cylindrical Structures
+By (author): B Mutlu Sumer (Technical University of Denmark), Jørgen Fredsøe (Technical University of Denmark)
+
+Volume 11
+Ocean Surface Waves: Their Physics and Prediction
+By (author): Stanisław R Massel (Australian Institute of Marine Science)
+
+Volume 10
+Water Waves Generated by Underwater Explosion
+By (author): Bernard Le Méhauté (Univ. Miami), Shen Wang (Univ. Miami)
+
+Volume 9
+Offshore Structure Modeling
+By (author): Subrata Kumar Chakrabarti (Chicago Bridge & Iron Tech. Svcs. Co.)
+
+Volume 8
+Ocean Disposal of Wastewater
+Edited by: Ian R Wood (Univ. Canterbury), R G Bell (Nat'l Inst. of Water & Atmospheric Res.), D L Wilkinson (Nat'l Inst. of Water & Atmospheric Res.)
+
+Volume 7
+Physical Models and Laboratory Techniques in Coastal Engineering
+By (author): Steven A Hughes (Coastal Engrg Res. Ctr., USA)
+
+Volume 6
+Kalman Filter Method in the Analysis of Vibrations Due to Water Waves
+By (author): Piotr Wilde (Polish Acad. Scis.), Andrzej Kozakiewicz (Polish Acad. Scis.)
+
+Volume 5
+Numerical Modeling of Ocean Dynamics
+By (author): Zygmunt Kowalik (Univ. Alaska), T S Murty (Inst. Ocean Scis.)
+
+Volume 4
+Coastal Bottom Boundary Layers and Sediment Transport
+By (author): P Nielsen (University of Queensland)
+
+Volume 3
+Mechanics of Coastal Sediment Transport
+By (author): Jørgen Fredsøe (Technical University of Denmark), Rolf Deigaard (Technical University of Denmark)
+
+Volume 2
+Water Wave Mechanics for Engineers and Scientists [available]
+By (author): Robert G Dean (University of Florida, USA), Robert A Dalrymple (University of Delaware, USA)
+
+Volume 1
+The Applied Dynamics of Ocean Surface Waves
+By (author): C Mei Chiang (MIT)
+
+** MRF
+the MRF model is applicable when the
+flow at the interface between adjacent moving/stationary zones is nearly uniform (“mixed out”). If the
+flow at this interface is not uniform, the MRF model may not provide a physically meaningful solution.
+
+** mixing plane model (MPM)
+Flow-field data from adjacent zones are passed as boundary conditions that are *spatially averaged* or “mixed” at the mixing plane interface.
+- steady 
+
+You can think of MPM  as a set of SRF models for each blade passage coupled by boundary conditions supplied by the mixing plane model.
+- the flow data at the mixing plane interface are averaged in the circumferential direction 
+
+- “mixing plane pair” :: The coupling of an *upstream outlet* boundary zone with a *downstream inlet* boundary zone 
+| Upstream        | Downstream      |
+|-----------------+-----------------|
+| pressure outlet | pressure inlet  |
+| pressure outlet | velocity inlet  |
+| pressure outlet | mass flow inlet |
+> For specific instructions about setting up mixing planes, see Setting Up the Mixing Plane Model in the
+User's Guide.
+
+*** Choosing an Averaging Method
+initiate the solution with area averaging, then switch to mass
+averaging after reverse flow dies out.
+- Mass averaging is not available with multiphase flows
+
+
+
+
+http://www.sjsu.edu/faculty/watkins/kolmo.htm
+- time interaval :: /a definite length of time/ marked off by two instants
+- provide reasonable approximations of the time-averaged flow field
+
+to ready speed up VOF simulation.pdf
+quantites/variables in RANS : Reynolds averaged mean(main) part
+
+literature review on RANS and LES of tidal turbine
+Why LES study?
+
+quantities of interest 
+http://www.pointwise.com/solutions/all.html
+https://link.springer.com/book/10.1007%2F978-3-642-57313-2
+https://research.chalmers.se/publication/251089
+https://libguides.uwf.edu/c.php?g=215199&p=1420828
+https://research.chalmers.se/person/ribe
+https://ocw.mit.edu/courses/biology/7-16-experimental-molecular-biology-biotechnology-ii-spring-2005/scientific-comm/lec05_mpominirev.pdf
+
+**  wave in fluids
+e.g. 
+gravity waves on water
+compressibility waves in air
+- surface gravity wave ::  a region of increased or decreased depth that moves relative to the fluid.
+
+- small amplitude wave :: wave amplitude is small compared to both  mean water depth and wave length
+
+how to detect the passage of a wave?
+- time history of pressure at a fixed point
+- the motion of the fluid particles, such as neutrally buoyant solid particles
+
+> Heiser, W. H., and Shercliff, J. A. (1965), "A Simple
+Demonstration of the Hartmann Layer." J, Fluid
+Mech. Vol. 22, p. 701.
+2. Melcher, J. R., and Warren, E. P. (1965), ~'Demonstration
+of Magnetic F1nx Constraints and a Lumped
+Parameter AJfVen Wave." IEEE Transactions on Education,
+J7 ol. E-8.
+
+- Darcy's law :: an equation that describes the flow of a fluid through a porous medium.
+- pressure wave :: a wave (such as a sound wave) in which the propagated 
+disturbance is *a variation of pressure* in a material medium [[[https://www.merriam-webster.com/dictionary/pressure%20wave][Merriam Webster]]]
+
+- sound is a pressure wave [ [[http://www.physicsclassroom.com/class/sound/Lesson-1/Sound-is-a-Pressure-Wave][source]]]
+http://www.physicsclassroom.com/class/sound/Lesson-1/Sound-is-a-Mechanical-Wave
+
+- convey :: formal to take or carry something from one place to another
+　Your luggage will be conveyed to the hotel by taxi.
+- advert :: convey by horizontal mass movement of a fluid
+https://library.maastrichtuniversity.nl/information-skills/workshops-courses/wos-training/
+http://wok.mimas.ac.uk/news/2017/20170523.html
+http://wok.mimas.ac.uk/
+
+? what is the definition of interaction?
+?? paper about dual rotor
+** Turbine rotor - stator interaction
+doi:10.1115/1.3227339
+unsteady interactions between stationary and rotating rotors
+– Potential interactions - flow unsteadiness due to
+pressure waves which propagate both upstream and downstream
+– Wake interactions - flow unsteadiness due to wakes
+from upstream blade rows advecting downstream
+– Shock interactions - for transonic/supersonic flows,
+unsteadiness due to shocks waves striking
+downstream blade row
+> CFD_Rotating_Machinery_16.0.pdf
+
+post processing
+FieldView [[http://www.ilight.com/en/][Intelligent Light]]
+Scientific Visualization with  Open Source Tools, https://www.sciencesmaths-paris.fr/upload/Contenu/HM%202014/jomier.pdf
+
+tidal turbine vs propeller vs wind turbine
+challenges in tidal turbine compared with wind turbine?
+
+https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/farwake-meandering-induced-by-atmospheric-eddies-in-flow-past-a-wind-turbine/D644F2DEAF45B97BE41EE35DD9055F1D
+Chalmers University of Technology, Sweden
+
+Rickard Bensow, Analysis of the thrust deduction in waterjet propulsion – The Froude number dependence, https://doi.org/10.1016/j.oceaneng.2018.01.037
+?  numerical modelling challenge of free surface effects on tidal turbine
+
+? Why pressure in the same at inlet and out of 1D momentum theory?
+
+RANS and LES study of Tidal turbine 
+what are quantities of interest in RANS modelling?
+why study full-scale tidal turbine?
+Penny Jeffcoate, 2015,International Journal of Marine Energy,  Field measurements of a full scale tidal turbine
+averaged velocity, 2.1m/s
+
+Hydrodynamic modelling of marine renewable energy devices: A state of the art review
+
+U, ahmed , 2017, renewable energy, Fluctuating loads on a tidal turbine due to velocity shear and turbulence: Comparison of CFD with field data
+
+lewis Matthew, 2017, renewable energy, Characteristics of the velocity profile at tidal-stream energy site
+- prerequisite :: a thing that is required as a prior condition for something else to happen or exist.
+
+- stanchion :: noun (formal) a vertical pole used to support sth
+https://www.sciencedirect.com/science/article/pii/S221416691500034X#f0015
+https://www.sciencedirect.com/science/article/pii/S0889974616305679#fig2
+https://www.sciencedirect.com/science/article/pii/S0960148117304330
+https://www.sciencedirect.com/science/article/pii/S0960148116309181
+
+2018 Attraction, Challenge and Current Status of Marine Current Energy
+
+Turbine submerged depth that governs the downstream wake structure and its recovery to the free-stream velocity profile
+Zhang Y Q, energies, 2017, Experimental Analysis and Evaluation of the Numerical Prediction of Wake Characteristics of Tidal Stream Turbine
+
+
+
+
+
+
+
+** Single Versus Multiple Frame of Reference Modeling
+Single component systems can usually be modeled by referring the
+entire domain to a single moving reference frame >> steady state solution
+
+If multiple components are required (e.g. additional blade rows,
+volutes, baffles, struts, etc.), then a single frame of reference can
+not be used! This leads to multiple zone models, where two or
+more fluid zones are connected via *interfaces*
+
+For multiple component systems, three different modeling
+approaches are available, depending on *the level of interaction*
+at the zone interface boundaries:
+- Frozen Rotor Model :: >> steady-state solution
+  + Ignore interaction effects at the interfaces 
+- Mixing Plane Model :: >> steady-state solution
+  + Ignore circumferential non-uniformities in the flow by averaging at the
+interfaces 
+- Sliding Mesh Model (Fluent) / Transient Rotor-Stator Model (CFX)  :: unsteady solution
+  + The cells in rotating fluid zones are moved relative to adjacent stationary zones
+
+* TODO running jobs
+ job 323386 
+, a7 smaller, inviscid
+
+job 323383 
+acoustics, e387
+* TODO running cases
+
+
+ 
+job 320395  , acoustics  tsr 4,  piso, e387 , 1e-3s, 1000 time steps, two node
+
+
+
+job 322335, a7 inviscid, small geo,  steady, 7K-11K iteration
+
+
+M. Rahimian, J. Walker, and I. Penesis, “Numerical assessment of
+a horizontal axis marine current turbine performance,” International
+Journal of Marine Energy, vol. 20, pp. 151–164, 2017.
+
+[fn:wing-Re] https://www.grc.nasa.gov/WWW/wind/valid/m6wing/m6wing.html
+
+[fn:static-pressure] https://en.wikipedia.org/wiki/Static_pressure
+* Reading list
+
+Aeroacoustics: fan noise and control; duct acoustics; rotor noise
+by Schwartz, Ira R; Nagamatsu, Henry T; Strahle, Warren C
+1975
+SHELVES, TL507 PRO/44 (ORDINARY), MAINLIB

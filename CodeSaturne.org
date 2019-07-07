@@ -1,0 +1,601 @@
+#+SETUPFILE: theme-bigblow.setup
+* TODO workshops
+** 2D airfoil LES
+** 3d wind/tidal turbine RANS
+** 3D turbine LES
+
+* Installation
+
+** Tips
+install the code in a separate directory from th source
+
+** semi-auto installation on Ubuntu
+*** installation guide
+file:saturne_installation.org
+
+1. Install the following packages before running  =install_saturne.py=
+
+  - Zlib (optional)
+  - BLAS
+  - [[https://www.riverbankcomputing.com/software/pyqt/intro][PyQt]] (optional, required for the GUI)
+      + ~pip3 install pyqt5~;  [[http://pyqt.sourceforge.net/Docs/PyQt5/installation.html][pyqt5 installation]], use *pip3* package
+      
+      + [[https://pyqt.readthedocs.io/en/latest/][pyqt5 reference guide]]
+
+ 
+  - C, C++, and Fortran compilers
+    + on Ubuntu OS, type in: 
+      + =sudo apt install gcc=
+      + =sudo apt install gfortran=
+  - Python
+    + python 3.6.7 is default installed on Ubuntu
+    
+  - MPI (optional)
+
+2. Create a *directory* named =saturne_build= run =install_saturne.py=
+  #+BEGIN_SRC 
+  mkdir /home/kaiming/Documents/Code-saturne/saturne_build
+  cd /home/kaiming/Documents/Code-saturne/code_saturne_5_build
+  /home/kaiming/Documents/Code-saturne/code_saturne_5/install_saturne.py
+  #+END_SRC 
+3.   to lauch the package =code_saturne= from a terminal
+two methods are available
+    - [[defining a permanent alias]]
+    - [[add the installation path]] of =code_saturne=,i.e. =/home/kaiming/Code_Saturne/5.0.9/code_saturne-5.0.9/arch/Linux_x86_64/bin=
+1) <<defining a permanent alias>>
+ 
+ a. define a =alias= named =code_saturne= in a file, =.bash_aliases= 
+   # create a file named .bash_alases
+   >> vi .bash_aliases
+  
+  Then define a alias as below
+/home/kaiming/Code_Saturne/5.0.9/code_saturne-5.0.9/arch/Linux_x86_64/lib/python2.7/site-packages/code_saturne
+ >> cspath=/home/kaiming/Code_Saturne/5.0.9/code_saturne-5.0.9/arch/Linux_x86_64/bin
+  
+ >> alias code_saturne = "$cspath/code_saturne"
+    file:figures/saturne/alias.png
+
+ To load  =.bash_aliases= 
+   - add the following commands in the =~/.bashrc=
+
+       #+BEGIN_SRC 
+          if [ -f ~/.bash_aliases ]; then
+               . ~/.bash_aliases
+          fi
+       #+END_SRC 
+     file:figures/saturne/bashrc.png
+   then source  =~/.bashrc=
+
+     >>  source  ~/.bashrc
+
+        from: https://askubuntu.com/questions/1414/how-to-create-a-permanent-alias
+
+2) <<add the installation path>>
+   http://www.linfo.org/path_env_var.html
+
+4. lauch =code_saturne= in any terminal
+   >> code_saturne
+
+to launch the GUI of code saturne
+
+  >> code_saturne gui
+   
+
+The documentation should then be available through the commands:
+  
+  >> code_saturne info -g refcard                         #reference card
+  
+  >> code_saturne info -g user 
+
+
+**** How to run a python script on Ubuntu
+$ python3 /path/to/script.py
+https://askubuntu.com/questions/590410/how-do-i-run-python-code-as-a-script
+
+
+**** PyQt installation
+
+***** log
+kaiming@127:~$ pip3 install pyqt5
+Collecting pyqt5
+  Downloading https://files.pythonhosted.org/packages/d4/bf/d884da8e2f7096d201c891d515eb6813a8e85df5eb6f5e12e867bf1d831c/PyQt5-5.11.3-5.11.2-cp35.cp36.cp37.cp38-abi3-manylinux1_x86_64.whl (117.8MB)
+    100% |████████████████████████████████| 117.8MB 22kB/s 
+Collecting PyQt5_sip<4.20,>=4.19.11 (from pyqt5)
+Exception:
+Traceback (most recent call last):
+  File "/usr/share/python-wheels/urllib3-1.13.1-py2.py3-none-any.whl/urllib3/connectionpool.py", line 377, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+solution: try it again
+
+which returns:
+=Installing collected packages: PyQt5-sip, pyqt5=
+=Successfully installed PyQt5-sip-4.19.13 pyqt5-5.11.3=
+
+***  error
+
+**** IOError: CRC check failed 0xa5a2e240 != 0x57105efaL
+solution:
+re-install
+
+
+****  cannot find PyQt5 support (>= 5.0) or PyQt4 support (>= 4.5), Graphical User Interface cannot be installed
+See `config.log' for more details
+
+solution:
+
+Install =python3-pyqt5= and =python-pyqt5=
+
+1. to query the APT cache
+
+  >>apt-cache search pyqt5
+
+find the packages, and install the package =pyqt-dev-tools=
+
+  >> sudo apt-get install pyqt-dev-tools
+
+
+
+
+*** log
+
+To check pip3 version
+
+*kaiming@ubun:~$ pip3 --version*
+pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+
+*kaiming@ubun:~$ pip3 install pyqt5*
+
+
+
+*$ python3 install_saturne.py*
+
+The 'install_saturne.py' installer script should not be run from inside the
+'/home/kaiming/Documents/Code-saturne/code_saturne_5' Code_Saturne source directory,
+but from a separate directory.
+
+  #+BEGIN_SRC 
+kaiming@127:~/Documents/Code-saturne/code_saturne-5.0.9$ mkdir /home/kaiming/Documents/Code-saturne/code_saturne-5.0.9_build
+kaiming@127:~/Documents/Code-saturne/code_saturne-5.0.9$ cd /home/kaiming/Documents/Code-saturne/code_saturne-5.0.9_build
+kaiming@127:~/Documents/Code-saturne/code_saturne-5.0.9_build$ /home/kaiming/Documents/Code-saturne/code_saturne-5.0.9/install_saturne.py
+  #+End_SRC 
+
+
+# hdf5, cgns, and libxml2 are enableed
+#  Name    Use   Install  Path
+#
+hdf5       yes    yes       None
+cgns       yes    yes       None
+med        yes    yes       None
+scotch    yes    yes     None
+parmetis   yes    yes       None
+libxml2    yes   yes       None
+#
+
+ kaiming@ubun:~/Documents/Code-saturne/saturne_build$ ../code_saturne_5/install_saturne.py
+#+BEGIN_EXAMPLE
+      Installation of Code_Saturne
+        ____________________________
+
+The process will take several minutes.
+You can have a look at the log file meanwhile.
+
+Check the setup file and some utilities presence.
+
+   o Checking for cc...  /usr/bin/cc
+   o Checking for f95...  /usr/bin/f95
+   o Checking for python...  /usr/bin/python
+     Python version is 2.7
+   o Checking for make...  /usr/bin/make
+
+Download of HDF5
+  (https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.17/src/hdf5-1.8.17.tar.gz)
+Download of CGNS
+  (http://sourceforge.net/projects/cgns/files/cgnslib_3.2/cgnslib_3.2.1.tar.gz/download)
+Download of libxml2
+  (ftp://xmlsoft.org/libxml2/libxml2-sources-2.9.2.tar.gz)
+#+END_EXAMPLE
+In the above
+   
+ 
+Before using Code_Saturne, please update your environment with:
+
+  cspath=/home/kaiming/Code_Saturne/5.0.9/code_saturne-5.0.9/arch/Linux_x86_64/bin
+  alias code_saturne="$cspath/code_saturne"
+
+The documentation should then be available through the commands:
+  code_saturne info -g refcard
+  code_saturne info -g user
+
+Do not forget the post-installation steps recommended in the
+installation documentation, available using:
+  code_saturne info -g install
+
+
+
+*kaiming@127:~/Documents/Code-saturne/code_saturne-5.0.9_build$ code_saturne*
+Usage: /home/kaiming/Code_Saturne/5.0.9/code_saturne-5.0.9/arch/Linux_x86_64/bin/code_saturne <topic>
+
+Topics:
+  help
+  studymanager
+  smgr
+  bdiff
+  bdump
+  compile
+  config
+  create
+  gui
+  studymanagergui
+  smgrgui
+  trackcvg
+  info
+  run
+  salome
+  submit
+
+Options:
+  -h, --help  show this help message and exit
+
+
+
+
+
+** Auto installation on Ubuntu
+sudo apt-get update
+
+sudo apt-get install code-saturne
+
+
+* TODO questions
+
+
+what does *prefix* mean in the following path?
+
+ =prefix    /home/kaiming/Code_Saturne/5.0.9=
+
+answer:
+* Introduction
+- solver: segregated approach, P-V coupling
+- velocity: Jacobi algorithm
+- pressure: algebraic multigrid algorithm
+- pallelism: MPI
+- programming languages
+|  C | Fortran | Python |
+| 50 | 37      | 13     |
+
+- 3D unstructured finite volume code
+- developed by Electricte de France (EDF) since 2000
+- code-saturne is mainly composed of two elements and an optimal GUI
+- code-saturne replies on the PLE (Parallel Location and Exchange) library
+for the management of code coupling
+- To access *Doxygen* documentation in command line:
+=code_saturne info --guide theory=
+
+-  supported mesh formats
+Hexa NUMECA (.hex), Universal I-DEAS(.unv), CGNS, med, gmsh, I-Deas, GAMBIT Neutral (.neu),
+starCD(.ccm)
+
+To check mesh
+  >> code_saturne check_mesh [options] -m meshfile
+
+
+- needs specific directory structure, i.e. STUDY/CASE hierarchy
+
+** Basics
+To open GUI of code saturne on Cluster at ZJU
+ 
+    >> ssh -X code_saturne gui
+
+To access  reference card
+
+   >>  code_saturne info -g refcard                      
+
+To access help file
+  
+  >> code_saturne info -g user 
+
+
+to create a new directory
+ 
+  >> code_saturne create -s Study -c case1
+  >> code_saturne create --study Study1 case1 case 2
+
+|-s|study|
+|-c|case|
+
+** run a case
+*** GUI
+1. create a new directory
+ 
+  >> code_saturne create -s Study -c case1
+  >> code_saturne create --study Study1 case1 case 2
+
+2. go to the DATA directory and execute
+   >> ./SaturneGUI
+-   Create a new file.
+- Go through the folders and fill the necessary information for
+the case (physical properties, boundary conditions, numerical
+options, etc.).
+- Save an =.xml= file (by default in the data directory)
+- Click on Code Saturne batch running and check the terminal.
+- Not all modules are available on the GUI. Sometimes use of
+the =FORTRAN= files is required as complement.
+
+
+*** TUI -- fortran
+Running a case - FORTRAN
+- If the GUI is not used, all necessary parameters have to be filled in
+the FORTRAN subroutines.
+- All used =subroutines= have to be copied
+into the =SRC= directory from the
+=REFERENCE= sub-directory.
+
+- The user subroutines are organised by
+=modules=.
+- The base module contains the basic
+subroutines for incompressible flow.
+- subroutines for incompressible flow.
+At least =usini1.f90= (main physical
+and numerical parameters) and
+=usclim.f90= (boundary conditions)
+are mandatory if not using the GUI.
+
+- 
+
+* Tutorials V5.0
+** TODO Q
+
+
+definition of volume regions
+
+check mesh size, domain
+
+
+
+** Laminar flow in a tube bundle using Code_Saturne and the GUI
+*** create file directory
+>> codes_saturne create -s STUDY -c CASE
+*** copy mesh file to the MESH directory
+
+*** case setup
+- all setup is installed in a =setup.xml= file
+
+1. create a new file
+File/new file
+
+2. load the mesh
+calculation environment/meshes selection
+
+3. fluid properties, and turbulence models
+4. BC
+- top and bottom -- symmetry condition
+- east and west -- periodicity with prescribed pressure drop
+5. volume region definition
+6. numerical parameters
+Psedo-time steps
+7. calculation control
+- add monitoring points
+
+
+
+*** running
+
+
+** LES in a tube bundle
+objectives:
+- setup on the local machine using GUI
+- Parallel running on  a remote supercomputer
+- post-processing on the local machine
+
+*** create directories
+mkdir TB_LES_GUI
+cd TB_LES_GUI
+code_saturne create -s TUBE_BUNDLE_LES -c LES_GUI
+ 
+*** copy mesh to the MESH directory
+
+*** case setup on local machine
+- File/new file
+
+calculation control/ output control/ monitoring points
+
+preprocessing mode/ calculation management
+   - prepare batch calculation
+   - File/save as : =LES_gui.xml=  # save setups
+   - mesh preprocessing, which create s subdirectory in the =RESU= directory
+which contains the output of the preprocessing stage
+
+– If everything is correct, the following message should be displayed at the very
+end of the preprocessing stage:
+********************************************
+Saving calculation results
+********************************************
+*** transferring files from local machine to cluster
+- copy setup and mesh files, =les_gui.xml, mesh_output=
+
+
+   >> scp ~/Downloads/les_gui.xml   kaiming@10.106.239.105:/home/kaiming/Code_Saturne/TUBE_BUNDLE_LES/LES_GUI/DATA/
+   >> scp ~/Downloads/mesh_output      kaiming@10.106.239.105:/home/kaiming/Code_Saturne/TUBE_BUNDLE_LES/LES_GUI/MESH/
+*** extra setups
+**** cs_users_scripts.py
+- Go to the DATA directory
+
+- Copy here the file =cs user scripts.py= available in the REFERENCE directory. 
+The =REFERENCE= directory is also in the DATA directory.
+- Open the file and go to line 138 to change the domain. mesh input value from None
+to :
+
+#+begin_src
+if domain.param == None:
+   domain.mesh_input = "../MESH/mesh_output"
+   domain.partition_input = None
+   domain.restart_input = None
+#+end_src
+
+*** Finalising the setup 
+Go to *LES_GUI* directory, and type:
+ 
+>> code_saturne run --initialize
+
+As a result a new directory is created under RESU which name is based on the
+current date (YYYYMMDD-HHMM).
+
+Go to this directory as:
+
+>> cd ~/Code_Saturne/case/TUBE_BUNDLE_LES/LES_SRC/RESU/20190706-1524
+
+Inside YYYYMMDD-HHMM are to be found:
+– The mesh file *mesh_input*
+– The file containing all the parameters for the simulation, i.e. *les_gui.xml*
+
+*** submitting a job 
+- a processor contains mutliple cores
+
+>> RunSaturne_Param les_gui 128 16 1 les_gui.xml 07 00
+
+
+| 128 | num. of nodes |
+| 16  | num. of cores in each node |
+*To check the status of all the jobs*
+
+
+*** submitting a job at zju cluster
+add the following scripts in a file
+
+#+begin_src
+
+#!/bin/bash
+#BSUB -n 560     # core number
+#BSUB -e %J.err     # error
+#BSUB -o %J.out   # output
+#BSUB -q nodeq   # queue name
+#BSUB -J LBL-T-v4     # job name 
+
+module load intel/2018
+
+mpirun -n 560 ./run_solver $@ --param setup.xml --mpi
+#+end_src
+
+*** log
+ ****************************
+  Preparing calculation data
+ ****************************
+
+ Parallel Code_Saturne on 20 processes.
+
+
+ ***************************
+  Preprocessing calculation
+ ***************************
+
+
+ **********************
+  Starting calculation
+ **********************
+
+--------------------------------------------------------------------------
+[[31043,1],11]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ubuntu
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+[ubuntu:31504] 19 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[ubuntu:31504] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+
+ ****************************
+  Saving calculation results
+ ****************************
+** Large Eddy Simulation in a Tube Bundle and User Subroutines
+-  Adapting the necessary subroutines (remote supercomputer), including restarting
+from a previous simulation
+-  Running the simulation on a remote supercomputer
+-  Visualising the results on the local training machine
+
+** Influence of the Partition on the Time to Solution and User Subroutines
+
+** Computation of a centrifugal pump using Saturne and code/code coupling
+-  Creating the structure for the coupling
+-  Running the simulations in a remote computer
+-  Visualising the results on the local training machine
+** Computation of a centrifugal pump using Code Saturne and the turbomachinery module
+-  Creating the structure for the case
+-  Running the simulations in a remote computer
+-  Visualising the results on the local training machine
+
+* Workshops &  User meeting
+EDF R&D  france
+CodeSaturne user meeting, https://www.code-saturne.org/cms/CodeSaturne-user-meeting-2017
+
+
+* ZJUI Cluster
+login:
+
+>> ssh -X kaiming@10.106.239.105
+
+pw:123**6
+
+load code saturne:
+code_saturne gui
+* FAQ
+** Source the =.bashrc= file
+>> source .bashrc
+- source ::  executes the content of the file passed as argument, in the current shell. 
+     
+
+
+To edit bashrc using nano, invoke the following command in Terminal:
+
+nano ~/.bashrc
+
+
+
+Any changes you make to bashrc will be applied next time you launch terminal. If you want to apply them immediately, run the command below:
+
+source ~/.bashrc
+
+** copy files from local machine to cluster
+
+   >> scp ~/Downloads/cs_script.py kaiming@10.106.239.105:/home/kaiming/Code_Saturne/5.2.0/code_saturne-5.2.0/arch/Linux_x86_64/bin/
+
+Syntax:
+
+  >> scp <source> <destination>
+| scp | secure copy |
+|     |             |
+
+if you wan to copy the file =/home/user/table.csv= to a remote host named =host.example.com= 
+and copy there to jane's home folder, use this command.
+
+   >> scp /home/user/table.csv jane@host.example.com:/home/jane/
+
+
+https://www.garron.me/en/articles/scp.html
+** To copy a file from B to A while logged into A:
+
+scp username@b:/path/to/file /path/to/destination
+
+
+
+
+* Post-processing output
+EnSight, CGNS, MED,
+in-situ postprocessing, 
+- ParaView Catalyst
+- Melissa libraries
+
+
+* Ref
+Introduction to Code Saturne J. Uribe School of MACE, University of Manchester, UK
+

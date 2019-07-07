@@ -1,0 +1,604 @@
+* which is better for wind turbine simluation, CFX or Fluent?
+a master thesis using both CFX and Fluent, refer to [[http://www.diva-portal.org/smash/get/diva2:1083080/FULLTEXT01.pdf][axisymmetric model of the Siemens SGT-800 burner]] [fn:1]
+[fn:1] Acharya, Rutvika. "Investigation of Differences in Ansys Solvers CFX and Fluent." (2016).
+
+* online tutorials for Fluent beginners?
+
+* Discretization methods for finite volume
+- *node* centered, i.e. CFX \\
+- *cell* centered, Fluent [fn:2]\\
+
+
+
+The relative advantages of node and cell centered discretization method have been extensively studied[fn:3][fn:4][fn:5]
+
+** advantage of cell centred
+cell centred is better in  non-conforming cell interfaces
+
+* CFX VS fluent
+** common:  both works with Finite Volume Methods.
+** differences:
+  - *Discretization*
+    1. fluent > *cell centered*
+    2. CFX > *vertex* centered, the control volume is assembled around the nodes
+file:\Users\exw692\OneDrive\academic\Tex_files\ANSYS/vertex_cell_centered.bmp
+
+  - *mesh quality*
+    CFX could handle worser mesh 
+  - *application*
+    CFX is recommended for turbo-machinery and aerodynamics applications[fn:6]
+
+
+  - *solver* [fn:7]
+    1. The solver of Fluent is more open and adjustable, where you have pressure based and density based options. The coupled option is available also.
+    2. CFX solver is almost locked. A pressure based solver, with some adjustable key parameters. The solver is very robust and rarely needs to have its default parameters changed
+[fn:7] Abushaikha, Ahmad S., et al. "Interface control volume finite element method for modelling multi-phase fluid flow in highly heterogeneous and fractured reservoirs." Journal of Computational Physics 298 (2015): 41-61.
+ 
+** cfx vs fluent 
+1. By CFD Code
+
+    FLUENT : UK college > Creare (US) > Fluent (US) > Ansys
+    CFX : UK Nuclear Research > AEA Technology (UK) > ASC (Canada, CFX-TASCflow) > Ansys
+    STAR-CD : UK college > CD-Adapco
+    FineTurbo : Brussel college (Prof. Hirsch) > NUMECA
+
+2. By Solver Type
+
+    Segregated : Pressure-based Method of FVM : FLUENT, STAR-CD
+
+    - Continuity, momentum and energy equations are solved sequentially.
+    - Pressure is later corrected by Pressure-Velocity Coupling (like SIMPLE, SIMPLEC or PISO)
+    - Originally for incompressible flow, but extended to compressible flow
+
+
+    Coupled : Time Marching of FVM : FLUENT (RAMPANT), FineTurbo
+
+    - Conservative vector forms in time and space
+    - Explicit (FineTurbo, FLUENT RAMPANT) or implicit (FLUENT) solver with multigrid
+    - Originally for compressible flow, but extended to incompressible using pseudo-compressibility factor
+    - Better accuracy in highly compressible flows (maybe controversial)
+
+
+
+3. CFX is kind of unique
+
+    CFX is a coupled solver, but needs the pressure-velocity coupling, too. It belongs to the Pressure-based group.
+    CFX is fully implicit, relatively faster than FLUENT, but requiring much storage.
+    CFX is a cell-vertex code, while FLUENT a cell-centered.
+    CFX has a shape function borrowed from FEM to evaluate gradients, but FLUENT uses the staggered grid concept.
+
+4. CFX vs. FLUENT
+
+    CFX has more friendly GUI for turbomachinery users (that was a kind of business strategy for CFX-TASCflow to survive competing with FLUENT).
+    FLUENT has traditionally more users in more general applications.
+    Both are now good enough !
+
+5. My recommendations
+
+    If you simulate combustion, multi-phase or chemically-reacting flows, I'd go with FLUENT segregated.
+    If you simulate a single phase turbomachinery flow, two options are recommended : CFX or FineTurbo. In this area, they are totally different animals. Try out both in your model through a comparison with reliable test data before making a decision.
+    NUMECA FineTurbo grid generation package (Autogrid) has been frequently agreed more powerful and of higher quality, but the Post still looks not easy to love.
+
+* Uncertainty and Error in CFD Simulations
+** [[https://www.grc.nasa.gov/www/wind/valid/tutorial/errors.html][definition of  Uncertainty and Error]]
+According to  the AIAA Guidlines[fn:AIAA_Guidlines]
+ *Uncertainty* is defined as:
+#+begin_quote
+    "A *potential deficiency* in any phase or activity of the modeling process that is due to the lack of knowledge." (AIAA G-077-1998) 
+#+end_quote
+
+*Error* is defined as:
+
+    A *recognizable deficiency* in any phase or activity of modeling and simulation that is *not* due to lack of knowledge. (AIAA G-077-1998) 
+
+The key phrase differentiating the definitions of uncertainty and error is *lack of knowledge*.
+_The key word in the definition of *uncertainty* is /potential/_, which indicates that deficiencies may or may not exist.
+*Lack of knowledge* has primarily to do with lack of knowledge about the physical processes that go into building the model. 
+Sensitivity and uncertainty analyses can be used to better determine uncertainty.
+Uncertainty applies to describing deficiencies in turbulence modeling. 
+There is a lot about turbulence modeling that is not understood.
+ One approach for determining the level of uncertainty and it effect on one's analysis is to run a number of simulations 
+with a variety of turbulence models and see how the modeling affects the results.
+
+_The definition for *error*_ implies that the deficiency is identifiable upon examination. 
+Errors can also be classified as *acknowledged* or *unacknowledged*:\\
+*Errors types*:
+- acknowledged errors
+- unacknowledged errors
+
+ *Acknowledged errors* have procedures for identifying them and possibly removing them.
+ Otherwise they can remain in the code with their error estimated and listed. 
+i.e.  *round-off error*, *discretization error*
+ *Unacknowledged errors* have no set procedures for finding them and may continue within the code or simulation. 
+i.e.  computer programming errors or usage errors
+
+*** local and global errors
+One can differentiate between local and global errors. Local errors refer to errors at a grid point or cell,
+ whereas global errors refer to errors over the entire flow domain.
+ We are interested here in the global error of the solution that accounts for the local error at each grid point
+ but is more than just the sum of the local errors. Local errors are transported, advected, and diffused throughout the grid.
+*** notes
+The definition of error presented here is different than that an *experimentalist* may use, which is "*the difference between the measured value and the exact value*".
+ Experimentalist usually define *uncertainty* as "*the estimate of error*". These definitions are inadequate(not enough) for computational simulations because the exact value is typically not known.
+ Further these definitions link error with uncertainty. The defintions provided in the above paragraphs are more definite because they differentiate error and uncertainty according to what is known.
+
+** Classification of Errors
+*Acknowledged Error*
+
+1. [[Physical Approximation Error]]
+    - Physical modeling error
+    - Geometry modeling error
+2. [[Computer round-off error]]
+3. [[Iterative convergence error]]
+4. [[Discretization error]]
+     - Spatial discretization error
+     - Temporal discretization error
+
+*Unacknowledged Error*
+
+- Computer programming error
+- Usage error
+*** Physical Approximation Error
+/Physical modeling errors/ are those due to /uncertainty in the formulation of the model/ and /deliberate simplifications of the model/. 
+These errors deal with the /continuum model only/. Converting the model to discrete form for the code is discussed as part of discretization errors.
+ Errors in the modeling of the fluids or solids problem are concerned with the choice of the governing equations 
+which are solved and models for the fluid or solid properties. Further, the issue of providing a well-posed problem can contribute to modeling errors.
+ Often modeling is required for turbulence quantities, transistion, and boundary conditions (bleed, time-varying flow, surface roughness). 
+
+ lists sources of uncertainty in physical models as[fn:Mehta_guide1996]
+
+1) the phenomenon is not thoroughly understood; 
+2) parameters used in the model are known but with some degree of uncertainty;
+3) appropriate models are simplified, thus introducing uncertainty; 
+4) an experimental confirmation of the models is not possible or is incomplete. 
+Even when a physical process is known to a high level of accuracy, 
+5) simplified model, a simplified model may be used within the CFD code for the convenience of a more efficient computation. 
+Physical modeling errors are examined by performing validation studies that focus on certain models
+ (i.e. inviscid flow, turbulent boundary layers, real-gas flows, etc...)
+*** Computer round-off error
+
+/Computer round-off errors/ develop with /the representation of floating point numbers on the computer/ and /the accuracy at which numbers are stored./
+ With advanced computer resources, numbers are typically stored with 16, 32, or 64 bits. 
+Round-off errors are not considered significant when compared with other errors.
+ If computer round-off errors are suspected of being significant,
+ one test is to run the code at a higher precision or on a computer known to store floating point numbers at a higher precision.
+ One can attempt to iterate a coarse grid solution to a residual of machine zero; however, this may not be possible for more complex algorithms.
+*** Iterative convergence error
+
+The iterative convergence error exists because the iterative methods used in the simulation must have a stopping point eventually.
+ The error scales to the variation in the solution at the completion of the simulations.
+*** Discretization Errors
+Discretization error is also known as numerical error. 
+
+/Discretization errors/ are those errors that occur from /the representation of the governing flow equations/ and other physical models as /algebraic expressions in a discrete domain of space/
+ (finite-difference, finite-volume, finite-element) and time. The discrete spatial domain is known as the grid or mesh. 
+The temporal discreteness is manifested through the time step taken. 
+A consistent numerical method will approach the continuum representation of the equations and zero discretization error as the number of grid points increases and the size of the grid spacing tends to zero. As the mesh is refined, the solution should become less sensitive to the grid spacing and approach the continuum solution. This is grid convergence. Such thinking also applies to the time step. The grid convergence study is a useful procedure for determining the level of discretization error existing in a CFD solution. "Ordered" discretization errors are those dependent on the grid size and vanish as the grid size approaches zero. These are the errors that are addressed by a grid convergence study.
+Further details can be found on the pages entitled Examining Spatial (Grid) Convergence and Examining Temporal Convergence.
+
+The level of discretization error is dependent on the features of the flow as resolved by the grid.
+ Errors may develop due to representation of /discontinuities/ (shocks, slip surfaces, interfaces, ...) on a grid. 
+/Interpolation errors/ come about at /zonal interfaces/ where the solution of one zone is approximated on the boundary of the other zone.
+
+The *truncation error* is /the difference between the partial differential equation (PDE) and the finite equation./
+
+ The truncation error is a function of the grid quality and flow gradients.
+
+ /Dispersive error/ terms causes oscillations in the solution. One fix to this is adding /artificial dissipation/ to decrease the size of the dispersive errors. 
+Dissipation error terms cause a smoothing of gradients. However, a level of dissipation comparable to the actual physical viscosity may contaminate the solution.
+ Boundary layers may thicken. The truncation error terms are those of the expansion which are not used in the discretized equation.
+ If the order of the leading term of the truncation error is of second-order, it is known as a numerical viscosity (dimensions of length2 / time), 
+which is dimensions of kinematic viscosity. A positive viscous term will indicate that errors will be damped 
+whereas a negative viscous term will indicate that errors will grow (unstable).
+
+Included in the discretization error are errors due to not properly converging the solution with respect to the iterations to the steady-state solution or within a time step. This is reffered to as /iterative convergence/
+
+*** Computer Programming Errors
+
+Programming errors are "bugs" and mistakes made in programming or writing the code.
+ They are the responsibility of the programmers. 
+These type of errors are discovered by systematically performing verification studies of subprograms of the code and the entire code, reviewing the lines of code, and performing validation studies of the code. The programming errors should be removed from the code prior to release..
+
+*** Usage Errors
+
+Usage errors are due to the application of the code in a less-than-accurate or improper manner.
+
+Usage errors may actually show up as modeling and discretization errors. The user sets the models, grid, algorithm, and inputs used in a simulation, which then establishes the accuracy of the simulation. There may be blatant errors, such as attempting to compute a known turbulent flow with an assumption of inviscid flow. A converged solution may be obtained; however, the conclusions drawn from the simulation may be incorrect. The errors may not be as evident, such as proper choice of turbulence model parameters for separated flows with shocks. The potential for usage errors increases with an increased level of options available in a CFD code. Usage errors are minimized through proper training and the accumulation of experience.
+
+The user may intentionally introduce modeling and discretization error as an attempt to expedite the simulation at the expense of accuracy. This may be proper in the conceptual stage of a design study where more general information is needed at less accuracy. Even in the later stages, there may not be proper computational resources to simulate at the proper grid density. One has to understand the level of accuracy accompanying the results.
+
+Usage errors should be controlable through proper training and analysis.
+
+Usage errors can exist in the CAD, grid generation, and post-processing software, in addition to the CFD code.
+
+* Spatial (Grid) Convergence, mesh independence
+
+A general discussion of [[Uncertainty and Error in CFD Simulations]] is available for background.
+
+
+** Introduction
+The examination of the spatial convergence of a simulation is a straight-forward method 
+for determining the ordered discretization error in a CFD simulation. [fn:1].\\
+
+grid convergence study=grid refinement study
+
+As the *grid* and the *time step size* is refined (reduced), the *spatial* and *temporal* discretization errors
+ should asymptotically approaches zero, excluding computer *round-off error*.
+
+Methods for examining the spatial and temporal convergence of CFD simulations
+ are presented in the book by Roache[fn:roache ]. They are based on use of Richardson's extrapolation. \\
+A summary of the method is presented here.\\
+** Grid considerations for a grid convergence study
+** Grid Convergence Index (GCI)
+
+* Verification and Validation
+verfication and validation apply to simulations of *mechanics and physics*, refer to "Verification and validation in computational
+engineering and science: basic concepts"[fn:babuska2004verification]
+
+For V&V of *Computational Fluid Dynamics* CFD, refer to 
+AIAA standards[fn:guide_AIAA1988] 
+Verification and validation in computational fluid dynamics[fn:oberkampf2002verification]
+
+lecture note on Verification and Validation in Computational Simulation by [[file:C:\akmkemin\Backup\ANSYS Tutorial\Verification and validation\paper\Verification_and_Validation_in_CFD.pdf][Dr. William]]
+** Goal:
+- assess accuracy\\
+- analysis credibility\\
+** terminology
+- Physical event :: an occurrence in nature or in a physical system; a fundamental entity of a physical reality; a physical phenomenon.
+
+- Simulate ::  To build a likeness; in our case, a likeness produced by an interpretation of output from a computer or computational device.
+- Mathematical model (of a physical event) :: A collectionof mathematical constructions that 
+provide abstractions of a physical event consistent with a scientific theory proposed to cover that event.
+- Data of a mathematical model (of a physical event) :: Factual inforination that defines the values or ranges
+of values of parameters in the mathematical model of a physical event. .
+- Discretize :: To transform a mathematical model into a finite number of discrete components that can be
+processed by a digital computer. 
+- Computational model :: The discretized version of a mathematical model that has been designed to be
+implemented on (or to be processed by) a computer or computational device.
+- Code :: A computer program designed (in the present context) to implement a cOmpUtational model.
+- Prediction ::  Something that is predicted, declared or indicated in advance; foretold on the basis of observation, experience, or scientific reason.
+ A prediction is not simply a deduetionor a consequerice of a theory of something that mayor may not be known. It is the
+indication of an event not already known (Merriam-Webster Collegiate Dictionary, 10th edition)
+- Verification :: The process of determining if a *computational model* (obtained by discretizing a mathematical model of a physical event) and the *code implementing* the computational model can be used to
+represent the *mathematical model* of the event with sufficient accuracy.
+- Validation :: The process of determining if a *mathematical model* of a physical event represents the *actual physical event* with sufficient accuracy.
+*** Verification
+*Definition*: The process of determining that a model implementation
+accurately represents the developer's *conceptual description of the model* and the solution to the model[fn:verification]
+
+[[file:C:\Users\exw692\OneDrive\academic\Notes\Emacs\figures\verification_vs_conceptual_model.png][- Verification deals with mathematics]]\\
+*verification types*
+
+- *code verification*
+    + Finding and removing mistakes in the source code
+    + Finding and removing errors in numerical algorithms
+    + Improving software using software quality assurance practices
+- *solution verification*
+    + Assuring the accuracy of *input data* for the problem of interest
+    + Estimating the *numerical solution error*
+    + Assuring the accuracy of *output data* for the problem of interest
+*** Validation
+a model is an accurate representation of the real world from the perspective of the intended uses of the model\\
+Review:Validation deals with *physics*\\
+*** verification vs validation
+- *Verification* provides evidence that the *computational model* is solved correctly and accurately.\\
+- *Validation* provides evidence that the *mathematical model* accurately represents experimental measurements.\\
+
+*** observed order of accuracy: 
+observed order of accuracy:  the actual accuracy determined from computed solutions\\
+
+*** Methods for Determining the Observed Order of Accuracy
+- Method of Exact Solutions (MES)
+- Method of Manufactured Solutions (MMS)
+
+
+* Bibliography of CFD Verification and Validation
+[[file:C:\akmkemin\Backup\ANSYS Tutorial\Verification and validation\paper\verification and Validation in Scientific Computing.pdf][Verification and Validation in Scientific Computing]],William L. Oberkampf 
+( you can download it from http://dlx.b-ok.org/genesis/458000/e9f8c027efab54444432c79f3c3e8c15/_as/[William_L._Oberkampf,_Christopher_J._Roy]_Verific(b-ok.org).pdf)
+
+The following is a list of references related to CFD Verification and Validation of CFD codes. The references are grouped according to whether they are:
+
+-  [[Policy Statements]]
+-  [[Books]]
+- [[ Compilations and Proceedings]]
+-  [[Individual Papers]]
+
+
+** Policy Statements
+
+Roache, P.J., K. Ghia, and F. White, "Editorial Policy Statement on the Control of Numerical Accuracy," ASME Journal of Fluids Engineering, Vol. 108,No. 1., March 1986, p. 2.
+
+AIAA, "Editorial Policy Statement on Numerical Accuracy and Experimental Uncertainty," AIAA Journal, Vol. 32, January 1994, p. 3.
+
+AIAA, "Guide for the Verification and Validation of Computational Fluid Dynamics Simulations," AIAA G-077-1998, 1998.
+
+ASME Editorial Board, "Journal of Heat Transfer Editorial Policy Statement on Numerical Accuracy," ASME Journal of Heat Transfer, Vol. 116, November 1994. pp. 797-798.
+
+** Books
+
+Anderson, D.A., Tannehill, J.C., and Pletcher, R.H. , Computational Fluid Mechanics and Heat Transfer, McGraw-Hill Book Company, New York, 1984.
+
+Briggs, W.L., A Multigrid Tutorial, SIAM, Philidelphia, PA, 1987.
+
+ERCOFTAC, Best Practices Guidelines for Industrial Computational Fluid Dynamics, Version 1.0, January 2000.
+
+Hirsch, C. Numerical Computation of Internal and External Flows, Volume I: Fundamentals of Numerical Discretization. New York: John Wiley & Sons, 1988.
+
+Hirsch, C. Numerical Computation of Internal and External Flows, Volume II: Computational Methods for Inviscid and Viscous Flows. New York: John Wiley & Sons, 1990.
+
+Roache, P.J., Verification and Validation in Computational Science and Engineering, Hermosa Publishers, Albuquerque, New Mexico, 1998.
+
+Roache, P.J., Fundamentals of Computational Fluid Dynamics, Hermosa Publishers, Albuquerque, New Mexico, 1998.
+
+Shyy, W., Computational Modeling for Fluid Flow and Interfacial Transport, New York: Elsevier, 1994.
+
+** Compilations and Proceedings
+
+AGARD, Validation of Computational Fluid Dynamics, Lisbon, Portugal, May 2-5, 1988, NATO Advisory Group for Aeronautical Research and Development, AGARD CP 437, December 1988.
+
+AIAA, AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, March-April 1990, pp. 97-215. This issue contains 5 papers on CFD Code Validation / Verification / Certification with the emphasis on hypersonic flight. Another section entitled CFD Code Applications has 8 papers on applying CFD codes for hypersonic flight and includes some discussion on validation. Some of these 13 papers are listed individually below.
+
+AIAA, AIAA Journal, Vol. 36, No. 5, May 1998, pp. 665-764. This issue contains 12 papers in a special section entitled Credible Computational Fluid Dynamics Simulations. Some of these 12 papers are listed individually below.
+
+AGARD, Experimental Data Base for Computer Program Assessment, Report of the Fluid Dynamics Panel Working Group 04, AGARD-AR-138, May 1979. This is the report that contains the papers and data for the RAE2822 airfoil and ONERA M6 wing.
+
+** Individual Papers
+
+Aeschliman, D.P., W.L. Oberkampf, and F.G. Blottner, "A Proposed Methodology for Computational Fluid Dynamics Code Verification, Calibration, and Validation," Paper presented at the 16th International Congress on Instrumentation in Aerospace Simulation Facilities (ICIASF), July 18-21, 1995, Wright-Patterson AFB, OH 45433.
+
+Aeschliman, D.P. and W.L. Oberkampf, "Experimental Methodology for Computational Fluid Dynamics Code Validation," AIAA Journal, Vol. 36, No. 5, pp. 733-741.
+
+Barber, T.J., "Role of Code Validation and Certification in the Design Environment," AIAA Journal, Vol. 36, No. 5, pp. 752-758.
+
+Bardina, J.E., P.G. Huang, and T.J. Coakley, "Turbulence Modeling Validation, Testing, and Development," NASA TM 110446, April 1997.
+
+Benek, J.A., E.M. Kraft, and R.F. Lauer, "Validation Issues for Engine - Airframe Integration," AIAA Journal, Vol. 36, No. 5, pp. 759-764.
+
+Blottner, F.G., "Accurate Navier-Stokes Results for the Hypersonic Flow over a Spherical Nosetip," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 113-122.
+
+Bobbitt, P.J., "The Pros and Cons of Code Validation," AIAA Paper 88-2535 (NASA TM 100657), July 1988.
+
+Coleman, H.W. and F. Stern, "Uncertainties and CFD Validation," ASME Journal of Fluids Engineering, Vol. 119, December 1997, pp. 795-803.
+
+Cosner, R.R., "Issues in Aerospace Application of CFD Analysis," AIAA Paper 94-0464, January 1994.
+
+Cosner, R.R., "CFD Validation Requirements for Technology Transition," AIAA Paper 95-2227, June 1995.
+
+Dolling, D.S, "High-Speed Turbulent Separated Flows: Consistency of Mathematical Models and Flow Physics,"
+AIAA Journal, Vol. 36, No. 5, pp. 725-732.
+
+Dudek, J.C., N.J. Georgiadis, and D.A. Yoder, "Calculation of Turbulent Subsonic Diffuser Flows Using the NPARC Navier-Stokes Code," AIAA Paper 96-0497, January 1996.
+
+Dudek, J.C., "NPARC Validation - Subsonic Turbulent Diffusing Pipe Flow," The NPARC Alliance, April 1996.
+
+Dudek, J.C., "Testing Guidelines for NPARC Alliance Software Development," The NPARC Alliance, April 1997.
+
+Dudek, J.C., D.O. Davis, and J.W. Slater, "Validation and Verificaiton of the WIND Code for Supersonic Diffuser Flows," AIAA Paper 2001-0224, January 2001.
+
+Gnoffo, P.A., "CFD Validation Studies for Hypersonic Flow Prediction," AIAA Paper 2001-1025, January 2001.
+
+Habashi, W.G., J. Dompierre, Y. Bourgault, M. Fortin, and M.-G. Vallet, "Certifiable Computational Fluid Dynamics Through Mesh Optimization," AIAA Journal, Vol. 36, No. 5, pp. 703-711.
+
+Jameson, A. and L. Martinelli, "Mesh Refinement and Modeling Errors in Flow Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 676-686.
+
+Lewis, C.H., "Comments on the Need for CFD Code Validation," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 97.
+
+Marvin, J.G., "Perspective on Computational Fluid Dynamics Validation," AIAA Journal, Vol. 33, No. 10, October 1995, pp. 1778-1787.
+
+Mehta, U.B., "Computational Requirements for Hypersonic Flight Performance Estimates," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 103-112.
+
+Mehta, U.B., "Some Aspects of Uncertainty in Computational Fluid Dynamics Results," Transactions of the ASME, Vol. 113, December 1991, pp. 538-543.
+
+Mehta, U.B., "Guide to Credible Computer Simulations of Fluid Flows," AIAA Journal of Propulsion and Power, Vol. 12, No. 5, September-October 1996, pp. 940-948. (Also AIAA Paper 95-2225).
+
+Mehta, U.B., "Credible Computational Fluid Dynamics Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 665-667.
+
+NPARC Alliance, "NPARC Alliance Policies and Plans", August, 1999.
+
+Oberkampf, W.L., "A Proposed Framework for Computational Fluid Dynamics Code Calibration / Validation," AIAA Paper 94-2540, June 1994.
+
+Oberkampf, W.L. and F.G. Blottner, "Issues in Computational Fluid Dynamics Code Verification and Validation," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 687-695.
+
+Oberkampf, W.L. and T.G. Trucano, "Validation Methodology in Computational Fluid Dynamics" AIAA Paper 2000-2549, June 2000.
+
+Paynter, G.C. and E. Tjonneland, "Accuracy Issues in the Prediction of Supersonic Inlet Flows," ASME 92-GT-400.
+
+Reed, H.L., T.S. Haynes, and W.S. Saric, "Computational Fluid Dynamics Validation Issues in Transition Modeling," AIAA Journal, Vol. 36, No. 5, pp. 742-751.
+
+Rizzi, A. and J. Vos, "Toward Establishing Credibility in Computational Fluid Dynamic Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 668-675.
+
+Roache, P.J., "Need for Control of Numerical Accuracy," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 98-102.
+
+Roache, P.J., "Perspective: A Method for Uniform Reporting of Grid Refinement Studies", ASME Journal of Fluids Engineering, Vol. 116, September 1994.
+
+Roache, P.J., "Quantification of Uncertainty in Computational Fluid Dynamics," Annual Review of Fluid Mechanics, Vol. 29, 1997, pp. 123-160.
+
+Roache, P.J., "Verification of Codes and Calculations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 696-702.
+
+Slater, J.W., J.C. Dudek, and K.E. Tatum, "The NPARC Verification and Validation Archive", ASME Paper 2000-FED-11233, June 2000.
+
+Slater, J.W., "Verification Assessment of Flow Boundary Conditions for CFD Analysis of Supersonic Inlet Flows", AIAA Paper 2001-3882, July 2001.
+
+Slater, J.W., J.M. Abbott, and R.H. Cavicchi, "Validation of WIND for a Series of Inlet Flows", AIAA Paper 2002-0669, January 2002.
+
+Steffen, C.J. Jr., Reddy, D.R., and K.B.M.Q. Zaman, "Analysis of Flowfield from a Rectangular Nozzle with Delta Tabs", AIAA 95-2146, June, 1995.
+
+Tatum, K.E. and J.W. Slater, "The Validation Archive of the NPARC Alliance", AIAA Paper 99-0747, January, 1999.
+
+Towne, C.E. and R.R. Jones, "Results and Current Status of the NPARC Alliance Validation Effort", AIAA Paper 96-0387, January, 1996.
+
+van Wie, D.M. and T. Rice, "Quantification of Data Uncertainties and Validation of CFD Results in the Development of Hypersonic Airbreathing Engines," AIAA Paper 96-2028, June 1996.
+
+Yee, H.C. and P.K. Sweby, "Aspects of Numerical Uncertainties in Time Marching to Steady-State Numerical Solutions," AIAA Journal, Vol. 36, No. 5, pp. 712-724.
+
+* Discretization error
+DE: discretization error\\
+TE: Truncation error\\
+GCI: grid convergence index\\
+*Grid convergence index* (GCI) can be used for estimation of discretizaiton error.\\
+
+
+Grid refinement process:  start with a grid resolution and then conduct a series of grid refinements to assess the effect of grid resolution
+
+* mesh
+** hexahedral mesh
+Benefit of hexa mesh (structured/unstructured mesh)?
+** structured vs unstructured mesh?
+The IJK thing is just how you identify a specific element in a structured mesh.
+
+In a structured grid, the cell or node adjacency is implied from the ordering of the nodes. 
+The grid definition is given in terms of a network of points with distinct i,j,k planes, like a 3-D block. 
+There is no need to store cell connectivity definitions. 
+Every node (i,j,k) in a structured grid has a fixed number of neighbors (6), 
+and those neighbors are always identified as i+1, i-1, j+1, j-1, k+1, k-1. 
+Generating grids for complicated geometries can be more difficult or time consuming using structured grids,
+ but it is easier to construct higher order schemes versus the unstructured approach.[fn:structured_cfdonline]
+
+In an unstructured grid, cell and node adjacency is completely arbitrary. 
+A given node j may have any arbitrary number of neighboring nodes, 
+and these neighboring node numbers cannot be implied from the node order.
+ Rather the neighbors must be explicitly provided by providing the cell connectivities. 
+The key advantage here lies in the relative ease of using arbitrary meshes of
+ tetrahedra, pyramids, prisms, and/or hexahedra, allowing for flexible,
+ rapid grid generation compared with block structured grids. 
+Key disadvantage being these methods are inherently more memory intensive owing to the need to store the cell definitions.
+** mesh quality
+Higher mesh quality reduces numerical diffusion.
+* meshing tutorial
+** ICEM
+** Fluent meshing
+file:C:\Users\exw692\Dropbox\Emacs\fluent_meshing.org
+
+*  Parametric Analysis in ANSYS Workbench
+refer to Chapter 2: Parametric Analysis in ANSYS Workbench Using ANSYS Fluent, tutorial guide, Fluent\\
+cfd online thread [[https://www.cfd-online.com/Forums/ansys/114457-parametric-study-ansys-workbench.html][parametric study]]\\
+* reorder the mesh
+This is done to reduce the bandwidth of the cell neighbor number and to speed up the computations. 
+This is especially important for large cases involving 1 million or more cells. The method used to reorder the domain
+is the Reverse Cuthill-McKee method.
+* Fluent setup
+** Courant friedrichs lewy condition
+** solution control
+*** flow courant number
+default value is 200, min value is 4
+
+** Results
+
+* Products
+** ANSYS icepak
+CAE software, electronic system designs
+heat transfer
+* Solver
+[[https://www.quora.com/What-is-a-comparison-of-the-major-CFD-software-packages][ a comparison of the major CFD software packages]]
+** unstructured solver
+   Fluent, ANSYS CFX, CFD++, Abaqus, ANSYS
+** Structured solver
+Plot3D, CFX-TASCFLOW, KIVA-3V
+** both unstructured and multiblock structured
+- [[http://cgns.github.io/][CGNS]], open source
+
+** Open Source Solver
+- CgLES, 
+- [[https://www.code-saturne.org/cms/][code Saturne]]
+- [[https://www.openfoam.com/][OpenFOAM]], C++ ,Finite Volume method 
+  + steep learning curve
+- [[https://su2code.github.io/][SU2]], C++
+  + performing Partial Differential Equation (PDE) analysis
+  + Solving PDE-constrained optimization problems.
+  + computational fluid dynamics and aerodynamic shape optimization 
+- [[http://cgns.github.io/][CGNS]]
+- OVERFLOW
+- [[https://mfix.netl.doe.gov/][mfix]], multiphase flow, Fortran, FVM, 
+- [[https://nek5000.mcs.anl.gov/][Nek5000]], written in F77 and C, unsteady incompressible fuid flows with thermal
+and passive scalar transport
+- [[http://www.palabos.org/][Palabos]], Lattice-Boltzmann solver
+*** limit
+- limited user-support
+*** Open Source wrappers
+ [[https://www.openfoam.com/products/visualcfd.php][Visual-CFD]], Caedium, HELYX and simFlow
+
+
+** Commercial CFD software
+- ansys
+- [[https://www.comsol.com/][COMSOL]]
+- [[https://www.aerosoft.com/en/][Aerosoft]]
+- [[http://cpfd-software.com/barracuda-vr-solutions][BARRACUDA VR]]
+- 
+
+** CAD integrated
+- Solidworks
+- Autodesk Inventor
+
+steady-state, single-phase, non-reacting flow problems and with a focus on ease of use.
+
+ multiphase flows and other high-end capabilities are typically out of reach for these packages.
+
+** Specialty
+targeted to niche markets with specialized functionality.
+
+- [[https://www.mentor.com/products/mechanical/flotherm/flotherm/][FloTHERM ]] for electronics industry
+- [[http://www.numeca.com/product/finemarine][FINE/Marine]], marine applications
+- [[https://www.futurefacilities.com/][6Sigma]] for data center ventilation
+- [[http://exa.com/product/overview][EXA]] for external aerodynamics
+- [[http://www.xflow-cfd.com/][XFlowCFD]] for Lattice-Boltzman simulation
+- [[http://www.ansys.com/Products/Fluids/ANSYS-CFX][CFX]] for *turbomachinery*
+- [[http://envenio.com/cfdsuite/][EXN/Aero]] focus on improving performance on very large scale simulations through the combined use of CPU and GPU processing.
+** Comprehensive Packages
+- Fluent
+- Star-CCM+
+
+
+*** [[https://convergecfd.com/][CONVERGE]]
+-  multipurpose code 
+- high level of sophistication with regards to moving meshes, multiphase flows and turbulent combustion 
+- automotive
+- internal combustion
+
+*  Software
+** meshing
+- ICEM CFD
+- ANSYS meshing
+- Turbogrid
+- Tgrid
+- pointwise
+
+
+* Help
+https://studentcommunity.ansys.com/
+
+
+* conference 
+[[http://www.opensourcecfd.com/conference2013/][Open Source CFD International Conference]]
+
+
+
+
+
+
+
+* BladeGen
+refer to 
+* Footnotes
+[fn:1] https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html
+[fn:2] Diskin, Boris, and James L. Thomas. "Comparison of node-centered and cell-centered unstructured finite-volume discretizations: inviscid fluxes." AIAA journal 49.4 (2011): 836-854.
+[fn:3] Delanaye, M., and Liu, Y., uadratic Reconstruction Finite Volume Schemes on 3D Arbitrary Unstructured Polyhedral Grids, 14th
+AIAA CFD Conference, Norfolk, VA, AIAA Paper 1999-3259,June 1999.
+[fn:4] Mavriplis, D. J.,nstructured Mesh Discretizations and Solvers for Computational Aerodynamics, 18th AIAA CFD Conference, Miami,
+FL, AIAA Paper 2007-3955, June 2007.
+[fn:5] Diskin, B.,etl, comparison of Node-Centered and Cell-Centered Unstructured Finite-Volume Discretizations:Viscous Fluxes, AIAA Journal,Vol. 48,No. 7, 2010, pp. 1326髣ょｙ辟ｦ骰捺ｰｬ笆闘1338.
+[fn:6] https://www.quora.com/What-is-the-difference-between-Ansys-cfx-and-fluent
+[fn:verification] American Institute of Aeronautics and Astronautics, Committee on
+Standards in Computational Fluid Dynamics definition (1998)
+[fn:roache] Roache, P.J., Verification and Validation in Computational Science and Engineering, Hermosa Publishers, Albuquerque, New Mexico, 1998.
+
+[fn:AIAA_Guidlines] AIAA, "Guide for the Verification and Validation of Computational Fluid Dynamics Simulations," AIAA G-077-1998, 1998.
+
+[fn:Mehta_guide1996] Mehta, U.B., "Guide to Credible Computer Simulations of Fluid Flows," AIAA Journal of Propulsion and Power, Vol. 12, No. 5, September-October 1996, pp. 940-948. (Also AIAA Paper 95-2225).
+
+[fn:babuska2004verification] Babuska, Ivo, and J. Tinsley Oden. "Verification and validation in computational engineering and science: basic concepts." Computer Methods in Applied Mechanics and Engineering 193.36 (2004): 4057-4066.
+
+[fn:guide_AIAA1988] Guide: Guide for the Verification and Validation of Computational Fluid Dynamics Simulations (AIAA G-077-1998(2002))
+
+[fn:oberkampf2002verification] Oberkampf, William L., and Timothy G. Trucano. "Verification and validation in computational fluid dynamics." Progress in Aerospace Sciences 38.3 (2002): 209-272.
+
+[fn:structured_cfdonline] https://www.cfd-online.com/Forums/main/5371-structured-un-structured-solver.html

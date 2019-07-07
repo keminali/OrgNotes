@@ -1,0 +1,453 @@
+* Near-Wall Treatments for Wall-Bounded Turbulent Flows
+- wall functions :: a set of semi-empirical formulas that bridge/link the solution variables at the near-wall cells and wall.
+
+The wall functions include:
+- law of the wall for the *mean velocity* and *termperature* (or other scalars)
+- Formulae for the near-wall turbulent quantities
+
+*Types of wall functions:*
+- standard wall functions (Launder and Spalding [fn:Launder1974])
+- Scalable Wall Functions
+- Non-Equilibrium Wall Functions
+- User Defined Wall Functions
+
+viscous sublayer and buffer layer is not resolved, use semi-empirical formulas
+- wall functions : viscous sublayer and buffer layer is not resolved, use semi-empirical formulas
+- near wall model: high quality result
+   + k-\omega
+  + prism mesh, 15 or more in the BL
+  + How to check? in CFD post, the BL thickeness is the double size of max turbulent viscosity
+
+* Boundary Conditions
+** Pressure Outlet
+
+- It assigns static (gauge) pressure at the outlet boundary. 
+- The value of the specified static pressure is used only while the flow is subsonic.
+
+
+The use of a pressure outlet boundary condition instead of an outflow condition often results in a better rate of convergence 
+when backflow occurs during iteration.
+
+*Inputs at Pressure Outlet Boundaries*
+-	static pressure
+-	backflow conditions
+-	open channel flow parameters
+
+*Calculation Procedure*
+For subsonic flow, ANSYS Fluent uses the pressure specified in the Pressure Outlet dialog box 
+as the static pressure of the fluid at the outlet plane, and extrapolates all other conditions from the interior of the domain.
+
+- Average Pressure Specification option
+This option allows the pressure vary across the boundary while maintaining an average boundary pressure close to the specified static exit pressure.
+
+Note:
+The Average Pressure Specification option is not available with multiphase flows.
+
+
+** Velocity inlet
+
+ define the velocity and scalar properties of the flow at inlet boundaries.
+One defines the total gauge pressure, temperature, and other scalar quantities at flow inlets:
+ 
+Pressure inlet boundary conditions are used to define the total pressure and other scalar quantities at flow inlets.
+
+* pressure
+static pressure, dynamic pressure, absolute pressure, total pressure
+
+gauge/static pressure = gauge static pressure= Static Pressure [abs zero ref] - Operating Pressure
+
+Absolute Pressure = Static Pressure [abs zero ref]
+
+dynamic pressure= 0.5 \rho u^2
+
+total pressure = gauge/static presure + dynamic pressure
+
+absolute total pressure = OP + total pressure
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\operating-gauge-pressure.png
+
+* Reference pressure density
+reference pressure location
+
+* Courant Number
+CFL
+
+ one dimensional case
+\[
+C=u \frac{\Delta t}{ \Delta x} \leq C_{max}
+\]
+- u: magnitude of the velocity 
+- \Delta t: time step
+- \Delta x: length interval
+
+
+- *explicit* (time-marching) solver is used then typically C max = 1.
+- *Implicit* (matrix) solvers are usually less sensitive to numerical instability and so larger values of  C_max  may be tolerated.
+
+* RANS Turbulence Model
+** URANS
+- URANS with good turbulence models can occasionally predict *vortex shedding*, i.e. largest unsteady scales
+- URANS often falls short of capturing the remaining large scales
+
+* Force, moment calculation
+*** Fluxes Through Boundaries
+*** forces on Boundaries (surface force)
+surface force = pressure force + shear (viscous) force
+
+- For selected wall zones, you can compute and report /the surface forces along a specified vector/
+- the moments about a /specified center/ and along a /specified axis/
+- the coordinates of the center of pressure
+
+for instance, aerodynamic quantities such as lift, drag, and moment
+coefficients, as well as the center of pressure for an airfoil.
+
+The total surface force component along the specified force vector, \( \overrightarrow{a} \) ,  on a wall zone
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\force-component-along-a.png
+( Eq. 23.1 theory guide fluent)
+
+- \( \overrightarrow{a} \) , specified force vector
+- \( \overrightarrow{F_p} \) ,  pressure force vector
+- \( \overrightarrow{F_v} \) , viscous force vector
+pressure force is calculated as
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\pressure-force.png
+
+the associated force coefficients are also
+computed for each of the selected wall zones, using the reference values
+
+The force coefficient = force / (0.5 \rho _ref  v^2 A )
+
+
+*** surface integration
+*** volume integration
+* Basic Fluid Flow
+ANSYS CFD solvers are based on the finite volume method
+*  Moving Reference Frames
+? assumptions:
+
+- the flow is steady-state
+- mean flow remains steady, \( \partial U/ \partial t =0) 
+- Motions can be translational, rotational, or both.
+-  Motion of the frame is defined relative to a stationary coordinate
+system (stationary frame).
+** what is moving reference frame?
+- MRF :: A reference frame which is in motion (with a
+prescribed orientation and speed) with respect to a stationary
+(or inertial) reference frame.
+- Frame motion can be translational, rotational, or both.
+** Governing Euqations for Moving Reference Frame
+
+
+- *additional acceleration terms*  is added in the  Equations of fluid dynamics defined with respect to the MRF
+
+
+- relative and absolution velocity formulations
+- scalar transport equations
+
+• Relative Velocity Formulation (RVF)
+– Obtained by transforming the stationary frame N-S equations to a rotating reference frame
+– Uses the relative velocity as the dependent variable in the momentum equations
+– Uses the relative total internal energy as the dependent variable in the energy equation
+
+• Absolute Velocity Formulation (AVF)
+– Derived from the relative velocity formulation
+– Uses the absolute velocity as the dependent variable in the momentum equations
+– Uses the absolute total internal energy as the dependent variable in the energy equation
+• Fluent uses RVF and AVF in steup
+• CFX uses Alternate Rotation Model (when enabled it uses the AVF)
+*** Derivation
+Begin with the conservation of mass, momentum, energy
+(and other transport equations) in the stationary frame.
+
+- Using the relationship between stationary and moving
+frame velocities, define the acceleration of the fluid in the
+moving frame.
+- Additional acceleration terms arise in this step.
+- Transform convection terms and source terms involving velocity for general scalar transport equations.
+
+*** Guideline
+
+– The AVF should be used when you have *axial flows* in the stationary frame of reference
+• Ex. Axial fans, Axial compressors with large inlet plenums
+
+• The RVF can have increased numerical errors!
+– Conversely the RVF should be used if you have nearly tangential flow in the stationary frame of
+reference
+• Cases involving solid body rotation
+• In this case the AVF can have increased numerical errors
+
+
+** why use a MRF?
+- A flow field which is unsteady ( the stationary
+frame) becomes steady with respect to the MRF
+
+- Steady-state problems in the moving frame are easier to
+solve...
+  + Simpler BCs
+  + Lower computational cost
+  + Easier to post-process and analyze
+** the velocity triangle
+The velocity of the fluid can defined with respect to both the
+stationary or moving frames:
+– Absolute velocity - Fluid velocity defined with respect to the
+stationary (absolute) frame
+– Relative velocity - Fluid velocity defined with respect to the MRF
+
+** BCs
+Need to account for moving frame in BC specification
+of *inlets, outlet and walls*
+
+- For unsteady problems, valid initial conditions will also be needed
+- For time-periodic flows, initial condition is not as important
+** Initialization
+Good initialization of the solution is often the key to obtaining rapid
+and robust convergence of turbomachinery problems
+
+– Less of an issue for
+  • Incompressible flows with velocity / mass flow inlets
+    – Fixed flow rate provides stability to the calculation
+• Problems with favorable pressure gradients (e.g. turbines)
+    – Less propensity for reverse flow at boundaries
+- More of an issue for
+ Compressible flows with adverse pressure gradients (e.g. compressors,
+diffusers)
+  – Adverse pressure gradient leads to flow separation and reverse flows, solution
+instability
+
+• Initial conditions in CFX and Fluent
+– Standard CFX and Fluent (Hybrid) initializations use boundary data to
+provide a good initial condition
+– Initialize from a completed simulation at a slightly different operating
+contidion
+– Two additional options in Fluent
+• Use grid interpolation to patch a coarse mesh solution onto a fine mesh
+• Use the Full Multigrid (FMG) initialization technique
+
+** Single Reference Frame
+Entire computational domain is referred to rotating reference frame
+
+Why use a single moving reference frame?
+– Flow field which is *unsteady* with respect to the stationary
+frame becomes *steady* with respect to the moving frame
+- in short, simplify unsteady simulation to steady 
+*** Geo for SFR
+Domain boundaries typically consist of
+– Inlet and outlet surfaces
+– Walls
+– Periodic boundaries (rotational)
+• Periodic boundaries assume spatial periodicity of the flow field
+• Periodic angle should be evenly divisible into 360 deg.
+• Important rules for boundary shapes
+1. Boundaries which move with the fluid domain may assume
+any shape
+2. Boundaries which are stationary (with respect to the
+laboratory or fixed frame) must be surfaces of revolution
+• Surface of revolution is about the moving reference frame axis of
+rotation.
+• This rule applies to both walls and flow boundaries (inlets, outlets)
+
+** limit
+You may still have *unsteadiness* in the rotating frame due to turbulence,
+circumferentially non-uniform variations in flow, separation, etc.
+
+- Example: vortex shedding from fan blade *trailing edge*
+
+Flow can be unsteady in the MRF due to turbulence, local separation, etc. 
+
+** Multiple Zone Modeling
+two models avaiable for *steady-state* modelling:
+1. Frozen Rotor Model
+2. Mixing Plane model
+two models avaiable for *unsteady* modelling:
+1. Sliding mesh model
+2. Transient Rotor stator (TRS)
+*** MFR, Frozen Rotor Model
+
+-Assumption of Forzeon Rotor model
+  - the flow at the *interface* between adjacent moving/stationary zones is nearly uniform
+
+Mathematically, what are the differences between Frozen Rotor model and Mixing Plane model?
+*** Interface of Frozen Rotor Model
+- all *velocities* converted to *absolute frame* and applied to interface along with
+local scalars
+
+*** Interface for Mixing Plane Model
+Flow-field data from adjacent zones are passed as *boundary conditions* that are *spatially averaged*  at the mixing plane interface.
+- reasonable approximations of the *time-averaged* flow field
+- Flow data at the mixing plane interface are *averaged* in the *circumferential direction*
+- specific bounary conditon types have been defined at the mixing plane interface
+
+on both the stator outlet and the rotor inlet boundaries.
+
+- the essential idea of the mixing plane model is that *each fluid zone* is solved as steady-state problem
+
+MFR=frozen rotor model
+
+Application of MFR:
+1. rotor-stator interaction with weak interaction, the flow is realatively uncomplicated at the interface
+2. Mixing tank, impeller baffle *interactions* are relatively weak
+
+
+*** convergence for MPM
+If you are using the mass or mixed-out averaging method and you are experiencing convergence
+problems in the presence of severe reverse flow, initialize your solution using the default area-averaging
+method, then switch to mass or mixed-out averaging after the reverse flow dies out.
+
+*** Mixing Plane Model (MPM)  vs Frozen Rotor Model :MPM:
+
+Similarity: both are steady-state 
+Differences: primarily in interface conditions treatment
+- velocity at interface of MPM>> circumferential averaging
+*why do you use Mixing plane model rather than frozen rotor model?*
+
+frozen rotor model is usually used for  rotating machineries with one rotating part
+
+Mixing plane model is for machineries with two or more blade row
+The FRM can (for best accuracy) only be used if we have  *same number of blades* for each row
+
+Unlike the FRM, the MPM requires only a single blade passage per blade row regardless of the number of blades
+
+- The interaction between blade rows is treated in a more satisfying manner than FRM
+- Avoids the “frozen rotor” assumption
+
+
+
+*** Limitations of the MRF 
+It does not account for the relative motion of a moving zone with respect to adjacent zones (which may be moving or stationary); 
+the mesh remains fixed for the computation
+
+*** Limitations of Mixing Plane
+
+- Interpolation process can introduce errors at the mixing plane interface
+- Mixing plane can handle some backflow, but you should avoid using the mixing plane 
+- Backflow direction, total temperature, scalars will be computed from downstream profiles
+- Mixing process resulting from the averaging will introduce additional (usually small) loss to the stage calculation
+
+- *Wake effects, shock wave interactions* will not be predicted
+   + Modeling these effects requires sliding mesh model
+
+- Errors in the mixing plane model increase as the spacing between the stages decreases (stronger interaction
+
+if a large amount of backflow is present (leads to poor convergence)
+
+** SFR VS MFR VS sliding mesh
+Single Reference Frame Modeling
+• Entire computational domain is referred to rotating reference frame
+• Usually steady-state (but may be locally unsteady)
+
+Multiple Reference Frames Modeling (Steady-State)
+• Selected regions of the domain are referred to rotating reference
+frames and solved using a steady-state approach
+– *Frozen Rotor Model*
+• No relative mesh motion, ignore interaction at interfaces
+– *Mixing Plane Model*
+• Average out circumferential non-uniformities at interfaces
+
+Multiple Reference Frames Modeling (*Unsteady*)
+• Flow variables interpolated across interfaces at each time step
+• Captures all *interaction effects* with complete fidelity
+– Sliding Mesh (Fluent) or Transient Rotor-Stator (CFX) models
+
+** Reference
+CFD_Rotating_Machinery_16.0.pdf
+* Sliding mesh model
+the sliding mesh model is a special case of general dynamic mesh motion
+wherein the nodes move rigidly in a given dynamic mesh zone.
+
+* Unsteady moving reference frame vs Sliding mesh
+- With the moving reference frame, /the mesh does not move/.
+
+- You are computing the simulation for a *fixed position* of your turbine. 
+
+- With the *sliding* mesh, the position of the rotating zone is updated at each time step.
+-  the position of your turbine changes during the simulation.
+
+* Turbulence Models
+file:Turbulence_Modelling.org
+
+
+
+
+
+
+* Flows Using Sliding and Dynamic Meshes
+
+* Y plus :yplus: :y+:
+y+ calculation in Fluent?
+description:
+	I have a problem for y plus calculation in Fluent.
+	according to solution #2040008,
+	skin friction coefficients are provided for flow on plate and internal flow.
+	what is skin friction formula for external flow problem, i.e. flow over cylinder, wings, turbine blade?
+	
+Answer: 
+Based on the description, I am assuming you are interested to find out whether the mesh is suitable for CFD analysis or not.
+	
+ y+ near the wall is important to know to judge the suitability of the mesh for turbulence modeling especially for RANS model.
+	
+
+1. one only needs to estimate the value of y+. Getting exact value of y+ is seldom required.
+	
+Secondly, one way to find y+ is the one outlined in solution # 2040008. 
+
+For simple configurations, skin friction correlations are available in literature.
+ Flow past a flat plate, flow inside a pipe, backward facing step, flow past a circular cylinder; 
+for such cases you will find correlations for skin friction coefficient in open literature. 
+
+Ansys doesn't possess such an information and relies on open literature for gathering such data.
+	
+For more complicated flows, the approach is to create a base mesh and run the simulation. 
+	
+Fluent provides y+ values as one of the post-processing variables. 
+If y+ near the wall is within a suggested range for the turbulence model and wall function used, 
+one can safely trust the results. If y+ is not, go back to mesher and modify the mesh accordingly. 
+
+	
+	
+
+** How is yplus calculated in Fluent?
+
+y+ = f ( \mu, \rho, U_\tau, \Delta y), where U_\tau is from [[wall shear stress  ]]
+\begin{equation}
+\delta y=\frac{y^+ \mu}{\rho U_\tau }
+\end{equation}
+
+Derivation: Cf =f( \tau_w, \rho, v)
+*wall shear stress* , \tau_w
+ $\tau_w=0.5\rho C_f U^2$ 
+
+friction velocity, $U_\tau$, $U_\tau=\sqrt{\frac{\tau_w}{\rho}}$
+
+$\delta y$ :first cell height
+
+
+
+*approximation/estimation of Skin friction coefficient*
+- emperical formula	
+flow over a plate, $C_f=0.058{R_e}^{-0.2}$
+	
+internal flow, $C_f=0.079{R_e}^{-0.25}$, $R_e$ is based on diameter of pipe
+	
+* <<wall shear stress>>, friction coefficient
+** Shear-Stress Calculation in Laminar Flow
+> 6.3.14.10.1. Shear-Stress Calculation in Laminar Flow
+In a laminar flow, the wall shear stress is defined by the normal velocity gradient at the wall as
+\[
+\tau_w =\mu \frac{v}{n}
+\]
+(6.105)
+When there is a steep velocity gradient at the wall, you must be sure that the mesh is sufficiently fine
+to accurately resolve the boundary layer. Guidelines for the appropriate placement of the near-wall
+node in laminar flows are provided in Mesh Element Distribution (p. 131).
+
+** Shear-Stress Calculation in Turbulent Flow
+Refer to
+Near-Wall Treatments for Wall-Bounded Turbulent
+Flows in the Theory Guide.
+https://www.sharcnet.ca/Software/Fluent6/html/ug/node510.htm#wall-treatment
+
+* Footnotes
+
+[fn:Launder1974] B. E. Launder and D. B.Spalding. "The Numerical Computation of Turbulent Flows". Computer Methods
+in Applied Mechanics and Engineering. 3. 269–289. 1974.
+
+
+

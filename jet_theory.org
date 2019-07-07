@@ -1,0 +1,69 @@
+* Theories
+
+combustion of premixed mixtures
+
+- viability :: [u] the fact that something can be done and can be successful
+
+- vapour :: a mass of very small drops of liquid in the air, for example steam
+
+Combustion:
+
+- deflagration :: the combustion process propagates outward at *subsonic* speeds
+-  detonation :: the combustion process propagates outward at supersonic speeds
+https://www.thoughtco.com/explosions-deflagration-versus-detonation-607316
+- mass fraction :: the fractional part of *mass*  originating from the jet (1 at jet core, and 0 at ambient region)
+
+- mixture fraction :: (jet) normalized scalar, P161, pope
+file:figure/jet/mixture_fraction_fond_2012.png
+
+
+*jet types:*
+1. free jet-- a jet in an infinite medium
+   + negligible effect of the surrounding enclosure on its characteristics
+file:figures/jet/round_free_jet.png
+
+2. confined jet
+   + the surrounding enclosure significantly affects 
+the jet hydrodynamic characteristics
+   + confined jets are encountered in several applications, such as jet pumps, ejectors, combustors, etc.
+file:figures/jet/confined_jet.png
+
+3. injection of natural gas into a diesel engine
+
+** entrainment
+
+*** definition:
+entrainment='nibbling' + 'engulfment' + 'induced inflow'
+
+file:figures\jet\entrainment_jet_jimmy_2012.png
+(FIG. 6. A caricature of turbulent jet and the entrainment., Jimmy, 2012)
+
+
+*** mechanisms of entrainment
+
+two opposite theories [fn:bing2012][fn:jimmy2012]:
+1. large scale motion ('engulfment')
+2. small scale turbulent mixing ('nibbling')
+
+
+** Planar turbulent jet
+- planar :: 2D, flow properties does not change in z direction
+flow is *self-preverving* after x/d=40
+
+
+
+
+** self similarity
+if the scaled dependent variable, $\hat{Q}(\xi, x)$ is independent of x,
+then Q(x,y) is self-similar (P99, Pope, turbulent flow)
+
+[[https://doi.org/10.1098/rsta.1951.0007][Similarity and self-preservation in isotropic turbulence]]
+
+** BCs for jet
+outflow boundary condition is used for tank outlet
+* Footnotes
+
+[fn:bing2012]  Bing huan, 2012, physics of fluids, The influence of large-scale structures on
+entrainment in a decelerating transient turbulent jet revealed by large eddy simulation
+
+[fn:jimmy2012] Jimmy Philip, Phys. Fluids, 2012, Large-scale eddies and their role in entrainment in turbulent jets and wakes

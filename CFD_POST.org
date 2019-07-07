@@ -1,0 +1,56 @@
+
+** TI in CFD post
+To define a new expression:
+~sqrt(2/3*Turbulence Kinetic Energy)/Velocity in Stn Frame~
+
+
+
+Turbulence intensity range: 0.01-0.12
+Changing the Legend Display (Fluent)
+Results → Graphics >> Options
+
+> sqrt(2*Turbulence Kinetic Energy /3)/Velocity in Stn Frame
+sqrt(2TKE/3)=UI
+- U: mean velocity
+- I : turbulence intensity
+- TKE: turbulence kinetic energy
+[
+TKE=0.5 \overline{u_i'u_i'}
+]
+- [[http://www.afs.enea.it/project/neptunius/docs/fluent/html/cfd/node21.htm][create a custom variable]]:
+to define a custom expression for the dynamics head, 0.5 \rho v^2
+(a)   On the tab bar at the top of the workspace area, select ~Expressions~. Right-click in the Expressions area and select New.
+
+(b)   In the New Expression dialog box, type: DynamicHeadExp
+
+(c)   Click OK.
+
+(d)   In the ~Definition~ area, type in this definition:
+
+> Density * abs(Velocity)^2 / 2
+
+ where:
+
+    Density is a variable
+
+    abs is a CEL function ( abs is unnecessary in this example, it simply illustrates the use of a CEL function)
+
+    Velocity is a variable
+
+   You can learn which predefined functions, variables, expression, locations, and constants are available by right-clicking in the Definition area.
+
+(e)   Click Apply. 
+
+2.   Associate the *expression* with a *variable* (as the plane you define in the next step can display only variables):
+
+(a)   On the tab bar at the top of the workspace area, select Variables. Right-click in the Variables area and select New.
+
+(b)   In the New Variable dialog box, type: DynamicHeadVar
+
+(c)   Click OK.
+
+(d)   In the Details view for DynamicHeadVar, click the drop-down arrow beside Expression and choose DynamicHeadExp. Click Apply. 
+
+
+
+- surge :: verb, to suddenly move very quickly in a particular direction

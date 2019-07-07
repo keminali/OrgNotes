@@ -1,0 +1,205 @@
+* Dissertation
+** Lust 2017 The Influence of Surface Gravity Waves on the Performance and Near-Wake of an Axial-Flow Marine Hydrokinetic Turbine
+
+* Others
+
+** MacEnri, Joseph, Matthew Reed, and Torbjörn Thiringer. "Influence of tidal parameters on SeaGen flicker performance." Phil. Trans. R. Soc. A 371.1985 (2013): 20120247.
+only velocity affect Cp in flood and ebb tides, tidal speed, water depth and turbulence strength and intensity. xk
+
+
+** cui 2017, Journal of Turbo. Numerical Study of Purge and Secondary Flows in a Low-Pressure Turbine
+
+
+** Best practice guidelines for marine applications of computational fluid dynamics
+wave modelling
+** Park 2018 Steady Aerodynamic Characteristics of Two-Dimensional NACA0012 Airfoil for One Revolution Angle of Attack
+Byung Ho Park1 · Yong Oun Han
+south korea
+
+what is new?
+coner vortex effect at high AOA, which is important at high AOA with low aspect raio.
+
+** lind 2014 AIAA, Time-Averaged Aerodynamics of Sharp and Blunt Trailing-Edge Static Airfoils in Reverse Flow
+NACA0012
+
+** Hydrodynamic assessment of a dual-rotor horizontal axis marine current turbine
+What problem does this paper solve?
+ + get 10% improvement of Cp
+
+Method: BEM, park wake model
+the effect of the front rotor on the rear rotor >> park wake model
+ 
+the effect of the rear rotor on the front rotor >> ignored
+Limit: 
+   radially independent, 
+   rotor distance > 3-4D, 
+   downstream swirl
+** Design analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth :tip_clearance:HAMT:
+
+Goal:
+Methods:
+     BEM + CFD
+     Variable: nacelle depth
+     CD: 1/3 section, upstream, 2D, downstream, 3D, radial, 2D
+     Mesh:
+	Interface: general grid interface to interpolate the data 
+    BC:
+	Time derivative: backward implicit scheme
+	Turbulence model: SST k -omega
+	Solver: CFX
+Conclusion:
+Review: Similar as your methods, use UDF as wave velocity at inlet 
+Limit: only one third section used, but the wave is a function of vertical depth, 3 blades should be used.
+	
+Further Research: 
+
+** Mycek, Paul, et al. 2014  "Experimental study of the turbulence intensity effects on marine current turbines behaviour. Part II: Two interacting turbines." Renewable Energy 68 (2014): 876-892.
+what is new?
+effect of TI on Dual Rotor in co-axial
+The wake and performances of the turbine are characterised.
+
+independent variable: TI, Rotor spacing 
+U\infty = 0.8 m/s
+
+Definitions, refer to table 5 (part I)
+
+*Limits:*
+no data for rotor spacing <2D
+
+** Ebdon, T., et al. "Modelling the Effect of Turbulence Length Scale on Tidal Turbine Wakes using Advanced Turbulence Models."
+numerical DES  modelling of *the effect on turbulence length scale on wake recovery rate* of a 1/20th scale model (0.5m) of HWTT [fn:Ebdon]
+comparing \ell =0.5m and 1m, the results shows that 
+
+**  Novo  2017   Field measurement and numerical study of tidal current turbulence intensity in the Kobe Strait of the Goto Islands, Nagasaki Prefecture
+
+** Lignarolo 2016 on the turbulent mixing in HAWT wake
+- parameters that influence the re-energiszing of the wake
+the following research questions (RQ) will be addressed:
+1. How does the tip-vortex instability influence the wake flow and its re-energising process?
+1.1. What is the effect on the mean velocity field in the wake?
+1.2. What is the effect on the flow turbulence and on the wake re-energising process?
+2. What are the key turbulence phenomena in the wake of a wind turbine rotor?
+2.1. What is the amount of kinetic energy transported and dissipated by the most relevant flow structures?
+2.2. What is the role of the tip-vortices, their instability and their breakdown in the turbulent mixing process?
+3. What are the main differences between the near wake of a wind turbine and an actuator disc?
+3.1. What are the key differences in the wind turbine and actuator disc near wake and how do they affect the transport of mean-flow kinetic-energy?
+3.2. To what extent is the actuator disc assumption valid for the representation of the near wake?
+4. What is the level of accuracy of the state-of-the-art numerical models in reproducing the near wake features highlighted in the experiments?
+
+
+**  Ritvika 2016 Investigation of Differences in Ansys  Solvers CFX and Fluent
+Rutvika Acharya
+Master thesis, 2016, Royal Instit
+ute of Technology, KTH Stockholm,
+
+
+**  Abuan, 2017, Uni. of Sheffield,  The Performance and Hydrodynamics in Unsteady Flow of a Horizontal Axis Tidal Turbine
+effect on sine wave 
+unsteady flow , hysteresis loop 
+*** Conclusions:
+
+input variable: sine wave
+parametric study: Amplitude and Frequency of sine wave
+
+- unsteady effect should be included in blade design phase
+
+- the instantaneous power extracted, Pe, by the turbine is not in phase with the unsteady water velocity (sine) (fig5.3)
+
+- the unsteady  cyclic-averaged CP less than that of the steady state CP.
+
+*** Further research
+- real velocity fluctuation data
+- experiments
+
+
+
+*** Blade Profile
+
+*** methods
+qblade, 
+steady >> k-ɛ RNG and k-ω SST
+ICEM CFD
+yplus > 30
+CD: 5D 5D 10D
+
+** Free surface Characterization of a micro-hydrokinetic turbine in close proximity to the free surface
+Goal: The effect of free surface and Froude number on power performance
+
+Results & conclusions: Froude number plays a critical role in the development of the transient free surface level. A sharp decrease in performance was observed at the critical Froude number, while Results at subcritical conditions showed acceptable agreement with previously published single phase results. 
+
+Methods: free surface capturing, VOF, CFD; solver, PISO; Meshing, Sliding mesh mode, structured mesh, time step size, 1e-3s, turbulence model, k-\omega SST.
+
+
+** Dhamankar 2017 "Overview of *Turbulent Inflow Boundary Conditions* for *Large-Eddy Simulations*." AIAA Journal
+
+
+** Large-eddy simulation of a hydrokinetic turbine mounted on an erodible bed
+turbine >> actuator line
+bed >> Exner-Pola equation
+
+DOI: 10.1016/j.renene.2017.07.007
+Yang X Khosronejad A Sotiropoulos F
+Renewable Energy (2017) 113 1419-1433
+
+** Hu Qiuhao, 2017, Shanghai Jiao Tong University, A large-eddy simulation study of horizontal axis tidal turbine in different inflow conditions
+Goal:
+
+Conclusion:
+
+Quantities of interst:
+performance and wake structure
+
+Methods:
+OpenFOAM
+LES
+actuator line method
+
+** Pablo Ouro, 2017, Journal of Fluids and Structures, Journal of Fluids and Structures
+near wake
+hydrodynamic loads: quantified in terms of bending and torsional moments at the blade root.
+quantified in terms of bending and torsional moments at the blade root.
+
+The method is first validated with data from experimental tests of a HATT prototype. 
+** Kang S 2012 renewable energy, Numerical simulation of 3D flow past a real-life marine hydrokinetic turbine
+Conclusion: 
+- bed, nacell, pylon has little effect on Cp
+- wake structure of tidal turbine
+  + three main regions: (1) the outer layer with the
+spiral blade tip vortices rotating in the same direction as the blades; (2) the counter-rotating inner layer
+surrounded by the spiral tip vortices; and (3) the core layer co-rotating with respect to the tip vortices
+
+**  N Barltrop Investigation into wave–current interactions in marine current turbines
+** Noruzi, 2015, Ocean Engineering Design, analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth
+Noruzi, R., M. Vahidzadeh, and A. Riasi. "
+." Ocean Engineering 108 (2015): 789-798.
+
+linear wave
+Method: BEM
+independent variable: nacelle depth
+dependent variable: time history of Cp, Ct
+
+Limit:
+in [fn:noruzi2015design],
+ only a third section, but the wave velocity is a function of vertical distance, 
+thus wave is not fully modelled in this paper
+
+Conclusion:
+effect of tip clearance on torque, file:figures/tip_clearance_noruzi_2015.jpeg
+
+
+** Chen, 2014 Slipstream between marine current turbine and seabed
+
+** Performance characterization and placement of a marine hydrokinetic turbine in a tidal channel under boundary proximity and blockage effects
+
+A reduction in tip-depth of immersion was observed to improve the turbine performance until it reached an optimum depth beyond which a reduction in performance was observed due to free surface interaction with wake and bypass region
+ For low tip clearance ratios, a significant drop (up to 5-10% of channel depth) in free surface was observed 
+three bladed, constant chord, untwisted turbine
+
+** Guo 2016  Numerical evaluation of the clearance geometries effect on the flow field and performance of a hydrofoil
+
+**  Design, analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth
+* jiahuan cui
+2017 Journal of turbo, numerical study of purge and secondary flows ina low pressure turbine
+Goal: the combined effects of *purge flow* and *secondary flow in the wake* on *endwall losses*
+
+Methods: LES

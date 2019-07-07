@@ -1,0 +1,627 @@
+* Error :error:
+
+
+** Process 1928: Received signal SIGSEGV. 
+Running on windows
+Mesh size, 12M
+
+
+serial
+	Error:  received a fatal signal (Segmentation fault).
+	Error Object: #f
+
+parallel
+	select 4 processors
+	
+	error information
+	Node 0: Process 1928: Received signal SIGSEGV.
+	
+	Node 5: Process 2824: Received signal SIGSEGV.
+	MPI Application rank 0 exited before MPI_Finalize() with status 2
+	 The fl process could not be started.
+	
+	Reason
+		This is primarily a Windows issue.
+		
+		If running Fluent with -t1 or higher number of processes and leave the session for an extended period of time (2-20 hours), it receives the following message in the console:
+		
+		The fl process could not be started.
+		
+		No other information about what timed out is provided, and only the cortex process is left running. This issue becomes more significant in light of the switch from serial to -t1.
+		IP interfaces on the machine.
+		
+		The problem seems to occur with the PPP Adapter Umbrella doing some periodic disconnections. We do not see connection disruptions between the cortex and host process which are connected through Local loopback: 127.0.0.1
+		
+	Resolution:
+		
+		Windows
+		
+		Type: ipconfig /all in a Command Prompt window
+		
+		If you see the PPP Adapter Umbrella connected disable it if possible.
+		You can also enforce the use of local loopback in the Fluent Launcher, Environment tab by entering this value:
+		
+		FLUENT_HOST_IP=-127.0.0.1
+		
+		If using command line job submission add this value to your command line when launching FLUENT or modify the FLUENT Launcher, Environment tab as noted above
+		
+		This issue will be addressed in future releases of Fluent. 
+		
+		From <https://support.ansys.com/AnsysCustomerPortal/en_us/Knowledge%20Resources/Solutions/FLUENT%20-%20SYS/2050947> 
+		
+** Error: Couldn't intersect threads 6 and 5 (periodic faces).
+error message: Non-conformal periodic interface with empty intersection.
+
+answer: 
+This is likely due to incorrect specification of periodic offset values. Please check the offset values specified
+	and recreate the interface.
+
+Solution: do *match control* in ANSYS Meshing
+	
+
+
+** Received signal SIGSEGV on Linux 
+*** Description
+ UDF parallel runnning\\
+job 141938\\
+eror information
+-  hwloc 1.11.1 has encountered what looks like an error from the operating system\\
+-  L3 (cpuset 0x000003f0) intersects with NUMANode (P#0 cpuset 0x0000003f) without inclusion!\\
+- Error occurred in topology.c line 981\\
+- Node 1: Process 22250: Received signal SIGSEGV.\\
+- Fatal error in one of the compute processes.\\
+*** answer
+chang node to NXV node
+- SM node get the above error message
+
+
+
+***  How to specify the number of nodes?
+
+The tutorial from hpc web is as follows:
+
+Here is an example of an Ansys job running on *64 cores* across *two nxv nodes* [fn:ansys-parallel-linux].
+
+#+BEGIN_SRC
+#!/bin/bash
+#$ -cwd 
+#$ -j y
+#$ -m bea               #get notifications on job start, finish and abortion.
+
+#$ -pe parallel 64 
+#$ -l h_rt=4:0:0
+#$ -l infiniband=nxv
+#$ -l ansys=64  #request 64 ansys licenses.
+
+module load ansys
+ansys180 -dis -np ${NSLOTS} -b < [INPUT FILE]
+#+END_SRC
+which command/script corresponds to “two” nodes?
+What does “#$ -l ansys=64” mean?
+Do I need to give a number to replace ${NSLOTS}? If do, it would duplicate with #$ -pe parallel 64
+
+*answer*
+You should only request the number of cores you want your job to run on and whether the job is smp or parallel.
+
+On the nxv parallel nodes, your request must use all 32 cores on a single node with a minimum of 2 nodes (hence 64 cores).
+
+If you wanted to use 3 or 4 nxv parallel nodes, your request would be "-pe parallel 96" or "-pe parallel 128" respectively.
+
+Ansys is licensed for 128 cores on Apocrita, when running the application you can request licences via ~l ansys <number of cores>~
+So if you use 64 cores, you should pass the "-l ansys=64" scheduler parameter to request 64 ansys licenses.
+
+The ~NSLOTS~ variable is set to the number of cores requested with "-pe".
+We prefer using this variable to ensure applications only use the number of cores requested.
+** Stack backtrace generated for process id 973 on signal 11 :
+ Error in `fluent': free(): corrupted unsorted chunks: 0x0000000001499030 
+
+
+save case and data separately, if not works, save case and data with HD5 format
+
+~file/write-data e387_new-uns-tsr55-100.h5~
+*** Read hd5 in Serial on Window OS
+Error: Hdfio library can be only loaded in parallel.
+*** Read HD5 file Using 2 node paralllel in Windows OS
+Warning: reading 64 partition grid onto 2 compute node machine.
+         Combining every 32 partitions.
+    11408693 faces ...
+  #001: F:\TeamCityBuilds\HDF5Builds170\Source\hdf5-1.8.13\src\H5Gint.c line 844 in H5G_iterate(): error iterating over links
+    major: Symbol table
+    minor: Iteration failed
+  #002: F:\TeamCityBuilds\HDF5Builds170\Source\hdf5-1.8.13\src\H5Gobj.c line 704 in H5G__obj_iterate(): no creation order index to query
+    major: Symbol table
+    minor: Bad value
+MPI Application rank 0 exited before MPI_Finalize() with status 2
+ The fl process could not be started.
+***  a clean experiment.
+
+1. The case and data files are saved in Linux in a standard binary *.cas* and .dat format. 
+- Can these files be read in on a same number of cores on the very same cluster in Linux?
+    yes
+- Can these files be read in on a different number of cores in Linux?
+    Haven't try
+-  Can these files be read in Windows? 
+   + can't read on Windows on serial, and have the following  error message: 
+Error:  received a fatal signal (Segmentation fault).
+Error Object: #f
+
+- Is it a cluster or big shared memory machine?
+  Linux Cluster
+-   How many partitions are used in Windows? 
+    1
+-  Did you monitor any memory and space hardware consumption & limitations in Windows?
+    memory, 27GB, hardware more than 100GB
+
+2. The case and data files are saved in Linux in a compressed .cas.gz and .dat.gz format. 
+-   Can these files be read in on a same number of cores on the very same cluster in Linux?
+   yes
+-   Can these files be read in on a different number of cores in Linux?
+     not tried
+-   Can these files be read in Windows? Is it a cluster or big shared memory machine?
+    got the following error when launch fluent with 2 node on Windows OS
+***
+Node 999999: Process 4808: Received signal SIGSEGV.
+Node 0: Process 4300: Received signal SIGSEGV.
+Node 1: Process 3972: Received signal SIGSEGV.
+MPI Application rank 0 exited before MPI_Finalize() with status 2
+ The fl process could not be started.
+*********
+-   How many partitions are used in Windows? 
+    1
+-   Did you monitor any memory and space hardware consumption & limitations in Windows?
+    memory, 27GB, hardware more than 100GB
+
+3. The case and data files are saved in Linux in a new HDT5 composite format  .cas.h5 and .dat.h5 format. 
+-   Can these files be read in on a same number of cores on the very same cluster in Linux?
+   yes
+-   Can these files be read in on a different number of cores in Linux?
+  havn't try
+-   Can these files be read in Windows? Is it a cluster or big shared memory machine?
+
+1) when launch Fluent in Serial on Windows OS
+    Error: Hdfio library can be only loaded in parallel.
+2) When launch Fluent Using 2 node paralllel on Windows OS
+      Warning: reading 64 partition grid onto 2 compute node machine.
+         Combining every 32 partitions.
+    11408693 faces ...
+   #001: F:\TeamCityBuilds\HDF5Builds170\Source\hdf5-1.8.13\src\H5Gint.c line 844 in H5G_iterate(): error iterating over links
+    major: Symbol table
+    minor: Iteration failed
+  #002: F:\TeamCityBuilds\HDF5Builds170\Source\hdf5-1.8.13\src\H5Gobj.c line 704 in H5G__obj_iterate(): no creation order index to query
+    major: Symbol table
+    minor: Bad value
+   MPI Application rank 0 exited before MPI_Finalize() with status 2
+   The fl process could not be started.
+
+-   How many partitions are used in Windows? 
+1
+-   Did you monitor any memory and space hardware consumption & limitations in Windows?
+ 
+4. Does the error happen during the case or the data file read-out?
+   + no problem with reading and writing on Linux Cluster, but can't read the data file on Windows OS
+
+
+
+
+** Error:  received a fatal signal (Segmentation fault).
+
+** Error happened when replacing cell zone and interpolate result
+Error messages:
+Warning: Could not find thread 34 for domain 1
+Restoring id for cell zone #f from 34 to 7
+
+Error: %%set-thread-id: invalid thread [1]
+Error Object: #f
+Error: access: unbound variable
+Error Object: set-var!
+Answer: 
+There is a defect in Fluent. I merged the case file and the new mesh in Fluent meshing. Please find attached the case file. You will have to check the boundary conditions and the mesh interfaces again.
+
+** Stationary wall motion relative to adjacent cell zone detected
+ In cases where the fluid zone motion type is specified as *Moving Mesh* or *Moving Reference Frame*,
+ all wall zones should be set to Moving Wall in the Momentum tab of the Wall boundary conditions panel.
+ The wall motion should be defined Relative to Adjacent Cell Zone. 
+The exception to this is if the walls are stationary in the absolute frame. 
+To define wall motion, see Section  7.13.1.
+
+** WARNING: Zone 13 has inconsistent periodic setting. 
+         Please fix the problem with the TUI command '/mesh/repair-improve/repair-periodic'
+
+** Error: CDR: invalid argument ~[1]~: wrong type [not a pair]
+
+Error: CDR: invalid argument [1]: wrong type [not a pair]
+Error Object: #f
+
+Warning: An error or interrupt occurred while reading the journal file.
+Some commands may not have been completed.
+
+
+> Halting due to end of file on input.
+
+*** answer
+This is most likely a problem with the text format of your *journal file*.
+ If you edit the text file on a Windows machine and then try to read it on a Linux cluster, 
+it is possible that the formats are incompatible and that there are *hidden characters* in the file
+ that prevent it from reading correctly on Linux.
+ There is a Linux command called '[[http://dos2unix.sourceforge.net/][dos2unix]]' that can be used to convert the format of such files.
+ I would suggest you try this or, if not available, try opening the journal file in a Linux text editor, such as 'vi' and remove any unwanted "control characters".
+
+- dos2unix: Removing Hidden Windows Characters from Files
+
+To run ~dos2unix~ in Ubuntu:
+
+~kaiming@V-Ubuntu:~/Dropbox/code$ dos2unix wave.jou~
+~dos2unix: converting file wave.jou to Unix format ...~
+
+another way is to edit the journal file in Linux OS
+
+** Error: The fl process could not be started
+~#2050947~
+Summary:
+
+
+
+This is primarily a Windows issue.
+
+If running Fluent with -t1 or higher number of processes and leave the session for an extended period of time (2-20 hours), 
+it receives the following message in the console:
+
+~The fl process could not be started.~
+
+No other information about what timed out is provided, and only the cortex process is left running.
+ This issue becomes more significant in light of the switch from serial to -t1.
+IP interfaces on the machine.
+
+The problem seems to occur with the PPP Adapter Umbrella doing some periodic disconnections. 
+We do not see connection disruptions between the cortex and host process which are connected through Local loopback: 127.0.0.1
+
+*** solution
+
+Windows
+
+Type: ~ipconfig /all~ in a Command Prompt window
+
+If you see the PPP Adapter Umbrella connected, disable it if possible.
+You can also enforce the use of *local loopback* in the Fluent Launcher, Environment tab by entering this value:
+
+FLUENT_HOST_IP=-127.0.0.1
+
+If using *command line* job submission add this value to your command line when launching FLUENT or modify the FLUENT Launcher,
+ Environment tab as noted above
+
+
+
+
+** hwloc 1.11.1 has encountered what looks like an error from the operating system
+*** description:
+running platform: HPC Apocrita
+paralllel UDF job
+*** answer:
+change node, 
+parallel udf works for *NXV node*, but not in *[[https://docs.hpc.qmul.ac.uk/nodes/sm/][SM node]]*
+*** What should I do when hwloc reports "operating system" warnings?
+When the operating system reports invalid locality information (because of either software or hardware bugs), hwloc may fail to insert some objects in the topology because they cannot fit in the already built tree of resources. If so, hwloc will report a warning like the following. The object causing this error is ignored, the discovery continues but the resulting topology will miss some objects and may be asymmetric (see also What happens if my topology is asymmetric?).
+***************************************************************************** hwloc has encountered what looks like an error from the operating system.** L3 (cpuset 0x000003f0) intersects with NUMANode (P#0 cpuset 0x0000003f) without inclusion!* Error occurred in topology.c line 940** Please report this error message to the hwloc user's mailing list,* along with the output from the hwloc-gather-topology script.****************************************************************************
+These errors are common on large AMD platforms because of BIOS and/or Linux kernel bugs causing invalid L3 cache information. In the above example, the hardware reports a L3 cache that is shared by 2 cores in the first NUMA node and 4 cores in the second NUMA node. That's wrong, it should actually be shared by all 6 cores in a single NUMA node. The resulting topology will miss some L3 caches.
+If your application not care about cache sharing, or if you do not plan to request cache-aware binding in your process launcher, you may likely ignore this error (and hide it by setting HWLOC_HIDE_ERRORS=1 in your environment).
+Some platforms report similar warnings about conflicting Packages and NUMANodes. Upgrading the BIOS and/or the operating system may help. Otherwise, as explained in the message, reporting this issue to the hwloc developers (by sending the tarball that is generated by the hwloc-gather-topology script on this platform) is a good way to make sure that this is a software (operating system) or hardware bug (BIOS, etc).
+
+From <https://www.open-mpi.org/projects/hwloc/doc/v1.11.2/a00030.php> 
+
+
+
+** Turbulent viscosity limited to viscosity ratio of 1e+05
+*** reason
+The possible *causes* for large turbulent viscosity ratio include:
+- Bad initial conditions for the turbulence quantities (k and e)
+- Improper turbulent boundary conditions
+- Skewed cells
+*** solution
+If the problem is not caused by *bad mesh*, then the beginning of the phenomena can usually be avoided by:
+-Turn off solving *turbulence equations* for the first 100-200 iterations
+-Turn on turbulence and continue iterations
+
+If the problem occurs *in the middle of the iteration process*, then use the following procedure:
+- Stop the iteration
+- Turn off all equations except the *turbulence equations*
+- Increase turbulence under relaxation factors (URFs) (k and e) to 1 and iterate for 20-50 iterations
+- *Turn back all equations* and reduce the turbulence URFs to 0.5-0.8 and then continue iterations
+- Repeat the above steps for several times
+
+For *faster convergence*, it might be useful to obtain an initial solution with the *standard k-e model* before switching to a more advanced turbulence model.
+
+Because some turbulent flows are inherently unsteady, 
+verify if the flow has any unsteady behavior and switch to transient calculation if needed.
+
+** ERROR: ASSQ: invalid argument =[2]= : improper list
+~#2039555~
+*** Symptoms:
+- Fluent works as expected as long as the Execute Commands window is not touched
+- The command cannot be changed or removed
+- Worst case: a GENERAL-CAR-CDR message is printed afterwards and the case becomes invalid
+*** Source of the error:
+If this error is shown there is something wrong with the settings stored in the case file.
+Usually there is a conflict with the syntax within the case file.
+
+*** Solution:
+1. Export the settings to a text file with the Fluent TUI command:
+~/file/write-settings temp.set~
+2. Edit the text file with a text editor and look for the line about execute commands. The search string could look like:
+(monitor/commands (
+3. Remove the line completely and save the file
+4. In Fluent read the settings with the following TUI command. 
+~/file/read-settings temp.set~
+5. You should be able to open the Execute Commands panel now. All entries should be gone but all other settings should be still intact.
+
+If you encounter this error message when opening other panels this solution might work, too.
+ But you have to locate the settings in question in the file yourself.
+ Make sure to check all settings in Fluent after reading the settings file.
+
+
+
+
+
+** Error: GENERAL-CAR-CDR: invalid argument =[1]=: improper list
+*** description
+get the error when running 2d udf 2nd stoke wave
+*** Reasons for this Error:
+It occurs when FLUENT is expecting *a list of inputs* and it gets insufficient or an improper list instead from the Cortex. 
+It could also happen while saving a case file, and the save operation does not complete due to issues like insufficient storage space.
+ In the latter case, the case file usually gets corrupted and it may no longer allow the save operation for case and data.
+
+*** Solution:
+1. If the case is corrupted and Fluent is still working properly, the *case settings* can be saved through the following TUI command:
+~/file/write-settings copy_settings.set~
+2. *Data* can be saved using the *file interpolate* option using the following TUI command:
+~/file/interpolate/write-data copy_data.ip yes yes~
+3. The above files can be read into a working case file using the following commands:
+~/file/read-settings copy_settings.set~
+~/file/interpolate/read-data copy_data.ip~
+
+Also, consider referring to Solution#2039555
+
+** review flow specifications at inlet boundaries. Default values detected.(boundary conditions)
+
+** Reverse flow
+ reversed flow in 4706 faces on pressure-outlet 148
+
+** How to display cells with high turbulent viscosity ratio?
+Often times during your simulation you will see a message that turbulence viscosity ratio has exceed the 
+upper limit (default 1e+5) in a certain number of cells. Do the following to *locate these cells*. Once you 
+locate these cells, you might be able to figure out the cause of why turbulence viscosity is exceeding the 
+limit in these cells.
+1. Go to Adapt ->Iso-Value
+2. Under "Iso-Value of" select turbulence and below that turbulent viscosity ratio
+3. Under "Iso-min" select a value just smaller than the upper limit that is being reached by the turbulent viscosity ratio.
+ E.g. if the default upper limit of turbulent viscosity ratio is 1E+5 the select 
+99999 as "iso-min"
+4. Under "Iso-max" select a value larger than the upper limit that is being reached by the turbulent 
+viscosity ratio. E.g. 100001
+5. Click on mark
+6. Click on Manage
+7. In the new panel that opens ("Manage Adaption Registers" panel),select the new register created 
+and click on Display. You will now see all the cells with turbulence viscosity ratio between 99999 
+and 100001 displayed by red dots in the graphics panel
+8. If you want to display the grid along with the cells, click on the Options button in the "Manage 
+Adaption Registers" panel and click on draw grid then select the required surfaces in the Grid 
+Display panel that will pop up and click Display
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\iso-values-adaption.png
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\cells-with-high-turbulent-viscosity-ratio.bmp
+file:C:\Users\exw692\Dropbox\Emacs\figures\fluent\adaption-display-option.bmp
+
+** high residual
+enable scale residual
+
+
+** Error: CDR: invalid argument [1]: wrong type [not a pair]
+Error Object: #f
+answer: close all monitor, reset fluent setups
+
+**  The fl process could not be started
+
+** VIsualize the Boundary between RANS and LES Zones in DES simulation
+~202441~
+** wall roughness height and manning coefficient
+~2036665~
+ANSYS Fluent requires the roughness height
+
+• There is lots of data where the surface roughness 
+• How can the surface roughness height and 
+** booyancy effects on turbulence productions
+~2001681~
+
+Can buoyancy production be included into k - \omega models and 
+RSM ( Stress-omega and stress-BSL) without a UDF in R17
+answer: yes
+
+
+** Divergence detected in AMG solver: pressure correction
+This error message is an indication that the “pressure correction” equation is diverging. 
+The most likely cause is that the under-relaxation factor (URF) for that equation is too large. 
+- Reduce the URF by 10% and repeat the calculation.
+- Try turning on “AMG verbosity” from the Multigrid Controls panel. 
+Try a setting of verbosity=1. This will display AMG residuals for each equation during the iteration. 
+
+During the iteration, you will see the *residuals* of the multigrid sub-iterations. 
+The default number of sub-iterations is 30. It normally takes under 10 sub-iterations for equations to converge to the default tolerance.
+ However, if a particular equation does not converge, it will “cycle-out,” requiring all 30 iterations, before giving up. 
+This will consume a lot of CPU time and is an indication that the solution is nearly divergent.
+ If this happens, try reducing the URF for that equation, also by 10%. 
+If the sub-iterations diverge, you will get the error message.
+
+Another cause is a problem with the mesh quality. 
+Mathematically, skewed cells induce source terms, which cause the equations to become unstable. 
+You may not be able to resolve this problem without remeshing the domain. 
+As a general rule, minimum orthogonal quality for the mesh is 0.01 
+ the maximum skewness reported in Mesh > Quality is less than 0.93-0.95. 
+
+Especially important is that you should have low skewness in regions where gradients are large.
+ It is in these regions that errors multiply.
+
+A final possible cause of AMG divergence is incorrectly defined boundary conditions. 
+If the grid quality is believed to be good enough and reducing the under-relaxation factors does not work, 
+it is recommended to review all boundary conditions for consistency and correct inputs.
+
+** change wall to periodic BC
+a. Press < Enter > in the console to get the command prompt (>).
+b. Type the commands as shown below in the console:
+#+BEGIN_QUOTE
+mesh/modify-zones/list-zones/
+/mesh/modify-zones/ make-periodic
+Periodic zone [()] 10    #zone ID
+Shadow zone [()] 9
+Rotational periodic? (if no, translational) [yes] yes
+Create periodic zones? [yes] yes
+#+END_QUOTE
+
+** reading multiple meshes
+There are three methods for loading multiple mesh files in Fluent:
+- Using the multiple read function in Fluent
+- Using TGrid/Fluent meshing
+- Using tmerge
+
+For further details, please refer to 5.3.18. Reading Multiple Mesh/Case/Data Files, user guide, fluent, 17
+*** using the Multiple read Function in Fluent
+After starting Fluent, follow the steps below from the GUI 
+(note this option only works when running in serial, not parallel): 
+1. Go to File > Read > Case and load the first mesh file.
+2. Go to Grid/Mesh >Zone>Append Case File and read the second mesh file. 
+3. Save the file and mesh.
+
+*** using TGrid
+
+ The following steps will explain how to combine these meshes into one 
+(this also applies when creating a mesh individually with a large shape).
+
+1. Start Tgrid in 2D or 3D. (Fluent Meshing 3D)
+From File > Read > Mesh, select the mesh you want to read. 
+The selected mesh file will be displayed in Mesh File (s). If you choose one by mistake, click Remove and select the wrongly selected file.
+2. Press the OK button, and export the mesh by going to File > Write > Mesh.
+3. read combined mesh in Fluent, fuse or merge the interface of two meshes
+When loading to Fluent, it is necessary to set *the joining face* of each part. 
+Please refer to [[What is the difference between the Fuse and Merge functions]]
+ to learn about the difference between Fuse and Merge regarding this operation.
+*** tmerge
+Using tmerge First, create multiple mesh files, then combine them into a single mesh file using tmerge before starting the solver. 
+You can also apply rotation, scaling, or translation prior to combining them in tmerge. 
+1. Run utility tmerge -3d (in a 3D case) or enter utility tmerge -2d (in a 2D case) in the DOS command prompt or Linux/UNIX prompt. 
+2. When prompted, enter the name of the output file after coupling to the input file name. 
+3. For each input file, you can specify magnification, translation, or rotation. 
+If you do not need to use any of those options, combine the inputs with the following TUI: 
+utility tmerge -2d -cl -p my1.msh my2.msh final.msh
+
+*Example of the use of tmerge (in a 2D case)*
+Example of the use of tmerge (in a 2D case) user@mymachine : > utility tmerge -2d /* Specifies a 2D case */ Starting /Fluent.Inc/utility/tmerge2.1/ultra/tmerge_2d.2.1.13 Append 2D grid files. tmerge2D Fluent Inc, Version 2.1.11 Enter name of grid file (ENTER to continue) : my1.msh /* Name of input file*/ x,y scaling factor, eg. 1 1 : 1 1/* Specifies no scaling */ x,y translation, eg. 0 1 : 0 0 /* Specifies no translation */ rotation angle (deg), eg. 45 : 0 /* Specifies no rotation */ Enter name of grid file (ENTER to continue) : my2.msh /*Name of input file*/ x,y scaling factor, eg. 1 1 : 1 1 /* Specifies no scaling */ x,y translation, eg. 0 1 : 0 0 /* Specifies no translation */ rotation angle (deg), eg. 45 : 0 /* Specifies no rotation */ Enter name of grid file (ENTER to continue) : <ENTER> Enter name of output file : final.msh /*Name of output file*/ Reading... node zone: id 1, ib 1, ie 1677, typ 1 node zone: id 2, ib 1678, ie 2169, typ 2 . . done. Writing... 492 nodes, id 1, ib 1678, ie 2169, type 2. 1677 nodes, id 2, ib 1, ie 1677, type 1.
+
+#+BEGIN_EXAMPLE
+user@mymachine : > utility tmerge -2d /* Specifies a 2D case */ 
+Starting /Fluent.Inc/utility/tmerge2.1/ultra/tmerge_2d.2.1.13 
+Append 2D grid files.
+ tmerge2D Fluent Inc, Version 2.1.11
+ Enter name of grid file (ENTER to continue) : my1.msh /* Name of input file*/
+ x,y scaling factor, eg. 1 1 : 1 1/* Specifies no scaling *
+/ x,y translation, eg. 0 1 : 0 0 /* Specifies no translation */
+rotation angle (deg), eg. 45 : 0 /* Specifies no rotation */ 
+Enter name of grid file (ENTER to continue) : my2.msh /*Name of input file*/
+x,y scaling factor, eg. 1 1 : 1 1 /* Specifies no scaling */ 
+x,y translation, eg. 0 1 : 0 0 /* Specifies no translation */ 
+rotation angle (deg), eg. 45 : 0 /* Specifies no rotation */
+Enter name of grid file (ENTER to continue) : <ENTER>
+Enter name of output file : final.msh /*Name of output file*/ 
+Reading... 
+node zone: id 1, ib 1, ie 1677, typ 1 
+node zone: id 2, ib 1678, ie 2169, typ 2 . . 
+done. 
+Writing... 
+492 nodes, id 1, ib 1678, ie 2169, type 2. 
+1677 nodes, id 2, ib 1, ie 1677, type 1.
+#+END_EXAMPLE
+
+** combine two mesh files into one single mesh file using Fluent
+keywords: merge mesh, combine mesh
+
+1. Read the hex mesh file film-hex.msh.
+File/Read/ Mesh...
+2. Append the tet mesh file film-tet.msh.
+Mesh /Zone / Append Case File...
+The *Append Case File*  functionality allows you to combine two mesh files into one single mesh file
+
+from: Chapter 9: Using a Non-Conformal Mesh, tutorial guide fluent v15
+**  Create *Continuous Mesh* from Multiple Mesh Files 
+#2048316 
+When the analysis area consists of multiple mesh files, it is convenient to use *TGrid* to combine them into one analysis space.
+
+The specific procedure is as follows.
+1. Read all corresponding mesh files from *File* > *Read* > *Mesh*
+(At this point, the adjacent boundary of each mesh file is a discontinuous mesh)
+
+2. From *Boundary* > *Merge Nodes*, turn off the *Only Free Nodes* option and click the Merge button
+(Continuous mesh is created)
+
+3. Output the mesh file from File - Write - Mesh
+
+Note: 
+However, the continuous mesh becomes a mesh on the boundary where multiple mesh files are adjacent.
+ Please be aware that this falls within the allowable error range.
+
+The above method is easier than working with FLUENT
+ (reading multiple mesh files using the: *append Case File function* and using *Fuse* to make it into a continuous mesh).
+
+This procedure also helps to check whether the created mesh is a mesh that can be calculated in FLUENT. 
+This is because when a continuous mesh is outputted,
+/the boundary type of the adjacent boundary mesh/ files is recognized as *wall* and *wall-shadow* in FLUENT.
+
+** What is the difference between the Fuse and Merge functions
+ *Fuse* will create one *interior* by combining two boundaries, Merge makes one boundary under a single name. 
+
+Their specific uses are described below:
+	
+Fuse: 
+	If you create one mesh by fusing it with another, their mesh pattern will be exactly the same at the junction where they connect.
+ You can create one for interior faces by selecting the pair to become a surface using Fuse.
+	
+Merge: 
+	Although it is commonly defined as a function that divides the boundary to multiple pieces in the pre-soft, 
+it is possible to put them together as one mesh if you are fine with them falling under a single name.
+
+
+
+** When to use operating density/operating temperature and how it is related to density?
+#: 2045437 and #: 2042658 
+
+** When is the operating density used in Fluent?
+The *operating density* in Fluent is used in every case
+ where gravity is activated. The term:
+
+Ps‘ = Ps - rho(operating)*gravity*height
+
+is used when computing the local pressure in the domain.
+ If the operating density is not explicitly defined (this is the default)
+ the operating density is set to the average value of density
+ in the fluid domain. 
+This is fine for constant density and 
+also for the Boussinesq approach
+ (where the density is constant except of the buoyancy term) 
+but for all cases where density is a function of temperature and / or species concentration
+ this mean value can lead to incorrect results as is shown in solution 2042659.
+
+For multiphase simulations there are additional considerations to be taken into account.
+
+The Operating Density is defined in
+
+Tree:
+Setup -> Cell Zone Conditions -> Operating Conditions
+Setup -> Boundary Conditions -> Operating Conditions
+
+Ribbon
+Setting Up Physics -> Solver -> Operating Conditions
+
+
+
+For more information, see:
+
+“Inputs at Pressure Inlet Boundary Conditions” (Fluent Users Guide, R17.0, Chapter 6.3.3.1.)
+and
+“Operating Density” (Fluent Users Guide, R17.0, Chapter 13.2.4.5.)
+
+(This Solution is also valid for earlier versions of Fluen

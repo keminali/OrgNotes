@@ -1,0 +1,5182 @@
+* Literature :  wave effects on turbine
+for stokes wave theory, refer to 
+file:wave.org
+keywords:
+unsteady flow, MCT, tidal turbine, wave, free surface
+
+*Introduction*
+
+An distinguish feature of MCT is the presence of free surface.
+
+*wave parameters:*
+- 3 basic wave parameter: water depth, wave amplitude, wave length
+| authors        | institudes        | methods | Solvers | results            |
+| Binoe E. Abuan | Sheffield Uni, UK | RANS    | Fluent  | Cp histeresis loop |
+| Jacob Riglin   | Lehigh Uni. USA   | RANS    | CFX     |                    |
+
+** wave modeling
+file:wave_modeling.org
+
+
+** Effect of unsteady wave on Cp
+- cyclic averaged Cp is 0.2% lower than its steady counterpart at optimal TSR (Abuan)
+- instaneous Cp vs time 
+- wave parameters: amplitude, length , frequency
+- hysteresis loop was observed (abuan,2017)
+
+*Cp of steady (no wave)  vs unsteady (wave)*
+- Average performance parameter (cp, ct) values for the unsteady case were found to closely match those of the steady case( no wave) [fn:lust2017influence] Luznik, 2013,
+- closer the free surface, higher Cp, Ct, but more fluctuations ( lust, 2013, International Journal of Marine Energy)
+
+
+*** input variable and output variable
+# independent and dependent variables
+
+Parametric study 
+*independent variable*:
+- three basic wave parameters: water depth, wave amplitude, wave length
+- Turbine parameters: rotating frequency/speed; turbine blade shapes; nacell depth; turbine position in the water
+- Froude Number
+- Blade tip clearance 
+
+*dependent variable*:
+- quantites of interest: Power, Thrust, wake characteristics
+| <40>                          | <30>                           | <40>                                   | <40> |<40> |
+| wave quantities                | turbine quantites              |       Cp                 |wake velocity deficit |
+| inflow turbulence              | Cp                             | wake                                     |
+| wave types(linear/non-linear)  |                                |                                          |
+| Froude number                  |       [fn:riglin2015]                              |                                          |
+| blade tip merge depth          |                                |                                          |
+| wave frequency/turbine frequency correlation |                                |                                          |
+| blade shape                    | [fn:riglin2015]                |                                          |
+| water depth( shallow, intermediate, deep) | Cp                             |                                          |
+| wave frequency  vs turbine frequency |                                |                                          |
+|                                |                                |                                          |
+
+
+
+
+*** Gaps
+*** your contribution/purpose of study
+*** Possible conclusion
+nacell depth/ blade tip merge depth is an important factor for loading.
+
+onenote > wave effects on turbine
+
+** Introduction
+similar research has been done:
+Abuan studied the variation of amplitude and frequency of *sine* wave  on Cp. Hystersis loop was observed, and 2% decrease of Cp at TSR 6 (Optimal TSR).
+- Abuan, WCE, 2018, The Influence of Unsteady Flow to the Performance of a Horizontal Axis Tidal Turbine
+
+
+
+The effect of *Froude number* on *power performance* of micro-hydrokinetic turbine
+ has been studied by Riglin et al [fn:riglin2015] ~\cite{riglin2015characterization}.
+Frounde number is below 1, wave impact on mean Cp is little,
+ but - 32.2% reduction in Cp was happened  at *supercritical* flows.[fn:riglin2015]
+
+The *head drop* for a single turbine unit in a large channel is quite small.
+ The effects could be aggravated in MCT array farm.[fn:chen2014methods]
+ 
+During sub-critial flow, the wave effect isn't effective. During critial flow, power coefficent drops about a third.
+Max power coefficents are similar between propeller-shaped turbine and traditional turbine, but the Best TSR of propeller-shaped turbine is lower than that of traditional turbine.
+~#~ jocab riglin 2015 is an important reference, similar with my current reserach\\
+
+A scale model of  kite-like turbine is tested in a circulating water channel with linear wave genenator [fn:shirasawa2017scale] ~\cite{shirasawa2017scale}.
+ The turbine were placed at different depth below the mean water level to analysis the wave impact on mooring line tension. 
+The results show that thrust of turbine is influenced by wave when the nacelle depth is half wave length, but not the case when the nacell depth is slightly greater than the wavelength.
+a spike-like variation of the stream-wise and vertical force on mooring line is observed  for 3 MW case, while  sinusoidal motion is observed for 10 MW case.
+the experient shows that wave amplitude and nacell depth are imporant parameters for design of morring system.
+
+** Parametric study
+
+input and output variables
+# independent and dependent variables
+Parametric study 
+
+
+*independent variable*:
+- flow characteristics: Froude Number
+- three basic wave parameters: <<water depth>>, wave amplitude, wave length
+- Turbine parameters: rotating frequency/speed; turbine blade shapes; nacell depth; turbine position in the water
+
+- Blade tip clearance 
+
+*dependent variable*:
+- quantites of interest: Power, Thrust, wake characteristics
+| <40>                                     | <30>                           | <40>                                     | <40>                                     | <40>                                     |
+| Input variables                          | Ouput variables                | Cp                                       | wake velocity deficit                    |                                          |
+| inflow turbulence                        | Cp                             | wake                                     |                                          |                                          |
+| wave types(linear/non-linear)            |                                |                                          |                                          |                                          |
+| Froude number                            | [fn:riglin2015]                |                                          |                                          |                                          |
+| blade tip merge depth                    |                                |                                          |                                          |                                          |
+| wave frequency/turbine frequency correlation |                                |                                          |                                          |                                          |
+| blade shape                              | [fn:riglin2015]                |                                          |                                          |                                          |
+| water depth( shallow, intermediate, deep) | Cp                             |                                          |                                          |                                          |
+| wave frequency  vs turbine frequency     |                                |                                          |                                          |                                          |
+|                                          |                                |                                          |                                          |                                          |
+
+
+*** water depth
+
+*** blade shape
+Traditional and propeller-based hydrokinetic turbine designs were compared by Jocab.[fn:riglin2015] .In their case,
+max Cp is close for two types of turbine,  but the design TSR of propeller-based turbine is lower than traditional turbine.
+
+
+*** possible conclusion
+cyclic loading accelerates the fatigue of the rotor blade
+
+nacell depth/ blade tip merge depth is an important factor.
+
+*** free surface modelling
+VOF [fn:kolekar2015performance]
+*** computational domain
+the same as experient [fn:kolekar2015performance]
+Side wall to nacelle centre, 4D (diameter of rotor) ( channel width > 8D) [fn:riglin2015] 
+
+*** meshing
+**** Mesh types
+inner tetra, outer hexa [fn:kolekar2015performance]
+**** mesh size
+3.5 M
+
+*** solver
+CFX [fn:kolekar2015performance]
+** unsteady flow simulation
+
+** E387 airfoil profiles
+
+** Stocks wave
+
+** Effect of Froude number  on power performance
+Frounde number is below 1, wave impact on mean Cp is little
+- 32.2% reduction in Cp at *supercritical* flows.[fn:riglin2015]
+
+
+** Further study
+further study: wave and current angle are different
+
+** References
+N. kolekar, 2015, applied energy (N. Kolekar and A. Banerjee, 
+"Performance characterization and placement of a marine hydrokinetic
+ turbine in a tidal channel under boundary proximity and blockage effects," Applied Energy, vol. 148, pp. 121-133, 2015
+
+** Digest 
+Import References
+sine wave on performance using UDF >> James
+- Sarah  Tatum 2016 
+*** James thesis
+Geo: Naca 63 812, A S Bahaj (2007)
+Modification of Geo: blunt trailing edge
+Mesh: ICEM CFD
+Solver: Code_Saturne
+ 
+*** Noruzi, R, ocean enginnering 2015   Design, analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth
+simulating wave using UDF
+input variables: distance between blade tip and surface
+
+***  xin bai thesis
+Immersed Boundary Method 
+Solver: CgLES
+
+*** Jacob Riglin Lehigh Uni. USA
+ Riglin, Jacob, et al. "Characterization of a micro-hydrokinetic turbine in close proximity to the free surface." Ocean Engineering 110 (2015): 270-280.
+
+Conclusions:
+- Power coefficient are sensitive to Froude number during critical and supercritical conditions.   [fn:riglin2015]
+
+Methods: experiment and numerical modelling, CFX, fluent
+
+
+*** Abuan B, 2017, Uni. of Sheffield, The Performance and Hydrodynamics in Unsteady Flow of a Horizontal Axis Tidal Turbine
+what problem does this thesis solve?
+effect of the variations of sine wave parameters on Cp
+? hysteresis curve
+*Gap*
+It is true that the device reliability and design is the most
+important part when it comes to devices like tidal turbines but improving the performance based on the environment and the flow setting where the turbine is installed is also a crucial step in the development of the technology. This is the rationale behind this study to fill the gap in the literature in presenting the effect of flow unsteadiness to turbine performance by presenting instantaneous response and hydrodynamics
+*Conclusions & contribution:*
+- find the instaneous Max Cp
+unsteady Cp is 2-8% lower than Cp of steady case.
+
+***  Edward lust,  2017, Uni. of Maryland  the influence of surface gravity waves on the performance and near wake of an axial flow marine hydrokinetic turbine
+
+*Conclusions*
+wake
+- wake exppansion well-described by a 1/3 power law expression, a maximum velocity deficit of 2/3 the free stream velocity
+
+Performance
+- mean value of Cp of unsteady wave = steady no wave case
+Average performance parameter values for the unsteady case were found to closely match those of the steady case, regardless of selected wave parameters.
+
+turbine tip vortices.
+
+? wave survey
+*Blade-phase averaging* was shown to be a poor descriptor of wake characteristics.
+Blade and wave phase averaging offers a clearer picture of wake dynamics in the presence of waves
+
+**** methods
++ experimental towing tank
+**** further work
+input variable: wave steepness 
+turbulent transport terms to examine more closely the role of vortex convection in wake reenergization
+***  X. Bai 2014 QMUL
+ E. J. Avital, A. Munjiza, and J. J. R. Williams, "Numerical simulation of a marine current turbine in free surface flow," Renewable Energy, vol. 63, pp. 715- 723, 2014.
+- x bai compared the wave heigt effect on performance at TSR 6, and 
+
+*** Duncan Murray, 2014, Unsteady Hydrodynamics of Tidal Stream Turbines
+
+*** Lust, 2013 The influence of surface gravity waves on marine current turbine *performance*
+sine wave
+study the effect of surfacee waves on a 0.8m HAMC using towing tank. 
+the results showed that the averaged  thrust and power coefficients are mildly higher than the steady no wave case, 
+but time history 
+
+*** 2016 Sarah Tatum  cardiff Uni., CFD modelling of a tidal stream turbine subjected to profiled flow and surface gravity waves
+- contribution: 
+
+in phase and out of phase wave effect on Cp
+
+*Results:*
+
+thrust
+power
+bending moment
+- thrust power spectrum
+
+flow and turbine:
+- free surface resolved 
+- blade geometry is not resolved
+- No current
+
+*wave*:
+- uniform in width
+- Only vary in gravity direction
+V_y =f(y)
+
+ modified linear airy wave 
+
+*numerical methods:*
+ CFX RANS sst
+- Volume of fluid
+
+2.25 rad/s
+* Feedback from Eldad Avital
+time: 1-12-18
+you must written detailed the BEM and CFD in Chapter 3
+2. you should  further detailed the wave theory (Stocks wave) to demonstrate understanding. it can be done in an appendix
+3. sections 1.2.3. should be extended to expalain what the CFD is trying to do, see my addtions to the summary.
+4. you shoud add one or two contour plots of the CFD, although it is not accurate.
+5. you should refer to your conference paper
+
+* Numerical methods
+- wave, 2nd stokes wave 
+- VOF
+** UDF
+User-Defined Functions (UDFs) enable the customization of many aspects of a CFD
+model, including boundary and cell zone conditions, material properties, data output,
+and solution execution. Data exchange between the UDF and the solver takes place
+via pre-defined macros.
+* Lab data
+# lab result has 5% correction
+** rotor parameter
+e387
+D=0.46m
+- Single Reference Frame
+- Multiple Reference Frame
+- Sliding mesh
+
+** current and wave properties
+
+*** Current
+Free steam velocity, 0.6m/s
+Froude number, F_r =0.28
+Reynolds number, Re=275503
+
+\begin{equation}
+Re_x=\frac{\rho U_\infty D}{\mu}
+\end{equation}
+- \rho, 998.2 kg/m^3
+- U_\infty, 0.6 m/s
+- D, 0.46m
+- \mu, 1e-3 kg/(ms)
+
+Frounde number:
+
+\begin{equation}
+F_r=\frac{U_{\infty}{\sqrt{gL} }
+\end{equation}
+where $U_\infty$ is  free flow velocity, $g$ is in general a characteristic external field, and $D$ is a turbine diameter.
+in the ref, U=0.6m/s; D=0.46m, thus F_r =0.28
+
+*** wave parameters
+Fr=0.28
+D=0.46m
+- 0.345h=0.16m, hub depth = 0.16+0.5D=0.16+0.5*0.46=0.39m
+hub depth:  1.7D= 1.7*0.46=0.782m, 
+hub depth/(water depth) = 0.782/1.6=0.49
+
+Wave period,T, 1.78s
+Wave  height, 0.076m
+wave length, 4.8m
+2nd stokes wave
+
+Wave: 2nd stokes wave velocity profile
+
+UBEM 
+\begin{equation}
+\overrightarrow{u}=[U+u(x=0,z,t)]\widehat{x}+w(x=0,z,t)\widehat{z}
+\end{equation}
+
+\begin{equation}
+u=f(z,t)=\frac{Hgk}{2(\omega-kU)} \frac{\cosh[k(z+d)]}{\cosh (kd)}\cos(\theta)+\frac{3H^2(\omega-kU) k}{16}\frac{cosh{[2k(z+d)]}}{\sinh(kd)^4}\cos(2\theta)
+\end{equation}
+
+\begin{equation}
+w=f(z,t)=\frac{Hgk}{2(\omega-kU)} \frac{\sinh[k(z+d)]}{\cosh (kd)}\sin(\theta)+\frac{3H^2(\omega-kU) k}{16}\frac{\sinh{[2k(z+d)]}}{\sinh(kd)^4}\sin(2\theta)
+\end{equation}
+
+where $H=2a$, $a$ is wave amplitude,  $\theta=kx-\omega t= -\omega t$ (x=0)\\
+expressoins of velocity components  from references[fn:whitham1974linear]  and
+ ( equations 3.27 and 3.58) [fn:lin2008numerical] are the same
+
+** towing tank
+
+ 37 m long, 2.4 m wide and 1.5 m deep
+
+Fr number
+
+blockage correction:
+Cp has been corrected 5% with 95% confidence bands
+** uncertainty analysis of results
+For wave effect on e387 turbine done by Luksa, the *uncertainty analysis* was conducted[fn:1]
+using the Taylor Series Method following the procedures recommended by the ISO/BIPM Guidance for Uncertainty in/of Measurement (GUM) [fn:1]
+** Cp vs time for 2nd stoke wave
+
+
+** no wave Cp vs TSR
+4.16854	0.35128
+4.24719	0.34329
+4.29213	0.33849
+4.51685	0.37194
+4.58427	0.35596
+4.55056	0.3464
+4.77528	0.3591
+4.80899	0.37186
+4.86517	0.36546
+5.2809	0.35737
+5.40449	0.38287
+5.38202	0.34458
+5.88764	0.33327
+5.92135	0.29975
+5.95506	0.3556
+6.04494	0.3093
+6.38202	0.3108
+6.40449	0.29005
+6.80899	0.31707
+6.76404	0.28198
+6.85393	0.28674
+7.1573	0.2324
+7.23596	0.22919
+7.82022	0.17478
+7.86517	0.162
+7.96629	0.16038
+8.25843	0.1252
+8.25843	0.11881
+8.32584	0.11241
+8.75281	0.04209
+8.74157	0.0022
+8.76404	-0.0026
+
+
+ reference [fn:luznik2013effect]
+
+* TODO writing
+- horizontal and vertical velocity doesn't satisfy the non-slip BC
+- frequency effects
+# conclusions
+When the \Omega/\omega is low, (longer wave period), larger fluctuations
+
+- Sine vs Stockes wave
+  + sine/stocks velocity velocity comparsion
+  + non-linear properties
+  + Cp of a turbine due to sine and stocks wave
+
+* TODO Questions
+which figure support the following conclusion?
+
+#+BEGIN_SRC
+It is shown that a large amplitude wave, but still a
+long wave can affect the time-averaged
+coefficient of power and also introduce non-
+linearity in the time response of the turbine
+particularly at low tip speed ratio.
+#+END_SRC
+
+* TODO Status
+** the one phase approximation analysis
+*** Numerical methods
+wave modeling using UDF fluent, similar to paper  [fn:noruzi2015design], but in his paper, only a third section, not right, wave velocity varies along vertical direction.
+
+*** waves
+
+*** related references
+
+Design, analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth    Noruzi R Vahidzadeh M Riasi A Ocean Engineering 2015 
+   + 2015
+   + steady/transient
+   + udf, k-\omega SST
+
+*** Results
+- the mean value of performance of e387 turbine under sine wave match experimental data
+
+** The two phase VOF analysis
+- Divergence
+* TODO  UDF 
+- one phase approximation
+- superimpose 2nd stokes wave velocity at inlet BC using UDF
+- no mesh detail,
+
+
+** Sine Wave
+flow direction, + y
+
+only stream-wise velocity
+U= U_infity ( 1+ 0.05 sin(omega*t)
+*** results
+file:../thesis/UDF/Cp_5.5_sine_wave_UDF.pdf
+time step size, 0.002s , residual 1e-6 Cp: 0.2-0.58 ( mean experimental 0.4)
+** TODO convergence problem
+2nd stokes wave, divergence
+after 700 time steps,
+
+error infomation:
+ 
+Reversed flow in 9416 faces on pressure-outlet 148. 
+ 
+turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 59999 cells 
+
+
+*** solution
+- reduce relaxation factors
+  +not works
+
+- inviscid then sstkw
+- refine mesh
+** Geo & CD
+Geo: as as VOF
+
+3L*2.3*1.6m
+L: wave length
+Vertical distance, 1.6m
+- blockage ratio: 4.5%
+No air, only water, bed to mean free surface level
+
+Inner rotating domain, upstream, 70mm, downstream, 70mm
+Center box, upstream,125mm. Downstream,170mm
+**** Initial CD
+
+length: 3 wave length, 3*4.8m
+width, Laterial, 2.3m
+Height, 2m
+
+Blockage ratio: At/A =0.166/(2.3*2) =0.035 < 0.05
+-	A: sectional area
+-	At : turbine swept area
+
+** Mesh
+blade surface mesh size is around 1mm
+out cell zone:
+ 3M
+
+*inner cell zone*:
+Mesh size, 9.7M
+Minimum Orthogonal Quality = 0.1
+Maximum Ortho Skew = 0.89
+Maximum Aspect Ratio = 110
+
+** Fluent setups
+MRF unsteady
+- \omega : angular velocity of rotor, which is variable in the lab experiment
+
+
+*** sine wave UDF code
+Use the following for the linear theory
+u_r = H*g*k/(2*(omega-k*U))*exp(k*z)*(1+exp(-2*k*(d+z)))/(1+exp(-2*k*d))*cos(omega*time)
+w_r = H*g*k/(2*(omega-k*U))*exp(k*z)*(1-exp(-2*k*(d+z)))/(1+exp(-2*k*d))*cos(omega*time)
+
+*** Turbulence Model
+k o sst
+*** Turbulence Parameters at Inlet and outlet
+Turbulent length scale:
+- based on BL thickness
+\ell = 0.4 \delta_{99} =0.4 * 0.35mm=1.4e-4m
+- based on channel depth
+\ell= 1/3 channel depth = 1/3*1.6=0.53m
+- Based on Turbulent viscosity ratio
+if \mu_t /\mu =5, then \ell = 1.25e-2m
+
+** Fluent setup: Running Parallel UDF on Linux OS
+Platform: Apocrita, QMUL, HPC
+Goal: imposing 2nd stokes wave on velocity inlet BC, ANSYS Fluent
+velocity components of 2nd Stokes wave is defined by UDF
+
+*** Steps
+
+steps
+
+1. Edit source code
+
+2. Setup the Directory structure
+
+3. Build the UDF library
+
+4. Load the UDF Library, Load and Hood the UDF to specified BCs in journal file
+
+****  Setup the Directory structure
+In your working directory, make a directory that will store your UDF library (for example, libudf).
+
+
+ Copy makefile.udf2 to the library directory and and name it “Makefile”
+
+
+> cp /share/apps/ansys/17.0.0/v170/fluent/fluent17.0.0/src/udf/makefile.udf2 /data/home/exw692/UDF/libudf/
+
+Notes:
+
+Installation path of makefile on Apocrita
+
+/share/apps/ansys/17.0.0/v170/fluent/fluent17.0.0/src/udf/makefile.udf
+/share/apps/ansys/17.0.0/v170/Icepak/icepak17.0/Fluent.Inc/fluent17.0.0/src/udf/makefile.udf
+
+/share/apps/ansys/18.0.0/v180/AFD/afd/linx64/runTimeLibraries/fluent/fluent18.0.0/src/udf/makefile.udf
+/share/apps/ansys/18.0.0/v180/fluent/fluent18.0.0/src/udf/makefile.udf
+/share/apps/ansys/18.0.0/v180/Icepak/icepak18.0/Fluent.Inc/fluent18.0.0/src/udf/makefile.udf
+
+3. In the “libudf” library directory, make a source directory named “src”.
+
+4. Copy source file (udf.c) to /src directory
+
+5. Copy makefile.udf to the /src directory
+
+
+> cp /share/apps/ansys/17.0.0/v170/fluent/fluent17.0.0/src/udf/makefile.udf /data/home/exw692/UDF/libudf/src
+
+
+or 
+
+
+> cp /share/apps/ansys/18.0.0/v180/fluent/fluent18.0.0/src/udf/makefile.udf /data/home/exw692/UDF/libudf/src
+
+
+6. create two sub-directories in directory named“lnamd64”
+
+Possible file names
+
+2d or 3d                       single-precision serial 2D or 3D
+
+2ddp or 3ddp                   double-precision serial 2D or 3D
+
+2d_node and 2d_host            single-precision parallel 2D
+
+3d_node and 3d_host            single-precision parallel 3D
+
+2ddp_node and 2ddp_host        double-precision parallel 2D
+
+3ddp_node and 3ddp_host        double-precision parallel 3D
+
+i.e.
+
+7. Copy user.udf from path/ansys_inc/v171/fluent/fluent17.1.0/src/user.udf to all the sub-folders, libudf/lnamd64/3ddp_host, libudf/lnamd64/3ddp_node).
+
+8. copy the “udf.h” Header File in Your Files, /libudf, /src
+
+/
+
+
+cp /share/apps/ansys/17.0.0/v170/fluent/fluent17.0.0/src/udf/udf.h /data/home/exw692/UDF/libudf/src
+
+/
+
+****  Build the UDF Library
+
+After you have set up the folder structure and put the files in the proper places, you can compile and build the shared library using the TUI.
+
+
+1.     Edit every user.udf file
+
+set the following parameters: CSOURCES, HSOURCES, and ANSYS Fluent path.
+
+/
+
+
+CSOURCES = vertical_component_2nd_stokes_wave.c x_component_2nd_stokes_wave.c
+
+HSOURCES = udf.h
+
+FLUENT_INC=/share/apps/ansys/17.0.0/v170/fluent
+
+ /
+
+
+#CSOURCES: The name of your source file(s)
+
+#HSOURCES: name of head file
+
+#FLUENT_INC: fluent installation path
+
+2.     execute the Makefile
+
+make "FLUENT_ARCH=lnamd64"
+
+
+In your library directory (for example, libudf), execute the Makefile by typing a command that begins
+
+with make and includes the architecture of the machine you will run ANSYS Fluent on, which you identified
+
+in a previous step. For example, for the Linux (lnamd64) architecture type:
+
+make "FLUENT_ARCH=lnamd64"
+
+****  Load the UDF Library and hook UDF to specified BCs in Journal file
+
+ rc e387_UDF.cas.gz
+
+rd e387_UDF_800.dat.gz
+
+;load UDF library "libudf"
+
+/define/user-defined/compiled-functions/ load "libudf"
+
+;set boundary condition at velocity inlet
+
+/define boundary-conditions velocity-inlet inlet no yes yes no 0 yes no 0 yes yes "udf" "x_velocity::libudf" yes yes "udf"  "vertical_velocity::libudf" yes no 1 no 1
+
+
+;set drag moment and monitor in y coordinate on "blades" surface
+
+/solve/monitors/force/unscaled? Yes
+
+/solve/monitors/force/set-drag-monitor cd yes blades () no yes cd-1 no no 0 1 0
+
+/solve/monitors/force/set-moment-monitor moment yes blades () no yes cm-history no no 0 0 0 0 1 0
+
+
+;save residuals
+
+(display "Save the residual in a file") (newline)
+
+    (let ((writefile (lambda (p)
+
+    (define np (length (residual-history "iteration")))
+
+    (let loop ((i 0))
+
+    (if (not (= i np))
+
+    (begin (define j (+ i 1))
+
+    (display (list-ref (residual-history "iteration") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "continuity") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "x-velocity") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "y-velocity") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "z-velocity") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "k") (- np j)) p) (display " " p)
+
+    (display (list-ref (residual-history "omega") (- np j)) p)
+
+    (newline p)
+
+    (loop (+ i 1))
+
+    )
+
+    )
+
+    )
+
+    ) )
+
+    (output-port (open-output-file "residual_1000_e387_udf.dat")))
+
+    (writefile output-port)
+
+    (close-output-port output-port))
+
+
+
+solve/set/time-step 0.02
+
+solve/dual-time-iterate 100 20
+
+wd e387_UDF_900.dat.gz
+
+exit
+
+yes
+
+**** run the journal file
+qsub journal.sh
+***   Source code
+x component of 2nd stokes wave
+/*second order stokes wave at inlet Boundary, wave velocity components are from equations 3.27 and 3.58, Pengzhi lin. numerical modeling of water waves. CRC press, 2008*/
+#include "udf.h"
+#define pi 3.14159265359 /*define  constants*/
+#define U  0.6 /*free stream velocity*/
+#define H 0.076 /*wave height*/
+#define g 9.81 /*gravity acceleration*/
+#define L 4.8 /*wave length*/
+#define d 1.6 /*water depth*/
+#define T 1.456/*effective wave period (include doppler effect)*/
+
+/*DEFINE_PROFILE: define an inlet velocity profile  that varies as a function of z coordinates or t.*/
+DEFINE_PROFILE(x_velocity,ft,var) /* DEFINE Macros, ft is a thread; var:index */
+{
+    /*define variables*/
+    real r[ND_ND]; /*Coordinates, r[0] mean x coordinates, r[1] means y coordinates*/
+    real k; /*wave number*/
+    real z; /*z(vertical) axis, gravity direction*/
+    real omega; /*effective wave angular velocity*/
+    real t; /*t*/
+    k = 2.0*pi/L;     /*assign values to variables*/
+    omega=2.0*pi/T;
+    t = CURRENT_TIME; /* Special Fluent macro, current running t */
+
+    face_t f; /* "f" is a face index for each face on the boundary */
+   
+    begin_f_loop(f,ft)/* face loop macro ,loop over all faces in a given face thread,i.e. "ft" */
+    {      
+         F_CENTROID(r,f,ft); /*F_CENTROID finds the coordinate position of the centroid of the face "f" and stores the coordinates in the "r" array */
+        z =r[1]; /* r[1] is y coordinate,r[2] is z coordinate */
+      
+F_PROFILE(f,ft,var) = U + H*g*k*cosh(k*(z-0.782+d))*cos(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*H*H*(omega-k*U)*k*cosh(2.0*k*(z-0.782+d))*cos(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0));
+/*x-velocity component (flow direction): u_r+U= U + H*g*k*cosh(k*(z+d))*cos(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*H*H*(omega-k*U)*k*cosh(2.0*k*(z+d))*cos(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0)); z=0 is the mean free surface levelin the theory model, however, free surface level is z=-0.782m in the Fluent geometry model*/
+
+    }
+    end_f_loop(f,ft)
+}
+vertical component of 2nd stokes wave
+/*vertical-velocity component (flow direction) of second order stokes wave at inlet Boundary, wave velocity components are from equations 3.27 and 3.58, Pengzhi lin. numerical modeling of water waves. CRC press, 2008*/
+#include "udf.h"
+#define pi 3.14159265359 /*define  constants*/
+#define U  0.6 /*free stream velocity*/
+#define H 0.076 /*wave height*/
+#define g 9.81 /*gravity acceleration*/
+#define L 4.8 /*wave length*/
+#define d 1.6 /*water depth*/
+#define T 1.456/*effective wave period (include doppler effect)*/
+
+/*DEFINE_PROFILE: define an inlet velocity profile  that varies as a function of z coordinates or t.*/
+DEFINE_PROFILE(vertical_velocity,ft,var) /* DEFINE Macros, ft is a thread; var:index */
+{
+    /*define variables*/
+    real r[ND_ND]; /*Coordinates, r[0] mean x coordinates, r[1] means y coordinates; r[2] is z coordinates*/
+    real k; /*wave number*/
+    real z; /*z(vertical) axis*/
+    real omega; /*effective wave angular velocity*/
+    real t; /*t*/
+    k = 2.0*pi/L;     /*assign values to variables*/
+    omega=2.0*pi/T;
+    t = CURRENT_TIME; /* Special Fluent macro, current running t */
+
+    face_t f; /* f is a face index for each face on the boundary */
+   
+    begin_f_loop(f,ft)/* face loop macro ,loop over all faces in a given face thread "ft" */
+    {       
+         F_CENTROID(r,f,ft); /*F_CENTROID finds the coordinate position of the centroid of the face "f" and stores the coordinates in the "r" array */
+        z =r[1]; /* r[1] means y coordinates */
+       
+F_PROFILE(f,ft,var) = H*g*k*sinh(k*(z-0.782+d))*sin(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*H*H*(omega-k*U)*k*sinh(2.0*k*(z-0.782+d))*sin(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0));
+/*   in the Fluent mode, free surface level is z=0.782m, positive z is in the gravity direction,however, z=0 is the mean free surface level, and z is negative gravity direction in the theory of wave */
+   
+/* verticla velocity: w_r= 2.0*a*g*k*sinh(k*(z+d))*sin(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*2.0*a*2.0*a*(omega-k*U)*k*sinh(2.0*k*(z+d))*sin(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0)); */
+    }
+    end_f_loop(f,ft)
+}
+
+
+
+
+
+ 
+2.     Set Up the Directory Structure
+
+For compiled UDFs on Linux OS, three ANSYS Fluent files are required to build your shared UDF library: makefile.udf, makefile.udf2, and user.udf.
+
+# Makefile to call user's makfile for user defined functions. 
+
+# Usage: make "FLUENT_ARCH=arch"
+*** Reference  
+
+  5.3. Compile a UDF Using the TUI, UDF Manual Fluent 
+
+
+https://support.ansys.com/AnsysCustomerPortal/en_us/Knowledge%20Resources/Solutions/FLUENT/2041940
+
+
+https://support.ansys.com/AnsysCustomerPortal/en_us/Knowledge%20Resources/Solutions/FLUENT/2050493
+
+** 2nd stokes wave
+
+*** code
+/*second order stokes wave at inlet Boundary, wave velocity components are from equations 3.27 and 3.58, Pengzhi lin. numerical modeling of water waves. CRC press, 2008*/
+#include "udf.h"
+#define pi 3.14159265359 /*define  constants*/
+#define U  0.6 /*free stream velocity*/
+#define H 0.076 /*wave height*/
+#define g 9.81 /*gravity acceleration*/
+#define L 4.8 /*wave length*/
+#define d 1.6 /*water depth*/
+#define T 1.456/*effective wave period (include doppler effect)*/ 
+
+/*DEFINE_PROFILE: define an inlet velocity profile  that varies as a function of z coordinates or t.*/
+DEFINE_PROFILE(streamwise_velocity,ft,var) /* DEFINE Macros, ft is a thread; var:index */
+{ 
+	/*define variables*/
+	real r[ND_ND]; /*Coordinates, r[0] mean x coordinates, r[1] means y coordinates*/
+	real k; /*wave number*/
+	real z; /*z(vertical) axis*/
+	real omega; /*effective wave angular velocity*/
+	real t; /*t*/
+	k = 2.0*pi/L; 	/*assign values to variables*/
+	omega=2.0*pi/T;
+	t = CURRENT_TIME; /* Special Fluent macro, current running t */
+
+	face_t f; /* "f" is a face index for each face on the boundary */ 
+	
+	begin_f_loop(f,ft)/* face loop macro ,loop over all faces in a given face thread,i.e. "ft" */ 
+	{		
+		 F_CENTROID(r,f,ft); /*F_CENTROID finds the coordinate position of the centroid of the face "f" and stores the coordinates in the "r" array */
+		z =r[2]; /* r[1] is y coordinate,r[2] is z coordinate */
+		
+F_PROFILE(f,ft,var) = U + H*g*k*cosh(k*(-z-0.782+d))*cos(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*H*H*(omega-k*U)*k*cosh(2.0*k*(-z-0.782+d))*cos(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0));
+/*x-velocity component (flow direction): u_r+U= U + H*g*k*cosh(k*(z+d))*cos(-omega*t)/(2.0*(omega-k*U)*cosh(k*d)) + 3.0*H*H*(omega-k*U)*k*cosh(2.0*k*(z+d))*cos(-2.0*omega*t)/(16.0*pow(sinh(k*d),4.0)); z=0 is the mean free surface levelin the theory model, however, free surface level is z=-0.782m in the Fluent geometry model*/
+
+	}
+	end_f_loop(f,ft)
+}
+** Results
+*** CP vs time at TSR 5.5
+# time,tsr 5.5 , sin wave UDF,U= 0.6( 1+ 0.05 sin(omega*t), e387	
+6.202	0.394305509
+6.204	0.393099446
+6.206	0.391867272
+6.208	0.39064963
+6.21	0.389051158
+6.212	0.387843839
+6.214	0.386635758
+6.216	0.385436155
+6.218	0.384236691
+6.22	0.383033964
+6.222	0.381836887
+6.224	0.380638738
+6.226	0.379442847
+6.228	0.378251361
+6.23	0.377059892
+6.232	0.375872311
+6.234	0.374684013
+6.236	0.373498919
+6.238	0.372315354
+6.24	0.371135497
+6.242	0.369956493
+6.244	0.368783377
+6.246	0.367607272
+6.248	0.366435761
+6.25	0.365265435
+6.252	0.364100237
+6.254	0.362936653
+6.256	0.361776455
+6.258	0.360615869
+6.26	0.359461482
+6.262	0.358308615
+6.264	0.357159412
+6.266	0.356014123
+6.268	0.354868412
+6.27	0.353727853
+6.272	0.352595241
+6.274	0.351456739
+6.276	0.350329233
+6.278	0.349203234
+6.28	0.348077762
+6.282	0.346956418
+6.284	0.345841633
+6.286	0.344728677
+6.288	0.343619916
+6.29	0.342516513
+6.292	0.341413497
+6.294	0.340317403
+6.296	0.339221496
+6.298	0.33813012
+6.3	0.337046896
+6.302	0.335963931
+6.304	0.334884886
+6.306	0.333807381
+6.308	0.332742927
+6.31	0.331674004
+6.312	0.330614239
+6.314	0.329556379
+6.316	0.328503769
+6.318	0.327454546
+6.32	0.326408804
+6.322	0.325370908
+6.324	0.324334591
+6.326	0.323302053
+6.328	0.322278133
+6.33	0.321253465
+6.332	0.320236311
+6.334	0.319223497
+6.336	0.318212746
+6.338	0.317212549
+6.34	0.31621113
+6.342	0.315218793
+6.344	0.314228531
+6.346	0.313242747
+6.348	0.312264253
+6.35	0.311288733
+6.352	0.310319791
+6.354	0.309352861
+6.356	0.308396436
+6.358	0.307437947
+6.36	0.306493366
+6.362	0.305548136
+6.364	0.304609935
+6.366	0.303674405
+6.368	0.302747632
+6.37	0.301824613
+6.372	0.300906431
+6.374	0.299994292
+6.376	0.299086717
+6.378	0.298185383
+6.38	0.297288448
+6.382	0.296397404
+6.384	0.295513085
+6.386	0.294634372
+6.388	0.293759781
+6.39	0.292892003
+6.392	0.292031067
+6.394	0.291171213
+6.396	0.290322867
+6.398	0.289476385
+6.4	0.288637091
+6.402	0.287803038
+6.404	0.286973783
+6.406	0.286153132
+6.408	0.285336888
+6.41	0.284528776
+6.412	0.283725983
+6.414	0.282925238
+6.416	0.282129889
+6.418	0.281344253
+6.42	0.28056444
+6.422	0.279789856
+6.424	0.279021405
+6.426	0.278259128
+6.428	0.277504867
+6.43	0.276754216
+6.432	0.276013242
+6.434	0.275274836
+6.436	0.274540865
+6.438	0.273818121
+6.44	0.273099558
+6.442	0.272388134
+6.444	0.271684565
+6.446	0.270990492
+6.448	0.270296594
+6.45	0.269608638
+6.452	0.268932194
+6.454	0.268255408
+6.456	0.267591481
+6.458	0.266933534
+6.46	0.266282096
+6.462	0.265631202
+6.464	0.264993476
+6.466	0.264357362
+6.468	0.26372992
+6.47	0.26311034
+6.472	0.262494359
+6.474	0.261886709
+6.476	0.261286308
+6.478	0.260693889
+6.48	0.260101286
+6.482	0.259522425
+6.484	0.258948514
+6.486	0.258380102
+6.488	0.257821842
+6.49	0.257270122
+6.492	0.256720434
+6.494	0.256179135
+6.496	0.255650039
+6.498	0.255124662
+6.5	0.254604991
+6.502	0.254093411
+6.504	0.25357881
+6.506	0.253083928
+6.508	0.252590216
+6.51	0.252103111
+6.512	0.251623883
+6.514	0.251150579
+6.516	0.250689493
+6.518	0.250230547
+6.52	0.249779054
+6.522	0.249334751
+6.524	0.248898166
+6.526	0.248470317
+6.528	0.248048517
+6.53	0.247628501
+6.532	0.247219102
+6.534	0.246821716
+6.536	0.246425252
+6.538	0.246032572
+6.54	0.245649992
+6.542	0.24527944
+6.544	0.244910465
+6.546	0.244552822
+6.548	0.244198414
+6.55	0.243854822
+6.552	0.243515587
+6.554	0.243182581
+6.556	0.242861974
+6.558	0.24254354
+6.56	0.242232337
+6.562	0.241927534
+6.564	0.241634018
+6.566	0.241344162
+6.568	0.241062721
+6.57	0.240789676
+6.572	0.240519173
+6.574	0.240260663
+6.576	0.240008395
+6.578	0.239763056
+6.58	0.239524852
+6.582	0.239291065
+6.584	0.239066767
+6.586	0.238849551
+6.588	0.238637891
+6.59	0.238438273
+6.592	0.238243143
+6.594	0.238051507
+6.596	0.237868857
+6.598	0.237698067
+6.6	0.237531182
+6.602	0.237369492
+6.604	0.237217909
+6.606	0.237072338
+6.608	0.236932153
+6.61	0.236802064
+6.612	0.236677482
+6.614	0.236562511
+6.616	0.236451141
+6.618	0.236348694
+6.62	0.236254072
+6.622	0.236164913
+6.624	0.236083516
+6.626	0.236010187
+6.628	0.235943756
+6.63	0.235885351
+6.632	0.235832617
+6.634	0.235786226
+6.636	0.235749843
+6.638	0.235717316
+6.64	0.235692465
+6.642	0.235676105
+6.644	0.235665597
+6.646	0.235660657
+6.648	0.235667207
+6.65	0.235676914
+6.652	0.235694875
+6.654	0.235721349
+6.656	0.235750627
+6.658	0.235791108
+6.66	0.235837995
+6.662	0.235889659
+6.664	0.235952583
+6.666	0.236014887
+6.668	0.236100812
+6.67	0.236173601
+6.672	0.236270748
+6.674	0.236335531
+6.676	0.236427326
+6.678	0.236534107
+6.68	0.236640065
+6.682	0.236762143
+6.684	0.236896411
+6.686	0.237038721
+6.688	0.237189351
+6.69	0.237343166
+6.692	0.237505598
+6.694	0.237674813
+6.696	0.237848572
+6.698	0.238032577
+6.7	0.238224375
+6.702	0.238415056
+6.704	0.238622441
+6.706	0.238832007
+6.708	0.239050452
+6.71	0.239274073
+6.712	0.239507371
+6.714	0.239743333
+6.716	0.23999317
+6.718	0.240242644
+6.72	0.240505979
+6.722	0.240768122
+6.724	0.241040543
+6.726	0.241324351
+6.728	0.241612116
+6.73	0.241907698
+6.732	0.242207271
+6.734	0.24251611
+6.736	0.242836232
+6.738	0.243160177
+6.74	0.243490892
+6.742	0.243826496
+6.744	0.244170818
+6.746	0.244517575
+6.748	0.244875999
+6.75	0.245239783
+6.752	0.245608842
+6.754	0.245986812
+6.756	0.246376376
+6.758	0.246770235
+6.76	0.247166615
+6.762	0.247573709
+6.764	0.247984866
+6.766	0.248403965
+6.768	0.248828511
+6.77	0.249260446
+6.772	0.24969937
+6.774	0.250144175
+6.776	0.250596533
+6.778	0.251057016
+6.78	0.251524952
+6.782	0.251995158
+6.784	0.2524741
+6.786	0.252957563
+6.788	0.253449932
+6.79	0.253947964
+6.792	0.254455524
+6.794	0.254970887
+6.796	0.255488421
+6.798	0.256018656
+6.8	0.256551495
+6.802	0.257090711
+6.804	0.257638498
+6.806	0.258192193
+6.808	0.258749658
+6.81	0.259313894
+6.812	0.25988765
+6.814	0.260461609
+6.816	0.261042975
+6.818	0.261636346
+6.82	0.262236488
+6.822	0.26283976
+6.824	0.263445983
+6.826	0.264058956
+6.828	0.264688986
+6.83	0.265314212
+6.832	0.265944051
+6.834	0.266585131
+6.836	0.267232523
+6.838	0.267884376
+6.84	0.268551035
+6.842	0.269221589
+6.844	0.269890321
+6.846	0.270567479
+6.848	0.27125106
+6.85	0.271940519
+6.852	0.27263746
+6.854	0.273336589
+6.856	0.27404516
+6.858	0.27476352
+6.86	0.275483707
+6.862	0.276208305
+6.864	0.276940313
+6.866	0.277682258
+6.868	0.27843035
+6.87	0.27917926
+6.872	0.279935662
+6.874	0.280696825
+6.876	0.281463317
+6.878	0.28223677
+6.88	0.283014802
+6.882	0.283799577
+6.884	0.284587598
+6.886	0.285383978
+6.888	0.286186304
+6.89	0.286995244
+6.892	0.287804783
+6.894	0.288623007
+6.896	0.289451408
+6.898	0.290276701
+6.9	0.291112071
+6.902	0.291952217
+6.904	0.292800828
+6.906	0.293648583
+6.908	0.294502758
+6.91	0.295362427
+6.912	0.296230309
+6.914	0.297099493
+6.916	0.297976046
+6.918	0.29885908
+6.92	0.299747923
+6.922	0.300639343
+6.924	0.301535937
+6.926	0.302439838
+6.928	0.303345583
+6.93	0.304257905
+6.932	0.305174846
+6.934	0.306095073
+6.936	0.307018303
+6.938	0.307949214
+6.94	0.308887232
+6.942	0.309831005
+6.944	0.310776835
+6.946	0.311728298
+6.948	0.312683562
+6.95	0.313644521
+6.952	0.314608114
+6.954	0.31557755
+6.956	0.316550794
+6.958	0.317527785
+6.96	0.318505226
+6.962	0.319486552
+6.964	0.320475545
+6.966	0.32147479
+6.968	0.322475204
+6.97	0.323475293
+6.972	0.324485696
+6.974	0.325505911
+6.976	0.326523588
+6.978	0.327544568
+6.98	0.328570617
+6.982	0.329598886
+6.984	0.330633034
+6.986	0.331671228
+6.988	0.332712273
+6.99	0.33375515
+6.992	0.334805974
+6.994	0.335855863
+6.996	0.336913388
+6.998	0.337969647
+7	0.339036709
+7.002	0.340101824
+7.004	0.341171057
+7.006	0.342246161
+7.008	0.343321253
+7.01	0.344404092
+7.012	0.345486229
+7.014	0.346576937
+7.016	0.347665118
+7.018	0.348760186
+7.02	0.349855716
+7.022	0.350956825
+7.024	0.352059324
+7.026	0.353167422
+7.028	0.354276651
+7.03	0.355388403
+7.032	0.35650369
+7.034	0.357621637
+7.036	0.358742734
+7.038	0.359865963
+7.04	0.360991178
+7.042	0.362120202
+7.044	0.363251769
+7.046	0.364385736
+7.048	0.365520362
+7.05	0.366663161
+7.052	0.367802794
+7.054	0.36894666
+7.056	0.370089822
+7.058	0.371240361
+7.06	0.372389296
+7.062	0.373546847
+7.064	0.37469974
+7.066	0.375855734
+7.068	0.377013776
+7.07	0.378173197
+7.072	0.37934089
+7.074	0.380505292
+7.076	0.381669251
+7.078	0.382837576
+7.08	0.384008277
+7.082	0.385178896
+7.084	0.386355471
+7.086	0.387526994
+7.088	0.388699881
+7.09	0.389884157
+7.092	0.391058959
+7.094	0.392237459
+7.096	0.393422234
+7.098	0.394606106
+7.1	0.395788058
+7.102	0.396978856
+7.104	0.39816192
+7.106	0.399350735
+7.108	0.400539488
+7.11	0.401727053
+7.112	0.402918921
+7.114	0.404109135
+7.116	0.405304974
+7.118	0.406492546
+7.12	0.407690465
+7.122	0.408883437
+7.124	0.410078185
+7.126	0.41127216
+7.128	0.41246685
+7.13	0.413666849
+7.132	0.414859048
+7.134	0.416056114
+7.136	0.417252436
+7.138	0.418451404
+7.14	0.419644647
+7.142	0.420842828
+7.144	0.422040403
+7.146	0.423233396
+7.148	0.424431903
+7.15	0.425627664
+7.152	0.426818974
+7.154	0.428017133
+7.156	0.429207718
+7.158	0.430399415
+7.16	0.431597146
+7.162	0.432789829
+7.164	0.433977432
+7.166	0.435172107
+7.168	0.436361968
+7.17	0.437546919
+7.172	0.438738673
+7.174	0.43992455
+7.176	0.441110584
+7.178	0.442295863
+7.18	0.443478055
+7.182	0.44466057
+7.184	0.445840236
+7.186	0.447020968
+7.188	0.448196653
+7.19	0.449373335
+7.192	0.450546422
+7.194	0.451718382
+7.196	0.452889426
+7.198	0.454059795
+7.2	0.455223825
+7.202	0.45639036
+7.204	0.457552446
+7.206	0.458710997
+7.208	0.459870737
+7.21	0.461017329
+7.212	0.462172055
+7.214	0.463321147
+7.216	0.464471896
+7.218	0.46562397
+7.22	0.466762274
+7.222	0.467903769
+7.224	0.469044797
+7.226	0.47018478
+7.228	0.471316718
+7.23	0.472448408
+7.232	0.473573278
+7.234	0.474697761
+7.236	0.475817307
+7.238	0.476926399
+7.24	0.478041616
+7.242	0.479148038
+7.244	0.480252744
+7.246	0.481357601
+7.248	0.482457435
+7.25	0.483557548
+7.252	0.484651044
+7.254	0.4857379
+7.256	0.486819054
+7.258	0.48789584
+7.26	0.488978431
+7.262	0.490049191
+7.264	0.491120095
+7.266	0.492177606
+7.268	0.493226133
+7.27	0.494289698
+7.272	0.495342883
+7.274	0.496384893
+7.276	0.497417856
+7.278	0.49845403
+7.28	0.499481587
+7.282	0.500514851
+7.284	0.501545325
+7.286	0.502564712
+7.288	0.503572892
+7.29	0.504573854
+7.292	0.505580576
+7.294	0.50657666
+7.296	0.507566229
+7.298	0.508548522
+7.3	0.509533173
+7.302	0.51051388
+7.304	0.511486698
+7.306	0.51244629
+7.308	0.513408602
+7.31	0.514362657
+7.312	0.515317505
+7.314	0.516254397
+7.316	0.517185864
+7.318	0.518124966
+7.32	0.519044058
+7.322	0.519965677
+7.324	0.52088359
+7.326	0.521796308
+7.328	0.522699773
+7.33	0.523594793
+7.332	0.524477739
+7.334	0.525364069
+7.336	0.52624945
+7.338	0.527122915
+7.34	0.527989588
+7.342	0.528846636
+7.344	0.529696313
+7.346	0.53054277
+7.348	0.531376825
+7.35	0.532208406
+7.352	0.533031469
+7.354	0.53385612
+7.356	0.534672076
+7.358	0.535474296
+7.36	0.536270773
+7.362	0.537062811
+7.364	0.537848969
+7.366	0.538627373
+7.368	0.539407041
+7.37	0.540168777
+7.372	0.540921785
+7.374	0.541670058
+7.376	0.542413685
+7.378	0.543146544
+7.38	0.543866655
+7.382	0.544585911
+7.384	0.545301336
+7.386	0.546001637
+7.388	0.546697881
+7.39	0.547385078
+7.392	0.548067081
+7.394	0.548742977
+7.396	0.549406422
+7.398	0.550062835
+7.4	0.550711763
+7.402	0.551349575
+7.404	0.551979417
+7.406	0.552605076
+7.408	0.553218273
+7.41	0.553829379
+7.412	0.554428641
+7.414	0.555022311
+7.416	0.555606707
+7.418	0.556181226
+7.42	0.556750255
+7.422	0.557307011
+7.424	0.557859666
+7.426	0.558396234
+7.428	0.558929232
+7.43	0.55945553
+7.432	0.559971492
+7.434	0.560480631
+7.436	0.560979429
+7.438	0.561469436
+7.44	0.56194542
+7.442	0.562420723
+7.444	0.562883849
+7.446	0.563339072
+7.448	0.563787674
+7.45	0.564222989
+7.452	0.564655487
+7.454	0.565076266
+7.456	0.565491254
+7.458	0.565892248
+7.46	0.566287698
+7.462	0.566674607
+7.464	0.567046869
+7.466	0.567406841
+7.468	0.567766494
+7.47	0.568113051
+7.472	0.568451691
+7.474	0.568783629
+7.476	0.569106306
+7.478	0.569418933
+7.48	0.569718958
+7.482	0.570010894
+7.484	0.570299658
+7.486	0.570575489
+7.488	0.570842056
+7.49	0.571097433
+7.492	0.571341808
+7.494	0.571581655
+7.496	0.571810259
+7.498	0.572029028
+7.5	0.572240523
+7.502	0.572441009
+7.504	0.572630826
+7.506	0.572810711
+7.508	0.572979307
+7.51	0.573143796
+7.512	0.573296982
+7.514	0.573440239
+7.516	0.573577451
+7.518	0.573703129
+7.52	0.573816181
+7.522	0.573921657
+7.524	0.574017285
+7.526	0.574104826
+7.528	0.574182029
+7.53	0.574249615
+7.532	0.574310707
+7.534	0.574356019
+7.536	0.574394939
+7.538	0.574426434
+7.54	0.574447985
+7.542	0.57445656
+7.544	0.574459516
+7.546	0.574450167
+7.548	0.574432511
+7.55	0.574407447
+7.552	0.574370811
+7.554	0.574324395
+7.556	0.574273738
+7.558	0.574206877
+7.56	0.574136855
+7.562	0.574055947
+7.564	0.573969068
+7.566	0.573898579
+7.568	0.573773905
+7.57	0.573674138
+7.572	0.573550926
+7.574	0.573407958
+7.576	0.57325852
+7.578	0.573089221
+7.58	0.572918615
+7.582	0.572731566
+7.584	0.572536092
+7.586	0.572334908
+7.588	0.572121417
+7.59	0.571895383
+7.592	0.571667209
+7.594	0.571429027
+7.596	0.571176152
+7.598	0.570920835
+7.6	0.570647074
+7.602	0.570368503
+7.604	0.570076128
+7.606	0.569775983
+7.608	0.569464111
+7.61	0.569148542
+7.612	0.568820934
+7.614	0.568487435
+7.616	0.568137349
+7.618	0.567778585
+7.62	0.567417248
+7.622	0.567048232
+7.624	0.566668696
+7.626	0.566268131
+7.628	0.565867067
+7.63	0.565454445
+7.632	0.565037329
+7.634	0.564607216
+7.636	0.564170714
+7.638	0.563724808
+7.64	0.563264601
+7.642	0.562792998
+7.644	0.562318264
+7.646	0.56183696
+7.648	0.561340363
+7.65	0.560837707
+7.652	0.560325953
+7.654	0.559806663
+7.656	0.559277604
+7.658	0.558737838
+7.66	0.55818848
+7.662	0.557639081
+7.664	0.557078115
+7.666	0.556501833
+7.668	0.555919776
+7.67	0.555337828
+7.672	0.554737112
+7.674	0.554128593
+7.676	0.553514398
+7.678	0.552889267
+7.68	0.552252535
+7.682	0.551612818
+7.684	0.550964893
+7.686	0.550310237
+7.688	0.549643967
+7.69	0.548973321
+7.692	0.548286267
+7.694	0.547597647
+7.696	0.546898663
+7.698	0.546193607
+7.7	0.545487862
+7.702	0.544769472
+7.704	0.544036891
+7.706	0.543293368
+7.708	0.542554066
+7.71	0.541802271
+7.712	0.541037435
+7.714	0.540276915
+7.716	0.539503877
+7.718	0.538717009
+7.72	0.537926537
+7.722	0.537124401
+7.724	0.536317737
+7.726	0.535515652
+7.728	0.534694652
+7.73	0.533870331
+7.732	0.533037432
+7.734	0.532190656
+7.736	0.531336824
+7.738	0.530479629
+7.74	0.529615878
+7.742	0.528748851
+7.744	0.527873729
+7.746	0.526992871
+7.748	0.526105423
+7.75	0.525206713
+7.752	0.524307036
+7.754	0.523408388
+7.756	0.522492725
+7.758	0.521569663
+7.76	0.520639699
+7.762	0.519707367
+7.764	0.51875765
+7.766	0.517814759
+7.768	0.516864897
+7.77	0.515908688
+7.772	0.514947692
+7.774	0.513976979
+7.776	0.513001335
+7.778	0.512021424
+7.78	0.511027882
+7.782	0.510034252
+7.784	0.509042572
+7.786	0.508031597
+7.788	0.507015695
+7.79	0.505995851
+7.792	0.504976878
+7.794	0.503956481
+7.796	0.502935467
+7.798	0.501902985
+7.8	0.500856593
+7.802	0.499802676
+7.804	0.498757299
+7.806	0.497707025
+7.808	0.496644734
+7.81	0.495574466
+7.812	0.494508959
+7.814	0.493441311
+7.816	0.49235873
+7.818	0.491270016
+7.82	0.490180107
+7.822	0.489095378
+7.824	0.487997824
+7.826	0.486892536
+7.828	0.485782149
+7.83	0.484675461
+7.832	0.483564941
+7.834	0.482452833
+7.836	0.481331962
+7.838	0.480210306
+7.84	0.479082775
+7.842	0.477954976
+7.844	0.476813691
+7.846	0.475668796
+7.848	0.474531521
+7.85	0.473384558
+7.852	0.472231549
+7.854	0.471085782
+7.856	0.469937198
+7.858	0.468776175
+7.86	0.467612684
+7.862	0.466451893
+7.864	0.465291921
+7.866	0.464126963
+7.868	0.462950297
+7.87	0.461774292
+7.872	0.460597728
+7.874	0.459419888
+7.876	0.458233169
+7.878	0.457052193
+7.88	0.455870491
+7.882	0.454676503
+7.884	0.453479704
+7.886	0.452281956
+7.888	0.451086424
+7.89	0.449889889
+7.892	0.448686927
+7.894	0.4474888
+7.896	0.446287942
+7.898	0.445078798
+7.9	0.44387051
+7.902	0.442658473
+7.904	0.441448562
+7.906	0.440234866
+7.908	0.439023621
+7.91	0.437808563
+7.912	0.436592863
+7.914	0.435377959
+7.916	0.434157172
+7.918	0.432939307
+7.92	0.43172018
+7.922	0.430499239
+7.924	0.429276688
+7.926	0.428055936
+7.928	0.426832927
+7.93	0.425608654
+7.932	0.424386231
+7.934	0.423166802
+7.936	0.421940118
+7.938	0.420716629
+7.94	0.41949451
+7.942	0.418267783
+7.944	0.417048283
+7.946	0.415818386
+7.948	0.414598334
+7.95	0.413374236
+7.952	0.412151715
+7.954	0.410927709
+7.956	0.409706205
+7.958	0.408481797
+7.96	0.407260991
+7.962	0.406039832
+7.964	0.404820546
+7.966	0.403601445
+7.968	0.40238202
+7.97	0.401163713
+7.972	0.399946661
+7.974	0.398729379
+7.976	0.397513974
+7.978	0.396298588
+7.98	0.395087314
+7.982	0.393874871
+7.984	0.394305509
+7.986	0.393099446
+7.988	0.391867272
+7.99	0.39064963
+7.992	0.389051158
+7.994	0.387843839
+7.996	0.386635758
+7.998	0.385436155
+8	0.384236691
+8.002	0.383033964
+8.004	0.381836887
+8.006	0.380638738
+8.008	0.379442847
+8.01	0.378251361
+8.012	0.377059892
+8.014	0.375872311
+8.016	0.374684013
+8.018	0.373498919
+8.02	0.372315354
+8.022	0.371135497
+8.024	0.369956493
+8.026	0.368783377
+8.028	0.367607272
+8.03	0.366435761
+8.032	0.365265435
+8.034	0.364100237
+8.036	0.362936653
+8.038	0.361776455
+8.04	0.360615869
+8.042	0.359461482
+8.044	0.358308615
+8.046	0.357159412
+8.048	0.356014123
+8.05	0.354868412
+8.052	0.353727853
+8.054	0.352595241
+8.056	0.351456739
+8.058	0.350329233
+8.06	0.349203234
+8.062	0.348077762
+8.064	0.346956418
+8.066	0.345841633
+8.068	0.344728677
+8.07	0.343619916
+8.072	0.342516513
+8.074	0.341413497
+8.076	0.340317403
+8.078	0.339221496
+8.08	0.33813012
+8.082	0.337046896
+8.084	0.335963931
+8.086	0.334884886
+8.088	0.333807381
+8.09	0.332742927
+8.092	0.331674004
+8.094	0.330614239
+8.096	0.329556379
+8.098	0.328503769
+8.1	0.327454546
+8.102	0.326408804
+8.104	0.325370908
+8.106	0.324334591
+8.108	0.323302053
+8.11	0.322278133
+8.112	0.321253465
+8.114	0.320236311
+8.116	0.319223497
+8.118	0.318212746
+8.12	0.317212549
+8.122	0.31621113
+8.124	0.315218793
+8.126	0.314228531
+8.128	0.313242747
+8.13	0.312264253
+8.132	0.311288733
+8.134	0.310319791
+8.136	0.309352861
+8.138	0.308396436
+8.14	0.307437947
+8.142	0.306493366
+8.144	0.305548136
+8.146	0.304609935
+8.148	0.303674405
+8.15	0.302747632
+8.152	0.301824613
+8.154	0.300906431
+8.156	0.299994292
+8.158	0.299086717
+8.16	0.298185383
+8.162	0.297288448
+8.164	0.296397404
+8.166	0.295513085
+8.168	0.294634372
+8.17	0.293759781
+8.172	0.292892003
+8.174	0.292031067
+8.176	0.291171213
+8.178	0.290322867
+8.18	0.289476385
+8.182	0.288637091
+8.184	0.287803038
+8.186	0.286973783
+8.188	0.286153132
+8.19	0.285336888
+8.192	0.284528776
+8.194	0.283725983
+8.196	0.282925238
+8.198	0.282129889
+8.2	0.281344253
+8.202	0.28056444
+8.204	0.279789856
+8.206	0.279021405
+8.208	0.278259128
+8.21	0.277504867
+8.212	0.276754216
+8.214	0.276013242
+8.216	0.275274836
+8.218	0.274540865
+8.22	0.273818121
+8.222	0.273099558
+8.224	0.272388134
+8.226	0.271684565
+8.228	0.270990492
+8.23	0.270296594
+8.232	0.269608638
+8.234	0.268932194
+8.236	0.268255408
+8.238	0.267591481
+8.24	0.266933534
+8.242	0.266282096
+8.244	0.265631202
+8.246	0.264993476
+8.248	0.264357362
+8.25	0.26372992
+8.252	0.26311034
+8.254	0.262494359
+8.256	0.261886709
+8.258	0.261286308
+8.26	0.260693889
+8.262	0.260101286
+8.264	0.259522425
+8.266	0.258948514
+8.268	0.258380102
+8.27	0.257821842
+8.272	0.257270122
+8.274	0.256720434
+8.276	0.256179135
+8.278	0.255650039
+8.28	0.255124662
+8.282	0.254604991
+8.284	0.254093411
+8.286	0.25357881
+8.288	0.253083928
+8.29	0.252590216
+8.292	0.252103111
+8.294	0.251623883
+8.296	0.251150579
+8.298	0.250689493
+8.3	0.250230547
+8.302	0.249779054
+8.304	0.249334751
+8.306	0.248898166
+8.308	0.248470317
+8.31	0.248048517
+8.312	0.247628501
+8.314	0.247219102
+8.316	0.246821716
+8.318	0.246425252
+8.32	0.246032572
+8.322	0.245649992
+8.324	0.24527944
+8.326	0.244910465
+8.328	0.244552822
+8.33	0.244198414
+8.332	0.243854822
+8.334	0.243515587
+8.336	0.243182581
+8.338	0.242861974
+8.34	0.24254354
+8.342	0.242232337
+8.344	0.241927534
+8.346	0.241634018
+8.348	0.241344162
+8.35	0.241062721
+8.352	0.240789676
+8.354	0.240519173
+8.356	0.240260663
+8.358	0.240008395
+8.36	0.239763056
+8.362	0.239524852
+8.364	0.239291065
+8.366	0.239066767
+8.368	0.238849551
+8.37	0.238637891
+8.372	0.238438273
+8.374	0.238243143
+8.376	0.238051507
+8.378	0.237868857
+8.38	0.237698067
+8.382	0.237531182
+8.384	0.237369492
+8.386	0.237217909
+8.388	0.237072338
+8.39	0.236932153
+8.392	0.236802064
+8.394	0.236677482
+8.396	0.236562511
+8.398	0.236451141
+8.4	0.236348694
+8.402	0.236254072
+8.404	0.236164913
+8.406	0.236083516
+8.408	0.236010187
+8.41	0.235943756
+8.412	0.235885351
+8.414	0.235832617
+8.416	0.235786226
+8.418	0.235749843
+8.42	0.235717316
+8.422	0.235692465
+8.424	0.235676105
+8.426	0.235665597
+8.428	0.235660657
+8.43	0.235667207
+8.432	0.235676914
+8.434	0.235694875
+8.436	0.235721349
+8.438	0.235750627
+8.44	0.235791108
+8.442	0.235837995
+8.444	0.235889659
+8.446	0.235952583
+8.448	0.236014887
+8.45	0.236100812
+8.452	0.236173601
+8.454	0.236270748
+8.456	0.236335531
+8.458	0.236427326
+8.46	0.236534107
+8.462	0.236640065
+8.464	0.236762143
+8.466	0.236896411
+8.468	0.237038721
+8.47	0.237189351
+8.472	0.237343166
+8.474	0.237505598
+8.476	0.237674813
+8.478	0.237848572
+8.48	0.238032577
+8.482	0.238224375
+8.484	0.238415056
+8.486	0.238622441
+8.488	0.238832007
+8.49	0.239050452
+8.492	0.239274073
+8.494	0.239507371
+8.496	0.239743333
+8.498	0.23999317
+8.5	0.240242644
+8.502	0.240505979
+8.504	0.240768122
+8.506	0.241040543
+8.508	0.241324351
+8.51	0.241612116
+8.512	0.241907698
+8.514	0.242207271
+8.516	0.24251611
+8.518	0.242836232
+8.52	0.243160177
+8.522	0.243490892
+8.524	0.243826496
+8.526	0.244170818
+8.528	0.244517575
+8.53	0.244875999
+8.532	0.245239783
+8.534	0.245608842
+8.536	0.245986812
+8.538	0.246376376
+8.54	0.246770235
+8.542	0.247166615
+8.544	0.247573709
+8.546	0.247984866
+8.548	0.248403965
+8.55	0.248828511
+8.552	0.249260446
+8.554	0.24969937
+8.556	0.250144175
+8.558	0.250596533
+8.56	0.251057016
+8.562	0.251524952
+8.564	0.251995158
+8.566	0.2524741
+8.568	0.252957563
+8.57	0.253449932
+8.572	0.253947964
+8.574	0.254455524
+8.576	0.254970887
+8.578	0.255488421
+8.58	0.256018656
+8.582	0.256551495
+8.584	0.257090711
+8.586	0.257638498
+8.588	0.258192193
+8.59	0.258749658
+8.592	0.259313894
+8.594	0.25988765
+8.596	0.260461609
+8.598	0.261042975
+8.6	0.261636346
+8.602	0.262236488
+8.604	0.26283976
+8.606	0.263445983
+8.608	0.264058956
+8.61	0.264688986
+8.612	0.265314212
+8.614	0.265944051
+8.616	0.266585131
+8.618	0.267232523
+8.62	0.267884376
+8.622	0.268551035
+8.624	0.269221589
+8.626	0.269890321
+8.628	0.270567479
+8.63	0.27125106
+8.632	0.271940519
+8.634	0.27263746
+8.636	0.273336589
+8.638	0.27404516
+8.64	0.27476352
+8.642	0.275483707
+8.644	0.276208305
+8.646	0.276940313
+8.648	0.277682258
+8.65	0.27843035
+8.652	0.27917926
+8.654	0.279935662
+8.656	0.280696825
+8.658	0.281463317
+8.66	0.28223677
+8.662	0.283014802
+8.664	0.283799577
+8.666	0.284587598
+8.668	0.285383978
+8.67	0.286186304
+8.672	0.286995244
+8.674	0.287804783
+8.676	0.288623007
+8.678	0.289451408
+8.68	0.290276701
+8.682	0.291112071
+8.684	0.291952217
+8.686	0.292800828
+8.688	0.293648583
+8.69	0.294502758
+8.692	0.295362427
+8.694	0.296230309
+8.696	0.297099493
+8.698	0.297976046
+8.7	0.29885908
+8.702	0.299747923
+8.704	0.300639343
+8.706	0.301535937
+8.708	0.302439838
+8.71	0.303345583
+8.712	0.304257905
+8.714	0.305174846
+8.716	0.306095073
+8.718	0.307018303
+8.72	0.307949214
+8.722	0.308887232
+8.724	0.309831005
+8.726	0.310776835
+8.728	0.311728298
+8.73	0.312683562
+8.732	0.313644521
+8.734	0.314608114
+8.736	0.31557755
+8.738	0.316550794
+8.74	0.317527785
+8.742	0.318505226
+8.744	0.319486552
+8.746	0.320475545
+8.748	0.32147479
+8.75	0.322475204
+8.752	0.323475293
+8.754	0.324485696
+8.756	0.325505911
+8.758	0.326523588
+8.76	0.327544568
+8.762	0.328570617
+8.764	0.329598886
+8.766	0.330633034
+8.768	0.331671228
+8.77	0.332712273
+8.772	0.33375515
+8.774	0.334805974
+8.776	0.335855863
+8.778	0.336913388
+8.78	0.337969647
+8.782	0.339036709
+8.784	0.340101824
+8.786	0.341171057
+8.788	0.342246161
+8.79	0.343321253
+8.792	0.344404092
+8.794	0.345486229
+8.796	0.346576937
+8.798	0.347665118
+8.8	0.348760186
+8.802	0.349855716
+8.804	0.350956825
+8.806	0.352059324
+8.808	0.353167422
+8.81	0.354276651
+8.812	0.355388403
+8.814	0.35650369
+8.816	0.357621637
+8.818	0.358742734
+8.82	0.359865963
+8.822	0.360991178
+8.824	0.362120202
+8.826	0.363251769
+8.828	0.364385736
+8.83	0.365520362
+8.832	0.366663161
+8.834	0.367802794
+8.836	0.36894666
+8.838	0.370089822
+8.84	0.371240361
+8.842	0.372389296
+8.844	0.373546847
+8.846	0.37469974
+8.848	0.375855734
+8.85	0.377013776
+8.852	0.378173197
+8.854	0.37934089
+8.856	0.380505292
+8.858	0.381669251
+8.86	0.382837576
+8.862	0.384008277
+8.864	0.385178896
+8.866	0.386355471
+8.868	0.387526994
+8.87	0.388699881
+8.872	0.389884157
+8.874	0.391058959
+8.876	0.392237459
+8.878	0.393422234
+8.88	0.394606106
+8.882	0.395788058
+8.884	0.396978856
+8.886	0.39816192
+8.888	0.399350735
+8.89	0.400539488
+8.892	0.401727053
+8.894	0.402918921
+8.896	0.404109135
+8.898	0.405304974
+8.9	0.406492546
+8.902	0.407690465
+8.904	0.408883437
+8.906	0.410078185
+8.908	0.41127216
+8.91	0.41246685
+8.912	0.413666849
+8.914	0.414859048
+8.916	0.416056114
+8.918	0.417252436
+8.92	0.418451404
+8.922	0.419644647
+8.924	0.420842828
+8.926	0.422040403
+8.928	0.423233396
+8.93	0.424431903
+8.932	0.425627664
+8.934	0.426818974
+8.936	0.428017133
+8.938	0.429207718
+8.94	0.430399415
+8.942	0.431597146
+8.944	0.432789829
+8.946	0.433977432
+8.948	0.435172107
+8.95	0.436361968
+8.952	0.437546919
+8.954	0.438738673
+8.956	0.43992455
+8.958	0.441110584
+8.96	0.442295863
+8.962	0.443478055
+8.964	0.44466057
+8.966	0.445840236
+8.968	0.447020968
+8.97	0.448196653
+8.972	0.449373335
+8.974	0.450546422
+8.976	0.451718382
+8.978	0.452889426
+8.98	0.454059795
+8.982	0.455223825
+8.984	0.45639036
+8.986	0.457552446
+8.988	0.458710997
+8.99	0.459870737
+8.992	0.461017329
+8.994	0.462172055
+8.996	0.463321147
+8.998	0.464471896
+9	0.46562397
+9.002	0.466762274
+9.004	0.467903769
+9.006	0.469044797
+9.008	0.47018478
+9.01	0.471316718
+9.012	0.472448408
+9.014	0.473573278
+9.016	0.474697761
+9.018	0.475817307
+9.02	0.476926399
+9.022	0.478041616
+9.024	0.479148038
+9.026	0.480252744
+9.028	0.481357601
+9.03	0.482457435
+9.032	0.483557548
+9.034	0.484651044
+9.036	0.4857379
+9.038	0.486819054
+9.04	0.48789584
+9.042	0.488978431
+9.044	0.490049191
+9.046	0.491120095
+9.048	0.492177606
+9.05	0.493226133
+9.052	0.494289698
+9.054	0.495342883
+9.056	0.496384893
+9.058	0.497417856
+9.06	0.49845403
+9.062	0.499481587
+9.064	0.500514851
+9.066	0.501545325
+9.068	0.502564712
+9.07	0.503572892
+9.072	0.504573854
+9.074	0.505580576
+9.076	0.50657666
+9.078	0.507566229
+9.08	0.508548522
+9.082	0.509533173
+9.084	0.51051388
+9.086	0.511486698
+9.088	0.51244629
+9.09	0.513408602
+9.092	0.514362657
+9.094	0.515317505
+9.096	0.516254397
+9.098	0.517185864
+9.1	0.518124966
+9.102	0.519044058
+9.104	0.519965677
+9.106	0.52088359
+9.108	0.521796308
+9.11	0.522699773
+9.112	0.523594793
+9.114	0.524477739
+9.116	0.525364069
+9.118	0.52624945
+9.12	0.527122915
+9.122	0.527989588
+9.124	0.528846636
+9.126	0.529696313
+9.128	0.53054277
+9.13	0.531376825
+9.132	0.532208406
+9.134	0.533031469
+9.136	0.53385612
+9.138	0.534672076
+9.14	0.535474296
+9.142	0.536270773
+9.144	0.537062811
+9.146	0.537848969
+9.148	0.538627373
+9.15	0.539407041
+9.152	0.540168777
+9.154	0.540921785
+9.156	0.541670058
+9.158	0.542413685
+9.16	0.543146544
+9.162	0.543866655
+9.164	0.544585911
+9.166	0.545301336
+9.168	0.546001637
+9.17	0.546697881
+9.172	0.547385078
+9.174	0.548067081
+9.176	0.548742977
+9.178	0.549406422
+9.18	0.550062835
+9.182	0.550711763
+9.184	0.551349575
+9.186	0.551979417
+9.188	0.552605076
+9.19	0.553218273
+9.192	0.553829379
+9.194	0.554428641
+9.196	0.555022311
+9.198	0.555606707
+9.2	0.556181226
+9.202	0.556750255
+9.204	0.557307011
+9.206	0.557859666
+9.208	0.558396234
+9.21	0.558929232
+9.212	0.55945553
+9.214	0.559971492
+9.216	0.560480631
+9.218	0.560979429
+9.22	0.561469436
+9.222	0.56194542
+9.224	0.562420723
+9.226	0.562883849
+9.228	0.563339072
+9.23	0.563787674
+9.232	0.564222989
+9.234	0.564655487
+9.236	0.565076266
+9.238	0.565491254
+9.24	0.565892248
+9.242	0.566287698
+9.244	0.566674607
+9.246	0.567046869
+9.248	0.567406841
+9.25	0.567766494
+9.252	0.568113051
+9.254	0.568451691
+9.256	0.568783629
+9.258	0.569106306
+9.26	0.569418933
+9.262	0.569718958
+9.264	0.570010894
+9.266	0.570299658
+9.268	0.570575489
+9.27	0.570842056
+9.272	0.571097433
+9.274	0.571341808
+9.276	0.571581655
+9.278	0.571810259
+9.28	0.572029028
+9.282	0.572240523
+9.284	0.572441009
+9.286	0.572630826
+9.288	0.572810711
+9.29	0.572979307
+9.292	0.573143796
+9.294	0.573296982
+9.296	0.573440239
+9.298	0.573577451
+9.3	0.573703129
+9.302	0.573816181
+9.304	0.573921657
+9.306	0.574017285
+9.308	0.574104826
+9.31	0.574182029
+9.312	0.574249615
+9.314	0.574310707
+9.316	0.574356019
+9.318	0.574394939
+9.32	0.574426434
+9.322	0.574447985
+9.324	0.57445656
+9.326	0.574459516
+9.328	0.574450167
+9.33	0.574432511
+9.332	0.574407447
+9.334	0.574370811
+9.336	0.574324395
+9.338	0.574273738
+9.34	0.574206877
+9.342	0.574136855
+9.344	0.574055947
+9.346	0.573969068
+9.348	0.573898579
+9.35	0.573773905
+9.352	0.573674138
+9.354	0.573550926
+9.356	0.573407958
+9.358	0.57325852
+9.36	0.573089221
+9.362	0.572918615
+9.364	0.572731566
+9.366	0.572536092
+9.368	0.572334908
+9.37	0.572121417
+9.372	0.571895383
+9.374	0.571667209
+9.376	0.571429027
+9.378	0.571176152
+9.38	0.570920835
+9.382	0.570647074
+9.384	0.570368503
+9.386	0.570076128
+9.388	0.569775983
+9.39	0.569464111
+9.392	0.569148542
+9.394	0.568820934
+9.396	0.568487435
+9.398	0.568137349
+9.4	0.567778585
+9.402	0.567417248
+9.404	0.567048232
+9.406	0.566668696
+9.408	0.566268131
+9.41	0.565867067
+9.412	0.565454445
+9.414	0.565037329
+9.416	0.564607216
+9.418	0.564170714
+9.42	0.563724808
+9.422	0.563264601
+9.424	0.562792998
+9.426	0.562318264
+9.428	0.56183696
+9.43	0.561340363
+9.432	0.560837707
+9.434	0.560325953
+9.436	0.559806663
+9.438	0.559277604
+9.44	0.558737838
+9.442	0.55818848
+9.444	0.557639081
+9.446	0.557078115
+9.448	0.556501833
+9.45	0.555919776
+9.452	0.555337828
+9.454	0.554737112
+9.456	0.554128593
+9.458	0.553514398
+9.46	0.552889267
+9.462	0.552252535
+9.464	0.551612818
+9.466	0.550964893
+9.468	0.550310237
+9.47	0.549643967
+9.472	0.548973321
+9.474	0.548286267
+9.476	0.547597647
+9.478	0.546898663
+9.48	0.546193607
+9.482	0.545487862
+9.484	0.544769472
+9.486	0.544036891
+9.488	0.543293368
+9.49	0.542554066
+9.492	0.541802271
+9.494	0.541037435
+9.496	0.540276915
+9.498	0.539503877
+9.5	0.538717009
+9.502	0.537926537
+9.504	0.537124401
+9.506	0.536317737
+9.508	0.535515652
+9.51	0.534694652
+9.512	0.533870331
+9.514	0.533037432
+9.516	0.532190656
+9.518	0.531336824
+9.52	0.530479629
+9.522	0.529615878
+9.524	0.528748851
+9.526	0.527873729
+9.528	0.526992871
+9.53	0.526105423
+9.532	0.525206713
+9.534	0.524307036
+9.536	0.523408388
+9.538	0.522492725
+9.54	0.521569663
+9.542	0.520639699
+9.544	0.519707367
+9.546	0.51875765
+9.548	0.517814759
+9.55	0.516864897
+9.552	0.515908688
+9.554	0.514947692
+9.556	0.513976979
+9.558	0.513001335
+9.56	0.512021424
+9.562	0.511027882
+9.564	0.510034252
+9.566	0.509042572
+9.568	0.508031597
+9.57	0.507015695
+9.572	0.505995851
+9.574	0.504976878
+9.576	0.503956481
+9.578	0.502935467
+9.58	0.501902985
+9.582	0.500856593
+9.584	0.499802676
+9.586	0.498757299
+9.588	0.497707025
+9.59	0.496644734
+9.592	0.495574466
+9.594	0.494508959
+9.596	0.493441311
+9.598	0.49235873
+9.6	0.491270016
+9.602	0.490180107
+9.604	0.489095378
+9.606	0.487997824
+9.608	0.486892536
+9.61	0.485782149
+9.612	0.484675461
+9.614	0.483564941
+9.616	0.482452833
+9.618	0.481331962
+9.62	0.480210306
+9.622	0.479082775
+9.624	0.477954976
+9.626	0.476813691
+9.628	0.475668796
+9.63	0.474531521
+9.632	0.473384558
+9.634	0.472231549
+9.636	0.471085782
+9.638	0.469937198
+9.64	0.468776175
+9.642	0.467612684
+9.644	0.466451893
+9.646	0.465291921
+9.648	0.464126963
+9.65	0.462950297
+9.652	0.461774292
+9.654	0.460597728
+9.656	0.459419888
+9.658	0.458233169
+9.66	0.457052193
+9.662	0.455870491
+9.664	0.454676503
+9.666	0.453479704
+9.668	0.452281956
+9.67	0.451086424
+9.672	0.449889889
+9.674	0.448686927
+9.676	0.4474888
+9.678	0.446287942
+9.68	0.445078798
+9.682	0.44387051
+9.684	0.442658473
+9.686	0.441448562
+9.688	0.440234866
+9.69	0.439023621
+9.692	0.437808563
+9.694	0.436592863
+9.696	0.435377959
+9.698	0.434157172
+9.7	0.432939307
+9.702	0.43172018
+9.704	0.430499239
+9.706	0.429276688
+9.708	0.428055936
+9.71	0.426832927
+9.712	0.425608654
+9.714	0.424386231
+9.716	0.423166802
+9.718	0.421940118
+9.72	0.420716629
+9.722	0.41949451
+9.724	0.418267783
+9.726	0.417048283
+9.728	0.415818386
+9.73	0.414598334
+9.732	0.413374236
+9.734	0.412151715
+9.736	0.410927709
+9.738	0.409706205
+9.74	0.408481797
+9.742	0.407260991
+9.744	0.406039832
+9.746	0.404820546
+9.748	0.403601445
+9.75	0.40238202
+9.752	0.401163713
+9.754	0.399946661
+9.756	0.398729379
+9.758	0.397513974
+9.76	0.396298588
+9.762	0.395087314
+9.764	0.393874871
+9.766	0.394305509
+9.768	0.393099446
+9.77	0.391867272
+9.772	0.39064963
+9.774	0.389051158
+9.776	0.387843839
+9.778	0.386635758
+9.78	0.385436155
+9.782	0.384236691
+9.784	0.383033964
+9.786	0.381836887
+9.788	0.380638738
+9.79	0.379442847
+9.792	0.378251361
+9.794	0.377059892
+9.796	0.375872311
+9.798	0.374684013
+9.8	0.373498919
+9.802	0.372315354
+9.804	0.371135497
+9.806	0.369956493
+9.808	0.368783377
+9.81	0.367607272
+9.812	0.366435761
+9.814	0.365265435
+9.816	0.364100237
+9.818	0.362936653
+9.82	0.361776455
+9.822	0.360615869
+9.824	0.359461482
+9.826	0.358308615
+9.828	0.357159412
+9.83	0.356014123
+9.832	0.354868412
+9.834	0.353727853
+9.836	0.352595241
+9.838	0.351456739
+9.84	0.350329233
+9.842	0.349203234
+9.844	0.348077762
+9.846	0.346956418
+9.848	0.345841633
+9.85	0.344728677
+9.852	0.343619916
+9.854	0.342516513
+9.856	0.341413497
+9.858	0.340317403
+9.86	0.339221496
+9.862	0.33813012
+9.864	0.337046896
+9.866	0.335963931
+9.868	0.334884886
+9.87	0.333807381
+9.872	0.332742927
+9.874	0.331674004
+9.876	0.330614239
+9.878	0.329556379
+9.88	0.328503769
+9.882	0.327454546
+9.884	0.326408804
+9.886	0.325370908
+9.888	0.324334591
+9.89	0.323302053
+9.892	0.322278133
+9.894	0.321253465
+9.896	0.320236311
+9.898	0.319223497
+9.9	0.318212746
+9.902	0.317212549
+9.904	0.31621113
+9.906	0.315218793
+9.908	0.314228531
+9.91	0.313242747
+9.912	0.312264253
+9.914	0.311288733
+9.916	0.310319791
+9.918	0.309352861
+9.92	0.308396436
+9.922	0.307437947
+9.924	0.306493366
+9.926	0.305548136
+9.928	0.304609935
+9.93	0.303674405
+9.932	0.302747632
+9.934	0.301824613
+9.936	0.300906431
+9.938	0.299994292
+9.94	0.299086717
+9.942	0.298185383
+9.944	0.297288448
+9.946	0.296397404
+9.948	0.295513085
+9.95	0.294634372
+9.952	0.293759781
+9.954	0.292892003
+9.956	0.292031067
+9.958	0.291171213
+9.96	0.290322867
+9.962	0.289476385
+9.964	0.288637091
+9.966	0.287803038
+9.968	0.286973783
+9.97	0.286153132
+9.972	0.285336888
+9.974	0.284528776
+9.976	0.283725983
+9.978	0.282925238
+9.98	0.282129889
+9.982	0.281344253
+9.984	0.28056444
+9.986	0.279789856
+9.988	0.279021405
+9.99	0.278259128
+9.992	0.277504867
+9.994	0.276754216
+9.996	0.276013242
+9.998	0.275274836
+10	0.274540865
+10.002	0.273818121
+10.004	0.273099558
+10.006	0.272388134
+10.008	0.271684565
+10.01	0.270990492
+10.012	0.270296594
+10.014	0.269608638
+10.016	0.268932194
+10.018	0.268255408
+10.02	0.267591481
+10.022	0.266933534
+10.024	0.266282096
+10.026	0.265631202
+10.028	0.264993476
+10.03	0.264357362
+10.032	0.26372992
+10.034	0.26311034
+10.036	0.262494359
+10.038	0.261886709
+10.04	0.261286308
+10.042	0.260693889
+10.044	0.260101286
+10.046	0.259522425
+10.048	0.258948514
+10.05	0.258380102
+10.052	0.257821842
+10.054	0.257270122
+10.056	0.256720434
+10.058	0.256179135
+10.06	0.255650039
+10.062	0.255124662
+10.064	0.254604991
+10.066	0.254093411
+10.068	0.25357881
+10.07	0.253083928
+10.072	0.252590216
+10.074	0.252103111
+10.076	0.251623883
+10.078	0.251150579
+10.08	0.250689493
+10.082	0.250230547
+10.084	0.249779054
+10.086	0.249334751
+10.088	0.248898166
+10.09	0.248470317
+10.092	0.248048517
+10.094	0.247628501
+10.096	0.247219102
+10.098	0.246821716
+10.1	0.246425252
+10.102	0.246032572
+10.104	0.245649992
+10.106	0.24527944
+10.108	0.244910465
+10.11	0.244552822
+10.112	0.244198414
+10.114	0.243854822
+10.116	0.243515587
+10.118	0.243182581
+10.12	0.242861974
+10.122	0.24254354
+10.124	0.242232337
+10.126	0.241927534
+10.128	0.241634018
+10.13	0.241344162
+10.132	0.241062721
+10.134	0.240789676
+10.136	0.240519173
+10.138	0.240260663
+10.14	0.240008395
+10.142	0.239763056
+10.144	0.239524852
+10.146	0.239291065
+10.148	0.239066767
+10.15	0.238849551
+10.152	0.238637891
+10.154	0.238438273
+10.156	0.238243143
+10.158	0.238051507
+10.16	0.237868857
+10.162	0.237698067
+10.164	0.237531182
+10.166	0.237369492
+10.168	0.237217909
+10.17	0.237072338
+10.172	0.236932153
+10.174	0.236802064
+10.176	0.236677482
+10.178	0.236562511
+10.18	0.236451141
+10.182	0.236348694
+10.184	0.236254072
+10.186	0.236164913
+10.188	0.236083516
+10.19	0.236010187
+10.192	0.235943756
+10.194	0.235885351
+10.196	0.235832617
+10.198	0.235786226
+10.2	0.235749843
+10.202	0.235717316
+10.204	0.235692465
+10.206	0.235676105
+10.208	0.235665597
+10.21	0.235660657
+10.212	0.235667207
+10.214	0.235676914
+10.216	0.235694875
+10.218	0.235721349
+10.22	0.235750627
+10.222	0.235791108
+10.224	0.235837995
+10.226	0.235889659
+10.228	0.235952583
+10.23	0.236014887
+10.232	0.236100812
+10.234	0.236173601
+10.236	0.236270748
+10.238	0.236335531
+10.24	0.236427326
+10.242	0.236534107
+10.244	0.236640065
+10.246	0.236762143
+10.248	0.236896411
+10.25	0.237038721
+10.252	0.237189351
+10.254	0.237343166
+10.256	0.237505598
+10.258	0.237674813
+10.26	0.237848572
+10.262	0.238032577
+10.264	0.238224375
+10.266	0.238415056
+10.268	0.238622441
+10.27	0.238832007
+10.272	0.239050452
+10.274	0.239274073
+10.276	0.239507371
+10.278	0.239743333
+10.28	0.23999317
+10.282	0.240242644
+10.284	0.240505979
+10.286	0.240768122
+10.288	0.241040543
+10.29	0.241324351
+10.292	0.241612116
+10.294	0.241907698
+10.296	0.242207271
+10.298	0.24251611
+10.3	0.242836232
+10.302	0.243160177
+10.304	0.243490892
+10.306	0.243826496
+10.308	0.244170818
+10.31	0.244517575
+10.312	0.244875999
+10.314	0.245239783
+10.316	0.245608842
+10.318	0.245986812
+10.32	0.246376376
+10.322	0.246770235
+10.324	0.247166615
+10.326	0.247573709
+10.328	0.247984866
+10.33	0.248403965
+10.332	0.248828511
+10.334	0.249260446
+10.336	0.24969937
+10.338	0.250144175
+10.34	0.250596533
+10.342	0.251057016
+10.344	0.251524952
+10.346	0.251995158
+10.348	0.2524741
+10.35	0.252957563
+10.352	0.253449932
+10.354	0.253947964
+10.356	0.254455524
+10.358	0.254970887
+10.36	0.255488421
+10.362	0.256018656
+10.364	0.256551495
+10.366	0.257090711
+10.368	0.257638498
+10.37	0.258192193
+10.372	0.258749658
+10.374	0.259313894
+10.376	0.25988765
+10.378	0.260461609
+10.38	0.261042975
+10.382	0.261636346
+10.384	0.262236488
+10.386	0.26283976
+10.388	0.263445983
+10.39	0.264058956
+10.392	0.264688986
+10.394	0.265314212
+10.396	0.265944051
+10.398	0.266585131
+10.4	0.267232523
+10.402	0.267884376
+10.404	0.268551035
+10.406	0.269221589
+10.408	0.269890321
+10.41	0.270567479
+10.412	0.27125106
+10.414	0.271940519
+10.416	0.27263746
+10.418	0.273336589
+10.42	0.27404516
+10.422	0.27476352
+10.424	0.275483707
+10.426	0.276208305
+10.428	0.276940313
+10.43	0.277682258
+10.432	0.27843035
+10.434	0.27917926
+10.436	0.279935662
+10.438	0.280696825
+10.44	0.281463317
+10.442	0.28223677
+10.444	0.283014802
+10.446	0.283799577
+10.448	0.284587598
+10.45	0.285383978
+10.452	0.286186304
+10.454	0.286995244
+10.456	0.287804783
+10.458	0.288623007
+10.46	0.289451408
+10.462	0.290276701
+10.464	0.291112071
+10.466	0.291952217
+10.468	0.292800828
+10.47	0.293648583
+10.472	0.294502758
+10.474	0.295362427
+10.476	0.296230309
+10.478	0.297099493
+10.48	0.297976046
+10.482	0.29885908
+10.484	0.299747923
+10.486	0.300639343
+10.488	0.301535937
+10.49	0.302439838
+10.492	0.303345583
+10.494	0.304257905
+10.496	0.305174846
+10.498	0.306095073
+10.5	0.307018303
+10.502	0.307949214
+10.504	0.308887232
+10.506	0.309831005
+10.508	0.310776835
+10.51	0.311728298
+10.512	0.312683562
+10.514	0.313644521
+10.516	0.314608114
+10.518	0.31557755
+10.52	0.316550794
+10.522	0.317527785
+10.524	0.318505226
+10.526	0.319486552
+10.528	0.320475545
+10.53	0.32147479
+10.532	0.322475204
+10.534	0.323475293
+10.536	0.324485696
+10.538	0.325505911
+10.54	0.326523588
+10.542	0.327544568
+10.544	0.328570617
+10.546	0.329598886
+10.548	0.330633034
+10.55	0.331671228
+10.552	0.332712273
+10.554	0.33375515
+10.556	0.334805974
+10.558	0.335855863
+10.56	0.336913388
+10.562	0.337969647
+10.564	0.339036709
+10.566	0.340101824
+10.568	0.341171057
+10.57	0.342246161
+10.572	0.343321253
+10.574	0.344404092
+10.576	0.345486229
+10.578	0.346576937
+10.58	0.347665118
+10.582	0.348760186
+10.584	0.349855716
+10.586	0.350956825
+10.588	0.352059324
+10.59	0.353167422
+10.592	0.354276651
+10.594	0.355388403
+10.596	0.35650369
+10.598	0.357621637
+10.6	0.358742734
+10.602	0.359865963
+10.604	0.360991178
+10.606	0.362120202
+10.608	0.363251769
+10.61	0.364385736
+10.612	0.365520362
+10.614	0.366663161
+10.616	0.367802794
+10.618	0.36894666
+10.62	0.370089822
+10.622	0.371240361
+10.624	0.372389296
+10.626	0.373546847
+10.628	0.37469974
+10.63	0.375855734
+10.632	0.377013776
+10.634	0.378173197
+10.636	0.37934089
+10.638	0.380505292
+10.64	0.381669251
+10.642	0.382837576
+10.644	0.384008277
+10.646	0.385178896
+10.648	0.386355471
+10.65	0.387526994
+10.652	0.388699881
+10.654	0.389884157
+10.656	0.391058959
+10.658	0.392237459
+10.66	0.393422234
+10.662	0.394606106
+10.664	0.395788058
+10.666	0.396978856
+10.668	0.39816192
+10.67	0.399350735
+10.672	0.400539488
+10.674	0.401727053
+10.676	0.402918921
+10.678	0.404109135
+10.68	0.405304974
+10.682	0.406492546
+10.684	0.407690465
+10.686	0.408883437
+10.688	0.410078185
+10.69	0.41127216
+10.692	0.41246685
+10.694	0.413666849
+10.696	0.414859048
+10.698	0.416056114
+10.7	0.417252436
+10.702	0.418451404
+10.704	0.419644647
+10.706	0.420842828
+10.708	0.422040403
+10.71	0.423233396
+10.712	0.424431903
+10.714	0.425627664
+10.716	0.426818974
+10.718	0.428017133
+10.72	0.429207718
+10.722	0.430399415
+10.724	0.431597146
+10.726	0.432789829
+10.728	0.433977432
+10.73	0.435172107
+10.732	0.436361968
+10.734	0.437546919
+10.736	0.438738673
+10.738	0.43992455
+10.74	0.441110584
+10.742	0.442295863
+10.744	0.443478055
+10.746	0.44466057
+10.748	0.445840236
+10.75	0.447020968
+10.752	0.448196653
+10.754	0.449373335
+10.756	0.450546422
+10.758	0.451718382
+10.76	0.452889426
+10.762	0.454059795
+10.764	0.455223825
+10.766	0.45639036
+10.768	0.457552446
+10.77	0.458710997
+10.772	0.459870737
+10.774	0.461017329
+10.776	0.462172055
+10.778	0.463321147
+10.78	0.464471896
+10.782	0.46562397
+10.784	0.466762274
+10.786	0.467903769
+10.788	0.469044797
+10.79	0.47018478
+10.792	0.471316718
+10.794	0.472448408
+10.796	0.473573278
+10.798	0.474697761
+10.8	0.475817307
+10.802	0.476926399
+10.804	0.478041616
+10.806	0.479148038
+10.808	0.480252744
+10.81	0.481357601
+10.812	0.482457435
+10.814	0.483557548
+10.816	0.484651044
+10.818	0.4857379
+10.82	0.486819054
+10.822	0.48789584
+10.824	0.488978431
+10.826	0.490049191
+10.828	0.491120095
+10.83	0.492177606
+10.832	0.493226133
+10.834	0.494289698
+10.836	0.495342883
+10.838	0.496384893
+10.84	0.497417856
+10.842	0.49845403
+10.844	0.499481587
+10.846	0.500514851
+10.848	0.501545325
+10.85	0.502564712
+10.852	0.503572892
+10.854	0.504573854
+10.856	0.505580576
+10.858	0.50657666
+10.86	0.507566229
+10.862	0.508548522
+10.864	0.509533173
+10.866	0.51051388
+10.868	0.511486698
+10.87	0.51244629
+10.872	0.513408602
+10.874	0.514362657
+10.876	0.515317505
+10.878	0.516254397
+10.88	0.517185864
+10.882	0.518124966
+10.884	0.519044058
+10.886	0.519965677
+10.888	0.52088359
+10.89	0.521796308
+10.892	0.522699773
+10.894	0.523594793
+10.896	0.524477739
+10.898	0.525364069
+10.9	0.52624945
+10.902	0.527122915
+10.904	0.527989588
+10.906	0.528846636
+10.908	0.529696313
+10.91	0.53054277
+10.912	0.531376825
+10.914	0.532208406
+10.916	0.533031469
+10.918	0.53385612
+10.92	0.534672076
+10.922	0.535474296
+10.924	0.536270773
+10.926	0.537062811
+10.928	0.537848969
+10.93	0.538627373
+10.932	0.539407041
+10.934	0.540168777
+10.936	0.540921785
+10.938	0.541670058
+10.94	0.542413685
+10.942	0.543146544
+10.944	0.543866655
+10.946	0.544585911
+10.948	0.545301336
+10.95	0.546001637
+10.952	0.546697881
+10.954	0.547385078
+10.956	0.548067081
+10.958	0.548742977
+10.96	0.549406422
+10.962	0.550062835
+10.964	0.550711763
+10.966	0.551349575
+10.968	0.551979417
+10.97	0.552605076
+10.972	0.553218273
+10.974	0.553829379
+10.976	0.554428641
+10.978	0.555022311
+10.98	0.555606707
+10.982	0.556181226
+10.984	0.556750255
+10.986	0.557307011
+10.988	0.557859666
+10.99	0.558396234
+10.992	0.558929232
+10.994	0.55945553
+10.996	0.559971492
+10.998	0.560480631
+11	0.560979429
+11.002	0.561469436
+11.004	0.56194542
+11.006	0.562420723
+11.008	0.562883849
+11.01	0.563339072
+11.012	0.563787674
+11.014	0.564222989
+11.016	0.564655487
+11.018	0.565076266
+11.02	0.565491254
+11.022	0.565892248
+11.024	0.566287698
+11.026	0.566674607
+11.028	0.567046869
+11.03	0.567406841
+11.032	0.567766494
+11.034	0.568113051
+11.036	0.568451691
+11.038	0.568783629
+11.04	0.569106306
+11.042	0.569418933
+11.044	0.569718958
+11.046	0.570010894
+11.048	0.570299658
+11.05	0.570575489
+11.052	0.570842056
+11.054	0.571097433
+11.056	0.571341808
+11.058	0.571581655
+11.06	0.571810259
+11.062	0.572029028
+11.064	0.572240523
+11.066	0.572441009
+11.068	0.572630826
+11.07	0.572810711
+11.072	0.572979307
+11.074	0.573143796
+11.076	0.573296982
+11.078	0.573440239
+11.08	0.573577451
+11.082	0.573703129
+11.084	0.573816181
+11.086	0.573921657
+11.088	0.574017285
+11.09	0.574104826
+11.092	0.574182029
+11.094	0.574249615
+11.096	0.574310707
+11.098	0.574356019
+11.1	0.574394939
+11.102	0.574426434
+11.104	0.574447985
+11.106	0.57445656
+11.108	0.574459516
+11.11	0.574450167
+11.112	0.574432511
+11.114	0.574407447
+11.116	0.574370811
+11.118	0.574324395
+11.12	0.574273738
+11.122	0.574206877
+11.124	0.574136855
+11.126	0.574055947
+11.128	0.573969068
+11.13	0.573898579
+11.132	0.573773905
+11.134	0.573674138
+11.136	0.573550926
+11.138	0.573407958
+11.14	0.57325852
+11.142	0.573089221
+11.144	0.572918615
+11.146	0.572731566
+11.148	0.572536092
+11.15	0.572334908
+11.152	0.572121417
+11.154	0.571895383
+11.156	0.571667209
+11.158	0.571429027
+11.16	0.571176152
+11.162	0.570920835
+11.164	0.570647074
+11.166	0.570368503
+11.168	0.570076128
+11.17	0.569775983
+11.172	0.569464111
+11.174	0.569148542
+11.176	0.568820934
+11.178	0.568487435
+11.18	0.568137349
+11.182	0.567778585
+11.184	0.567417248
+11.186	0.567048232
+11.188	0.566668696
+11.19	0.566268131
+11.192	0.565867067
+11.194	0.565454445
+11.196	0.565037329
+11.198	0.564607216
+11.2	0.564170714
+11.202	0.563724808
+11.204	0.563264601
+11.206	0.562792998
+11.208	0.562318264
+11.21	0.56183696
+11.212	0.561340363
+11.214	0.560837707
+11.216	0.560325953
+11.218	0.559806663
+11.22	0.559277604
+11.222	0.558737838
+11.224	0.55818848
+11.226	0.557639081
+11.228	0.557078115
+11.23	0.556501833
+11.232	0.555919776
+11.234	0.555337828
+11.236	0.554737112
+11.238	0.554128593
+11.24	0.553514398
+11.242	0.552889267
+11.244	0.552252535
+11.246	0.551612818
+11.248	0.550964893
+11.25	0.550310237
+11.252	0.549643967
+11.254	0.548973321
+11.256	0.548286267
+11.258	0.547597647
+11.26	0.546898663
+11.262	0.546193607
+11.264	0.545487862
+11.266	0.544769472
+11.268	0.544036891
+11.27	0.543293368
+11.272	0.542554066
+11.274	0.541802271
+11.276	0.541037435
+11.278	0.540276915
+11.28	0.539503877
+11.282	0.538717009
+11.284	0.537926537
+11.286	0.537124401
+11.288	0.536317737
+11.29	0.535515652
+11.292	0.534694652
+11.294	0.533870331
+11.296	0.533037432
+11.298	0.532190656
+11.3	0.531336824
+11.302	0.530479629
+11.304	0.529615878
+11.306	0.528748851
+11.308	0.527873729
+11.31	0.526992871
+11.312	0.526105423
+11.314	0.525206713
+11.316	0.524307036
+11.318	0.523408388
+11.32	0.522492725
+11.322	0.521569663
+11.324	0.520639699
+11.326	0.519707367
+11.328	0.51875765
+11.33	0.517814759
+11.332	0.516864897
+11.334	0.515908688
+11.336	0.514947692
+11.338	0.513976979
+11.34	0.513001335
+11.342	0.512021424
+11.344	0.511027882
+11.346	0.510034252
+11.348	0.509042572
+11.35	0.508031597
+11.352	0.507015695
+11.354	0.505995851
+11.356	0.504976878
+11.358	0.503956481
+11.36	0.502935467
+11.362	0.501902985
+11.364	0.500856593
+11.366	0.499802676
+11.368	0.498757299
+11.37	0.497707025
+11.372	0.496644734
+11.374	0.495574466
+11.376	0.494508959
+11.378	0.493441311
+11.38	0.49235873
+11.382	0.491270016
+11.384	0.490180107
+11.386	0.489095378
+11.388	0.487997824
+11.39	0.486892536
+11.392	0.485782149
+11.394	0.484675461
+11.396	0.483564941
+11.398	0.482452833
+11.4	0.481331962
+11.402	0.480210306
+11.404	0.479082775
+11.406	0.477954976
+11.408	0.476813691
+11.41	0.475668796
+11.412	0.474531521
+11.414	0.473384558
+11.416	0.472231549
+11.418	0.471085782
+11.42	0.469937198
+11.422	0.468776175
+11.424	0.467612684
+11.426	0.466451893
+11.428	0.465291921
+11.43	0.464126963
+11.432	0.462950297
+11.434	0.461774292
+11.436	0.460597728
+11.438	0.459419888
+11.44	0.458233169
+11.442	0.457052193
+11.444	0.455870491
+11.446	0.454676503
+11.448	0.453479704
+11.45	0.452281956
+11.452	0.451086424
+11.454	0.449889889
+11.456	0.448686927
+11.458	0.4474888
+11.46	0.446287942
+11.462	0.445078798
+11.464	0.44387051
+11.466	0.442658473
+11.468	0.441448562
+11.47	0.440234866
+11.472	0.439023621
+11.474	0.437808563
+11.476	0.436592863
+11.478	0.435377959
+11.48	0.434157172
+11.482	0.432939307
+11.484	0.43172018
+11.486	0.430499239
+11.488	0.429276688
+11.49	0.428055936
+11.492	0.426832927
+11.494	0.425608654
+11.496	0.424386231
+11.498	0.423166802
+11.5	0.421940118
+11.502	0.420716629
+11.504	0.41949451
+11.506	0.418267783
+11.508	0.417048283
+11.51	0.415818386
+11.512	0.414598334
+11.514	0.413374236
+11.516	0.412151715
+11.518	0.410927709
+11.52	0.409706205
+11.522	0.408481797
+11.524	0.407260991
+11.526	0.406039832
+11.528	0.404820546
+11.53	0.403601445
+11.532	0.40238202
+11.534	0.401163713
+11.536	0.399946661
+11.538	0.398729379
+11.54	0.397513974
+11.542	0.396298588
+11.544	0.395087314
+11.546	0.393874871
+11.548	0.394305509
+11.55	0.393099446
+11.552	0.391867272
+11.554	0.39064963
+11.556	0.389051158
+11.558	0.387843839
+11.56	0.386635758
+11.562	0.385436155
+11.564	0.384236691
+11.566	0.383033964
+11.568	0.381836887
+11.57	0.380638738
+11.572	0.379442847
+11.574	0.378251361
+11.576	0.377059892
+11.578	0.375872311
+11.58	0.374684013
+11.582	0.373498919
+11.584	0.372315354
+11.586	0.371135497
+11.588	0.369956493
+11.59	0.368783377
+11.592	0.367607272
+11.594	0.366435761
+11.596	0.365265435
+11.598	0.364100237
+11.6	0.362936653
+11.602	0.361776455
+11.604	0.360615869
+11.606	0.359461482
+11.608	0.358308615
+11.61	0.357159412
+11.612	0.356014123
+11.614	0.354868412
+11.616	0.353727853
+11.618	0.352595241
+11.62	0.351456739
+11.622	0.350329233
+11.624	0.349203234
+11.626	0.348077762
+11.628	0.346956418
+11.63	0.345841633
+11.632	0.344728677
+11.634	0.343619916
+11.636	0.342516513
+11.638	0.341413497
+11.64	0.340317403
+11.642	0.339221496
+11.644	0.33813012
+11.646	0.337046896
+11.648	0.335963931
+11.65	0.334884886
+11.652	0.333807381
+11.654	0.332742927
+11.656	0.331674004
+11.658	0.330614239
+11.66	0.329556379
+11.662	0.328503769
+11.664	0.327454546
+11.666	0.326408804
+11.668	0.325370908
+11.67	0.324334591
+11.672	0.323302053
+11.674	0.322278133
+11.676	0.321253465
+11.678	0.320236311
+11.68	0.319223497
+11.682	0.318212746
+11.684	0.317212549
+11.686	0.31621113
+11.688	0.315218793
+11.69	0.314228531
+11.692	0.313242747
+11.694	0.312264253
+11.696	0.311288733
+11.698	0.310319791
+11.7	0.309352861
+11.702	0.308396436
+11.704	0.307437947
+11.706	0.306493366
+11.708	0.305548136
+11.71	0.304609935
+11.712	0.303674405
+11.714	0.302747632
+11.716	0.301824613
+11.718	0.300906431
+11.72	0.299994292
+11.722	0.299086717
+11.724	0.298185383
+11.726	0.297288448
+11.728	0.296397404
+11.73	0.295513085
+11.732	0.294634372
+11.734	0.293759781
+11.736	0.292892003
+11.738	0.292031067
+11.74	0.291171213
+11.742	0.290322867
+11.744	0.289476385
+11.746	0.288637091
+11.748	0.287803038
+11.75	0.286973783
+11.752	0.286153132
+11.754	0.285336888
+11.756	0.284528776
+11.758	0.283725983
+11.76	0.282925238
+11.762	0.282129889
+11.764	0.281344253
+11.766	0.28056444
+11.768	0.279789856
+11.77	0.279021405
+11.772	0.278259128
+11.774	0.277504867
+11.776	0.276754216
+11.778	0.276013242
+11.78	0.275274836
+11.782	0.274540865
+11.784	0.273818121
+11.786	0.273099558
+11.788	0.272388134
+11.79	0.271684565
+11.792	0.270990492
+11.794	0.270296594
+11.796	0.269608638
+11.798	0.268932194
+11.8	0.268255408
+11.802	0.267591481
+11.804	0.266933534
+11.806	0.266282096
+11.808	0.265631202
+11.81	0.264993476
+11.812	0.264357362
+11.814	0.26372992
+11.816	0.26311034
+11.818	0.262494359
+11.82	0.261886709
+11.822	0.261286308
+11.824	0.260693889
+11.826	0.260101286
+11.828	0.259522425
+11.83	0.258948514
+11.832	0.258380102
+11.834	0.257821842
+11.836	0.257270122
+11.838	0.256720434
+11.84	0.256179135
+11.842	0.255650039
+11.844	0.255124662
+11.846	0.254604991
+11.848	0.254093411
+11.85	0.25357881
+11.852	0.253083928
+11.854	0.252590216
+11.856	0.252103111
+11.858	0.251623883
+11.86	0.251150579
+11.862	0.250689493
+11.864	0.250230547
+11.866	0.249779054
+11.868	0.249334751
+11.87	0.248898166
+11.872	0.248470317
+11.874	0.248048517
+11.876	0.247628501
+11.878	0.247219102
+11.88	0.246821716
+11.882	0.246425252
+11.884	0.246032572
+11.886	0.245649992
+11.888	0.24527944
+11.89	0.244910465
+11.892	0.244552822
+11.894	0.244198414
+11.896	0.243854822
+11.898	0.243515587
+11.9	0.243182581
+11.902	0.242861974
+11.904	0.24254354
+11.906	0.242232337
+11.908	0.241927534
+11.91	0.241634018
+11.912	0.241344162
+11.914	0.241062721
+11.916	0.240789676
+11.918	0.240519173
+11.92	0.240260663
+11.922	0.240008395
+11.924	0.239763056
+11.926	0.239524852
+11.928	0.239291065
+11.93	0.239066767
+11.932	0.238849551
+11.934	0.238637891
+11.936	0.238438273
+11.938	0.238243143
+11.94	0.238051507
+11.942	0.237868857
+11.944	0.237698067
+11.946	0.237531182
+11.948	0.237369492
+11.95	0.237217909
+11.952	0.237072338
+11.954	0.236932153
+11.956	0.236802064
+11.958	0.236677482
+11.96	0.236562511
+11.962	0.236451141
+11.964	0.236348694
+11.966	0.236254072
+11.968	0.236164913
+11.97	0.236083516
+11.972	0.236010187
+11.974	0.235943756
+11.976	0.235885351
+11.978	0.235832617
+11.98	0.235786226
+11.982	0.235749843
+11.984	0.235717316
+11.986	0.235692465
+11.988	0.235676105
+11.99	0.235665597
+11.992	0.235660657
+11.994	0.235667207
+11.996	0.235676914
+11.998	0.235694875
+12	0.235721349
+12.002	0.235750627
+12.004	0.235791108
+12.006	0.235837995
+12.008	0.235889659
+12.01	0.235952583
+12.012	0.236014887
+12.014	0.236100812
+12.016	0.236173601
+12.018	0.236270748
+12.02	0.236335531
+12.022	0.236427326
+12.024	0.236534107
+12.026	0.236640065
+12.028	0.236762143
+12.03	0.236896411
+12.032	0.237038721
+12.034	0.237189351
+12.036	0.237343166
+12.038	0.237505598
+12.04	0.237674813
+12.042	0.237848572
+12.044	0.238032577
+12.046	0.238224375
+12.048	0.238415056
+12.05	0.238622441
+12.052	0.238832007
+12.054	0.239050452
+12.056	0.239274073
+12.058	0.239507371
+12.06	0.239743333
+12.062	0.23999317
+12.064	0.240242644
+12.066	0.240505979
+12.068	0.240768122
+12.07	0.241040543
+12.072	0.241324351
+12.074	0.241612116
+12.076	0.241907698
+12.078	0.242207271
+12.08	0.24251611
+12.082	0.242836232
+12.084	0.243160177
+12.086	0.243490892
+12.088	0.243826496
+12.09	0.244170818
+12.092	0.244517575
+12.094	0.244875999
+12.096	0.245239783
+12.098	0.245608842
+12.1	0.245986812
+12.102	0.246376376
+12.104	0.246770235
+12.106	0.247166615
+12.108	0.247573709
+12.11	0.247984866
+12.112	0.248403965
+12.114	0.248828511
+12.116	0.249260446
+12.118	0.24969937
+12.12	0.250144175
+12.122	0.250596533
+12.124	0.251057016
+12.126	0.251524952
+12.128	0.251995158
+12.13	0.2524741
+12.132	0.252957563
+12.134	0.253449932
+12.136	0.253947964
+12.138	0.254455524
+12.14	0.254970887
+12.142	0.255488421
+12.144	0.256018656
+12.146	0.256551495
+12.148	0.257090711
+12.15	0.257638498
+12.152	0.258192193
+12.154	0.258749658
+12.156	0.259313894
+12.158	0.25988765
+12.16	0.260461609
+12.162	0.261042975
+12.164	0.261636346
+12.166	0.262236488
+12.168	0.26283976
+12.17	0.263445983
+12.172	0.264058956
+12.174	0.264688986
+12.176	0.265314212
+12.178	0.265944051
+12.18	0.266585131
+12.182	0.267232523
+12.184	0.267884376
+12.186	0.268551035
+12.188	0.269221589
+12.19	0.269890321
+12.192	0.270567479
+12.194	0.27125106
+12.196	0.271940519
+12.198	0.27263746
+12.2	0.273336589
+12.202	0.27404516
+12.204	0.27476352
+12.206	0.275483707
+12.208	0.276208305
+12.21	0.276940313
+12.212	0.277682258
+12.214	0.27843035
+12.216	0.27917926
+12.218	0.279935662
+12.22	0.280696825
+12.222	0.281463317
+12.224	0.28223677
+12.226	0.283014802
+12.228	0.283799577
+12.23	0.284587598
+12.232	0.285383978
+12.234	0.286186304
+12.236	0.286995244
+12.238	0.287804783
+12.24	0.288623007
+12.242	0.289451408
+12.244	0.290276701
+12.246	0.291112071
+12.248	0.291952217
+12.25	0.292800828
+12.252	0.293648583
+12.254	0.294502758
+12.256	0.295362427
+12.258	0.296230309
+12.26	0.297099493
+12.262	0.297976046
+12.264	0.29885908
+12.266	0.299747923
+12.268	0.300639343
+12.27	0.301535937
+12.272	0.302439838
+12.274	0.303345583
+12.276	0.304257905
+12.278	0.305174846
+12.28	0.306095073
+12.282	0.307018303
+12.284	0.307949214
+12.286	0.308887232
+12.288	0.309831005
+12.29	0.310776835
+12.292	0.311728298
+12.294	0.312683562
+12.296	0.313644521
+12.298	0.314608114
+12.3	0.31557755
+12.302	0.316550794
+12.304	0.317527785
+12.306	0.318505226
+12.308	0.319486552
+12.31	0.320475545
+12.312	0.32147479
+12.314	0.322475204
+12.316	0.323475293
+12.318	0.324485696
+12.32	0.325505911
+12.322	0.326523588
+12.324	0.327544568
+12.326	0.328570617
+12.328	0.329598886
+12.33	0.330633034
+12.332	0.331671228
+12.334	0.332712273
+12.336	0.33375515
+12.338	0.334805974
+12.34	0.335855863
+12.342	0.336913388
+12.344	0.337969647
+12.346	0.339036709
+12.348	0.340101824
+12.35	0.341171057
+12.352	0.342246161
+12.354	0.343321253
+12.356	0.344404092
+12.358	0.345486229
+12.36	0.346576937
+12.362	0.347665118
+12.364	0.348760186
+12.366	0.349855716
+12.368	0.350956825
+12.37	0.352059324
+12.372	0.353167422
+12.374	0.354276651
+12.376	0.355388403
+12.378	0.35650369
+12.38	0.357621637
+12.382	0.358742734
+12.384	0.359865963
+12.386	0.360991178
+12.388	0.362120202
+12.39	0.363251769
+12.392	0.364385736
+12.394	0.365520362
+12.396	0.366663161
+12.398	0.367802794
+12.4	0.36894666
+12.402	0.370089822
+12.404	0.371240361
+12.406	0.372389296
+12.408	0.373546847
+12.41	0.37469974
+12.412	0.375855734
+12.414	0.377013776
+12.416	0.378173197
+12.418	0.37934089
+12.42	0.380505292
+12.422	0.381669251
+12.424	0.382837576
+12.426	0.384008277
+12.428	0.385178896
+12.43	0.386355471
+12.432	0.387526994
+12.434	0.388699881
+12.436	0.389884157
+12.438	0.391058959
+12.44	0.392237459
+12.442	0.393422234
+12.444	0.394606106
+12.446	0.395788058
+12.448	0.396978856
+12.45	0.39816192
+12.452	0.399350735
+12.454	0.400539488
+12.456	0.401727053
+12.458	0.402918921
+12.46	0.404109135
+12.462	0.405304974
+12.464	0.406492546
+12.466	0.407690465
+12.468	0.408883437
+12.47	0.410078185
+12.472	0.41127216
+12.474	0.41246685
+12.476	0.413666849
+12.478	0.414859048
+12.48	0.416056114
+12.482	0.417252436
+12.484	0.418451404
+12.486	0.419644647
+12.488	0.420842828
+12.49	0.422040403
+12.492	0.423233396
+12.494	0.424431903
+12.496	0.425627664
+12.498	0.426818974
+12.5	0.428017133
+12.502	0.429207718
+12.504	0.430399415
+12.506	0.431597146
+12.508	0.432789829
+12.51	0.433977432
+12.512	0.435172107
+12.514	0.436361968
+12.516	0.437546919
+12.518	0.438738673
+12.52	0.43992455
+12.522	0.441110584
+12.524	0.442295863
+12.526	0.443478055
+12.528	0.44466057
+12.53	0.445840236
+12.532	0.447020968
+12.534	0.448196653
+12.536	0.449373335
+12.538	0.450546422
+12.54	0.451718382
+12.542	0.452889426
+12.544	0.454059795
+12.546	0.455223825
+12.548	0.45639036
+12.55	0.457552446
+12.552	0.458710997
+12.554	0.459870737
+12.556	0.461017329
+12.558	0.462172055
+12.56	0.463321147
+12.562	0.464471896
+12.564	0.46562397
+12.566	0.466762274
+12.568	0.467903769
+12.57	0.469044797
+12.572	0.47018478
+12.574	0.471316718
+12.576	0.472448408
+12.578	0.473573278
+12.58	0.474697761
+12.582	0.475817307
+12.584	0.476926399
+12.586	0.478041616
+12.588	0.479148038
+12.59	0.480252744
+12.592	0.481357601
+12.594	0.482457435
+12.596	0.483557548
+12.598	0.484651044
+12.6	0.4857379
+12.602	0.486819054
+12.604	0.48789584
+12.606	0.488978431
+12.608	0.490049191
+12.61	0.491120095
+12.612	0.492177606
+12.614	0.493226133
+12.616	0.494289698
+12.618	0.495342883
+12.62	0.496384893
+12.622	0.497417856
+12.624	0.49845403
+12.626	0.499481587
+12.628	0.500514851
+12.63	0.501545325
+12.632	0.502564712
+12.634	0.503572892
+12.636	0.504573854
+12.638	0.505580576
+12.64	0.50657666
+12.642	0.507566229
+12.644	0.508548522
+12.646	0.509533173
+12.648	0.51051388
+12.65	0.511486698
+12.652	0.51244629
+12.654	0.513408602
+12.656	0.514362657
+12.658	0.515317505
+12.66	0.516254397
+12.662	0.517185864
+12.664	0.518124966
+12.666	0.519044058
+12.668	0.519965677
+12.67	0.52088359
+12.672	0.521796308
+12.674	0.522699773
+12.676	0.523594793
+12.678	0.524477739
+12.68	0.525364069
+12.682	0.52624945
+12.684	0.527122915
+12.686	0.527989588
+12.688	0.528846636
+12.69	0.529696313
+12.692	0.53054277
+12.694	0.531376825
+12.696	0.532208406
+12.698	0.533031469
+12.7	0.53385612
+12.702	0.534672076
+12.704	0.535474296
+12.706	0.536270773
+12.708	0.537062811
+12.71	0.537848969
+12.712	0.538627373
+12.714	0.539407041
+12.716	0.540168777
+12.718	0.540921785
+12.72	0.541670058
+12.722	0.542413685
+12.724	0.543146544
+12.726	0.543866655
+12.728	0.544585911
+12.73	0.545301336
+12.732	0.546001637
+12.734	0.546697881
+12.736	0.547385078
+12.738	0.548067081
+12.74	0.548742977
+12.742	0.549406422
+12.744	0.550062835
+12.746	0.550711763
+12.748	0.551349575
+12.75	0.551979417
+12.752	0.552605076
+12.754	0.553218273
+12.756	0.553829379
+12.758	0.554428641
+12.76	0.555022311
+12.762	0.555606707
+12.764	0.556181226
+12.766	0.556750255
+12.768	0.557307011
+12.77	0.557859666
+12.772	0.558396234
+12.774	0.558929232
+12.776	0.55945553
+12.778	0.559971492
+12.78	0.560480631
+12.782	0.560979429
+12.784	0.561469436
+12.786	0.56194542
+12.788	0.562420723
+12.79	0.562883849
+12.792	0.563339072
+12.794	0.563787674
+12.796	0.564222989
+12.798	0.564655487
+12.8	0.565076266
+12.802	0.565491254
+12.804	0.565892248
+12.806	0.566287698
+12.808	0.566674607
+12.81	0.567046869
+12.812	0.567406841
+12.814	0.567766494
+12.816	0.568113051
+12.818	0.568451691
+12.82	0.568783629
+12.822	0.569106306
+12.824	0.569418933
+12.826	0.569718958
+12.828	0.570010894
+12.83	0.570299658
+12.832	0.570575489
+12.834	0.570842056
+12.836	0.571097433
+12.838	0.571341808
+12.84	0.571581655
+12.842	0.571810259
+12.844	0.572029028
+12.846	0.572240523
+12.848	0.572441009
+12.85	0.572630826
+12.852	0.572810711
+12.854	0.572979307
+12.856	0.573143796
+12.858	0.573296982
+12.86	0.573440239
+12.862	0.573577451
+12.864	0.573703129
+12.866	0.573816181
+12.868	0.573921657
+12.87	0.574017285
+12.872	0.574104826
+12.874	0.574182029
+12.876	0.574249615
+12.878	0.574310707
+12.88	0.574356019
+12.882	0.574394939
+12.884	0.574426434
+12.886	0.574447985
+12.888	0.57445656
+12.89	0.574459516
+12.892	0.574450167
+12.894	0.574432511
+12.896	0.574407447
+12.898	0.574370811
+12.9	0.574324395
+12.902	0.574273738
+12.904	0.574206877
+12.906	0.574136855
+12.908	0.574055947
+12.91	0.573969068
+12.912	0.573898579
+12.914	0.573773905
+12.916	0.573674138
+12.918	0.573550926
+12.92	0.573407958
+12.922	0.57325852
+12.924	0.573089221
+12.926	0.572918615
+12.928	0.572731566
+12.93	0.572536092
+12.932	0.572334908
+12.934	0.572121417
+12.936	0.571895383
+12.938	0.571667209
+12.94	0.571429027
+12.942	0.571176152
+12.944	0.570920835
+12.946	0.570647074
+12.948	0.570368503
+12.95	0.570076128
+12.952	0.569775983
+12.954	0.569464111
+12.956	0.569148542
+12.958	0.568820934
+12.96	0.568487435
+12.962	0.568137349
+12.964	0.567778585
+12.966	0.567417248
+12.968	0.567048232
+12.97	0.566668696
+12.972	0.566268131
+12.974	0.565867067
+12.976	0.565454445
+12.978	0.565037329
+12.98	0.564607216
+12.982	0.564170714
+12.984	0.563724808
+12.986	0.563264601
+12.988	0.562792998
+12.99	0.562318264
+12.992	0.56183696
+12.994	0.561340363
+12.996	0.560837707
+12.998	0.560325953
+13	0.559806663
+13.002	0.559277604
+13.004	0.558737838
+13.006	0.55818848
+13.008	0.557639081
+13.01	0.557078115
+13.012	0.556501833
+13.014	0.555919776
+13.016	0.555337828
+13.018	0.554737112
+13.02	0.554128593
+13.022	0.553514398
+13.024	0.552889267
+13.026	0.552252535
+13.028	0.551612818
+13.03	0.550964893
+13.032	0.550310237
+13.034	0.549643967
+13.036	0.548973321
+13.038	0.548286267
+13.04	0.547597647
+13.042	0.546898663
+13.044	0.546193607
+13.046	0.545487862
+13.048	0.544769472
+13.05	0.544036891
+13.052	0.543293368
+13.054	0.542554066
+13.056	0.541802271
+13.058	0.541037435
+13.06	0.540276915
+13.062	0.539503877
+13.064	0.538717009
+13.066	0.537926537
+13.068	0.537124401
+13.07	0.536317737
+13.072	0.535515652
+13.074	0.534694652
+13.076	0.533870331
+13.078	0.533037432
+13.08	0.532190656
+13.082	0.531336824
+13.084	0.530479629
+13.086	0.529615878
+13.088	0.528748851
+13.09	0.527873729
+13.092	0.526992871
+13.094	0.526105423
+13.096	0.525206713
+13.098	0.524307036
+13.1	0.523408388
+13.102	0.522492725
+13.104	0.521569663
+13.106	0.520639699
+13.108	0.519707367
+13.11	0.51875765
+13.112	0.517814759
+13.114	0.516864897
+13.116	0.515908688
+13.118	0.514947692
+13.12	0.513976979
+13.122	0.513001335
+13.124	0.512021424
+13.126	0.511027882
+13.128	0.510034252
+13.13	0.509042572
+13.132	0.508031597
+13.134	0.507015695
+13.136	0.505995851
+13.138	0.504976878
+13.14	0.503956481
+13.142	0.502935467
+13.144	0.501902985
+13.146	0.500856593
+13.148	0.499802676
+13.15	0.498757299
+13.152	0.497707025
+13.154	0.496644734
+13.156	0.495574466
+13.158	0.494508959
+13.16	0.493441311
+13.162	0.49235873
+13.164	0.491270016
+13.166	0.490180107
+13.168	0.489095378
+13.17	0.487997824
+13.172	0.486892536
+13.174	0.485782149
+13.176	0.484675461
+13.178	0.483564941
+13.18	0.482452833
+13.182	0.481331962
+13.184	0.480210306
+13.186	0.479082775
+13.188	0.477954976
+13.19	0.476813691
+13.192	0.475668796
+13.194	0.474531521
+13.196	0.473384558
+13.198	0.472231549
+13.2	0.471085782
+13.202	0.469937198
+13.204	0.468776175
+13.206	0.467612684
+13.208	0.466451893
+13.21	0.465291921
+13.212	0.464126963
+13.214	0.462950297
+13.216	0.461774292
+13.218	0.460597728
+13.22	0.459419888
+13.222	0.458233169
+13.224	0.457052193
+13.226	0.455870491
+13.228	0.454676503
+13.23	0.453479704
+13.232	0.452281956
+13.234	0.451086424
+13.236	0.449889889
+13.238	0.448686927
+13.24	0.4474888
+13.242	0.446287942
+13.244	0.445078798
+13.246	0.44387051
+13.248	0.442658473
+13.25	0.441448562
+13.252	0.440234866
+13.254	0.439023621
+13.256	0.437808563
+13.258	0.436592863
+13.26	0.435377959
+13.262	0.434157172
+13.264	0.432939307
+13.266	0.43172018
+13.268	0.430499239
+13.27	0.429276688
+13.272	0.428055936
+13.274	0.426832927
+13.276	0.425608654
+13.278	0.424386231
+13.28	0.423166802
+13.282	0.421940118
+13.284	0.420716629
+13.286	0.41949451
+13.288	0.418267783
+13.29	0.417048283
+13.292	0.415818386
+13.294	0.414598334
+13.296	0.413374236
+13.298	0.412151715
+13.3	0.410927709
+13.302	0.409706205
+13.304	0.408481797
+13.306	0.407260991
+13.308	0.406039832
+13.31	0.404820546
+13.312	0.403601445
+13.314	0.40238202
+13.316	0.401163713
+13.318	0.399946661
+13.32	0.398729379
+13.322	0.397513974
+13.324	0.396298588
+13.326	0.395087314
+13.328	0.393874871
+
+** FAQ
+
+? Do I need finner mesh at near top when using UDF for one phase approximation
+
+*** wave reflection
+**** how to solve the wave reflection problem for UDF velocity inlet?
+
+**** numerical beach in multiphase model in Fluent
+
+in fluent VOF wave, numerical beach is used for wave reflection, essentially /a damping sink term is added in the momentum equation/ 
+for the cell zone in the vicinity of the pressure outlet boundary[fn:park1999] [fn:zwartship2007].
+more detail, refer to 17.3.10.3. Numerical Beach Treatment, theory guide, fluent.
+
+* Results
+- Free stream velocity vs time, e.g. Fig. 5.3 (abuan, 2017)
+- Cp vs time 
+file:figure/free_surface/fig5-2-abuan-2017.png
+
+- Torque vs time
+- Pressure coefficient
+- streamwise at different station in one circle
+- offpeak performance
+
+
+** Torque
+Torque is clsely related to fatigure 
+
+** parameter study
+*input variables:*
+
+- [[tip clearance]]: blade tip to mean free surface distance
+- wave parameters, water depth, amplitude, frequency
+
+*output variables:*
+Cp, Ct, bending moment
+
+*** tip clearance
+file:figures/free_surface/water_depth.png
+
+# definition
+# why is it important
+The tip clearance is refer as the distance between the blade tip and the mean free surface level. The vertical velocity of a wave is a function of water depth, thus the tip clearance affects the velocity seen by the rotor. Meanwhile, there is a strong interaction between the blade and wave when the rotor blade is close to the free surface. Thus, the blade tip clearance is a key parameter for the deployment of a MCT
+
+*Conclusions*
+
+
+Noruzi\cite{noruzi2015design} studied the effect of installation depth on a MCT subjected linear wave using BEM and CFD and concluded that the performance is significant effect when the installation depth is below 20 \% of water depth.
+
+*limits* in Noruzi 2015
+in [fn:noruzi2015design] (Fig.11)
+, only a third section, but the wave velocity is a function of vertical distance,
+ thus wave is not fully modelled in this paper.
+
+#  [fn:shirasawa2017scale] ~\cite{shirasawa2017scale}.
+A scale model of  kite-like turbine is tested in a circulating water channel with linear wave genenator
+ [fn:shirasawa2017scale] ~\cite{shirasawa2017scale}.
+ The turbine were placed at different depth below the mean water
+ level to analysis the wave impact on mooring line tension. 
+
+The results show that thrust of turbine is influenced by wave when the nacelle depth 
+is half wave length, but not the case when the nacell depth is slightly greater than the wavelength.
+a spike-like variation of the stream-wise and vertical force on mooring line is observed  for 3 MW case,
+ while  sinusoidal motion is observed for 10 MW case.
+the experient shows that wave amplitude and nacell depth are imporant parameters 
+for design of morring system.
+
+
+[fn:lust2013influence] compared two rotor depth (1.3D and 2.25D) in a towing tank. , and observed 
+Lust, Ethan E., et al. "The influence of surface gravity waves on marine current turbine performance." International Journal of Marine Energy 3 (2013): 27-40.
+
+
+*** authors
+Dr. anna young >> https://www-diva.eng.cam.ac.uk/directory/amy21@cam.ac.uk
+Noruzi 2015
+Lust 2013
+
+*** amplitude
+conclusion:
+file:figures/free_surface/wave_amplitude_on_cp.png
+> ch6, abuan, 2017
+
+*** frequency
+file:figures/hub_depth.png
+file:figures/frequency_wave_turbine.png
+
+# \Omega_turbine / omega_wave = 0.25, 0.5, 1
+\Omega_turbine / omega_wave = 0.25, 0.5, 1
+
+
+
+T_turbine / T_wave = 0.34
+Turbine and surface wave time periods=  0.60213860869407665        1.7814751736511141     
+file:///home/kaiming/Documents/Emacs/QMUL/Chapter6/Chapter6Figs/cp_time_surf.pdf
+surface BEm code results
+file:figures/free_surface/cp_time_surf.eps
+
+# conclusions
+
+
+** Frequency analysis: FFT
+
+
+> 3.6 sarah  Ttum 2016
+
+** Chapter 6 Free surface water effects
+- Unsteady BEM 
+- Sine wave one phase approxiation  using UDF Fluent
+  
+** data to be collected
+*** Chapter 6 Free surface water effects
+- 2nd stokes wave one phase approxiation  using UDF Fluent
+  + related 
+- two phase VOF
+
+*** Chapter 7 The HAMT in confined space
+- URANS analysis of the effect of hub, pylon and sea floor on the HAMT 
+- URANS analysis of the effect of the free surface waves on the full HAMT 
+- Acoustics analysis 
+** Pressure coefficient
+- C_pr : pressure coefficient
+
+*  VOF  setups
+Fluent Setups
+** TODO problem
+Cp is 0.8 much large than Exp value
+
+** Geo and wave properties, Lab experiment,  benchmark
+L. Luznik, KA Flack, EE Lust and K Taylor, “The effect of surface
+waves on the performance characteristics of a model tidal turbine,”
+Ren. Energy 58, 2013, 108-114
+
+McGhee, R.J., Walker, B.S., and Millard, B.F., “Experimental Results for the
+Eppler 387 Airfoil at Low Reynolds Numbers in the Langley Low-Turbulence
+Pressure Tunnel,” NASA TM 4062, October 1988
+
+blade tip to free surface distance: 0.552m (1.2D)
+Turbine diameter, 0.46m
+Blade profile, E387
+Pitch angle, 0 °
+Root chord, 0.05m,
+Tip chord, 0.025m
+Water depth, 1.6m
+Free steam velocity, 0.6m/s
+Wave period, 1.78s
+Wave amplitude, 4cm
+
+*** root station?
+
+root station is unknown
+
+
+*** Wave Parameters
+- Water depth, d, 1.6m
+- Hub height=0.782m
+- Hub center to bottom, 1.6-0.782=0.818m
+- Free steam velocity, U=0.6m/s
+- Wave period,T, 1.43s
+- Wave amplitude, a, 4cm=0.04m 
+- Wave length, L, 4.8m
+- Wave height, H,0.076m
+- Wave steepness=wave height/wave length=0.076/4.8= 0.016
+
+**   CD
+same as UDF
+
+Hybrid CD
+
+9D*9.5D*36.5D (width*height*length)
+
+
+
+
+** numerical setups
+*** modelling guide 
+file:c:/Users/exw692/Dropbox/Emacs/two-phase-tidal-turbine-modelling-guide.org
+
+*** Geo
+blunt trailing edge
+coordinates vs sharp
+Cl Cd vs AOA 
+
+*** CD
+length:  upstream is 10D, downstream 20-30D, 
+height: vertical domain 5D
+Width: 
+****   CD in the literature
+-  3D*10D*5D (xin bai)
+- 4D from tip, 6D upstream, 16D downstream (Jacob)
+
+- the same as lab exp.[fn:kolekar2015]
+
+*** Mesh
+*** Boundary condition
+*** Turbulence model
+k-o SST
+
+
+*** Gaps
+*** your contribution/purpose of study
+*** possible conclusion
+nacell depth/ blade tip merge depth is an important factor for loading.
+
+** Parameter study
+      + floor impact: flat, or morphology
+      + turbine paramters: turbine location, blade tip distance to free surface and bed, turbine center vs wave impact depth
+      + wave parameters: wave height, wave types, water depth, wave frequency
+      + interest of quantities:
+	+ performance
+	+ wake
+** Results
+
+*** wave parameter verfication
+wave length and period  ( Lust, 2013, International Journal of Marine Energy)
+
+** Conclusions
+
+* Wave BEM code
+To compile:
+
+- =f95 -o3 wake_surf.f dyn_surf.f=
+- =./a.out=
+
+## gnuplt plotting
+-  load 'c_t.gnu'
+- =load 'blade_aero.gnu=
+
+** log file
+Blade tilted by   0.0000000000000000      (deg)
+ Number of blades=           3
+ Number of BEM divisions along blade=          12
+ Blade length R=  0.23000000000000001      (m)
+ Tip speed ratio=   5.5000000000000000      without surface wave
+ Blade data file is=blade_ep.dat                  
+ Using tip loss factor (Y=1,N=0)           1
+ 0 - Goldstein, 1 - Prandtl=           1
+ C_T correction for high a:
+ 0 - Spera (1994), 1 - Glauert =           1
+ BEM starts from r/R=  0.20000000000000001     
+ r/R of hub =  0.10000000000000001     
+ water and hub depths =   1.6000000000000001       0.78200000000000003      (m)
+ surface wave frequency normalized by turbine freq=  0.24590000000000001     
+ surface wave amplitude=  0.14999999999999999      (m)
+ Time step safety factor=   4.0000000000000000     
+ Time to stop=   25.000000000000000     
+ Number of time steps=       10000
+ Unsteady aerodynamics is fully in iterative solver
+ With TUDK wake model
+ Stokes surface wave
+ Border between momentum and empirical C_T, ac=  0.34000000357627869     
+ cd_max=   1.2168154267321367     
+ Wave frequency (rad/s)=   3.5281304347826081     
+ Possible wave numbers are   1.1411679084853896        38.104668702625403     
+ Choosing long wave (low wave number)
+ Surface wave number=   1.1411679084853896      (1/m)
+ Turbine and surface wave time periods=  0.43791898814114666        1.7808824243234918     
+ dt=   3.9139008129504660E-002
+
+** Readme
+The code calculates the effect of free surface wave on a horizontal axis marine current turbine (MCT).
+
+# wave profile
+The free surface waves are approximated using linear wave theory, see Panton (incompressible flow).
+Thus the wave induces the following velocities on the uniform stream of U:
+u = A*(omega-kU)*cosh(k(z+h))/sinh(kh)*(cos(theta_t)+2*inl*B*cos(2*theta_t))
+w = A*(omega-kU)*sin(k(z+h))/sinh(kh)*(sin(theta_t)+2*inl*B*sin(2*theta_t))
+  +  A*(omega-kU)*cosh(k(z+h))/sinh(kh)*6*ka*sinh(2k(z+h))/[8*(sinh(kh))^3]
+
+B= k*A*3*cosh(2k(z+h))/[8*(sinh(kh))^3]
+where 
+k - wave number
+omega - wave frequency
+g - gravity acceleration
+x - horizontal axis
+z - vertical axis (z=0 is the water surface level)
+h - depth of the water
+
+inl = 0 linear surface wave
+inl = 1 Stokes surface wave
+
+The *dispersion relation* relates \omega with k as follows;
+(omega-k*U)^2=g*k*tanh(k*h)
+
+For a given \omega, there are usually two solutions for k.
+
+The performance of the MCT is calculated using unsteady BEM (see =wake_surf.f=) 
+coupled with *unsteady flow dynamics for the blade* (=dyn_surf.f=). 
+
+The code requires the blade geometry given in file =blade.dat= and the cl&cd.vs.alfa given in the =*.dat=. 
+
+To fit the wave evolution with the BEM approach we take u and w at x=0. 
+This should be accurate for long waves (wave length at the order of the rotor diameter or more). 
+The shorter the free surface wave, the less accurate the result can be.
+
+To compile the code:
+=f95 -O3 wake_surf.f dyn_surf.f=
+The size of the arrays is determined by the file =incl.for=
+
+Data is entered through the file =data_surf.in=
+The file is similar to the regular unsteady bem data file =data_wake.in=
+ except for a few new entries for the *surface wave* and
+ control whether unsteady BEM (iwake=1) or steady BEM is used (iwake=0). 
+
+Explanation for all variables in =data_wake.in= is given in that file.
+
+*Output file includes:*
+- =coeff_time.plt=
+- =blade-aero1.plt=
+
+=coeff_time.plt= that shows *the time variation of C_T,C_Q and C_P with time*.
+
+# plotting
+ It can be plotted in gnuplot using the file =coeff_time_sur.gnu= or in any other graphical software.
+The code can also produce files showing the instantaneous aerodynamics, 
+d(C_T/dx) and d(C_P/dx) along blade 1 
+if requested through the file =data_surf.in=. 
+In the enclosed example the file =blade_aero1.plt= is produced at t=1 s. 
+Blade 1 is defined as the blade that is horizontal pointing at hour 3 
+for a front view of the rotor. The rotor is assumed to rotate clockwise.
+** assumptions
+- ka <<1
+-  axissymmetric
+
+* Unsteady BEM code
+=eadme_unsteady_bem.pdf=
+
+Please see attached for the unsteady BEM code.
+two unsteady BEM models are available:
+- TUDK as of Hansen's book implemented in =wake_tudk.f= 
+- Garrad &Hassan model implemented in =wake_gh.f=
+
+Further information is in the *readme.pdf* file.
+
+Please try to run both steady and unsteady BEM codes and see that you manage to get results.
+
+-  Blade's pitch angle time variation is determined by the subroutine *find_theta*
+ TSR time variation is determined by the subroutine find_tsr
+
+The problem with these small scale MCTs is that the *aerodynamic profile* data is sensitive to Re
+ unlike in large scale MCT, causing mismatch in Cp if the right Re range is not used.
+
+**  Introduction:
+The *unsteady BEM code* is based on the assumption of a fully axisymmetric flow and utilizes the
+steady bem code of bem_hat.f. 
+
+It incorporates a *wake model* to modify the BEM calculation and
+unsteady aerofoil aerodynamics.
+
+***  Dynamic wake model:
+
+keywords: helicopter dynamic inflow theory
+
+*Origin:*
+the dynamic inflow models applied in helicopter aerodynamics
+
+yaw flow conditions = forward flight
+hover and vertical flight = axisymmetric conditions
+
+Design Idea of Helicopter:
+
+high thrust at the lowest possbile power consumption, which leads to low
+values for the induction factor \( a=u_i/V^2\)
+
+
+Two engineering wake models are incorporated; the TUDK model [1,2] developed for wind
+turbines and the Garrad &Hassan (GH) model developed for helicopters and adapted for wind
+turbines [2]. 
+
+- The TUDK model is implemented in the file wake_tudk.f
+- the GH model is implemented in the file wake_gh.f. 
+
+There are some modifications in both models as relative to Refs.[1,2].
+
+- *The quasi-steady equilibrium induced velocity* is found exactly by iterating the steady BEM
+equations (Eqs. (9.13) and (9.14) in Ref [1]) instead of using the previous time step value.
+This is to remove dependence on the time step in achieving the steady state solution.
+
+
+ The GH model has been
+modified to include the *Glauert correction* for high axial velocity factor a and tip losses in the
+steady and unsteady momentum terms of Eq. (M.10) in Ref. [2].
+
+*Unsteady aerodynamics* is implemented in the file =dyn_aero.f=:
+
+a. Attached *flow unsteadiness* has been modelled using Theodorsen's approach [3,4]
+b. *Dynamic stall* of *trailing edge separation* has been modelled using *0ye's mode* [1,3,4]. 
+The dynamic stall calculation start only when the *lift curve slope* is lower than 0.05 1/deg (if not then at
+the first available angle of attack) [5].
+
+**  Compiling
+In order to compile, one has to use a Fortran compiler as [[http://g95.org/][g95]], *ifort* and so on.
+> [[https://www.howtoinstall.co/en/ubuntu/xenial/gfortran][How to install gfortran on Ubuntu 16.04 (Xenial Xerus)]]
+
+ For example if one
+wants to use the *TUDK model* and the ifort compiler, 
+one should compile at the prompt: 
+
+> ifort wake_tudk.f dyn_aero.f
+
+or
+
+=f95 wake_tudk.f dyn_aero.f=
+
+If the GH model is to be used, then:
+
+> ifort wake_gh.f dyn_aero.f
+
+ The file =incl.for= must be in the same folder 
+where the compiling takes place.
+
+** Data entering:
+The *user data* to be entered is through the file =data_wake.in=. 
+
+The file contains explanation on the
+variables. 
+
+The tip speed ratio (TSR) and blade pitch angle can vary in time. In order to achieve the
+required time variation
+- the use must change the subroutine *find_tsr* and *find_theta* for TSR and
+blade pitch angle respectively.
+
+**  Output:
+The code yields *instantaneous loading* on the blade and other 
+variables at times and in files that
+their names have been specified in data_wake.in. 
+
+The code also produces the time variation of TSR,
+blade's pitch angle (deg), C_T, C_Q and C_P in the file =coeff_time.plt=. 
+
+The gnuplot script
+=coeff_time.gnu= plotting 
+the time variation of C_T and C_P is supplied (it creates a coeff_time.eps).
+
+** Examples
+Below is shown the effect of changing TSR of Batten's [6] turbine from 4 to 6 at time 2 s and back
+to 4 at time 5s for \theta_0=5 degs (i.e. the hub is pitched at 20 deg) as shown in Figure 1. The effect
+of changing theta0 from 5 degs to 0 at t=2 s and back to 5 degs at t=5 s is shown in Figure 2 for
+TSR=4. In both cases the TUDK and GH models were computed. As expected the agreement
+between the two models is not perfect, but is from fair to good. One should expect the GH model to
+underestimate the unsteadiness effects as it models those effects only in the momentum equation.
+
+** References:
+
+[1] Hansen (2005) Aerodynamics of Wind Turbines, 2nd Ed.
+
+[2] Snel & Schepers (1995) Join investigation of dynamic inflow effects and implementation of an engineering method, ECN-C—94-107
+
+[3] Bjork (2000), DYNSTALL: Subroutine package with a dynamic stall model, FFAP-V-110
+
+[4] Hansen, Gaunna and Aagaard (2004), A Beddoes-Leishman type dynamic stall model in statespace
+and indicial formulations, RIS0 R 1354
+
+[5] Hibbs (1986), HAWT performance with dynamic stall, Solar Energy Research Inst, SERI/STR-
+217-2732
+[6] Batten WMJ, Bahaj AS, Molland AF and Chaplin JR (2008), The prediction of the
+hydrodynamics performance of marine current turbines, Ren. Energy 33, 1085-1096
+
+* Purpose of study
+** ontribution
+
+* Unsteady BEM analysis
+** Turbine Geo 
+For this study we chose to use the the three-blades model of  \cite{luznik2013effect} as the HAMCT.
+This is simply because our group already has good experience in studying its blade profile E387 \cite{heffron2016flow},
+ and the BEM method requires good knowledge of the profile's lift and drag coefficients variation with the angle of attack. 
+The turbine's diameter is 0.46 m and it was placed 0.782 m beneath the undistributed water surface in a towing tank of 1.6 m depth.
+
+** purpose of study
+the purpose of my study is to present an investigation of the effect of the free surface wave's amplitude 
+and frequency on the MCT operation and performance.
+ This investigation is part of a project aimed at investigating the viability of MCTsto provide energy to Indian remote islands. 
+These turbines should show robustness, steady performance and minimum maintenance requirements.
+ Flow unsteadiness caused by surface waves can adversely affect such turbines.
+
+For the study presented in this paper, we use the unsteady BEM approach as it is a rapid numerical solver 
+enabling us to examine a wide range of wave variables at a low computational cost.
+ It has already been demonstrated that such approach can reasonably predict
+ well the turbine's time response to free surface waves 
+\cite{barltrop2007investigation} \cite{galloway2014quantifying} \cite{lust2013influence}. 
+More comprehensive methods of Computational Fluid Dynamics (CFD) as LES \cite{bai2014numerical} 
+that can predict the interaction between the free surface wave and the turbulent wake \cite{yu2008large} 
+will be employed in a separate study for conditions of interest identified through the current study.
+ A brief summary of our unsteady BEM approach is presented next, followed by results and analysis.
+** Methods
+We assume a submerged horizontal axis marine turbine (HAMCT) subject to a steady free stream speed U and the
+influnce of gravity waves acting on the water surface, which we call free surface, see Fig. \ref{schematic-mct} a.
+ The free surface waves are
+modelled as Stokes waves and their flow induced velocities are superimposed over the free stream speed U. 
+This leads to the flow instantaneous velocity vector;
+# eq 1
+\begin{equation}
+\overline{u}=[U+u_r(z,t)]x+w_r(z,t)z
+\label{eq1}
+\end{equation}
+
+In the equation \ref{eq1}， ur and wr are the Stokes wave velocities at the location of the MCT \cite{whitham1974linear} which we take as x=0 as was done previously for linear waves \cite{galloway2014quantifying}. Basically Stokes wave is a high order non-linear wave and we take the terms up to second order of $kA$ , where $k$ is the wave number and $A$ is the wave amplitude. A full mathematical description of Stokes waves is given in  \cite{whitham1974linear}. It is assumed that the wave length is long enough to neglect its axial variation along the control volume of the momentum calculation of the MCT at that instant of time, which corresponds to the requirement of $kA < 1$. The wave frequency $\omega$ is related to its wave number $k$ through the following dispersion relation \cite{whitham1974linear};
+
+\begin{equation}
+\omega=kU+\sqrt{gk\tanh{(kd)}}
+\label{eq2}
+\end{equation}
+
+where $h$ is the water's depth and g is the gravity acceleration. One should note that Eq. \label{eq2} 
+accounts for the Doppler effect and thus there can be two positive roots of $k$ for a given positive $\omega$ , 
+which corresponds to a downstream propagating wave. 
+Our interest lays in the longer wave (low $k$) as we expect the wave's velocities to decay as $exp(-|k|z)$ 
+and thus the lower $k$  is, the greater the effect of the wave is at deeper depths.
+
+The loadings and power produced by the turbine is calculated using the unsteady BEM approach. 
+In this paper we only give a brief summary of our approach.
+ The interested reader can find more details on the various aspects of the steady and unsteady
+ BEM methods in \cite{galloway2014quantifying} \cite{hansen2008aerodynamics}.
+ The axial and tangential velocities 'seen' by a radial element of the blade can be written as
+
+\begin{equation}
+\overline{v}_{rel}=[U(1-a)+u_r(z,t)]\widehat{x}+[\Omega r(1+a')+w_r(z,t)cos(\psi)]\widehat{\psi}
+\end{equation}
+
+where
+\begin{equation}
+d\psi /dt=\Omega
+\end{equation}
+
+
+and $\psi$ is the azimuthal angle, see Fig. 1b. $a(r,\psi)$ and $a'(r,\psi)$ are the axial and tangential velocity induction factors to be calculated by the BEM method. This is done by calculating the axial force and torque acting on each radial element of the blade using the momentum theory and the known aero/hydrodynamics of the blade's profile. Both approaches must yield the same result and thus the two expressions for the axial force are required to yield the same value and the same holds for the torque expressions. This yields two nonlinear equations for $a$ and $a'$ that typically are solved by a linear iterative solver. Please note that while for the steady BEM approach where uniform axial velocity is assumed, $a$ and $a'$ are taken as dependent only $r$ and assumed to be identical for all the blades, in our case they can differ from blade to blade and they also depend on time as the azimuthal angle   $\psi$varies with time.
+
+At a high axial induction factor of $a>0.4$ the wake behind the rotor becomes highly turbulent and thus the momentum expression for the axial force is no longer appropriate. It is replaced in our calculation by Glauert's correction \cite{hansen2008aerodynamics}. Tip and hub losses are calculated using Prandtl's or Goldstein's loss factors. The variation of the blade's profile lift and drag coefficients with the angle of attack can be obtained from experimental data, freeware as Xfoil and JavaFoil and CFD computations. Post-stall variation of the blade's profile lift and drag coefficients with the angle of attack are calculated using Viterna \& Janetzke's empirical expressions ~\cite{moriarty2005aerodyn}.
+
+The unsteadiness in the flow caused by ur and wr will cause unsteadiness in the blade's hydrodynamics and in the wake. The TUDK dynamic wake model is used to account for the wake's unsteadinesses \cite{hansen2008aerodynamics}. It is a relative simple engineering model that accounts for the time-delay of the turbine in reacting to the unsteadiness in the flow and is added as a correction after the steady BEM calculation. The unsteadiness in the blade profile's hydrodynamics is accounted using Theodorsen's theory for attached flow over an aerofoil and 0ye's dynamic stall model for when the flow becomes detached \cite{bjorck2000dynstall}.
+**** Re
+ Small scale turbine blade's hydrodynamics like this one are sensitive
+ to the Reynolds number more than their full scale counterparts.
+ In this study we took the hydrodynamics 
+of the blade of as of $Re_c=10^5$ for $ r<0.7R$ and its tip as of $2e5$ with linear variation between them.
+ As the TSR increases and the incoming velocity stays constant as in ~\cite{luznik2013effect}
+ the profile Reynold number changes and thus re-distributing the hydro/aerodynamic 
+data along the blade should improve the BEM accuracy for high TSR, 
+but as noted above that level of TSR is not of strong operational interest.
+
+** Results
+
+# Figure: schematic-mct 	\label{schematic-mct}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/schematic-mct.png}
+	\caption{Schematic description of (a) the horizontal axis marine turbine configuration and (b) its rotor}
+	\label{schematic-mct}
+\end{figure}
+
+The variation of the power coefficient $C_p$ with the tip speed ratio TSR is shown in Fig \ref{cp-vs-time} (a) 
+for the case with no surface waves.
+ A very good agreement is revealed between the BEM results and the reported experimental results \cite{luznik2013effect}, expect for TSR>8 which is of low importance as the Cp.
+already declines to levels of no practical use.
+
+
+# figure cp-vs-time   \label{cp-vs-time}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-vs-tsr-no-wave.png}
+        \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-history-exp-bem.png}
+    
+   \end{subfigure}
+  \caption{(a) The tip speed ratio variation of the time-averaged coefficient of power with no surface waves and (b) the time variation of the instantaneous coefficient of power for TSR=5.5, surface wave of 4 cm amplitude and a time period of1.78 s that are plotted for the model HAMCT of Luznik et al }
+  \label{cp-vs-time}
+\end{figure}
+
+The time variation of Cp when TSR=5.5 and with a small surface wave of an amplitude of 0.04 m and a time period of 1.78 s 
+is shown in Fig \ref{cp-vs-time} (b). Again an excellent agreement with the experimental results is revealed. 
+The peaks and troughs of Cp are in phase with the peaks and troughs of the surface wave.
+ This can be explained by looking at the Stokes velocity potential:
+  	\begin{equation}
+  	\phi=\mu _1 A\cosh[k(z+h)]sin(\theta)+\mu _2 A^2 \cosh [k(z+h)]\sin(2\theta)+ \dotsc
+  	\end{equation}
+
+where the surface wave elevation is
+ \begin{equation}
+ \eta =A\cos(\theta)+\mu_2A^2\cos(2z\theta)+\dotsc
+ \end{equation}
+ 
+ and 
+ 
+\begin{equation}
+\theta=kx-\omega t, (u_r,w_r)=\nabla \phi
+\label{eq:phase}
+\end{equation}
+
+$\nu_1$ $\nu_2$  and$\mu_2$  are positive expressions containing $k$, $g$, $\omega$ and $U$.
+ Thus $u_r$ is in phase with $\in$  and it increases the axial velocity seen by the turbine peaks, 
+while one should note that $C_p$ is defined as $P/(0.5\rho U^3\pi R^3$ 
+ and thus it can go above the Betz limit as ur is added to U by Eq. (1). 
+A similar process was noted by \cite{luznik2013effect}\cite{lust2013influence} 
+but they more emphasized on wr becoming zero at the peaks and troughs of Cp while we found this process to be more affect by $u_r$.
+
+The time oscillations of Cp in Fig \ref{cp-vs-time} (b) are very periodic 
+(except at t=0 that is affected by the numerical initial condition) and correspond to the surface wave frequency. 
+Increasing the wave amplitude from 4 cm to 15 cm causes a significant increase in the
+ amplitude of the fluctuations and a shift upwards in the time-averaged Cp as seen in Fig.   \label{Fig. cp history}b.
+ Reducing the TSR from 5.5 to 4 while keeping the surface wave frequency the same causes a steepening of the time
+oscillations of Cp which is a hallmark of a non-linear interaction as seen in Fig.   \label{Fig. cp history} a. 
+
+# fig3
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-history-bem-tsr4.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-history-bem-tsr4.png}
+   \end{subfigure}
+  \caption{Time variation of the power coefficient, left TSR=4; right TSR=5.5}
+  \label{Fig. cp history}
+\end{figure}
+
+
+This is better seen in the time variation of the coefficient of thrust (drag) CT presented in Figs   \label{Fig. ct history}.
+ A clear steepening is seen at TSR=4 and A=0.15 cm. CT time averaged value is also reduced, while is less affected in TSR=5.5.
+# fig 4
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/ct-history-bem-tsr4.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/ct-history-bem-tsr4.png}
+   \end{subfigure}
+  \caption{Time variation of the thrust coefficient, left TSR=4; right TSR=5.5}
+  \label{Fig. ct history}
+\end{figure}
+
+
+The instantaneous radial distribution of d(Cp)/d(r/R) and (CT)/d(r/R) are shown in Figs   \label{Fig. spanwise cp} and \label{Fig. spanwise ct}.
+ As expected the maximum occurs near the blade tip, before the tip loss factors reduce the load towards the tip.
+ The difference between the crest (t=T/4) and trough (t=T/2) is higher for A=0.15 cm 
+than A=0.04 cm in both cases of TSR and as expected.
+ However, the distribution of TSR=4 at A=0.15 m less declines towards the hub than in TSR=5.5. 
+The radial distribution of the thrust coefficient shows a similar behavior where 
+TSR=4 shows a higher difference between the crest (t=T/4) and trough (t=T/2) as compared to TSR=5.5.
+# figs 5 cp spanwise dirtribution   \label{Fig. spanwise cp}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-distribution-bem-tsr4.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/cp-distribution-bem-tsr5.5.png}
+   \end{subfigure}
+  \caption{Spanwise distribution of the power coefficient, left TSR=4; right TSR=5.5}
+  \label{Fig. spanwise cp}
+\end{figure}
+# fig 6 , \label{Fig. spanwise ct}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/ct-distribution-bem-tsr4.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/ct-distribution-bem-tsr5.5.png}
+   \end{subfigure}
+  \caption{Spanwise distribution of the thrust coefficient, left TSR=4; right TSR=5.5}
+  \label{Fig. spanwise ct}
+\end{figure}
+
+# fig 7 , \label{Fig. power spectra ct}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/power-spectra-ct-tsr4.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/Users/exw692/Dropbox/Emacs/thesis/bem/Unsteady_BEM/power-spectra-ct-tsr5.5.png}
+   \end{subfigure}
+  \caption{Power spectra of thrust coefficient, left TSR=4, right, TSR5.5}
+  \label{Fig. power spectra ct}
+\end{figure}
+
+Finally, the power spectra of the coefficient of thrust are shown in Figs  \label{Fig. power spectra ct} for TSR=4 and 5.5. Power spectra are notoriously noisy due to any mild non-periodicity, nevertheless the surface wave frequency is clearly evident in both cases of TSRs and is noted on the figures. The first harmonic is alsoevident for A=0.15 cm and much clearer for TSR=4 than for TSR=5.5, pointing again towards non-linear interaction for low TSR.
+
+** Summary
+Hydrodynamic calculations based on the unsteady BEM method have been pursued to 
+assess the effect of free surface waves on marine current turbines (MCTs). 
+Very good agreement between the BEM calculations and experimental results of a small scale MCT were found both for the timeaveraged
+and time varying coefficient of power with a small amplitude surface wave.
+
+It was shown that large waves, but still long in sense of kA<1 can affect in a different way
+ the turbine performance by changing its time averaged coefficients of thrust and power 
+while introducing non-linear behavior in the time variations of those coefficients, particularly for low TSR. 
+This was also exhibited in a noticeable first harmonic of the surface wave affecting the turbine time-response. 
+Future plans include detailed CFD study of the water surface and sea bed topography 
+coupled with the turbine operation and the development of a control law to mitigate those unsteadiness effects.
+
+
+** FAQ
+*** Re number used in BEM code
+In this study we took the hydrodynamics of the blade of as of \(Re_c=1e5\) for \$ r<0.7R\$ and its tip as of \(2e5\) 
+with linear variation between them. 
+
+* verification and validation
+*** quantities used for validation
+- power performance 
+- Thrust
+- Strouhal number
+
+* CD
+width, 2.3m
+height, 2m
+length, 3L (wave length)
+**** new CD
+Height, 5.6m
+width, 4m
+length, 4L, upstream, L, downstream, 3L
+* Boundary conditions
+
+
+* scaling
+
+for water, both Re and Fr  are important variables.
+it is not always possible to match both Re and Fr between the model and prototype
+
+* FAQ
+  
+* Footnotes
+
+[fn:kolekar2015] Kolekar, Nitin, and Arindam Banerjee. "Performance characterization and placement of a marine hydrokinetic turbine in a tidal channel under boundary proximity and blockage effects." Applied Energy 148 (2015): 121-133.
+
+[fn:lust2017influence] Lust, Ethan Edward. The Influence of Surface Gravity Waves on the Performance and Near-Wake of an Axial-Flow Marine Hydrokinetic Turbine. Diss. 2017.
+
+
+[fn:riglin2015] Riglin, Jacob, et al. "Characterization of a micro-hydrokinetic turbine in close proximity to the free surface." Ocean Engineering 110 (2015): 270-280. Power coefficient are sensitive to Froude number during critical and supercritical conditions.  
+
+[fn:shirasawa2017scale] Scale-Model Experiments for the Surface Wave Influence on a Submerged Floating Ocean-Current Turbine
+\

@@ -1,0 +1,5 @@
+add a rectangle box around equation  in Adobe Acrobat 
+- markup :: detailed stylistic instructions for typesetting something that is to be printed;
+[[https://helpx.adobe.com/acrobat/11/user-guide.html][adobe acrobat user guide]]
+[[https://helpx.adobe.com/acrobat/11/using/commenting-pdfs.html][Annotations and drawing markup tools]]
+

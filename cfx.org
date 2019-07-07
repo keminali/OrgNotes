@@ -1,0 +1,857 @@
+* Glossary
+refer to reference guide
+Glossary, Symbols
+https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/cfx_ref/ch_gloss.html
+
+<CFDPOSTROOT>
+
+    The directory in which CFD-Post is installed; for example: C:\Program Files\ANSYS Inc\v170\CFD-Post\
+<CFXROOT>
+
+    The directory in which CFX is installed; for example: C:\Program Files\ANSYS Inc\v170\CFX\
+
+A
+
+absolute pressure
+
+    The summation of solver pressure, reference pressure, and hydro-static pressure (if a buoyant flow) in the cavitation model. The absolute pressure is clipped to be no less than the vapor pressure of the fluid. It is used by the solver to calculate pressure-dependent properties (such as density for compressible flow).
+absorption coefficient
+
+    A property of a medium that measures the amount of thermal radiation absorbed per unit length within the medium. 
+adaption criteria
+
+    The criteria that are used to determine where mesh adaption takes place. 
+adaption level
+
+    The degree that a mesh element has been refined during adaption. Each mesh element has an adaption level. Each time an element is split into smaller elements, the new elements have an adaption level that is one greater than the "parent" element. The maximum number of adaption levels is controlled to prevent over-refinement. 
+adaption step
+
+    One loop of the adapt-solve cycle in the mesh adaption process.
+Additional Variable
+
+    A non-reacting, scalar component. Additional Variables are used to model the distribution of passive materials in the flow, such as smoke in air or dye in water.
+
+    Additional Variables are typically specified as concentrations. 
+adiabatic
+
+    The description of any system in which heat is prevented from crossing the boundary of the system. You can set adiabatic boundary conditions for heat transfer simulations in ANSYS CFX or in Fluent. 
+Advancing Front and Inflation (AFI)
+
+    The default meshing mode in CFX. The AFI mesher consists of a triangular surface/tetrahedral volume mesh generator that uses the advancing front method to discretize first the surface and then the volume into an unstructured (irregular) mesh. Inflation can be applied to selected surfaces to produce prismatic elements from the triangular surface mesh, which combine with the tetrahedra to form a hybrid mesh. 
+all domains
+
+    In immersed-solids cases in CFD-Post, "all domains" refers to all of the domains in the case excluding the immersed solid. This is done for backwards compatibility.
+
+    Generally speaking, only the wireframe needs to keep track of both "all domains" and the immersed solid.
+ASM (Algebraic Slip Model)
+
+    A mathematical form in which geometry may be represented, known as parametric cubic. 
+aspect ratio
+
+    Also known as normalized shape ratio. A measure of how close to a regular tetrahedron any tetrahedron is. The aspect ratio is 1 for a regular tetrahedron, but gets smaller the flatter the tetrahedron gets. Used for judging how good a mesh is. 
+
+B
+
+backup file
+
+    An intermediate CFX-Solver Results file that can be manually generated during the course of a solution from the CFX-Solver Manager interface by using the Backup action button. Backup files should be generated if you suspect your solution may be diverging and want to retain the intermediate solution from which you can do a restart. 
+batch mode
+
+    A way to run some components of ANSYS CFX without needing to open windows to control the process. When running in batch mode, a Viewer is not provided and you cannot enter commands at a command prompt. Commands are issued via a CFD-Post session file (*.cse), the name of which is specified when executing the command to start batch mode. The session file can be created using a text editor, or, more easily, by recording a session while running in line-interface or user-interface mode.
+blend factor
+
+    A setting that controls the degree of first/second order blending for the advection terms in discrete finite volume equations. 
+body
+
+    A collection of surfaces that completely and unambiguously enclose a finite volume. Modelers that create so-called B-Rep models create "bodies." This term was coined to distinguish between the tri-parametric entities, known herein as solids, and the shell-like representations produced by most CAD systems. 
+boundary
+
+    A surface or edge that limits the extent of a space. A boundary can be internal (the surface of a submerged porous material) or external (the surface of an airfoil). 
+boundary condition
+
+    Physical conditions at the edges of a region of interest that you must specify in order to completely describe a simulation.
+buoyant flow
+
+    Flow that is driven wholly or partially by differences in fluid density. For fluids where density is not a function of temperature, pressure, or Additional Variables, the Boussinesq approximation is employed. If density is a function of one of these, then the Full Buoyancy model is employed. 
+
+C
+
+CEL (CFX Expression Language)
+
+    A high level language used within CFX to develop expressions for use in your simulations. CEL can be used to apply user-defined fluid property dependencies, boundary conditions, and initial values. Expressions can be developed within CFX using the Expression Editor.
+CFD (Computational Fluid Dynamics)
+
+    The science of predicting fluid flow, heat transfer, mass transfer (as in perspiration or dissolution), phase change (as in freezing or boiling), chemical reaction (as in combustion), mechanical movement (as in fan rotation), stress or deformation of related solid structures (such as a mast bending in the wind), and related phenomena by solving the mathematical equations that govern these processes using a numerical algorithm on a computer. 
+CFX-Solver Input file
+
+    A file that contains the specification for the whole simulation, including the geometry, surface mesh, boundary conditions, fluid properties, solver parameters and any initial values. It is created by CFX and used as input to CFX-Solver.
+CHT (Conjugate Heat Transfer)
+
+    Heat transfer in a conducting solid. 
+clipping plane
+
+    A plane that is defined through the geometry of a model, in front of which no geometry is drawn. This enables you to see parts of the geometry that would normally be hidden. 
+command actions
+
+    Command actions are:
+
+        Statements in session files
+
+        Commands entered into the Tools > Command Editor dialog box
+
+        Commands entered in Line Interface mode.
+
+    All such actions must be preceded with the > symbol. These commands force CFD-Post to undertake specific tasks, usually related to the input and output of data from the system. See also Power Syntax.
+component
+
+    A substance containing one or more materials in a fixed composition. The properties of a component are calculated from the mass fractions of the constituent materials and are based on the materials forming an ideal mixture. 
+compressible flow
+
+    Flow in which the fluid volume changes in response to pressure change. Compressible flow effects can be taken into consideration when the Mach number (M) approaches approximately 0.2. 
+computational mesh
+
+    A collection of points representing the flow field where the equations of fluid motion (and temperature, if relevant) are calculated.
+control volume
+
+    The volume surrounding each node, defined by segments of the faces of the elements associated with each node. The equations of fluid flow are solved over each control volume. 
+convergence
+
+    A state of a solution that occurs when the change in residual values from one iteration to the next are below defined limits.
+corrected boundary node values
+
+    Node values obtained by taking the results produced by CFX-Solver (called "conservative values") and overwriting the results on the boundary nodes with the specified boundary conditions.
+
+    The values of some variables on the boundary nodes (that is, on the edges of the geometry) are not precisely equal to the specified boundary conditions when CFX-Solver finishes its calculations. For instance, the value of velocity on a node on the wall will not be precisely zero, and the value of temperature on an inlet may not be precisely the specified inlet temperature. For visualization purposes, it can be more helpful if the nodes at the boundary do contain the specified boundary conditions and so "corrected boundary node values" are used. Corrected boundary node values are obtained by taking the results produced by CFX-Solver (called "conservative values") and overwriting the results on the boundary nodes with the specified boundary conditions. This will ensure the velocity is display as zero on no-slip walls and equal to the specified inlet velocity on the inlet, for example. 
+coupled solver
+
+    A solver in which all of the hydrodynamic equations are solved simultaneously as a single system. The advantages of a coupled solver are that it is faster than a traditional solver and fewer iterations are required to obtain a converged solution. CFX-Solver is an example of a coupled solver. 
+curve
+
+    A general vector valued function of a single parametric variable. In CFX, a line is also a curve. By default, curves are displayed in yellow in ANSYS CFX. 
+
+D
+
+default boundary condition
+
+    The boundary condition that is applied to all surfaces that have no boundary condition explicitly set. Normally, this is set to the No Slip Adiabatic Wall boundary condition, although you can change the type of default boundary condition in CFX. 
+Detached Eddy Simulation (DES)
+
+    A model that covers the boundary layer by a RANS model and switches to a LES model in detached regions.
+Direct Numerical Simulation (DNS)
+
+    A CFD simulation in which the Navier-Stokes equations are solved without any turbulence model.
+discretization
+
+    The equations of fluid flow cannot be solved directly. Discretization is the process by which the differential equations are converted into a system of algebraic equations, which relate the value of a variable in a control volume to the value in neighboring control volumes. 
+domain
+
+    Regions of fluid flow and/or heat transfer in CFX are called domains. Fluid domains define a region of fluid flow, while solid domains are regions occupied by conducting solids in which volumetric sources of energy can be specified. The domain requires three specifications:
+
+        The region defining the flow or conducting solid. A domain is formed from one or more 3D primitives that constrain the region occupied by the fluid and/or conducting solids.
+
+        The physical nature of the flow. This determines the modeling of specific features such as heat transfer or buoyancy.
+
+        The properties of the materials in the region.
+
+    There can be many domains per model, with each domain defined by separate 3D primitives. Multidomain problems may be created from a single mesh if it contains multiple 3D primitives or is from multiple meshes.
+dynamic viscosity
+
+    Dynamic viscosity, also called absolute viscosity, is a measure of the resistance of a fluid to shearing forces. 
+dynamical time
+
+    For advection dominated flows, this is an approximate timescale for the flow to move through the Domain. Setting the physical time step size to this value (or a fraction of it) can promote faster convergence. 
+
+E
+
+eddy viscosity model
+
+    A turbulence model based on the assumption that Reynolds stresses are proportional to mean velocity gradients and that the Reynolds stress contribution can be described by the addition of a turbulent component of viscosity. An example of an eddy viscosity model is the k- model. 
+edge
+
+    The edge entity describes the topological relationships for a curve. Adjacent faces share at least one edge. 
+emissivity
+
+    A property of an object that describes how much radiation it emits as compared to that of a black body at the same temperature. 
+expansion factor
+
+    The rate of growth of volume elements away from curved surfaces and the rate of growth of surface elements away from curved boundaries. Expansion factor is also used to specify the rate of mesh coarsening from a mesh control. 
+expression editor
+
+    An interactive, form-driven facility within CFX for developing expressions. 
+external flow
+
+    A flow field that is located outside of your geometry. 
+
+F
+
+face
+
+    “Face” can have several meanings:
+
+        A solid face is a surface that exists as part of a solid. It is also known as an implicit surface.
+
+        An element face is one side of a mesh element.
+
+        A boundary face is an element face that exists on the exterior boundary of the domain.
+
+        Surfaces composed of edges that are connected to each other. 
+
+FLEXlm
+
+    The program that administers ANSYS licensing. 
+flow boundaries
+
+    The surfaces bounding the flow field. 
+flow region
+
+    A volumetric space containing a fluid. Depending on the flow characteristics, you may have a single, uninterrupted flow region, or several flow regions, each exhibiting different characteristics.
+flow symmetry
+
+    Flow where the conditions of the flow entering and leaving one half of a geometry are the same as the conditions of the flow entering and leaving the other half of the geometry. 
+fluid
+
+    A substance that tends to flow and assumes the shape of its domain, such as a gas in a duct or a liquid in a container. 
+free edges
+
+    Element edges belonging to only one element. 
+
+G
+
+gas or liquid surface
+
+    A type of boundary that exhibits no friction and fluid cannot move through it. Also called a symmetry boundary. 
+general fluid
+
+    A fluid whose properties may be generally prescribed in ANSYS CFX or Fluent. Density and specific heat capacity for general fluids may depend on pressure, temperature, and any Additional Variables. 
+global model tolerance
+
+    The minimum distance between two geometry entities below which CFX considers them to be coincident. The default setting of global model tolerance, defined in the template database, is normally .005 in whichever geometry units you are working. 
+geometric symmetry
+
+    The state of a geometry where each half is a mirror of the other.
+group
+
+    A named collection of geometric and mesh entities that can be posted for display in viewports. The group's definition includes:
+
+        Group name
+
+        Group status (current/not current)
+
+        Group display attributes (modified under Display menu)
+
+        A list of the geometric and mesh entities that are members of the group.
+
+H
+
+hexahedral element
+
+    A mesh element with the same topology as a hexahedron, with six faces and eight vertices.
+home directory
+
+    The directory on all Linux systems and some Windows NT systems where each user stores all of their files, and where various set-up files are stored.
+
+    However, on some Windows NT systems, users do not have an equivalent to the Linux home directory. In this case, the ANSYS CFX set-up file cfx5rc can be placed in c:\winnt\profiles\<user>\Application Data\ANSYS CFX\<release>, where <user> is the user name on the machine. Other files can be put into a directory set by the variable HOME. 
+
+I
+
+ideal gas
+
+    A fluid whose properties obey the ideal gas law. The density is automatically computed using this relationship and a specified molecular weight. 
+IGES (Initial Graphics Exchange Specification) file
+
+    An ANSI standard formatted file used to exchange data among most commercial CAD systems. IGES files can be imported into CFX. 
+implicit geometry
+
+    Geometry that exists as part of some other entity. For example, the edges of a surface are implicit curves. 
+import mesh
+
+    A meshing mode that enables import of volume meshes generated in one of a number of external CFD packages. The volume mesh can contain hexahedral, tetrahedral, prismatic, and pyramidal element types. 
+inactive region
+
+    A fluid or porous region where flow and (if relevant) temperatures are not being calculated, or a solid region where temperatures are not being calculated. By default, inactive regions are hidden from view in the graphics window.
+incompressible flow
+
+    Flow in which the density is constant throughout the domain.
+incremental adaption
+
+    The method of mesh adaption used by CFX where an existing mesh is modified to meet specified criteria. Incremental adaption is much faster than remeshing; however, the mesh quality is limited by that of the initial mesh. 
+inertial resistance coefficients
+
+    Mathematical terms used to define porous media resistance. 
+initial guess
+
+    The values of dependent variables at the start of a steady-state simulation. These can set explicitly, read from an existing solution, or given default values. 
+initial values
+
+    The values of dependent variables at the initial time of a transient simulation. These can be either set explicitly, or read from an existing solution. 
+inlet boundary condition
+
+    A boundary condition for which the quantity of fluid flowing into the flow domain is specified, for example, by setting the fluid velocity or mass flow rate. 
+instancing
+
+    The process of copying an object and applying a positional transform to each of the copies. For example, a row of turbine blades can be visualized by applying instancing to a single blade.
+interior boundary
+
+    A boundary that enables flow to enter and exit. These types of boundaries are useful to separate two distinct fluid regions from each other, or to separate a porous region from a fluid region, when you still want flow to occur between the two regions.
+internal flow
+
+    Flow through the interior of your geometry, such as flow through a pipe. 
+interpolation
+
+    The process of transferring a solution from a results file containing one mesh onto a second file containing a different mesh. 
+isentropic
+
+    The description of a process where there is no heat transfer and entropy is held constant. 
+isosurface
+
+    A surface of constant value for a given variable.
+
+    A three-dimensional surface that defines a single magnitude of a flow variable such as temperature, pressure, velocity, and so on.
+Isovolume
+
+    A locator that consists of a collection of volume elements, all of which take a value of a variable greater than a user-specified value. 
+
+J
+
+JPEG file
+
+    A common graphics file type that is supported by CFD-Post output options. 
+
+K
+
+k-epsilon turbulence model
+
+    A turbulence model based on the concept that turbulence consists of small eddies that are continuously forming and dissipating. The k-epsilon turbulence model solves two additional transport equations: one for turbulence generation (k), and one for turbulence dissipation (epsilon). 
+kinematic diffusivity
+
+    A function of the fluid medium that describes how rapidly an Additional Variable would move through the fluid in the absence of convection. 
+
+L
+
+laminar flow
+
+    Flow that is dominated by viscous forces in the fluid, and characterized by low Reynolds Number.
+
+    A flow field is laminar when the velocity distributions at various points downstream of the fluid entrance are consistent with each other and the fluid particles move in a parallel fashion to each other. The velocity distributions are effectively layers of fluid moving at different velocities relative to each other. 
+Large Eddy Simulation Model (LES)
+
+    The Large Eddy Simulation model decomposes flow variables into large and small scale parts. This model solves for large-scale fluctuating motions and uses “sub-grid” scale turbulence models for the small-scale motion.
+legend
+
+    A color key for any colored plot. 
+line interface mode
+
+    A mode in which you type the commands that would otherwise be issued by the user interface. A viewer is provided that shows the geometry and the objects created on the command line. Line interface mode differs from entering commands in the Command Editor dialog box in that line interface action commands are not preceded by a > symbol. Aside from that difference, all commands that work for the Command Editor dialog box will also work in line interface mode, providing the correct syntax is used. 
+locator
+
+    A place or object upon which a plot can be drawn. Examples are planes and points. 
+
+M
+
+MAlt key (Meta key)
+
+    The MAlt key (or Meta key) is used to keyboard select menu items with the use of mnemonics (the underscored letter in each menu label). By simultaneously pressing the MAlt key and a mnemonic is an alternative to using the mouse to click a menu title. The MAlt key is different for different brands of keyboards. Some examples of MAlt keys include the "⋄" key for Sun Model Type 4 keyboards, the "Compose Character" key for Tektronix keyboards, and the Alt key on most keyboards for most Windows-based systems.
+mass fraction
+
+    The ratio of the mass of a fluid component to the total mass of the fluid. Values for mass fraction range from 0 to 1. 
+material
+
+    A substance with specified properties, such as density and viscosity. 
+meridional
+
+    A term used in Fluent documentation that is equivalent to the ANSYS CFX term constant streamwise location.
+mesh
+
+    A collection of points representing the flow field where the equations of fluid motion (and temperature, if relevant) are calculated.
+mesh adaption
+
+    The process by which, once or more during a run, the mesh is selectively refined at various locations, depending on criteria that you can specify. As the solution is calculated, the mesh can automatically be refined in locations where solution variables are changed rapidly, in order to resolve the features of the flow in these regions.
+
+    There are two general methods for performing mesh adaption. Incremental adaption takes an existing mesh and modifies it to meet the adaption criteria. The alternative is remeshing, in which the whole geometry is remeshed at every adaption step according to the adaption criteria. In CFX, incremental adaption is used because this is much faster; however, this imposes the limitation that the resulting mesh quality is limited by the quality of the initial mesh. 
+mesh control
+
+    A refinement of the surface and volume mesh in specific regions of the model. Mesh controls can take the form of a point, line, or triangle. 
+meshing mode
+
+    The method you use to create your mesh of nodes and elements required for analysis. There are two main meshing modes:
+
+        Advancing Front and Inflation (AFI)
+
+        import mesh
+
+minimal results file
+
+    A file that contains only the results for selected variables, and no mesh. It can be created only for transient calculations. It is useful when you are only interested in particular variables and want to minimize the size of the results for the transient calculation.
+multicomponent fluid
+
+    A fluid consisting of more than one component. The components are assumed to be mixed at the molecular level, though the proportions of each component may vary in space or time. The properties of a multicomponent fluid are dependent on the proportion of constituent components. 
+
+N
+
+Navier-Stokes equations
+
+    The fundamental equations of fluid flow and heat transfer, solved by CFX-Solver. They are partial differential equations. 
+new model preferences
+
+    Preferential settings for your model that define the meshing mode, the geometry units, and the global model tolerance. 
+node allocation parameter
+
+    A parameter that is used in mesh adaption to determine how many nodes are added to the mesh in each adaption step. 
+non-clipped absolute pressure
+
+    The summation of solver pressure, reference pressure, and hydro-static pressure (if a buoyant flow). This pressure, used by the solver to calculate cavitation sources, can be negative or positive.
+non-Newtonian fluid
+
+    A fluid that does not follow a simple linear relationship between shear stress and shear strain. 
+normal
+
+    The direction perpendicular to the surface of a mesh element or geometry. The positive direction is determined by the cross-product of the local parametric directions in the surface. 
+
+O
+
+open area
+
+    The area in a porous region that is open to flow.
+OpenGL
+
+    A graphics display system that is used on a number of different types of computer operating systems. 
+outlet
+
+    A boundary condition where the fluid is constrained to flow only out of the domain. 
+outline plot
+
+    A plot showing the outline of the geometry. By setting the edge angle to 0, the surface mesh can be displayed over the whole geometry. 
+output file
+
+    A text file produced by CFX-Solver that details the history of a run. It is important to browse the output file when a run is finished to determine whether the run has converged, and whether a restart is necessary. 
+
+P
+
+parallel runs
+
+    Separate solutions of sections (partitions) of your CFD model, run on more than one processor. 
+parametric equation
+
+    Any set of equations that express the coordinates of the points of a curve as functions of one parameter, or express the coordinates of the points of a surface as functions of two parameters, or express the coordinates of the points of a solid as functions of three parameters. 
+parametric solids
+
+    Six-sided solids parameterized in three normalized directions. Parametric solids are colored blue ANSYS CFX. 
+parametric surfaces
+
+    Four sided surfaces parameterized in two normalized directions. Parametric surfaces are colored green ANSYS CFX. 
+Particle-Particle Collision Model (LPTM-PPCM)
+
+    A model in ANSYS CFX that takes inter-particle collisions and their effects on the particle and gas phase into consideration. 
+periodic pair boundary condition
+
+    A boundary condition where the values on the first surface specified are mapped to the second surface. The mapping can be done either by a translation or a rotation (if a rotating frame of reference is used).
+physical time step
+
+    The time represented in each iteration of the solution. 
+pick list
+
+    The list processor interprets the contents of all selected data boxes. All selected data boxes in CFX expect character strings as input. The character strings may be supplied by the graphics system when you select an entity from a viewport, or you can type or paste in the string directly. The character strings are called "pick lists."
+plot
+
+    Any means of viewing the results in CFD-Post. Types of plots include vectors, streamlines, and contour plots. 
+point
+
+    An ordered n-tuple, where n is the number of dimensions of the space in which the point resides. 
+point probes
+
+    Points placed at specific locations in a computational domain where data can be analyzed. 
+polyline
+
+    A locator that consists of user-defined points. 
+postprocessor
+
+    The component used to analyze and present the results of the simulation. For ANSYS CFX, the postprocessor is CFD-Post. 
+Power Syntax
+
+    The CFX Command Language (CCL) is the internal communication and command language of CFD-Post. It is a simple language that can be used to create objects or perform actions in the postprocessor. Power Syntax enables you to embed Perl commands into CCL to achieve powerful quantitative postprocessing.
+
+    Power Syntax programming uses the Perl programming language to enable loops, logic, and custom macros (subroutines). A Line of Power Syntax is identified in a .ccl file by an exclamation mark (!) in the first column of a line. In between Perl lines, simple syntax lines may refer to Perl variables and lists.
+
+    For details, see Power Syntax in ANSYS CFX.
+preprocessor
+
+    The component used to create the input for the solver. For ANSYS CFX, the preprocessor is CFX-Pre. 
+pressure
+
+    In the cavitation model, pressure is the same as solver pressure, but clipped such that the absolute pressure is non-negative. It is used for postprocessing only.
+prism or prismatic element
+
+    A 3D mesh element shaped like a triangular prism (with six vertices). Sometimes known as a wedge element. 
+pyramid element
+
+    A 3D mesh element that has five vertices. 
+
+R
+
+reference coordinate frame
+
+    The coordinate frame in which the principal directions of X or Y or Z are taken. X is taken in the local X of that frame, and so on. If the coordinate frame is a non-rectangular coordinate frame, then the principal axes 1, 2, and 3 will be used to define the X, Y, and Z directions, respectively. The default is CFX global system (Coord 0).
+
+    For domains, boundary conditions, and initial values, the reference coordinate frame is always treated as Cartesian, irrespective of coordinate frame type. 
+region
+
+    An area consisting of a fluid, a solid material, or a porous material. 
+residuals
+
+    The change in the value of certain variables from one iteration to the next.
+
+    The discretized Navier-Stokes equations are solved iteratively. The residual for each equation gives a measure of how far the latest solution is from the solution in the previous iteration. A solution is considered to be converged when the residuals are below a certain value.
+
+    CFX-Solver writes the residuals to the output file so that they can be reviewed. Fluent allows residuals to be plotted during the solution process.
+results file (CFX-Solver Results file)
+
+    A file produced by CFX-Solver that contains the full definition of the simulation as well as the values of all variables throughout the flow domain and the history of the run including residuals. A CFX-Solver Results file can be used as input to CFD-Post or as an input file to CFX-Solver, in order to perform a restart.
+Reynolds averaged Navier-Stokes (RANS) equations
+
+    Time-averaged equations of fluid motion that are primarily used with turbulent flows. 
+Reynolds stress
+
+    The stress added to fluid flow due to the random fluctuations in fluid momentum in turbulent flows. When the Navier-Stokes equations are derived for time averaged turbulent flow to take into account the effect of these fluctuations in velocity, the resulting equations have six stress terms that do not appear in the laminar flow equations. These are known as Reynolds stresses. 
+Reynolds stress turbulence model
+
+    A model that solves transport equations for the individual Reynolds stress components. It is particularly appropriate where strong flow curvature, swirl, and separation are present. Reynolds stress models in general tend to be less numerically robust than eddy viscosity models such as the k-epsilon turbulence model. 
+RNG k-epsilon turbulence model
+
+    An alternative to the standard k-epsilon turbulence model. It is based on renormalization group analysis of the Navier-Stokes equations. The transport equations for turbulence generation and dissipation are the same as those for the standard k-epsilon model, but the model constants differ, and the constant C1 is replaced by the function C1RNG. 
+Rotating Frame of Reference (RFR)
+
+    A coordinate system that rotates. ANSYS CFX and Fluent can solve for fluid flow in a geometry that is rotating around an axis at a fixed angular velocity.
+run
+
+    A process that requires the specification of the CFX-Solver input file (and an initial values file, if necessary), and produces an output file and a results file (if successful).
+
+S
+
+Sampling Plane
+
+    A locator that is planar and consists of equally-spaced points. 
+scalar variable
+
+    A variable that has only magnitude and not direction. Examples are temperature, pressure, speed (the magnitude of the velocity vector), and any component of a vector quantity. 
+Scale Adaptive Simulation (SAS) model
+
+    A shear stress transport model used primarily for unsteady CFD simulations, where steady-state simulations are not of sufficient accuracy and do not properly describe the true nature of the physical phenomena. Cases that may benefit from using the SAS-SST model include:
+
+        Unsteady flow behind a car or in the strong mixing behind blades and baffles inside stirred chemical reactors
+
+        Unsteady cavitation inside a vortex core (fuel injection system) or a fluid-structure interaction (unsteady forces on bridges, wings, and so on). 
+
+    For these problems and others, the SAS-SST model provides a more accurate solution than URANS models, where steady-state simulations are not of sufficient accuracy and do not properly describe the true nature of the physical phenomena. 
+Second Moment Closure models
+
+    Models that use seven transport equations for the independent Reynolds stresses and one length (or related) scale; other models use two equations for the two main turbulent scales. 
+session file (CFX)
+
+    A file that contains the records of all the actions in each interactive CFX session. It has the extension .ses.
+Shear Stress Transport (SST)
+
+    A based SST model that accounts for the transport of the turbulent shear stress and gives highly accurate predictions of the onset and the amount of flow separation under adverse pressure gradients.
+singleton (CCL object)
+
+    A singleton object that consists of an object type at the start of a line, followed by a : (colon). Subsequent lines may define parameters and child objects associated with this object. The object definition is terminated by the string END on a line by itself. The singleton object for a session file is declared like this:
+
+    SESSION:
+         Session Filename = <filename>.cse
+    END
+
+    The difference between a singleton object and a named object is that after the data has been processed, a singleton can appear just once as the child of a parent object. However, there may be several instances of a named object of the same type defined with different names.
+slice plane
+
+    A locator that is planar, and that consists of all the points that intersect the plane and the mesh edges. 
+solid
+
+    A material that does not flow when a force or stress is applied to it.
+
+    The general class of vector valued functions of three parametric variables.
+solid sub-domain
+
+    A region of the fluid domain that is occupied by a conducting solid. ANSYS CFX can model heat transfer in such a solid; this is known as CHT (Conjugate Heat Transfer).
+solver
+
+    The component that solves the CFD problem, producing the required results. 
+solver pressure
+
+    The pressure calculated by solving conservative equations; it can be negative or positive. In the .out file it is called Pressure.
+spanwise coordinate
+
+    A term used in Fluent documentation that is equivalent to the ANSYS CFX term constant span.
+specific heat
+
+    The ratio of the amount of heat energy supplied to a substance to its corresponding change in temperature. 
+specific heat capacity
+
+    The amount of heat energy required to raise the temperature of a fixed mass of a fluid by 1 K at constant pressure. 
+speed of sound
+
+    The velocity at which small amplitude pressure waves propagate through a fluid. 
+sphere volume
+
+    A locator that consists of a collection of volume elements that are contained in or intersect a user-defined sphere. 
+state files
+
+    Files produced by CFD-Post that contain CCL commands. They differ from session files in that only a snapshot of the current state is saved to a file. You can also write your own state files using any text editor. 
+STP (Standard Temperature and Pressure)
+
+    Defined as 0°C (273.15 K) and 1 atm (1.013x105 Pa). 
+steady-state simulation
+
+    A simulation that is carried out to determine the flow after it has settled to a steady state. Note that, even with time constant boundary conditions, some flows do not have a steady-state solution. 
+stream plot
+
+    A plot that shows the streamlines of a flow. Stream plots can be shown as lines, tubes, or ribbons. 
+streamline
+
+    The path that a small, neutrally-buoyant particle would take through the flow domain, assuming the displayed solution to be steady-state. 
+subdomains
+
+    Regions comprising a solid or set of solids, within the region of bounding solids for a fluid domain, that enable the prescription of momentum and energy sources. They can be used to model regions of flow resistance and heat source. 
+subsonic flow
+
+    The movement of a fluid at a speed less than the speed of sound. 
+surface plot
+
+    A plot that colors a surface according to the values of a variable. Additionally, you can choose to display contours. 
+symmetry-plane boundary condition
+
+    A boundary condition where all variables except velocity are mathematically symmetric and there can be no diffusion or flow across the boundary. Velocity parallel to the boundary is also symmetric and velocity normal to the boundary is zero. 
+
+T
+
+template fluid
+
+    One of a list of standard fluids with predefined properties that you can use 'as is', or use as a template to create a fluid with your own properties. 
+thermal conductivity
+
+    The property of a fluid that characterizes its ability to transfer heat by conduction.
+
+    A property of a substance that indicates its ability to transfer thermal energy between adjacent portions of the substance. 
+thermal expansivity
+
+    The property of a fluid that describes how a fluid expands as the result of an increase in temperature. Also known as the coefficient of thermal expansion, β. 
+theta
+
+    The angular coordinate measured about the axis of rotation following the right-hand rule. When looking along the positive direction of the axis of rotation, theta is increasing in the clockwise direction. Note that the theta coordinate in CFD-Post does not increase over 360°, even for spiral geometries that wrap to more than 360°. 
+topology
+
+    The shape, node, edge, and face numbering of an element. 
+tracers
+
+    Particles that follow a flow pathline. Used in viewing CFD results in order to visualize the mechanics of the fluid flow. 
+transitions
+
+    Portions of a mesh that are the result of meshing geometry with two opposing edges that have different mesh seeds. This produces an irregular mesh. 
+turbulence intensity
+
+    The ratio of the root-mean-square of the velocity fluctuations to the mean flow velocity.
+
+    A turbulence intensity of 1% or less is generally considered low and turbulence intensities greater than 10% are considered high. Ideally, you will have a good estimate of the turbulence intensity at the inlet boundary from external, measured data. For example, if you are simulating a wind-tunnel experiment, the turbulence intensity in the free stream is usually available from the tunnel characteristics. In modern low-turbulence wind tunnels, the free-stream turbulence intensity may be as low as 0.05%.
+
+    For internal flows, the turbulence intensity at the inlets is totally dependent on the upstream history of the flow. If the flow upstream is under-developed and undisturbed, you can use a low turbulence intensity. If the flow is fully developed, the turbulence intensity may be as high as a few percent. 
+turbulence length scale
+
+    A physical quantity related to the size of the large eddies that contain the energy in turbulent flows.
+
+    In fully-developed duct flows, the turbulence length scale is restricted by the size of the duct because the turbulent eddies cannot be larger than the duct. An approximate relationship can be made between the turbulence length scale and the physical size of the duct that, while not ideal, can be applied to most situations.
+
+    If the turbulence derives its characteristic length from an obstacle in the flow, such as a perforated plate, it is more appropriate to base the turbulence length scale on the characteristic length of the obstacle rather than on the duct size. 
+turbulence model
+
+    A model that predicts turbulent flow. The available turbulence models in ANSYS CFX are:
+
+        k-epsilon turbulence model
+
+        RNG k-epsilon turbulence model
+
+        Reynolds stress turbulence model
+
+        zero equation turbulence model 
+
+    Turbulence models enable a steady-state representation of (inherently unsteady) turbulent flow to be obtained. 
+turbulent
+
+    A flow field that is irregular and chaotic look. In turbulent flow, a fluid particle's velocity changes dramatically at any given point in the flow field, in time, direction, and magnitude, making computational analysis of the flow more challenging. 
+turbulent flow
+
+    Flow that is randomly unsteady over time. A characteristic of turbulent flow is chaotic fluctuations in the local velocity. 
+
+V
+
+variable
+
+    A quantity such as temperature or velocity for which results have been calculated in a CFD calculation.
+
+    See also Additional Variable.
+vector plot
+
+    A plot that shows the direction of the flow at points in space, using arrows. Optionally, the size of the arrows may show the magnitude of the velocity of the flow at that point. The vectors may also be colored according to the value of any variable. 
+verification
+
+    A check of the model for validity and correctness. 
+viewer area
+
+    The area of ANSYS CFX that contains the 3D Viewer, Table Viewer, Chart Viewer, Comment Viewer, and Report Viewer, which you access from tabs at the bottom of the area.
+viewport (CFX)
+
+    An assigned, named, graphics window definition, stored in the CFX database, that can be used to display selected portions of a model's geometry, finite elements, and analysis results. The viewport's definition includes:
+
+        The viewport name
+
+        The status of the viewport (posted or unposted; current or not current)
+
+        Viewport display attributes
+
+        A definition of the current view
+
+        A current group
+
+        A list of the posted groups for display
+
+        A graphics environment accessed from Display, Preference, and Group menus that is common to all viewports.
+
+    There are the following types of CFX viewports:
+
+    current viewport
+
+        The viewport currently being displayed. The following actions can be performed only on the current viewport:
+
+            Changing the view by using the View menu or mouse.
+
+            Posting titles and annotations by using the Display menu. 
+
+    posted viewport
+
+        A viewport that has been selected for display. 
+    target viewport
+
+        A viewport selected for a viewport modify action. Any viewport (including the current viewport) can be selected as the target viewport. 
+
+viscosity
+
+    The ratio of the tangential frictional force per unit area to the velocity gradient perpendicular to the flow direction.
+viscous resistance coefficients
+
+    A term to define porous media resistance.
+Volume of Fluid (VOF) method
+
+    A technique for tracking a fluid-fluid interface as it changes its topology.
+
+W
+
+wall
+
+    A generic term describing a stationary boundary through which flow cannot pass.
+workspace area
+
+    The area of CFX-Pre and CFD-Post that contains the Outline, Variables, Expressions, Calculators, and Turbo workspaces, which you access from the tabs at the top of the area. Each workspace has a tree view at the top and an editor at the bottom (which is often called the details view).
+
+    See also CFD-Post Graphical Interface.
+
+Y
+
+y+ (YPLUS)
+
+    A non-dimensional parameter used to determine a specific distance from a wall through the boundary layer to the center of the element at a wall boundary. 
+
+Z
+
+zero equation turbulence model
+
+    A simple model that accounts for turbulence by using an algebraic equation to calculate turbulence viscosity. This model is useful for obtaining quick, robust solutions for use as initial fields for simulations using more sophisticated turbulence models. 
+
+Release 17.0 - © SAS IP, Inc. All rights reserved.
+* CFX vs CFD
+CFX :  finite volume method
+All solution variables and fluid properties are stored at the nodes (mesh vertices).
+- fluent, variables (v,p \rho) are stored in cell center.
+
+Fluent can try to improve the mesh quality via the TUI command
+/mesh/repair-improve/improve-quality
+
+* Error 
+**  SEVERE Operation 'Res PT for solid' failed (system exception: vector too long). 
+#2043417
+error messages:
+ SEVERE Operation 'Res PT for solid' failed (system exception: vector too long). 
+or SEVERE Operation ‘Res PT for Sand’ failed (system exception vector:: M default append).
+
+CFX
+Area: MP - Particle Tracking
+SubArea: Post-processing
+Last Updated: Oct 13 2016
+
+Answer:
+
+The particle track data is too large.
+
+There are two ways to solve this problem:
+
+1. Reduce the length of the tracks . For example, reduce the maximum track length, time or number of cells crossed in CFX-Pre: Solver Control > Particle Termination Control. Or reduce the number of particle injected or change the particle injection locations to further downstream. This requires rerunning the calculation.
+
+2. Or reduce the amount of particle tracking data written to the results file as follows:
+
+(i) Open the results (.res) file in CFX-Pre and customize the type and amount of particle track data recorded in the results file via the Particles tab on Output Control.
+
+Option> Specified Positions Interval = Set this equal to 3 or larger, instead of 1. This will write particle data only every third location.
+
+(ii) Write out a new definition (.def) file
+
+(iii) Start the CFX Solver and run with the new .def file, restarting from the old .res file, for one iteration or time-step to get a new smaller results file.
+* Important
+CFX is an *element-based* finite volume method
+
+* CFX-Pre
+
+* workflow
+- Load mesh
+- Define domain properties
+- Create BCs
+- Define Solver settings
+* mesh
+** mesh quality requireement
+- aspect ratio < 100
+- min orthogonality factor, 1/6
+- min orthogonality angle, 10 degree
+- minimum/maxmum face angle (CFD-post) : (10 170)
+
+> 15.3.2. Measures of Mesh Quality
+** Can I use mesh created for CFX in FLUENT and vice-versa?
+In Workbench you can use ICEM CFD (.cfx5) meshes for FLUENT, or .msh files (from gambit or TGrid) for CFX.
+
+When run in standalone mode, Fluent can also import meshes from a CFX setup (.def) or solution (.res) file. 
+Meshes imported from CFX .def or .res files will inherit the region names created during CFX boundary condition definition.
+
+Please keep in mind that a default mesh created for CFX may be too coarse or otherwise inappropriate for FLUENT simulation. 
+Check the mesh quality including skewness before conducting your runs.
+* parallel
+*** How many nodes per partition are necessary to achieve good scalability for parallel runs?
+#2049076
+The scalability depends on the physics and number of nodes per partition. 1000 nodes per partition is too small for ANSYS CFX.
+ Assuming the physical models allow for good scalability, you can find the following information in the ANSYS CFX Modelling guide:
+
+16.4.1. Optimizing Mesh Partitioning
+
+In the ANSYS CFX 17.2 Modelling Guide you will find:
+
+Do not run small jobs in parallel
+For *tetrahedral meshes*, you may want to use a minimum of 30,000 nodes per partition. For partitions smaller than this, you are unlikely to see any significant performance increase and may even see parallel slow down.
+
+For *hexahedral meshes*, good parallel performance improvements are usually not seen until a *minimum* of 75,000 nodes per partition is reached.
+
+These numbers are machine dependent and can be higher or lower. Dual CPU PCs usually give poorer performance due to lack of bandwidth in the memory bus.
+ Essentially the two CPUs can demand more memory access than the memory bus can provide.
+
+Use a sensible number of partitions
+The partitioning of a mesh leads to the creation of overlap regions at the partition interfaces. 
+These regions are responsible for communication and memory overhead during a parallel run. 
+During partitioning, ANSYS CFX prints partitioning diagnostic information to the CFX-Solver Manager text window and output file about partition overlaps. The percentage of overlap nodes to the total number of mesh nodes should ideally be less than 10% for efficient partitioning. Values greater than 20% will impair performance and are not recommended.
+
+Additional comment: Overlap node percentage above 20% maybe ok, if the absolute number of nodes in this domain is small, e.g. you have huge fluid domain and a small solid domain.
+
+Radiation and Particle modelling usually do not scale as good. For particle it is very dependent to the particle distribution within the physical domain.
+* References
+Lecture_CFX.pdf

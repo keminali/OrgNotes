@@ -1,0 +1,202 @@
+
+* installation
+1) Download and install the most recent version of [[https://cran.r-project.org/)][R]]
+
+2) Download and install the most recent version of [[https://www.rstudio.com/products/rstudio/download/#download][Rstudio]]
+
+3) Open *Rstudio* and then, in the console window, type:
+
+  >>> install.packages("bibliometrix")   # to install the bibliometrix *stable* version from CRAN
+
+    or 
+
+   >>> install.packages("devtools")         # to install the bibliometrix most recent version from GITHUB
+
+  >>>  devtools::install_github("massimoaria/bibliometrix")
+
+
+
+bibliometrix official source webpages:
+
+Stable version is published on  R CRAN Package Repository.
+
+Most recent (non stable) version is published on GITHUB repository. 
+** R installation
+- To obtain the latest R 3.5 packages, add an entry like
+#+begin_SRC
+deb https://cloud.r-project.org/bin/linux/ubuntu cosmic-cran35/
+#+end_SRC
+in your /etc/apt/sources.list file
+
+
+- To install the complete R system, use
+
+#+begin_SRC
+sudo apt-get update
+sudo apt-get install r-base
+#+end_SRC
+*** ref
+https://cran.r-project.org/
+*** Receiving “Unmet dependency” while installing r-base
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies.
+ r-base : Depends: r-base-core (>= 3.5.3-1cosmic) but it is not going to be installed
+          Depends: r-recommended (= 3.5.3-1cosmic) but it is not going to be installed
+          Recommends: r-base-html but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.
+
+
+answer:
+https://stackoverflow.com/questions/28273441/receiving-unmet-dependency-while-installing-r-base-on-ubuntu-14-10
+* [[http://www.bibliometrix.org/][Bibliometrix]] --an R tool for comprehensive science mapping analysis
+
+bibliometrix R package
+
+R for scientiometics data visualization
+
+
+org presentation
+https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs
+
+
+
+** citation analysis
+
+science citation index
+
+[[http://citeseerx.ist.psu.edu/index;jsessionid=FE1EC54F06266F90717F52C7ECAFF4A5][citeseer]]
+
+google pagerank
+
+
+
+
+
+
+* Biblioshiny
+library(bibliometrix)
+error: aaa not found
+
+biblioshiny() 
+** no rows to aggregate
+
+
+* Command line -  Rstudio
+https://cran.r-project.org/web/packages/bibliometrix/vignettes/bibliometrix-vignette.html
+**  change working directory
+get the working directory
+getwd()  
+
+setwd()
+
+** load bibliometrix package
+
+library(bibliometrix)
+
+** data loading
+
+D<- readFiles("url link")
+
+or 
+D <- readFiles(“file1.txt”,“file2.txt”, …)
+| D         | a large character vector                                         |
+| readFiles | combines all the text files onto a single large character vector |
+
+** covert to a data frame
+#+begin_SRC
+> M <- convert2df(D, dbsource = "isi", format ="bibtex")
+#+END_SRC
+
+The argument =
+| dbsource | database types |
+| format   | data format    |
+
+database types:
+
+- “isi” (for Clarivate Analytics Web of Science database),
+
+- “scopus” (for SCOPUS database),
+
+-  “pubmed” (for PubMed/Medline database),
+
+-  “cochrane” (for Cochrane database of systematic reviews).
+
+#+begin_SRC
+Converting your isi collection into a bibliographic dataframe
+Articles extracted   100 
+Articles extracted   200 
+Articles extracted   300 
+Articles extracted   400 
+Articles extracted   403 
+Done!
+#+END_SRC
+
+| Field Tag | Description                                   |
+| AU        | Authors                                       |
+| TI        | Document Title                                |
+| SO        | Publication Name (or Source)                  |
+| JI        | ISO Source Abbreviation                       |
+| DT        | Document Type                                 |
+| DE        | Authors’ Keywords                            |
+| ID        | Keywords associated by SCOPUS or ISI database |
+| AB        | Abstract                                      |
+| C1        | Author Address                                |
+| RP        | Reprint Address                               |
+| CR        | Cited References                              |
+| TC        | Times Cited                                   |
+| PY        | Year                                          |
+| SC        | Subject Category                              |
+| UT        | Unique Article Identifier                     |
+| DB        | Bibliographic Database                        |
+**  Bibliometrix analysis
+*** Functions summary and plot
+you can extract the following information:
+- annual scientific production
+- top manuscripts per number of citation
+-  most productive authors
+- most productive countries
+-  total citation per country
+-  most relevant sources (journals) and most relevant keywords
+
+#+begin_SRC
+options(width=100)
+S <- summary(object =results, k =10, pause = FALSE)
+view(S)
+#+end_SRC
+
+| k     | row numbers of each table |
+| pause | allow (or not) pause in screen scrolling |
+
+
+* bibliometrix
+library(bibliometrix)
+
+
+data loading and converting
+
+Authors’ Dominance ranking
+
+Top-authors's Productivity over the Time
+
+topAU <- authorProdOverTime(M, k = 10, graph = TRUE)
+| M  | bibliographic data frame |
+| k  | number of k Tip Authors  | 
+  
+| DF | Dominance Factor         |
+|    |                          |
+- Dominance Factor ::  a ratio indicating the fraction of multi-authored articles in which a scholar appears as the first author.
+- h-index :: an author-level mtric that attempts
+to measure both the productivity and citation impact
+of publicatons of a scientist or scholar
+
+DF <- dominance(results, k=10)
+DF
+** Visualizing bibliographic networks
+based on:
+- networkPlot function
+- [[http://www.vosviewer.com/][VOSviewer]] software

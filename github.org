@@ -3,8 +3,33 @@ username: keminali
 kaiming.ai@outlook.com
 hui**8**1
 * Tutorials
+** create a subfolder
 
-** [[http://jmcglone.com/guides/github-pages/][Creating and Hosting a Personal Site on GitHub]]
+You cannot create an empty folder and then add files to that folder, 
+but rather creation of a folder must happen together with adding of at least a single file. 
+On github you can do it this way:
+
+    go to the folder inside which you want to create another folder
+    click on New file
+    on the text field for the file name, first write the folder name you want to create
+    then type /. This creates a folder
+    you can add more folders similarly
+    finally, give the new file a name, (eg. .gitkeep which is conventionally used to make git track otherwise empty folders, not a git feature though)
+    finally click Commit new file.
+
+
+https://stackoverflow.com/questions/12258399/how-to-create-folder-in-github-repository
+
+** add images/figures
+![alt text](http://url/to/img.png)
+
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
+
+https://stackoverflow.com/questions/14494747/add-images-to-readme-md-on-github
+
+https://github.com/keminali/keminali.github.io/blob/master/Fig/k_fit_park_model.png
+** creating and hosting a personal site
+ [[http://jmcglone.com/guides/github-pages/][Creating and Hosting a Personal Site on GitHub]]
 - Jekyll :: a simple, blog-aware, static *site generator* for personal, 
 project, or organization sites
 
@@ -17,36 +42,54 @@ project, or organization sites
 
 
 * Github pages--a static site hosting service
+
 - GitHub pages :: a static site hosting service
 
 - Usage limits: 1GB
 
-Platforms:
+*Platforms:*
 - online, Jekyll THeme Chooser
 - Github Desktop, command line
 
 
 https://pages.github.com/
-** first try
+
 Clone the repository
 
 Go to the *folder* where you want to store your project, and clone the new repository:
 
+
 #+BEGIN_SRC
-    >> git clone https://github.com/keminali/keminali.github.io
+    >> git clone https://github.com/username/username.github.io
 #+END_SRC
 
 Enter the project folder and add an *index.html* file:
 
 #+BEGIN_SRC
-    cd keminali.github.io
+    cd username.github.io
 
     echo "Hello World" > index.html
 #+END_SRC
 
-Add, commit, and push your changes:
+create a new repository on the command line
 
-git add test.html  #Add file contents to the index
+#+BEGIN_SRC
+echo "# literature" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:keminali/literature.git
+git push -u origin master
+#+END_SRC
+To push an existing repository from the command line
+
+#+begin_SRC
+git remote add origin git@github.com:keminali/literature.git
+git push -u origin master
+#+END_SRC
+or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 * adding an existing project to GitHub using the command line
 

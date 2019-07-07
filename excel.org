@@ -1,0 +1,4 @@
+* VBA
+** show developer tab
+file/option/customize Ribbon/ developer
+https://www.techonthenet.com/excel/macros/visual_basic_editor2013.php

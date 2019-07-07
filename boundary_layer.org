@@ -1,0 +1,56 @@
+* Glossary
+- Boundary layer :: The region near the wall where the *viscous forces* are of the same order as the inertial forces
+
+* Division of BL
+
+- inner layer
+  + viscous sublayer, y+ <5
+  + buffer layer / blending region; (5, 60)
+  + fully turbulent region/ log-law region
+- outer layer
+
+* turbulent BL equation
+ drop  viscous term
+Eq. 5.57-5.59 (pope,2000)
+
+
+
+
+
+
+
+
+
+
+
+* Law of wall-- u+ = f(y+)
+
+
+both internal and external flows, 
+the steamwise velocity in the flow near the wall
+ varies logarithmically with distance from the surface
+ch7, pope
+U/u_t=1/k (ln{u_ty/\nu}) + C
+eq 1.20, Wilcox,3rd
+
+* Why BL is important?
+- no drag for inviscid approximation
+* Boundary-layer equations
+*Derivation:*
+based on  the continuity, momentum, and energy equations written in a special form applicable to the flow in the BL
+-  partial differential equations
+
+*2D Laminar Boundary Layer Equations*
+file:figures/2d_laminar_boundary_layer_eqs_incompressible.pdf
+* Reference  
+boudary layer.doc
+
+** online
+http://personalpages.manchester.ac.uk/staff/david.d.apsley/lectures/turbbl/index.htm
+** Recommended Books
+    Schlichting, H. and Gersten, K., 1999, Boundary layer theory, 8th English Edition, Springer-Verlag
+    White, F.M., 1991, Viscous fluid flow, McGraw-Hill
+
+    Pope, S.B., 2000, Turbulent flows, Cambridge University Press
+    Wilcox, D.C., 1998, Turbulence modelling for CFD, 2nd Edition, DCW Industries
+    White, F.M., 2006, Fluid Mechanics, 6th Edition, McGraw-Hill

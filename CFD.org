@@ -1,0 +1,1065 @@
+# this is theory guide
+file:CFD_Trend.org
+
+
+* References
+- 数值传热学, 陶文铨
+
+- John D. Anderson, “Computational fluid dynamics: the basics with applications", 3rd Ed. Mc Graw Hill, QA911 AND
+
+- H.K. Versteeg, W. Malalasekera, “An introduction to Computational Fluid Dynamics", Prentice Hall
+- Jiri Blazek, Computational Fluid Dynamics: Principles and Applications, 
+- The finite volume method in computational fluid dynamics: an advanced introduction with open foam and matlab, F. Moukalled
+- computational fluid dynamics for engineers, Bengt Andersson, cambridge, https://doi.org/10.1017/CBO9781139093590
+
+- F. Moukalled, The Finite Volume Method in Computational Fluid Dynamics: An Advanced Introduction with OpenFOAM and Matlab
+- Jiri Blazek, Computational Fluid Dynamics: Principles and Applications
+- Ferziger, M. Peri, “Computational Methods for Fluid Dynamics", Springer, QA911 
+- C.Hirsch, “Numerical Computation of Internal and External Flows: The Fundamentals of Computational Fluid Dynamics”, Butterworth-Heinemann; 2nd edition (August 1,2007).
+- Wilcox, David C. Turbulence modeling for CFD. Vol. 2. La Canada, CA: DCW industries, 1998. 
+- Mathieu, Jean, and Julian Scott. An introduction to turbulent flow. Cambridge University Press, 2000.
+-  finite volume methods for hyperbolic problems, cambridge texts in applied mathematics, Randall j. leveque
+
+- An Introduction to Fluid Dynamics, University of cambridge, George K.Batchelor
+
+
+
+
+ 
+
+
+- 
+ 
+Dynamics of Polymer liquids vol1 and vol2-  R.B.Bird
+Crochet写的Numerical simulation of non-Newtonian fluid flow
+沈崇棠和刘鹤年编的《非牛顿流体力学及其应用》
+
+Turbulence modeling：
+A First Course inTurbulence Hendrik Tennekes and John L. Lumley
+000
+http://www.cfd-online.com/Books/browse_subjects.php?category_id=4
+some good books on Turbulence and turbulence modeling。
+turbulence models for CFD, by Wilcox.
+Turbulent flows by Stephen Pope
+
+中文经典的的有是勋刚写的和张兆顺写的"湍流",超星里有下载,能看完看懂这几本书,turbulence就基本上道了.
+for k-e modeling, the book by Chen and Jaw is good one
+Turbulence Models and Their Application by Tuncer Cebeci (a new book published by Springer last year.)
+
+CFD入门教材：
+John D. Anderson, JR. Computational Fluid Dynamics, The Basics with Applications, McGraw-Hill, 2002, 4
+
+
+introduction to CFD: finite volume method
+Computational Gasdynamics- C.B. Laney 
+
+
+
+
+计算流体动力学/马铁犹.--北京航空学院出版社，1986.6.--503页
+应用计算流体力学/朱自强…[等]著.--北京：北京航空航 天大学出版社，1998.8.--222页
+计算流体力学基础/苏铭德， 黄素逸.--北京：清华大学出版社，1997.3.--497页
+计算流体力学/刘顺隆， 郑群.--哈尔滨工程大学出版社，1998.5.--353页
+计算流体力学/魏茂乐， 杨岭.--北京：教育科学出版社，1985.11.--162页
+计算流体力学的理论、方法及应用/吴江航，韩庆书著.-- 北京：科学出版社，1988.--293页
+计算流体动力学——偏微积分方程的数值解法/程心一.--北京：教育科学出版社，1984.10.--214页
+计算流体力学导论/Chuen-Yen，Chow.--上海：上海交通大学出版社，1987.2.--458页
+流体力学与应用数学讲座（4） 计算流体力学/赵国英， 吴汉明 整理.--北京：教育科学出版，1985.11.--162页
+《计算流体力学的若干新方法》刘儒勋 舒其望 2003.4
+这本书对比较新的非标准有限元法有一些讲解，从理论方面的， 可以参考参考
+
+
+
+An Introduction to Fluid Dynamics
+
+University of cambridge
+作者： (英)George K.Batchelor
+页码： 615 市场价:￥66.00
+出版社： 机械工业出版社
+出版日期： 2004-4-1
+中文版：《流体动力学引论》，科学出版社，1997年11月第一版，58.0元
+本书介绍了真实流体物理学的基础理论，使学生能了解从过去半个多世纪研究中获得的常见的流系统和流现象。本书的重点在于流体动力学的物理规律和普遍性，此外还特别关注流系统的各种概念模型和分析模型与观察资料之间的关联。本书适合作为应用数学和工程专业本科生及研究生的教材。
+
+遗传算法的书：
+
+云庆夏．进化算法[M]．北京：冶金工业出版社，2000
+
+刘勇，康立山，陈毓屏．非数值并行算法[M]．北京：科学出版社，2000
+
+玄光南，程润伟．遗传算法与工程设计[M]．北京：科学出版社，2000
+ 
+
+
+
+R.B.Bird的Dynamics of Polymer liquids vol1 and vol2
+Crochet写的Numerical simulation of non-Newtonian fluid flow
+沈崇棠和刘鹤年编的《非牛顿流体力学及其应用》
+
+Turbulence modeling：
+最好的E文书是Hendrik Tennekes and John L. Lumley写的A First Course inTurbulence,在国外,大多数大学都有.更多的书见：http://www.cfd-online.com/Books/browse_subjects.php?category_id=4
+some good books on Turbulence and turbulence modeling。
+turbulence models for CFD, by Wilcox.
+Turbulent flows by Stephen Pope
+turbulence modeling for CFD,by Wilcox
+其中turbulence modeling for CFD,by wilcox 在"流体中文网"上有下载.
+中文经典的的有是勋刚写的和张兆顺写的"湍流",超星里有下载,能看完看懂这几本书,turbulence就基本上道了.
+for k-e modeling, the book by Chen and Jaw is good one
+Turbulence Models and Their Application by Tuncer Cebeci (a new book published by Springer last year.)
+
+CFD入门教材：
+John D. Anderson, JR. Computational Fluid Dynamics, The Basics with Applications, McGraw-Hill, 2002, 4
+John.D.Anderson的<<Computational Fluid Dynamics>>西单图书大厦有卖。如果想看E文就来这里，http://www.cfd-online.com/Books/，应该说经典的流体力学书都有了。
+
+introduction to CFD: finite volume method，这是本入门很好的CFD书.讲得很清楚刘导治编写的《计算流体力学基础》北航出版社。也是入门级的教材！从差分基础一直讲到NS方程，非常浅显。没有大量的数学推导，而是很注重物理现象的本质。比如说，雅克比的实际意义、这种许多书都不齿一谈的东西都交代得很透彻。
+
+
+
+
+     “Computational Fluid Dynamics: The Basics with Applications
+     虽然书中没有涉及一些高级格式，如first order upwind method:Godunov,Roe,steger-warming... ,也没有涉及高阶的upwind method:
+     Muscl ,Flux limited ,ENO...。 但是读下来感觉可以让一个没有接触过cfd的人很快的建立这方面的一些概念，并且我觉得这本书写的很通俗易懂，有些概     念讲的很精彩。如倒数第二章对upwind格式，flux splitting,Godunov,Roe ，muscl 的介绍说明，虽然几乎一个公式都没有写，但是却透彻到位，看起来很过瘾。也许这就是J.D.Anderson写的航空类的教材流行的原因吧。
+
+2  C.B. Laney 的“大砖头”
+     “Computational Gasdynamics”(Must Have)
+    感觉写的很系统、到位，对所有涉及的内容安排的井井有条。好像几乎涉及到了目前所有的主流格式(不知是不是）觉得讲解的也很精彩，公式和概念相互呼应，就好像他在前言中写的“力求达到读者看完后感觉这些格式这样构造是理所    当然的，非常明显，读者会有不看书也可以推出公式的感觉的境界。”  总感觉我们国内的一些教材太死板了，数学公式一大堆，概念叙说却没有几句话，而且大多是很正规的书面科技语言，没有半句“废话”，读起来真的要找个很安静的地方。
+
+计算流体动力学 的有关书籍
+
+计算流体动力学/马铁犹.--北京航空学院出版社，1986.6.--503页
+应用计算流体力学/朱自强…[等]著.--北京：北京航空航 天大学出版社，1998.8.--222页
+计算流体力学基础/苏铭德， 黄素逸.--北京：清华大学出版社，1997.3.--497页
+计算流体力学/刘顺隆， 郑群.--哈尔滨工程大学出版社，1998.5.--353页
+计算流体力学/魏茂乐， 杨岭.--北京：教育科学出版社，1985.11.--162页
+计算流体力学的理论、方法及应用/吴江航，韩庆书著.-- 北京：科学出版社，1988.--293页
+计算流体动力学——偏微积分方程的数值解法/程心一.--北京：教育科学出版社，1984.10.--214页
+计算流体力学导论/Chuen-Yen，Chow.--上海：上海交通大学出版社，1987.2.--458页
+流体力学与应用数学讲座（4） 计算流体力学/赵国英， 吴汉明 整理.--北京：教育科学出版，1985.11.--162页
+
+* Software
+** Geo
+-  space claim - solid modeling CAD
+- ANSYS BladeModeler is integrated with ANSYS DesignModeler 
+- ANSYS DesignModeler
+- Solidworks
+** meshing
+- ICEM CFD, mainly top down, detail control
+- ANSYS Meshing, mainly top down, easy, rough control
+    - no edge match
+    - no first edge/element length
+- Pointwise
+  - bottom up
+** solver
+
+CAD Embedded CFD Software Packages - Featuring SolidWorks Flow Simulation, Autodesk CFD, ANSYS Discovery Live and more.
+
+
+Open-Source CFD Software Packages - Featuring OpenFOAM   
+
+
+Semi-Comprehensive CFD Software Packages - Featuring COMSOL CFD, CONVERGE CFD and NUMECA OMNIS   
+
+Comprehensive CFD Software Packages - Featuring Siemens Simcenter and ANSYS Fluent
+*** Open source
+http://www.tfd.chalmers.se/~hani/kurser/OS_CFD_2011/
+- [[https://su2code.github.io/][SU2]], written in C++ 
+- [[https://www.openfoam.com/][Open Foam]]
+- [[https://www.nas.nasa.gov/publications/software.html][NAS Software]],  NASA-originated software
+    - ARC2D, 2d airfoil , simply connected geometries, finite-difference,Beam and Warming implicit approximate factorization algorithm 
+    - Cart3D,  high-fidelity inviscid analysis package for conceptual and preliminary aerodynamic design
+    - Incompressible Navier-Stokes CFD Solver (INS3D)
+    - CFL3D, structured mesh, compressible, NASA
+    - OVERFLOW, overset structured meshes (aka CHIMERA grids), NASA
+*** commercial 
+- ANSYS, Fluent, CFX
+-FLOW3D, free licence for [[https://www.flow3d.com/academic-program/research-licenses/][academic research licenses]]
+** Post processing
+- Tecplot
+- CFD POST
+* authors
+ Joel H. Ferziger --stanford
+[[https://www.researchgate.net/profile/Milovan_Peric2][Milovan Peric]] -- University of Duisburg-Essen, Germany
+
+
+
+* wall function vs y+ 
+
+ we have discussed the importance of an inflation layer mesh and how to implement one easily in ANSYS Meshing.  We also touched upon the concept of mesh y+ values and how we can estimate them during the inflation meshing process.  In other posts, we also discuss the different turbulence models and eddy simulation methods available to ANSYS CFD users.  In today's post, we'll talk in more detail about y+ values apply to the most commonly used turbulence models.
+From our earlier discussions, we now understand that the placement of the first node in our near-wall inflation mesh is very important.  The y+ value is a non-dimensional distance (based on local cell fluid velocity) from the wall to the first mesh node, as you can see in the image below.  To use a wall function approach for a particular turbulence model with confidence, we need to ensure that our y+ values are within a certain range.
+
+y+ definition
+file:figures/cfd/theory/BL_yplus.png
+
+Looking at the image above, we need to be careful to ensure that our y+ values are not so large that the first node falls outside the boundary layer region.  If this happens, then the Wall Functions used by our turbulence model may incorrectly calculate the flow properties at this first calculation point which will introduce errors into our pressure drop and velocity results.  The upper range of applicability will vary depending on the flow physics and the extent of the boundary layer profile.
+For instance, flows with very high Reynolds numbers (typically aircraft, ships, etc) will experience a logarithmic boundary layer that extends to several thousand y+ units, whereas low Reynolds number flows such as turbine blades may have an upper limit as little as 100 y+ units.  In practice, this means that the use of wall functions for these class of flows should be avoided as their use will limit the overall number of mesh nodes that can be sensibly placed within the boundary layer.  In general, it is recommended that you endeavour to place sufficient inflation layer cells within the boundary layer, rather than simply focusing on achieving any particular y+  value. This will be covered in detail in a future post
+In addition to the concern about having a mesh with y+ values that are too large, you need to be aware that if the y+ value is too low then the first calculation point will be placed in the viscous sublayer (logarithmic) flow region and the Wall Functions will also be outside their validity (below about y+ < 11).  You can imagine that this would become an issue if a mesh intended to be used with wall functions is then refined near the wall.  Fortunately, the use of scalable wall functions in ANSYS CFD products now takes care of these problems and produces consistent results for grids of varying y+.  Without any further user involvement, the scalable wall functions activate the local usage of the log law in regions where the y+ is sufficiently small, in conjunction with the standard wall function approach in coarser y+ regions.
+So, where should you start?  We have learnt that the wall function approach and y+ value required is determined by the flow behaviour and the turbulence model being used.  If you have an attached flow, then generally you can use a Wall Function approach, which means a larger initial y+ value, smaller overall mesh count and faster run times.  If you expect flow separation and the accurate prediction of the separation point will have an impact your result, such as the drag or lift forces experienced by the ellipse below, then you would be advised to resolve the boundary layer all the way to the wall with a finer mesh. Please refer to this post for a more detailed explanation of appropriate turbulent wall function and modelling approaches.
+
+Wall Function applicability
+Once we know our preferred approach, we can estimate the thickness for our first inflation layer cell using the equation below, which can be used to calculate the distance value for a specific velocity fluid and the required y+ value (based on the flow over a flat plate).  This is usually a good initial estimate and the y+ value we aim for will depend on our turbulence model selection.
+
+Note that Δy is the distance of the first node from the wall, L is the flow characteristic length scale, y+ is the desired y+ value, Re_L is the Reynolds Number based on your problem's characteristic length scale.
+Unfortunately, as the y+ value is dependent on the local fluid velocity which varies across the wall significantly for most industrial flow applications, it is not possible to know your exact y+ prior to running an initial simulation.  For this reason, it is important that you get into the habit of checking your y+ values as part of your normal post-processing in ANSYS CFD-Post so that you can make sure you are in the valid range for your flow physics and turbulence model selection.
+Our next post in this series concentrates on the feasibility and selection of different wall functions, based on the applied turbulence modelling strategy.
+This is still an area of active research and is a hot topic for many of our CFD users.  If you have any questions or comments, please leave a message below or contact our CFD Technical Support team for more detailed technical information on these topics.
+* cfd -- F. Peric
+ Joel H. Ferziger
+
+| x         | horizontal coordinate                                       |
+| \phi      | any conserved intensive property                            |
+| *\phi*    | extensive proterty, velocity potential                      |
+| CM        | control mass                                                |
+| CV        | control volume                                              |
+| m         | mass                                                        |
+| t         | time                                                        |
+| f         | forces acting on the control mass                           |
+| Ma        | Mach number                                                 |
+| \Omega    | Control volume                                              |
+| S_{CV}    | surface enclosing CV                                        |
+| n         | unit vector orthogonal to S_{CV}                            |
+| *T*       | stess tensor                                                |
+| *D*       | Rate fo strain(deformation)tensor                           |
+| \upsilon  | velocity vector                                             |
+| \mu       | dynamic viscosity                                           |
+| T         | temperature                                                 |
+| \tau_{ij} | viscous part of the stress tensor                           |
+| *b*       | body forces per unit mass                                   |
+| i_i       | cartesiin unit vector in the drection of the coordinate X_i |
+| \lambda   | \lambda = -2/3 \nu                                          |
+| \Gamma    | diffusivity for the quantity \phi                           |
+| \nu       | kinematic viscosity, \nu=\mu/\rho                           |
+| f^c       | convective flux, f^c = \rho \phi v \cdot n                          |
+| f^d       | diffusive  flux, f^d = \Gamma grad (\phi) v \cdot n   |
+|          |                                                            |
+* Experiments vs Numerical modeling
+
+* Immersed Boundary Method
+** Definitions and basic concepts
+
+** Historical develoments
+** application in turbines
+
+** References
+- xinbai thesis
+- Mittal, Rajat, and Gianluca Iaccarino. "Immersed boundary methods." Annu. Rev. Fluid Mech. 37 (2005): 239-261.
+
+* workshop
+6th AIAA CFD Drag Prediction Workshop, https://aiaa-dpw.larc.nasa.gov/Workshop6/presentations/presentations.html
+* slides/PPT
+https://web.stanford.edu/class/me469b/handouts/turbulence.pdf
+* tips
+\section{book references and learning tips}
+
+Computational fluid dynamics: the basics with applications, John, D., and J. R. Anderson ~\cite{john1995computational}	\#highly recommended for beginners\\
+Turbulence Modeling for CFD, David C. Wilcox ~\cite{wilcoxturbulence}\\
+An introduction to turbulent flow, Mathieu, Jean, and Julian Scott ~\cite{mathieu2000introduction}
+
+Versteeg, Henk Kaarle, and Weeratunge Malalasekera. An introduction to computational fluid dynamics: the finite volume method. Pearson Education, 2007.~\cite{versteeg2007introduction}
+
+Ferziger, Joel H., and Milovan Peric. Computational methods for fluid dynamics. Springer Science \& Business Media, 2012.\cite{ferziger2012computational}
+
+Moukalled, F., L. Mangani, and M. Darwish. "The finite volume method in computational fluid dynamics." (2016).~\cite{moukalled2016finite}
+
+Blazek, Jiri. Computational fluid dynamics: principles and applications. Butterworth-Heinemann, 2015.~\cite{blazek2015computational}
+
+A simply worded introduction to CFD , focused on concepts and much less mathematics,refer to \href{http://bookboon.com/en/textbooks/energy-environment/computational-fluid-dynamics}{this}
+
+To understand Fluid Mechanics on a fast(er) track, try the \ref{http://web.mit.edu/hml/ncfmf.html }{videos and notes}
+
+Some very nice sources for  :\href{http://storify.com/ShreyasRagavan/software-and-code-related}{coding examples} 
+
+Once you get along, you might want to plunge into open source CFD applications like OpenFOAM and SU2. I'd recommend playing around with SU2 before going for openFOAM.
+
+Have a look at the resources I've colleted \ref{http://cfdrevolutions.weebly.com/resources.html} 
+
+* Symbols
+** list of symbols-CFD the basic with applications
+the following are symbols used in Computational Fluid Dynamics: The Basics with Applications, John Anderson
+| F           | force vector                                              |
+| m           | mass                                                      |
+| *a*         | acceleration                                              |
+| *V*         | velocity vector                                           |
+| S           | control surface                                           |
+| \mathscr{V} | control volume                                            |
+| *n*         | unit vector perpendicular to dS                           |
+| \tau_{ij}         | stress vector                                             |
+| *f*         | body force per unit mass                                  |
+| \dot{q}     | heat flux                                                 |
+| e           | internal energy per unit mass                             |
+| c_v          | specific heat at constant volume , e = c_V T               |
+| T           | temperature                                               |
+| T_w          | wall temperature                                          |
+| [A]         | matrix A                                                  |
+| \vert A \vert       | determinant of [A]                                        |
+| W           | column vector,  W=\{u v\}                                 |
+| \tau_{w}          | wall shear stress                                         |
+| \epsilon           | round-off error          \epsilon = N-D                          |
+| A           | analyticdal solution of partial differential equation     |
+| D           | exact solution of difference equation                     |
+| N           | numerical solution of difference equation from a computer |
+| k_m          | wave number , k_m = 2 \pi / \lambda                                |
+| C           | courant number, C=c \Delta t / \Delta x                             |
+| \Gamma           | diffusity for the quantity \phi                              |
+| \lambda           | second viscosity coefficinent, \lambda=-2/3 \mu ( stokes hypothesis) |
+  
+* Abbreviation
+LES: large eddy simulation
+CAE: Computer-aided engineering
+SGS: subgrid scale model
+FDS: forward difference scheme
+BDS: backward difference scheme
+UDS: upwind schemes
+* Glossary
+** turbulence kinetic energy
+- TKE: Turbulence kinetic energy
+- tubulence kinetic energy :: mean kinetic energy per unit mass associated with eddies in turbulent flow.
+- symbol, k
+
+in RANS, the TKE is
+\[
+k = \frac{1}{2} \left(\, \overline{(u')^2} + \overline{(v')^2} + \overline{(w')^2} \,\right)
+\]
+
+** eddy viscosity ratio
+eddy viscosity ratio = eddy viscosity/ molecular viscosity
+- \mu_t / \mu
+** intensive property, extensive property
+intensive property is indepent of the amount of mattered considerd\\
+such as, density, velocity
+- \( \phi \) : any conserved intensity property
+- corresponding extensive property, \( \Phi \) 
+\[
+\Phi = \int_{\Omega_{CM}} \rho \phi d\Omega
+\]
+** dot product
+vector \( \overrightarrow{a}\), \( \overrightarrow{b}\)
+
+** divergence, gradient, curl
+- divergence,\( \nabla \cdot \upsilon =div (\upsilon) \)
+- gradient, \nabla f = grad f
+- curl,  \nabla \times \upsilon = curl (\upsilon) 
+
+assume a vector A, 
+\(\overrightarrow{A }= Pi + Qj+R k \)
+divergence of A:
+\[
+div(A)= \frac{\partial P}{\partial x} i + \frac{\partial Q}{\partial y} j + \frac{\partial R}{\partial z} k
+\]
+
+** under relaxation factor
+\[
+\phi = \phi_{old} + \alpha \bigtriangleup 
+ \phi
+\]
+- \alpha : under relaxation factor
+
+
+** flux
+convective flux: \( \rho \phi \upsilon \cdot \mathbf{n} \)
+diffusive flux: \( \Gamma grad \phi \cdot \mathbf{n} \)
+- diffusive flux :: flux quantity migrate form zone of high 
+concentration to zones of low concentration by random molecular motion
+- [[https://en.wikipedia.org/wiki/Diffusion][Diffusion]] :: is the net movement of molecules or atoms from a region of high concentration (or high chemical potential) to a region of low concentration (or low chemical potential). 
+** Divergence theorem
+switch between *surface integral* and *volume integral*
+** convective term
+\[ \mathbf{v} \cdot \nabla \mathbf{v} \]
+** viscous stress term
+\[ \nabla \cdot \mathbf{T} \]
+** implicit approach/time marching
+the unknows must be obtained by means of a sumutaneous solution of the difference equations applied at all the grid points arrayed a a given time level.
+** demoninator 
+\( fraction=
+\frac{Numerator}{Denominator} \)
+i.e. \( 0.5=\frac{1}{2} \)
+** transpose
+transpose:转置
+
+* Uncertainty and Errors
+https://www.grc.nasa.gov/www/wind/valid/tutorial/errors.html
+**  discretization error vs round-off error
+ (P155   CFD:the basic with application, Anderson [fn:john1995computational])
+** truncation error, discretization error
+
+truncation error is the error made by truncating an *infinite sum* and approximating it by a *finite sum*.
+ For instance, if we approximate the sine function by the first two non-zero term of its Taylor series, as in 
+\[ sin(x)  \approx x - \frac{1}{6} x^3  \]
+for small x, the resulting error is a [[https://en.wikipedia.org/wiki/Truncation_error][truncation error]].
+* mesh
+** body conformal vs non-body conformal mesh
+*** non body conformal mesh
+Immersed boundary method is an example 
+** collocated mesh vs staggered grid(mesh)
+- collcated grid: all variable stored in the same position
+- staggerd gird: scalar stored in cell centre, while velocity and momentum stored in face
+limit of collcated grid: pressure oscillation
+* Governing equations
+the conservation laws of physics, such that:
+- Fluid mass is conserved
+- The rate of change of momentum = the sum of the forces on a fluid particle
+- The rate of change of energy =  the rate of heat addition to  a particle + 
+the rate of work done on a particle.
+- 5 transport equations (1 mass + 3 momentum + 1 energy)
+- 7 unknowns, u, v, w, p, T, \rho and e.
+** Navier-Stokes equations-- elliptic, parabolic
+Navier-Stokes equations = mass + momentum equations
+(the Navier-Stokes equation is typically just the momentum equation)
+
+** generic transport equation
+*** integral form
+file:C:\Users\exw692\Dropbox\Emacs\figures\cfd\generic-conservation-equation-integral-form.png
+*** coordinate-free vector form
+\begin{equation}
+\frac{\partial (\rho \phi)}{\partial t} +div(\rho \phi \upsilon ) = div (\Gamma grad \phi) + q_\phi 
+\end{equation}
+*** differential form
+\[ 
+\frac{\partial (\rho \phi)}{\partial t} +\frac{\partial  (\rho u_j \phi )}{\partial x_j }
+ = \frac{\partial }{\partial x_j }(\Gamma \frac{\partial \phi }{\partial x_j }) + q_\phi 
+\]
+
+
+** incompressible Navier-Stokes Equat
+* PDEs
+broad methods for discritizing PDEs
+- Finite difference  -->> regualr domain
+- Finite element (FE)-->> complex geometry - standard method for solid mechanics
+- Finite volume (FV) --> complex geometry 
+
+Feature of FV:
+- conservation properties, apply conservation principle over each small CV, gobla consrvation ia also ensured
+
+* Finite difference method
+- FDS: forward difference scheme
+- BDS: backward difference scheme
+- CDS: central difference scheme
+\[ \left ( \frac{\partial \phi}{\parital x} \right )_i \approx  \frac{ \phi_{i+1} - \phi_i}{x_{i+1} - x_i } \] \rightarrow FDS
+\[ \left ( \frac{\partial \phi}{\parital x} \right )_i \approx  \frac{ \phi_{i} - \phi_{i-1}{x_{i} - x_{i-1} } \] \rightarrow BD
+\[ \left ( \frac{\partial \phi}{\parital x} \right )_i \approx  \frac{ \phi_{i+1} - \phi_{i-1} }{x_{i+1}  - x_{i-1} } \] \rightarrow FDS
+- discretization method :: approxiate the differential equations by a system of algebraic equations for the variables at some set of discrete locations in space and time.
+
+- difference equation :: all the parital differentail derivatives are replaced by finite difference quotients
+essence:\\
+approciate partial derivative with finite difference
+
+| upwind                     | central difference                                       |
+| account for direction flow | can not accunt for flow directionnot work for shock wave |
+| first/second order         | second order                                             |
+|                            |             conservative                                 |
+* Grids with appropriate transformations
+** goal of grids transformations
+physical plane \rightarrow computational plane
+non-uniform grid \rightarrow uniform grid
+
+transformation from the physical space (x, y) to the computational space (\epsilon, \eta)
+*** Review
+
+** metrics and Jacobians
+maetric ~/metrik/~
+matrix ~/'meitriks/~
+jaconbian ~/dʒɪˈkoʊbiən/~
+\eta ~/ˈiːtə/~
+\xi ~/ksi/ /zaɪ/ or /saɪ/~
+- metrics carry all the specific information pertinent to a specific transformation.
+
+* Finite Volume Method
+a method of discretisation
+
+* Algebraic Multigrid (AMG)
+ad: unstructured mesh
+* Boundary conditions
+** Neumann boudary condition vs Dirichlet BC
+for Neumann BC, the normal derivative of a variable is prescribed
+For, Dirichlet BC, the value of a variable ( velocity, pressure, etc_ is prescribed
+** wall
+** inlet
+** outlet
+** symmetry
+- Reduce computational effort 
+- No inputs are required
+- Flow field as well as geometry must be symmetric:
+
+​ Must take care to correctly define symmetry boundary locations
+1. zero /normal velocity/ at a symmetry plane
+2. zero /normal gradients of all variables/ at a symmetry plane
+- no convective flux
+- no diffusion flux
+
+** periodic
+
+** outflow
+- outflow BC :: the detail of the flow velocity and pressure are not known
+-  A zero *diffusion flux* for all flow variables.
+-  An overall mass balance correction.
+- flow is assumed as fully-developed 
+- no any conditions at outflow boundaries
+- the outflow information is extrapolated from the interior
+
+limits:
+if the flow may produce a recirculation at the outlet
+or if the flow field is not stable and fully developed at the outlet, then a pressure outlet
+boundary condition is preferred.
+* Boundary layer
+** Boundary layer thickness estimation
+for Laminar BL
+- Thwaites' method [fn:Thwaites1949]
+** law of the wall
+> Inner Layer: Law of theWall , kundu, chapter 13, turbulence,fluid mechanics
+[[https://en.wikipedia.org/wiki/Law_of_the_wall][law of the wall]] from wikipedia
+BL includes for a channel:
+- viscous sublayer, y+ <5
+- buffer layer
+- log-law region, 30< y+ <200
+
+*** log-law region 30< y+ <200
+\[
+u^+ = \frac{1}{\kappa} \ln\, y^+ + C^+
+\]
+
+\[
+y^+ = \frac{y\, u_\tau}{\nu}
+\]
+
+\[
+
+ u_\tau=\sqrt{\frac{\tau_w}{\rho}}
+\]
+
+\[
+u^+ = \frac{u}{u_\tau}
+\]
+
+*** viscous sub layer   y+ <5
+\[
+u^+ = y^+
+\]
+
+
+
+
+*  RANS --Reynolds Averaged Navier Stokes Equations
+** essence
+Navier-Stokes equations > time average > results in RANS ( *variables are the Mean variable except Reynolds stress term*)
+ > new unknown: Reynolds stress tensor > close equtions with turbulence model
+
+the closure problems
+new term (Reynolds stress tensor) is generated and the equation is not closed. ( more unknown than number of equations )
+*** limit
+    RANS assumes the flow is iso
+*** k - e model
+
+*** v2f model
+v^2 -f model (V2F) is based on Durbin's k - e -v^2 model
+
+*** k - \omega model
+
+
+** ensemble average
+- ensemble average :: an average over collection
+\[
+\overbar{u}(t) = \frac{1}{N}  \sum_{i=1}^{N}  u^i (t)
+\] 
+** Reynolds averaging vs time averaging
+for stationary ( statistic steady) Reynolds average = time average
+** Reynolds Averaging
+Mean value, \(  U,V,W,P  \)
+fluctuated value, \( u', v', w', p' , etc \)
+
+\begin{equation}
+	\widetilde{U_i}=U_i+u_i
+\end{equation}
+$\widetilde{U_i}$: instantaneous velocity
+
+$U_i$: average velocity
+
+$u_i$: fluctuating part
+
+\begin{equation}
+	U(t)=U+u(t)
+\end{equation}
+
+\begin{equation}
+	\widetilde{P}=P+p
+\end{equation}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{figures/Reynolds_averaging.png}
+	\caption{Reynolds Averaging}
+	\label{fig:Reynolds Averaging}
+\end{figure}
+the above figure is from [[http://cfd.mace.manchester.ac.uk/twiki/pub/Main/TimCraftNotes\_All\_Access/cfd1-numanal.pdf][here]]
+
+
+
+
+** RANS for incompressible flow
+*** Continuity equation
+\begin{equation}
+  \frac{\partial U_i}{\partial x_i}=0
+\end{equation}
+
+
+*** Momentum
+\begin{equation}
+\frac{\partial U_i}{\partial t}+\frac{\partial (U_i U_j) }{\partial x_j}
+= -\frac{1}{\rho}\frac{\partial P}{\partial x_i}+\frac{\partial}{\partial x_j}(\nu\frac{\partial U_i}{\partial x_j}-\overline{u_i u_j})
+\end{equation}
+
+** RANS in cartesian tensor form
+ for compressible and incompressible flow
+
+
+*ensemble-averaged or time-averaged*
+\begin{equation}
+u_i=\overline{u_i}+u'_i
+\end{equation}
+where $\overline{u_i}$ and $u'_i$ are the /mean/ and /fluctating/ velocity components ($i=1,2,3$).
+
+\begin{equation}
+\frac{\partial \rho}{\partial t}+\frac{\partial}{\partial x_i}(\rho u_i)=0
+\end{equation}
+
+\begin{equation}
+\frac{\partial }{\partial t}(\rho u_i)+\frac{\partial}{\partial x_j}(\rho u_iu_j)=-\frac{\partial p}{\partial x_i}+\frac{\partial}{\partial x_j}[\mu(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}-\frac{2}{3}\delta _{ij}\frac{\partial u_l}{\partial x_l})]+\frac{\partial}{\partial x_j}(-\rho \overline{u'_i u'_j})
+\end{equation}
+
+from: Theory guide, Fluent, 17.2
+
+* pressure-based solver
+data storeage:
+- checkboard: p, _v_ stored on same location
+- staggered grid: p, _v_ are not stored on same location
+
+** SIMPLE vs SIMPLEC
+For complicated flows involing turbulence and or additional physical models,
+SIMPLEC will improve convergence only if it is being limited by the 
+pressure velocity coupling.
+| simple                           | simplec             |
+| good for velocity correction     | skewness correction |
+| not good for pressure correction | faster convergence although 30% more memory |
+** PIso
+P = P^* + p' + p''
+- two correction of pressure in one circle
+- robust convergence, less computational resources, when momentum eqs not coupled with a scalar variables.
+
+** segregated vs coupled solver
+SIME, SIMPLEC, PISO , Fractional step \rightarrow pressure-based *segregated* algorithm
+Coupled \rightarrow pressre-based coupled solver
+* Multigrid Method
+- algebraic Multigrid  (AMG) 
+- full-approximation storage (FAS)c
+** algebraic multigrid (AMG) method
+* Convergence
+- [[Grid convergence]]
+- time convergence
+
+keywords: Verification and validation
+- verification :: the process is right
+
+- validaton :: the results is right
+
+
+
+** Time (Temporal) convergence
+** Courant–Friedrichs–Lewy condition                                   :CFL:
+CFL ~ f( \delta x,  \delta t)
+
+where \delta x is mesh size
+
+Courant–Friedrichs–Lewy ([[https://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition][CFL]]) condition is a necessary condition for convergence 
+while solving certain partial differential equations (usually hyperbolic PDEs) numerically by the method of finite differences.
+*** one dimensional case
+\[
+C=u \frac{\Delta t}{ \Delta x} \leq C_{max}
+\]
+- u: magnitude of the velocity 
+- \Delta t: time step
+- \Delta x: length interval
+*** choose CFL value
+The value of C_max changes with the method used to solve the 
+discretised equation, 
+especially depending on whether the method is explicit or implicit.
+
+- *explicit* (time-marching) solver is used then typically C_max = 1.
+- *Implicit* (matrix) solvers are usually less sensitive to
+ numerical instability and so larger values of  C_max  may be tolerated.
+*** two or n-dimensional case
+\[
+C=\frac{u_x \Delta t} {\Delta x} +\frac{u_y \Delta t}{\Delta y} \leq Cmax
+\]
+
+\[
+C= \Delta t \sum_{i=1}^{n} \frac{u_i} {\Delta x_i}  \leq Cmax
+\]
+** references
+*** recommended
+
+Stockdill, B., et al. "Simulation of unsteady turbulent flow over a stalled airfoil." Computational Fluid Dynamics Journal 14.4 (2006): 359.
+
+Roache, Patrick J. Verification and validation in computational science and engineering. Vol. 895. Albuquerque, NM: Hermosa, 1998.
+*** Others
+- Design, analysis and predicting hydrokinetic performance of a horizontal marine current axial turbine by consideration of turbine installation depth   Noruzi R
+
+Oberkampf, William L., and Timothy G. Trucano. "Verification and validation in computational fluid dynamics." Progress in Aerospace Sciences 38.3 (2002): 209-272.
+
+*** Policy Statements
+
+ Roache, P.J., K. Ghia, and F. White, "Editorial Policy Statement on the Control of Numerical Accuracy," ASME Journal of Fluids Engineering, Vol. 108,No. 1., March 1986, p. 2.
+
+ AIAA, "Editorial Policy Statement on Numerical Accuracy and Experimental Uncertainty," AIAA Journal, Vol. 32, January 1994, p. 3.
+
+ AIAA, "Guide for the Verification and Validation of Computational Fluid Dynamics Simulations," AIAA G-077-1998, 1998.
+
+ ASME Editorial Board, "Journal of Heat Transfer Editorial Policy Statement on Numerical Accuracy," ASME Journal of Heat Transfer, Vol. 116, November 1994. pp. 797-798.
+
+ 
+ 
+*** Books
+
+ Anderson, D.A., Tannehill, J.C., and Pletcher, R.H. , Computational Fluid Mechanics and Heat Transfer, McGraw-Hill Book Company, New York, 1984.
+
+ Briggs, W.L., A Multigrid Tutorial, SIAM, Philidelphia, PA, 1987.
+
+ ERCOFTAC, Best Practices Guidelines for Industrial Computational Fluid Dynamics, Version 1.0, January 2000.
+
+ Hirsch, C. Numerical Computation of Internal and External Flows, Volume I: Fundamentals of Numerical Discretization. New York: John Wiley & Sons, 1988.
+
+ Hirsch, C. Numerical Computation of Internal and External Flows, Volume II: Computational Methods for Inviscid and Viscous Flows. New York: John Wiley & Sons, 1990.
+
+ Roache, P.J., Verification and Validation in Computational Science and Engineering, Hermosa Publishers, Albuquerque, New Mexico, 1998.
+
+ Roache, P.J., Fundamentals of Computational Fluid Dynamics, Hermosa Publishers, Albuquerque, New Mexico, 1998.
+
+ Shyy, W., Computational Modeling for Fluid Flow and Interfacial Transport, New York: Elsevier, 1994.
+
+ 
+ Compilations and Proceedings
+
+ AGARD, Validation of Computational Fluid Dynamics, Lisbon, Portugal, May 2-5, 1988, NATO Advisory Group for Aeronautical Research and Development, AGARD CP 437, December 1988.
+
+ AIAA, AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, March-April 1990, pp. 97-215. This issue contains 5 papers on CFD Code Validation / Verification / Certification with the emphasis on hypersonic flight. Another section entitled CFD Code Applications has 8 papers on applying CFD codes for hypersonic flight and includes some discussion on validation. Some of these 13 papers are listed individually below.
+
+ AIAA, AIAA Journal, Vol. 36, No. 5, May 1998, pp. 665-764. This issue contains 12 papers in a special section entitled Credible Computational Fluid Dynamics Simulations. Some of these 12 papers are listed individually below.
+
+ AGARD, Experimental Data Base for Computer Program Assessment, Report of the Fluid Dynamics Panel Working Group 04, AGARD-AR-138, May 1979. This is the report that contains the papers and data for the RAE2822 airfoil and ONERA M6 wing.
+
+ 
+ 
+*** Individual Papers
+
+ Aeschliman, D.P., W.L. Oberkampf, and F.G. Blottner, "A Proposed Methodology for Computational Fluid Dynamics Code Verification, Calibration, and Validation," Paper presented at the 16th International Congress on Instrumentation in Aerospace Simulation Facilities (ICIASF), July 18-21, 1995, Wright-Patterson AFB, OH 45433.
+
+ Aeschliman, D.P. and W.L. Oberkampf, "Experimental Methodology for Computational Fluid Dynamics Code Validation," AIAA Journal, Vol. 36, No. 5, pp. 733-741.
+
+ Barber, T.J., "Role of Code Validation and Certification in the Design Environment," AIAA Journal, Vol. 36, No. 5, pp. 752-758.
+
+ Bardina, J.E., P.G. Huang, and T.J. Coakley, "Turbulence Modeling Validation, Testing, and Development," NASA TM 110446, April 1997.
+
+ Benek, J.A., E.M. Kraft, and R.F. Lauer, "Validation Issues for Engine - Airframe Integration," AIAA Journal, Vol. 36, No. 5, pp. 759-764.
+
+ Blottner, F.G., "Accurate Navier-Stokes Results for the Hypersonic Flow over a Spherical Nosetip," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 113-122.
+
+ Bobbitt, P.J., "The Pros and Cons of Code Validation," AIAA Paper 88-2535 (NASA TM 100657), July 1988.
+
+ Coleman, H.W. and F. Stern, "Uncertainties and CFD Validation," ASME Journal of Fluids Engineering, Vol. 119, December 1997, pp. 795-803. 
+
+ Cosner, R.R., "Issues in Aerospace Application of CFD Analysis," AIAA Paper 94-0464, January 1994.
+
+ Cosner, R.R., "CFD Validation Requirements for Technology Transition," AIAA Paper 95-2227, June 1995.
+
+ Dolling, D.S, "High-Speed Turbulent Separated Flows: Consistency of Mathematical Models and Flow Physics,"
+AIAA Journal, Vol. 36, No. 5, pp. 725-732. 
+ Dudek, J.C., N.J. Georgiadis, and D.A. Yoder, "Calculation of Turbulent Subsonic Diffuser Flows Using the NPARC Navier-Stokes Code," AIAA Paper 96-0497, January 1996.
+
+ Dudek, J.C., "NPARC Validation - Subsonic Turbulent Diffusing Pipe Flow," The NPARC Alliance, April 1996.
+
+ Dudek, J.C., "Testing Guidelines for NPARC Alliance Software Development," The NPARC Alliance, April 1997.
+
+ Dudek, J.C., D.O. Davis, and J.W. Slater, "Validation and Verificaiton of the WIND Code for Supersonic Diffuser Flows," AIAA Paper 2001-0224, January 2001.
+
+ Gnoffo, P.A., "CFD Validation Studies for Hypersonic Flow Prediction," AIAA Paper 2001-1025, January 2001.
+
+ Habashi, W.G., J. Dompierre, Y. Bourgault, M. Fortin, and M.-G. Vallet, "Certifiable Computational Fluid Dynamics Through Mesh Optimization," AIAA Journal, Vol. 36, No. 5, pp. 703-711.
+
+ Jameson, A. and L. Martinelli, "Mesh Refinement and Modeling Errors in Flow Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 676-686. 
+
+ Lewis, C.H., "Comments on the Need for CFD Code Validation," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 97.
+
+ Marvin, J.G., "Perspective on Computational Fluid Dynamics Validation," AIAA Journal, Vol. 33, No. 10, October 1995, pp. 1778-1787. 
+
+ Mehta, U.B., "Computational Requirements for Hypersonic Flight Performance Estimates," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 103-112.
+
+ Mehta, U.B., "Some Aspects of Uncertainty in Computational Fluid Dynamics Results," Transactions of the ASME, Vol. 113, December 1991, pp. 538-543.
+
+ Mehta, U.B., "Guide to Credible Computer Simulations of Fluid Flows," AIAA Journal of Propulsion and Power, Vol. 12, No. 5, September-October 1996, pp. 940-948. (Also AIAA Paper 95-2225).
+
+ Mehta, U.B., "Credible Computational Fluid Dynamics Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 665-667.
+
+ NPARC Alliance, "NPARC Alliance Policies and Plans", August, 1999.
+
+ Oberkampf, W.L., "A Proposed Framework for Computational Fluid Dynamics Code Calibration / Validation," AIAA Paper 94-2540, June 1994.
+
+ Oberkampf, W.L. and F.G. Blottner, "Issues in Computational Fluid Dynamics Code Verification and Validation," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 687-695. 
+
+ Oberkampf, W.L. and T.G. Trucano, "Validation Methodology in Computational Fluid Dynamics" AIAA Paper 2000-2549, June 2000.
+
+ Paynter, G.C. and E. Tjonneland, "Accuracy Issues in the Prediction of Supersonic Inlet Flows," ASME 92-GT-400.
+
+ Reed, H.L., T.S. Haynes, and W.S. Saric, "Computational Fluid Dynamics Validation Issues in Transition Modeling," AIAA Journal, Vol. 36, No. 5, pp. 742-751.
+
+ Rizzi, A. and J. Vos, "Toward Establishing Credibility in Computational Fluid Dynamic Simulations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 668-675. 
+
+ Roache, P.J., "Need for Control of Numerical Accuracy," AIAA Journal of Spacecraft and Rockets, Vol. 27, No. 2, pp. 98-102.
+
+ Roache, P.J., "Perspective: A Method for Uniform Reporting of Grid Refinement Studies", ASME Journal of Fluids Engineering, Vol. 116, September 1994.
+
+ Roache, P.J., "Quantification of Uncertainty in Computational Fluid Dynamics," Annual Review of Fluid Mechanics, Vol. 29, 1997, pp. 123-160.
+
+ Roache, P.J., "Verification of Codes and Calculations," AIAA Journal, Vol. 36, No. 5, May 1998, pp. 696-702. 
+
+ Slater, J.W., J.C. Dudek, and K.E. Tatum, "The NPARC Verification and Validation Archive", ASME Paper 2000-FED-11233, June 2000.
+
+ Slater, J.W., "Verification Assessment of Flow Boundary Conditions for CFD Analysis of Supersonic Inlet Flows", AIAA Paper 2001-3882, July 2001.
+
+ Slater, J.W., J.M. Abbott, and R.H. Cavicchi, "Validation of WIND for a Series of Inlet Flows", AIAA Paper 2002-0669, January 2002.
+
+ Steffen, C.J. Jr., Reddy, D.R., and K.B.M.Q. Zaman, "Analysis of Flowfield from a Rectangular Nozzle with Delta Tabs", AIAA 95-2146, June, 1995.
+
+ Tatum, K.E. and J.W. Slater, "The Validation Archive of the NPARC Alliance", AIAA Paper 99-0747, January, 1999.
+
+ Towne, C.E. and R.R. Jones, "Results and Current Status of the NPARC Alliance Validation Effort", AIAA Paper 96-0387, January, 1996.
+
+ van Wie, D.M. and T. Rice, "Quantification of Data Uncertainties and Validation of CFD Results in the Development of Hypersonic Airbreathing Engines," AIAA Paper 96-2028, June 1996.
+
+ Yee, H.C. and P.K. Sweby, "Aspects of Numerical Uncertainties in Time Marching to Steady-State Numerical Solutions," AIAA Journal, Vol. 36, No. 5, pp. 712-724.
+
+
+* Grid convergence                                         :GCI:
+grid convergence, mesh sensitivity
+
+
+
+keywords: Richardson's extrapolation, Grid convergence index
+a summary of Richardson's extrapolation is [[https://www.grc.nasa.gov/www/wind/valid/tutorial/bibliog.html#Roach94][here]]
+
+
+ 
+
+
+
+[[https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html][a summary of GCI]] from nasa web , local downloaded file is [[file:C:\akmkemin\Backup\ANSYS\Geo_mesh_solver_post_processing\Convergence-Verification-validation\grid convergence][here]] ( print version is in *BEM* file folder)
+** Richardson extrapolation
+
+
+
+
+
+
+** grid refinement ratio
+- Hexa mesh -->>   grid refinement ratio
+  + double nodes along each coordinates (x, y,z)
+
+- Tetra mesh -->> effective grid refinement ratio
+
+*Definitions:*
+
+\[
+r_{ij} = h_i/h_j
+\]
+
+- r: grid refinement ratio,  
+- h: grid spacing
+
+**** effective grid refinement ratio
+For tetra mesh, the effective grid refinement ratio is defined as:
+
+\begin{equation}
+r_e =( \frac{N_1}{N_2})
+^{1/D}
+\end{equation}
+
+Where \( N \) is the total number of grid point and \( D \) is the dimension of the flow domain. 
+** Example of Grid convergence study
+
+The example is from [[https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html][here]], 
+The Fortran 90 program  [[file:c:/Users/exw692/Dropbox/Emacs/verify.f90][verify.f90]] was written to carry out the calculations associated with a grid convergence study involving 3 or more grids
+The program is compiled on a unix system through the commands:
+
+ ~f90 verify.f90 -o verify~
+
+It reads in an ASCII file (~prD.do~) through the standard input unit (5) that contains a list of pairs of grid size and value of the observed quantity f.
+
+input data format:
+~1.0 0.97050 2.0 0.96854 4.0 0.96178~
+ ~verify < prD.do > prD.out~
+
+It assumes the values from the finest grid are listed first. The output is then written to the standard output unit (6) ~prD.out~.
+ The output from the of {\tt verify} for the results of Appendix A are:
+
+#+BEGIN_EXAMPLE
+
+ --- VERIFY: Performs verification calculations ---
+  
+ Number of data sets read =  3
+  
+      Grid Size     Quantity
+  
+      1.000000      0.970500
+      2.000000      0.968540
+      4.000000      0.961780
+  
+ Order of convergence using first three finest grid 
+ and assuming constant grid refinement (Eqn. 5.10.6.1) 
+ Order of Convergence, p =  1.78618479
+  
+ Richardson Extrapolation: Use above order of convergence
+ and first and second finest grids (Eqn. 5.4.1) 
+ Estimate to zero grid value, f_exact =  0.971300304
+  
+ Grid Convergence Index on fine grids. Uses p from above.
+ Factor of Safety =  1.25
+  
+   Grid     Refinement            
+   Step      Ratio, r       GCI(%)
+   1  2      2.000000      0.103080
+   2  3      2.000000      0.356244
+  
+ Checking for asymptotic range using Eqn. 5.10.5.2.
+ A ratio of 1.0 indicates asymptotic range.
+  
+  Grid Range    Ratio
+  12 23      0.997980
+  
+ --- End of VERIFY ---
+
+#+END _EXAMPLE
+
+** calculation steps
+1. Complete at least 3 simulations (Coarse, medium, fine) with a constant refinement ratio, r, between them (in our example we use r=2)
+2. Choose a parameter indicative of grid convergence. In most cases, this should be the parameter you are studying. ie if you are studying drag, you would use drag.
+3.    Calculate the order of convergence, p, using:
+
+\begin{equation}
+p=ln(\frac{f_3 - f_2}{f_2- f_1}) / \ln (r)
+\end{equation}
+where \( f_i \) is the solution at different meshes, f_1 is fine grid, \( r \) is /grid refinement ratio/.
+
+4.    Perform a Richardson extrapolation to predict the value at h=0
+  
+\begin{equation}
+f_e = f_1 + \frac{f_1 -f_2 }{r^p - 1}
+\end{equation}
+ f_e, exact numerical value ( continuum value at zero grid spacing)
+
+5.    Calculate grid convergence index (GCI) for the medium and fine refinement levels
+
+\begin{equation}
+GCI_{fine} = \frac{F_s \vert \epsilon \vert }{r^p - 1}
+\end{equation}
+
+where \( F_s \) is a safety factor. the recommended value is 3 for two grids comparisons and 1.25 for three or more grids comparisons.
+
+6.   Ensure that grids are in the asymptotic range of convergence by checking:
+        \frac{GCI_{2,3}}{r^p \times GCI_{1,2}} \approxeq 1
+** Example of Grid convergence for wing:
+file:C:\akmkemin\Backup\academic\Notes\ANSYS\mesh\Modules\wings\wing-mesh-comparing-pointwise.doc
+
+
+
+** References
+Roache, P. J. Perspective: A Method for Uniform Reporting of Grid Refinement Studies, Journal of Fluids Engineering, Vol. 116, 1994; 405-413.
+
+Roache, P. J. Quantification of Uncertainty in Computational Fluid Dynamics, in Annual Review of Fluid Mechanics
+
+Roache, Patrick J. Verification and validation in computational science and engineering. Vol. 895. Albuquerque, NM: Hermosa, 1998.
+
+
+* Verification and Validation
+** ** verification -- solving the euqations right
+- verification :: the process of  determining that a model implementation 
+accurately represents the developer's conceptual description of the 
+model and the solution to the model (AIAA G-077-1998)
+- It is intended to concern itself more with mathematics rather
+than engineering.
+
+verification assessment examines:
+1. if the computational models are the correct implementation of the conceptual models
+2. if the resulting code ban be properly used for an analysis
+
+*Two aspects of verification*:
+1. *the verification of a code* -- error evaluation
+2. the verification of a *calculation*
+   + objective : error estimation, that is determining the accuracy a a calculation
+
+
+
+
+https://www.grc.nasa.gov/WWW/wind/valid/tutorial/verassess.html
+
+** AIAA Editorial  Policy Statement on *Numerical Accuracy* and *Experimental Uncertainty* 
+file:figures/cfd/AIAA_Journals_NumericalAccuracy.pdf
+
+The  purpose  of  this  statement  is  to  improve  the  quality  of  computational  
+and experimental investigations published in the AIAA journals. 
+In January 1994 the AIAA journals  published  
+their  first  statement  regarding  the  accuracy  of  numerical  solutions and  experimental  results.  
+This  statement  has  been  in  effect  since  that  time  and  
+will remain so in the future:
+
+The  AIAA  journals  will  not  accept  for  publication  any  manuscript  reporting  
+(1) *numerical  solutions*  of  an  engineering  problem  that  fails  to  
+adequately  address  the accuracy  of  the  *computed*  results  or  
+(2)  *experimental  results*  unless  the  accuracy  of the data is adequately presented.
+
+To  aid  prospective  authors  submitting  manuscripts  to  the  AIAA  journals
+  and  to  aid Editors-in-Chief,  Associate  Editors,  and  reviewers  of  the  AIAA  journals,  
+additional guidance  concerning  numerical  and  experimental  accuracy  is  now  provided.  
+The implementation  of  this  policy  statement  will be  at  the  discretion  
+of  the  Editor-in-Chief of each journal and the Associate Editor evaluating the submitted manuscript.
+
+*Numerical Accuracy*
+
+Many  technical  issues  impact  
+the  accuracy  of  a  mathematical  model  of  a  physical process  
+or  system  of  interest.  
+This  portion  of  the  policy  statement  deals  with  only  one issue:  
+the  numerical  solution  accuracy  of  the  assumed  mathematical  model
+  that  is solved  using  numerical  algorithms  that  are  implemented  in  software  and  solved  on  a computer.   
+Other   issues,   such   as   *the   assumptions   of   the   mathematical   model*, 
+*appropriateness  of  the  initial  and  boundary  conditions*,  and  
+*the  accuracy  of  the simulation  results  with  respect  to  experimental  data*,  
+are  considered  in  the  decision  to accept or reject a manuscript for publication. 
+However, these issues are not the topic of this  policy  statement.  
+The  intent  of  this  policy  statement  is  to  improve  
+the  credibility and reproducibility of the numerical aspects of the simulation results.
+Authors should address the following criteria, 
+as applicable, in summary form in the manuscript and can provide additional detailed 
+information in referenced documents:
+
+1. Statement  of  Numerical  Methods:  Authors  should  be  clear  and  precise  
+in  the description of all important numerical methods used in the investigation. 
+For example, in  the  numerical  solution  of  partial  differential  equations  (PDEs),  
+the  author  should state  the  formal  accuracy  of  the  numerical  method  for  interior  points  
+as  well  as  the formal accuracy of the numerical boundary conditions. 
+If the specific numerical method used is one of a class of methods, 
+then all pertinent information, such as specific values of adjustable parameters in the method, 
+should be given or referenced.
+
+2.Minimum Formal Accuracy of Numerical Methods: 
+Numerical methods for solving PDEs  should  be  at  least  formally  *second-order*  accurate  in  space  
+for  spatially  smooth solutions.   
+For   non-smooth   solutions,   such   as   solutions   with   shock   waves   and singularities,   spatially   first-order   methods   are   appropriate.   Temporal   difference methods  for  initial  value  problems  are  recommended  to  be  at  least  formally  second-order accurate. 3.Statement  of  Code  Verification  Activities:  For  computer  codes  that  numerically solve   PDEs,   some   level   of   verification   testing   of   the   code   should   have   been 
+demonstrated. 
+For example, comparisons should have been made to analytical solutions or   highly   accurate   numerical   solutions.   However,   because   of   manuscript   length requirements,  it  is  recommended  that  references  be  given  to  documentation  of  the verification  testing  of  the  code.  If  commercially  available  computer  codes  are  animportant  element  in  the  simulations  presented,  references  for  publicly  available  code testing should be given.4.Spatial Convergence Accuracy: Spatial discretization errors in the solution of PDEs should  be  quantified. Procedures  typically  involve  the  use  of  multiple  refined  spatial grids  or  procedures  that  use  different  order-of-accuracy  methods  on  a  single  grid.  It is recommended  that a  posteriori  error  estimation  procedures  be  used,  as  opposed  to a priori  error  estimation  methods.  An  alternative,  but  less  precise,  method  for  indicating spatial  discretization  errors  is  to  show  sensitivity  of  important  dependent  variables  or solution functionals on multiple refined spatial grids.5.Temporal   Convergence   Accuracy:   Temporal   discretization   errors   should   be quantified  by  either  direct  control  of  estimated  local  time-step  error  or  by  multiple solutions  of  an  initial  value  problem,  each  with  a  significantly  different  time-step.  In direct  control  of  the  local  time-step,  as  is  commonly  done  in  the  numerical  solution  of ordinary  differential  equations,  the  author  should  state  how  the  error  was  controlled and the magnitude of the estimated local time-step error. When using the technique of comparing  solutions  obtained  with  different  time-steps,  the  sensitivity  of  important dependent variables or solution functionals to the time-step should be addressed.6.Iterative   Convergence   Accuracy:   The   accuracy   of   convergence   of   important iterative schemes in the numerical solution should be addressed. Examples of iterative schemes  are  iterations  needed  to  advance  to  a  new  time-step  and  iterations  needed  in the  solution  of  a nonlinear  boundary-value  problem.  Iterative  convergence  criteria should be based on a relative error estimate of the quantity of interest, not an absolute error estimate. For the case of iterative solution of a nonlinear matrix equation, iterative convergence should be based on an appropriate matrix norm of the error.For more detailed discussion of the above topics, authors should consult modern texts and published articles dealing with code verification testing, numerical algorithms, and numerical solution error estimation.Experimental AccuracyThe  accuracy  of  experimental  results  is  concerned  with  how  well  the  specified measurands  in  the  manuscript  have  been  determined,  and  the  statistical  confidence with which they can be assessed. The appropriateness of the measurands for describing the physical phenomena and for comparing the results with numerical investigations is not part  of  this  policy  statement.  The  intent  of  the  policy  statement  is  to  encourage authors  to  provide  sufficient  information  for  readers  to  independently  assess  the statistical  confidence  of  results  presented  in  AIAA  journal  articles.  Authors  should address  the  following  criteria,  as  applicable,  in  summary  form  in  the  manuscript  and can also provide additional detailed information in referenced documents:1.Statement  of  Measurement  Techniques  and  Apparatus:  Authors  should  be  clear and  precise  in  the  description  of  the  test  articles  and  facilities,  test  methods,  and instrumentation, including the data reduction techniques.2.Statement  of  Experimental  Design:  To  assist  others  in  assessing  the  uncertainty  in the  experimental  results,  for  such  purposes  as  reproducing  them  experimentally  or simulating them analytically and for identifying corresponding statistical techniques to 
+analyze  the  results,  the  experimental  conditions  and  order  of  acquisition  should  be presented or concisely described.3.Estimation of Uncertainty: Unexplained variance in results should be addressed as follows:a.Estimation  of  Bias  Uncertainty:  The  bias  uncertainty  of  the  results  (systematic component  of  the  unexplained  variance)  should  be  estimated.  In  addition,  the  method of estimation should be described.b.Estimation  of  Precision  Uncertainty:  The  repeatability  of  the  results  (random component  of  the  unexplained  variance)  should  be  quantified.  Also,  the  method  of determining  the  repeatability  should  be  specified.  Unusual  results,  whether  explained or unexplained, should be identified.c.Statement  of  Total  Uncertainty:  The  total  uncertainty  is  the  combination  of  the bias and precision uncertainties and should be presented with the experimental results (in text, tables, or graphs as appropriate). Authors should identify any known potential sources  of  bias  and  precision  uncertainty  that  have  not  been  explicitly  included  in  the estimates of total uncertainty.4.Statistical Analysis: Statistical analysis may be warranted in a number of cases, such as when comparing the effects of independent variables, when correlating experimental conditions and measures, and when performing hypothesis tests.a.Description of Methodology: The choice of statistical analysis method should be clearly  described  and  justified  relative  to a  priori  knowledge,  the  experimental  design, and the characteristics of the measurements.b.Treatment  of  Impact:  The  findings  of  the  statistical  tests  should  be  carefully substantiated and discussed relative to their  confidence level, parametric assumptions, and experiment design.5.Coverage  Factor:  The  coverage  factor  used  for  all  expanded  uncertainty  estimates should be specified. That is, the author(s) should associate a specific level of confidence with each uncertainty value, by estimating the probability that reported error limits will encompass the true result.For more detailed discussion of the above  topics, prospective authors should consult modern  texts  in  measurement  methods,  experimental  design,  uncertainty  analysis, hypothesis testing, and statistical data analysis.
+
+http://servidor.demec.ufpr.br/CFD/bibliografia/erros_numericos/AIAA_Journals_NumericalAccuracy.pdf
+* Finite element methods in scientific computing
+http://www.math.colostate.edu/~bangerth/videos.html
+* Footnotes
+
+[fn:john1995computational] John, D., and J. R. Anderson. "Computational fluid dynamics: the basics with applications." P. Perback, International ed., Published (1995).
+
+[fn:wilcoxturbulence] Wilcox, David C. Turbulence modeling for CFD. Vol. 2. La Canada, CA: DCW industries, 1998.
+
+[fn:Thwaites1949]  THWAITES, B. (1949) “Approximate calculation of the laminar boundary layer” Aeronautical Quarterly, 1,245-280.

@@ -1,0 +1,97 @@
+* Glossary 
+
+
+Library – a collection of references ; there is no limit to the number of references you can create in an EndNote library. It is recommended that the number not exceed 100,000 to maintain efficient performance managing the database. Libraries created with the Windows version of EN can be used by the Mac version and vice versa.
+
+Reference – a bibliographic citation citation which usually includes author, title, source, abstract and/or related information
+
+Reference type – the type of material of a citation; some of the reference types in EndNote are journal article, book, book section, conference proceedings, electronic source, etc.
+
+Field – components of a reference, such as author, title, year, and journal title; at most, there can be 52 fields per reference Import filter – a file that tells EndNote how to import references from online databases and catalogs Output style – a file that tells EndNote how to format citations; styles are available for individual journals or for general styles (Vancouver, APA, AMA, NLM, Chicago, etc.)
+
+Term list – a list of terms associated with a given field (like author or journal title) that assists with automated data entry
+
+Traveling Library -- A library created from references in an Existing Word document, which can be transfered (imported) to an existing or new EndNote library. The traveling library does not include Notes, Abstracts, or Figures.
+* Label
+Label
+Label field can be used for many purposes, such as *special in-text citations* or *reprint numbers.*
+
+Some citation styles require that citations include only part of the author’s name, such as [ SMIT 90]. EndNote cannot create this
+citation for you, but if you type " SMIT 90" into the Label field and use the Label field in your style’s citation template, EndNote will
+insert the Label field into the citation.
+
+If you do not need the Label field for citation purposes, it can be used as an additional field for categorizing references or storing
+reprint numbers. (Do not use EndNote’s record numbers to number reprints because these numbers change when references are
+moved to different libraries. EndNote’s record numbers cannot be assigned or changed by the user.)
+
+* Features
+1. find references based on keywords
+2. keep notes
+3. goup papers
+4. find full text
+5. reference statistics
+* Top 10 Things to Remember about EndNote
+1. EndNote does not replace the style manual. It will make it easier to follow the manual, but you will still need the manual.
+2. Garbage in, garbage out. So check your import results, especially when working with sources such as Google Scholar that
+may have inconsistent data.
+3. Use one EndNote library for all of your writing. It will make your life easier in the long run.
+4. Use the Edit Citation command to make changes to citations in documents. Trying to make changes on the screen risks
+corrupting the EndNote citations.
+5. If you are using footnote styles, your word processor controls the numbering and placement of the footnote and EndNote
+controls the formatting. So you will first need to insert the footnote using your word processor, then insert the EndNote citation
+into that footnote.
+6. EndNote provides five ways of importing references:
+n Online search
+n Direct export
+n Importing text files
+n Importing PDF files
+n Through the Capture button in EndNote Web, which can import one record at a time into either an EndNote or an End-
+Note Web library
+The method you use will depend on which databases you need to work with. Talk to your librarian about searching online
+databases. They can tell you which databases you have available to you and the best way of searching them.
+7. Online search uses the Z39.50 Internet protocol, a standard protocol that was developed just for searching and retrieving
+bibliographic data. It has limitations.
+n It does not work through proxy servers.
+n It does not use the same port your browser uses.
+n It is not the same protocol your browser uses.
+8. EndNote can be customized.
+9. For collaboration, use the EndNote Web feature set in EndNote to store references online where your entire project team
+can access them.
+10. Back up your EndNote Libraries.
+
+
+
+* Automatic importing of PDFs
+A new option in EndNote X8 is to automatically import PDFs from a specific folder that you select. 
+Whenever you download or copy a PDF file into this folder, EndNote will attempt to automatically import it and create a reference.
+
+1. Create the download folder to use if it doesn't already exist
+
+2. Click Edit >> Preferences
+
+3. Select the *PDF Handling* section on the left
+
+4. Click in the Enable automatic importing checkbox
+
+5. Click on Select Folder and browse to and select the folder to use
+
+6. Click OK to save
+** Reference
+http://libguides.federation.edu.au/c.php?g=444910&p=3418905
+* Automatic renaming of imported PDFs 
+1. Click Edit >> Preferences
+
+2. Select the PDF handling section on the left
+
+3. Select the pattern that will determine how your PDF files are renamed
+
+4. Click OK to save
+
+Note: imported PDFs will be listed in a group called Imported References.
+* QMUL Library Endnote Guides:
+http://www.library.qmul.ac.uk/endnote/desktop
+
+* Reference
+http://community.thomsonreuters.com/ts/?category.id=endnote
+http://libguides.utoledo.edu/c.php?g=284330&p=1895347
+https://library.leeds.ac.uk/tutorials/endnote/page_02.htm

@@ -1,0 +1,1172 @@
+#+SETUPFILE: theme-bigblow.setup
+* Paper digest
+
+
+effects of transient rate of injection on high pressure diesel fuel jets
+** LES vs. RANS
+s. som, 2012, Comparison of RANS and LES Turbulence Models against Constant Volume Diesel Exper-iments 
+
+
+** Dynamics of Transient Fuel Injection, Mixing, and Auto-Ignition
+https://tcrl.osu.edu/research/dynamics-transient-fuel-injection-mixing-and-auto-ignition
+
+chemical kinetics 
+
+turbulence
+** rothamer research group, Experimental Studies of Transient Jets
+https://rothamer.erc.wisc.edu/transientjets
+
+** the transient start of supersonic jets
+** decelerating transient turbulent jets
+2009 Mark P B Musculus, JFM,  entrainment waves in decelerating transient turbulent jets
+Doi: 10.1017/S0022112009990826
+
+keywords: decelerating transient turbulent jet
+
+*why study it?*
+
+the majority of the combustion event occurs after the end of injection, 
+during the decelration phase.
+
+entrainment during the deceleration phase can be critical for engine
+performance.
+
+
+***  Bing huan, 2012, physics of fluids
+
+** validi 2016, PhD thesis, Michigan State University
+TJI in different combustion systems with DNS and LES
+
+** P wang, 2008,
+ what is new of wang(2008) compared with experimental result?
+39, 2149–2164.
+Chen, C.J., Rodi, W., 1980. 
+Vertical Turbulent Buoyant Jets—A Review of Experimental Data. The Science and Application of Heat and Mass
+Transfer. Pergamon Press, New York.
+
+
+\( \omega = \nabla \times v \)
+ S.V. Gordeyev and F. O. Thomas. 
+Coherent structure in the turbulent planar jet. part
+1. extraction of proper orthogonal decomposition eigenmodes and their self-similarity.
+Journal of Fluid Mechanics, 414:145 – 194, 2000.
+
+[[http://www.potto.org/gasDynamics/node24.php][
+fundamentals of compressible flow]]
+
+
+** TJI assited combustion system 2016
+- PCh :: pre-chamber
+- MCh :: main chamber
+- RCMs :: rapid compression machines
+- IC :: internal combustion
+- SGS :: sub-grid scale
+- PDF :: probalility density function
+
+
+conclusions:
+turbulence fields becomes fully developed by t=3\tau_0 (P11)
+
+- \tau_0 : flow through time
+
+simulation performed up to t=17\tau_0 (P11)
+
+* TODO Questions
+10 realization of the les model ? Fig. 6, BIng Hu
+
+inlet BCs
+
+time step size
+* theory
+file:jet_theory.org
+
+
+* FAQ
+
+**  is it a spark ignition (gasoline)?
+yes
+
+** time step size in your LES ?
+
+** When does the main chamber start to burn/combust?
+when the jet flow enter the main chamber
+
+** how to estimate the Mach number
+
+ma=U/C
+
+and
+
+C=sqrt( \gamma R T)
+
+how to define the reference temperature (T)?
+
+answer: use local T at every computational point
+
+** mixture fraction calculation
+
+mixture fraction, f, is defined as the mass  fraction from fuel, i.e.
+
+f=m_fuel/m_total
+
+
+
+the question is how to define the sample area/cubic size in the post processing ? 
+
+
+answer: use the mesh size
+* TODO Purpose of study
+
+* problem description
+
+intial conditions
+
+inlet gas
+ma=u/c = 1.3
+Re = \rho u L / \mu =0.231*1102.95*0.0025 / 
+density:
+pressure
+temperature
+velocity, u= 1102.95
+
+c: speed of sound
+
+c=sqrt(\gamma RT)
+
+
+
+flow direction
++x
+
+* setups
+LES
+time step size: 5e-7s
+
+
+time step  between two snapshots :2.5e-4 (s)
+The snapshots were saved every 500 steps, so for the data you have got, it is 0.0000005 * 500 =2.5e-4 (s)
+
+inlet center (-0.432, 0, 0)
+flow direction, +x
+
+for 105 snapshot: 0.02625 s
+for 312 snapshot: 0.078s
+
+* results
+axial and radial distribution of <Ux>, TKE, <u_i u_j>
+
+jet spreading angle is 28 \degree based on emrirical estimation
+
+** mixture fraction -- defining the jet boundary
+- f ::  mixture fraction, which is the mass 
+fraction that originated from the fuel stream. 
+it is the local mass fraction of burnt and unburt fuel stream elements.
+
+why use mixture fraction?
+
+because *atomic elements* are conserved in chemical reactions.
+In turn, the mixture fraction is conserved scalar quantity, and therefore
+its governing transport equation does not have a source term. (ch8, theory guide, fluent)
+
+How to calculate mass fraction in post processing?
+
+you can define a small cubic/plane and calculate the mass ratio = mass_(fule)/mass_total
+the problem is the size of cubic/plane?
+
+
+
+How to define the jet boundary?
+
+
+* source files
+- transient.case  :: scripts for paraview
+
+- automate naming of files
+  attach =_*= at the end of filename
+
+** transient.case
+FORMAT
+type: ensight gold
+GEOMETRY
+model: solution.pval.unsteady_1.geo
+VARIABLE
+scalar per node: density   solution.pval.unsteady_*.density
+vector per node: v   solution.pval.unsteady_*.v
+scalar per node: pressure   solution.pval.unsteady_*.pressure
+scalar per node: temperature   solution.pval.unsteady_*.temperature
+
+
+TIME
+time set: 1
+number of steps: 1
+filename start number: 61
+filename increment: 1
+time values: 1.8385297551528
+
+* Post-processing
+** plot axial streamwise velocity--paraview
+# Properties modified on plotOverLine1.Source
+plotOverLine1.Source.Point1 = [0.0, 0.0, 0.0]
+plotOverLine1.Source.Point2 = [-0.435, 0.0, 0.0]
+
+pay attention to x coordinate of point2, which is -0.435
+*** script
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+# create a new 'EnSight Reader'
+transient_312case = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient_312.case')
+transient_312case.PointArrays = ['density', 'v', 'pressure', 'temperature']
+
+# Properties modified on transient_312case
+transient_312case.PointArrays = ['v']
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+# uncomment following to set a specific view size
+# renderView1.ViewSize = [956, 837]
+
+# show data in view
+transient_312caseDisplay = Show(transient_312case, renderView1)
+# trace defaults for the display properties.
+transient_312caseDisplay.ColorArrayName = [None, '']
+transient_312caseDisplay.GlyphType = 'Arrow'
+transient_312caseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+# reset view to fit data
+renderView1.ResetCamera()
+
+# set scalar coloring
+ColorBy(transient_312caseDisplay, ('FIELD', 'vtkBlockColors'))
+
+# show color bar/color legend
+transient_312caseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get color transfer function/color map for 'vtkBlockColors'
+vtkBlockColorsLUT = GetColorTransferFunction('vtkBlockColors')
+
+# get opacity transfer function/opacity map for 'vtkBlockColors'
+vtkBlockColorsPWF = GetOpacityTransferFunction('vtkBlockColors')
+
+# create a new 'Plot Over Line'
+plotOverLine1 = PlotOverLine(Input=transient_312case,
+    Source='High Resolution Line Source')
+
+# init the 'High Resolution Line Source' selected for 'Source'
+plotOverLine1.Source.Point1 = [-0.43700000643730164, -0.0860000029206276, -0.0860000029206276]
+plotOverLine1.Source.Point2 = [1.9165229048212495e-07, 0.0860000029206276, 0.0860000029206276]
+
+# Properties modified on plotOverLine1
+plotOverLine1.Tolerance = 2.22044604925031e-16
+
+# Properties modified on plotOverLine1.Source
+plotOverLine1.Source.Point1 = [0.0, 0.0, 0.0]
+plotOverLine1.Source.Point2 = [-0.435, 0.0, 0.0]
+
+# get layout
+viewLayout1 = GetLayout()
+
+# Create a new 'Line Chart View'
+lineChartView1 = CreateView('XYChartView')
+lineChartView1.ViewSize = [473, 837]
+
+# place view in the layout
+viewLayout1.AssignView(2, lineChartView1)
+
+# show data in view
+plotOverLine1Display = Show(plotOverLine1, lineChartView1)
+# trace defaults for the display properties.
+plotOverLine1Display.CompositeDataSetIndex = [0]
+plotOverLine1Display.UseIndexForXAxis = 0
+plotOverLine1Display.XArrayName = 'arc_length'
+plotOverLine1Display.SeriesVisibility = ['v_Magnitude']
+plotOverLine1Display.SeriesLabel = ['arc_length', 'arc_length', 'v_X', 'v_X', 'v_Y', 'v_Y', 'v_Z', 'v_Z', 'v_Magnitude', 'v_Magnitude', 'vtkValidPointMask', 'vtkValidPointMask', 'Points_X', 'Points_X', 'Points_Y', 'Points_Y', 'Points_Z', 'Points_Z', 'Points_Magnitude', 'Points_Magnitude']
+plotOverLine1Display.SeriesColor = ['arc_length', '0', '0', '0', 'v_X', '0.89', '0.1', '0.11', 'v_Y', '0.22', '0.49', '0.72', 'v_Z', '0.3', '0.69', '0.29', 'v_Magnitude', '0.6', '0.31', '0.64', 'vtkValidPointMask', '1', '0.5', '0', 'Points_X', '0.65', '0.34', '0.16', 'Points_Y', '0', '0', '0', 'Points_Z', '0.89', '0.1', '0.11', 'Points_Magnitude', '0.22', '0.49', '0.72']
+plotOverLine1Display.SeriesPlotCorner = ['arc_length', '0', 'v_X', '0', 'v_Y', '0', 'v_Z', '0', 'v_Magnitude', '0', 'vtkValidPointMask', '0', 'Points_X', '0', 'Points_Y', '0', 'Points_Z', '0', 'Points_Magnitude', '0']
+plotOverLine1Display.SeriesLineStyle = ['arc_length', '1', 'v_X', '1', 'v_Y', '1', 'v_Z', '1', 'v_Magnitude', '1', 'vtkValidPointMask', '1', 'Points_X', '1', 'Points_Y', '1', 'Points_Z', '1', 'Points_Magnitude', '1']
+plotOverLine1Display.SeriesLineThickness = ['arc_length', '2', 'v_X', '2', 'v_Y', '2', 'v_Z', '2', 'v_Magnitude', '2', 'vtkValidPointMask', '2', 'Points_X', '2', 'Points_Y', '2', 'Points_Z', '2', 'Points_Magnitude', '2']
+plotOverLine1Display.SeriesMarkerStyle = ['arc_length', '0', 'v_X', '0', 'v_Y', '0', 'v_Z', '0', 'v_Magnitude', '0', 'vtkValidPointMask', '0', 'Points_X', '0', 'Points_Y', '0', 'Points_Z', '0', 'Points_Magnitude', '0']
+
+# save data
+SaveData('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/plot_over_line/v_312.csv', proxy=plotOverLine1)
+Disconnect()
+Connect()
+ 
+** axial velocity along centerline (Jet) -- Matlab
+input: velocity.csv file from paraview
+goal: post processing data, rerange data sequence
+
+1. Read comma-separated value (CSV) file
+syntax:
+
+~M = csvread(filename)~
+ reads a comma-separated value (CSV) formatted file into array M. The file must contain *only numeric values*.
+
+#+BEGIN_SRC Matlab
+>> filename='v.csv';
+>> m=csvread(filename)
+m =
+
+ Columns 1 through 4:
+
+   3.7053e-14   8.2965e-13   1.7973e-12   1.0000e+00
+  -2.5358e-14   2.9547e-13  -2.3817e-13   1.0000e+00
+   7.2622e-15   8.2172e-13  -4.0024e-13   1.0000e+00
+  -4.2667e-14  -1.7888e-12   4.8413e-13   1.0000e+00
+#+END_SRC 
+
+2. assign first column (U_x) to a variable 'u'
+
+>>u=m(:,1);
+
+3. change column vector to row vector (transpose)
+
+>> u_x=u.' 
+4. change orders with =fliplr=
+u_x=fliplr(u)
+
+i.e.
+If A is a row vector,
+
+    A =
+        1    3    5    7    9
+
+then fliplr(A) produces
+
+        9    7    5    3    1
+
+5. change row vector to column vector
+
+ >> u_x=u_x(:)
+u_x =
+
+   1.0042e+03
+6. combine column vectors into matrix
+>> u_vs_x =[u_x x]
+u_vs_x =
+
+   1.0042e+03   0.0000e+00
+   6.9823e+02   1.0000e-02
+   3.2162e+02   2.0000e-02
+   4.0328e+02   3.0000e-02
+7. normalized U_x, and x
+>> u_o=1102.95
+u_o =  1103.0
+>> u_x_nor=u_x/u_0
+where u_0 is jet exit velocity
+
+plotting with gnuplot/matlab
+>> x_nor=x/D
+where D is diameter of jet
+8. plot(x_nor, u_x_nor)
+
+*** scpirts
+filename='v.csv';   % assign file to a variable
+m=csvread(filename);  %Read comma-separated value (CSV) file 
+u=m(:,1);            % extract first column data, i.e. U_x
+u=u.' ;     %change column vector to row vector (transpose)
+u_x=fliplr(u);    % change orders of array, Flip array left to right
+u_x=u_x.';          %  change row vector back to column vector (transpose)
+u_0=1102.95;       % jet exit velocity
+u_x_nor=u_x/u_0;  % normalize axial veloicty
+x=m(:,5) ;      % extract 5th column data, i.e. x coordinates
+d=0.0025;      % diameter of jet
+x_nor=x/d;       % normalize axial distance
+plot(x_nor, u_x_nor)  
+print -deps u_x.eps  % save plot as eps image 
+output=[u_x_nor x_nor]; % format a matrix
+save -ascii u_vs_x.txt output; 
+
+
+*** log
+>> load v.csv
+error: load: unable to determine file format of 'v.csv'
+
+solution: use [[https://uk.mathworks.com/help/matlab/ref/csvread.html][csvread]]
+
+
+** Q-criterion loop
+*** scripts
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+
+	# create a new 'EnSight Reader'
+transient_91case = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient_514.case')
+transient_91case.PointArrays = ['density', 'v', 'pressure', 'temperature']
+
+	# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+renderView1.Background =[1,1,1]
+
+# uncomment following to set a specific view size
+
+renderView1.ViewSize = [1117, 866]
+	# get color transfer function/color map for 'density'
+densityLUT = GetColorTransferFunction('density')
+
+	# show data in view
+transient_91caseDisplay = Show(transient_91case, renderView1)
+	# trace defaults for the display properties.
+transient_91caseDisplay.ColorArrayName = ['POINTS', 'density']
+transient_91caseDisplay.LookupTable = densityLUT
+transient_91caseDisplay.GlyphType = 'Arrow'
+transient_91caseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+ # get color legend for 'densityLUT' in view 'renderView1'
+densityLUTColorBar = GetScalarBar(densityLUT, renderView1)
+densityLUTColorBar.AutoOrient = 0
+  ## legend orientation
+densityLUTColorBar.Orientation = 'Horizontal'
+densityLUTColorBar.RangeLabelFormat = '%.2f'
+   ## legend normalized position
+densityLUTColorBar.Position = [0.3, 0.1]
+         #  change label color to 'black'
+densityLUTColorBar.LabelColor = [0.0, 0.0, 0.0]
+
+        #  change titile color to 'black'
+densityLUTColorBar.TitleColor = [0.0, 0.0, 0.0]
+	# reset view to fit data
+renderView1.ResetCamera()
+
+	# show color bar/color legend
+transient_91caseDisplay.SetScalarBarVisibility(renderView1, True)
+
+	# get opacity transfer function/opacity map for 'density'
+densityPWF = GetOpacityTransferFunction('density')
+
+	# create a new 'Gradient Of Unstructured DataSet'
+gradientOfUnstructuredDataSet1 = GradientOfUnstructuredDataSet(Input=transient_91case)
+gradientOfUnstructuredDataSet1.ScalarArray = ['POINTS', 'density']
+
+	# Properties modified on gradientOfUnstructuredDataSet1
+gradientOfUnstructuredDataSet1.ScalarArray = ['POINTS', 'v']
+gradientOfUnstructuredDataSet1.ComputeQCriterion = 1
+
+	# show data in view
+gradientOfUnstructuredDataSet1Display = Show(gradientOfUnstructuredDataSet1, renderView1)
+	# trace defaults for the display properties.
+gradientOfUnstructuredDataSet1Display.ColorArrayName = ['POINTS', 'density']
+gradientOfUnstructuredDataSet1Display.LookupTable = densityLUT
+gradientOfUnstructuredDataSet1Display.GlyphType = 'Arrow'
+gradientOfUnstructuredDataSet1Display.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+	# hide data in view
+Hide(transient_91case, renderView1)
+
+	# show color bar/color legend
+gradientOfUnstructuredDataSet1Display.SetScalarBarVisibility(renderView1, True)
+
+	# create a new 'Contour'
+contour1 = Contour(Input=gradientOfUnstructuredDataSet1)
+contour1.ContourBy = ['POINTS', 'density']
+contour1.Isosurfaces = [0.7536712437868118]
+contour1.PointMergeMethod = 'Uniform Binning'
+
+	# Properties modified on contour1
+contour1.ContourBy = ['POINTS', 'Q-criterion']
+contour1.OutputPointsPrecision = 'Single'
+contour1.Isosurfaces = [1000000.0]
+
+	# show data in view
+contour1Display = Show(contour1, renderView1)
+	# trace defaults for the display properties.
+contour1Display.ColorArrayName = ['POINTS', 'density']
+contour1Display.LookupTable = densityLUT
+contour1Display.GlyphType = 'Arrow'
+
+	# hide data in view
+Hide(gradientOfUnstructuredDataSet1, renderView1)
+
+	# show color bar/color legend
+contour1Display.SetScalarBarVisibility(renderView1, True)
+
+	# reset view to fit data bounds
+renderView1.ResetCamera(-0.437000006437, -0.363715648651, -0.0146765615791, 0.0155552132055, -0.0139937549829, 0.0155133698136)
+
+
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.3693876183825478, -0.14945995339693371, 0.18962885092966636]
+renderView1.CameraFocalPoint = [-0.3579576038702967, -0.006822062851817242, -0.0021144211493554846]
+renderView1.CameraViewUp = [0.6080912350865584, 0.61916691517865, 0.4968474423392544]
+renderView1.CameraParallelScale = 0.04229428955697712
+
+
+
+	# get layout
+viewLayout1 = GetLayout()
+
+	# save screenshot
+SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/Q_criteria_colored_by_density_514.png' , layout=viewLayout1, magnification=1, quality=100)
+
+Disconnect
+Connect
+	
+**  video of velocity contour
+1. create multiple files with matlab
+2. reading files in a loop
+
+add time on screen
+
+fixed label value
+LockDataRange not work
+
+inlet fluid properties,  and
+conditions
+
+frequency
+*** fixed label value
+
+*** Python file I/O
+1. open a file
+2. read or write (perform operation)
+3. Close the file
+
+*How to open a file?*
+use =open()= function, which returns a file object
+
+e.g.
+
+~>>> f = open("test.txt") # open file in current directory~
+~>>> f = open("C:/Python/readme.txt") # specifying full path~
+~>>> f = open("test.txt",mode='r',encoding='utf-8') # specifying mode, and encoding~
+https://www.programiz.com/python-programming/file-operation
+
+*How to close a file?*
+Method 1
+#+BEGIN_SRC Python
+f = open("test.txt",encoding = 'utf-8')
+# perform file operations
+f.close()
+#+END_SRC 
+
+Method 2
+
+use a =try... finally= block
+
+*** loop in python
+
+** multiple slides with for loop
+file: sliceForLoop.py
+
+
+***************
+#+BEGIN_SRC Python
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+# for loop, 'Num' is number of loops
+for Num in range(2):
+	# create a new 'EnSight Reader' and assign it to a variable, 'transientcase'
+	transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient%i.case' %(Num+1))
+	transientcase.PointArrays = ['v', 'density', 'pressure', 'temperature']
+
+	# get active view
+	renderView1 = GetActiveViewOrCreate('RenderView')
+	# set a specific view size
+	renderView1.ViewSize = [1022, 837]
+
+
+
+	# get color transfer function/color map for 'density'
+	densityLUT = GetColorTransferFunction('density')
+	densityLUT.LockDataRange = 1
+
+
+	# get opacity transfer function/opacity map for 'density'
+	densityPWF = GetOpacityTransferFunction('density')
+
+
+	# show data in view
+	transientcaseDisplay = Show(transientcase, renderView1)
+	# trace defaults for the display properties.
+	transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+	transientcaseDisplay.LookupTable = densityLUT
+	transientcaseDisplay.GlyphType = 'Arrow'
+	transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+	# reset view to fit data
+	renderView1.ResetCamera()
+
+	# show color bar/color legend
+	transientcaseDisplay.SetScalarBarVisibility(renderView1, False)
+
+	# get opacity transfer function/opacity map for 'density'
+	densityPWF = GetOpacityTransferFunction('density')
+
+	# reset view to fit data
+	renderView1.ResetCamera()
+
+
+
+	#################
+	## slice
+	################
+	# create a new 'Slice'
+	slice1 = Slice(Input=transientcase)
+	slice1.SliceType = 'Plane'
+	slice1.SliceOffsetValues = [0.0]
+
+	# init the 'Plane' selected for 'SliceType'
+	slice1.SliceType.Origin = [-0.21849990739250558, 0.0, 0.0]
+
+	# Properties modified on slice1.SliceType
+	slice1.SliceType.Origin = [0.0, 0.0, 0.0]
+	slice1.SliceType.Normal = [0.0, 0.0, 1.0]
+
+	# show data in view
+	slice1Display = Show(slice1, renderView1)
+	# trace defaults for the display properties.
+	slice1Display.ColorArrayName = ['POINTS', 'density']
+	slice1Display.LookupTable = densityLUT
+	slice1Display.GlyphType = 'Arrow'
+
+	# hide data in view
+	Hide(transientcase, renderView1)
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, True)
+
+	# set active source
+	SetActiveSource(transientcase)
+
+	# reset view to fit data
+	renderView1.ResetCamera()
+
+
+	# current camera placement for renderView1
+	renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+	renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+	renderView1.CameraParallelScale = 0.25006857916835856
+
+
+	# *****************
+	# change legend layout, and its font color, position
+	# *****************
+
+	# get color legend for 'densityLUT' in view 'renderView1'
+	densityLUTColorBar = GetScalarBar(densityLUT, renderView1)
+
+	# Properties modified on densityLUTColorBar
+	densityLUTColorBar.AutoOrient = 0
+	densityLUTColorBar.RangeLabelFormat = '%.2f'
+	## legend orientation
+	densityLUTColorBar.Orientation = 'Horizontal'
+
+	## legend normalized position
+	densityLUTColorBar.Position = [0.3, 0.2]
+
+	# change label color to 'black' 
+	densityLUTColorBar.LabelColor = [1.0, 1.0, 1.0] 
+
+	#  change titile color to 'black' 
+	densityLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+	# ***************
+
+	# set Background color as 'White'
+	renderView1.Background =[1,1,1]
+
+
+	# get layout
+	viewLayout1 = GetLayout()
+
+
+	# save screenshot
+	SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/d_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+
+	#################
+	# pressure contour
+	##################
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, False)
+
+	# set active source
+	SetActiveSource(slice1)
+
+	# set scalar coloring
+	ColorBy(slice1Display, ('POINTS', 'pressure'))
+
+	# rescale color and/or opacity maps used to include current data range
+	slice1Display.RescaleTransferFunctionToDataRange(True)
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+
+	# get color transfer function/color map for 'pressure'
+
+	pressureLUT = GetColorTransferFunction('pressure')
+	pressureLUT.LockDataRange = 1
+
+
+	# get opacity transfer function/opacity map for 'pressure'
+	pressurePWF = GetOpacityTransferFunction('pressure')
+
+
+
+
+	# set active source
+	SetActiveSource(transientcase)
+	# *****************
+	# change legend layout, and its font color, position
+	# *****************
+
+	# get color legend for 'pressureLUT' in view 'renderView1'
+	pressureLUTColorBar = GetScalarBar(pressureLUT, renderView1)
+
+	# Properties modified on vLUTColorBar
+	pressureLUTColorBar.AutoOrient = 0
+	pressureLUTColorBar.RangeLabelFormat = '%.2f'
+	## legend orientation
+	pressureLUTColorBar.Orientation = 'Horizontal'
+
+	## legend normalized position
+	pressureLUTColorBar.Position = [0.3, 0.2]
+
+	# change label color to 'black' 
+	pressureLUTColorBar.LabelColor = [1.0, 1.0, 1.0] 
+
+	#  change titile color to 'black' 
+	pressureLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+	# ***************
+
+
+	# current camera placement for renderView1
+	# current camera placement for renderView1
+	renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027125790890924]
+	renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+	renderView1.CameraParallelScale = 0.25006857916835856
+
+
+
+	# save screenshot
+	SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/p_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+	######################
+	# #temperature contour
+	######################
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, False)
+
+	# set active source
+	SetActiveSource(slice1)
+
+	# set scalar coloring
+	ColorBy(slice1Display, ('POINTS', 'temperature'))
+
+	# rescale color and/or opacity maps used to include current data range
+	slice1Display.RescaleTransferFunctionToDataRange(True)
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+
+	# get color transfer function/color map for 'termperature'
+
+	temperatureLUT = GetColorTransferFunction('temperature')
+	temperatureLUT.LockDataRange = 1
+
+
+	# get opacity transfer function/opacity map for 'temperature'
+	temperaturePWF = GetOpacityTransferFunction('temperature')
+
+
+	# ******
+	# legend layout, and its font color, position
+	# *****
+
+	temperatureLUTColorBar = GetScalarBar(temperatureLUT, renderView1)
+
+	# Properties modified on vLUTColorBar
+
+	temperatureLUTColorBar.AutoOrient = 0
+	temperatureLUTColorBar.RangeLabelFormat = '%.2f'
+	## legend orientation
+	temperatureLUTColorBar.Orientation = 'Horizontal'
+
+	## legend normalized position
+	temperatureLUTColorBar.Position = [0.3, 0.2]
+
+	# label color to 'black' 
+	temperatureLUTColorBar.LabelColor = [1.0, 1.0, 1.0] 
+
+	#  change 'titile' color to 'black' 
+	temperatureLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+	# *****************
+
+	# set active source
+	SetActiveSource(transientcase)
+
+	# current camera placement for renderView1
+	# current camera placement for renderView1
+	renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+	renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+	renderView1.CameraParallelScale = 0.25006857917835856
+
+	# save screenshot
+	SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/t_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+
+	# *****************
+	#  Velocity
+	# ****************
+
+	# show color legend
+	slice1Display.SetScalarBarVisibility(renderView1, False)
+
+	# set active source
+	SetActiveSource(slice1)
+
+	# set scalar coloring
+	ColorBy(slice1Display, ('POINTS', 'v'))
+
+	# rescale color and/or opacity maps used to include current data range
+	slice1Display.RescaleTransferFunctionToDataRange(True)
+
+	# show color bar/color legend
+	slice1Display.SetScalarBarVisibility(renderView1, True)
+
+
+
+	# get color transfer function/color map for 'v'
+
+	vLUT = GetColorTransferFunction('v')
+	vLUT.LockDataRange = 1
+
+
+
+	# get opacity transfer function/opacity map for 'v'
+	vPWF = GetOpacityTransferFunction('v')
+
+
+	# *****************
+	# change legend layout, and its font color, position
+	# *****************
+
+	# get color legend for 'densityLUT' in view 'renderView1'
+	vLUTColorBar = GetScalarBar(vLUT, renderView1)
+
+	# Properties modified on vLUTColorBar
+	vLUTColorBar.AutoOrient = 0
+	vLUTColorBar.RangeLabelFormat = '%.2f'
+	## legend orientation
+	vLUTColorBar.Orientation = 'Horizontal'
+
+	## legend normalized position
+	vLUTColorBar.Position = [0.3, 0.2]
+
+	# change label color to 'black' 
+	vLUTColorBar.LabelColor = [1.0, 1.0, 1.0] 
+
+	#  change titile color to 'black' 
+	vLUTColorBar.TitleColor = [1.0, 1.0, 1.0]
+	# ***************
+
+	# set active source
+	SetActiveSource(transientcase)
+
+	# current camera placement for renderView1
+	# current camera placement for renderView1
+	renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027125790890924]
+	renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+	renderView1.CameraParallelScale = 0.25006857916835856
+
+	# save screenshot
+	SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/tem/v_%s.png' %(Num+1), layout=viewLayout1, magnification=1, quality=100)
+
+	#### saving camera placements for all active views
+
+	# current camera placement for renderView1
+	# current camera placement for renderView1
+	renderView1.CameraPosition = [-0.3656950276430585, -0.000908563692513454, 0.21027127790890924]
+	renderView1.CameraFocalPoint = [-0.3656950276430585, -0.000908563692513454, 0.0]
+	renderView1.CameraParallelScale = 0.25006857916835856
+	#### uncomment the following to render all views
+	# RenderAllViews()
+	# alternatively, if you want to write images, you can use SaveScreenshot(...).
+#+END_SRC 
+
+****************
+
+
+* Video
+** Ignition of a turbulent methane jet
+ (fuel=70% CH4 and 30% air in volume),
+ ignited by an electrical spark (100mJ, 400 micro-second, electrode gap: 1mm). 
+Isosurface of equivalence ratio = 1 (blue) and of mass fraction of H2O (Y=0.5) colored by the temperature.
+Author: G. Lacaze
+Credit: CERFACS
+
+* Reference
+
+
+
+
+* How to
+1. 3D video
+2. Q-criteria
+** 3D video
+software: Paraview
+
+***  steps
+1. record all commands
+     
+   ~tool/start traces~
+
+   References:
+     exercise 3.1 creating a Python script trace, tutorial guide
+
+2. get an image 
+
+   a. slip the Computational domain
+   b. change background to white
+c. save an image
+
+   Reference:
+   
+  [[https://blog.kitware.com/exporting-vector-graphics-in-paraview-4-0/][export vector graphics]]
+3. get multiple images with Python scripts
+60 time steps
+
+4.  image >> video
+
+*** Reference video
+[[http://www.eng.cam.ac.uk/profiles/bnu20][Bryn Noel Ubald]]- An instrumented turbine blade – Another unique perspective
+https://www.youtube.com/watch?v=JKJnkYFyskw&index=7&list=PLpzImLbDbsyCrFS2fXlyaiFXb87JdZpm-&pbjreload=10
+
+
+
+*** change contour variable
+
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+# create a new 'EnSight Reader'
+transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient.case')
+transientcase.PointArrays = ['density', 'v', 'pressure', 'temperature']
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+# uncomment following to set a specific view size
+# renderView1.ViewSize = [863, 837]
+
+# get color transfer function/color map for 'density'
+densityLUT = GetColorTransferFunction('density')
+
+# show data in view
+transientcaseDisplay = Show(transientcase, renderView1)
+# trace defaults for the display properties.
+transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+transientcaseDisplay.LookupTable = densityLUT
+transientcaseDisplay.GlyphType = 'Arrow'
+transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+# reset view to fit data
+renderView1.ResetCamera()
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get opacity transfer function/opacity map for 'density'
+densityPWF = GetOpacityTransferFunction('density')
+
+# set scalar coloring
+ColorBy(transientcaseDisplay, ('POINTS', 'v'))
+
+# rescale color and/or opacity maps used to include current data range
+transientcaseDisplay.RescaleTransferFunctionToDataRange(True)
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get color transfer function/color map for 'v'
+vLUT = GetColorTransferFunction('v')
+
+# get opacity transfer function/opacity map for 'v'
+vPWF = GetOpacityTransferFunction('v')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.21849990739250558, 0.0, 0.9661907958485202]
+renderView1.CameraFocalPoint = [-0.21849990739250558, 0.0, 0.0]
+renderView1.CameraParallelScale = 0.25006857916835856
+
+
+**** change contour variable from 'density'  to 'v'
+
+
+# set scalar coloring
+ColorBy(slice1Display, ('POINTS', 'v'))
+
+# rescale color and/or opacity maps used to include current data range
+slice1Display.RescaleTransferFunctionToDataRange(True)
+
+# show color bar/color legend
+slice1Display.SetScalarBarVisibility(renderView1, True)
+
+# get color transfer function/color map for 'v'
+vLUT = GetColorTransferFunction('v')
+
+# get opacity transfer function/opacity map for 'v'
+vPWF = GetOpacityTransferFunction('v')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.24175098022185249, 0.11823180090490217, 1.098500283147858]
+renderView1.CameraFocalPoint = [-0.20832480931184155, 0.12646538877612318, 0.00125895591456612]
+renderView1.CameraViewUp = [8.169175204111794e-05, 0.9999718249271369, 0.007506176013726962]
+renderView1.CameraParallelScale = 0.23481544622305758
+
+#### uncomment the following to render all views
+# RenderAllViews()
+# alternatively, if you want to write images, you can use SaveScreenshot(...).
+
+* Results
+inlet pressure, T, density, \rho
+
+1. 3D video similar to 
+2. Q-criteria
+3. Turbulent BL, shear layer
+
+* Paraview Script FAQ
+** camera placement
+# 'renderView1' is the view name
+# current camera placement for renderView1
+
+renderView1.CameraPosition = [-0.22126314316421933, 0.12646846135388234, 1.0978252757245606]
+renderView1.CameraFocalPoint = [-0.2082859046961596, 0.12646846135388234, 0.00012075157365905824]
+renderView1.CameraParallelScale = 0.23481544622305758
+
+# at xy plane, zoom change z value only as below:
+left figure:
+
+    renderView1.CameraPosition = [-0.21849990739250558, 0.0, *2.0711157783058827* ]
+
+Right figure:
+
+    renderView1.CameraPosition = [-0.21849990739250558, 0.0, *1.1690908629767092* ]
+file:figures/python/cameraPosition.png
+
+as seen in the above figure, the smaller is z value , the bigger is the figure
+** To load the EnSight files using the  =transient.case= script
+
+#+BEGIN_SRC Python
+## create a new 'EnSight Reader'
+	transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/transient.case')
+	transientcase.PointArrays = ['density', 'v', 'pressure', 'temperature']
+#+END_SRC 
+
+#### import the simple module from the paraview
+from paraview.simple import *
+#### disable automatic camera reset on 'Show'
+paraview.simple._DisableFirstRenderCameraReset()
+
+# create a new 'EnSight Reader'
+transientcase = EnSightReader(CaseFileName='/home/kaiming/Documents/ZJU_Projects/Jet/data/transient.case')
+transientcase.PointArrays = ['v', 'density', 'pressure', 'temperature']
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+# uncomment following to set a specific view size
+# renderView1.ViewSize = [1111, 837]
+
+# get color transfer function/color map for 'density'
+densityLUT = GetColorTransferFunction('density')
+
+# show data in view
+transientcaseDisplay = Show(transientcase, renderView1)
+
+# trace defaults for the display properties.
+transientcaseDisplay.ColorArrayName = ['POINTS', 'density']
+transientcaseDisplay.LookupTable = densityLUT
+transientcaseDisplay.GlyphType = 'Arrow'
+transientcaseDisplay.ScalarOpacityUnitDistance = 0.0016420380639339577
+
+# reset view to fit data
+renderView1.ResetCamera()
+
+# show color bar/color legend
+transientcaseDisplay.SetScalarBarVisibility(renderView1, True)
+
+# get opacity transfer function/opacity map for 'density'
+densityPWF = GetOpacityTransferFunction('density')
+
+#### saving camera placements for all active views
+
+# current camera placement for renderView1
+renderView1.CameraPosition = [-0.21849990739250558, 0.0, 0.9661907958485202]
+renderView1.CameraFocalPoint = [-0.21849990739250558, 0.0, 0.0]
+renderView1.CameraParallelScale = 0.25006857916835856
+
+#### uncomment the following to render all views
+# RenderAllViews()
+# alternatively, if you want to write images, you can use SaveScreenshot(...).
+#+END_SRC 
+
+** NameError: name 'slice1Display_1' is not defined
+Traceback (most recent call last):
+
+solution:
+
+assign =active view= to =renderView1=
+
+    # get active view
+    renderView1 = GetActiveViewOrCreate('RenderView')
+** View
+# get active view and assign it to a variable, "renderView1"
+renderView1 = GetActiveViewOrCreate('RenderView')
+
+# set Background color as 'White'
+renderView1.Background =[1,1,1]
+
+# set image size
+renderView1.ViewSize = [1920, 1080]
+
+** Save screenshot
+
+
+# saving camera placements for all active views
+Version 1  
+
+SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/jet_64.png', view=renderView1, ImageResolution=[1920,1080])
+
+
+Version 2
+
+SaveScreenshot('/home/kaiming/Documents/ZJU_Projects/Jet/paraview/jet_1.png', magnification=1, quality=100, view=renderView1)
+
+exercise, 2.25 tutorial, V5.6
+
+https://forgeanalytics.io/blog/saving-a-screenshot-in-paraview/
+https://www.paraview.org/Wiki/ParaView/Python/Screenshot
+** legend
+
+
+* contacts
+
+Chia-Fon Lee
+
+    Professor, Mechanical Science and Engineering
+    Professor, ZJU-Illinois Joint Institute, College of Engineering
+** reseach groups
+[[https://tcg.mae.cornell.edu/][Turbulence and Combustion Group]], Cornell Uni. College of Engineering, 
+ 
+

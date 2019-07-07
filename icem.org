@@ -1,0 +1,240 @@
+* Ref
+胡坤的《ANSYS ICEM CFD工程实例详解》
+* ICEM
+** Pre-Mesh Params
+*** mesh law
+
+** 2D to 3D Blocks
+options
+- MultiZone Fill: converts surface blocking into 3D blocking
+- Translate
+allows you to specify the X, Y and Z distance to extrude the 2D Block.
+- Rotate
+
+
+  
+https://www.sharcnet.ca/Software/Ansys/15.0.7/en-us/help/icm_help/iblock_2dto3d.html 
+** airfoil
+- Import formatted point data
+- Far field geometry creation
+- Basic blocking
+-  O-grid, Split blocks, move verts, split edges, etc.
+-  Edge parameters
+- Smoothing
+-  Output to fluent
+*** Import formatted point data
+>> File/import geometry/formatted point data
+
+- Typically in an ASCII file
+- Specially formatted
+- Can be extrapolated to 3D, with scaling, twist, etc.
+- High or low curvature, etc.
+- May require different blocking strategy(Topology)
+- Requires some robust scripting
+
+* FAQ
+** background color
+setting/background style
+** create geometry from mesh
+edit/mesh/facets
+>>Turbogrid to ICEM Blocking export.pdf
+** close mesh
+file/mesh/close mesh
+* Tips
+GENERAL PROCEDURE FOR OCTREE MESHING WITH PRISMS AND DELUNAY DEVELOPMENT BY A USER
+
+1.0 Octree Volume mesh, to give me a watertight volume.
+2.0 Delete the volume mesh.
+3.0 Smooth & manually improve the surface mesh (Quality >0.5).
+4.0 Then do a Delauney volume fill with advancing front option.
+5.0 Smooth that volume mesh to obtain a quality above 0.3.
+6.0 Grow 8 prism layers with an expansion ratio of 1.25, but no initial height set to allow the prisms to float.
+7.0 Split the prisms in 3 to produce 24 layers, redistribute to give desired initial wall height.
+8.0 Smooth tetras freezing pentas & any pyramids produced.
+9.0 smooth everything up to around 0.05.
+
+RULE OF THUMB – GEOMETRY BUILD TOPOLOGY
+1/10 th of minimum curve length in geometry
+
+METHOD FOLLOWED BY FAR TO GENERATE TRI- TETRA – PRISM MESHING OF A WING BODY
+1) Set the Global element sizes.
+2) Set Global surface mesh set up – all tri – patch dependent – respect line elements to the smallest mesh length
+3) Specify surface mesh settings individually for all surfaces. Specify curve elements – use dynamic to control meshing parameters in the wing. – bunching ratios.
+4) Generate shell mesh tri elements.
+5) Repair and improve surface mesh
+6) Generate prism on top of surface mesh
+7) Generate delunay volume mesh
+8) Smooth all mesh in 2 steps
+
+SURFACE MESHING OF A WING
+Problem: problem is like that when i draw the patch independent surface mesh on the delta shape surface mesh penetrates the surface and it creates the problem when i draw the volume mesh
+Simon replied:
+Yes, we understand the problem...
+
+We are telling you that there are several ways to fix it.
+
+1) Setup "Thin Cuts"
+
+2) Refine your mesh
+
+3) Adjust "Edge Criterion"
+
+ABOUT PRISMS FLOATING
+There's two parameters in ICEM which deals with how prism layers are built and treated in relation to the prism-to-tetra transition: Max Height Over Base (MHOB) and Prism Height Limit Factor (PHLF). It seems to me from reading the material and trying different meshes (so I know what they do) that the MHOB is only suitable to cap the layering of prisms if they are not floated, and instead all required layers are build one after another. Whereas, the PHLF is only suitable when floating the prisms to give a smooth prims-to-tetra transition.
+(answered by simon)
+Floating the prisms is similar to using PHLF, except that you don't set the initial height (it gets calculated).
+
+You can't really use MHOB and PHLF at the same time. Which ever ratio it hits first will prevent the other one from being reached.
+
+
+HOW TO MERGE 2 MESHES AT SYMMETRY (SIMON)
+Are you mirroring the blocking or just the mesh? If it is topologically symmetrical, but not geometrically symmetrical, you should mirror the blocking and then adjust to fit the actual geometry... But if it is geometrically symmetrical, you can just mirror the mesh, then merge nodes with a tolerance and delete the symmetry shells.
+
+ABOUT FAR FIELD (FAR)
+Oh, I check the domain extents and they are too close to the body. Body length is approx. 1000 units and downstream is 5000 units (5 lengths) and upstream boundary is 2000 units (2 lengths). And the flow is low subsonic. For this you need at least 10-15 lengths upstream and 20-30 lengths downstream. Similarly 10-15 lengths in Y and Z direction
+
+ABOUT WALL DISTANCE ( FAR)
+Wall distance is the another measure of aspect ratio. It is required by SA and two equation omega based models. You should avoid the high aspect ratio at the far field. Higher aspect ratios are allowed (upto 1000 for dp), but I have also tested the aspect ratios up to 8000-10000 for NASA rotor 37 and results were still comparable to experiments with 2-3% error.
+
+So rule of thumb is that you can go for higher aspect ratios (1000-10000 with dp) in boundary layer but you must avoid them in far field.
+
+Minimum orthogonal quality required is 0.01 and if you are getting problem then you should check settings in Fluent, 
+such as under-relaxation parameters, mesh scaling, mesh units, boundary condition etc..
+https://www.cfd-online.com/Forums/ansys-meshing/154520-icem-meshing-tips-forum-collection.html
+
+* Tutorials
+** 1/3 section pie
+https://www.youtube.com/watch?v=0e-LBBoEu3s&list=PLatFsrQJITpKqA6dweZQSXLiRzSALI6EL&index=3
+
+* online doc
+[[https://www.sharcnet.ca/Software/Ansys/16.2.3/en-us/help/icm_help/icem_help_book.html][help manual]]
+* pre mesh quality
+keywords: Pre Mesh Quality, help manual ICEM CFD
+** Requirement
+Mesh quality in ICEM 
+
+	Determinant >0.3
+	Angle, (18, 90)
+	Warpage < 45 degrees
+
+- orthogonal quality > 0.1
+- Equiangle Skewness > 0.1 (ICEM) = 1- ortho skew(Fluent)
+   + ortho Skewness (Fluent) Must be less than 0.8. Up to 0.95 is acceptable.
+- Aspect Ratio
+    below 100 (single precision solver)
+    below  1000 ( double precision solver)
+** The major quality criteria for a *hexa mesh*
+- angle, (18-90)
+- determinant >0.3
+- warpage <45 degrees
+- Quality : > 0.3. But quality of 0.2 or greater can be tried and if solver doesn't mind it than carry on.
+- Expansion rate: 1.2, Change of cell volume with respect to neighbouring cells.
+
+** Orthogal quality: 0 bad, 1 good
+- use three sets of vectors
+- the face normal vector (A i), the vector from the cell centroid to the centroid of the adjacent cell (c i), and the vector from the cell centroid to the centroid of the face (f i)
+- orthogonal quality :: The minimum value obtained from calculating these quantities for all the faces
+
+- For tetrahedral, prism, and pyramid cells, the Orthogonal Quality is the minimum of the orthogonality
+and (1 - cell skewness).
+- For *hexahedral* cells, the *Orthogonal Quality* is the same as the *orthogonality*.
+
+
+** Equiangle Skewness (ICEM) = 1- ortho skew(Fluent)
+Equiangle Skewness (ICEM) , 0 is bad, 1 is good
+Element equiangle skew = 1.0 – max ((Qmax – Qe) / (180 – Qe), (Qe – Qmin) / Qe),
+
+where
+
+Qmax = largest angle in the face or element
+
+Qmin = smallest angle in the face or element
+
+Qe = angle of an equiangular face or element (e.g., 60 degrees for a triangle, and 90 degrees for a square).
+** Quality
+- 0, bad, 1 ideal good
+
+
+Tri and Tetra
+
+The quality is calculated as the minimum ratio of height to base length of each side (normalized to 1).
+
+Quad
+
+The quality is calculated as the Determinant, as described in Determinant (2x2x2 stencil).
+
+Hexa
+
+the minimum of the  weighted diagnostic between Determinant , Max Orthogls and Max Warpgls.
+
+
+Pyramid
+
+The quality is calculated as the determinant.
+
+Prism
+
+The quality is calculated as the minimum of the Determinant and Warpage. Warpage is normalized to a factor between 0 and 1, where 90 degrees is 0, and 0 degrees is 1.
+** References
+https://www.sharcnet.ca/Software/Ansys/15.0.7/en-us/help/icm_help/iblock_premeshqualoptions.html
+https://www.sharcnet.ca/Software/Ansys/17.0/en-us/help/icm_help/iedit_fluentortho.html
+* Part
+** Add to Part
+Allows you to add /entities/ to an /existing part/.
+
+* TODO ansys meshing
+y plus to 30-300, k-e model
+
+* blocking
+** topology
+* multizone 
+- 3D blocking fill
+- automatical,
+- all zones mesh conformal
+- multiple different zones
+- based on Hexa blocking
+the blocking is a separate layer, you can associate a blocking topology to a variety of topologically similar geometries.
+ The blocking is not constrained by the surface topology of the geometry
+
+** multizone algorith
+The multizone algorithm starts with a concept of “loops”[fn:multizone-ansys].
+ In its simplest form, _a loop is the perimeter of a surface._
+ However, surfaces with dormant curves between them can be combined into larger loops. 
+Loops can also be split (manually or automatically) into smaller loops.
+- similar to the virtual topology (ANSYS meshing)
+- a great way to get rid of slivers or simplify your surface patches.  
+** how to 
+- 2d surface blocking
+- 2d to 3d blocking
+** tutorial
+- Multizone Mesh in HVAC Square-to-circle Transition Duct, tutorial manual, ICEM CFD
+- youtube video, [[https://www.youtube.com/watch?v=HmEzZ1zZnsU][ANSYS ICEM CFD: Mapped Surface Meshing in support of Aircraft Drag Workshop]]
+
+An automated method to create 3D blocking using the sequential operations of 2D Surface Blocking followed
+by 3D Fill. The volume is decomposed into a combination of *mapped*, *swept* and *free* blocks.
+ Source imprint surfaces and Mapped/Swept Decomposition options affect how the volume is decomposed and can aid
+with sweeping, etc.
+#+caption: ICEM Multizone airplane
+#+NAME: MultiZone_airplane
+file:C:\Users\exw692\Dropbox\Emacs\figures\ICEM_MultiZone_airplane.png
+
+* mapped surface meshing
+
+* Replay control/script
+script is based on tlc programming >> http://www.tcl.tk/doc/
+** workbench integration with replay control
+This ANSYS How To video demonstrates the use of Replay scripts and user-defined parameters in ICEM CFD in the ANSYS Workbench environment. ANSYS ICEM CFD meshing software starts with advanced CAD/geometry readers and repair tools to allow the user to quickly progress to a variety of geometry-tolerant meshers and produce high-quality volume or surface meshes with minimal effort. Advanced mesh diagnostics, interactive and automated mesh editing, output to a wide variety of computational fluid dynamics (CFD) and finite element analysis (FEA) solvers and multiphysics post-processing tools make ANSYS ICEM CFD a complete meshing solution. For more information, please visit ansys.com.
+> https://www.youtube.com/watch?v=eLEngAetq-E
+> workbench integration, help guide, ICEM CFD
+
+* Video
+** Free Block Decomposition
+This video demonstrates volume meshing including O-grid definition for inflation, free block splitting for parallel meshing, and edge parameters to improve quality. ANSYS ICEM CFD meshing software starts with advanced CAD/geometry readers and repair tools to allow the user to quickly progress to a variety of geometry-tolerant meshers and produce high-quality volume or surface meshes with minimal effort. Advanced mesh diagnostics, interactive and automated mesh editing, output to a wide variety of computational fluid dynamics (CFD) and finite element analysis (FEA) solvers and multiphysics post-processing tools make ANSYS ICEM CFD a complete meshing solution. 
+* Footnotes
+
+[fn:multizone-ansys] http://www.ansys-blog.com/ansys-icem-cfd-multizone/
+
+
+
+
+

@@ -1,0 +1,10 @@
+image
+#+begin_src
+
+<img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
+#+end_src
+annotaton:
+~img~  #image
+~src~  #source
+
+in HTML, images are defined with the ~<img>~ tag

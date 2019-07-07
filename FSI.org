@@ -1,0 +1,54 @@
+* Fluid structure interaction
+the note is from fluent FSI[fn:fluent_fsi]
+
+** Meshing types for FSI
+- Conforming mesh
+- Non-conforming mesh
+*** conforming mesh
+con: need remesh at every time step
+*** non-conforming mesh
+pro: no remesh
+Immersed Boundary Method is a non-conforming mesh method
+
+** Equations for FSI
+For *fluid*, NSEs
+For *solid*, governing equations for elastic body
+
+
+
+* Symbols 
+FSI  fluid structure interaction
+
+* Modeling approaches for FSI
+What is Fluid Structure Interaction?
+- Occurs when a fluid flow interacts with a solid structure or bodies
+- Flow may exert pressure and (or) thermal loads
+- These may cause structural deformations significant enough to change
+the fluid flow itself (2-way interaction)
+-  the deformations may be neglected on the fluid side (1-way)
+- Solid may deform or move due to external forces, driving the 
+fluid flow, or exert thermal loads on the fluid
+- Again, 1-way and 2-way interactions are possible
+** implicit explicit approaches vs implicit/explicit solver
+Implicit and Explicit approaches in the context of the FSI
+coupling is not to be confused with an ¡°implicit solver¡±
+or an ¡°explicit solver¡±
+
+** Implicit vs Explicit
+ANSYS uses the *iteratively implicit* approach\\
+implicit arrpoach in FSI=/= implicit solver\\
+By Coupling Iterations = Iteratively Implicit\\
+By using a *single fluid-solid matrix* = Fully coupled (and naturally implicit)\\
+* IB method
+IB method :immersed boundary method
+First introduced by Peskin(1972) [fn:peskin1972]
+
+** Review on IB method
+immersed boundary methods[fn:mittal2005immersed]
+
+* Footnotes
+[fn:fluent_fsi] FSI_Fluent_Lectures.pdf
+[fn:mittal2005immersed] Mittal, Rajat, and Gianluca Iaccarino. "Immersed boundary methods." Annu. Rev. Fluid Mech. 37 (2005): 239-261.
+
+[fn:peskin1972] Peskin CS. 1972. Flow patterns around heart valves: a digital computer method for solving the equations of motion. PhD thesis. Physiol., Albert Einstein Coll. Med., Univ. Microfilms. 378:72–30
+

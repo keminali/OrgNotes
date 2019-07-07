@@ -1,0 +1,119 @@
+ aeroacoustics-Goldstein
+* list of symbols
+| B                      | nubmer of propeller or fan blades                                               |
+| C^f                     | convective amplification factor, \( 1-Mcos\theta \)                                  |
+| c                      | chord length; local speed of sound                                              |
+| c_0                     | speed of sound at steady state                                                  |
+| e_ij                    | viscous stress tensor                                                           |
+| *F*                    | total force exerted on sold boundaries                                          |
+| f                      | frequency; arbitrary function;\[\vert\]f\[\vert\]                                       |
+| \( \mathbf{f} \)       | force per unit area                                                             |
+| G                      | fundamental solution of wave equation                                           |
+| G^0                     | free space Green's function                                                     |
+| \( I_\omega \)          | fourier transform of \[\overline{I}\]                                           |
+| \[\overline{I}\]       | intensity vector                                                                |
+| *k*                    | wave number vector                                                              |
+| M                      | Mach number, U/C_0                                                               |
+| \[ \hat{\mathbf{n}} \] | unit normal vector to solid surface                                             |
+| p                      | pressure                                                                        |
+| p_o                     | pressure of steeady flow; constant reference pressure                           |
+| R                      | \[ \ver{\mathbf{x}-\mathbf{y}}                                                  |
+| *R*                    | *x*- *y*   vector between observation point and source point                    |
+| r                      | radial coordinate of observation point in cylindrical coordiante system         |
+| r', r_0                 | radial coordiante of observation point in cylindrical coordiante system         |
+| S                      | entropy; Sears' function; fixed surface                                         |
+| S(\[\tau\])               | moving surface                                                                  |
+| T                      | large time interval (eventually equal to infinity)                              |
+| T_{ij}                    | Lighthill's stress tensor                                                       |
+| t                      | time associated with the arrival of sound wave at observation point             |
+| U, U_\infin             | mean flow velocity                                                              |
+| *u*                    | unsteady velocity                                                               |
+| *V_s*                  | surface velocity                                                                |
+| *v*                    | velocity                                                                        |
+| x                      | coordinates associated with observation point                                   |
+| \Gamma                      | normalized pressure autocorrelation function, \[ \overline{p(t)p(t+\tau)}/\rho_o c_o \] |
+| \gamma                      | source term                                                                     |
+| \delta_{ij}                    | Kronecker delta( 1 if i=j; 0 if i \neq j                                          |
+| \delta(x)                   | Dirac delata function                                                           |
+| \theta                      | polar coordiante                                                                |
+| \Theta                      | temperature                                                                     |
+| \lambda                      | wave length                                                                     |
+| k_{m, n}                  | eigenvalue                                                                      |
+| \zeta                      | moving coordiantes attached to source                                           |
+| v(\tau)                   | volume of fluid exterior or inerior to solid surfaces                           |
+| \rho                      | density                                                                         |
+| \rho_o                     | density of steday flow; constant reference density                              |
+| \rho'                     | fluctuating density, \rho'=\rho-\rho_o                                                    |
+| \sigma                      | reduced frequency; interblade phase angle in Chapter 5                          |
+| \Phi                      | phase; velocity potential                                                       |
+| \phi                      | polar coordinate (azimuthal angle)                                              |
+| \omega                      | angular frequency  \omega=2\pi f                                                       |
+| \Omega                      | \( \vert \mathbf{\Omega} \vert \)                                                    |
+
+Subscripts:
+| D | drag component   |
+| T | thrust component |
+| 0 | constant reference value; value of quantity in steady background flow |
+
+we write \( f(x)=O(g(x)) \) as \(  x \rightarrow x_o \) to indicate that the ratio \(  f(x)/g((x) \)
+remains *finite* as \(  x \rightarrow x_o \). It shows that f(x) approaches its limiting value at
+\( x_o \) at least as fast as \( g(x)  \) does. If \( lim f(x) / g(x) =1 \) as \( x \rightarrow x_o \). we write \( f(x) \sim g(x) \).
+
+* notation
+*A* (boldface) : vector
+\( A \) : magnitude\\
+\( A_i \) vector component, \[ i=1,2,3 \]\\
+\( \overline{A} \) : average\\
+< > :space average\\
+T : a large time interval\\
+\nabla : vector operator 
+* Glossary
+Retarded time ( P26) :  \( \tau - ( R/c_o ) \)
+Where \tau is time associated with soud emmision, R is distance between
+source and receiver, \( c_o \) is speed of sound
+* Introduction
+
+*** Governing Equation for invisid flow
+*Euler's equation*
+\begin{equation}
+\rho  (\frac{\partial \mathbf{v}}{\partial t}+ \mathbf{v}\cdot \nabla \mathbf{v}) = - \nabla p + \mathbf{f}
+\end{equation}
+
+*continuity equation*
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \mathbf{v} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{v}=\rho q
+\end{equation}
+
+*** Governing equation for steady invisid flow
+*** linearized gas dynamic equations
+- equations using fluctuating variables.
+- govering the propagation of small disturbances through a *steady flow*.
+
+assumption: steady flow, 
+
+
+*Linearized gas-dynamic equations*
+ refer to Eq.(1.11) [[eq.1.11]]
+it governs /the propagation of *small disturbances* through a steady flow./
+
+#+caption: Linearized gas-dynamic equations
+#+name: eq.1.11
+file:C:\Users\exw692\Dropbox\Emacs\figures\eq.1.11.png
+
+*Derivation process*
+Eq.(1.11) + Eq. (1.12) \rightarrow Eq. (1.15) \rightarrow Eq. (1.17) \rightarrow U=constant \rightarrow [[eq.1.18]] \\
+Eq.(1.18) is inhomogeneous wave equation for uniformly moving media \\
+
+#+CAPTION  inhomogeneous wave equation for uniformly moving media 
+#+NAME: eq.1.18
+\begin{equation}
+\nabla^2 p -\frac{1}{c_o^2} \frac{D_o^2}{Dt^2}p=\nabla \cdot f =\rho_o \frac{D_o q}{Dt} = -\gamma
+\end{equation}
+
+** Green's formula
+
+* acoustic source
+- monopole[fn:acoustic_source]
+- dipole
+- quadrupoles
+* effect of solid boundaries

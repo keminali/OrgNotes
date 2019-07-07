@@ -1,0 +1,9 @@
+* BladeGen
+BladeGen 
+- Blade design for a_single blade row_ only 
+- Allows designers to easily manipulate blade shapes 
+-  Uses turbo designer language 
+-  Much simpler than CAD, very intuitive 
+- Multiple starting points and input formats 
+- Templates, existing BladeGen model, text files, CAD files, custom user I/0, Vista 1D tools 
+- Windows OS _only_ 

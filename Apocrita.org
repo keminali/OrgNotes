@@ -1,0 +1,507 @@
+#+SETUPFILE: theme-bigblow.setup
+	
+* Apocrita Linux Parallel OS
+keywords: Linux, HPC, Apocrita, parallel 
+
+To run ANSYS in Linux cluster, you need Shell scripts (~.sh~ ) and journal file ( ~.jou~)
+- *Shell scripts* is used to request computational resources and open ANSYS software,  refer to [[submitting jobs]]
+- *Journal file* is a list of command (batch model)n for Fluent,  refer to [[ Journal file]]
+
+** OS--CentOS
+
+Resources
+    
+    parallel ansys jobs up to 128 cores (4 nxv nodes). https://docs.hpc.qmul.ac.uk/using/#parallel-job
+
+Module
+
+	Ansys 18
+
+Check module available?
+
+	Module avail, https://docs.hpc.qmul.ac.uk/using/UsingModules/
+
+** login
+- use "MobaXterm" software to login in via SSH
+
+*Account*
+Old account
+
+ssh -X exw110@login.hpc.qmul.ac.uk 
+
+New account
+
+ssh  exw110@login2.hpc.qmul.ac.uk 
+
+Password: a((**1***8***5
+		
+IT research support account: exw***@qmul.ac.uk
+
+To change passwords: https://pass.hpc.qmul.ac.uk/ 
+
+Remote host: login.hpc.qmul.ac.uk
+ username: exw***
+
+	
+	If you want to change your password, log in to
+	frontend1.apocrita.hpc.qmul.ac.uk	
+	and type "passwd" (without the quotes) at the prompt.
+	
+
+
+*** [[https://docs.hpc.qmul.ac.uk/intro/sshkeys/#mobaxterm][Setting up SSH key based access to Apocrita]]
+# Generate Key
+ssh-keygen
+
+# Copy key to Apocrita
+ssh-copy-id exw***@login.hpc.qmul.ac.uk
+
+# You can now login with your key
+ssh exw***@login.hpc.qmul.ac.uk
+
+
+** submitting jobs
+
+*** two node example
+
+#!/bin/sh
+#$ -cwd                 # Set the working directory for the job 
+#$ -j y                 #combine the standard output and the standard error stream.
+#$ -m bea               #get notifications on job start, finish and abortion.
+#$ -M k.ai@qmul.ac.uk
+#$ -l h_rt=48:0:0       #request 48 hour runtime
+#$ -pe parallel 64      #parallel environment, multiple nodes, 64 cores (2 nxv nodes: 64/32=2)
+#$ -l h_rt=24:0:0        #running time, 4 hour
+#$ -l infiniband=nxv    #node type: nxv node, each node has 32 cores
+#$ -l ansys=64          #request ansys licence for 64 cores
+
+module load ansys     #load ansys 
+fluent 3ddp -g -rsh -t$NSLOTS -i e387un.jou
+
+
+to submit a job, use ~qsub <scirpt name>~ command
+i.e. ~qsub udf.sh~
+
+*** scripts
+The main purpose of a job script is to request the required resources and setup the environment. 
+The main resources to be requested on the cluster are *cores*, *memory* and *runtime*.
+
+a simple job script requesting a single core, 1GB of ram and 24 hours runtime:
+#+BEGIN_SRC
+#!/bin/sh
+#$ -cwd           #execute the job from the Current Working Directory.
+#$ -pe smp 1      # Request 1 node, 1 core
+#$ -l h_rt=24:0:0 # Request 24 hour runtime
+#$ -l h_vmem=1G   # Request 1GB RAM
+./code
+#+END_SRC
+**** syntax
+| ~smp~             | #Single Machine Processing   (1 node)                       |
+| ~-pe~             | # Parallel Environment                                    |
+| ~#$ -cwd~         | # Set the working directory for the job                     |
+| ~#$ -j y~         | #combine the standard output and the standard error stream. |
+| ~#$ -m bea~       | #get notifications on job Begin, End and Abortion.          |
+| ~$NSLOTS~         | the number of cores/processes/slots the job will use        |
+| ~-pe smp 4~       | #  parallel environment, single node, 4 cores                                    |
+| ~-pe parallel 64~ | #     parallel environment, multiple node, 64 cores         |
+
+
+~#$ <resource>~     #specify resources
+~#$ -l h_rt=24:0:0~  #wallclock runtime 
+~#$ -l excl~            #request a full node and ensure that the maximum amount of available memory is used by your job
+~pe~                #request a parallel environment - this will usually be =smp= to /request a number of cores on the same node/ or *parallel* to request more than one whole machine.
+~#$ -pe smp~   # parallel environment, 1 node
+~-l exclusive=true~ 	#requests exclusive use of a node.
+~#$ -l infiniband=nxv~    # for parallel job, Choose infiniband island ( nxv)
+~#$ -pe parallel~ # parallel environment, parallel machine (node), more than 1  node
+~#$ -pe parallel 128~     # Request 128 cores/4 nxv nodes
+~#$ -M k.ai@qmul.ac.uk~   #specify email address
+~-cwd~ 	#execute the job from the current working directory.
+~-j y~ 	   #combine the standard output and the standard error stream.
+ [[https://docs.hpc.qmul.ac.uk/apps/sems/ansys/][one node]]
+*** Job Runtimes
+- Jobs requesting more than 72 hours may not be scheduled as quickly as those requesting less.
+- checkpointing :: a method of regularly dumping the job's state so that it can be restarted
+*** Environment variables
+| Variable           | Description                          |
+| SGE_O_WORKDIR      | Jobscript directory                  |
+| SGE_CWD_PATH       | Working directory                    |
+| TMPDIR             | Job specific temporary directory     |
+| JOB_NAME           | Job Name                             |
+| QUEUE              | Queue                                |
+| PE                 | Parallel Environment                 |
+| NSLOTS             | Number of slots                      |
+| NHOSTS             | Number of hosts                      |
+| SGE_HGR_m_mem_free | Total memory requested (slots * mem) |
+| SGE_HGR_gpu        | ID of GPU granted                    |
+| SGE_BINDING        | Cores job is bound to on host        |
+| SGE_TASK_FIRST     | First task in array                  |
+| SGE_TASK_LAST      | Last task in array                   |
+| SGE_TASK_STEPSIZE  | Array step size                      |
+| SGE_TASK_ID        | Current Task ID in array             |
+| PE_HOSTFILE        | Location of host file for MPI        |
+
+*** job output
+Output from the job will include an output and an error file 
+~<jobname>.o<jobID>~ #output file
+~<jobname>.e<jobID>~ #error file
+*** SMP job ([[https://docs.hpc.qmul.ac.uk/apps/sems/ansys/][one node]])
+- SMP job :: multiple  cores on a single node (machine) with shared memory, e.g. using OpenMP
+Shared-Memory Parallelism (SMP) is when /work is divided between multiple threads or processes running on a single machine/ 
+and these threads have access to common (shared) memory.
+- OpenMP :: Open Multi-Processing
+#+BEGIN_SRC
+#running multiple cores on one node  
+
+#!/bin/sh
+#$ -cwd                 # Set the working directory for the job 
+#$ -j y                 #combine the standard output and the standard error stream.
+#$ -m bea               #get notifications on job start, finish and abortion.
+#$ -M k.ai@qmul.ac.uk
+#$ -l node_type=nxv       #node type,  can be 'sm', 'dn' or 'nxv' for smp jobs.
+#$ -pe smp 2       #parallel environment, 1 node, 2 cores
+#$ -l h_vmem=4G    #4GB memory per core
+#$ -l h_rt=24:0:0       #request 48 hour runtime
+#$ -l ansys=2         #request ansys licence for 64 cores
+module load ansys    #load ansys 
+fluent 2ddp -g -rsh -t$NSLOTS -i cylinder.jou
+#+END_SRC
+
+**** ansys example
+
+
+Here is an example *Mechanical APDL* job running on *4 cores* and *16G of ram* on *a single node.*
+#+BEGIN_SRC
+#!/bin/bash
+#$ -cwd                            # Set the working directory for the job to the current directory
+#$ -j y                               #combine the standard output and the standard error stream.
+#$ -pe smp 4                       #A single node, 4 cores
+#$ -l h_rt=4:0:0                  # 1 hour runtime
+#$ -l h_vmem=4G              # Request 4GB RAM per core
+#$ -l ansys=4                    # ansys licence  for 4 cores
+
+module load ansys
+mapdl -np $NSLOTS -b < [SIM-FILE]
+#+END_SRC
+**** Fluent job
+Here is an example of a *fluent 3d* job running on *4 cores* and *16G of ram on a single node*.
+1. running time
+2. memeory per core
+3. number of cores
+4. number of ansys licences (one core one licence)
+#+BEGIN_SRC
+#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 4
+#$ -l h_rt=4:0:0
+#$ -l h_vmem=4G
+#$ -l ansys=4
+
+module load ansys
+fluent 3d -g -rsh -t$NSLOTS -i [SIM-FILE]
+#+END_SRC
+
+
+
+
+*** Parallel job  (multiple nodes)    
+parallel licence for max 128 cores\\
+For parallel jobs, each node is booked for exclusive use and uses all available memory on each node: you do not need to specify a memory requirement.
+
+A low latency infiniband interconnect is provided for parallel jobs running over multiple nodes simultaneously using MPI.
+
+Here is an example of a *Fluent 3d douple precision*  job running on *64 cores*  across *2  nxv nodes*.
+#+BEGIN_SRC
+#For parallel jobs, each node is booked for exclusive use and uses all available memory on each node: you do not need to specify a memory  requirement.
+# add "-l infiniband=" command
+#!/bin/bash
+#$ -cwd                       # Set the working directory for the job       
+#$ -j y                          #combine the standard output and the standard error stream
+#$ -m bea                #get notifications on job start, finish and abortion.
+#$ -pe parallel 64      #parallel environment, multiple nodes, 64 cores (2 nxv nodes: 64/32=2)
+#$ -l h_rt=4:0:0        #running time, 4 hour
+#$ -l infiniband=nxv  #node type: nxv node, each node has 32 cores
+#$ -l ansys=64          #request ansys licence for 64 cores
+
+module load ansys
+fluent 3ddp -g -rsh -t$NSLOTS -i udf.jou
+
+#+END_SRC
+
+
+**** Parallel Job Memory
+
+For parallel jobs, each node is booked for *exclusive use* and uses all available memory on each node: you do not need to specify a memory requirement.
+  
+
+
+            
+
+#+BEGIN_SRC
+#!/bin/sh
+#$ -cwd                 # Set the working directory for the job to the current directory
+#$ -j y
+#$ -pe parallel 128     # Request 128 cores/4 nxv nodes
+#$ -l infiniband=nxv    # Choose infiniband island (ccn nxn nxv)
+#$ -l h_rt=24:0:0       # Request 24 hour runtime
+
+module load intelmpi
+
+mpirun -np $NSLOTS ./code
+#+END_SRC
+
+** job status
+To see the status of a job (e.g. job  297259)
+> qstat -j  297259
+
+To see the resources you are currently requesting
+>qstat -r
+
+shows all of the jobs waiting to be run, in the order of priority
+> showqueue
+
+Note:  # means commend
+qsub test.sh  #submit job "test.sh" 
+ls -l #list of software/doc
+passwd #password
+cd #change directory
+qdel  #delete jobs
+qstat #check the status of the jobs
+qrsh   #request interactive nodes on the cluster
+tab #add suffix automatically
+
+*** Checking on a Completed Job
+- qacct  #report and account for Sun Grid Engine usage
+
+The ~qacct~ command shows the GE accounting information and 
+can be used to check on  
+- the resources used by a given job that has completed
+- its exit status.
+
+For example:
+
+  > qacct -j <job id>
+
+will list the accounting information for a finished job with the given job ID.
+
+
+
+
+
+
+
+
+
+
+
+
+
+**  Journal file
+- read case file
+- read data file
+- save residuals
+- save force/moment
+- save sectional figure
+*** save image
+*** 2nd stokes wave
+rc st_e387_w_hy-14M_open_invisid.cas.gz
+rd st_e387_w_hy-14M_open_invisid.dat.gz
+;set drag moment and monitor in y coordinate on "blades" surface
+solve/monitors/force/unscaled? yes
+solve/monitors/force/set-drag-monitor cd yes blades () no yes thrust-history no no 0 1 0
+solve/monitors/force/set-moment-monitor moment yes blades () no yes moment-history no no 0 0 0 0 1 0    
+;Coupled solver, Coupled with Volume Fractions [no] 
+;/solve/set p-v-coupling 24  no 
+;/solve/set/p-v-controls [courant-number] [explicit momentum] [explicit pressure] 
+;/solve/set/p-v-controls  1 0.5 0.5 
+;/solve/set/under-relaxation/k 0.5           
+;/solve/set/under-relaxation/epsilon  0.5   
+;/solve/set/under-relaxation/turb-viscosity 0.5
+(display "Save the residual in a file") (newline)
+	(let ((writefile (lambda (p)
+	(define np (length (residual-history "iteration")))
+	(let loop ((i 0))
+	(if (not (= i np))
+	(begin (define j (+ i 1))
+	(display (list-ref (residual-history "iteration") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "continuity") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "x-velocity") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "y-velocity") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "z-velocity") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "k") (- np j)) p) (display " " p)
+	(display (list-ref (residual-history "omega") (- np j)) p)
+	(newline p)
+	(loop (+ i 1))
+	)
+	)
+	)
+	) )
+	(output-port (open-output-file "residual_1000_e387_udf.dat")))
+	(writefile output-port)
+	(close-output-port output-port))
+solve/iterate 3000
+wd e387_st_hy_14M_open_channel_3k.dat.gz
+exit
+yes
+
+
+** Glossary
+*** [[https://www.nics.tennessee.edu/hpc-glossary][Core]]
+A core is an individual processor: the part of a computer which actually executes programs. CPUs used to have a single core, and the terms were interchangeable. In recent years, several cores, or processors, have been manufactured on a single CPU chip, which may be referred to as a multiprocessor. It is important to note, however, that the relationship between the cores may vary radically: AMD's Opteron, Intel's Itanium, and IBM's Cell have very distinct setups.
+*** References
+https://www.nics.tennessee.edu/hpc-glossary
+** wiki
+*** slot
+*** CPU Core
+
+Computers have a Central Processing Unit (CPU) which may have one or more CPU cores 
+- A CPU core can only do one thing at a time. 
+If there are many things that a CPU core must do it will start to become overloaded. Multiple CPU cores can run multiple applications at the same time.
+*** Node
+A node is a *physical machine* within the HPC.
+ A node will have one or more CPUs, lots of memory (RAM), hard disks, network connections etc. 
+
+**** types of nodes
+a storage node, a master node, and computer nodes
+- storage node :: home directories or research data stored, 
+- master node :: deals with the operations of the HPC such as scheduling and most importantly, 
+- compute nodes :: run your applications.
+
+*** Scheduler
+
+*** jobs
+You submit your jobs to the scheduler by writing a small script called a job submission script. This will contain information such as the amount of memory you require, how long your job will run for etc. 
+*** slot
+A slot is what the scheduler uses to represent one or more CPU cores. One slot represents one CPU core.
+
+The reason that cores are not simply refered to as cores is that one may wish to have two CPU cores per slot in the case of hyper threaded processors.
+Queue [fn:nodes-core]
+*** Queue
+A queue is comprised of several slots on one or more nodes.
+
+*** MPI
+MPI=Message Passing Interface
+
+*** GPU
+GPU=graphics processing units 
+** Starting ANSYS Fluent on a Linux System
+4.1.3. Starting ANSYS Fluent on a Linux System, getting started guide
+** Running ANSYS Fluent in Batch Mode
+4.2. Running ANSYS Fluent in Batch Mode, getting started guide
+
+** 6GB 4 core vs 6 core 4GB
+use 6 core is faster
+
+** nodes
+https://docs.hpc.qmul.ac.uk/nodes/
+- use "nxv" node for parallel
+- "sm" and "dn" node don't support parallel
+- The sm nodes are usually full so your job is more likely going to run on a dn node.
+*** node status
+nodestatus
+** Node Selection
+*** architecture type
+~-l cpuarch=intel~  #Require architecture type=intel
+~-l cpuarch=amd~  #Require architecture type=amd
+*** node types
+~-l node_type=dn~  #node type: dn
+~-l node_type=nxv~ #node type: [[https://docs.hpc.qmul.ac.uk/nodes/nxv/#nxv-nodes][nxv]]
+*** nxv node
+node number: 36 \\
+each node has 32 cores  \\
+
+
+** storage usage
+To check how much disk memory used
+~qmquota~ 
+
+
+[[https://docs.hpc.qmul.ac.uk/storage/quota/][Quotas]] are used to keep track of storage space that is being used on per-user or per-group basis.
+
+** hold jobs
+Holding a job means it remains in the queue but will not be considered for scheduling until the hold is removed or the requirement is met.
+~qhold <job_id>~    # Hold a job
+~qrls <job_id>~       # Release a job
+** Further Information
+
+- The [[https://docs.hpc.qmul.ac.uk/using/manpages/][man pages]] on the cluster systems give information on the queuing system and MPI functions.
+-  The MPI Specifications contain information on the MPI functions including examples and advice.
+-   [[https://docs.hpc.qmul.ac.uk/apps/hpclibraries/][HPC Libraries]]
+
+** [[http://www.hpc.mcgill.ca/index.php/starthere/81-doc-pages/205-faq][Job exit status]]
+
+| 137 | more resources are needed than what you asked for, or more than is available on the machine (memory, walltime, ...) |
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|-----+---------------------------------------------------------------------------------------------------------------------|
+|   0 | Job Success!                                                                                                        |
+|   1 | General error                                                                                                       |
+Exit codes between 128 and 173 indicate that the process ended due to receiving a signal. Examples:
+|128	|Invalid argument to exit()
+|131|	SIGQUIT: ctrl-\, core dumped
+|132|	SIGILL: Malformed, unknown, or priviledged instruction
+|133|	SIGTRAP: Debugger breakpoint
+|134|	SIGABRT: Process itself called abort
+|135|	SIGBUS: Bus error (on Guillimin: often a file system issue)
+|136|	SIGFPE: Bad arithmetic operation (e.g. division by zero)
+|137|	SIGKILL (e.g. kill -9 command)
+|139	|SIGSEGV: Segmentation Fault
+|143|	SIGTERM (probably not canceljob or oom)
+|151|	SIGURG: Urgent condition on socket
+
+Exit codes between 174 and 253 indicate a "Fatal error signal".
+Exit codes larger than 253:
+
+| 254 | Command invoked cannot execute                               |
+| 255 | Command not found, possible path problem                     |
+| 265 | SIGKILL (e.g. kill -9 command), possible out-of-memory error |
+| 271 | SIGTERM (e.g. canceljob or oom), possible memory error       |
+|     |                                                              |
+
+** FAQ
+*** Error: Non-conformal periodic interface with empty intersection.
+       This is likely due to incorrect specification of periodic
+       offset values. Please check the offset values specified
+       and recreate the interface.
+
+Error: Couldn't intersect threads 29 and 30.
+
+Error: Couldn't intersect threads 29 and 30.\n
+Error Object: #f
+**** answer
+the Geo part is not 120 degree, define the angle in the Geo and remesh
+
+
+*** How many number of core for parallel running?
+old Fluent lost efficiency for more than 8 nodes
+
+***  hwloc 1.11.1 has encountered what looks like an error from the operating system.
+ L3 (cpuset 0x000003f0) intersects with NUMANode (P#0 cpuset 0x0000003f) without inclusion!
+ Error occurred in topology.c line 981
+
+answer:
+
+don't use "sm" [[https://docs.hpc.qmul.ac.uk/nodes/][node]]
+
+
+** References
+	For more information on the HPC systems operated by
+	IT Services - Research please visit
+	https://www.hpc.qmul.ac.uk/
+	
+	Specific information on using Apocrita is available at
+	https://www.hpc.qmul.ac.uk/twiki/bin/view/HPC/MidPlusInformation
+	
+	Use of the system is subject to the QMUL IT Regulations:
+	http://www.its.qmul.ac.uk/ITregsETC/itreg.shtml
+
+https://wiki.rc.ucl.ac.uk/wiki/ANSYS_Fluent_on_Legion
+
+https://www.bwhpc-c5.de/wiki/index.php/Ansys
+** Citation
+This research utilised Queen Mary's Apocrita HPC facility, supported by
+QMUL Research-IT. http://doi.org/10.5281/zenodo.438045

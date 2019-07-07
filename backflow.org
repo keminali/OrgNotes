@@ -1,0 +1,89 @@
+#+SETUPFILE: theme-bigblow.setup
+* Reverse flow :reversed_flow:
+
+It is common to encounter the regions of reversed flow at the initial stages of the simulation – This is normal. 
+
+However, if the “reversed flow” warnings do not disappear as the simulation progresses, 
+then one needs to address the issue and move the outlet boundaries to a location where the inflow is no longer encountered. 
+
+Normally, it has to do with the outlet boundary condition.
+
+if you were to use the "pressure outlet" boundary condition at the outlet, your outlet must be set far away from the object of interest. 
+
+In Fluent, I normally use the " outflow" boundary condition at the outlet and it does not give me reverse flow.
+
+** reasons
+It is virtually impossible to prescribe correct values for varying turbulence characteristics, 
+temperature and species concentrations in those cells where the backflow occurs. 
+-  The number of such “backflow” cells might vary from one iteration to another, 
+and any discontinuity in calculated turbulence, species and temperature values
+ for the neighbouring “outflow” and “inflow” cells is very likely to have an adverse effect on convergence. 
+- The accuracy of the solution can also be affected, especially if the area of interest is located close to the outlet with the “backflow”. 
+file:figures/reversed_flow.png
+** solutions
+> if vortex formation/recirculation of flow near an outlet boundary, [[increase the downstream length]].
+
+> check the mesh quality, improve it.
+
+> use higher order scheme
+
+> At last reduce the relaxation factor if necessary. 
+
+<<increase the downstream length>>
+- At preprocessor (mesh generation) – too costly and inconvenient. 
+- Directly in ANSYS Fluent by [[Outlet BC Extrusion][extruding the outlet boundaries]]. 
+
+
+
+Calculation steps:
+- Set up the model and calculate a solution on the initial mesh
+- Please write the interpolation file first. 
+- Close the existing Fluent session. 
+- Open a new Fluent session and read the case file only. 
+- Perform [[Outlet BC Extrusion]]
+- Check the new zones and ensure that the prescribed outlet boundary conditions are set and named consistently. 
+- Initialise the flow. 
+- Read in the interpolation file. 
+- Continue simulation.
+
+<<Outlet BC Extrusion>>
+- The original data file cannot be read onto the new mesh. 
+- The new case file need to be initialised. 
+- Old data can still be recycled and used again by interpolation:
+
+
+#+BEGIN_SRC 
+ file interpolate read-data original_ip_file_name.ip
+
+Mesh/modify-zones/extrude-face-zone-delta 
+#specify the face zone id/name i.e. inlet boundary name or zone ID 
+distance delta 1 0.2[1]
+#first extrusion layer edge length
+distance delta 2 0.25 
+distance delta 3 0.3 
+distance delta 4 
+#press “Enter” once a sufficient outlet section has been built[2]***. 
+#+END_SRC 
+[1] − The offset value does not need to be 0.2 and should be equal to the typical cell edge length close to the original outlet 
+[2] – total extrude layers, 3 cells. To minimise the amount of cells an expansion ratio of 1.2 can be used
+**** Reference
+-	5.9.8. Extruding Face Zones, user guide
+-	File “prevent backflow at outlet.fss”
+**** Note:
+
+- This text command is not available in the parallel version of ANSYS Fluent.
+extrusion is not possible from boundary face zones that have hanging nodes.
+-  Extruding face zones is not allowed on polygonal face zones.
+- Extruding face zones is only allowed in the 3D version of ANSYS Fluent.
+
+**** outlet Extrusion  error
+Problem description:
+- mesh/modify-zones/extrude-face-zone-delta
+- Face zone id/name [] 27 #outlet face zone
+
+- Distance delta(1) [()] 0.1
+- Distance delta(2) [()] 
+- Extrude face zone? [yes] 
+- Warning: the base thread has multiple adjacent threads!
+- Please separate the extruded side threads manually, and set the boundary condition accordingly.
+- Error: received a fatal signal (Segmentation fault).

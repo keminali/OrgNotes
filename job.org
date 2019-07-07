@@ -1,0 +1,4645 @@
+#+SETUPFILE: theme-bigblow.setup
+
+* kaiming - infor
+
+
+address:
+Flat 10 
+weddell house 
+Duckett Street
+E1 4LT
+
+Passport num: E33633797
+Winrar passport,n5
+
+School of Engineering and Materials Science Queen Mary University of London
+Mile End Road
+London E1 4NS
++44 (0) 20 7882 5555 
+Tower Hamlets ,  borough, London,
+The first author would like to thank the  
+Queen Mary – China Scholarship Council Co-funded Scholarships.
+This research utilised Queen Mary's Apocrita HPC facility, supported by QMUL Research-IT. http://doi.org/10.5281/zenodo.438045
+
+* accounts
+kemin
+hui*ai8**1
+outlook
+
+- nottingham
+#H*Im**g8**1
+
+southampton, 
+outlook
+hui%%%88(1
+
+* Review
+** 工作选择 - 40万的码农（programmer） 还是 25万的矿工 （quant），为什么？
+作者：行走的汉堡
+链接：https://www.zhihu.com/question/62419703/answer/494090470
+
+
+去BAT做码农。努力四五年干到阿里p7，年收入税前100万人民币so easy。
+再加把劲，工作第七八年的时候升个p8，税后100万人民币妥妥的。
+何苦去外面风吹雨打呢？去风口上做猪就好。
+如果想创业，那么再熬几年，干到p9，每年税前四五百万人民币是有的，
+那会你肯定车子房子妹子票子二胎都有了，再出去创业就没后顾之忧，
+而且由于有大厂高P光环，拉融资都是投资人排队找你。
+随便做个什么APP，用个区块链或者什么技术，把用户数据、增长率刷上去，
+干个四五年，融他个五六轮的资，可劲儿烧钱拉客、招人，
+反正花的都是PE/VC的钱，再搞个深度学习研究部，PPT做起来，
+估值拉起来，最后即使亏损几十亿人民币也能纳斯达克上市，
+而你作为创始人直接就是身价百亿人民币了。
+如果运气好，最后还能以科技独角兽的名义回A股发个CDR，再割他一波韭菜。
+然后呢？你找机会把自己的股份套现就好了呀，买他几栋别墅，几辆豪车。
+不要问我怎么知道的，你仔细观察，就会发现，这就是现在流行的套路。
+搞什么量化？那都是屌丝玩儿的，一年能赚几个钱？
+就算搞得好还不如一个普通的阿里码农，费劲儿不讨好，哪儿有风口就往哪儿站才是正确的。
+不扯创业上市圈钱这些远的，你做码农的话，很多大厂都有首套房无息贷款几十万，你做量化有？
+国内量化最大的私募也就40-50人，和互联网比都是小作坊。
+而且量化私募都得老板自己掏钱实缴，因为不能上市，根本不能从PE/VC那里融资，
+哪一年运气不好几个产品触及清盘线了或回撤爆表了，分分钟就得倒闭，根本没什么福利和保障。
+而互联网大厂有的甚至还有贷款优惠，利息比银行还低，额度特别大，
+有的给员工父母免费上商业医保，有的甚至可以摇号送房子，
+就算是中型厂，没钱了也可以继续做PPT，玩儿融资。
+年轻人，不要被所谓的量化财务自由、一夜暴富蒙蔽双眼，
+量化领域有老板每年分红上亿的，而互联网行业也有马化腾马云，根本不是一个级别。
+自己上BOSS查查，国内顶尖量化私募CTA研究员才多少工资。
+附一张图，各位可以有个比照，我们不和互联网社招码农比，就和校招比。
+<img src="https://pic1.zhimg.com/50/v2-befe2b15951e17ce5e810d2bfa83f8d6_b.jpg" data-caption="" data-size="normal" data-rawwidth="864" data-rawheight="408" data-default-watermark-src="https://pic2.zhimg.com/50/v2-a739d4edefa10180253d3579e66c8aeb_b.jpg" class="origin_image zh-lightbox-thumb" width="864" data-original="https://pic1.zhimg.com/v2-befe2b15951e17ce5e810d2bfa83f8d6_r.jpg">
+有人说quant年终奖高，收入波动大。难道互联网码农年终奖就低了，收入波动就小了？
+别忘了，大厂互联网码农赶上好年景也可以年终奖十几个月，而码农本身base就很高，
+而且高级别码农总包的50%以上都是公司的股票，波动性大着呢，赶上牛市了，
+人家靠beta赚的不一定比你的策略少。你做quant年终能发几个钱？
+那些发到100万以上的都是自己能带一个产品线管理几亿资金的，并且要有好的行情配合，
+有几个quant能做到，几年能赶上一次？除此之外，互联网大厂码农的总包每年都可以通过普调涨10%左右，
+如果有晋升总包可以涨20-30%，如果跳槽可以涨30%以上甚至翻倍，成长性也比quant高多吧？
+而且，做quant的难度本身可比做互联网码农要大多了，那是要真金白银去市场里厮杀的，
+不是闹着玩的，也不是去忽悠融资的。而你做码农，调个包，调个参，做个ppt，撕撕逼，忽悠忽悠，
+就能旱涝保收，只不过加班多了点而已
+很多人说，互联网升级很难，这辈子不可能到高级别，你弱你有理？
+其实混互联网大厂是有技巧的，技术只是基本属性，首先技术水平得中等偏上，然后最为重要的，就是一个字“熬”。
+你仔细观察一下身边的高P高T，哪个不是忍辱负重熬过来的？互联网行业离职率很高，
+能在一个厂干超过3年的就算老员工了。而那些高P高T都是在一个厂熬了七八年的，
+把那些不安分的、想法多的、能力强的全部耗死，你自然就上去了，
+这个行业听话比能力强更重要。
+
+PS，科创板注册制来了，创投股都多少个涨停板了，
+PE/VC都乐坏了，为啥，创业公司上市容易了啊，资本套现退出方便多了呀。
+而quant却不高兴了，为啥？A股主板又要被抽血了啊，
+商品期货里的韭菜也会被抽走一些。
+正在读金融工程、机械制造、自动化、物理、数学的你，还不赶紧转专业？
+家里没矿还不当程序员，你将来拿什么买房？
+评论里很多质疑的互联网薪资待遇的，p7社招今年价位35~45k x 16 + 800~1200股集团股票（四年拿完），
+进去之后每年都有薪资普调10%左右，而股票部分也基本每年都会增发，
+除非个人绩效差或者部门绩效差，算算一年多少钱吧。
+另外，16里有3个月属于年终奖，但一般都会高于3，有些部门和个人绩效好的可以拿到20薪。
+至于拼夕夕和某条同级别的码农，我就不说了，应届生基本都40w起了，你需要更多想象力。
+再说说国内量化私募，管理规模几十亿的量化私募（全国范围内用手指头可以数过来），
+一般行情下每年营业收入也就几千万人民币，注意，这里说的是营业收入，不是净利润。
+这么点钱，够干嘛的，能象互联网那么烧吗？况且公司老板要控制成本，
+否则没有分红开公司干嘛，做二级市场的私募是不能上市的，
+没有圈钱途径，只能靠自己赚钱。在这种情况下，量化私募待遇能好吗？
+而BAT呢？每年净利润数百亿元人民币！就算每年亏几亿的互联网公司，
+也可以不停融资继续烧，最后老板和股东还可以通过上市一下子套现几十亿。
+** bank
+家境一般，没什么背景的高学历外地男孩子就不要去银行了，不然你会过的很压抑
+2.女孩子如果长得漂亮，进银行工作，嫁给富二代的机率比较高
+
+3.银行水很深，分行总行内勤机关人员大都背景很深，至于贸易融资部、投资银行部以及金融市场部等部门，基本各种二代云集
+
+4.相貌很重要！很重要！很重要！无论男女
+
+5.不要看不起保洁阿姨、保安大叔等当地土著，人家说不定在静安区有三、四套房，
+人家参加工作纯粹为了解闷
+
+6.桃色事件、绯闻传言比较多，而大多基本属实
+
+7.现金柜员上厕所之前一定要洗手，尤其是女柜员，因为钱太脏了，容易患妇科疾病
+
+8.存款至上。谁有存款，谁就是爷
+
+9.高层斗争激烈，不同派系相互角力，一把手与二把手往往面和心不合
+
+10.女孩子在银行呆久了，往往会变得势利眼，毕竟整天跟钱打交道，接触的也都是有钱人
+
+作者：苏菲爱玛索
+链接：https://www.zhihu.com/question/24699538/answer/349996556
+
+
+学校学历还可以，没有银行领导背景的，又不是那种特别喜欢营销的性格的女生，选择其他工作，考公务员，继续深造读博留校
+
+很多大佬都是嘴里一套实际另一套，目的是骗你留下，然后到时候跟你说我忘了或者现在形势不好，他一句话的事儿，摧毁的是你的整个青春和一辈子的努力和付出，因为往往你到了那个阶段已经没有任何进入工业界的可能
+
+讲师再怎么低工资，那也是和教授一样的正式工；
+
+博士后再怎么高工资，那也就是个临时工，
+
+国内博士后没前途，至少现阶段是，你怎么就看不明白那些博士后出站留校的都是大佬之前就安排好的呢（工作可期
+
+（1）到985大学投靠大牛，以副教授职称为起点，艰苦奋斗十年，坏处是极有可能成为变相“博士后”，连科研成果都被抢去；（2）到985大学拿到副教授或讲师职称，自己单干，基本分不到学校资源，但可维持学术独立；（3）去一般的211大学，直聘教授或副教授，自己建摊子，不容易被强人灭掉。如果能拿到不错的启动经费，所在平台设备充足，以这等海归的实力也是可以发展起来的。与其游走于西方拿不到教职，不如早日海归杀出一条血路；当年轻的“学术博士”赶上来，就再没机会了。
+http://secdr.github.io/2016/10/10/xue-zhu-jie-xian-zhuang-ji-hai-gui-gao-xiao-qian-jing-fen-xi/
+
+后来就来博士后政策了，两年完不成任务就不能留校。然后就是留下了还有3+3，三年得基金，文章若干，后三年上副高。完不成，走人。总之，就是想着法让你新来的作贡献，画个框圈着你玩。早期签合同的“正式工”只需要完成基本的教学科研任务，人事处就不会找你。明白了编制的意义了吗？
+* TODO under review
+** postdoc at University of Wyoming
+Postdoctoral Researcher
+
+Qualifications
+ 
+
+MINIMUM QUALIFICATIONS: 
+
+    PhD in Mechanical Engineering or Aerospace Engineering or related field.
+    Excellent communication skills
+    Experience with programming in Fortran or C/C++
+    Experience with parallel computing.
+
+DESIRED QUALIFICATIONS:  
+
+    Experience with mesh generation tools such as Pointwise Inc. and post-processing tools such as Fieldview or Tecplot 
+    Experience in computational fluid dynamics 
+
+** TODO 哈尔滨工业大学（威海）
+contact them
+
+** Machine-learnt turbulence models with quantified uncertainty
+Category	PostDoc Position
+Employer	Institut Aérotechnique de Saint-Cyr and DynFluid Lab
+Location	France, Paris
+International	Yes, international applications are welcome
+Closure Date	Sunday, July 07, 2019
+
+skills needed:
+- LES
+- Machine leaning
+
+The present postdoc position is open in the framework of the project
+*high-fidelity exPerimental and numERIcal study for daTa-drIven modeliNg of 
+rEalistic turbuleNt separaTed flows* (PERTINENT).
+*Turbulent separated flows* (TSF) are of capital importance for a plethora of
+applications, including the Aerodynamics of road vehicles, wind turbines and
+helicopter rotors. These flows represent a challenge for traditional models in
+Computational Fluid Dynamics (CFD), relying on the solution of the
+Reynolds-Averaged Navier-Stokes (RANS) equations supplemented by a turbulence model.
+Given the urgent need for greener automotive, transport and energy production
+solutions for the sustainable growth of our society, it is then clear that
+next-generation models are required for the efficient design, control and
+optimization of TSF. 
+The Institut Aérotechnique (IAT) and the Aerodynamics and Aeroacoustics (AERO2)
+group of the DynFluid Laboratory aim at contributing to a novel simulation
+paradigm for turbulent separated flows of interest in aeronautics, wind and
+automotive engineering, based on the augmentation of RANS turbulence models by
+means of Statistical Learning and Uncertainty Quantification techniques
+integrating high-fidelity experiments. Such data-augmented models leverage
+knowledge from specifically tailored high-fidelity experimental and numerical
+databases and combine this with sound physical constraints derived from
+mathematical physics, while automatically identifying regions of possible high
+uncertainty of the model. To achieve its goals, the project will create a
+multi-disciplinary synergy between advanced experimental techniques and
+facilities available at IAT and the long-term expertise in both high and
+low-fidelity turbulence modelling of AERO2, leading to radically improved CFD
+models with the potential to further disseminate to a number of other applications.
+The DAM models developed in PERTINENT will be trained and assessed against novel
+high-fidelity experimental and numerical databases obtained during the project
+and specifically tailored for the target applications in wind turbine and
+automotive aerodynamics.
+
+The research team of PERTINENT is urgently looking for a postdoctoral researcher
+in applied aerodynamics with skills in high-fidelity numerical simulations
+(Large Eddy and Direct Numerical Simulations), in advanced methods for the
+analysis of data from experiments and numerical simulations (modal
+decomposition, modal reduction, Fourier analysis…), and data assimilation
+techniques. A background in uncertainty quantification and/or machine learning
+techniques is appreciated.
+
+Contract duration & Salary
+24 months appointment, starting June 1, 2019.
+Approximately 3080 €/month gross salary.
+
+Contact
+For more information and to send your application (Resume, Motivation letter,
+the names of two person susceptible to write a recommendation letter):
+
+Prof. Francesco Grasso, francesco.grasso@cnam.fr 
+Prof. Paola Cinnella, paola.cinnella@ensam.eu
+
+** hongkong
+http://aantc.ust.hk/apply.html
+
+**  duham
+Reference Number: 018595
+
+[[https://www.jobs.ac.uk/job/BSS196/postdoctoral-research-associate-in-wind-turbine-generator-technology][Postdoctoral Research Associate In Wind Turbine Generator Technology]]
+* 青岛 - qingdao
+
+** 哈尔滨工业大学（威海）
+https://www.hitwh.edu.cn/rczp/list.htm
+
+** 研究所
+- 中国科学院海洋研究所
+  + 国家海上风力发电工程技术研究中心 (national engineering research center for offshore windpower)
+
+** Companies
+
+- 中船重工
+  + 中国船舶重工集团有限公司第七一七研究所 - 武汉
+
+- 中国中车
+-  Haier
+-  Haixin
+- 商发- [[http://www.acae.com.cn/][中国航发商用航空发动机有限责任公司]]
+
+** 山东大学青岛
+山东大学海洋研究院
+institute of marine science and technology, shandong University
+
+founded in 2014
+
+Hydrodynamic analysis of a marine current energy converter for profiling floats(Article)(Open Access)
+
+    Wu, S.a,bEmail Author, Liu, Y.a,bEmail Author, An, Q.a,bEmail Author View Correspondence (jump link) 
+
+    aInstitute of Marine Science and Technology, Shandong University, Qingdao, Shandong, 266237, China
+    bKey Laboratory of High Efficiency and Clean Mechanical Manufacture, Ministry of Education, Jinan, Shandong, 250061, China
+
+
+
+
+*预聘制教师：“研究员／副研究员”*
+
+*应聘条件：*
+
+1. 应聘研究员岗位者年龄原则上不超过40岁，并至少具备下列条件之一：
+
+（1）海外知名大学或研究机构 *助理教授* ；
+
+（2）海外知名大学或研究机构优秀 *博士后* ；
+
+（3）国内著名高校或研究机构具有高级专业技术职务人员。
+
+2. 应聘 *副研究员* 岗位者年龄原则上不超过35岁，并至少具备下列条件之一：
+
+（1）海外知名大学或研究机构优秀博士后或 *博士毕业生* ；
+
+（2）国内著名高校或研究机构具有副高级专业技术职务人员；
+
+（3）国内著名高校或研究机构优秀博士后。
+
+*引进待遇：*
+
+1. 事业单位基本工资待遇及有竞争力的绩效工资。
+
+2. 提供科研启动经费人民币15-20万元，入选“山东大学青年学者未来计划”者另有50万元。
+
+3. 提供12-15万元的住房补助。
+
+4. 为子女提供优质的校内就学条件。
+
+
+*博士后*
+
+应聘条件：
+
+1. 设特别资助类博士后、重点资助类博士后、项目资助类博士后。
+
+2. 年龄不超过35周岁。
+
+3. 近三年内在海内外世界知名高校或科研机构获得博士学位。
+
+4. 攻读博士学位期间取得突出的研究成果。
+
+5. 能保证在山东大学连续从事博士后研究工作不少于21个月。
+
+引进待遇：
+
+1. 年薪：特别资助类不低于36万元；重点资助类不低于26万元；项目资助类不低于18万元。
+
+2. 按在职事业编制教师同等标准缴纳社会保险和公积金；为外籍及港澳台博士后购买商业医疗保险。
+
+3. 提供博士后公寓优惠租住。
+
+4. 为关系转入我校的博士后子女提供优质的校内就学条件。
+
+
+三、 应聘方式：
+
+如有意向，请您提供以下材料的电子版：
+
+1. 详细个人简历（包括自大学本科以来不间断的教育、工作经历；科研情况及其证明材料）。
+
+2. 个人简介（500字左右），着重介绍取得的主要学术成就。
+
+3. 三篇代表性论著的全文。
+
+发送至diaojunyu@email.sdu.edu.cn。
+
+研究院收到材料后，会组织专家进行材料初审，通过材料初审的，以电子邮件方式发送试讲邀请；没有通过材料初审的，原则上不再专门回复。由于招聘工作全年滚动进行，因此材料初审也会视应聘材料的递交情况酌情安排。
+
+
+四、 联系方式
+
+此招聘全年有效。
+
+联系人：刁俊玉
+
+联系电话：+86-532-58633267
+
+邮箱：diaojunyu@email.sdu.edu.cn
+
+通讯地址：山东省青岛市即墨区滨海公路72号，山东大学青岛校区海洋研究院
+
+邮编：266237
+
+http://www.imst.sdu.edu.cn/info/1074/2433.htm
+
+
+*** school
+    信息科学与工程学院
+- 计算机科学与技术学院
+- 生命科学学院、环境科学与工程学院、政治学与公共管理学院、法学院、前沿交叉科学青岛研究院、人文社会科学青岛研究院、海洋学院（筹）、财富管理学院（筹）、微电子学院（筹）、德国学院（筹）等 
+** 山东科技
+affiliation
+ME: 
+[[http://www.sdust.edu.cn/info/1050/2430.htm][曾庆良]]
+先进设计与制造；计算机集成制造CIMS；并行工程；虚拟样机；机电一体化技术；液压传动与控制技术；采掘机械与装备；设备状态监测与故障诊断等
+
+肖林京
+矿山运输技术与装备；机电传动与控制；新能源技术
+钟佩思
+CIMS与并行工程；产品开发过程管理与冲突协调；虚拟样机技术
+陈庆光
+矿山机械节能与环保技术，流体机械内流；气动噪声与流固耦合数值模拟
+万丽荣
+虚拟样机；并行工程；计算机集成制造技术；机电一体化；液压传动与控制
+韩宝坤
+机械振动与噪声控制，车辆动力学
+陈修龙
+并联机器人技术；机构学理论与应用
+刘培坤
+固液分离理论及设备
+周满山
+矿山机械；机电一体化技术
+张  鑫
+机电一体化；液压传动与控制；采掘机械
+
+*** 关于开展“菁英计划”申报工作的通知
+
+发布时间：2018-12-12 　点击：7162
+
+各校区，各部门、各单位：
+
+根据《关于印发〈山东科技大学“菁英计划”实施办法〉的通知》（山科大人字〔2018〕17号）（以下简称“菁英计划”）文件精神，经学校研究同意，现就“菁英计划”申报工作有关事项通知如下：
+
+一、申报条件
+
+（一）基础条件
+
+1.热爱祖国，坚持党的基本路线，在政治上始终同党中央保持一致；
+
+2.遵纪守法，学术端正；
+
+3.具有良好的科学精神与发展潜力；
+
+4.有强烈的事业心和责任感，能全身心投入教学和科学研究；
+
+5.具有博士学位；
+
+6.年龄不超过40周岁，身心健康（1978年5月25日以后出生）；
+
+7.学校现有正式聘用人员。
+
+（二）业务条件
+
+1.A类人才。近5年具备下述11小项中至少1项者：
+
+（1）论文（独立第一作者或唯一通讯作者或导师第一作者本人第二作者）：
+
+①入选ESI“Top Paper”高影响论文稳定两次（不含综述性论文）；
+
+②理工类发表SCI论文至少12篇，其中一区至少2篇；
+
+③其他类发表SSCI、CSSCI（学科专业期刊分类排名前20%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少8篇；
+
+（2）科研项目：
+
+④主持国家自然基金重点项目或者国家科技重大专项、国家重点研发计划等国家级重点（大）项目；
+
+⑤主持国家社会科学基金重点项目；
+
+⑥主持国家社会科学基金和教育部人文社科项目各1项或国家自然科学基金和教育部人文社科项目各1项；
+
+（3）科研奖励：
+
+⑦获国家科学技术奖一等奖前3位或二等奖前2位；
+
+⑧获国家社会科学基金项目优秀成果奖一等奖前3位或二等奖前2位；获全国普通高等学校人文社会科学研究优秀成果奖一等奖前3位或二等奖前2位；
+
+⑨获国家教学成果奖特等奖前3位或一等奖前2位或二等奖首位；
+
+⑩获省部级科学技术奖、优秀科研成果奖一等奖前2位或二等奖首位；
+
+⑪获省级教学成果奖最高奖前2位。
+
+2.B类人才，近5年具备下述8小项中至少1项者：
+
+（1）论文（独立第一作者或唯一通讯作者或导师第一作者本人第二作者）：
+
+①理工类发表SCI论文至少8篇，其中一区至少1篇或二区3篇；
+
+②其他类发表SSCI、CSSCI（学科专业期刊分类排名前30%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少5篇，其中法学、艺术、外国语言文学类至少4篇；
+
+（2）科研项目：
+
+③主持国家级项目2项；
+
+④主持国家社会科学基金项目1项；
+
+⑤主持教育部人文社科项目2项；
+
+（3）科研奖励：
+
+⑥获国家科学技术奖一等奖前6位或二等奖前3位；
+
+⑦获省部级科学技术奖、优秀科研成果奖一等奖前3位或二等奖前2或三等奖首位；
+
+⑧获国家级教学成果奖一等奖前3位或二等奖前2位或省级教学成果奖最高奖前3位。
+
+3.C类人才，近5年具备下述4小项中至少1项者：
+
+（1）论文（独立第一作者或唯一通讯作者或导师第一作者本人第二作者）：
+
+①理工类发表SCI论文至少6篇，其中二区及以上至少2篇；
+
+②其他类发表SSCI、CSSCI（学科专业期刊分类排名前40%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少3篇；
+
+（2）科研项目：
+
+③主持国家级项目1项，且省部级项目2项；
+
+④主持教育部人文社科项目1项。
+
+4.D类人才。
+
+符合学校引进人才条件，但未达到上述A、B、C类人才层次与条件的博士（后）人员。
+
+二、支持期内目标任务（所列成果学校为第一单位且完成人为学校第一完成人）
+
+（一）A类人才。须完成下列任务之一：
+
+1.入选省部级及以上人才计划（工程）；
+
+2.入选ESI“Top Paper”高影响论文2篇；
+
+3.主持国家级（人文社科类省部级）项目至少1项，且理工类发表SCI论文至少10篇（一区至少3篇）或其他类发表SSCI、CSSCI（至少1篇为学科专业期刊分类排名前10%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少9篇；
+
+4.主持国家自然基金重点项目、国家科技重大专项或国家重点研发计划等国家级重点（大）项目或课题；或主持国家社会科学基金重点项目；或主持国家社会科学基金与教育部人文社科项目各1项；
+
+5.以首位人员获省部级科学技术奖或优秀科研成果奖一等奖；或以首位人员获省级教学成果特等奖。
+
+（二）B类人才。须完成下列任务之一：
+
+1.入选省部级及以上人才计划（工程）；
+
+2.入选ESI“Top Paper”高影响论文1篇；
+
+3.主持国家级（人文社科类省部级）项目至少1项，且理工类发表SCI论文至少8篇（一区至少2篇）或其他类发表SSCI、CSSCI（至少1篇为学科专业期刊分类排名前20%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少7篇，其中法学、艺术、外国语言文学类至少5篇；
+
+4.主持国家级项目2项，或主持国家社会科学基金项目1项，或主持教育部人文社科项目2项；
+
+5.以首位人员获省部级科学技术奖、优秀科研成果奖二等奖，或以首位人员获省级教学成果一等奖。
+
+（三）C类人才。须完成下列任务之一：
+
+1.入选青岛市及以上人才计划（工程）；
+
+2.入选ESI“Top Paper”高影响论文1篇；
+
+3.主持国家级（人文社科类省部级）项目至少1项，且理工类发表SCI论文至少6篇（一区至少1篇或二区至少2篇）或其他类发表SSCI、CSSCI（至少1篇为学科专业期刊分类排名前30%）、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少5篇，其中法学、艺术、外国语言文学类至少3篇；
+
+4.获省部级科学技术奖、优秀科研成果奖、二等奖前2位，或获省级教学成果一等奖前2位。
+
+（四）D类人才。须完成下列任务之一：
+
+1.青岛市及以上人才计划（工程）；
+
+2.ESI“Top Paper”高影响论文1篇；
+
+3.国家级（人文社科类省部级）项目至少1项，且理工类发表SCI论文至少4篇或其他类发表SSCI、CSSCI、A&HCI、人大复印资料收录或《新华文摘》全文转载论文至少3篇，其中法学、艺术、外国语言文学类至少2篇；
+
+4.以首位人员获省部级科学技术奖、优秀科研成果奖三等奖，或以首位人员获省级教学成果二等奖。
+
+三、申报程序
+
+（一）组织申报
+
+1.个人申报。申请人填写《山东科技大学“菁英计划”申报书》（以下简称《申报书》）《山东科技大学“菁英计划”申报工作规划一览表》（以下简称《一览表》），提交所在学院（校区）。兼职人员提交兼职所在单位。
+
+2.学院（校区）初评
+
+（1）学院（校区）对申报人资格进行初审，并进行评议推荐，提出申报人工作目标任务初步方案。
+
+（2）申报人的《一览表》在学院（校区）范围内公示5个工作日。
+
+（二）组织考察
+
+学校采取多种方式对推荐人选进行资格复审和综合考察，通过后将申报人《一览表》公示5个工作日。
+
+（三）专家论证
+
+学校人才聘任专门委员会对推荐人选进行学术审查和评议，提出评审意见和建议。
+
+（四）学校决定
+
+人才工作办公室汇总推荐人选综合情况，提出推荐人选《工作协议书》建议方案，提交校党委常委会。
+
+（五）公示聘任
+
+对拟支持人选公示5个工作日。无异议后，学校、学院（校区）和支持人选签订三方《工作协议书》。
+
+四、其它说明
+
+（一）“菁英计划”支持期为5年。提前完成目标任务，可申请验收。完成情况经所在学院（校区）或兼职单位认定后报学校。
+
+（二）各学院（校区）应严格按照“菁英计划”规定的业务条件进行资格审查。论文、课题项目、所获成果奖励等级按学校的认定依据进行认定。
+
+（三）支持人选在支持期内取得的成果，在“山海英才工程”“菁英计划”等学校支持和科研奖励政策中，只能使用一次。
+
+（四）急需紧缺专业、具有丰富工程实践背景的特殊人才可进行申报。
+
+（五）申报条件中的成果计算起始时间：2013年5月25日。
+
+（六）申报过程中如遇政策性问题，按照《关于印发〈山东科技大学“菁英计划”实施办法〉的通知》（山科大人字〔2018〕17号）执行。其他事宜由学校人才工作办公室负责解释。
+
+五、材料提交
+
+学院（校区）提交纸质版《申报书》一式2份、《一览表》一式2份、《山东科技大学高层次人才申报信息汇总表》一式1份，加盖单位公章，并只需要提交符合申报条件的证明材料复印件1份。所有申报材料于12月29日前报送至人才工作办公室（行政楼608室），电子版材料发邮箱skdzjb@163.com。
+
+联系人：郭洪波、郭磊，联系电话：0532-86057131、86058190。
+
+特此通知
+
+附件：1.《山东科技大学“菁英计划”申报书》
+
+2.《山东科技大学“菁英计划”申报一览表》
+
+3.《山东科技大学高层次人才申报信息汇总表》
+
+4.论文认定依据
+
+5.科研项目课题认定依据
+
+6.科研教学奖励认定依据
+
+人才工作办公室
+*** 关于“菁英计划”资格复审通过人员的公示
+根据学校“菁英计划”文件规定，经个人申报、学院（校区）初评、学校资格复审，王刚等61人通过学校“菁英计划”（ABC类）资格审查（名单附后）。
+
+按照认定程序，为进一步增强认定工作的透明度，广泛征求意见，接受全校师生监督，决定对“菁英计划”（ABC类）资格复审通过人员名单予以公示，公示期5个工作日（5月13日-17日）。
+
+2018年5月25日以后新引进且年龄不超过40周岁的博士（后）均纳入“菁英计划”D类人才管理，人员名单不再公示。
+
+公示期内如有异议，可书面向学校纪委办公室或人才工作办公室反映。电话：86057195（纪委办公室）、80657131（人才工作办公室）。
+
+特此公示
+
+                                               人才工作办公室
+
+                                                2019年5月13日
+
+“菁英计划”（ABC类）资格复审通过人员名单
+
+序号
+	
+
+姓名
+	
+
+出生年月
+	
+
+认定层次
+	
+
+学院
+	
+
+申报学科
+	
+
+符合条件
+
+1
+	
+
+王刚
+	
+
+1984.09
+	
+
+A
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+2
+	
+
+周刚
+	
+
+1979.03
+	
+
+A
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+3
+	
+
+倪冠华
+	
+
+1988.08
+	
+
+A
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+4
+	
+
+胡相明
+	
+
+1981.07
+	
+
+A
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+5
+	
+
+陈连军
+	
+
+1981.06
+	
+
+B
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+获省部级科学技术奖二等奖前2位
+
+6
+	
+
+陈军涛
+	
+
+1985.02
+	
+
+C
+	
+
+矿业学院
+	
+
+矿业工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+7
+	
+
+房凯
+	
+
+1986.10
+	
+
+C
+	
+
+矿业学院
+	
+
+工程力学
+	
+
+主持国家级项目1项，且省部级项目2项
+
+8
+	
+
+宋维强
+	
+
+1987.09
+	
+
+C
+	
+
+矿业学院
+	
+
+矿业与安全工程
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+9
+	
+
+孙文斌
+	
+
+1981.01
+	
+
+C
+	
+
+矿业学院
+	
+
+矿业工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+10
+	
+
+于岩斌
+	
+
+1986.11
+	
+
+C
+	
+
+矿业学院
+	
+
+安全科学与工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+11
+	
+
+赵增辉
+	
+
+1980.07
+	
+
+C
+	
+
+矿业学院
+	
+
+力学
+	
+
+主持国家级项目1项，且省部级项目2项
+
+12
+	
+
+尹会永
+	
+
+1979.10
+	
+
+B
+	
+
+地科学院
+	
+
+地质资源与地质工程
+	
+
+获省部级科学技术奖二等奖前2位
+
+13
+	
+
+吕大炜
+	
+
+1980.08
+	
+
+B
+	
+
+地科学院
+	
+
+地质资源与地质工程
+	
+
+获省部级科学技术奖二等奖前2位
+
+14
+	
+
+张伟杰
+	
+
+1984.01
+	
+
+C
+	
+
+地科学院
+	
+
+地质资源与地质工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+15
+	
+
+冯强
+	
+
+1985.07
+	
+
+C
+	
+
+土建学院
+	
+
+土木工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+16
+	
+
+李为腾
+	
+
+1987.02
+	
+
+C
+	
+
+土建学院
+	
+
+土木工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+17
+	
+
+黄一杰
+	
+
+1983.10
+	
+
+C
+	
+
+土建学院
+	
+
+土木工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+18
+	
+
+曹连民
+	
+
+1978.12
+	
+
+B
+	
+
+机电学院
+	
+
+机械工程
+	
+
+获省部级科学技术奖三等奖首位
+
+19
+	
+
+王瑞
+	
+
+1987.07
+	
+
+B
+	
+
+机电学院
+	
+
+机械工程
+	
+
+获省部级科学技术奖二等奖前2位
+
+20
+	
+
+高魁东
+	
+
+1986.12
+	
+
+C
+	
+
+机电学院
+	
+
+机械工程
+	
+
+主持国家级项目1项，且省部级项目2项
+
+21
+	
+
+赵中英
+	
+
+1983.10
+	
+
+A
+	
+
+计算机学院
+	
+
+计算机
+	
+
+主持国家自然科学基金和教育部人文社科项目各1项
+
+22
+	
+
+刘彤
+	
+
+1982.02
+	
+
+C
+	
+
+计算机学院
+	
+
+计算机
+	
+
+主持国家级项目1项，且省部级项目2项
+
+23
+	
+
+温彦
+	
+
+1984.06
+	
+
+C
+	
+
+计算机学院
+	
+
+计算机
+	
+
+主持教育部人文社科项目1项
+
+24
+	
+
+赵华
+	
+
+1980.05
+	
+
+C
+	
+
+计算机学院
+	
+
+计算机
+	
+
+主持教育部人文社科项目1项
+
+25
+	
+
+杨红卫
+	
+
+1979.12
+	
+
+A
+	
+
+数学学院
+	
+
+数学
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+26
+	
+
+张子叶
+	
+
+1979.07
+	
+
+A
+	
+
+数学学院
+	
+
+数学
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+27
+	
+
+张同迁
+	
+
+1980.03
+	
+
+A
+	
+
+数学学院
+	
+
+数学
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+28
+	
+
+王艳慧
+	
+
+1984.07
+	
+
+C
+	
+
+数学学院
+	
+
+数学
+	
+
+主持国家级项目1项，且省部级项目2项
+
+29
+	
+
+马宏基
+	
+
+1979.09
+	
+
+C
+	
+
+数学学院
+	
+
+数学
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+30
+	
+
+徐光宝
+	
+
+1980.11
+	
+
+C
+	
+
+数学学院
+	
+
+数学
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+31
+	
+
+饶卫振
+	
+
+1981.04
+	
+
+A
+	
+
+经管学院
+	
+
+管理科学与工程
+	
+
+主持国家社会科学基金和教育部人文社科项目各1项
+
+32
+	
+
+范柳
+	
+
+1984.07
+	
+
+A
+	
+
+经管学院
+	
+
+管理科学与工程
+	
+
+主持国家自然科学基金和教育部人文社科项目各1项
+
+33
+	
+
+马红
+	
+
+1985.10
+	
+
+B
+	
+
+经管学院
+	
+
+会计学
+	
+
+发表CSSCI收录论文至少5篇
+
+34
+	
+
+李淑云
+	
+
+1985.01
+	
+
+C
+	
+
+经管学院
+	
+
+经济学
+	
+
+发表CSSCI收录论文至少3篇
+
+35
+	
+
+刘露
+	
+
+1990.09
+	
+
+C
+	
+
+经管学院
+	
+
+管理科学与工程
+	
+
+发表CSSCI收录论文至少3篇
+
+36
+	
+
+方宏
+	
+
+1981.10
+	
+
+C
+	
+
+经管学院
+	
+
+管理学
+	
+
+发表CSSCI收录论文至少3篇
+
+37
+	
+
+王向华
+	
+
+1986.02
+	
+
+B
+	
+
+自动化学院
+	
+
+控制科学与工程
+	
+
+发表SCI论文至少8篇，其中一区至少1篇或二区3篇
+
+38
+	
+
+郭梅
+	
+
+1982.05
+	
+
+B
+	
+
+自动化学院
+	
+
+控制科学与工程
+	
+
+发表SCI论文至少8篇，其中一区至少1篇或二区3篇
+
+39
+	
+
+李超
+	
+
+1984.10
+	
+
+A
+	
+
+电信学院
+	
+
+计算机科学与技术
+	
+
+主持国家自然科学基金和教育部人文社科项目各1项
+
+40
+	
+
+付民
+	
+
+1987.09
+	
+
+A
+	
+
+化工学院
+	
+
+化学
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+41
+	
+
+闫华晓
+	
+
+1978.09
+	
+
+B
+	
+
+化工学院
+	
+
+生物化工
+	
+
+主持国家级项目2项
+
+42
+	
+
+焦甜甜
+	
+
+1988.12
+	
+
+C
+	
+
+化工学院
+	
+
+化学工程与技术
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+43
+	
+
+张亚青
+	
+
+1989.01
+	
+
+C
+	
+
+化工学院
+	
+
+化学工程与技术
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+44
+	
+
+阚渝姣
+	
+
+1991.01
+	
+
+C
+	
+
+化工学院
+	
+
+环境科学与工程
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+45
+	
+
+丁建旭
+	
+
+1981.02
+	
+
+A
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+46
+	
+
+李好
+	
+
+1989.10
+	
+
+A
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+入选ESI"Top Paper"高影响论文稳定两次
+
+47
+	
+
+李志超
+	
+
+1989.01
+	
+
+B
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+发表SCI论文至少8篇，其中一区至少1篇或二区3篇
+
+48
+	
+
+马勇
+	
+
+1987.11
+	
+
+B
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+发表SCI论文至少8篇，其中一区至少1篇或二区3篇
+
+49
+	
+
+张如良
+	
+
+1982.09
+	
+
+B
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+发表SCI论文至少8篇，其中一区至少1篇或二区3篇
+
+50
+	
+
+魏娜
+	
+
+1988.10
+	
+
+C
+	
+
+材料学院
+	
+
+材料科学与工程
+	
+
+发表SCI论文至少6篇，其中二区及以上至少2篇
+
+51
+	
+
+田华文
+	
+
+1980.04
+	
+
+A
+	
+
+文法学院
+	
+
+公共管理
+	
+
+发表CSSCI、人大复印资料收录论文至少8篇
+
+52
+	
+
+王次宝
+	
+
+1979.10
+	
+
+B
+	
+
+文法学院
+	
+
+法学
+	
+
+主持国家社会科学后期资助项目1项
+
+53
+	
+
+秘明杰
+	
+
+1979.06
+	
+
+C
+	
+
+文法学院
+	
+
+法学
+	
+
+主持教育部人文社科项目1项
+
+54
+	
+
+陈琳
+	
+
+1979.09
+	
+
+C
+	
+
+文法学院
+	
+
+公共管理
+	
+
+发表CSSCI收录论文至少3篇
+
+55
+	
+
+辛璐璐
+	
+
+1988.06
+	
+
+C
+	
+
+文法学院
+	
+
+公共管理
+	
+
+发表CSSCI收录论文至少3篇
+
+56
+	
+
+任成金
+	
+
+1979.05
+	
+
+B
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+主持国家社会科学基金项目1项
+
+57
+	
+
+梁秀文
+	
+
+1981.9
+	
+
+B
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+法学类发表CSSCI收录论文至少4篇
+
+58
+	
+
+宋开金
+	
+
+1985.12
+	
+
+B
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+主持国家社会科学基金项目1项
+
+59
+	
+
+金小燕
+	
+
+1981.05
+	
+
+B
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+法学类发表CSSCI收录论文至少4篇
+
+60
+	
+
+徐玉明
+	
+
+1979.04
+	
+
+C
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+发表CSSCI收录论文至少3篇
+
+61
+	
+
+高千
+	
+
+1982.08
+	
+
+C
+	
+
+马克思学院
+	
+
+法学·马克思主义理论
+	
+
+发表CSSCI收录论文至少3篇
+
+** +青岛科技大学+
+** 青岛理工大学
+** +中国石油大学+ （华东）
+
+** +中国海洋大学+ - ocean uni. of China
+*** papers on mct
+ocean Uni. of China, Simulation of the hydrodynamic performance of a horizontal axis tidal turbine blade designed by profile modeling based on the shark fin
+
+Experimental study on multi-level overtopping wave energy convertor under regular wave conditions
+
+Study of effect of flexible blade chord-wise deformation on thrust of tidal turbine [柔性叶片弦向变形对潮流能水轮机轴向载荷影响的研究
+
+*** [[http://coe.ouc.edu.cn/f9/8d/c9092a63885/page.htm][王树杰]] (1961)
+王树杰，工程学院机电工程系教授    
+办公室电话：0532-66781121转2432
+
+联系方式：13583286589，wangshujie@ouc.edu.cn
+
+publicatons:
+1. 柔性叶片弦向变形对潮流能水轮机轴向载荷影响的研究 - EI - 
+  + exp, numerical (fluent)
+
+Projects:
+**** 复杂海洋环境中水平轴潮流能水轮机水动力学性能研究（51479185），国家自然科学基金， 2015～2018，项目负责人；
+
+*** 吴立新- 院士
+Lixin wu received his PhD from Peking University in China. 
+He did a postdoc at Rutgers University and in 1995 
+he moved to the Centre for Climatic Research of the University of Wisconsin-Madison, where he stayed until 2005. 
+
+Later in that year, he became Director of the Key Laboratory of Physical Oceanography, MOE, at the Ocean University of China. His main interests are modelling the global climate system, large-scale ocean-atmosphere interaction, and decadal climate variability. Until last year, 
+he was a member of the CLIVAR Pacific Panel.
+
+http://www.clivar.org/node/435
+
+　项目名称：大洋能量传递过程、机制及其气候效应
+ 
+　　项目完成人：吴立新（中国海洋大学），林霄沛（中国海洋大学），陈朝晖（中国海洋大学），陈显尧（中国海洋大学），王伟（中国海洋大学）
+ 
+　　项目简介：该项目系统阐述了能量向深层海洋传递的通道以及驱动大尺度环流的过程与机理，揭示了深海大洋热量变异关键海区对大气环流及区域气候的重要调节作用，阐明了海洋环流变异影响全球气候的海洋和大气通道，为正确预测未来海洋环境与气候变化提供了理论基础。成果初步回答了全球气候变化下海洋能量及热量输运机制及造成的海温异常对大气的反馈作用，为海洋-大气能量循环交换提出了一个清晰的物理过程。主要成果发表在Science、Nature Climate Change、Nature Geoscience等国际顶级学术期刊，其中，8篇代表性论文被Science、Nature等国际权威期刊他引762次，相关成果分别入选2014年度高校十大科技进展和海洋十大科技进展。
+*** 刘臻
+电子信箱：liuzhen@ouc.edu.cn
+
+办公室电话：
+
+his students
+崔莹
+electrical design for ocean wave and tidal energy system, Ray Alcom and Dara 
+
+
+http://coe.ouc.edu.cn/f9/09/c9091a63753/page.htm
+
+**   +青岛大学+
+https://mp.weixin.qq.com/s?__biz=MjM5NDgyOTcyMQ==&mid=2650450933&idx=2&sn=b13e77c32467b731bbd58e6d3f2fdda8&chksm=be8fcf0389f84615d1d7df2f3a98005f08e9fc1393854af6e0e91f99cc7140d6b1b49db85f6d&mpshare=1&scene=1&srcid=0118MHmtlBcfqmDq6jUxYLdi&pass_ticket=5pblE2y2taUgzZ%2FqAGNQjZJEeKHEIfF8UVibzRk0YCZDTbGIb15azT5U2gRuf1Rr#rd
+*** 未来研究院
+，现面向全球，公开招聘海内外高层人才，共同创建无限精彩未来。
+
+青岛大学未来研究院，是由青岛大学斥资数亿元全力打造的国际一流科研院所。研究院秉持“开拓未来，创造未来，引领未来”的崭新发展理念，以“产学研”相结合的特色模式发展，致力于建设一个真正智能化的未来世界。未来研究院具有国际一流的科研团队。
+
+  院长由我国海外高层次人才引进计划的首批入选者、新加坡工程院院士葛树志教授担任。葛院长与数位国内外知名科学家带领大批来自于美国、加拿大、意大利、荷兰、日本及国内等不同国家高校的优秀博士人才或知名学者，将以一流的科研水平，引领人工智能及智能机器人方向的世界潮流。
+
+ 未来研究院目前共有五个研究中心，包括智能机器人、人工智能、无人系统、智能制造和基础研究。2018年4月，青岛大学未来研究院正式入驻青岛大学城阳科技成果转化示范基地。作为人才汇聚与科研创新的高地，未来研究院将充分发挥凝聚创新人才及科技资源的优势，以城阳基地为平台，踏上全新的科研腾飞之路。
+
+ 未来研究院将敞开胸怀，拥抱世界。我们愿意结交五湖四海的朋友，倾情分享最新的科研成果，在合作共赢中创造属于我们的未来世界！
+   二.   招聘范围与条件
+
+    （一）招聘领域：计算科学与工程，信息科学与工程，自动化科学与工程，智能制造，机器人技术，AI技术，无人系统等相关领域。
+
+        （二）招聘职位
+
+         1、特聘教授一、二、三层次：国家万人计划百千万工程领军人才，国家万人计划哲学社会科学领军人才，千人计划入选者，长江学者特聘教授，杰出青年基金获得者，国家重点研发计划（原973计划、863计划和重大科学研究计划）首席，教育部社科基金重大（招标）项目首席科学家，国家自然科学奖、国家技术发明奖二等奖及其以上获得者首位人员，国家科学技术进步一等奖及其以上获得者首位人员。国家级教学名师，“泰山学者攀登计划”入选者，国家科学技术进步二等奖及其以上获得者首位人员，高等教育国家级优秀教学成果奖一等奖及以上获得者首位人员，国家万人计划科技创新领军人才，中科院百人计划入选者，国外知名大学教授及相当职务者，国家万人计划青年拔尖人才，青年千人计划，长江学者青年项目入选者，国家优秀青年基金获得。国外知名大学副教授及相当职位者。年龄自然科学原则在50周岁以下，人文社会科学原则在55周岁以下。
+
+        2、特聘教授四、五层次：海内外知名大学博士，具有三年以上海外科研工作经历以及在本学科领域做出业界认可优异科研成果，满足青岛大学副教授业绩者。年龄自然科学须不超过40周岁，人文社会科学须不超过45周岁。
+
+        3、青年卓越人才、优秀博士：海内外知名大学博士，专业基础扎实，具有较强科研能力，能胜任本学科教学科研工作。
+
+    4、博士后：海内外知名大学博士。
+三.   岗位待遇与支持政策
+
+（一）特聘教授
+
+  1、特聘教授一层次：年收入60万元加科研奖励；提供具有竞争力的购房补贴；科研启动经费自然科学（实验类200万，非实验类100万）、人文社会科学40万元；并根据需要提供学科平台建设经费，配备团队、实验室，一事一议；经同行专家评议和学校研究，符合要求者聘为教授；解决配偶工作及义务教育阶段孩子入学事宜。
+
+   2、特聘教授二层次：年收入50万元加科研奖励；购房补贴100万元；科研启动经费自然科学（实验类100万，非实验类60万）、人文社会科学30万元；经同行专家评议和学校研究，符合要求者聘为教授；解决配偶工作及义务教育阶段孩子入学事宜。
+
+    3、特聘教授三层次：年收入45万元加科研奖励；购房补贴60万元；科研启动经费自然科学（实验类50万，非实验类30万）、人文社会科学20万元；经同行专家评议和学校研究，符合要求者聘为教授。
+
+    4、特聘教授四层次：年收入35万元加科研奖励；购房补贴30万元；科研启动经费自然科学（实验类30万，非实验类20万）、人文社会科学10万元；经同行专家评议和学校研究，符合要求者聘为副教授。
+
+    5、特聘教授五层次：年收入30万元加科研奖励；购房补贴20万元；科研启动经费自然科学（实验类15万，非实验类10万）、人文社会科学5万元；经同行专家评议和学校研究，符合要求者聘为副教授。
+
+  （二）青年卓越人才
+
+   年收入23万元加科研奖励；购房补贴15万元；科研启动经费自然科学5万、人文社会科学2万元。
+
+   （三）青年博士
+
+    国家政策性工资加科研奖励；学校提供租房补贴2000元/月*36个月；科研启动经费自然科学3万、人文社会科学1万元。
+     四.   联系方式
+
+ 刘银华＋86-18616709510，liuyinhua@qdu.edu.cn 
+
+ 赵东杰＋86-13156213617 ，dongjiezhao@qdu.edu.cn
+https://rlzy.qdu.edu.cn/rczp.htm
+
+* Japan
+www.jsps.go.jp
+www.riken.jp
+
+* Record
+
+** PostDoctor in Fluid Mechanics and FSI #15806
+The Department of Aerodynamics at the Nanjing University of Aeronautics and 
+Astronautics invites applications for a postdoctoral researcher in the area of 
+computational fluid dynamics and fluid-structure interaction (FSI) in the research lab 
+of Professor Wang Yan. We are seeking a highly qualified individual to perform 
+numerical studies in bio-inspired flapping wing UAV. The successful candidate must be 
+proficient in 
+(1) Numerical methods in CFD and/or CSD (Computational Structural Dyanmics), including 
+lattice Boltzmann method, generalized finite difference method et al ;
+(2) Fortran90 and/or C/C++ and MPI programming with experience using high performance 
+parallel computer hardware desirable;
+(2) Experience with mesh generation tools such as Pointwise 
+Inc. and post-processing tools such as Tecplot, Paraview is also highly 
+desirable.
+Interested researchers may submit an application with full CV to 
+aerowangy@nuaa.edu.cn.Only short listed candidates will be informed.
+
+Contact Information:
+Please mention the CFD Jobs Database, record #15806 when responding to this ad.
+Name	Prof. YAN WANG
+Email	aerowangy@nuaa.edu.cn
+Email Application	Yes
+URL	https://www.researchgate.net/profile/Yan_Wang95
+
+
+** PhD candidate in the field of data analysis and processing
+| Title         | PhD candidate in the field of data analysis and processing |
+| Category      | Job in Academia                                            |
+| Employer      | Karlsruhe Intitute for Technology                          |
+| Location      | Germany, Karlsruhe                                         |
+| International | Yes, international applications are welcome                |
+| Closure Date  | Monday, July 15, 2019                                      |
+
+Description:
+
+For the Institute for Chemical Technology and Polymer Chemistry (ITCP), we are
+currently seeking to recruit, as soon as possible, a
+
+Research associate / PhD candidate (f/m/d)
+
+for work on a project in the field of data analysis and processing.
+The investigation of heterogeneous catalyzed and homogeneous reaction systems by
+means of experiments and simulations generates large amounts of data. Their
+evaluation and comparison requires new approaches to digital processing. The
+data has to be largely automatically converted into a form to be ready for a
+detailed scientific analysis. The focus of the work to be carried out
+relates to the application and further development of an existing platform on
+the basis of web technologies (JavaScript/TypeScript, HTML, CSS) for the direct
+visual and statistical comparison of data sets from experiments and numerical
+simulations. For these, further tools will be developed
+and implemented.
+
+Please enclose a one-page letter of motivation and relevant certificates with
+your application. The opportunity for a doctorate is given. 
+
+For further information please visit
+www.itcp.kit.edu/deutschmann
+
+Contact Information:
+Please mention the CFD Jobs Database, record #15964 when responding to this ad.
+Name	Matthias Hettel
+Email	matthias.hettel@kit.edu
+Email Application	Yes
+URL	www.itcp.kit.edu/deutschmann
+Address	Please send the application to the address given in the offer
+
+** Post Doctoral Research Associate at SCOREC, RPI
+Title	Post Doctoral Research Associate at SCOREC, RPI
+Category	Job in Academia
+Employer	Scientific Computation Research Center, RPI
+Location	United States, NY, Troy
+International	Yes, international applications are welcome
+Closure Date	* None *
+
+**  TODO Research Fellow in CFD of Flows over Porous Surfaces - 30th June 2021
+1127819DA
+
+Skills:
+
+1. C++, fortran
+2. parallel HPC
+
+Dr. Ralf Deiterding
+
+University of Southampton - Aeronautical and Astronautical Engineering 
+
+
+Preliminary Questions
+
+Before you can start your application, please answer the following questions.
+Have you implemented a parallel CFD solver yourself?
+Yes  No There is an error with this field
+Do you have experience obtaining power spectra from flow simulations?
+Yes  No There is an error with this field
+Do you have experience working within a large, object-oriented code base in C++?
+Yes  No There is an error with this field
+Have you written at least one journal paper as first author?
+Yes  No
+
+The Aerodynamics and Flight Mechanics (AFM) Research Group at the University of Southampton 
+is seeking a postdoctoral researcher specialized in computational fluid dynamics. 
+The AFM group is comprised of experts in theoretical, computational and experimental fluid mechanics 
+and our aim is to provide an environment in which these different approaches can be combined and 
+focused on particular topics of practical importance. 
+You will join a vibrant team of other postdoctoral researchers and graduate students 
+working in different areas of fluid mechanics ranging from environmental flows to hypersonics. 
+
+You will be part of Dr. Ralf Deiterding's team working on 
+the Cartesian parallel adaptive AMROC fluid solver framework 
+and concentrate on using the lattice Boltzmann method (LBM) 
+to carry out massively *parallel large eddy* and direct numerical simulations of 
+*turbulent boundary layer* flows over rough, porous and compliant surfaces. 
+
+You will compare your results directly to corresponding experimental data 
+obtained by another postdoctoral researcher in the same funded project. 
+At a later stage, acoustic signals will be gathered from your high-resolution computations 
+and compared to experimental flow noise measurements. 
+Simulations will be run on the University of Southampton’s supercomputer Iridis 5 
+as well as on the national supercomputing facility ARCHER.
+
+It is essential that you have completed a PhD with a focus on Computational Fluid Dynamics 
+of high Reynolds number flows. 
+
+A strong programming background in C++ and Fortran as well as 
+parallel high-performance computing experience 
+in a Linux environment are expected. 
+
+Previous experience with lattice Boltzmann methods and/or 
+multiscale modelling of porous media flows will be valued highly but are not mandatory. 
+
+A publication record in computational fluid dynamics, specifically, 
+large eddy simulation or direct numerical simulation with the LBM is desirable. 
+
+Applications for Research Fellow positions will be considered from candidates 
+who are working towards or nearing completion of a relevant PhD qualification. 
+
+The title of Research Fellow will be applied upon successful completion of the PhD.
+Prior to the qualification being awarded the title of Senior Research Assistant will be given.
+
+There will also be opportunities to collaborate with graduate students working on advanced developments 
+related to lattice Boltzmann schemes and 
+to supervise undergraduate students on topics of applied computational fluid dynamics.
+
+This post is fixed term until the 30th June 2021.
+
+Contact Dr. Ralf Deiterding (R.Deiterding@soton.ac.uk) for further details about the position.
+
+
+
+Application procedure:
+
+You should submit your completed online application form at www.jobs.soton.ac.uk. 
+The application deadline will be midnight on the closing date stated above. 
+If you need any assistance, please call Ita Holmes (Recruitment Team) on +44 (0) 23 8059 9002. 
+Please quote reference 1127819DA on all correspondence.
+
+https://www.jobs.ac.uk/job/BTF156/research-fellow-in-cfd-of-flows-over-porous-surfaces
+
+
+
+** Data Analytics Analyst
+
+
+Job Responsibilities:
+
+ 
+
+-     Good at interpreting and translating business problems into actionable analytical plans
+
+-     Use statistical tools/models to identify drivers of growth, losses and profitability of consumer business, which support business decision
+
+-     Provide timely and accurate management MIS and data analytics to business/functional heads for better understanding of portfolio, with the aim to provide management insights on business opportunities to tap on and risks to mitigate
+-     Effectively engage in campaign management processes such as campaign pre-analysis, marketing leads generation and campaign effectiveness tracking
+
+-     Closely work with other stakeholders to design & implement collection strategy.
+
+-    Good understanding of Data Warehouse design & development, experience in managing the implementation of new product / system data flow to DWH is a plus;
+
+ 
+
+Job Requirements:
+
+·         Master degrees in major of Finance / Statistics /Econometrics/ Mathematics /Computer Sciences
+
+·         At least 2 years working experience on data & analytics in financial industry
+
+·         Good command of SAS, especially in SAS Macro, SAS EG, SAS Statistics
+
+·         Good team player, self-motivated and proactive at work. Able to work under pressure
+
+·         Excellent communication skill in both English and Chinese
+
+·         Experience in Database/web platform building is a plus
+
+** Research Fellow in Wind Turbine/Farm Control (80765-087)
+Fengbo-wind
+英国华威大学（University of Warwick）的EPSRC项目'Farming the Environment into the Grid: Big Data in offshore wind (FENGBO-WIND)'招收博后，该项目与英国帝国理工学院（Imperial College London）
+Dr. Xiaowei Zhao：Xiaowei.zhao@warwick.ac.uk.
+** Job Record #15901
+
+von Karman Institute - Turbomachinery and Propulsion Department
+
+Position type: Research Assistant – Experimental aerodynamics of aero-engine
+turbines
+
+Duration: 1-2 years (with possibility to turn the assignment into a permanent
+position).
+
+Application Deadline: Open Until Filled
+
+Position Start Date: July-October 2019
+
+Detailed description:
+
+We are seeking a full-time Research Assistant to join the von Karman Institute
+in the Department of Turbomachinery and Propulsion. The position is initially
+fixed-term for one or two years, that can be turned into a permanent position.
+As part of a team investigating advanced technologies for future aero-engine
+turbomachinery, you will support the experimental research programs of the
+Turbomachinery and Propulsion Laboratory at the von Karman Institute. The
+research assistant will be responsible for the design, execution and management
+of measurement test campaigns investigating the aerodynamics of aero-engine
+turbines. 
+
+The candidate will be responsible for the commissioning and use of the VKI
+turbomachinery test facilities such as the world-class transonic rotating
+turbine rig CT3 and the high-speed low-Reynolds S1/C linear cascade. In
+particular, she or he will be responsible for the planning of the research
+objectives, the design of experiments, the implementation of measurement
+techniques and the processing and analysis of the acquired data. Most of the
+research activities will use a combination of experiments and computational
+modelling.
+
+The successful candidate is expected to organize the research data and report
+results and findings to colleagues and external research sponsors. The candidate
+is expected to contribute actively to the dissemination of her/his research
+findings through conference participation and peer-reviewed articles. 
+The candidate will also assist with grant proposal preparation and will mentor
+graduate and PhD students involved in the experimental projects.
+Requirements
+
+You will have a PhD in Mechanical, Aeronautical/Aerospace or related engineering
+field. 
+
+Experience is required in the field of experimental fluid dynamics. The
+successful applicant is familiar with experimental techniques for testing of
+turbomachinery. The job requires multitasking skills and predisposition towards
+teamwork while liaising closely with faculty, student and staff members.
+A background in one of the following subjects is a valuable asset:
+turbomachinery flows, measurement techniques for wind tunnel testing,
+experimental data analysis and processing. Familiarity with optical techniques
+(laser techniques, infrared thermography, Schlieren) is also an asset. Knowledge
+and experience in turbomachinery CFD is an asset, but not a requisite. Fluent
+knowledge of English (oral and written) is mandatory.
+
+Candidates are expected to be self-motivated, hardworking and team players. We
+ensure a high-level of interaction in a world-known international research
+center specialized in fluid dynamics for aerospace, environmental and propulsion
+applications.  
+
+The appointment is fixed-term (1-2 years). The salary and benefits are dependent
+on skills and experience. We maintain a very friendly and international working
+environment, which will provide easy adaptation for the selected applicant. 
+You will be required to upload a covering letter, CV, publication list and the
+contact of two referees as part of your application.
+
+Further information on the position and informal enquiries may be addressed to
+Assistant Professor Sergio Lavagnoli (lavagnoli@vki.ac.be).
+
+
+Name	Sergio Lavagnoli
+Email	lavagnoli@vki.ac.be
+Email Application	Yes
+URL	https://jobs.vki.ac.be/offer-detail/research-assistant-experimental-aerodynamics-of/
+Address	von Karman Institute for Fluid Dynamics
+Chaussée de Waterloo 72
+1640 Rhode Saint Genèse
+Belgium
+
+** Job Record #15909 - Dr. Mostafa Momen
+- relevant published papers
+-  your research  interests
+- your future career goals
+
+The  environmental  fluid  mechanics  group at the University  of Houston
+ has an  open Post-docposition in computational fluid dynamics(CFD) or 
+experimental meteorologyto start in Fall 2019 or Spring 2020.
+The post-doc  inCFDwill  beresponsibleto  conduct multiple state-of-the-art  large  eddy  simulations  of turbulent environmental  flows  with  various  urban,  coastal,  and  energy  applications.The  post-doc  is expected to perform postprocessing of big environmental data and derive simplified analytical or statistical models to describe different fluid dynamics phenomena.The post-doc in experimental meteorology will be responsible to conduct meteorological measurements in coastal and urban environments. The main focus will be on turbulenceand boundary layer dynamics. The post-doc is also expected to perform postprocessing of big observational data.Required qualifications:-A PhDdegree in engineering, meteorology, physics, or other closely related fields-Strong  hands-on  experience  with atleast  one programming language  such  asFortran,  C/C++, Python, or MATLAB-In-depth knowledge of fluid dynamics, turbulence, and boundary layers-Publications in internationally recognized journals-Strong motivation to perform cutting-edge research and to publish high-impact papers Preferred qualifications for the CFD applicants:-Strong experience in developing numerical models and computational algorithms-Strong experience with parallel computing (e.g. MPI) -Experience with machine learning in Python or other languages-Proficiency in Linux computing environment-Experience with OpenFoam/Fluent/WRFPreferred qualificationsfor the experimental meteorology applicants:-Strong hands-on experience with meteorological and weather instruments such as sodar, LIDAR, radiosondes, anemometers, wind profilers, and flux towers-Strong data analysis skills using Python, MATLAB, or R-Experience with machine learning The position is available for September 2019/January 2020. Interested candidates should send their up-to-date  CVand  a  short  cover  letter  (maximum  1-page)  to  Dr.Mostafa  Momen mmomen@central.uh.edu. Please  note  that  the  title  of  your  email  should  start  with "Postdoc-EFM-CFD"for  CFD  applicants  and “Postdoc-EFM-EM” for experimental  meteorology applicants.  In  the  cover  letter,  please  include any relevant  published  papers,  your  research  interests,  as  well  as  your  future  career  goals.  The  review  of candidates will begin immediately and continue until the position is filled.The civilengineering program at the University of Houston is ranked #62in the USA according to the 2019 U.S. News and World Report rankings. The civil engineering program also is ranked 101-150 in the world according tothe2018 Shanghai Ranking. The University of Houston is located in a park-like campus a few minutes from downtown Houston. Houston is the fourth largest city in the U.S. and is the “energy capital of the world”. The greater Houston area offers state-of-the-art recreational facilities, world-class arts and cultural activities, and affordable housing
+** Job Record #15953
+
+Job Record #15953
+Title	industrial flows simulations with Lattice-Boltzmann
+Category	PostDoc Position
+Employer	Aix-Marseille University
+Location	France, Marseille
+International	Yes, international applications are welcome
+Closure Date	* None *
+Description:
+
+Project: Advanced Lattice-Boltzmann Understandings for Multiphysics 
+Simulations (ALBUMS) funded by Airbus, Safran, Renault and the French National
+Research Agency (ANR)
+
+Goal: the modelling of solid wall and turbulent boundary layer
+
+Description 
+
+Fluid dynamics simulations play now a crucial role in aeronautics and automotive
+industry with the ambition to predict accurately quantities of engineering
+interest for turbulent flows developing inside or over full scale real-world
+objects. The key of the success is the development of high-fidelity simulations
+based on accurate and efficient discretization methods and algorithms working in
+the HPC framework. This is required by the several millions of degrees of
+freedom induced by the very large range of spatio-temporal scales as well as by
+the complex geometry to discretize.
+
+The intrinsic properties of the Lattice Boltzman method coupled with the
+immersed boundary method presents a great potential to predict complex flows in
+realistic conditions. This is already assessed by successful simulations carried
+out by the M2P2 team for the automotive and aeronautic industry. However, some
+key issues have been already clearly identified to push forward the reliability
+and the accuracy of such simulations with LBM and immersed boundary method. 
+
+In this context, a one-year renewable post-doct position is opened at the M2P2
+laboratory in Marseilles (Aix-Marseille Univ, CNRS, Ecole Centrale) to focus on
+the modelling of solid wall and turbulent boundary layer, which is a key issue
+to accurately predict aerodynamic forces and heat transfer in complex full-scale
+industrial configurations. The post-doc will aim at developing an improved
+no-slip boundary condition with an increased physical accuracy and numerical
+stability. The work will have to prevent mass leakage through solid walls, and
+to guarantee the symmetry preservation of solid wall condition, i.e. by
+developing a (nearly) fully isotropic condition without large directional error.
+A part of the work will concern the development of advanced interpolation
+schemes needed by the combined use of uniform grids and IBM. In the case of
+turbulent flows, in which the no-slip boundary condition is not relevant, the
+use of improved explicit algebraic wall models based on turbulent velocity
+profile models will be considered. 
+
+This post-doct fellowship is part of the ALBUMS chair (Advanced
+Lattice-Boltzmann Understandings for Multiphysics Simulations, 2019-2023)
+recently granted by the ANR and three worldwide industrial companies AIRBUS,
+SAFRAN and RENAULT for 4 years to deal with the development of efficient Lattice
+Boltzmann Methods (LBM) for the simulations of flows in realistic industrial
+applications in the field of aerodynamics, aeroacoustics and heat transfer.
+
+
+Expected profile of the candidate 
+The candidate will hold a PhD with a solid background in computational fluid
+dynamics and fluid mechanics. The numerical developments required will involve
+team-working skills to interact frequently with other post-docs/PhD working on
+the same numerical code, software engineers, associated industrials and
+supervisors. 
+
+Research team
+The post-doc will be part of the ALBUMS (Advanced Lattice-Boltzmann
+Understandings for Multiphysics Simulations) project at the M2P2 lab, in
+Marseille. Funding is assured by the national research agency (ANR), Airbus,
+Renault and Safran.
+Supervision of the research work will be assured by Eric Serre, renowned CFD
+specialist, and Pierre Sagaut, renowned scientist on turbulence modeling, LBM
+and ALBUMS Chair holder. 
+
+How to apply 
+Send an application to: eric.serre@univ-amu.fr and pierre.sagaut@univ-amu.fr
+including:
+- A detailed CV  
+- A cover letter  
+
+Starting date: September to February 2020
+
+Contract duration: 1 year (renewable every year)
+
+Deadline to apply: 20/01/2020
+
+
+
+Contact Information:
+Please mention the CFD Jobs Database, record #15953 when responding to this ad.
+Name	SERRE
+Email	eric.serre@univ-amu.fr
+Email Application	Yes
+Record Data:
+Last Modified	08:45:41, Monday, June 24, 2019
+** Renewable Integration in Power Systems: Challenges in Estimation and Control 
+Uni. of Southamption
+
+A transition from coal and gas based non-renewable generation to wind and solar based renewable generation is necessary to ensure a sustainable low-carbon future. But this transition introduces several challenges to power system operation. One of the challenges is to find the impact of stochastic and intermittent dynamics of renewable sources of energy on power grid, and how these dynamics can be better controlled to ensure global system stability. This is not a trivial problem given that the available integrated models of wind farms or solar parks do not correctly represent the dynamics of the constituent turbines or photovoltaic panels. Another challenge is a fall in system inertia for grids with large-scale integration of renewable sources, since renewable energy sources do not contribute to system inertia (which is the rotating mass in the system). A direct impact of low system inertia is to make the grids unstable as system inertia is needed to resist disturbances (such as a fault or a sudden load change) occurring in the system and to maintain the frequency of the system.
+
+This project will find solutions to such challenges related to maintaining the stability of power grids in light of renewable integration. Towards this broad goal, the student will explore various ideas, such as developing an accurate model for a wind farm or solar park that preserves the underlying oscillatory dynamics, while reducing complexity, thereby eliminating the use of inaccurate substitute models. Such a model will then be used to design dynamic and optimal control schemes for wind farms or solar parks in order to assist in global power system stability. An idea to address the impact of renewables on system inertia is to accurately estimate the rate of change of frequency (RoCoF) in the system – as low inertia translates to high RoCoF – and use it to provide ‘synthetic inertia’ to the system using energy from high capacity storage devices or through intelligent control of wind farms and solar parks.
+
+The project is open to customisation based on the particular interests of the student but needs to be in the broad field of stability aspects of renewable integration.
+
+For any queries contact: Dr. Abhinav Kumar Singh (A.K.Singh@soton.ac.uk)
+
+
+
+** Postdoc position in wave breaking
+Category	PostDoc Position
+Employer	Wave group of University College Dublin
+Location	Ireland, Dublin
+International	Yes, international applications are welcome
+Closure Date	Monday, June 17, 2019
+Description:
+
+This postdoctoral position is within a recently funded project by the European
+Research Council (ERC) entitled HIGHWAVE. The postdoc will be based in the
+School of Mathematics and Statistics of University College Dublin and expected
+to collaborate with the other project members (two lecturers, three PhD
+students, three postdocs and one engineer). The wave group has an international
+reputation in the study of waves and computational fluid mechanics.
+
+HIGHWAVE covers simultaneously past, present and future energetic ocean waves.
+The project research, associated with sustainable environmental science and
+technology, will help future generations to improve environmental practice.
+HIGHWAVE is a cutting-edge mathematical project that uses real-time raw data
+harvested in situ by the project team to develop new models and new algorithms.
+These new models will provide information about air and water exchange in
+oceanic environments, boulder deposits, erosion and structural damage.
+
+Information about the project can be found on the web site of the project:
+https://www.highwave-project.eu
+
+The key task is the development of a new mathematical wave model including
+unbroken as well as broken waves. The model will be a system of coupled
+amplitude equations, one for the (unbroken) wave amplitude and one for the order
+parameter associated with the breaking threshold parameter. The model will be
+fed by several ingredients: (i) a breaking onset threshold that is robust to the
+range of mechanisms that contribute to wave breaking: bathymetry, spectral
+bandwidth, directionality, wind forcing, currents and any combination of these;
+(ii) a breaking strength parameter linked to the breaking threshold parameter;
+(iii) a source term representing wind forcing. The coupled model will be tested
+first in deep to intermediate water, since a breaking threshold parameter and a
+breaking severity parameter have already been identified for this simplified case. 
+
+Goals: 
+
+1. Universal threshold for wave breaking onset that is robust to the range of
+mechanisms that contribute to wave breaking (the approach here is to combine
+Machine Learning classification algorithms with numerical simulations based on
+the full water wave equations to find the breaking onset threshold)
+
+2. Prediction of breaking strength across the whole range of wave breaking
+mechanisms (the approach here is to combine Machine Learning tools with field
+measurements to find the link between breaking strength and breaking threshold
+parameters)
+
+3. Incorporation of wave directionality into large-eddy-simulations of the
+oceanic boundary layer with stochastic breakers (an improved description of
+breaking statistics as a function of wind speed, wave age, and wave direction
+will be obtained from the analysis of field data)
+
+The applicant must have a PhD in Applied Mathematics or Physics, and a strong
+background in Ocean Waves, CFD and Statistics.
+
+Applications can be submitted only by the online application form at the
+following link: http://www.ucd.ie/hr/jobvacancies/
+
+Click Research Position and Mathematics & Statistics.
+
+Job Ref: 011540
+
+Salary range: €37,223 - €43,029 per annum
+
+Frederic Dias
+
+School of Mathematics & Statistics
+
+University College Dublin
+email: frederic.dias@ucd.ie 
+
+Contact Information:
+Please mention the CFD Jobs Database, record #15882 when responding to this ad.
+Name	Professor Frederic Dias
+Email	frederic.dias@ucd.ie
+Email Application	No
+URL	https://www.highwave-project.eu
+Record Data:
+Last Modified	23:25:53, Sunday, May 26, 2019
+** Research Fellows in wind energy & fluid mechanics (fixed-term, two posts)
+- Dr [[https://www.nottingham.ac.uk/research/groups/fluids-and-thermal-engineering/people/xuerui.mao][Xuerui Mao]]
+-  full time
+- 12 months. 
+
+Applications are invited for two Research Fellow posts situated in the Engineering Faculty, Nottingham University.
+
+These posts will be part of the consortium for the H2020 project 
+“high performance computing in wind energy” 
+
+consisting of 12 academic and industrial partners coordinated by Dr. Xuerui Mao at the University of Nottingham.
+
+The project offers a pioneering research in high performance computing and 
+its application to key fluid mechanics problems in wind energy. 
+
+The research will concentrate on the *development of novel algorithms and codes* 
+related with reduced order modelling and large eddy simulations.
+
+Candidates must have a PhD or equivalent 
+in the area of applied mathematics or fluid mechanics, 
+with preference for fields related to numerical methods, 
+adjoint based optimization, large eddy simulation and wind energy are highly desirable.
+
+It is also expected that the candidate will demonstrate the Development of *in-house programmes* 
+for computational fluid dynamics and Numerical simulations of fundamental fluid physics.
+
+It is essential that the candidate has experience of the following:
+
+-     Developing novel numerical algorithms
+-     scientific report writing with a track record of publication in leading academic journals
+-    running large-scale simulation in state-of-the-art HPC facilities.
+
+
+Job share arrangements maybe considered.
+
+
+Informal enquiries may be addressed to Dr Xuerui Mao. 
+Email: xuerui.mao@nottingham.ac.uk. 
+Please note that applications sent directly to this email address will not be accepted.
+
+https://www.nottingham.ac.uk/jobs/currentvacancies/ref/ENG062819
+
+
+** Fatigue Modelling and Testing of Composite Tidal Turbine Blades
+https://www.nuigalway.ie/engineering-informatics/mechanical-engineering/research/marine/fatiguemodellingandtestingofcompositetidalturbineblades/
+
+Aim of Project:
+
+Tidal stream turbines harness the energy available through the repeated action of the oceans’ tides. Coastlines in many parts of the world experience semidiurnal, or twice daily, tides. Due to certain favourable geographical conditions, such as narrow inlets to bays or tidal estuaries, these tides can be accelerated over quite a large area. A mean tidal stream velocity of only 1.5 to 2 m/s is sufficient to power many of the tidal energy capture devices currently in development. One of the most common designs is the horizontal axis tidal turbine (HATT). Fibre-reinforced composites are considered most suitable for rotor blade construction, due to their high specific strength and stiffness and good corrosion resistant properties.
+
+The Blade Element Momentum Theory (BEMT) combines actuator disk theory with blade element theory to define an iterative procedure for determining the performance characteristics of a tidal stream turbine. The BEMT is often used in the initial design stages to set the operating parameters of a turbine, and can supply the loads on turbine blades for the structural analysis. Figure 1 displays how the thrust force on the turbine blades varies due to the velocity profile across the turbine. Varying in magnitude by 1.5 to 2% per revolution for a 20 m diameter 500 kW turbine in 2 m/s flow. This is a significant fluctuation and warrants investigation of the fatigue properties of the blade material. Other sources of blade fatigue include: manufacturing defects, variability in composite material strength/stiffness, surface fouling, and wave-blade interactions.
+
+Finite element models are employed to investigate the structural performance of the tidal turbine blades using the loads calculated by the BEMT model. The FE models analyse the blades’ response using a material user-subroutine (UMAT) in Abaqus. The UMAT includes a non-linear degradation of lamina stiffness due to damage accumulation. The level of damage is based on the risk of failure for each element in the model, for both fibre failure and inter-fibre failure (IFF) or matrix cracking.
+
+The next step in the modelling process is to determine an appropriate fatigue accumulation model and apply it within the FE framework already created. Current efforts are focused on determining the vibrational response of the composite blades. Structural testing of scale blades in the lab will calibrate the fatigue damage models based on the numerically determined loads.
+
+ 
+ ‌Tidal Turbine 1 	‌ ‌Tidal Turbine 2
+
+ 
+
+Figure 1 - Horizontal axis tidal turbine and velocity profile of incoming flow [left], and subsequent cyclically varying thrust force on turbine blades [right].
+
+Associated with:
+
+NUI Galway College Scholarship, the Marine Renewable Energy Ireland (MaREI) research centre, the Martin Ryan Institute, the National University of Ireland.
+
+Academic Collaborators:
+
+Civil Engineering: Dr Jamie Goggins
+
+Mechanical Engineering: Prof Sean Leen, Dr Ciaran Kennedy
+
+Researcher: Edward Fagan
+
+Achievements:
+
+[1] E. M. Fagan, S. B. Leen, C. R. Kennedy, and J. M. Goggins “Finite element based damage assessment of composite tidal turbine blades,” in Proceedings of the 11th International Conference on Damage Assessment of Structures, Belgium 2015.
+
+[2] E. M. Fagan, R. W. Yeung, S. B. Leen, and J. M. Goggins “Structural and Hydrodynamic Modelling of Composite Tidal Turbine Blades,” in Proceedings of the 11th European Wave and Tidal Energy Conference, 4th-6th, France, 2015.
+
+** Post-Doc Or Research Assistant Cfd, Tidal Turbine, Comparison With Experiments
+[[https://www.monitoratlantic.eu/][Monitor]] project
+
+responsibility:
+
+   - in charge the final development of the numerical tool 
+(code Dorothy, Vortex Method, [1, 2, 3]) and 
+to run computations to compare turbine load fluctuations with the in-situ and experimental results, 
+and also with a BEM-CFD code developed at Swansea University. 
+
+Job Description
+
+-  Organisation/Company: Université Le Havre Normandie
+-    Research Field: Computer science › Other Physics › Mathematical physics
+-    Researcher Profile: Recognised Researcher (R2)
+-    Application Deadline: 30/11/2018 12:00 - Europe/Athens
+    Location: France › Le Havre
+    Type Of Contract: Temporary
+    Job Status: Full-time
+    Hours Per Week: 35
+    Offer Starting Date: 01/02/2019
+
+Profile : A PhD or equivalent in the field of Computational Fluid Dynamics, Energy or Renewable Energy (Tidal or Wind).
+
+Topics :
+
+In the framework of an Atlantic Area (AA) Interreg project, we are recruiting a Post-Doc or 
+Research Assistant (PDRA) in order to develop an existing software and 
+run computations of different tidal turbines in a turbulent flow. 
+
+In fact, *MONITOR* (www.monitoratlantic.eu/) is an AA Interreg project funded 
+in June 2017 that gathers several European universities such as 
+- University of Le Havre Normandy (France), 
+- Swansea Uni- versity (lead Partner, Wales UK), 
+- University of Algarve (Portugal), 
+- University College Cork (Ireland) ; 
+
+research centres such as :
+- ORE catapult 
+-  EMEC ; 
+
+companies such as Sabella (France) and Magallanes (Spain).
+
+The aim of this project is to study, via a multi-model approach, 
+tidal turbines reliability in real life flow. 
+
+In fact, two full scale turbines will be used for in-situ measurement 
+(Sabella turbine in Fromveur strait and Magallanes turbine at EMEC), 
+three turbine models will be used at the model scale 
+(the two previous ones plus the IFREMER turbine) and also for the numerical studies. 
+Load fluctuations with respect to ambient turbulence, wave, combined wave and turbulence cases 
+will be evaluated at the prototype and model scale and also numerically. 
+
+Comparisons of numerical results with the experimental and in-situ ones will be performed. 
+In the end, all the results will feed in a reliability tool under development at ORE Catapult.
+
+The recruited PDRA will have in charge the final development of the numerical tool 
+(code Dorothy, Vortex Method, [1, 2, 3]) and 
+to run computations to compare turbine load fluctuations with the in-situ and experimental results, 
+and also with a BEM-CFD code developed at Swansea University. 
+
+The three considered turbines are very different in term of solidity, 
+blade profiles, number of blades, bottom-mounted or floating. 
+The large range of scale between the prototype scale (EMEC and Fromveur strait) 
+and the model scale (IFREMER flume tank) also enables comparison at different Reynolds numbers. 
+Several ambient turbulence conditions and wave climates will also be considered. 
+This gives a very large and interesting field of investigation.
+
+ 
+
+Different steps :
+
+1. Familiarisation with the MONITOR objectives.
+
+2. Familiarisation with the numerical tool (code *Dorothy*) and run of regular configuration of our partners’ turbines.
+
+3. Analysis of the experimentally obtained databases at model scale; writing of report and scientific publi- cations.
+
+4. Final developments of the numerical tool with respect to power assessment.
+
+5. Run of computations in the tested configurations (either at model or full-scale) in turbulence only cases.
+
+6. Comparison of obtained results (model scale, full scale and numerical); writing of report and scientific publications.
+
+7. Development of wave module into Dorothy.
+
+8. Run of computations in the tested configurations (either at model or full-scale) in turbulence & wave cases.
+
+9. Comparison of obtained results (model scale, full scale and numerical); writing of report and scientific publications.
+
+
+References :
+
+1. Grégory Pinon, Paul Mycek, Grégory Germain, and Elie Rivoalen. Numerical simulation of the wake of marine current turbines with a particle method. Renewable Energy, 46(0) :111 – 126, 2012.
+
+2. Paul Mycek, Grégory Pinon, Corentin Lothodé, Alexandre Dezotti, and Clément Carlier. Iterative solver approach for turbine interactions : application to wind or marine current turbine farms. Applied Mathematical Modelling, 41 :331 – 349, 2017.
+
+
+Benefits
+
+Large and interesting field of investigation.
+
+Development of a large european professional network in the frame on the Interreg Projet (8 partners involved from academic and non-academic sectors).
+
+Selection process
+
+Deadline for application : 30th of Nov. 2018 - Starting date : 1st of February 2019
+
+CV + Cover Letter + track records by e-mail to gregory.pinon@univ-lehavre.fr
+
+ 
+
+Additional comments
+
+1 year + 1 additional year already funded
+
+a maximum gross salary of ≈ 2700e/month depending on proven experience
+
+Offer Requirements
+
+    REQUIRED EDUCATION LEVEL
+    Physics: PhD or equivalent
+    REQUIRED LANGUAGES
+    ENGLISH: Excellent
+    FRENCH: Good
+
+Skills/Qualifications
+
+A PhD or equivalent in the field of Computational Fluid Dynamics, Energy or Renewable Energy (Tidal or Wind).
+
+Good knowledge of numerical methods, coding of software and code development in the framework of a collaborative context. 
+
+Knowledge of tidal or wind energy will be much appreciated. 
+
+The recruited person will also be in charge of the analysis of existing 
+tidal tur- bines trials databases already performed in flume tanks.
+
+An excellent command of English is absolutely required in the framework of this European project.
+
+ 
+
+Contact Information
+
+    Organisation/Company: Université Le Havre Normandie
+    Department: Laboratory LOMC
+    Organisation Type: Higher Education Institute
+
+    Website: https://www.univ-lehavre.fr/
+
+    contact E-Mail: dirved@univ-lehavre.fr  gregory.pinon@univ-lehavre.fr
+
+    Country: France
+    City: Le Havre
+    State/Province: Normandie
+    Postal Code: 76600
+    Street: 25 rue Philippe Lebon
+    Phone: +33(0)235217123
+
+from: https://www.academicgates.com
+
+** Research Assistant at Seansea Uni.
+
+https://www.jobs.ac.uk/job/BRR202/research-assistant
+contacts: 
+Dr Michael Togneri
+e-mail:  M.Togneri@swansea.ac.uk
+
+Contract Type: Fixed Term Contract
+
+Closing Date: 19-05-2019
+
+Salary: £29515 to £33199 per annum together with USS pension
+
+Contract: This is a fixed term position for 2 years from the start date or until 30 April 2021 , whichever is shorter.
+
+Location: This position will be based at Bay Campus, Swansea University
+
+Main Purpose of the Post:
+
+The post holder will be expected to contribute to the 
+Interreg Atlantic Area funded project MONITOR (ref. no. EAPA_333/2016), 
+working with an international project group of universities and SMEs.  
+
+Purpose:
+
+- The primary purpose is to develop guidelines and tools for tidal energy developers to improve device reliability. 
+The post holder will be responsible for delivering research outputs 
+relevant to the numerical work package of the MONITOR project.
+
+To contribute to the Interreg Atlantic Area funded project MONITOR (ref. no. EAPA_333/2016), 
+working with an international project group of universities and SMEs.
+
+To carry out simulations of specific turbine geometries relevant 
+to the MONITOR project in order to predict loads in realistic flow conditions.
+
+To continue development of the *Marine Energy Research Group* ’s *in-house code* for tidal turbine simulation, 
+in C++ and Matlab/Python, specifically:
+
+    Development of coupling between floating platform motion and hydrodynamic loads
+    Development of code modifications to deal with high-solidity rotors
+
+To validate the computational models using laboratory and field data gathered by the project partners.
+
+To implement the computational models over a range of sea states using data gathered by project partners.
+
+To collaborate with research partners including national and international travel.
+
+To write journal papers for submission in ISI-accredited peer-reviewed journals.
+
+Informal enquiries contact details and Further Information
+
+* Germany
+https://www.jobs.ac.uk/country-profiles/germany/post-doctoral-zone/article/14/postdoctoral-research-funding-in-germany
+
+* finance
+
+黄金价格
+低于1200，去买，拿到1300！
+
+人民币兑美元汇率低于6.4左右，买去美元，到6.8左右出来！
+
+上证指数低于3000点， *消费型指数*  
+基金定投！做到3500点左右
+https://xueqiu.com/P/ZH792029
+
+
+* 薪酬报告
+source: 
+科锐, mercer
+
+IT 
+
+财务和hr
+
+咨询业, mckinsey，Boston
+斯坦福大学的人生设计课
+
+销售总监
+
+法务
+
+* WEC
+中国海洋工程咨询协会
+
+* Salary
+company 
+作为一个30多岁的高学历年轻人，除了个别行业和地区，在公司能拿到年薪50万的概率并不大
+
+lecturer, Uni
+- 新进博士，如果不是特殊人才的话，待遇最低的我知道，年薪4万+，待遇最高的我也知道，中国海洋大学，年薪7万+，以上都是税前， 不包含其它奖励和补贴。据说安家费、科研启动费之类的不多，可以忽略
+** 财务总监（CFO）
+2017年财会人员平均薪酬为12.54万元
+真正的财务思维是创造价值的思维
+
+* scopus -- turbine + qingdao
+TITLE-ABS-KEY ( turbine )  AND  AFFILCITY ( qingdao )  AND  ( LIMIT-TO ( AFFILCOUNTRY ,  "China" ) )  AND  ( LIMIT-TO ( DOCTYPE ,  "ar" ) )  AND  ( LIMIT-TO ( SUBJAREA ,  "ENGI" )  OR  LIMIT-TO ( SUBJAREA ,  "ENER" ) )  AND  ( LIMIT-TO ( LANGUAGE ,  "English" ) )  AND  ( LIMIT-TO ( SRCTYPE ,  "j" ) )  
+
+* 航空航天科研院所
+* 选调生
+博士生进来了给予副处级职务安排的不少，但是这个副处级岗位可能并不是实权岗位。而是一些意识形态岗位，不涉及人事、财政、项目这些比较敏感的岗位
+
+* china
+人才引进计划
+
+
+中国最幸福的是一线政府事业单位,央企, 大国企 里会投资的中高层副职，收入高，责任轻，谁也动不了
+
+不要以进入某知名外企民企私企996顶着压力拿着高薪很风光，等过了30甚至35就明白了
+
+那家公司比我党规模大，地位高，前景好？
+
+** high incomre
+- 医药代表
+
+* 深圳 
+
+** 哈尔滨工业大学深圳研究生院
+HIT Campus of University Town of Shenzhen, Shenzhen, China
+深圳市南山区桃源街道深圳大学城哈尔滨工业大学校区
+
+*** Alam Md.Mahbub - cfd
+http://www.hitsz.edu.cn/teacher/view/id-752.html
+
+*** Yu Zhou - Turbulence
+
+
+**** Intro
+[[http://www.hitsz.edu.cn/teacher/view/id-319.html][周裕]]-大洋洲流体力学学会会, Fellow of Australasia Fluid Mechanics Society
+ 通讯地址：深圳市南山区西丽大学城哈工大校区C栋310室
+电子邮件：yuzhou@hit.edu.cn
+联系电话：0755-26037148 
+
+Institute for Turbulence-Noise-Vibration Interactions and Control, 
+Harbin Institute of Technology (Shenzhen), Shenzhen, 518055, China; 
+
+Digital Engineering Laboratory of Offshore Equipment, Shenzhen, 518055, China; 
+
+
+
+
+scopus ID:  57013702000
+湍流理论；工程湍流及其控制（如钝体绕流、射流和边界层）
+；空气动力学（飞行器、汽车等）；
+流体诱发的振动（海洋工程结构、核反应堆等等）。
+
+
+
+funds:
+- 2013-2016  Effect of *incident turbulence* on axial-flow-induced vibration of *clustered cylinders*
+- 2012-2015  Active *drag reduction* of a 3D generic *car model* using a combination of steady and unsteady actuations
+- 2011-2014   Closed-loop-controlled *turbulent boundary layer* based on local surface oscillation
+- 2010-2012   *Active control* of a *round jet* using a novel pulsed minijet actuator
+
+*students*
+吴智(Wu Zhi) --  jet mixing,  'Closed-loop control for turbulent flow
+
+**** papers
+2019, JFM, The turbulent Kármán vortex, doi:10.1017/jfm.2019.296
+
+Free vibrations of two tandem elastically mounted cylinders in crossflow
+
+Can small-scale turbulence approach a quasi-universal state?
+
+Vibration initiation of a cylinder in the wake of another
+
+Effect of micro-bubbles on a turbulent boundary layer
+
+
+
+*** 教师岗位招聘(内含申请材料）
+
+学校简介：
+
+
+
+哈尔滨工业大学（深圳）由哈工大与深圳市政府合作共建，是哈工大的一个校区，
+是广东省、深圳市的一所大学。前身是始建于2002年的哈工大深圳研究生院。
+哈工大（深圳）以全日制本科生与研究生教育为主、非全日制教育为辅，
+是首所进驻深圳招收本科生的中国九校联盟（C9）成员、
+国家“985工程”建设高校和“双一流”建设高校。
+
+哈工大（深圳）是哈工大高等教育改革的试验田、汇聚高端人才的桥头堡、国际化办学的示范区，是哈工大实现“中国特色、世界一流、哈工大规格”目标的重要组成部分，是深圳市高等教育体系的重要成员和建设现代化国际化创新型城市的生力军。哈工大（深圳）传承哈工大传统、发扬深圳精神，充分发挥哈工大的品牌优势、办学资源优势和深圳市的区位优势、创新优势，在与哈工大校本部统一规格、统一标准、统一要求的前提下，实现统一质量、统一品牌。校区现有计算机科学与技术学院、电子与信息工程学院、机电工程与自动化学院、土木与环境工程学院、材料科学与工程学院、建筑学院、经济管理学院、理学院和人文与社会科学学院、空间科学与应用技术研究院等10个教学科研机构，现诚邀海内外优秀学者加盟。
+
+一、招聘要求及工作职责：
+
+1. 在人才培养和科学研究领域取得突出成绩的学科带头人和
+学术骨干以及在国内外知名大学取得博士学位（全日制），
+在研究领域取得一定成绩且具有良好发展潜力的优秀青年人才。
+
+2. 具有海外相关工作经历的优先考虑。
+
+3. 招聘学院及学科方向：
+
+航空宇航科学与技术、计算机科学与技术、电子科学与技术、
+信息与通信工程、材料科学与工程、环境科学与工程、
+管理科学与工程、控制科学与工程、土木工程、机械工程、
+生物医学工程、动力工程与工程热物理、力学、数学、化学、
+物理、生物学、建筑学、设计学、工商管理、海洋科学、
+应用经济学、城乡规划学、语言学、英语语言文学、体育学、思想政治教育、相关人文社会学科以及社会科学诸领域、空间科学与技术。
+
+4. 工作职责：    
+
+（1）完成本科及研究生教学任务；
+
+（2）具有较强科研能力，能够独立完成或指导学生完成高水平科研实验；
+
+（3）参与社会公共服务
+
+二、待遇及福利：
+
+教学科研岗位
+
+（1）入选者根据水平可聘为助理教授、副教授、教授职务。
+
+（2）提供年薪30-150万左右（税前），另可享受个人科研成果奖励等其他收入。
+
+（3）科研经费根据所聘岗位级别及所在学科确定。
+
+（4）可申请深圳市高层次人才奖励补贴（160-600万），
+或租住教师福利性住房,租金低于市场价格。
+
+此外，我校可在规定范畴内报销参加二面往返交通费及2晚指定酒店住宿费，
+如成功录用，可报销入职报到单程交通费及3晚指定酒店住宿费。 
+
+三、申请材料要求（见附件）：
+
+1.教学科研岗位申请表
+
+2.一封求职信(包括三部分内容：①自我综述，并对自身的素质、能力和特点给出评价；
+②论述你与所申请岗位的匹配性；③如果你得到了所申请的岗位后的工作计划）
+
+3.三封推荐信（可于面试环节中提供）
+
+4.佐证材料（如学历学位证，代表性成果、重要论著目录等）
+
+请将上述应聘材料一并发送至招聘邮箱：hrsz@hit.edu.cn，并在邮件主题注明应聘学院+姓名。
+
+此外，我校可在规定范畴内报销参加二面往返交通费及2晚指定酒店住宿费，如成功录用，可报销入职报到单程交通费及3晚指定酒店住宿费。
+
+ 
+
+附件：
+四、联系方式：
+
+哈尔滨工业大学（深圳）人事处（常年接受应聘）
+
+联系人：杨芷茜
+
+联系电话：+86755-26033365
+
+E-mail: hrsz@hit.edu.cn(招聘专用邮箱)
+
+网址：http://www.hitsz.edu.cn/job/id-37.html
+
+*** funds in HIT
+
+| 项目名称| 计划时间| 项目经费| 项目类型
+
+|湍流边界层主动减阻及机理研究|2017-2021|280|国家级重点
+
+空间大尺度可变构型智能结构体创新设计与在轨操控方法研究
+	
+
+2017-2020
+	
+
+265
+	
+
+国家级重点
+
+大中型仿生飞鸟机器人建模理论、设计与控制关键技术
+	
+
+2017-2020
+	
+
+260
+	
+
+国家级重点
+
+***电源系统稳定性分析及稳定裕度评估方法研究
+	
+
+2016-2017
+	
+
+232
+	
+
+国家级重点
+
+航天飞行器的鲁棒控制理论与应用
+	
+
+2017-2020
+	
+
+85
+	
+
+国家级
+
+基于超声调制静电驱动的微细电火花加工新方法研究
+	
+
+2015-2018
+	
+
+85
+	
+
+国家级
+
+圆柱尾流中弹性支撑圆柱振动机理研究
+	
+
+2017-2020
+	
+
+82
+	
+
+国家级
+
+面向微电子封装的压电驱动按需滴化喷射点胶形成机理与控制
+	
+
+2014-2017
+	
+
+80
+	
+
+国家级
+
+大型柔性结构在轨装配的多臂空间机器人协调控制研究
+	
+
+2016-2018
+	
+
+66
+	
+
+国家级
+
+在未知人机共融环境下基于行人行为学习的户外移动机器人自主感知、语义制图和运动规划
+	
+
+2017-2020
+	
+
+65
+	
+
+国家级
+
+典型开关电源无源组件近场耦合集总参数提取方法研究
+	
+
+2017-2020
+	
+
+62
+	
+
+国家级
+
+多约束耦合的快速搬运型无人机运动规划与飞行控制研究
+	
+
+2017-2020
+	
+
+62
+	
+
+国家级
+
+悬臂型多叶薄片气体轴颈轴承面接触承载机理研究
+	
+
+2017-2020
+	
+
+62
+	
+
+国家级
+
+基于无人直升机的长城遗址动态监测技术研究
+	
+
+2013-2015
+	
+
+60
+	
+
+国家级
+
+航天多变换器开关电源关键技术研发
+	
+
+2015-2017
+	
+
+500
+	
+
+深圳市
+
+带机械臂的操作型无人机轨迹规划与控制研究
+	
+
+2016-2019
+	
+
+300
+	
+
+深圳市
+
+面向乳腺癌早期筛查的反射与透射融合超声CT技术研究
+	
+
+2016-2019
+	
+
+300
+	
+
+深圳市
+
+面向未知环境探测的仿生机器人关键技术研究
+	
+
+2016-2019
+	
+
+300
+	
+
+深圳市
+
+等离子体技术在航天领域中的应用研究
+	
+
+2016-2018
+	
+
+300
+	
+
+深圳市
+
+工业机器人视觉关键技术的研究
+	
+
+2016-2018
+	
+
+300
+	
+
+深圳市
+
+柔性辅料贴装智能机器人关键技术研究
+	
+
+2016-2018
+	
+
+300
+	
+
+深圳市
+
+宇航机构可重构动力学与控制研究
+	
+
+2016-2018
+	
+
+300
+	
+
+深圳市
+
+智能自学习制造关键技术研究
+	
+
+2016-2018
+	
+
+300
+	
+
+深圳市
+
+气体和液体静压轴承电主轴高速稳定性和回转精度机理以及波箔型动压气体轴承承载机理研究
+	
+
+2015-2020
+	
+
+170
+	
+
+企业横向 
+
+http://smea.hitsz.edu.cn/kxyj/kyxm.htm
+
+http://www.hitsz.edu.cn/job/view/5.html
+http://www.hitsz.edu.cn/index.html
+** SUSTech - Southern University of Science and Technology
+
+*** review
+南科大的博后深圳市有12万的补助，学校每月只发8000，
+外加2千多多的住房补助。
+8000里面除去税和五险一金后只剩6000。
+在南科大附近，学校的房补是不够交房租的，故每月除去房租，
+税和五险一金拿到手只有5000多。
+并且南科大的博后和其它国内高校的博后一样都需要给老师打杂，
+辅助老师做上课的课件（没有助教费的），
+安排会议，帮老师审稿等。
+南科大的博后办公环境极差，现在学校扩招，原来的学院小，招的很多博后都没地方办公，新的办公室装修极差，搬进去时没网，桌子一动就散架，气味极大。这边博后办公好多都要自己的电脑。南科大的财物报账极慢，买个几百元的东西，报账得好几个月。杂事还是挺多的，要静心比较难，有的老师想招10个多博后，这样老师们出成果比较快，但是老师照顾每个博后的时间就比较少了。真实情况就是这样，供大家参考。如果想搞科研，建议还是去传统的有实力高校，如果想拿那12万，去也可以。仅供大家参考。
+
+*** [[http://mae.sustech.edu.cn/2019/faculty_0620/128.html][袁鸿雁]]- 力学与航空航天工程系
+计算固体力学，柔性机器人，先进制造
+
+*** [[http://faculty.sustc.edu.cn/profiles/wanghq/?cat=29&tagid=wanghq][王宏强]] - Principal Investigator
+
+http://hongqiang-wang.com/index.html
+
+
+主要成果包括：
+
+1） 世界上最薄的柔性攀爬机器人；
+2）毫米尺度的超薄、长行程静电型电机；
+3）可自由穿越水空界面的蜜蜂飞行机器人 
+
+研究方向：
+◆ 新型柔性电机、微型电机
+◆ 柔性机器人
+◆ 微型机器人
+◆ 医疗机器人
+◆ 仿生机器人
+
+工作经历:
+- 2018.09 – 至今 : 南方科技大学，助理教授
+- 2015.10 – 2018.09 : 哈佛大学，博后研究员,SEAS/Wyss （School of Engineering and Applied Science and Wyss Institu
+- 2015.06 – 2015.10 : 新加坡国立大学，博后研究员,新加坡国立大学生物医疗机器人实验室
+
+教育经历：
+- 2011.10 – 2015.06：日本东京大学 博士, Supervisor, Prof. Toshiro Higuchi, Precision Engineering Department,  University of Tokyo
+
+design and analyses on electrostatic film actuators and electroadhesion and their application to climbing robots. 
+
+- 2008.09 – 2011.07：西安交通大学  硕士
+- 2004.09 – 2008.07：西安交通大学  学士
+** 海外高层次人才补贴
+- （孔雀计划A、B、C类分别为300万、200万和160万）
+
+http://www.gaoxinbutie.com/haiwairencai/
+深圳市海外高层次人才概述：
+       海外高层次人才是指企业技术与创新创业、科研学术与教育卫生、文化艺术与体育三个领域的国（境）外高级专家和留学回国人员，其中国（境）外高级专家分为A、B两类，留学回国人员分为A、B、C三类。A类人才对应《深圳市高层次专业人才认定办法（试行）》中的国家级领军人才、B类人才对应地方级领军人才、C类人才对应后备级人才。
+*** time
+办学位公证需要一个月，办理深圳留学证明十天，社保三个月，申请高层次人才证书一个半月，申请补助按我现在这个时间要四个月。行政说我这个算慢的了仅供参考。
+　
+*** A类人才（300万）
+　　1.诺贝尔奖获得者（物理、化学、生理或医学、经济学奖）。
+　　2.获得以下奖项者：中国国家最高科学技术奖、美国国家科学奖章、美国国家技术创新奖章、法国全国科研中心科研奖章、英国皇家金质奖章、科普利奖章、图灵奖、菲尔兹奖、沃尔夫数学奖、阿贝尔奖、拉斯克奖、克拉福德奖、日本国际奖、京都奖、邵逸夫奖。
+　　3.中国、美国、英国、德国、法国、日本、意大利、加拿大、瑞典、丹麦、挪威、芬兰、比利时、瑞士、奥地利、荷兰、西班牙、澳大利亚、新西兰、俄罗斯、以色列、印度、乌克兰、新加坡、韩国的科学院院士、工程院院士（即成员member或高级成员fellow，见中国科学院国际合作局网站http://www.bic.cas.cn）。
+　　4.近5年，中组部“海外高层次人才引进计划（千人计划）”顶尖人才与创新团队项目中的顶尖人才和团队带头人，以及创新人才长期项目、创业人才长期项目、文化艺术人才长期项目、高层次外国专家项目的入选者。
+　　5.获中国政府“友谊奖”的专家。
+　　6.近10年，担任过世界500强企业总部（见说明1）首席执行官、首席技术官或同等职位的人员（每个申报单位限申报3人）。
+　　7.近5年，担任过国际著名金融机构（见说明2）首席类负责人（每个申报单位限申报1人）。
+　　8.近5年，担任过国际著名会计师事务所（见说明3）首席类负责人（每个申报单位限申报1人）。
+　　9.担任过国际著名学术组织（见说明4）主席或副主席。
+　　10.担任过国际标准化组织（ISO）标样委员会委员。
+　　11.担任过境外世界知名大学（见说明5）校长、副校长。
+　　12.担任过世界著名乐团（见说明6）首席指挥、艺术总监、首席演奏员，或近5年担任过声部首席演奏员。
+　　13.担任过国际著名艺术比赛（见说明7）评委会主席、副主席。
+　　14.近5年，获得过国际著名建筑奖（见说明8），著名文学奖（见说明9），著名电影、电视、戏剧奖（见说明10），著名音乐奖（见说明11），著名广告奖（见说明12）中最高级别个人奖项及国际A类艺术比赛（见说明7）大奖。
+　　15.近5年，获得过国际著名工业设计iF奖的金奖或红点奖的至尊奖，且为该设计奖项的主设计师（Team leader）。
+　　16.近5年，直接培养出奥运会冠军或近两届列入奥运会项目的世界杯、世锦赛冠军的主教练员。
+　　17.近5年，发明专利的主要发明人，该技术被主流标准组织接纳为标准，或列为863等国家级高技术研究发展计划，或该发明人在国家级的知识产权示范企业担任董事长或总经理（每个申报单位限申报1人）。
+
+　　
+*** B类人才（200万）
+
+　　1.近5年，担任过国际高水平科技期刊（《期刊引用报告》JCR一、二区）正、副总编（主编）。
+　　2.近5年，在Nature、Science、Cell或所在专业领域影响因子30以上的著名科技期刊发表论文的第一作者（含与第一作者具有同等贡献作者），或唯一通讯作者。
+　　3.近5年，广东省“珠江人才计划”领军人才入选者。
+　　4.近5年，入选广东省创新科研团队的带头人。
+　　5.近5年，获得广东省南粤突出贡献和创新奖的南粤突出贡献奖团队带头人或个人（每个申报单位限申报1人）。
+　　6.近5年，入选深圳市海外高层次人才团队的带头人。
+　　7.近5年，中组部“海外高层次人才引进计划（千人计划）”创新人才短期项目、外专千人短期项目、文化艺术人才短期项目、青年千人计划项目入选者。
+　　8.近5年，担任过国际著名投资机构（见说明13）首席类负责人（每个申报单位限申报1人）。
+　　9.近5年，获得北美精算师、英国精算师、澳洲精算师或中国精算师资格证书，且受聘于我市保险公司法人机构担任总精算师或精算责任人（每个申报单位限申报1人）。
+　　10.担任过国际著名学术组织（见说明4）高级成员（fellow）。
+　　11.担任过境外世界知名大学（见说明5）教授、副教授。
+　　12.近5年，中国科学院“百人计划”国外杰出人才或“率先行动”百人计划专家入选者。
+　　13.近5年， 国家引进境外技术、管理人才项目计划的首席外国专家项目的入选专家（每个申报单位限申报1人）。
+　　14.在美国、英国、德国、法国、日本、意大利、加拿大、澳大利亚、荷兰、比利时、瑞典、瑞士、丹麦、挪威、奥地利、西班牙、新西兰取得专科医师资格的人员；或在上述国家获执业医师资格，并有国内三甲综合医院或三甲专科医院2年以上工作经验的人员。
+　　15.在境外世界知名大学（见说明5）获得博士学位，近5年被评选为深圳I类实用型临床医学人才。
+　　16.近5年，担任过世界著名乐团（见说明6）声部副首席演奏员。
+　　17.担任过亚洲一流乐团（见说明14)首席指挥、艺术总监、首席演奏员，或近5年担任过声部首席演奏员。
+　　18.担任过国际著名艺术比赛（见说明7）评委会评委。
+　　19.近5年，获得过国际A类艺术比赛一等奖或国际B类艺术比赛大奖（见说明7）。
+　　20.近5年，累计获得5项以上国际著名工业设计iF奖或红点奖。
+　　21.近5年，直接培养出奥运会项目第二、三名运动员，或近两届列入奥运会项目的世界杯、世锦赛第二、三名运动员的主教练员。
+　　22.近5年，拥有国际发明专利或国内发明专利，且年营业收入5亿元人民币以上，或年纳税额2000万元人民币以上的企业董事长或总经理或首席技术官（每个申报单位限申报2人）。
+　　23.近5年，获评国家专利奖的主要发明人，且在本市国家级高新技术企业或国家级知识产权优势企业担任董事长或总经理（每个申报单位限申报1人）。
+　　24.近5年，带领企业获得中国质量奖且仍在岗的企业首席质量官。
+　　25.近5年，在深圳注册的投资机构（见说明15）核心投资决策团队主要负责人，且被清科集团、投中集团评选为优秀创业投资人（每个申报单位限申报1人）。
+
+　　
+*** C类人才（160万）
+1.担任过境外世界知名大学（见说明5）助理教授。
+2.近5年，入选中组部“海外高层次人才引进计划（千人计划）”
+ 顶尖人才与创新团队项目的团队核心成员（限前3名）。
+3.近5年，入选广东省创新科研团队的核心成员（限前3名）。
+4.近5年，获得广东省南粤突出贡献和创新奖的南粤创新奖团队带头人或个人
+（每个申报单位限申报1人）。
+5.近5年，入选深圳市海外高层次人才团队的核心成员（限前3名）。
+6.近5年，以第一作者（含与第一作者具有同等贡献作者）或唯一通讯作者，
+在国际高水平科技期刊（期刊所在各专业领域位于《期刊引用报告》JCR一区）发表论文3篇。
+7.近5年，在国（境）外从事博士后科研工作2年以上，
+且以第一作者（含与第一作者具有同等贡献作者）或唯一通讯作者在国际高水平科技期刊
+（期刊所在各专业领域位于《期刊引用报告》JCR二区以上）发表论文1篇，来深圳后继续从事科研工作。
+8.近5年，在境外世界知名大学（见说明5）获得博士学位，
+来深圳工作且与用人单位签订3年以上劳动合同的人员。
+9.在境外世界知名大学（见说明5）获得硕士及以上学位，近5年被评选为深圳II类实用型临床医学人才。
+　　10.近5年，在美国、英国、德国、法国、日本、意大利、加拿大、澳大利亚、荷兰、比利时、瑞典、瑞士、丹麦、挪威、奥地利、西班牙、新西兰的医疗机构或大学附属医院从事临床医疗工作（Clinic Fellowship）2年以上的人员。
+　　11.获得北美精算师、英国精算师、澳洲精算师或中国精算师资格证书，且在深圳保险业从事精算专业工作5年以上人员。
+　　12.近5年，获得过国际A类艺术比赛二等奖或国际B类艺术比赛一等奖（见说明7）。
+　　13.近5年，担任过世界著名乐团（见说明6）演奏员。
+　　14.近5年，担任过亚洲一流乐团（见说明14）声部首席副演奏员。
+　　15.担任过港澳台地区一流乐团（见说明16）首席指挥、艺术总监、首席演奏员，或近5年担任过声部首席演奏员。
+　　16.近5年，入选我市留学人员创业前期费用补贴一等资助的项目申请人（每个申报单位限申报1人）。
+　　17.近5年，在深圳注册的非上市创业创新型中小企业且获得风险投资机构（见说明15）第一轮融资1000万元以上，担任董事长或总经理的人员（每个申报单位限申报1人）。
+　　18.近5年，在深圳注册的创业投资机构（见说明15）核心投资决策团队成员（每个申报单位限申报1人）。
+　　19.近5年，累计获得3项以上国际著名工业设计iF奖或红点奖。
+　　20.近5年，拥有国际发明专利或国内发明专利，且年营业收入3亿元人民币以上，或年纳税额1000万元人民币以上的企业董事长或总经理或首席技术官（每个申报单位限申报2人）。
+　　21.近5年，国际发明专利或国内发明专利的主要发明人，且在市级高新技术企业或市级知识产权优势企业担任主要职务者（每个申报单位限申报1人）。
+　　22.深圳市政府主办的海外创新创业大赛总决赛获奖项目的主要核心成员,且在赛后3年内，在深圳工作或其参赛项目落户深圳（每个申报单位限申报1人）。
+　　23.近5年，通过联合国YPP考试（青年专业人才计划）并曾在联合国总部或下设经济和金融类分支机构（见说明17）担任P3（中级职位）以上职务3年以上，来深圳工作的人员。
+　　24.近5年，带领企业获得广东省政府质量奖且仍在岗的企业首席质量官。
+*** 　说明：
+　　5.上海交通大学高等教育研究院《世界大学学术排名》或泰晤士报《全球顶尖大学排行榜》排名前150名的境外大学，限申报年度最新排名。
+　　1.“世界500强”即美国《财富》杂志每年评选的“全球最大500家公司”。
+　　2.国际著名金融机构：
+　　美国高盛（Goldman Sachs）
+　　摩根士丹利（Morgan Stanley）
+　　摩根大通(JPMorgan Chase )
+　　花旗银行（Citibank）
+　　美国国际集团(AIG，American International Group )
+　　英国汇丰银行（HSBC）
+　　法国兴业银行( Societe Generale )
+　　法国巴黎银行( BNP Paribas　)
+　　法国巴黎百富勤有限公司（BNP Paribas Peregrine）
+　　荷兰银行（ABN AMRO Bank）
+　　荷兰国际集团( ING Group )
+　　德意志银行( Deutsche Bank )
+　　德累斯顿银行( Dresdner Bank AG )
+　　瑞士信贷第一波士顿（Credit Suisse First Boston）
+　　瑞士联合银行集团 ( United Bank of Switzerland )
+　　日本瑞穗集团 ( Mizuho Financial Group, Inc.)
+　　三菱UFJ金融集团（ Mitsubishi UFJ Financial Group, Inc.）
+　　三井住友金融集团( Sumitomo Mitsui Financial Group )
+　　新加坡星展银行（DBS Bank Limited）
+　　贝莱德集团（BlackRock）
+　　先锋资产管理(Vanguard Asset Management)
+　　道富环球投资管理公司(State Street Global Advisors)
+　　富达投资集团(Fidelity Investments)
+　　纽银梅隆投资管理公司(BNY Mellon Invest. Management EMEA)
+　　摩根大通资产管理公司(J.P. Morgan Asset Management)
+　　美国资金集团(Capital Group)
+　　太平洋投资管理公司(PIMCO)
+　　保德信投资管理公司（Pramerica Investment Management Int.）
+　　东方汇理资产管理公司（Amundi）
+　　3.国际著名会计师事务所：
+　　普华永道会计师事务所（Pricewaterhouse Coopers）
+　　德勤会计师事务所（Deloitte & Touche）
+　　安永会计师事务所（Ernst & Young）
+　　毕马威会计师事务所（KPMG）
+　　捷安国际会计师事务所（AGN International）
+　　艾格斯国际会计师事务所（IGAF）
+　　安博国际会计联盟（INPACT International）
+　　博太国际会计师事务所（Baker Tilly International）
+　　贝克国际会计师事务所（BKR International）
+　　德豪国际会计师事务所（BDO International）
+　　费都寿国际会计师事务所（Fiducial Global）
+　　浩华国际会计师事务所（Horwath International）
+　　浩信国际会计师事务所（HLB International）
+　　华利信国际会计师事务所（Morison International）
+　　均富国际会计师事务所（Grant Thornton International）
+　　克瑞斯顿国际会计师事务所（Kreston International）
+　　罗申美国际会计师事务所（RSM International）
+　　联合会计师国际会计师事务所（CPAAI）
+　　摩斯伦国际会计师事务所（Moores Rowland International）
+　　4.国际著名学术组织:
+　　电气与电子工程师学会（美国）—IEEE (The Institute of Electrical And Electronics Engineers)
+　　电气工程师学会（英国）—IEE(The Institutions of Electrical Engineers)
+　　国际电工委员会—IEC(International Electrotechnical Commission)
+　　美国物理学会—APS (American Physical Society)
+　　美国医药生物工程学会—AIMBE(American Institute for Medical and Biological Engineering)
+　　美国计算机协会—ACM（Association for Computing Machinery）
+　　美国机械工程师学会—ASME（American Society of Mechanical Engineers）
+　　美国工业与应用数学学会（SIAM）
+　　美国航天航空学会（AIAA）
+　　英国皇家化学会（RSC）
+　　国际儿科肿瘤协会（International Society of Pediatric Oncology,SIOP)
+　　世界儿科感染学会（World Congress for Pediatric Infectious Diseases,WCPID)
+　　世界眼科学会联盟(International Federation of Ophthalmological Societies,IFOS)
+　　世界精神病学协会（World Psychiatric Association,WPA)
+　　世界心胸外科医师学会（The World Society of Cardiothoracic Surgeons,WSCTS）
+
+　　6.世界著名乐团：
+　　柏林爱乐乐团（Berlin Philharmonic Orchestra）
+　　维也纳爱乐乐团（Vienna Philharmonic Orchestra）
+　　伦敦交响乐团（London Symphony Orchestra）
+　　芝加哥交响乐团（Chicago Symphony Orchestra）
+　　巴伐利亚广播交响乐团（Bavarian Symphony Orchestra）
+　　法国国家管弦乐团 （Orchestra National de France）
+　　费城管弦乐团（Philadelphia Orchestra）
+　　克里夫兰管弦乐团（Cleveland Orchestra）
+　　洛杉矶爱乐乐团（Los Angeles Philharmonic Orchestra）
+　　布达佩斯节庆管弦乐团（Budapest Festival Orchestra）
+　　德累斯顿国立歌剧院乐团（Dresden Staatskapelle）
+　　波士顿交响乐团（Boston Symphony Orchestra）
+　　纽约爱乐乐团（New York Philharmonic Orchestra）
+　　旧金山交响乐团（San Francisco Symphony Orchestra）
+　　以色列爱乐乐团（Israel Philharmonic Orchestra）
+　　马林斯基剧院管弦乐团（Mariinsky Theatre Orchestra）
+　　俄罗斯国家管弦乐团（Russian National Orchestra）
+　　圣彼得堡爱乐乐团（St Petersburg Philharmonic Orchestra）
+　　莱比锡布商大厦乐团（Leipzig Gewandhaus Orchestra）
+　　大都会歌剧院管弦乐团（Metropolitan Opera Orchestra）
+　　捷克爱乐乐团（Czech Philharmonic Orchestra）
+　　慕尼黑爱乐乐团（Die Munchner Philharmoniker）
+　　德国广播交响乐团（Deutsche Radio Philharmonie）
+　　斯图加特爱乐乐团（Stuttgarter Philharmoniker）
+　　北德广播爱乐乐团（NDR Radio Philharmonie）
+德国交响乐团（Dresdner Philharmonie）
+　　阿姆斯特丹皇家音乐厅管弦乐团（Royal Concertgebouw Orchestra）
+　　多伦多交响乐团（Toronto Symphony Orchestra）
+　　7.以文化部鼓励参加的国际艺术比赛名单为准。
+　　8.国际著名建筑奖：
+　　普利兹克建筑奖（Pritzker Prize）
+　　金块奖( Gold Nugget )
+　　国际建筑奖(International Prize for Architecture )
+　　阿卡汉建筑奖(Aga Khan Awards for Architecture)
+　　亚洲建协建筑奖（ARCASIA awards for Architecture）
+　　开放建筑大奖（Open Architecture Prize）
+　　9.国际著名文学奖：
+　　诺贝尔文学奖（Nobel Prize in Literature）
+　　美国国家图书奖（National Book Award）
+　　普利策文学奖(Pulitzer Prize for Literature)
+　　英国布克奖（The Man Booker Prize）
+　　法国龚古尔文学奖（Prix Goncourt）
+　　10.国际著名电影、电视、戏剧奖：
+　　奥斯卡电影金像奖（Academy Awards）
+　　戛纳电影节(Festival De Cannes)
+　　威尼斯电影节(Venice International Film Festival )
+　　柏林电影节(Berlin International Film Festival）
+　　香港电影金像奖（Hong Kong Film Awards）
+　　台湾金马奖（Golden Horse Awards）
+　　艾美奖（Emmy Awards）
+　　班夫世界电视节奖(Banff World Television Festival)
+　　东尼奖（Tony's Awards）
+　　11.国际著名音乐奖：
+　　格莱美音乐奖（Grammy Awards）
+　　英国水星音乐奖(Mercury Prize)
+　　美国乡村音乐协会大奖(CMT Music Awards)
+　　全美音乐奖(American Music Awards)
+　　全英音乐奖(British Record Industry Trust Awards)
+　　公告牌音乐大奖(Billboard Music Awards)
+　　朱诺奖(Juno Awards)
+　　保拉音乐奖（Polar prize）
+　　12.国际著名广告奖：
+　　美国金铅笔奖(The One Show)
+　　伦敦国际广告奖(London International Advertising Awards)
+　　戛纳广告大奖(Cannes Lions Advertising Campaign)
+　　莫比杰出广告奖(The Mobius Advertising Awards)
+　　克里奥国际广告奖(Clio Awards)
+　　纽约广告奖(The New York Festivals)
+　　13.国际著名投资机构：
+　　软银中国资本（Softbank China Venture Capital）
+　　美国国际数据集团（International Data Group）
+　　凯雷投资集团（The Carlyle Group）
+　　法国巴黎百富勤融资有限公司（BNP Paribas Peregrine Capital Limited）
+　　荷银融资亚洲有限公司（Abn amro's financing Asia co., LTD）
+　　博资财务顾问有限公司（Orchid Asia Group Management Ltd）
+　　英高财务顾问有限公司（The Anglo Chinese Group）
+　　亚洲融资有限公司（DBS Singapore）
+　　兆丰资本（亚洲）有限公司（Mega Capital (Asia) Company Limited）
+　　贝尔斯登亚洲有限公司（Bear Stearns Cos.）
+　　加拿大怡东融资有限公司（Canadian Eastern Finance Limited）
+　　中银国际亚洲有限公司（The bank of China group）
+　　时富融资有限公司（Celestial Asia Securities Holdings Limited ）
+　　里昂证券资本市场有限公司（CLSA Asia-Pacific Markets）
+　　京华山一企业融资有限公司（Core Pacific – Yamaichi）
+　　群益亚洲有限公司（The Capital Group）
+　　14.亚洲一流乐团：
+　　马来西亚爱乐乐团（Malaysian Philharmonic Orchestra）
+　　新加坡交响乐团(Singapore Symphony Orchestra)
+　　韩国KBS交响乐团(KBS Symphony Orchestra)
+　　首尔爱乐乐团(Seoul Philharmonic Orchestra)
+　　日本广播协会交响乐团（NHK Symphony Orchestra）
+　　斋藤纪念管弦乐团（Saito Kinen Orchestra）
+　　香港中乐团（Hong Kong Chinese orchestra）
+　　香港管弦乐团(The Hongkong Philharmonic)
+　　15.限申报当年度名列清科中国创业投资机构年度排行榜和投中中国最佳创业投资机构年度排行榜前20名。
+　　16.港澳台一流乐团：
+　　澳门乐团
+　　17.联合国总部或下设经济和金融类分支机构：
+　　世贸组织(WTO)
+　　国际货币基金组织（IMF）
+　　世界银行（World Bank）
+　　国际金融公司(IFC)
+　　联合国贸易和发展会议(UNCTAD)
+　　科学和技术促进发展委员会(CSTD)
+　　国际开发协会（IDA）
+　　多边担保机构（MIGA）
+
+必须具备以下基本资格条件：
+（1）遵纪守法，具有良好的职业道德，严谨的科研作风和科学、求实、团结、协作的精神。
+（2）国（境）外高级专家需与应聘单位签订一年以上的聘用合同；留学回国人员应是在深工作、创业或已与在深单位签订聘用合同的优秀人才。
+（3）海外高层次人才中A类人才年龄应在60周岁以下，B类人才应在55周岁以下，C类人才年龄应在40周岁以下。有特别突出成就的，以上年龄条件可适当放宽。
+申请海外高层次人才（孔雀人才）材料要求和申报信息说明：
+一、申报海外高层次人才认定业务，中国籍申请人必须在深圳连续缴纳社会保险费（任一险种）满3个月以上，申报奖励补贴业务，申请人也须符合在深圳连续缴纳社会保险费（任一险种）满3个月以上的条件，且自首次申领开始，历次申领之间不得间断。即日起，社会保险费缴纳信息由窗口受理人员核查，近期开通系统自动比对，比对通过的方可提交业务申请。
+二、申请人必须完整填写个人简历，含高等教育、留学、研究经历，并提供申请时上一个工作单位的联系电话（填写在简历中），如上一个工作单位为市外机关事业单位、高校、研究机构、国有企业的，还须提供原工作单位的离职证明材料。
+三、申请人劳动合同必须填写完备。合同期内有试用期的，试用期结束方可申报；合同条款最后规定“双方签字盖章之日起生效”的，则甲方必须有法人或授权人签字，属授权人签字的还需同时提供授权书；工作时间和休息休假为不定时工作制或综合计算工时工作制的，须提供劳动行政部门的批复；申请人为公司法人的，须提供营业执照复印件，不需提供劳动合同。
+四、外籍申请人（包括外籍华人）持国外护照申报人才确认时，所填报姓名必须与护照姓名一致，后续奖励补贴发放时系统默认开户名与申请人姓名一致。已经确认的外籍华人为中文姓名申报的，需到窗口办理信息变更手续，变更为与护照姓名一致方可续办业务。
+五、中国籍申请人必须以身份证进行申报，号码为18位格式。已经确认的中国籍申请人为非身份证申报的，需窗口办理信息变更手续，变更为身份证信息方可续办业务。
+六、异地入选的创新类“千人计划”人才，确认为“孔雀计划”人才后申领奖励补贴时，不再提供原入选地证明材料，需提交个人申明及现申报单位担保证明材料；异地入选的创业类“千人计划”人才申领奖励补贴所需提交的材料标准按原规定执行。材料具体内容以组织部门有关通知为准 0755-26037122。
+** 深圳大学
+https://www.szu.edu.cn/xxgk/xxjj.htm
+
+** 清华大学深圳国际研究生院
+http://www.sigs.tsinghua.edu.cn/cnhtml/index.html
+
+* 上海 Shanghai
+临港
+
+
+魏明洁 会计(非全日制)国际财务管理与会计
+上海对外经贸大学
+http://www.kybang.com/?p=14084
+
+** Shanghai
+
+
+链接：https://www.zhihu.com/question/58428948/answer/261055658
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+事项名称 上海市引进人才
+申办本市常住户口二、设定依据 上海市人力资源和社会保障局关于印发《关于上海市引进人才申办本市常住户口有关问题的通知》 上海市人力资源和社会保障局关于印发《上海市引进人才申办本市常住户口试行办法实施细则》的通知 上海市人民政府关于印发《上海市引进人才申办本市常住户口试行办法》的通知三、申请条件 （一）用人单位基本条件  1、在本市行政区域内注册的用人单位引进本市紧缺急需的国内优秀人才。  2、用人单位应正常经营、无不诚信记录，并依法纳税，按规定参加本市社会保险。 （二）引进人才基本条件 　　在沪工作稳定，专业与岗位相符，一般应能在本单位工作五年以上，且符合下列条件之一：  1、具有博士研究生学历并取得相应学位或者具有高级专业技术职务任职资格并受聘相应职务的专业技术人员和管理人员。  2、获得省部级及以上政府奖励的人员。  3、国家重大科技专项项目、国家重要科技计划项目和本市重大科技项目负责人及其团队核心成员。  4、列入省部级及以上人才培养计划的人选。  5、在本市重点支持的产业和领域中担任高级经营管理职务且具有研究生学历并取得相应学位的人员。  6、本市金融、贸易、航运等现代服务业重点机构、高新技术产业化重点领域、高新技术企业、高新技术成果转化项目、在沪跨国公司地区总部及地区总部投资设立的具有独立法人资格的研发中心紧缺急需的具有本科及以上学历并取得相应学位的专业技术人员、管理人员和创新团队核心成员。应属单位紧缺急需的业务骨干，且具有两年以上（截至申报之日）相应工作经历。  7、本市重点引进机构、项目或做出重大贡献的企业紧缺急需的具有本科及以上学历并取得相应学位的专业技术人员、管理人员。  8、本市重点产业发展紧缺急需、取得国家一级职业资格证书（高级技师），或取得国家二级职业资格证书（技师）且获得国家及省部级以上技能竞赛奖励的在工作一线从事技能类职业、工种的高技能人才。国家及省部级以上技能竞赛奖励，是指国家级或省部级技能类人才表彰、国家级技能竞赛金、银、铜奖或省部级技能竞赛金奖或一等奖。技能类职业、工种范围另行发布。  9、本市文化艺术、体育、传统医学、农业技术及其他特殊行业紧缺急需的专门人才。  10、在沪投资于本行业中处于领先水平、为投资所在地区县经济社会发展作出重大贡献的企业中担任企业高级经营管理职务的创业人才。  11、其他紧缺急需、确有特殊才能的人才。四、办理材料 （除特殊说明外，所有申报材料均须核对原件，留复印件） 单位申报材料1、单位介绍信，经办人员身份证。（与网上联系人一致）2、单位申请报告，内容应当包括单位简介，申请事项和理由，个人及配偶子女情况简介。3、单位企业法人营业执照（事业单位法人登记证）和组织机构代码证复印件（须加盖单位公章）；单位为分公司的，还须提供总公司营业执照复印件和人事授权书；单位为高新技术企业或软件企业，还须提供有效期内的《高新技术企业证书》或《软件企业认定证书》复印件。4、《上海市引进人才申请表》。（本人签字，单位盖公章）5、合同期限3年及以上，且自申办之日起有效期为2年及以上的劳动（聘用）合同。6、提供反映政治素质、能力业绩以及无参加非法组织等违法记录的相关材料。申请人申报材料7、居民身份证（2份）、户口簿（需要外地详细住址页及本人信息页，须与网上填报内容一致），集体户口的由户籍所在地公安部门出具的户籍证明原件。8、婚姻状况证明材料，包括： （1）未婚：由户籍地民政部门出具的未婚证明。 （2）已婚：结婚证。 （3）离异：离婚证+离婚协议书（民政局盖章）或法院调解书、判决书；及户籍地民政部门出具的单身证明。9、户籍所在地乡镇以上人口和计划生育部门出具的计划生育证明，包括： （1）已婚未育：提供已婚未育证明。 （2）已婚已育：提供《出生医学证明》，《独生子女父母光荣证》《再生育准生证》+准生批复或其他符合计划生育政策的相关证明材料，如再婚，另须提供丧偶证明或离婚证+离婚协议书或法院调解书、判决书。10、学历、学位证书原件和复印件（专升本需提供专科+本科学历证书）。11、就业期间缴纳社会保险的证明材料和个人所得税完税证明，如在外省市机关事业单位工作未参加社会保险的，提供相应的证明材料（社保证明须由当地社保机构盖章，缴税证明须由当地税务机构盖章）。12、本市落户证明，包括： （1）引进人才本人或其配偶在沪居住房屋房地产权证或者配偶的租用居住公房凭证。（如系配偶个人产权房，另须提供配偶同意落户的书面证明） （2）居住在单位集体宿舍等的，提供相应集体户口簿复印件或房产证或者户籍证明，以及同意落户证明。 （3）落户在本市直系亲属家中的，提供引进人才本人与直系亲属的身份关系证明、直系亲属在沪的居住房屋房地产权证或者租用居住公房凭证、直系亲属的居民户口簿，户口簿上所有登记人员共同签署的同意落户的书面证明。 （4）落户在“社区公共户”的，提供申报单位无集体户口及申办人夫妻双方在沪无产权房（租用居住公房）的情况说明。（可由申报单位向受理窗口申领填写“申请社区公共户承诺书”）。13、申请人外省市调出单位（档案保管单位）出具的同意调出证明及政治表现证明，如果档案已在沪，提供档案保管部门出具的保管证明及政治表现证明（政治表现中须包含无参加非法组织等违法记录的相关材料）。14、如申报单位无人事档案管理权限，另须提供人事档案接收单位出具的相关证明或者档案挂靠申请。15、配偶随调随迁，包括： （1）配偶随调的，提供材料完整性与主调人相同。 （2）配偶随迁的，提供《上海市引进人才申请表》（配偶随迁）、身份证、户口簿及在外地已退休或无业（失业）的相关证明。（须提供全国统一的就业失业登记证并附详细记录） （3）配偶暂不调沪的，提供《上海市引进人才申请表》（配偶暂不随调）、身份证、户口簿，提供由引进人才和配偶双方共同签署的书面承诺证明。 （4）配偶户籍已在沪的，提供《上海市引进人才申请表》（配偶已在沪）、身份证、户口簿、工作关系证明（三个月内有效期）。16、子女相关材料，包括： （1）子女居民户口簿或户籍证明。 （2）满16周岁及以上且在全日制普通高中就读的子女随迁的，另需提供就读证明、学籍证明或学籍卡。17、人力资源社会保障部门会同其他相关部门根据需要要求提供的其他相关材料。与依据的申报条件相应的证明材料： ◆省级及以上人民政府或国家人力资源和社会保障部（原人事部）会同相关部委共同授予的政府奖励的个人证书。 ◆国家或本市科技主管部门关于国家及本市重大科技专项项目、国家重要科技计划项目和本市重大科技项目的立项批复证明。 ◆国家相关主管部门或各省、市、自治区和人才主管部门关于省部级及以上人才培养计划人选的批复证明。 ◆上海市科技委员会关于高新技术企业和高新技术成果转化项目的批复证明。 ◆上海市商务委员会关于在沪跨国公司地区总部的批复证明。 ◆国家级或者省部级技能类人才表彰、国家级技能竞赛金、银、铜奖或省部级技能竞赛金奖或一等奖的证明。 ◆相关行业主管部门出具的特殊人才的认定材料或者相应的专业资格证明材料。 ◆高级专业技术职务任职资格证明材料，包括以下材料之一： （1）通过考试、评审取得的高级专业技术职务任职资格证书、评审表及聘任证书。 （2）根据规定实行以聘代评的行业（单位）中聘任高级专业技术职务的，提供单位的聘书。 ◆本市核发的（或外省市核发且通过本市考核复评的）国家二级以上技能类职业资格证书。 ◆经认可由相关部门颁发的职业资格证书。五、办理地点 受理地址：梅园路77号六、办理时间 周一至周五上午9：00-11：30     下午1：00－5：00七、联系电话 咨询热线：021-32511311投诉电话：021-32511207注意事项: (1)中央在沪单位、市属单位到市人才服务中心各受理点进行单位审核及现场申报；其他单位到注册所在地的区县人才服务中心进行单位审核及现场申报。 (2)单位审核时须携带单位介绍信、经办人身份证、单位企业法人营业执照（事业单位法人登记证）和组织机构代码证原件（附加盖单位公章的复印件），单位为分公司的，还需提供总公司营业执照复印件和人事授权书。
+** 上海交通大学航空发动机研究院
+背景要求
+航空发动机、机械工程、动力工程、应用数学、计算数学
+
+工作经验
+不限
+招聘详情
+
+上海交通大学航空发动机研究院是上海交通大学直属的交叉学科研究平台，是教育部工程研究中心，
+主要致力于大涵道比涡扇发动机部件级应用基础研究和测试验证技术研究。
+目前主要的研究方向包括风扇、压气机、涡轮等核心部件的气动、声学、结构、可靠性、适航技术等领域，现诚聘博士后。 
+
+ 
+
+一、招聘人数：3人 
+
+ 
+
+二、招聘条件： 
+
+ 
+
+1. 年龄不超过35周岁，国内外知名大学即将博士毕业或已经获得博士学位。
+专业背景包括但不限于航空发动机、机械工程、动力工程、应用力学、计算数学等； 
+
+ 
+
+2. 具有扎实的专业理论基础、较强的科研能力或已发表高水平学术论文； 
+
+ 
+
+3. 身体健康，责任心强，热爱科研工作，具有良好的团队合作意识和创新能力； 
+
+ 
+
+4. 具有较强的中英文书面表达能力； 
+
+ 
+
+5. 具有以下任意专业特长者优先：数学、力学或工程专业博士学位，
+具备气动弹性、信号分析与处理、声学研究经历和自主编程开发能力，熟悉民机符合性验证方法/适航审定或参与过类似工作/培训。 
+
+ 
+
+三、岗位职责： 
+
+ 
+
+1. 开展风扇/压气机气动设计与实验验证、叶轮机械气动弹性力学、实验空气动力学、气动声学、动态信号处理与分析等领域的科学研究； 
+
+ 
+
+2. 协助指导硕士以及博士研究生； 
+
+ 
+
+3. 完成团队负责人安排的其它任务。 
+
+ 
+
+四、岗位待遇： 
+
+ 
+
+1. 年薪不低于20万（税前，含租房补贴3万/年），具体额度由导师及博士后本人协商确定； 
+
+ 
+
+2. 提供必要的办公、科研与实验条件； 
+
+ 
+
+3. 按照上海市博士后管理政策办理有关落户事宜，享受社会保险、公积金等福利待遇。 
+
+ 
+
+五、应聘方式： 
+
+ 
+
+有意申请者请将以下材料发送至联系人邮箱，邮件主题：应聘博士后+本人姓名+学校 
+
+ 
+
+1. 个人简历； 
+
+ 
+
+2. 近五年发表代表性学术论文； 
+
+ 
+
+3. 两封专家推荐信或其它可以证明本人研究能力及水平的相关资料。 
+
+* Beijing
+- 两限房
+-  现在年轻人, 除非是家里能支援首付，否则还是别待在北京了吧
+
+[[http://www.etp.ac.cn/kydw/rczp/][中国科学院工程热物理研究所]]
+
+
+** 清华大学土水学院
+
+
+[[http://www.civil.tsinghua.edu.cn/he/essay/342/938.html][林斌良]]
+PhD in 1988
+科技部863项目 波浪、潮流能资源调查、建模与评 2012-2015
+SS2012AA052602
+
+林斌良, 
+羊天柱
+, 张永良, 许雪峰, 张俊彪, 王传崑, 施伟勇, 孙健, 叶钦, 张峰, 刘思, 陈娅玲, 刘秋林, 杨岑, 郑思明, 林杰, 陈文创, 余慧峰, 林政.
+
+
+[[http://www.civil.tsinghua.edu.cn/he/essay/342/696.html][孙健]] 
+
+
+** tsinghua - 流体力学研究所
+http://www.hy.tsinghua.edu.cn/publish/hy/1585/index.html
+* PhD Studentship: Estimating the Stiffness and Mass Contribution of Soil in Dynamic Soil-pile Interaction for Offshore Structures
+Application details
+
+The position is available to start in October, December, February, April or July (subject to date of application)
+
+Duration: 3 years
+
+Closing date: open until filled
+
+Project description
+
+Offshore wind turbines are dynamically sensitive systems, with the potential for resonance between the rotational frequencies of the blades, the frequency of waves in the ocean and the natural frequency of the structure. This resonance can cause fatigue in the system and is best avoided. Understanding the dynamic soil-structure interaction is therefore paramount to safe, reliable design of these systems.
+
+This project aims to:
+
+    Expand a recently developed finite-element model updating approach capable of estimating the soil mass and stiffness acting in the dynamic motion of pile foundations. The existing approach can estimate the soil stiffness by applying a weighting factor to a postulated soil-stiffness with depth, and updating this to match recorded data. The project aims to expand this method to enable depth-dependant stiffness updating to obtain a better estimation of the acting soil stiffness. Since many existing approaches rely on empirical equations to specify soil stiffness, the approach is urgently needed.
+    Benchmark/calibrate the developed approach against data from experimental testing to be completed at Nottingham Centre for Geomechanics (NCG).
+    Expand the approach to other types of foundations including gravity base, suction caissons, and other soil-structure systems.
+
+Eligibility
+
+Applicants should have, or expect to obtain, a 1st class or 2.1 honours degree (or international equivalent) in Civil Engineering, Materials Science, Physics or a related subject. A relevant Masters degree in these areas would be advantageous.
+
+If English is not your first language, you must provide evidence that you meet the University’s minimum English Language requirements.
+
+Students with experience or a willingness to learn software such as MATLAB and Python are encouraged to apply. Computer programming skills is an advantage. 
+
+Due to funding restrictions this position is only available for UK or EU candidates.
+
+Funding
+
+Eligible for Home/EU candidates. This project will include the payment of tuition fees as well as a stipend equivalent to RCUK rates (£15,009 p.a. tax free for 2019/20) awarded to the suitable candidate.
+
+How to apply
+
+Informal contact with Dr. Luke J Prendergast (luke.prendergast@nottingham.ac.uk) before submitting an online application. Please send a cover letter and a copy of your CV with your up-to-date relevant experience.
+
+Online application can be made via www.nottingham.ac.uk/pgstudy/how-to-apply/how-to-apply.aspx. Please quote the studentship reference and Dr. Luke J Prendergast. 
+
+Contact details
+
+Name: Dr. Luke J Prendergast
+
+Email: luke.prendergast@nottingham.ac.uk
+* 人工智能
+ Lattice
+Boltzmann Methods (LBM)
+
+韩松（MIT助理教授），
+陈丹琦 （普林斯顿助理教授）
+
+
+Richard Socher (Salesforce首席科学家
+
+Andrej Karpathy（特斯拉AI高级总监）。
+* Journals
+Applied Mechanics Reviews
+Journal of Fluid Mechanics
+Physics of Fluids
+Experiments in Fluids
+Journal of Fluids and Structures
+AIAA Journal
+Computers and Fluids
+International Journal of Heat and Fluid Flow
+Experimental Thermal and Fluid Science
+International Journal of Heat and Mass Transfer
+ASME Transactions: Journal of Heat Transfer
+ASME Transactions: Journal of Fluids Engineering
+International Journal of Offshore and Polar Engineering
+Journal of Thermophysics and Heat Transfer
+* contacts
+
+|XIN BAI |Lead Research Scientist at Siemens 
+* Note
+Iberdrola Renovables - wind industry
+[[https://www.sciencedirect.com/science/article/pii/S1877750315300521?via%3Dihub][Alya]]: Multiphysics engineering simulation toward exascale
+* web 
+
+keywords:
+
+postdoctoral 
+
+research assistant
+https://www.cfd-online.com/Jobs/listjobs.php?category=PostDoc%20Position
+https://jobs.sciencecareers.org/jobs/japan/postdoc/
+https://www.linkresearcher.com/
+https://www.cfd-online.com/Jobs/
+
+https://euraxess.ec.europa.eu/jobs
+https://www.jobs.ac.uk/
+https://www.postdocjobs.com/
+https://www.findapostdoc.com/
+
+Europe
+
+https://www.eurosciencejobs.com/
+
+* TODO offer
+- Zhoushan ZJU
+- SUSTech
+* TODO 国家重点研发计划
+
+* 全国海洋技术学术会议
+* 航空发动机研究院
+is it a good job
+* policy
+2017年事业单位分类改革实施方案
+
+清华为例，首先，每个系按照师生比例和帽子数量给教研岗，其他的要不转临时工要不转科研岗，这一条就已经很明显的定了基调，科研岗是给进不了教研岗的老师安置用的，然后，教研岗给定工资，科研岗给定工资上限，但是有相当部分需要自己去挣，再次也是最重要的一条，教研岗自动获得博导资格，科研岗也可以招学生不过十年一个名额，十年一个名额哦亲...而且你知道的，tp啊hit啊sht啊这些一向是风向标，他们在做什么意味着国家在做试点，是要全面推广的...我本来还说可能推广起来还需要时间，没想到上两周我现在呆的学校也出文开始严格划分专职科研人员和教师了
+** 去985、211高校当老师需要什么条件？
+985 海归副教授，最近审核申请人分讲师（青椒）或者副教授，或者直接特聘教授。
+本科985以上（其实这个不是特别重要）博士，博后世界top 50海外经历文章，这个是主要的。
+代表作：
+一般业内顶一流2～3篇-》副教授
+超一流2～3篇-》教授
+
+其他小文章大约20-30个就够了
+- 清北C9一般需要青千或者其他计划支持
+
+作者：匿名用户
+链接：https://www.zhihu.com/question/320351285/answer/654338134
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+x
+* examples
+985硕士佛山美的税前9000，8.30-晚上10点，一周上6天
+https://www.zhihu.com/question/54696826
+
+* Nasa
+https://npp.usra.edu/opportunities/?filter_keywords=&filter_fields=105&filter_visas=fn
+
+ID  	Title 	Center 	Advisors
+17579 	Nonlinear Dynamical Approach to the Study of Algorithm Development in Computational Fluid Dynamics 	Ames Research Center 	Helen M.C. Yee
+650-604-4769
+Helen.M.Yee@nasa.gov
+17594 	Problem Solving Environments for Multidisciplinary Engineering Problems 	Ames Research Center 	Guru P. Guruswamy
+650-604-6329
+guru.p.guruswamy@nasa.gov
+17602 	Software Safety 	Ames Research Center 	Michael Lowry
+650-604-3369
+michael.r.lowry@nasa.gov
+17647 	Cryogenic Fluid Systems 	Glenn Research Center 	David J. Chato
+216 977-7488
+david.j.chato@nasa.gov
+18484 	Effect of Solid Surfaces on Jet Noise 	Glenn Research Center 	Marvin Goldstein
+216 433-5825
+Marvin.E.Goldstein@nasa.gov
+18790 	Spacecraft and Instrument Development for Planetary Science and Exploration 	Johnson Space Center 	Paul Abell
+281-483-0293
+Paul.A.Abell@nasa.gov
+18809 	Computational Methods for Complex Flows and Configurations 	Ames Research Center 	Scott Murman
+650-604-4770
+Scott.M.Murman@nasa.gov
+18857 	Adjoint Based Dynamic Grid Adaptation 	Langley Research Center 	Mark Huitt Carpenter
+757-864-2318
+Mark.H.Carpenter@NASA.GOV
+18864 	Machine Vision and Learning for eXplainable AI (XAI) 	Langley Research Center 	Bonnie Allen
+757-864-7364
+danette.allen@nasa.gov
+18942 	Bulk Metallic Glasses for Spacecraft Applications 	Jet Propulsion Laboratory 	Douglas Hofmann
+818-731-6500
+dch@jpl.nasa.gov
+19209 	Aeronautics Research: Air Traffic Management Research and Development 	Ames Research Center 	Katharine K Lee
+650-604-5051
+katharine.lee@nasa.gov
+
+Shannon Zelinski
+650-604-1353
+shannon.j.zelinski@nasa.gov
+19236 	Intelligent Monitoring of the National Airspace 	Ames Research Center 	Nikunj Chandrakant Oza
+(650)604-2978
+Nikunj.C.Oza@nasa.gov
+Page: 	1
+* UKTC
+The UKTC managing committee
+
+(Neil Sandham, David Emerson, Spencer Sherwin, Paul Tucker, Alistair Revell, Maarten van Reeuwijk and Sylvain Laizet)
+
+List of members for the UK Turbulence Consortium 2018-2021
+- Pavlos Aleiferis (Imperial College London), 
+- Angela Busse (University of Glasgow), 
+- Dimitris Drikakis (University of Strathclyde), 
+- Jian Fang (Daresbury Lab), 
+- Shuishen He (University of Sheffield), 
+- Yongyun Hwang (Imperial College London), 
+- Xi Jiang (Queen Mary London), 
+- Jae-Wook Kim (University of Southampton), 
+- Michael A. Leschziner (Imperial College London), 
+- Xuerui Mao (University of Nottingham), 
+- Joanne Mason (University of Exeter), 
+- Charles Moulinec (Daresbury Lab), 
+- George Papadakis (Imperial College London), 
+- Alfredo Pinelli (City University London), 
+- Pierre Ricco (University of Sheffield), 
+- Neil Sandham (University of Southampton), 
+- Peter Schmid (Imperial College London), 
+- Spencer Sherwin (Imperial College London), 
+- Vassilios Theofilis (University of Liverpool), 
+- Paul Tucker (University of Cambridge), 
+- J. Christos Vassilicos (Imperial College London), 
+- Andy Wheeler (University of Cambridge), 
+- Jun Xia (Brunel University London),
+- Eldad Avital (Queen Mary London), 
+- Yongmann Chung (University of Warwick), 
+- David Emerson (Daresbury Lab), 
+- Gerard Gorman (Imperial College London), 
+-  Zhiwei Hu (University of Southampton), 
+- Richard Jefferson-Loveday (University of Nottingham), 
+- Robert Kerr (University of Warwick), 
+- Sylvain Laizet (Imperial College London),
+-  Kai Luo (University College London), 
+- Olaf Marxen (University of Surrey), 
+- Aimee S. Morgans (Imperial College London), 
+Gary Page (Loughborough University), Matthew Piggott (Imperial College London), 
+Alistair Revell (University of Manchester), Aldo Rona (University of Leicester), 
+Mark Savill (University of Cranfield), Mehdi Seddighi (University of Liverpool), 
+John S. Shrimpton (University of Southampton), Emile Touber (Imperial College London), 
+Maarten van Reeuwijk (Imperial College London), Peter Vincent (Imperial College London), 
+Beth Wingate (University of Exeter), 
+Yufen Yao (University of Bristol)
+
+* Real estate
+别说所有人的房子都卖出兑现，就是哪怕10%的房产抛给市场，房地产市场都会立刻崩盘，因为必须绝大部分人都锁仓不动，只有少量的人在交易，才能维持价格的稳定
+- 国家大幅度的发行钞票收取铸币税
+- 土地价值是虚幻的，房产价值是虚幻的，那又怎么样，一直到崩盘那一天才会显现出来。如果你不买，那你的损失会更大，而且可能根本抗不到崩盘那一天就被洗劫一空了。最关键的是，人类的幸福感来源于社会阶层，我不需要比所有人强，我只需要比我身边的人强就行了。
+* Wind energy association (China)
+[[http://www.cwea.org.cn/union_introduce.html][wind energy association]]
+金风科
+
+上海电气
+
+远景能源
+
+中国船舶重工集团海装风电股份有限公司
+
+中国可再生能源学会风能专业委员会
+
+ 8610-59796665
+
+ 8610-64228215
+
+ cwea@cwea.org.cn
+
+ 北京市东城区和平里北街6号远东文化园26号楼3层
+
+ 100013
+
+
+* 杰出青年
+keyword: fluid, mechanical 
+刘应征 	上海交通大学 	先进实验流体测量方法与技术 	2017
+罗喜胜 	中国科学技术大学 	实验流体力学 	2016
+汤华中 	北京大学 	流体力学中的数值计算 	2009
+焦宗夏 	北京航空航天大学 	流体动力控制新技术与理论及其应用研究 	2008
+席光 	西安交通大学 	流体机械 	2007
+黄中伟 	中国石油大学（北京） 	油气井流体力学与工程 	2017
+https://www.sciping.com/22844.html
+
+* TODO 院士 on wind/tidal turbine
+* 长江学者
+* 青年千人 
+青千申请也有几个特点：
+(1) 各位大佬回收弟子，大多青千为土博回流依附以前的老板，对于没有背景的海归越来越难；
+
+(2) 名校只进青千，对研究方向是否热门、是否国家急需非常重视；
+
+(3) 青千已难有独立课题组，大多被大佬收编，成为他们继续拼长江院士的附庸；
+
+(4) 如果依托西部地区且有大牛力挺，上的机会较大，缺点是跳槽不易
+
+（1）到985大学投靠大牛，以副教授职称为起点，艰苦奋斗十年，坏处是极有可能成为变相“博士后”，连科研成果都被抢去；
+
+（2）到985大学拿到副教授或讲师职称，自己单干，基本分不到学校资源，但可维持学术独立；
+
+（3）去一般的211大学，直聘教授或副教授，自己建摊子，不容易被强人灭掉。如果能拿到不错的启动经费，
+
+所在平台设备充足，以这等海归的实力也是可以发展起来的。与其游走于西方拿不到教职，不如早日海归杀出一条血路；
+当年轻的“学术博士”赶上来，就再没机会了。
+
+* Major in Uni.
+
+优势专业+热门专业
+- 北京航空航天大学计算机、软件工程
+中国人民大学法学、金融学、会计学、统计学南京审计大学审计学电子科技大学信息与通信工程西安交通大学电气工程同济大学车辆工程北京师范大学数学师范类武汉大学法学四川大学口腔医学8年本博
+
+
+链接：https://www.zhihu.com/question/309589722/answer/588309433
+
+
+* intro  to computer science 
+data types, operator, variables
+
+keywords excluded 
+- meaningful variable name
+
+if < some test> :
+   block  of instructions
+else:
+   block  of instructions
+
+boolean operation, and, or, not
+
+iteration, loops
+** lec 3 - iterative programs
+iterative progress:
+1. choose variables
+2. initialize outise the loop
+3. setup and test
+4. construct block
+  - change variable
+5. what to do when done
+
+for loop
+for <variable> in < some collection>:
+   block of code
+
+tuple - ordered sequence of elements
+- immutable: you can not change
+
+e.g.
+foo=(1,2,3,4)
+To select elements
+>>> foo[0]
+>>> foo[-1]
+
+slicing
+>>> foo[1,3]
+** lec 4: decomposition and abstraction through functions
+introduction to recursion function
+- recursive function ::  a function in code that refers to itself for execution
+
+Turing complete
+- assignment
+- conditions
+- loop, e.g. while, for
+- input/output
+
+functions
+- breake up into modules
+- supress details
+- create 'new primitives'
+
+e.g.
+>>> def sqrt(x)
+- def :: a keyword, definition
+
+keywords: return, ans, print
+- None :: a special value
+
+sqrt(16)
+- binds x to 16 --- local 
+ 
+Note:
+local binds do not affect global binds
+** lec 5: floating point numbers, successive refinement, finding roots
+floating point
+>>> 0.1
+0.1000000001
+
+rule: IEE 754 floating point, scientific notation
+- mantissa, which varies (1,2)
+- exponent, 
+
+>> import math
+>> a = math.sqrt(2)
+>> a
+>> a*a == 2
+False
+# be careful with == for floating point
+# a is a approximation
+
+if abs(a*a-2.0) < epsilon
+# what you see on the screen may not be the exact answer/value
+# we can't enumerate all guess for real number, which is uncountable
+
+
+
+
+
+* robot
+IHMC 
+机器人学有四个核心领域
+- 感知。视觉传感器、图像传感器、触觉和力传感器、惯导等。认知。人工智能、知识表达、规划、任务调度、机器学习等。行为。运动学、动力学、控制、manipulation和locomotion等。数学基础。最优估计、微分几何、计算几何、运筹学等。
+
+作者：YY硕
+链接：https://zhuanlan.zhihu.com/p/22266788
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+Linear Algebra Done Right
+麻省理工学院公开课：计算机科学及编程导论
+Anacoda
+
+Numpy
+
+- C的一维数组和指针来实现矩阵的加法、乘法、求逆等操作
+- makefile
+- 数学之美
+
+* yufeng chen -- Micro-robot at Harvard Uni.
+
+https://scholar.harvard.edu/yufengchen/publications
+
+
+* 西交利物浦大学
+contact:
+https://www.xjtlu.edu.cn/zh/about/jobs/contact
+
+* SUSTC
+** [[https://mee.sustc.edu.cn/][Depart of mechanical and energy engineering]]
+
+** 机械与能源工程系博士后招聘启事
+招聘介绍
+
+南方科技大学承载着为我国高等教育探索具有中国特色的现代大学制度和创新人才培养模式的双重使命，
+坚持“敢闯敢试、求真务实、改革创新、追求卓越”的创校精神，实行理事会治理、教授治校、学术自治的管理体制，
+目标是迅速建成国际化高水平研究型大学，成为我国重大科学技术研究与拔尖创新人才培养的基地。
+经过近5年的筹建，南科大于2012年4月获教育部批准正式建立，
+已引进包括40余位“千人计划”专家在内的160余人的师资队伍。
+新校区占地面积194.38万平方米，规划总建筑面积为63万平方米，一期工程已于2013年暑期正式启用。
+根据科研工作需要，现面向海内外，与流动站联合招收博士后。
+
+应聘材料：
+（1）详细的个人简历，含学习、工作和科研的经历，主要科研成果（如论文论著、成果证书或奖励）清单以及联系方式；
+（2）2-3推荐人的姓名及有效联系方式；
+（3）其他可以证明工作能力的材料。
+
+联系方式：
+电子邮件：pdf(AT)sustc.edu.cn；
+咨询电话：0755-88010911
+
+备注说明:
+所有在线的职位均实时有效，招聘完的将即时撤下，欢迎您应聘！
+具体招聘流程的开展将根据各部门的时间表，可能需要较长的时间，请投递简历后耐心等待，
+课题组的职位可联系相关教授，联系方式请查看我校师资队伍介绍页面，谢谢！
+
+* policy
+我国高校师资博士后政策的十年回顾与展望
+- 四青”人才(指国家优青、青年长江、青年拔尖、青年千人
+- 国内的高校就相当于资本家，青椒就是血汗工人。
+
+* fiannce
+券商研究所
+量化/衍生品/行研
+
+* 海归博士
+一般海归，大多数高校已经不提供住房，一线或准一线城市一般有30-40万的房补，二线城市一般有15-20万的房补，基本分几年发放，要扣税。
+
+典型路径如下：
+1. 国内内地人口大省（某南，某东，某北），农村家庭；
+2. 高考成绩县中前几，无奈放到全省只能个二本或者末流211；
+3. 大学期间发奋苦读考研，馒头咸菜不谈恋爱；硕士考得还可以985或者中科院，决心此生立志科研，当一名科学家；发现硕士毕业连科研的门槛都见不到。找工作？不存在的，我是科学家。在导师的鼓励下转了博士，小伙子很适合干科研，前途无量。博士毕业还是留不了高校，被27，8岁的海归回来秒杀。找工作？不存在的，我是科学家。海外博后，第一站给老板赶了出来第二站转眼人生已经3，45岁，光棍，无车无房，月入3000刀，在北美能达到清洁工水平回国？第一学历杯具，年龄大了，文章还是比不过学霸，小地方二本高校看不上，俺毕竟也是北美混过的。在国外找工作？那一口夹杂着韭菜味儿神仙都听不懂的英语，找什么工作？啊，不，工作？对华人歧视能忍？
+
+作者：鸭鸭2019
+链接：https://www.zhihu.com/question/281702832/answer/588428204
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+**  晋升制度
+国内高校改革为非升即走体制，还美其名曰与国际接轨，
+人事权力却集中于个别领导手里，和西方教授会投票完全不一样。
+基本上助理教授6年聘期，副教授3年聘期，期间可以申请晋升。另外，国内大学的人事编制已取消，每个大学政策不一样，有些大学三年一考核，教授考核不通过可以降职为副教授，完全堵死了西方学术界混吃等死那条路。海归们要注意几点：(1) 国内仍处于改革变动期，文件说作废就作废，有些规定看似严格，其实不必当真，政策可能随时更改，先占位子要紧；(2) 国内很多高校的晋升政策很严，只是用来过滤他们不想要的人，而对于想留的人有各种“破格”规定和绿色通道；(3) 国内不可能实现真正的美式终身教职，现在有些大学的双轨制文件明确标明了“试行”；(4) 真正决定你晋升与否的还是你的”价值”，对于那些没有背景的海归来说，做出成就才是你留下的理由，也是你跳槽的资本。
+
+
+* New idea-- financial
+Y combinator
+
+[[https://www.linkedin.com/company/alpacadb-inc-/][alpaca]] - trading API and free real-time market data 
+
+Boundary layer technologies, https://www.boundarylayer.tech/#investors
+
+our world in data
+https://ourworldindata.org/
+
+- science exchange -- a marketplace for sicentific research. They let sicentists outsource their research
+and development to scientific institutions
+- HackerRank is a technology hiring platform that is the standard for assessing developer skills for over 1,000 companies around the world.
+
+- [[https://www.botorange.com/][bot orange]] - sale, market and customer service on nwechat
+
+- Tailor-ED - primary and secondary education
+
+
+* 西湖大学
+
+http://www.wias.org.cn/chinese-flist-372.html
+
+
+
+* career path
+
+
+
+UK
+Research Associate (Postdoctoral Research Fellow), Research Fellow (lecturer), Senior Research Fellow (senior lecturer or reader), Professorial Research Fellow (professor).
+*  Fluid related paper on Nature, Science
+先看50篇论文再总结提炼 
+* bug - latex 
+Package inputenc Error: Unicode char (U+2009)(inputenc) not set up for use with LaTeX.
+
+* fluid machinery
+* 国家杰出青年基金获得者-ZJU
+
+| Name   | School       | Year |
+| 周昊   | 能源学院     | 2018 |
+| 王树荣 | 能源学院     | 2017 |
+| 王宏涛 | 航空航天学院 | 2017 |
+| 曲绍兴 | 航空航天学院 | 2015 |
+| 金仲和 | 航空航天学院 | 2015 |
+* 院士, 长江、杰青
+国内最有含金量的学术荣誉是：“两院院士、国家杰青、百篇优博
+
+* TODO Postdoc
+美国这边push一边的老板，三个月做不出东西基本就要滚蛋了。
+稍微nice一些的会留你一年，再nice一点最多两年。
+没有老板推荐信，opt学生身份又丧失，自动就会往业界找工作，哪里还有机会赖在学界做千年老博
+https://zhuanlan.zhihu.com/p/33811486	
+* 聘任制教师
+1.没有事业编制，聘任考核（6年内拿到副教授，否则下岗；
+2. 几个讲师一起竞争按照最低1:3的竞争比，先拿到副教授职称的留任，剩下两位淘汰）和
+长期聘任制（副教授及以上）
+
+- 重点实验室基本上都是996制度
+- 入职到“能挣钱”的时间年限拉长，建议家里经济基础差的慎重选择。
+
+* Cover letter
+https://writing.wisc.edu/handbook/assignments/coverletters/
+* 非升即走 - tenure-track
+- 六年之内评不上副教授
+- 90%的985，40%的211/非985（例如上海大学，华东理工），十所左右的双非（例如深圳大学、南方科大）。
+- 讲师每个聘期, 三篇二区以上，一个国家级项目或者两个省部级项目，考核不过走人
+
+http://muchong.com/t-12525879-1
+* Key contribution in PhD
+- （理论上）能独当一面作出系统性的创新工作
+ +  创新性，系统性。创新性是科研的灵魂，系统性是科研的筋骨
+- 一篇博士学位论文中有一个重要的创新点就很好了——整个博士论文就是在一个比较重要的创新点的基础上进行系统性的拓展
+
+
+* nature
+- Physical Review Letters, 
+
+
+Nature等顶刊发表论文，需要很强的人脉，当值编辑权力很大，尤为关键。如果编辑不认识通讯作者，会直接建议转投底下的子刊，根本不会有送审的下一步
+- nature with Comsol Multiphysics
+
+self-assembly of fractal liquid crystal colloids
+
+Ice-VII-like molecular structure of ambient water namomeniscus
+
+High-throughput single-cell rheology in coplex samples by dynamic real-time
+
+
+* APS Meeting
+- 讲座, Colloquium
+* 风电发展“十二五”规划
+
+* UK
+** funding groups
+    University of Strathclyde Chancellor’s Fellowship Scheme
+
+    Newton International Fellowships
+
+    The Leverhulme Trust
+
+    EPSRC
+
+    BBSRC
+
+    EU Research Fellowship Programme
+* Japan
+Japan’s 
+New Energy and Industrial Technology Development Organization (NEDO) has selected IHI Corp. 
+and Toshiba Corp. to research and develop an underwater floating-type ocean current tidal energy turbine system as part of a US$501 million effort for sustainable, renewable energy.
+
+
+* Shang Hai
+ School of Naval Architecture, Ocean and Civil Engineering, Shanghai Jiao Tong University
+
+*  863
+国家高技术研究发展计划(863计划)
+
+* 研究所
+水利部杭州机械设计研究所
+
+国家能源风电叶片研发（实验）中心
+http://www.iet.cas.cn/yjsbsh/yjsjyjj/
+
+工程热物理研究所
+* TODO 国资委的船舶，飞机
+
+* 中国科学院
+工程热物理研究所
+
+* Xi'an
+西安交通大学流体机械及工
+http://epe.xjtu.edu.cn/xygk/ltjxjgcx.htm
+
+* 数据分析师
+1.学过计算机但不会统计学（新手）
+2.学过统计学但不会计算机（小白）
+3.统计学和计算机都不会（菜鸟）
+统计学基础
+
+常用模型理论
+
+R和PYTHON
+
+网页分析
+
+数据库技术
+
+实战应用
+
+
+* authors
+**  [[http://coe.ouc.edu.cn/f9/0f/c9091a63759/page.htm][王树杰]](1961) --教授- 中国海洋大学工程学院
+publicatons:
+1. 柔性叶片弦向变形对潮流能水轮机轴向载荷影响的研究 - EI - 
+  + exp, numerical (fluent)
+
+
+
+* positions in Uni.
+岗位种类：
+
+1.教学科研岗
+
+2.专职科研岗
+
+3.党政管理岗（偏文职）
+
+4.辅导员岗
+
+5.实验实训岗
+
+6.其他专技岗（如财务，审计，基建，校医，档案这些带有管理功能，同时又要有一定的专业技术）
+https://www.zhihu.com/question/28059383
+
+* 师资博后
+
+* Career  Job
+living allowance
+
+** Career path in the UK 
+Research Associate (Postdoctoral Research Fellow) 
+Research Fellow (lecturer)
+Senior Research Fellow (senior lectuer/Reader)
+Professorial Research Fellow (Professor)
+
+** Research Associate (Complex Rotating Boundary-Layer Flows)
+Manchester Mertropolitan University
+School of Computing, Maths and Digital Tech
+Location: 	Manchester
+Salary: 	£29,799 to £33,518
+Hours: 	Full Time
+Contract Type: 	Fixed-Term/Contract
+Placed on: 	15th May 2018
+Closes: 	7th June 2018
+Job Ref: 	eArcu-0635
+
+Department:
+The School of Computing, Mathematics and Digital Technology is a large and successful unit in MMU’s Faculty of Science and Engineering. 
+It is committed to achieving high quality teaching, research and enterprise. 
+The School has a long track record of securing grants from research councils, EU and government backed bodies like Innovate UK, and made a significant contribution to the University's REF2014 submission.
+
+The Centre for Mathematical Modelling and Flow Analysis (CMMFA) within the School of Computing, Mathematics and Digital Technology has a long history 
+of developing advanced computational fluid dynamics (CFD) techniques for applications in both aerospace and coastal/ocean engineering.
+
+ Our recent and on-going projects, mainly funded by the EPSRC and
+ supported by industrial collaborators, are primarily concerned with the following applications:
+
+Modelling the stability of fluid flows in rotating geometries.
+    Evaluation of marine renewable technology (wave and offshore wind) through the development of computational fluid dynamics methods 
+and tools.
+
+Prediction of wave impact loads on coastal and marine structures (coastal defences, marine vessels, oil/gas platforms, etc.).
+
+*** Role:
+Our knowledge of the fluid mechanical processes governing turbulent flow is far from comprehensive, and 
+it will be many years before we unravel the paths to turbulence in order to develop the next generation of silent,
+ ultra-efficient aircraft engines and turbofans.
+
+As a Postdoctoral Research Associate you will undertake research in the area of 
+*hydrodynamic stability of rotating boundary-layer flows*. 
+
+More specifically, a recently developed and computationally efficient *spectral stability code* (SSC) will be adapted 
+and linked to a complex rotating boundary-layer geometry undergoing a crossflow instability with imposed axial flow. 
+An *energy eigenmode analysis* will be conducted on this geometry for the first time and 
+both outputs will be validated against a number of benchmark studies in the literature, 
+as well as against developing experimental results obtained by international partners at the KTH Royal Institute of Technology, Sweden. 
+The results will then be applied to a parallel theoretical study directed by *Dr Zahir Hussain* 
+in a related geometry undergoing a *centrifugal instability* to understand the nature of the competing instabilities and their interaction.
+
+Ideal Candidate:
+You will have a PhD (or be on course to submit soon) in the area of Applied Mathematics, Physics, Engineering or a closely related area. Knowledge and understanding of the physics of fluids including boundary-layer flows and hydrodynamic stability theory, as well as related numerical methods for modelling linear stability equations are essential. You will possess sufficient breadth and depth of specialist knowledge on computational modelling of high Reynolds number fluid flows, including current practice, and a record of research papers published (or in press) in reputed journals. You will be proficient in writing computational fluid dynamics codes in MATLAB or a high level language (e.g. C++ and/or FORTRAN) and the experience of using linear modal stability theory. Expertise in code development and application of boundary-layer stability theory for rotating fluid flow problems will be an advantage. For an informal discussion, please contact Dr Zahir Hussain at Z.Hussain@mmu.ac.uk.
+
+** Manchester Research Associate
+*** descriptions
+- free surface modelling
+- non-linear potential flow theory
+- OpenFOAM
+- Domain decompostion approach
+- in-house free surface code based on non-linear potential flow theory
+- Navier-Stokes multi-phase flow solver
+- wave interaction with floating structures e.g. dynamic response of offshore floating wind turbines under random/extreme wave conditions. 
+*** key requirements
+- potential and viscous flow theories
+- numerical methods for modelling free surface flow 
+- code, C++
+- OpenFOAM
+
+ More specifically, to further improve the computational efficiency of a recently developed *numerical wave tank* (NWT) software 
+based on OpenFOAM
+ and domain decomposition approach, a highly efficient in-house free surface code based on fully non-linear potential flow theory
+ will be adapted and linked to the Navier-Stokes multi-phase flow solvers within the framework of OpenFOAM.  
+The developed code will be validated against a number of benchmark test cases and 
+parallelised for run on high performance computer clusters. 
+It will then be applied to model flow problems involving wave interaction with floating structures e.g. dynamic response of offshore floating wind turbines under random/extreme wave conditions. 
+
+You will have a PhD in Engineering/Applied Mathematics or a closely related area.
+ Knowledge and understanding of the physics of fluids including both potential and viscous flow theories
+ and related numerical methods for modelling free surface flow are essential. 
+You will possess sufficient breadth and depth of specialist knowledge on computational modelling of wave interactions 
+with fixed and floating structures including current practice. 
+You should have the ability to write computational fluid dynamics codes in a high level language (e.g. C++ and/or FORTRAN) 
+and the experience of using high performance computing. 
+
+Experience in code development and application of OpenFoam for free surface flow problems will be an advantage. 
+Please attach your CV and covering letter, detailing how you meet the person specification, to you online application
+
+If you would like to join our people and share our ambition, we would love to hear from you.
+*** link and contacts
+Dr Ling Qian at L.Qian@mmu.ac.uk.
+http://www.jobs.ac.uk/job/BIH865/research-associate/Manchester 
+Metropolitan University - School of Computing, Maths and Digital Tech
+Location: 	Manchester
+Salary: 	£34,520 to £39,992
+Hours: 	Full Time
+Contract Type:  Fixed-Term/Contract
+Placed on: 	9th March 2018
+Closes: 	9th April 2018
+Job Ref: 	eArcu-0453
+
+One of the largest research-led science and technology educators in the UK, our Faculty of Science and Engineering offers a world-class teaching environment, covering undergraduate and postgraduate programmes. With genuine trailblazing specialisms and global impact, our exceptional research has created an international reputation for making a transformative contribution to the world around us. We deliver work with real-world impact, 
+and cultivate lasting relationships with businesses, the government and the general public to share our innovation and expertise.
+
+The School of Computing, Mathematics and Digital Technology is a large and successful unit
+ in MMU’s Faculty of Science and Engineering. 
+It is committed to achieving high quality teaching, research and enterprise. 
+The School has a long track record of securing grants from research councils, EU and government backed bodies like Innovate UK, and had made significant contribution to the University's REF2014 submission. The School works closely with employers, particularly in the region’s vibrant digital sector, on funded projects.
+
+The Centre for Mathematical Modelling and Flow Analysis (CMMFA) within the School of Computing, Mathematics and Digital Technology has a long history of developing advanced computational fluid dynamics (CFD) techniques for applications in both aerospace and coastal/ocean engineering. Our recent and on-going projects, mainly funded by the EPSRC and supported by industrial collaborators, are primarily concerned with the following applications:
+
+Evaluation of marine renewable technology (wave and offshore wind) through the development of computational fluid dynamics methods and tools;
+Prediction of wave impact loads on coastal and marine structures (coastal defences, marine vessels, oil/gas platforms, etc.).
+
+The CMMFA has a well-equipped computer lab with dedicated high spec desktop workstations and CPU/GPU clusters.
+* 青千 talents
+age < 40
+oversea work experience 3 years
+https://www.thepaper.cn/newsDetail_forward_2294063
+
+https://wenku.baidu.com/view/66c2a9b26c85ec3a86c2c5b7.html
+* Interview
+* Job hunting
+** How to Use Twitter to Find a Job
+https://biginterview.com/blog/2015/03/twitter-jobs.html
+
+
+Compared with social media job search heavyweights like LinkedIn, Twitter often flies under the radar as a tool for job search success. Don’t let that underdog status fool you, though. Our own Elizabeth Magill walks us through Twitter’s surprising job search staying power – all in 140 characters or less.
+How can Twitter be so effective?
+
+Twitter is all about enabling users to send out brief messages to large audiences. As a job seeker, you can use this to your advantage on multiple fronts including:
+
+    Finding hidden job leads
+    Networking with industry insiders
+    Researching companies and interviewers
+    Building your personal brand within the industry
+
+In order to get the maximum job search benefit from Twitter, you need to develop a strategy for achieving your specific goals.
+
+Once you do, job search success is literally at your fingertips.
+Twitter for Identifying Hidden Job Leads
+
+2015-3-26-twitter-birds-3
+The big question that may be on your mind, particularly if you think of Twitter was primarily a tool for personal use, is this: “Where does one begin when using Twitter for a job search?”
+
+Step One: Assuming you’ve already created your Twitter account, you should then begin with the follow button. It’s easy. Start following people in your field and organizations you’d like to work for.
+
+Many companies will tweet about new opportunities before the jobs are widely posted. Industry insiders also tweet about interesting new developments you should be aware of — company expansions, hiring trends, and more.
+Insider Tip: You may also want to follow employees of the companies you’re interested in working for. They are often the best source of insider information when those companies are hiring or preparing to hire.
+
+Step Two: Join the conversation when it’s relevant to your industry. Retweet sage advice. Offer words of wisdom based on your experience in the industry. Get to know the people who are discussing your industry on Twitter and give them an opportunity to get to know you. Add some “Twitter friends” to your network.
+
+Step Three: Take advantage of hashtags (#). Avid social media enthusiasts understand the importance of hashtags, but if you’re new to the world of Twitter, or just beginning to consider it for your job search needs, the hashtag can help you quickly find available opportunities.
+
+Popular hashtags for your job search include:
+
+    #Hiring or #NowHiring
+    #Jobs
+    #Careers
+    #TweetMyJobs
+    #JobOpening
+    #JobListing
+    #JobPosting
+    #HR
+    #Graduate Jobs
+
+Don’t forget to look for career and industry specific hashtags too, like:
+
+    #ITJobs
+    #TechJobs
+    #Marketing
+    #Freelance (in case you’re looking for quick or temporary jobs while the main job search continues)
+
+Step Four: Get a little help. When it comes to looking for leads on Twitter, you don’t have to go it alone (or get overwhelmed by the flood of Twitter conversations every hour). There are plenty of apps available that will help you identify potential leads, as well as websites that will help assist you in finding jobs on Twitter.
+
+For instance, sites like TweetMyJobs.com deliver custom-tailored job leads directly to your Twitter feed. TweetMyJobs is a trusted recruiting tool for many big companies that utilize social media for finding candidates (and all of them do in some capacity now)
+
+A strategic job search effort requires more than simply finding available jobs, however, and Twitter is an excellent tool for multiple fronts including the next stage, which involves networking.
+Twitter for Networking
+
+2015-3-26-twitter-birds-2
+There really is only one major rule when it comes to networking on Twitter. It’s this: “Be someone worth following.”
+
+How do you become someone worth following on Twitter?
+
+These tips will help you keep your Twitter feed filled with items that will reflect well upon you in your job search efforts.
+
+    Share tips
+    Share industry news
+    Answer industry-related questions quickly, but thoughtfully
+    Share valuable links
+    Be active on Twitter
+    Be generous and share the thoughts of others too
+    Make connections in-person by connecting with Twitter peers at conventions and other networking events
+
+Important Tip: Avoid following spammers who fill up your feed with links for their services or goods when possible. If you follow one by accident, unfollow quickly as a Twitter feed filled with spam and questionable links can harm your credibility.
+
+For other social media networking tips, read Big Interview’s blog post: 15 Power Tips for Using Your Social Network to Find a Job.
+
+Lightbulb Networking Idea One:
+
+Consider using Twitter to get more proactive in your networking efforts. For some,  it may be worth creating a blog on a niche area of your industry and tweeting to direct users to your blog. This helps to build your credibility within the industry and solidify your brand with potential employers.
+
+Lightbulb Networking Idea Two:
+
+Hashtags can work for you in multiple ways. It’s true you can use them in order to find job openings as mentioned above, but you can also use them to announce that you are available for work.
+
+Some consider it a little brazen, but if you’ve followed the networking advice above, you’ve presented yourself as a professional, made the appropriate contacts, and established your credibility in the field by now.
+
+It’s the perfect time to use a little self-promoting hashtagging to let potential employers know you’re available.
+
+Self-promoting hashtags to consider include:
+
+    #HireMe
+    #MBA
+    #Candidate
+    #JobSearching
+    #Hire(insert college nickname or mascot) Princeton Career Services recommends this nifty trick for getting employer attention.
+
+Beyond the scope of networking, though, Twitter is an extremely useful tool for enhancing your efforts to research various companies as well as interviewers you may come across in your efforts to work for certain organizations.
+Twitter for Researching Companies / Interviewers
+
+Twitter is a great tool for getting to know people and businesses. Learn about the business, from an employee’s point of view, by following the people who work for the organization. You can generally tell if they are shouting out the virtues of their employer or view work as essentially another four-letter word.
+
+You can also learn a great deal about the company culture by observing company-posted tweets and responses to the tweets of others. Use Twitter to learn the following things and more:
+
+    Have there been recent changes within the organization or structure of the company, new products, or industry-shaking news?
+    How does the company define the position you’re applying for? Your idea and the company’s idea of a position or title are not always identical.
+    What is the background of the people you’ll be working with (specializations, fields, education, etc.)?
+    Who are the company’s major competitors and how does your future employer (let’s be optimistic) stand out?
+
+The more you know about the company before going into an interview, the better prepared you are to impress them with your knowledge.
+Note: For additional information on learning about companies, read Big Interview’s blog post: The Job Seeker’s Guide to Company Research.
+Get to Know Your Interviewer Before the Interview
+
+2015-3-26-twitter-birds-4
+If you’ve made it past the initial screening steps and are preparing for an interview, Twitter is invaluable – particularly if you know the name of the person conducting the interview. You don’t even have to follow the interviewer in order to read his or her posts or view the person’s profile, which is something you definitely want to do.
+
+Investigating the interviewer enables you to gain personal insight about the person who holds your employment fate in his or her hands. It also allows you to find some common ground personally and professionally.
+
+If your interviewer is active on Twitter, you may be able to find details beyond the LinkedIn profile — like a sense of your interviewer’s personality, the aspects of the industry that are most interesting to him/her, etc.
+
+Your main objective in an interview is to be memorable. Understanding the person conducting the interview allows you to do this in two important ways.
+
+1) Find the specialization of the person conducting the interview in your field and use the interview as an opportunity to display your expertise and knowledge in that particular area.
+
+2) Find a shared hobby or interest, outside of the workplace, and find a way to weave that into your interview questions. This could be anything from being a train enthusiasts to having a shared interest in an obscure musical group.
+
+One word of warning: Don’t get too personal. You want to come across as someone who does your interview homework, but NOT as a stalker.
+
+Making an authentic connection with your interviewer is the goal. You want to stand out from the crowd of other qualified candidates — and a little inside information can definitely help you when you only have 30-40 minutes (typical interview) to make your case.
+Twitter for Strengthening Your Personal Brand
+
+2015-3-26-twitter-birds-5
+As your job search continues, the importance of building your personal brand becomes more significant. Beyond the initial job search, though, continuing to build your brand throughout your career will open many doors for you that would otherwise remain closed.
+
+Twitter is an outstanding tool for building your personal brand – especially as it relates to your career or job search efforts. Your goal, when looking for a job, is to stand out in your field. You want people to recognize your name as an expert. While it’s great to have your little niche, or area where you’re the “go to” expert of choice, it’s equally important to display a broad understanding of your industry in general.
+
+In addition to the lightbulb idea mentioned above of establishing an industry related blog to help solidify your brand, don’t overlook the importance of participating in Twitter conversations, chats, networking experiences, and general conversations to help you show off your deep understanding of industry-specific matters.
+
+If you establish a strong professional reputation through Twitter (even when you’re not looking for a job), your future career progression will be much easier. Companies will come looking for you.
+Why is Twitter important for building your brand?
+
+While it’s great to have your name on Twitter, not everyone is searching for you specifically. Some people are searching for an expert in your industry. You want your name to be one of the first names they find. The reason you want to be on Twitter is that Twitter is where many people are taking this type of search. It’s fast, convenient, and public, which is not necessarily the case with Facebook or LinkedIn.
+
+This means they can find you based on the brand you’ve built for yourself and the openness of search features in Twitter.
+
+But that’s not all!
+
+When potential employers are doing their due diligence to research you, specifically, through social media mediums, like Twitter, they’ll see what you want them to see – the brand you’ve created. Twitter gives you the simplest opportunity of all to do that by building a profile, linking to your blog, and building a network that paints a positive image of you as a person and as a leader in your industry.
+
+More importantly, businesses may become suspicious or view it as a red flag if they can’t find you through social media outlets. In fact, according to the recent JobVite Social Recruiting Survey, 92 percent of businesses either use or plan to use social media recruiting. You need to build your brand in a location where you’re likely to be discovered and Twitter is an excellent place to begin.
+How to Build Your Brand on Twitter
+
+2015-3-26-twitter-birds-6
+While you must find your own personal voice to use to communicate on Twitter while building your brand, there are certain mechanics involved as well.
+
+Step One: Participate often. Twitter isn’t like LinkedIn or Facebook. The messages are short and you require more frequent and mindful participation in order to build your personal brand. Plan to participate in short bursts, several times a day. This ensures your message is seen by people who participate at different times during their day. If you have time constraints that prohibit that frequency, plan to tweet at least once per day.
+
+Step Two: Keep your message simple. While you want to present yourself as an expert in your field, you must be relatable or you will lose your audience and some of your brand power.
+
+Step Three: Engage your audience. Conversations require more than one voice. Ask for feedback. Offer feedback. Participate in conversations and you’ll make valuable connections – both seen and unseen – that go a long way towards solidifying your brand.
+
+Step Four: Make it viral. Ask people to retweet your message. This means the message will be seen by even more people than you’d normally reach and more connections will be made between your name, your message, and the brand you’re building.
+
+Step Five: Use photos and videos to improve engagement and interest. SearchEngineWatch reports that photographs and videos were the most effective components used in Twitter. Other components to note include:
+
+    Quotes
+    Statistics
+    Hashtags
+
+The most important thing when building your personal brand on Twitter for job search purposes, though, is to use your own voice, thoughts, and opinions, rather than adopting a character or persona.
+Do’s and Don’ts for Twitter Job Search Success
+
+If you’re looking for true success from your Twitter job search efforts, then there are a few best practices rules you should follow, including these listed below.
+
+Do create a thoughtful and complete profile that associates you with the industry in which you are seeking employment.
+
+Do include your Twitter “handle” on your resumes and applications. This provides employers an opportunity to find you more easily and lets them know you feel you have nothing to hide.
+
+Do be mindful in what you say and add value to the conversations you begin and the ones you join. That doesn’t mean you can’t have fun and carry on real conversations. It does mean, though, that you need to keep the language you use and the way you present yourself through Twitter professional.
+
+Do make sure your posts reflect well upon you as a person and as someone businesses will want to hire. Remember this from the start as you build your Twitter profile and develop your career search plan: the Internet has a long memory.
+
+Don’t make posts that may present you in a unfavorable light. While Twitter may be a medium to communicate with friends, what you post on Twitter can prevent you from getting the job you seek. One of three employers have rejected job candidates based on things they find in social media profiles, reports the Muse.
+
+Don’t polarize topics and statements about news, current events, politics, and religion while using Twitter to enhance your job search. Stick to lighter topics or industry-related topics instead.
+
+Don’t forget to include a professional looking headshot in your profile in order to make a favorable impression with potential employers.
+In Summary
+
+If you haven’t been taking advantage of Twitter as a job search tool, it’s time to jump in. When used intelligently, Twitter can have a profound impact on your job search success – or lack thereof.
+
+Small steps can help you turn Twitter into your own personal job search platform. Try them today and see what a difference they make in your overall job search success.
+
+2014-1-15-magill
+* Jobs vs career
+
+当你收到入学通知书的一瞬间开始，你大概能找到第一份工作是什么，
+ 范围基本已经确定
+* Academic ranking standards
+
+** CSU
+within 5 years
+
+- lectuator - 18 points 
+- vice prof. - 45 points
+
+| JCR | points |
+| Q1  | 7      |
+| Q2  | 5      |
+| Q3  | 3      |
+| Q4  | 1      |
+
+- you must have one paper in JRC Q1
+* ref
+The Professor Is In: The Essential Guide To Turning Your Ph.D. Into a Job 
+Marie Curie European fellowships (http://ec.europa.eu/research/mariecurieactions/).
+

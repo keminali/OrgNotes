@@ -1,0 +1,1081 @@
+*  Literature review
+** Propeller noise
+gutin's theory
+propeller induced noise [fn:merz2009]
+
+pp. 266-286, doi:10.1016/j.jsv.2009.03.011.
+
+
+
+** Recommended references
+1. 3.5.3 propeller noise: Gutin's theory, aerodynamics, Goldstein, 1976
+2. chapter 15 Gutin's formula, Modern Methods in Analytical Acoustics - 1992 Lecture Notes https://doi.org/10.1007/978-1-4471-0399-8 Crighton, D., Dowling, A., Williams, J. F., Heckl, M., Leppington, F., _Modern Methods in Analytical Acoustics_, 1992
+3. Made, Jack E., and Donald W. Kurtz. "A Review of Aerodynamic Noise From Propellers, Rofors, and Liff Fans." Jet propulsion laborotary, California institute of technology, California (1970).
+4. Real-Time Sound Synthesis Model of a Propellor, Rod Selfridge, DOI: 10.475/123 4
+5. A Review of Aerodynamic Noise From Propellers, Rotors, and Lift Fans
+
+** Paper digest
+*** The Effects of Slope-of-Curvature Discontinuities on the tonal noise (aerofoil 387)
+Author sheng xiang 
+Conclusion: 
+- primary frequency of e387 airofil is 192 Hz of a7 dropped 13% compared with e387, and frequency of primary tone of a7 is 32 Hz lower than that of e387 [fn:shen2017experimental]
+
+Methods
+		wind tunnel measurements
+		CgLes, numerical
+			LES
+		the aerofoils steady and unsteady performance > CgLes
+
+		
+	Chapter 6
+	
+	
+	Re=100,000, 200,000 and 300,000
+	
+	A7 coordinates
+		The CIRCLE method is used to redesign the airfoil by removing the slope of surface curvature discontinuities from LE to TE.
+	
+	Geo
+		chord length, 200mm
+		span length, 1000 mm
+** Airfoil/wing noise
+*** sources
+- Turbulent Boundary layer - Trailing edge noise
+- Separation Stall Noise
+- Laminar Boundary layer - Vortex shedding noise
+- Tip Vortex Formation noise
+-  Traling edge Bluntness-Vortex Shedding Noise
+* Hydro-turbine noise
+| <20>                 | <20>                 | <20>                 | <20>                 | <40>                                     |                                    |                                                |
+| Diameter (m)         | Turbulence Model     | Quantities           | Solver               | Reference                                |                                    |                                                |
+| 0.25                 | LES                  | SPL                  |                      | OpenFOAM                                 | Lidtke, 2016, oceaning enginnering |                                                |
+|                      | LES                  | SPL                  |                      |                                          |                                    | LLoyd, 2014, Renewable energy                  |
+|                      | URANS                | SPL                  |                      |                                          |                                    | Maizi, 2017 Journal of Applied Fluid Mechanics |
+
+													
+										Receiver			
+| Geo	                                                                                                                                                                                                      | Diameter (m)	 | No. of Blades	 | TSR | 	Turbulence Model | 	acoustic analogy | 	CD	Mesh (Million)	Solver		 Distance	Direction	Max SPL	Reference |
+| Tidal tubine	0.4	3	5.96	LES	FWH	up, 3D, down, 7D, top, 3D	4.6	OpenFOAM		2D	0, 45, 90	90	LLoyd, 2014, Renewable energy |                      |                       |     |                          |                          |                                                                                                                          |
+Propeller	0.25	5		LES	FWH		4.6	OpenFOAM		100m	rotational plane	90	Lidtke, 2016, oceaning enginnering |
+hydrofoil				URANS	FWH								Maizi, 2017 Journal of Applied Fluid Mechanics [fn:maizi2017reducing]
+										20m			 (Polagye, 2015)
+airfoil				LES	FWH								Solis-Gallego, 2018,Renewable Energy
+				LES	FWH								M.Cianferra,2017   International Journal of Heat and Fluid Flow
+
+[fn:maizi2017reducing]Maizi, M., R. Dizene, and M. C. Mihoubi. "Reducing Noise Generated from a Wind Turbine Blade by Pitch Angle Control using CFD and Acoustic Analogy." Journal of Applied Fluid Mechanics 10.4 (2017).
+
+keywords: hydro-turbine noise;  aeroacoustics, tidal turbine,hydro-kinetic turbine,  hydroturbine, propeller, hydroacoustics, under-water noise
+** types
+- aeroacoustic
+- mechanical
+
+** Source 
+
+***  Source type:
+
+- more similar to a monopole  rather  than a dipole.
+
+*** source location : leading edge near the tip
+- he blade leading edges near the tip[fn:lloyd2014assessing]~\cite{lloyd2014assessing}
+
+
+a *review* on aeroacoustics research in Europe in 2008 [fn:juve2009aeroacoustics] ~\cite{juve2009aeroacoustics}
+Aeroacoustics research in Europe: The CEAS-ASC report on 2013 highlights[fn:CEAS-ASC2013]
+
+Inflow turbulence is known to be the dominant noise source due to turbulence
+
+wind turbine can be regarded as a point source if A receiver distance > 2D (diameter of rotor)  [fn:maka2011]
+
+** Receiver direction and distance 
+*** direction
+? *the plane of rotating blades* is the /critical location/ 
+of the receiver because the distances to the blades are the shortest[fn:makarewicz2011wind]~\ite{makarewicz2011wind}.
+*** distance
+- 2D  [fn:lloyd2011modelling]
+- 20m (Polagye, 2015)
+- 100m at propeller rotational plane (Lidtke, 2016, oceaning enginnering)
+
+
+
+** phD thesis 
+> tidal turbine noise, Lloyd, Thomas P. 2013 Uni. of southermpton, UK
+> Jet noise,   computational aeroacoustics study of circular and elliptical jets, mikel alonso (students of Eldad) queen mary university 2006
+
+** report
+(Robinson, 2013) Soping study: Review of current knowledge of underwater noise emissions from wave and tidal stream energy devices, The Crown Estate, 2013.
+
+** sound pressure level(SPL)  for underwater turbine
+
+- third-octave-bandwidth, 119 dB (re 1\mu Pa) at 20 m for the turbine  [fn:lloyd2011modelling] ~\cite{lloyd2011modelling}
+- 166 dB re 1 \mu Pa at 1m from the "seaFlow" turbine (full-scale) [fn:Parvin2005]
+- ~131 dB re 1 \mu Pa at 1m (20 Hz) and ~ 112  dB re 1 \mu Pa at 1m (500 Hz) (1Hz bandwidth) [fn:wang2007experimental] ~\cite{wang2007experimental}
+** Dominant frequency
+the dominant noise of  *horizontal axis tidal turbines* (HATTs) to be due to rotating machinery in a
+frequency range (1, 100) Hz [fn:richards2007underwater]~\cite{richards2007underwater}
+** far field 
+far field >> 4L (wave length)
+** experient
+full scale experiment (Richard [fn:richard])
+** modelling
+chapter 6,  *LES* study on *inflow turbulence noise* of *tidal turbine* (PhD thesis, Uni Southamption) [fn:lloyd2013large]
+
+keywords: LES, inflow turbulence noise, tidal turbine
+* wind turbine noise
+
+(Glegg et al., 1987[fn:Glegg1987]); Grosveld,
+1985[fn:grosveld1985]; Hubbard, 1991 ; Oerlemans et al., 2009
+
+wind turbine could be regarded as point source when R( source receiver distance) is large than 2D ( Diameter of turibne)
+
+For standard measurenment of sound power level:
+hub and blades are modeled as one songle point source located at thub height[fn:swedish2001]
+
+
+optimizes the aerodynamic noise emission level 
+
+
+(Glegg et al., 1987[fn:Glegg1987]); Grosveld,
+1985[fn:grosveld1985]; Hubbard, 1991 ; Oerlemans et al., 2009
+[fn:Glegg1987] Glegg, S., Baxter, S. and Glendinning, A. (1987), The prediction of broadband noise from wind turbines. Journal of Sound and Vibration, 118(2): pp. 217–239, doi:10.1016/0022-460X(87)90522-0.
+wind turbine could be regarded as point source when R( source receiver distance) is large than 2D ( Diameter of turibne)
+
+For standard measurenment of sound power level:
+hub and blades are modeled as one songle point source located at thub height[fn:swedish2001]
+** Noise Source and Locations
+*flow-generated noise sources* could be [fn:lloyd2011modelling] ~\cite{lloyd2011modelling}:
+- unsteady loading;
+- trailing edge;
+- vortex shedding;
+- cavitation, less likely, normally can be  ignored
+
+- For modern turbines the dominant(main) noise source is *trailing edge noise* from the outer part of the blades
+** design options for  noise reduction
+Blade add-ons
+Smart control strategies
+Blade shape (planform, airfoils, tip design) [(2012 Stefan Oerlemans, Peter Fuglsang Siemens Wind Power A/S Low-noise wind turbine design)]
+* Tonal noise
+- tonal noise :: /discrete frequency noise/ and is characterized by spectral tones 
+that are pure tone in nature.  [fn:tonal_noise]
+
+*How is tonal noise generated?*
+Tonal noise is generated by *rotating equipment* at a predictable frequency 
+relating to the rotational speed of the shaft and the number of compressor vanes, 
+fan blades, engine pistons, gear teeth, etc. 
+
+- the fundamental frequency is tonal noise is described as blade passing frequency (BPF):
+        BPF = B*\omega
+- \omega: blade rotational frequency (Hz)
+*Tolerance levels* for tonal noise are generally at a lower threshold.
+
+** References
+Khelladi, S., et al. "Predicting tonal noise from a high rotational speed centrifugal fan." Journal of Sound and Vibration 313.1-2 (2008): 113-133.
+
+On the aeroacoustic tonal noise generation mechanism of a sharp-edged plate
+
+Predicting tonal noise from a high rotational speed centrifugal fan
+
+
+
+ISO 1996-2:2007  Acoustic  Description, measurement and assessment of environmental noise Part 2 : Determination of environmental noise levels
+Annex D Objective method for assessing the audibility of tones in noise – Simplified method 
+Technical Note 28 - Recording Audio with the optimus green (CR:170) sound level meters
+https://www.cirrusresearch.co.uk/blog/2012/03/tonal-noise-analysis-with-the-optimus-green-sound-level-meters/
+* Fluent tutorials
+file:acoustics_fluent.org
+* Paper digest
+**  LLoyd, 2014, Renewable energy Assessing the influence of inflow turbulence on noise and performance of a tidal turbine using large eddy simulations  :inflow_turbulence:   :tidal_turbine: :LES:
+	Thomas P. Lloyd
+
+Object
+		scale rotor tested by Bahaj et al
+
+
+ Methods
+LES
+FWH
+		Sliding mesh
+		Solver: OpenFoam
+		CD: three blades 
+		Meshing: Blockmesh and snappyHexMesh 
+		Mesh size, 4.6M
+		Cell type: Hexa and polyhedra
+		
+
+ Conclusion
+	
+ the inflow turbulence results in characteristic ‘humps’ in the turbine thrust and torque spectra
+	
+ the dominant sources are concentrated at the blade leading edges towards the tip
+	
+ The full scale source level is found to be lower than comparable measured data reported in the literature
+
+ No impact on fish
+		
+
+** Chapter 6 Sheng xiang thesis
+	Goal:
+		The Effects of Slope-of-Curvature Discontinuities on the Tonal Noise (aerofoil 387)
+	Methods
+		wind tunnel measurements
+		CgLes, numerical
+			LES
+		the aerofoils’ steady and unsteady performance > CgLes
+*** Conclusion:
+tonal noise of a7 dropped 13% compared with e387, and frequency of primary tone of a7 is 32 Hz lower than that of e387 [fn:shen2017experimental]
+*** Details:
+	Re=100,000, 200,000 and 300,000
+	
+	A7 coordinates
+		The CIRCLE method is used to redesign the airfoil by removing the slope of surface curvature discontinuities from LE to TE.
+	
+	Geo
+		chord length, 200mm
+		span length, 1000 mm
+	
+	
+
+
+
+
+
+
+** (Robinson, 2013) Soping study: Review of current knowledge of underwater noise emissions from wave and tidal stream energy devices, The Crown Estate, 2013.
+Science Area Leader, Acoustics Group: Sound in Air and Water
+National Physical Laboratory, Middlesex TW11 0LW
+Phone: 020 8943 7152
+Email: stephen.robinson@npl.co.uk
+http://www.npl.co.uk/ultrasound-and-underwater-acoustics/research/#underwater
+
+
+** Lidtke, 2016, oceaning enginnering, Feasibility study into a computational approach for marine propeller noise and cavitation modelling
+Tonal blade noise of the propeller is computed using the Ffowcs Williams–Hawkings acoustic analogy and URANS flow solver.
+- Diameter, 0.25m
+- Solver: OpenFOAM
+* Aeroacoustics Basic
+** acoustics and sound
+Acoustics = The scientific study of *sound*
+Sound = *Pressure waves* radiating in any material medium
+*** Characteristics of Sound
+- compressible
+- wave amplitude is very small
+- Sound waves carry only a tiny fraction of the energy contained in the mean flow
+    + E.g. Acoustic energy generated by Boeing 747 during take-off is not enough to boil an egg!
+
+** Narrow-, third octave and octave band analysis
+- \overline{p} : time average
+
+
+2.1.5.3 Delfs, J. "Basics of aeroacoustics, lecture notes." Braunschweig, DLR–German Aerospace Center, Braunschweig, Germany (2008).
+
+** Sound has essential characteristics of waves
+keywards: Source, Medium, Propagation, Receiver
++ It has a 鈥渟ource鈥�
+  Oscillatory disturbance
++ It 鈥減ropagates鈥� in a 鈥渕edium鈥�
+  Transports energy without transporting matter
+** aeroacoustics
+- Sub-area of acoustics where *the source of sound* is *fluid flow*\\
+*Source* 鈮ransient pressure variation caused by the flow\\
+Sound 鈮ressure waves propagating in the acoustic medium\\
+*Characteristics*\\
+- No moving boundaries 
+    + such as electric speakers, vibrating strings, or vocal chords
+- Unsteady fluid flow always produces pressure oscillations
+    + therefore is inherently a source of sound
+*Examples*\\
+i.e. Whistles, HVAC vent noise, Automotive wind noise
+
+** acoustics types
+Acoustics is sub-classified based on[2]
+- Source
+  + Aeroacoustics
+  + Vibroacoustics
+  + Etc.
+- Medium
+  + Hydroacoustics
+  + Seismology
+
+
+
+* history of aeroacoustics
+
+
+propeller noise, Gutin > Lighthill's analogy theory, 1952 (jet noise) > extensions of  Lighthill's idea,
+ which account for solid boundaries  [fn:gutin1948sound] [fn:lighthill1952sound] [fn:lighthill1954sound] [fn:curle1955influence] [fn:powell1960aerodynamic] [fn:williams1970aerodynamic]
+~\cite{gutin1948sound, lighthill1952sound, lighthill1954sound, curle1955influence, powell1960aerodynamic, williams1970aerodynamic}
+* Spherical waves
+
+* Glossary
+
+- aeroacoustics :: sound generated by aerodynamic forces or motions originating in a flow rather than by the externally applied forces or motion of classicial acoustics
+
+- impulive :: adj, acting suddenly 
+e.g.  impulsive fluctuating forces
+- Bang :: a sudden loud noise caused by something 
+such as a gun or an object hitting a hard surface
+e.g. There was a loud bang outside the kitchen door.
+- mechanism :: a method or a system for achieving something
+- modulation :: (specialist) the act of changing the rate at which a sound wave or radio signal vibrates (= the frequency ) so that it is clearer
+- *sound Pressure level* (SPL) (Eq.(2.3) in the reference):\\
+
+\[
+SPL=20log_{10}(p'_{rms}/P_{ref})
+\]
+
+reference pressure:
+- water, P_ref=1 \mu Pa (microPascal) [fn:under-acoustics-concepts]
+- air, P_ref = 20 \mu Pa
+
+** overall sound pressure level
+Overall Sound Pressure Level (OASPL)
+The total energy contained in the spectrum is
+
+E = ò S(f) df
+
+where we integrate over all resolved frequencies.  The OASPL is
+
+OASPL = 10 log10 (E)   [units: dB]
+http://supersonic.eng.uci.edu/mwe/mwe_noise_data.htm
+
+** power spectral density
+PSD: Power Spectral Densfty
+
+PSD is the frequency response of a random or periodic signal. 
+It tells us where the average power is distributed as a function of frequency.
+
+** blade passage frequency
+BPF=B*\omega
+- BPF: blade passage frequency
+-B: number of blades
+- \omega: blade rotational frequency (Hz)
+- Blade-passing frequency (BPF) ::  the number of blades *  the rotation rate
+** fundamental frequency
+/[[https://en.wikipedia.org/wiki/Fundamental_frequency][fundamental frequency]]/, often referred to simply as the /fundamental/, 
+- the fundamental (frequency) :: the *lowest frequency* of a periodic waveform
+- symbol, f_o
+-unit, Hz
+\[ 
+f_o = \frac{1}{T}
+\]
+- T: period
+
+** pure tone
+- Pure tones ::  wave forms that occur at a *single frequency*[fn:delfs-notes]. 
+\( p(t)= p^c \cos (\omega t) + p^s sin(\omega t) \)
+** tone
+\( p(t)= \sum _{n=0}^\infty p^c \cos (n \omega t) + p^s sin(n \omega t) \)
+
+** pure noise
+p(t) has a continuous frequency content, the signal
+is permanent, stochastic
+** fundamental frequency vs Harmonics frequency
+
+- fundamental frequency :: the *lowest frequency* of a periodic waveform. 
+- 1st harmonic= fundamental frequency
+Harmonics (frequency) = N* frequency
+
+The fundamental tone (F) may also manifest itself at progressively lower intensity levels
+ at integer harmonic multiples (2F, 3F, etc.).
+* propeller noise: Gutin's theory
+3.5.3 of aeroacoutics, Goldstein  1976
+Eq. (3.118) for the *steady* loading noise, 
+(3.119) and the expressions on Page 165 for *unsteady* loading noise.
+
+* Lighthill Theory
+*Assumption*
+- Noise Sources are assumed in a *uniform fluid* at rest
+- Acoustic field at *observer* is described by wave equation
+- *Acoustic* and *hydrodynamic* fields are *decoupled*
+
+*calculation steps*
+1. Simulate *transient* flow field accurately using CFD to get the *acoustic sources*
+2. *Propagate* noise from sources to receiver by solving *wave equation* analytically
+
+* Sources of aerodynamic noise
+- relative motion between a solid body and the surrounding medium
+- relative motion bewteen stream of fluid and the surrouding medium
+** noise components
+- rotational/periodic noise
+- vortex noise
+*** rotational/periodic noise
+- discrete frequencies occuring at harmonics of the blade passage frequency
+*** vortex/broad band noise
+-  sound generated by the unsteady pressure field, i.e.
+  + vortices shed from the trailing edge and blade tips
+  + turbulence effects in the air stream
+
+* Modern Methods in Analytical Acoustics: Lecture Notes
+** complex variable theory
+References for complex variables
+https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-fall-1999/
+
+* Aeroacoustics-Goldstein-1976
+notes, refer to file:C:\Users\exw692\Dropbox\Emacs\aeroacoustics-Goldstein-1976.org
+
+* An Introduction to Acoustics-Rienstra
+
+** List of symbols
+
+
+| m          | mass source term                                            |
+| \alpha          | damping coefficient                                         |
+| *p*        | stress tensor                                               |
+| q          | source term                                                 |
+| E          | acoustic energy density                                     |
+| I          | acoustic energy flux/intensity                              |
+| \hat{p}    | fourier transform of p                                      |
+| f_c         | critical frequency                                          |
+| d          | pipe width/diameter                                         |
+| \delta_A         | boundary layer thickness                                    |
+| \nu          | kinematic viscosity                                         |
+| G          | green's function                                            |
+| Z          | impedance                                                   |
+| \phi          | velocity potential                                          |
+| \phi'         | acoustic potential                                          |
+| \mathbf{f} | a force density acting on the fluid as a source of momentum |
+| \tau          | viscous stress tensor                                       |
+| I          | unit tensor                                                 |
+| \mathbf{v} | velocity vector                                             |
+| \( \tau \)    | time (usually source time or retarded time)                 |
+| \( e \)    | the internal energy per unit of mass                        |
+| \mathbf{q} | heat flux due to heat conduction                            |
+| \( k \)    | heat conductivity                                           |
+| \( s \)    | the specific entropy or entropy per unit of mass            |
+| \( c \)    | speed of sound                                              |
+| \( p' \)   | pressure fluctuation                                        |
+| \( P_{ref} \) | reference pressure level                                    |
+| \( f \)    | component of force                                          |
+| \( L \)    | distance                                                    |
+| \( \lambda \)    | wave length                                                 |
+| \(  \eta \)   | dynamic viscosity                                           |
+|  T         | temperature                                                 |
+| \(  T_{ij}\)  | Lighthill's stress tensor                                   |
+  
+** Glossary
+\phi  the velocity potential, *v*=grad(\phi)
+\[
+\mathbf{\upsilon'} = \nabla \phi'
+\]
+- \upsilon' = \upsilon - v_o
+- \phi': acoustic potential
+
+*** compact
+point source, a region where the acoustic potential, \phi' , varies significantly over distances, L, which is short compared to the wave length, \lambda
+
+
+
+
+
+** Abbreviation
+PWL: Sound Power Level \\
+SPL: Sound Pressure Level\\
+I: sound intensity\\
+p' : pressure fluctuation\\
+dB: decibel \\
+p: pressure\\
+** Introdution
+This book[fn:acoustics_Rienstra] is inspired by the book of Dowling and Ffowcs Williams: "*sound and Sources of Sound*"\\
+Categories of sound: ultrasound and infrasound
+
+- Structural vibrationsb
+- sound perception
+*** Basics
+Challenge in fluid dynamics:
+ the equations are non-linear.This implies that an exact general solution of these equations is not available.
+
+aero-acoustic processes of sound generation: heat transfer and turbulence
+
+Turbulence is a chaotic motion dominated by non-linear convective forces.
+
+forcus of the book: duct acoustics.
+** Definitions
+*homentropic flow*: homogeneous and entropy uniform (ds=0)
+- acoustic intensity :: (time averaged) acoustic energy flux
+- acoustic energy density, \( E = p'^2/(2\rho _0  c_0^2) + 0.5 \rho_0  v'^2 \) (2.80a)
+- energy flux/intensity :: I=p'v'
+- the dissipation :: D= - p' m'/\rho_0 - v' \dot f'
+
+** Governing equations of fluid dynamics
+*** Decomposition of velocity
+Under reasonably general conditions, the velocity, *v*, like any vector field, can be split into an *irrotational* and *solenoidal* part:(P.53, [fn:kac1956pm])
+\begin{equation}
+\mathbf{v}=\nabla \phi + \nabla \times \Psi , \nabla \cdot \Psi=0  
+\end{equation}
+
+ or  \[   v_i=\frac{\partial \phi}{\partial x_i} + \epsilon_{ijk} \frac{\partial \Psi_k}{\partial x_j} ,  \frac{\partial \Psi_j}{x_j}=0 \]
+- \phi is scalar
+- \Psi is vector
+
+*** mass continuity
+\[
+\partial \rho/\partial t + \nabla \cdot(\rho \mathbf{v})=m
+\]
+
+where \[ \mathbf{v}=(v_i)\]
+
+
+*** Momentum conservation
+dynamic product of two vectors \[ \mathbf{v}\] and \[ \mathbf{w}\] 
+\[ \overrightarrow{vw}=\mathbf{vw}=v_i w_j \] 
+i,j=(1,2,3)
+
+file:/emacs/bin/figures/momentum_conservation.png
+where \[ \mathbf{f}=(f_i)\]: external force density (like the gravitatiaonal force)
+\[\mathbf{P}=(P_{ij})\]: fluid stress tensor\\
+\[\mathbf{\tau}\]:viscous stress tensor\\
+\[ \mathbf{I}=\delta_{ij}\]: unit tensor
+Constitutive equation:
+\[\mathbf{\tau}=\eta(\nabla\mathbf{v}+(\nabla\mathbf{v})^T)-2/3\eta(\nabla\cdot\mathbf{v})\mathbf{I}
+\]\\
+\eta: dynamic viscosity\\
+*** energy equation
+e: internal energy per unit mass
+\[\mathbf{q}\]: heat flux
+\[
+\mathbf{q}=-K\nabla T
+\]
+k:heat conductivity, which is a function of p and T.\\
+
+*equation for entropy*
+\[
+\rho T(\partial s/\partial t + \mathbf{v}\cdot\nabla s)=-\nabla\cdot\mathbf{q}+\mathbf{\tau}:\nabla\mathbf{v}
+\]
+\[\tau:\nabla\mathbf{v}=\nabla\cdot(\tau\cdot\mathbf{v})-\mathbf{v}(\nabla\cdot\mathbf{\tau})
+\], and \tau is symmetric \\
+\[
+(\nabla\mathbf{v})_{ij}=\frac{\partial}{\partial x_i}v_j
+\]  \\
+\[
+\nabla\cdot\mathbf{q}
+\]: heat conduction\\
+\[
+\tau:\nabla \mathbf{v}
+\]: viscous dissipation\\
+Isentropic flow: heat conduction and viscous dissipation are neglected,the entropy of a fluid particle remains constant except for regions near walls.\\
+
+entropy equation for isentropic flow:\\
+\[\partial s/ \partial t+\mathbf{v}\cdot\nabla s=0 \]\\
+e=e(\rho,s)
+\[p=\rho^2(\frac{\partial e}{\partial \rho})_s \]
+*Equation of state*
+p=p(\rho,s)\\
+\[ dp=c^2 d\rho+(\frac{\partial p}{\partial s})_\rho ds
+ \]
+
+*** Approximations and alternative forms of the conservation laws for ideal fluids
+Totoal derivative, D/Dt
+\[
+\frac{D}{Dt}=\frac{\partial}{\partial t}+\textbf{v} \cdot \nabla
+\]
+
+$v\cdot\nabla$: convective derivative
+physical meaning: time rate of change at a fixed point.\\
+velocity vector \[\mathbf{v}\], can be split into an irrotational part and a solenoidal part:
+\[ \mathbf{v}=\nabla\phi+\nabla\times\mathbf{\psi} \]
+\[
+\nabla\cdot\mathbf{\psi}=0
+\]
+\phi:velocity potential, scalar
+\mathbf{\psi}:vectorial velocity potential or vector stream function
+
+** Wave equation, speed of sound and acoustic energy
+- quiescent fluid :: stagnant (u_0 = 0,  in space and time) , steady flow
+*** order of magnitude estimates
+\rho': pressure perturbation\\
+*sound is a small perturbation of a steady state*, so that second order effects can be neglected.\\
+For *harmonic presure fluctuations*, the typical range of frequency of the human ear is:
+20Hz<f<20kHz\\
+[[https://en.wikipedia.org/wiki/Harmonic][Harmonic]]\\
+A harmonic of  a wave is a wave with a frequency that is a *positive integer* multiple of the frequency of the original wave, known as *the fundamental frequency*.
+
+*sound power level* (SPL) is measured by decibel(dB) scale\\
+\[
+PWL=10log_{10}(Power/10^{-12})
+\]
+1dB=0.1B\\
+bel(B)=0.5ln(10) Np\\
+base-10/common log :log (x),  log(100)=2
+base-e, *natural log*, denoted as "ln(x)",  if e^x=y , then ln(y)=x, i.e. ln(e^4)=4 \\
+
+*sound Pressure level* (SPL) (Eq.(2.3) in the reference):\\
+\[
+SPL=20log_{10}(p'_{rms}/P_{ref})
+\]
+reference pressure:
+- underwater, P_ref=1 \mu Pa (microPascal) [fn:under-acoustics-concepts]
+- air, P_ref = 20 \mu Pa
+
+Decibel formats:
+dB re 1 \mu Pa      # "re" means /reference/
+
+
+ 
+\gamma=Cp/Cv: the ratio of specific heats at constant pressure and volume respectively.\\
+\rho_0 c_0 : the characteristic impedance of the fluid\\
+acoustic Mach number: \mu'/c_o \\
+
+acoustic Mach number is a measure for the relative density variation \rho'/\rho_0\\
+
+where: 
+\rho_0 is density in the media\\
+L: characteristic length scale\\
+acoustical Strouhal number Sr_a=L/\delta\\
+\delta: particle displacement\\
+
+\[\overline{l}\]: the molecular mean free path, air at atmospheric pressure is about 5e-8 m\\
+
+The continuum hypothesis is valid.\\
+\[ \lambda=\frac{c}{f}
+\]
+Acoustic Fourier number:\[
+\lambda/\overline{l}=\lambda c/\nu=\lambda^2 f/\nu
+\]
+where \lambda is acoustic wave length
+Re_t :unsteady Reynolds number
+\[
+Re_t~\lambda^2 f/\nu
+\]
+monochromatic:constant-frequency\\
+[[https://en.wikipedia.org/wiki/Plane_wave][plane wave]]: a wave whose wavefronts are infinite parallel planes\\
+Wavefront: surfaces of constant phase\\
+
+*** Wave equation for a uniform stagnant fluid and compactness
+**** Linearization and wave equation
+A *derivation* of /general linearized wave equations/ is discussed by Pierce[fn:pierce] and Goldstein[fn:goldstein].\\
+Density/velocity fluctuations are small\\
+density fluctuations: \rho'/\rho_0 \\
+velocity flucntion magnitude, v'~(\rho'/\rho_0)c_0  \\
+
+fluid motion equations are linearized\\
+
+*assumption*: flow is frictionless\\
+
+
+
+*quiescent fluid*:being still, stagnant, uniform fluid.
+acoustic perturbations (p', \rho', s', v' . . .) of a stagnant (u_0 = 0)
+uniform fluid (p_0, \rho_0, s_0, . . .)\\
+s:entropy\\
+
+*the governing equations* for *quiescent* fluid\\
+(Eq.2.14 in the reference)
+\[ \partial\rho'/\partial t + \rho_0 \nabla\cdot\mathbf{v}' =0
+\]
+
+\[\rho_0 \frac{\partial \mathbf{v}'}{\partial t} +  \nabla p' =0
+\]
+
+
+\[ \partial s'/\partial t  =0
+\]
+
+#+CAPTION: the governing euqations of /quiescent/ fluid
+#+NAME: fig:GQ-quiescent
+[[file:C:\emacs\bin\figures/governing_equations_quiescent_fluid.png]]
+
+wave equations
+
+the typical range of frequency of the human ear is:
+(20 Hz, 20 kHz)
+
+
+
+#+STARTUP: latexpreview
+
+**** Simple solutions
+d'Alembert's solution in 1D (Eq.2.20)
+
+\[
+p'=f(x-c_0 t)+g(x+c_0 t)
+\]
+
+\[
+v'=[f(x-c_0 t)-g(x+c_0 t)]/(\rho_0 c_0)
+\]
+
+
+**** compactness
+- compact region :: a region where the /acoustic potential/ \phi'  varies significantly over /distances/
+L which are short compared to the /wave length/ \lambda,  the acoustic flow can locally be approximated
+as an *incompressible potential flow*.
+*** speed of sound
+*** influence of temperature gradient
+*** influence of mean flow
+*** sources of sound
+**** lighthill analogy
+- perturbation :: a deviation of a system, moving object, or process from its regular or normal state or path, caused by an outside influence.
+*** acoustic energy
+
+*** Green's functions, impedance, and evanescent waves
+**** Green's functions
+[[https://en.wikipedia.org/wiki/Green%27s_function][Green's function]] is the impulse response of an inhomogeneous linear differential equation
+ defined on a domain, with specified initial conditions or boundary conditions.
+**** integral representations
+why need Green's functions?\\
+Using Green’s theorem we can construct an *integral equation* which combines the effect of sources,
+propagation, boundary conditions and initial conditions in a simple formula.
+
+The Green’s function G(x, t| *y*, \tau ) is the pulse response of the wave equation.\\
+The pulse \delta (*x* − *y* ) \delta (t-\tau ) is released at the *source point* *y* at time \tau and G is measured at the *observation point *x* at time t.\\
+*** acoustic impedance
+
+
+* basics of aeroacoustcs-Delfs
+ download address [[http://www.dlr.de/as/Portaldata/5/Resources/dokumente/abteilungen/abt_ta/Notes_Basics_of_Aeroacoustics_Delfs.pdf][lecture notes-Basics of aeroacoustics]], Technische Universit at Braunschweig
+** list of Symbols
+| f                 | scalar function                                            |
+| *f*               | vector function(bold face)                                 |
+| *x*               | spatial co-ordinates (usually position vector of observer) |
+| \xi                 | spatial co-ordinates (usually position vector of /source/  |
+| t                 | time (usually observer time)                               |
+| \tau                 | time (usually source time or retarded time                 |
+| \nabla \cdot               | divergence of                                              |
+| \nabla                 | gradient of                                                |
+| \nabla\times                | curl of                                                    |
+| \cdot                 | simple contraction                                         |
+| :                 | double contraction                                         |
+| \Delta                 | Laplace operator \Delta=\nabla^2=\nabla \cdot \nabla                                |
+| \[ \frac{D}{Dt}\] | total/material derivative (following a fluid particle)     |
+| \delta                 | total variation of a thermodynamic variable                |
+
+** aeroacoustic phenomena
+Sound produced by or in the presence of a fluid flow
+- sound generated aerodynamically :: the noise generated in the /unsteadily moving fluid itself/,
+ and the influence of (non-vibrating, stiff) bodies on this process
+#+STARTUP: latexpreview
+** Basic concepts of acoustics
+- aeroacoustics  :: flow induced noise
+*** acoustic quantities
+unsteady sound pressure,
+\begin{equation}
+ p'(t)=p(t)-P_0
+\end{equation}
+- p' :: pressure disturbance; fluctuating sound pressure
+- p :: unsteady pressure
+- p_o :: *temporal average* of unsteady pressure
+- \[ \tilde{p} \] ::  root mean square of p'
+
+\[ 
+P_0 = \overline{p} = \lim_{T \to \infty} \frac{1}{T}  \int_{-T/2}^{T/2}  p(t+t') dt' 
+\]
+
+* Slides
+Advances in Aeroacoustics, Sheryl Grace, Boston University, download from [[http://www.bu.edu/ufmal/files/2011/08/present.pdf][here]]
+
+* FW-H model
+** TODO what problem does FWH model solve?
+The Ffowcs-Williams and Hawkings (FW-H) equation 
+is essentially an *inhomogeneous* wave equation.\\
+
+*Derivation*:
+FWH equation is derived from *the continuity equation* and *the Navier-Stokes equations*\\
+
+- Ffowcs Williams-Hawkings derived a *generalized Lighthill equation* valid for *moving surfaces*\\
+** FW-H Source Calculation
+1. The *spatial* and *temporal* resolution of source data directly determines
+the fidelity of FW-H predictions
+  -  Do we need compressible flow simulations?
+  - Can we get away with incompressible source data?
+
+2. *Unsteady RANS* or LES/DES calculation should be used
+  - Unsteady RANS usually underpredicts the SPL and filters the high frequencies
+  - DES can be used for *detached flows*
+  - LES is used in all other cases
+** FW-H Model in Fluent
+
+refer to Chapter 15: Aerodynamically Generated Noise, theory guide, fluent.
+*** The procedure for computing sound
+1. time accurate flow solution for time histories of relevant variables ( \rho, v, p) on selected source surfaces
+2. sound pressure signals at the user-specified receiver locations
+*** application
+1. *Targeted applications*
+- External aerodynamic noise
+- Airframe noise, landing gear, high-lift devices
+- Cavity noise, sideview mirrors, wipers, antennas
+- Jet noise
+- Blade noise, fan noise
+2. *Available for*
+- 3D and 2D planar
+- FW-H model not available for *axisymmetric solver*
+- Rotationally periodic boundaries allowed
+- Segregated and coupled implicit solvers
+- FW-H model *not* available for *coupled explicit solver*
+
+
+The most general Acoustic Analogy-based integral formulation today is the Ffowcs-Williams Hawking鈥檚(FW-H) method[
+
+FW-H model allows *Moving and Permeable surfaces*
+- essentially an integral method
+    + Store time-varying pressure at all points on the identified source surfaces during a transient CFD simulation
+    + After transient CFD simulation is completed, an automatic 鈥渙ne-click鈥� routine provides sound pressure signal at predefined receiver locationsSSPM
+*** Advantages
+- Less computation expense
+- Small CFD Domain
+    + only covering source area
+- Ideal for far-field applications
+*** Disadvantages
+- no account for backward effect of sound on flow
+- no account for reflections
+- Needs straight line of sight from source to receiver
+*** simulation guide
+**** mesh
+? mesh requirement
+- required only in source region
+- needs to be carefully prepared
+- mesh edge length= (length scale of turbulent eddies whose timescale is 1/(max frequency))/5
+- wall source surfaces
+   + include all walls that will experience transient pressure fluctuation
+- interior source sourfaces
+    + need to enclose dominant sources and important scattering sourfaces
+    + quadrupole sources inside permeable source surfaces are accounted for
+    + acoustic pressure field need to be resolved accurately within the region enclosed by interior source surfaces
+
+*** tutorial
+Chapter 23: Predicting Aerodynamically Generated Noise,fluent user guide
+tutorial 2-FWH, [[C:\Users\exw692\OneDrive\academic\Projects\A7_acoustics\fluent_lecture_tutorials_Acoustics\Fluent_Aeroacoustics_advanced_training_v14.5\acoustics_tutorials_advanced_training.pdf][2D turbulent flow across a circular cylinder using LES]]
+
+*** Calculatoin procedure
+1.  Calculate a converged flow solution. For a transient case, run the transient solution until you obtain a statistically steady-state solution as described below.
+2.  Enable the FW-H acoustics model and set the associated model parameters.
+3.  Specify *the source surface(s)* and choose the options associated with acquisition and saving of the source
+data. For a steady-state case, specify the rotating surface zone(s) as the source surface(s).
+4.  Specify the *receiver location(s)*.
+5.  Continue the transient solution for a sufficiently long period of time and save the source data (transient
+cases only).
+6. Compute and save the sound pressure signals.
+7. Postprocess the *sound pressure signals*. 
+
+* aero-acoutics vs mechanical acoustics
+Fluent acoustics is for aero-acoustics, and is different from mechanical acoustics
+
+* sound propagation
+- Sound waves propagate through *compressible media* such as air or water.\\
+- Sound can propagate through *solids* as well,but there are additional modes of propagation\\
+** *properties* affect the sound propagation
+
+- *State equation* determines the *speed of sound*
+  state equation:relationship between density and pressure and temperature
+- The *viscosity* of the medium determines the *attenuation*. For many media,
+such as air or water, attenuation due to viscosity is negligible at the
+frequencies of interest.
+
+** wave equation
+- Wave equation is derived from continuity and Navier-Stokes equation
+- Acoustics deals with *perturbations* traveling at the speed of sound
+** acoustics classification
+- *aeoracoustics*: sound generated /aerodynamically/
+  + *Free-space* problem, no solid surfaces: Sound generated from turbulence,jet noise
+  + *Free-space* problem, with solid surfaces: airframe noise, fan/rotor noise, boundary layer noise, cavity noise
+  + *Interior* problem: Duct noise, mufflers, ducted fan noise
+
+- *vibroacoustics*: sound generated /structurally/
+  + Difficult when fluid and structure are *closely coupled*
+  + Doable in simple *uncoupled* cases[fn:acoustics_fluent]
+[fn:acoustics_fluent]fluent_acoustics_advanced_training_v6.2.pdf
+
+** what to expect from CFD?
+*** Receiver
+- Receiver signal (acoustic pressure), directivity
+- Spectra (broadband, tones)
+- Overall Sound Pressure Level (OASP)
+*** Propagation
+- Accurate tracking of acoustic waves
+*** Source Information
+- Strength
+- Contribution from different sources
+- Source classification
+** aeroacoustic source classification
+- monopole
+- Diplole
+- Quadrupole
+1. Scaling valid for acoustically compact sources, l >> L
+2. Monopole and dipole sources dominant at low Mach numbers
+* CFD Approaches to Aeroacoustics
+the following methods are available and required computational resources is decreasing in order.
+1. *Direct calculation-Computational Aeroacoustics (CAA)*
+  - Resolve the acoustic pressure fluctuations as part of the CFD
+solution
+2. *Couple CFD with specialized acoustics codes, Boundary Element Methods (BEM), Hybrid zonal methods*
+  - Acoustic waves are not tracked with CFD solution
+  - Use special acoustics codes to calculate the wave propagation
+3. *Acoustic Analogy modeling*
+  - Use CFD to calculate source field
+  - Use analytical solution to propagate sound from source to receiver location
+4. *Steady RANS based noise source modeling*
+  - Use empirical correlations to estimate acoustic radiation based on mean flow solutions
+** CAA
+** Couple CFD with specialized acoustics codes, Boundary Element Methods (BEM), Hybrid zonal methods
+** Acoustic Analogy Modeling
+- Magnitude of *acoustic* pressure fluctuations are very small compared to
+*hydrodynamic* pressure fluctuations
+- Acoustic radiation contains only tiny fraction of energy of the primary flow
+- The classical CFD methods are not suited to cope well with the needed level of accuracy
+*** Advantages of the Analogy Approach
+1. Small acoustic fluctuations are separated from large hydrodynamic fluctuations
+2. Separate length scales at low Mach numbers not an issue any more
+  - Turbulence can possibly be calculated with even incompressible NS equations
+  - Wave equation deals with long pressure waves analytically
+3.  The farfield (receiver) is considered only while solving the wave equation
+  - No dispersion and dissipation losses during transmission
+  - Computational domain doesn鈥檛 have to include receiver
+  - CFD solution only necessary in source region, allowing more accurate and less expensive simulations
+  - Can focus CFD resources in source region
+  - Less sensitive to BCs, NRBCs not absolutely needed
+*** Limitations of acoustic analogy methods
+- ignore Reflection and scattering by external (outside source region) solid surfaces 
+- ignore Inhomogeneities in acoustic medium 
+- Doesn鈥檛 account for _effects of sound_ on flow
+- No acoustic coupling inside flow, e.g. no vortex shedding triggered by acoustics
+- Doesn鈥檛 account for effect of flow on propagating sound
+
+** Steady RANS based noise source modeling
+
+* Aeroacoustics Modeling
+note is from  [fn:Aeroacoustics],
+file is located: [[C:\Users\exw692\OneDrive\academic\Projects\A7_acoustics\fluent_lecture_tutorials_Acoustics\lectures\acoustics-fluent-simulation.pdf][acoustics fluent simulation]]
+** simulation aspects
+aeroacoustics simulation involves sound source and propagation
+- sound source
+   + provides sound characteristics and rankings
+- sound propagation
+    + propagation of sound from the source to the receiver
+    + requires input of source characteristics
+    + provides sound spectrum, receiver and directivity
+ 
+** objectives/outputs
+- source strengths
+    + source ranking
+Frequency spectrum
+    + directivity
+
+** Simulation Methods
+
+*** Computational Aeroacoustics (CAA)
+*** Segregated Source-Propagation Methods (SSPM)
+Sound *generation* and *propagation* are *independent* phenomena in most cases\\
+Sound generation and propagation happen at *vastly different scales*\\
+Flow pressure ~ 1 kPa; Acoustics pressure ~ 1 mPa
+Turbulence length scales ~ 1渭m; Acoustic wavelengths ~1m
+Turbulence time scales ~ 1 渭s; Acoustic timescales ~ 1ms
+**** Decoposition
+- *Acoustic field* governs *sound propagation*, *Wave equation*
+- *Flow field* governs sound *generation*, *Navier-Stokes equations*
+
+**** Advantages
+- Reduced computational effort
+- Expanded applicability to a wide variety of problems
+**** Derivation of the Wave Equation
+linearized continuity equation ( for fluctuation)
+\[
+\frac{\partial \rho'}{\partial t} + \rho\frac{\partial u_i '}{\partial x_i}=0
+\]
+- linearized momentum equation (no convection, body forces, viscous stresses)
+\[
+\rho_0 \frac{\partial u_i '}{\partial t} + \frac{\partial p '}{\partial x_i}=0
+\]
+
+- eleminate \rho_0 u_i ' , then 
+\[
+ \frac{\partial \rho '}{\partial t^2} + \frac{\partial^2 p '}{\partial x_i^2}=0
+\]
+- use isentropic relation for speed of sound
+\[ p'=c^2 \rho' \]      \[ c^2 =(\frac{\partial p}{\partial \rho})_s
+\]
+- *wave equation*
+\[
+\frac{\partial^2 p'}{\partial t^2} -c^2 \frac{\partial^2 p'}{\partial x_i^2} =0
+\]
+
+**** Variational Methods (Finite Element Method)
+ACTRAN-LA is a third party Lighthill equation solver code developed by Free Field Technologies\\
+    Fluent has an interface to export Lighthill tensor and other variables to ACTRAN\\
+
+**** Boundary Element Methods
+- SYSNOISE is a third party BEM code developed by LMS International
+- Fluent has an interface to export surface pressure fluctuation to SYSNOISE
+    - Being a Boundary Element code SYSNOISE needs only the pressure fluctuation on the boundaries
+**** Integral Methods
+- FLUENT has an inbuilt sound propagation module based on the Ffowcs-Williams and Hawkings(FWH) Method
+- Part of the standard FLUENT package, no add-on components required
+*** Stochastic Noise Generation and Radiation (SNGR)
+** Summary
+** Bibliography
+** Simulation Guide
+
+
+
+
+
+* Footnotes
+
+[fn:Aeroacoustics] Aeroacoustics Modeling, Sandeep Sovani, Ph.D. Senior Consulting Engineer Fluent Inc., Ann Arbor, MI\\
+
+[fn:pierce] A.D. Pierce. Acoustics: an Introduction to its Physical Principles and Applications. McGraw-Hill Book Company,
+Inc., New York, 1981. Also available from the Acoustical Society of America
+
+[fn:lloyd2011modelling] Lloyd, Thomas P., Stephen R. Turnock, and Victor F. Humphrey. "Modelling techniques for underwater noise generated by tidal turbines in shallow waters." Proc. 30th OMAE (2011).
+
+[fn:acoustics_Rienstra] Rienstra, Sjoerd W., and Avraham Hirschberg. "An introduction to acoustics." Eindhoven University of Technology 18 (2017)
+
+[fn:tonal_noise] http://www.industrialnoisecontrol.com/inc-library/noise-control-faqs
+
+[fn:kac1956pm] Kac, Mark. "PM Morse and H. Feshbach, Methods of theoretical physics." Bulletin of the American Mathematical Society 62.1 (1956): 52-54.
+
+[fn:lloyd2013large] Lloyd, Thomas P. Large eddy simulations of inflow turbulence noise: application to tidal turbines. Diss. University of Southampton, 2013.
+
+[fn:shen2017experimental] Shen, Xiang. Experimental and Numerical Study of Surface Curvature Effects on the Performance of the Aerofoils Used in Small Wind Turbines. Diss. Queen Mary University of London, 2017.
+
+[fn:gutin1948sound] Gutin, L. "On the sound field of a rotating propeller." (1948).
+
+[fn:lighthill1952sound] Lighthill, Michael J. "On sound generated aerodynamically. I. General theory." Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences. Vol. 211. No. 1107. The Royal Society, 1952.
+
+[fn:lighthill1954sound] Lighthill, M.J., 1954, February. On sound generated aerodynamically. II. Turbulence as a source of sound. In Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences (Vol. 222, No. 1148, pp. 1-32). The Royal Society.
+
+[fn:curle1955influence] Curle, N. "The influence of solid boundaries upon aerodynamic sound." Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences. Vol. 231. No. 1187. The Royal Society, 1955.
+
+[fn:powell1960aerodynamic] Powell, Alan. "Aerodynamic noise and the plane boundary." The Journal of the Acoustical Society of America 32.8 (1960): 982-990.
+
+[fn:williams1970aerodynamic] Williams, JE Ffowcs, and L. H. Hall. "Aerodynamic sound generation by turbulent flow in the vicinity of a scattering half plane." Journal of Fluid Mechanics 40.4 (1970): 657-670.
+
+[fn:richard] Richards, S., Harland, E. and Jones, S. (2007), Underwater noise study supporting scottish executive strategic environmental assessment for marine renewables. Tech. Rep. 06/02215/2, QinetiQ Ltd.
+
+
+
+[fn:merz2009] Merz, S., Kinns, R. and Kessissoglou, N. (2009), Structural and acoustic responses of a submarine hull due to propeller forces. Journal of Sound and Vibration, 325(1-2):
+
+[fn:juve2009aeroacoustics] Juvé, D. "Aeroacoustics research in Europe: The CEAS-ASC report on 2008 highlights." Journal of Sound and Vibration 328.1 (2009): 213-242.
+
+[fn:CEAS-ASC2013] https://doi.org/10.1016/j.jsv.2014.12.005
+
+[fn:grosveld1985] Grosveld, F.W. (1985), Prediction of broadband noise from horizontal axis wind turbines. Journal of Propulsion and Power, 1(4): pp. 292–299, doi:10.2514/3.22796.
+
+[fn:bensow2010propeller] Bensow, R.E. and Bark, G. (2010), Implicit LES predictions of the cavitating flow on a propeller. Journal of Fluids Engineering, 132(4): pp. 041,302–1 – 041,302–10, doi:10.1115/1.4001342.
+
+[fn:acoustic_source] https://en.wikibooks.org/wiki/Aeroacoustics/Acoustic_Sources#Introduction
+
+[fn:richards2007underwater] Richards, S. D., E. J. Harland, and S. A. S. Jones. "Underwater noise study supporting Scottish Executive Strategic Environmental Assessment for marine renewables." QinetiQ Ltd. Farnborough, Hampshire (2007).
+
+[fn:maka2011] Makarewicz R. Is a wind turbine a point source? J Acoust Soc Am 2011;129(2): 579e81. http://dx.doi.org/10.1121/1.3514426.
+
+[18] Lloyd T, Turnock S, Humphrey V. Modelling techniques for underwater noise generated by tidal turbines in shallow waters. In: Proceedings of the 30th International Conference on Ocean, Offshore and Arctic Engineering.19the24th June, Rotterdam; 2011.
+
+[fn:under-acoustics-concepts] http://resource.npl.co.uk/acoustics/techguides/concepts/siunits.html
+
+[fn:Parvin2005] Parvin S, Workman R, Bourke P, Nedwell J. Assessment of tidal current turbine noise at the Lynmouth site and predicted impact of underwater noise at Strangford Lough. Tech. Rep. Subacoustech Ltd.; 2005
+
+[fn:lloyd2014assessing] Lloyd, Thomas P., Stephen R. Turnock, and Victor F. Humphrey. "Assessing the influence of inflow turbulence on noise and performance of a tidal turbine using large eddy simulations." Renewable Energy 71 (2014): 742-754.
+
+[fn:makarewicz2011wind] Makarewicz, Rufin. "Is a wind turbine a point source?(L)." The Journal of the Acoustical Society of America 129.2 (2011): 579-581.
+
+[fn:swedish2001] Swedish Environmental Protection Agency,Noise from wind turbines,” Report 6241 (2001).
+
+[fn:wang2007experimental] Wang, D., M. Atlar, and R. Sampson. "An experimental investigation on cavitation, noise, and slipstream characteristics of ocean stream turbines." Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy 221.2 (2007): 219-231.
+
+[fn:delfs-notes] http://www.dlr.de/as/Portaldata/5/Resources/dokumente/abteilungen/abt_ta/Notes_Basics_of_Aeroacoustics_Delfs.pdf
+
+
+* Reference
+[[https://www.researchgate.net/post/Which_will_be_the_best_source_to_study_on_Aeroacoustics_and_Computational_Simulation_of_Aeroacoustics][aeroacoustics, researchgate]]
+  [[https://www.win.tue.nl/~sjoerdr/papers/boek.pdf][An Introduction to Acoustics]]
+Computational Aeroacoustics A Wave Number Approach Christopher K. W. Tam, June 2014
+The Bakerian Lecture, 1961. Sound Generated Aerodynamically

@@ -1,0 +1,6 @@
+* Ref
+Elementary differential equations with boundary value problems
+[[http://ramanujan.math.trinity.edu/wtrench/texts/TRENCH_DE_STUDENT_MANUAL.PDF][download link]]
+
+
+

@@ -1,0 +1,25 @@
+- immersed boundary method :: an approach to simulate fluid-structure (fiber) interactions. 
+Treating the coupling of the structure deformations and the fluid flow poses a number of challenging problems for numerical simulations (the elastic boundary changes the flow of the fluid and the fluid moves the elastic boundary simultaneously). In the immersed boundary method, the fluid is represented on an Eulerian coordinate and the structure is represented on a Lagrangian [lə'grændʒiən] coordinate. 
+
+IBM: immersed Boundary Method
+review on IBM[fn:mittal2005immersed]
+application of IBM on tidal turbine >> Xinbai
+
+what is it?
+- the *fluid* is represented on an Eulerian coordinate 
+- the *structure* is represented on a Lagrangian coordinate. 
+
+what is it used for?
+- to simulate fluid structure interaction
+
+who was it proposed?
+Charles, Peskin 1972
+
+* References
+https://en.wikipedia.org/wiki/Immersed_boundary_method
+
+
+
+
+[fn:mittal2005immersed] Mittal, Rajat, and Gianluca Iaccarino. "Immersed boundary methods." Annu. Rev. Fluid Mech. 37 (2005): 239-261.
+

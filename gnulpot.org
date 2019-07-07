@@ -1,0 +1,580 @@
+#+SETUPFILE: theme-bigblow.setup
+
+* Label
+
+** label  position
+** insde the box
+e.g.
+set label 1 'interaural time differences' at -15,0.85 front right
+~at -15, 0.85~  position coordinate, x=-15, y=0.85
+position is specified by either x,y or x,y,z (coordinates), and may be preceded by first, 
+second, graph, screen, or character to select the coordinate system. See [[coordinates]] for details.
+* coordinates
+[[http://gnuplot.sourceforge.net/docs_4.2/node49.html#coordinates][coordinates]] in official web
+Syntax:
+- {<system>} <x>, {<system>} <y> {,{<system>} <z>}
+  + *system* can either be first, second, graph, screen, or character. 
+- first :: places the x, y, or z coordinate in the system defined by the *left and bottom axes*
+e.g. set key at first 2, 5
+- second :: places it in the system defined by the second axes (*top and right*)
+- graph :: specifies the area within the axes 
+   +  0,0 is bottom left and 1,1 is top right (for splot, 0,0,0 is bottom left of plotting area; use negative z to get to the base -- see set ticslevel
+e.g. ~set key at graph .5, .5~   # set the key at the *middle* of the graph
+
+* Symbols
+keywords: enhanced text mode
+
+=~U{0.8-}=           ## \( \overline{U} \)
+
+~U{/Symbol \245}~    #U_\infty
+
+~{/Symbol \245}~  #\infty, infinity
+
+~{/Symbol q}~  #  \theta
+={/Symbol q}_R = 0^{0}= \theta_R=0^\degree
+
+Symbol and alphabet is as follows.
+|ALPHABET| 	SYMBOL| 	ALPHABET| 	SYMBOL| 	alphabet| 	symbol| 	alphabet| 	symbol
+A 	Alpha 	N 	Nu 	a 	alpha 	n 	nu
+B 	Beta 	O 	Omicron 	b 	beta 	o 	omicron
+C 	Chi 	P 	Pi 	c 	chi 	p 	pi
+D 	Delta 	Q 	Theta 	d 	delta 	q 	theta
+E 	Epsilon 	R 	Rho 	e 	epsilon 	r 	rho
+F 	Phi 	S 	Sigma 	f 	phi 	s 	sigma
+G 	Gamma 	T 	Tau 	g 	gamma 	t 	tau
+H 	Eta 	U 	Upsilon 	h 	eta 	u 	upsilon
+I 	iota 	W 	Omega 	i 	iota 	w 	omega
+K 	Kappa 	X 	Xi 	k 	kappa 	x 	xi
+L 	Lambda 	Y 	Psi 	l 	lambda 	y 	psi
+M 	Mu 	Z 	Zeta 	m 	mu 	z 	zeta 
+
+
+
+
+
+
+| ^   | 	a^x 	superscript |                                             |
+| ~_~ | 	a_x                     | 	subscript                           |
+| @   | 	@x or a@^b_c             | 	phantom box (occupies no width)     |
+| &   | 	&{space}               | 	inserts space of specified length   |
+| ~   | 	~a{.8-}                | 	overprints '-' on 'a', raised by .8 |
+|     |                                |                                             |
+http://materials.ucsd.edu/doc/ps_guide.pdf
+
+
+Control Example Result Explanation
+
+
+|@|a@^b_{cd} ab
+cd phantom box (occupies no width)
+& d&{space}b d b inserts space of specilized length
+~ ~a{.8-} ~a overprints '-' on 'a', raised by .8
+times the current fontsize
+{/Times abc} abc print abc in font Times at current size
+{/Times*2 abc} abc print abc in font Times at twice current size
+{/Times:Italic abc} abc print abc in font Times with style italic
+
+*  key - legend position
+** key position
+> set key out horiz center top
+## key outside, horizontal, center ,top
+e.g. file:figures/key_out_horiz_top.png
+
+key out vertical centra right
+> set key right
+> set key outside right bottom vertical Right noreverse enhanced autotitles box linetype -1 linewidth 1.000
+> set title "Key (out vert cent right)"
+http://gnuplot.sourceforge.net/demo_4.4/key.html
+
+set key at graph .7, .9
+top right, 
+** gnuplot legend overlaps graph
+key=legend
+** key
+key=legend
+the ~set key~ command enables a key (or legend) 
+containing a title and a sample (line, point, box) for each
+plot in the graph.
+~set key top left~
+*** syntax
+set key {on|off} {default}
+{{inside | outside} | {lmargin | rmargin | tmargin | bmargin}
+| {at <position>}}
+{left | right | center} {top | bottom | center}
+{vertical | horizontal} {Left | Right}
+{{no}opaque}
+{{no}reverse} {{no}invert}
+{samplen <sample_length>} {spacing <vertical_spacing>}
+{width <width_increment>} {height <height_increment>}
+{{no}autotitle {columnheader}}
+{title "<text>"} {{no}enhanced}
+{font "<face>,<size>"} {textcolor <colorspec>}
+{{no}box {linestyle <style> | linetype <type> | linewidth <width>}}
+{maxcols {<max no. of columns> | auto}}
+{maxrows {<max no. of rows> | auto}}
+* FAQ
+** column data ratio 
+e.g. cl/cd vs aoa
+
+"NACA0018_Re_1M.dat"  using 1:($2/$3)  t "NACA0018" ls 2 with lines
+
+** Zooming in with multiplot
+*** code
+#!/usr/bin/gnuplot
+#
+# Using multiplot to include a zoomed in version into your plot
+#
+# AUTHOR: Hagen Wierstorf
+
+reset
+
+# wxt
+set terminal wxt size 350,262 enhanced font 'Verdana,10' persist
+# png
+#set terminal pngcairo size 350,262 enhanced font 'Verdana,10'
+#set output 'zoom_plot.png'
+
+# color definitions
+set style line 2  lc rgb '#0025ad' lt 1 lw 2
+set style line 3  lc rgb '#0042ad' lt 1 lw 2
+set style line 4  lc rgb '#0060ad' lt 1 lw 2
+set style line 5  lc rgb '#007cad' lt 1 lw 2
+set style line 6  lc rgb '#0099ad' lt 1 lw 2
+set style line 7  lc rgb '#00ada4' lt 1 lw 2
+set style line 8  lc rgb '#00ad88' lt 1 lw 2
+set style line 9  lc rgb '#00ad6b' lt 1 lw 2
+set style line 10 lc rgb '#00ad4e' lt 1 lw 2
+set style line 11 lc rgb '#00ad31' lt 1 lw 2
+set style line 12 lc rgb '#00ad14' lt 1 lw 2
+set style line 13 lc rgb '#09ad00' lt 1 lw 2
+
+unset key
+
+# Axes
+set style line 101 lc rgb '#808080' lt 1
+set border 3 back ls 101
+set tics nomirror out scale 0.75
+# Grid
+set style line 102 lc rgb'#808080' lt 0 lw 1
+set grid back ls 102
+
+set format x '%gÂ°'
+set xlabel 'azimuth angle'
+set ylabel 'time / ms' offset 1,0
+
+set xrange [-90:0]
+set yrange [0:0.9]
+
+set label 1 'interaural time differences' at -15,0.85 front right
+set label 2 'f = 236Hz' at -28,0.45 textcolor ls 2
+set label 3 'f = 1296Hz' at -12,0.05 right textcolor ls 13
+
+set multiplot
+
+# === large plot ===
+# set white rectangle as a place holder for the small plot
+set object 1 rect from -88,0.03 to -49,0.41
+set object 1 rect fc rgb 'white' fillstyle solid 0.0 noborder
+plot for [n=2:13] 'itd.txt' u 1:(column(n)*1000) w lines ls n
+
+# === small plot ===
+do for [n=2:13] { set style line n lw 1 }
+set origin 0.12,0.17
+set size 0.45,0.4
+set xrange [-10:0]
+set yrange [0:0.1]
+unset xlabel
+unset ylabel
+unset label
+unset object 1
+set tics scale 0.5 front
+set xtics 10 offset 0,0.5
+set ytics 0.1 offset 0.5,0
+plot for [n=2:13] 'itd.txt' u 1:(column(n)*1000) w lines ls n 
+
+unset multiplot
+
+* PLotting with error bar
+plot "e387_bem/epp_exp.dat"  t "luznik-exp" with errorbars ,\
+
+ "e387_exp/Cp_no_wave_e387_luznik_95CI.dat" with errorbars notitle,\
+"e387_exp/Cp_no_wave_e387_luznik_95CI.dat" using 1:2 pt 2 t "Exp_95%CI",\
+
+https://stackoverflow.com/questions/10684182/gnuplot-with-errorbars-plotting
+** Data
+syntax:    (x, y, ydelta)
+# TSR cP   eRROR
+4.5  0.38  0.048
+5.0  0.39  0.048
+5.5  0.37  0.046
+6.0  0.33  0.041
+6.5  0.30  0.038
+7.0  0.27  0.031
+7.5  0.23  0.028
+8.0  0.18  0.023
+8.5  0.125 0.018
+
+* [[http://www.gnuplotting.org/plotting-data/][Plotting data]] with points
+data file: plotting_data1.dat
+#+BEGIN_EXAMPLE
+#  X Y
+    1  2
+    2  3
+#+END_EXAMPLE
+
+#+BEGIN_SRC
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+plot 'plotting_data1.dat' with linespoints ls 1
+#+END_SRC
+
+where
+- pt :: point type
+- ps :: point size
+file:figures\alfa_epp_a7.eps
+* References
+https://www.youtube.com/watch?v=h2uiyJO6uHg
+
+http://people.duke.edu/~hpgavin/gnuplot.html
+
+http://www.gnuplot.info/help.html
+
+* Introduction
+command-line graphing
+It was originally created to allow scientists and students to visualize mathematical functions and
+data interactively
+
+Command language is case sensitve,i.e. commands and function names written in lowercase
+are not the same as those written in capitals\\
+commands in a line must be separated by semicolon(;)\\
+Strings can be either single or double quotes\\
+i.e.
+
+/set title "my first plot"; plot 'data'; print "all done!"/
+
+{}  #optional choice\\
+\| #separates mutually exclusive choice\\
+<> #mark replaceable tokens
+* Comments
+#, comment
+Comments are supported as follows: a # may appear in most places in a line and gnuplot will ignore the rest of the line. 
+
+It will not have this effect inside quotes, inside numbers (including complex numbers), inside
+command substitutions, etc. In short, it works anywhere it makes sense to work.
+See also set datafile commentschars (p. 109) for specifying comment characters in data files.
+Note that if a comment line ends in '\' then the subsequent line is also treated as a comment.
+
+* Terminal
+** postscript
+~set terminal postscript eps enhanced color font 'Helvetica,10' size 3in, 3in~
+~set output 'introduction.eps'~
+Besides, the postscript terminal can’t handle all UTF-8 input characters and we have to use the enhanced mode to produce greek letter etc. But in opposite to the before mentioned terminals the enhanced mode will work fully for the postscript terminal.
+
+set xlabel '{/Helvetica-Oblique x}'
+set ylabel '{/Helvetica-Oblique y}'
+set xtics ('-2{/Symbol p}' -2*pi,'-{/Symbol p}' -pi,0, \
+    '{/Symbol p}' pi,'2{/Symbol p}' 2*pi)
+plot f(x) title 'sin({/Helvetica-Oblique x})' with lines linestyle 1, \
+*** syntax
+set terminal postscript {default}
+set terminal postscript {landscape | portrait | eps}
+{enhanced | noenhanced}
+{defaultplex | simplex | duplex}
+{fontfile [add | delete] "<filename>"| nofontfiles} {{no}adobeglyphnames}
+{level1 | leveldefault | level3}
+{color | colour | monochrome}
+{background <rgbcolor> | nobackground}
+{dashlength | dl <DL>}
+{linewidth | lw <LW>}
+{rounded | butt}
+{clip | noclip}
+{palfuncparam <samples>{,<maxdeviation>}}
+{size <XX>{unit},<YY>{unit}}
+{blacktext | colortext | colourtext}
+{{font} "fontname{,fontsize}" {<fontsize>}}
+{fontscale <scale>}
+
+
+
+** pdf
+*** test 
+#+BEGIN_SRC
+gnuplot> set terminal pdf monochrome
+gnuplot> set output "graph.pdf"
+gnuplot> test
+gnuplot> unset output
+#+END_SRC
+- not recommended
+set terminal pdf {monochrome|color|colour}
+                 {{no}enhanced}
+                 {fname "<font>"} {fsize <fontsize>}
+                 {font "<fontname>{,<fontsize>}"} {fontscale <scale>}
+                 {linewidth <lw>} {rounded|butt}
+                 {dl <dashlength>}}
+                 {size <XX>{unit},<YY>{unit}}
+The default is to use a different color for each line type. 
+Selecting *monochome* will use black for all linetypes,
+ Even in in mono mode you can still use explicit colors
+ for filled areas or linestyles.
+
+where <font> is the name of the default font to use 
+(default Helvetica) and <fontsize> is the font size 
+(in points, default 12). 
+For help on which fonts are available or how to install new ones,
+ please see the documentation for your local installation of pdflib.
+
+The enhanced option enables enhanced text processing features (subscripts, superscripts and mixed fonts). See enhanced.
+
+The width of all lines in the plot can be increased by the factor <n> specified in linewidth. Similarly dashlength is a multiplier for the default dash spacing.
+
+rounded sets line caps and line joins to be rounded; butt is the default, butt caps and mitered joins.
+
+The default size for PDF output is 5 inches by 3 inches. 
+The size option changes this to whatever the user requests. 
+By default the X and Y sizes are taken to be in inches,
+ but other units are possible (currently only cm).
+
+* Syntax:
+set terminal {<terminal-type> | push | pop}
+show terminal
+	
+If <terminal-type> is omitted, gnuplot will list the available terminal types. <terminal-type> may be abbreviated.
+If both set terminal and set output are used together, it is safest to give set terminal rst, because
+some terminals set a ag which is needed in some operating systems.
+* load scripts in Linux
+script is suffix with ~script.gnu~
+To load a script:
+
+#+BEGIN_SRC
+> load "sample.gnu"
+#+END_SRC
+
+#+BEGIN_SRC
+gnuplot> load uc_x_nor.gnu
+         internal error : STRING operator applied to non-STRING type
+#+END_SRC
+
+* gnuplot on Windows
+** change directory
+~cd 'C:\Users\exw692\Documents\gnuplot'~
+- use single quote for directory
+
+	
+* X11 
+gnuplot provides the x11 terminal type for use with X servers. 
+This terminal type is set automatically at startup if the DISPLAY environment variable is set,
+ if the TERM environment variable is set to xterm, or if the -display command line option is used. 
+Syntax: 
+  set terminal x11 {<n>}                   {title "<string>"}                   {{no}enhanced}                   {font <fontspec>}                   {{no}persist} {{no}raise} {solid|dashed} {{no}ctrlq}                   {close}  set terminal x11 {reset}
+		
+	
+	
+	Autoscaling may be set individually on the x, y or z axis or globally on all axes. The default is to autoscale
+	all axes. If you want to autoscale based on a subset of the plots in the figure, you can mark the other ones
+	with the flag noautoscale. See data file (p. 78).
+	Syntax:
+		set autoscale {<axes>{|min|max|fixmin|fixmax|fix} | fix | keepfix}
+		unset autoscale {<axes>}
+		show autoscale
+	where <axes> is either x, y, z, cb, x2, y2 or xy. A keyword with min or max appended (this cannot
+	be done with xy) tells gnuplot to autoscale just the minimum or maximum of that axis. If no keyword is
+	given, all axes are autoscaled.
+	
+Plotting
+		plot generates 2D plots, splot generates 3D plots (actually 2D projections, of course
+	
+* line types
+the *postscript* terminal shows different dash patterns:
+type the following commands, and you will see the line types in an image named "test"
+
+- linestyle :: *user defined* line style
+- linetype :: system defined
+#+BEGIN_SRC
+set terminal postscript eps color colortext
+set output 'test.eps'
+test
+set output
+ #+END_SRC
+http://gnuplot.sourceforge.net/docs_4.2/node62.html
+** dashed line
+- depends on selectd terminal
+- png don't support dashed lines
+- pngcairo, support dashed lines, but it is disables by default. To enable it, use set termoption dashed, or set terminal pngcairo dashed ....
+- To see the defined linetype, use the test command:
+++++
+set terminal pngcairo dashed
+set output 'test.png'
+test
+set output
+++++
+
+** line with points
+set style line 1  linecolor rgb "red"  linewidth 1.000 lt 1 pointtype 1
+plot  "e387_bem/fort.101"  using 1:2 t "TSR 1" ls 1 with linespoints
+# ls : line style
+
+
+* line style and arrow
+** Syntax:
+set style line <index> default
+set style line <index> {{linetype | lt} <line_type> | <colorspec>}
+{{linecolor | lc} <colorspec>}
+{{linewidth | lw} <line_width>}
+{{pointtype | pt} <point_type>}
+{{pointsize | ps} <point_size>}
+{{pointinterval | pi} <interval>}
+{{dashtype | dt} <dashtype>}
+{palette}
+unset style line
+show style line
+** example
+~set style line 1 lt 1 lc rgb "black" lw 1~
+~lc~ line color
+~lw~ line width
+http://gnuplot.sourceforge.net/demo_5.0/lines_arrows.html
+** pointinterval 
+http://gnuplot.sourceforge.net/demo_5.0/lines_arrows.html
+
+
+
+* Example
+** Eldad Avital
+#set terminal jpeg
+#set output 'airfoil_e387_blunt_sharp.pdf'
+set terminal postscript eps enhanced color font 20 size 3in, 3in
+set out 'airfoil_e387_blunt_sharp.eps'
+#set terminal X11
+set autoscale
+unset log
+unset label
+unset pm3d
+set key at graph .8, .9
+set key spacing 1.2
+set xtic auto
+set ytic auto
+set xlabel  "x/R"
+set xrange [*:1] 
+# r0 initial pulse
+set yrange [*:*] 
+set ylabel "y/c
+set style line 1 lt 1 lc rgb "black" lw 1
+# lt : line type
+# lc : line color
+set style line 2 lt 2 lc rgb "red" lw 4
+# define a set of line
+set style line 3 lt 3 lc rgb "purple" lw 3
+set style line 4 lt 4 lc rgb "blue" lw 3
+set style line 5 lt 5 lc rgb "black" lw 2
+set style line 6 lt 6 lc rgb "brown" lw 3
+plot "2d_e287_sharp.txt"  using 1:2 t "E387 sharp" ls 1 with lines,\
+"2d_e387_blunt_coor.txt"  using 1:2 t "E387 blunt" ls 2 with lines
+** Join data points with non-continuous lines
+http://www.gnuplotting.org/tag/linespoints/
+** case 2
+
+# png
+set terminal pngcairo size 350,262.5 enhanced font 'Verdana,10'
+set output 'terminal_png.png'
+
+# Line styles
+set border linewidth 1.5
+set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2  # blue
+set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 2  # red
+# Legend
+set key at 6.1,1.3
+# Axes label 
+set xlabel 'x'
+set ylabel 'y'
+
+
+# Axis ranges
+set xrange[-2*pi:2*pi]
+set yrange[-1.5:1.5]
+# Axis labels
+set xtics ("-2Ï€" -2*pi, "-Ï€" -pi, 0, "Ï€" pi, "2Ï€" 2*pi)
+set ytics 1
+set tics scale 0.75
+# Functions to plot
+a = 0.9
+f(x) = a * sin(x)
+g(x) = a * cos(x)
+# Plot
+plot f(x) title 'sin(x)' with lines ls 1, \
+     g(x) notitle with lines ls 2
+
+
+* Output
+By default, screens are displayed to the standard output. The set output command redirects the display
+to the specified file or device.
+
+Syntax:
+set output {"<filename>"}
+show output
+The filename must be enclosed in quotes, e.g. 
+	
+set output 'model.jpeg'
+
+Plotting Functions
+Basic Plotting[fn:1]
+[fn:1] https://www.cs.hmc.edu/~vrable/gnuplot/using-gnuplot.html
+	
+In gnuplot, exponentiation uses **, not ^.
+	
+From 
+	
+* sine wave
+[[http://psy.swansea.ac.uk/staff/carter/gnuplot/gnuplot_sine.htm][sin wave plotting]]
+*Radians* is used for trigonometric functions
+_xlabel_:label for X axis
+For the Greek symbols the terminal's "enhanced" option must be used. This is done in the set terminal command.
+*xtic*: /marker/ on the x-axis
+The /xzeroaxis/ command draws a horizontal line along the zero value on the Y axis (parallel to the X axis).
+Example
+~# Clear any previous plots.
+clear
+
+# Reset all plotting variables to their default values.
+reset
+
+# We don't need a key (or legend) for this simple graph.
+set key off
+
+# Set the title for the graph.
+set title "Sine against Phase"
+
+# We want the graph to cover a full sine wave.
+set xrange [0:6.28]
+
+# Set the label for the X axis.
+set xlabel "Phase (radians)"
+
+# Set the tick-marks for the X-axis. Use the Postscript
+# symbol for Pi.
+set xtics ("0" 0,"0.5{/Symbol p}" pi/2, "{/Symbol p}" pi, \
+	"1.5{/Symbol p}" 1.5*pi, "2{/Symbol p}" 2*pi)
+
+# Draw a horizontal centreline.
+set xzeroaxis
+
+# Pure sine wave amplitude ranges from +1 to -1.
+set yrange [-1:1]
+
+# No tick-marks are needed for the Y-axis .
+unset ytics
+
+# The wxt terminal is the default, but we need to turn on
+# the enhanced feature in order to get the Greek symbols.
+set terminal wxt enhanced
+
+# Plot the curve.
+plot sin(x)~
+* Abbreviation
+lt  #line type
+lc  #line color
+lw # line width
+* tutorials
+http://people.duke.edu/~hpgavin/gnuplot.html
+http://gnuplot.sourceforge.net/demo/
+* log
+line type and point type not compatiable
+Warning:
+ No pointtype specifier allowed, here

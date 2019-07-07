@@ -1,0 +1,40 @@
+* Installation
+
+* Compiling Fortran 95
+https://gcc.gnu.org/wiki/GFortranUsage
+http://www.fortran.gantep.edu.tr/compiling-g95-basic-guide.html
+* advantages
+- Scientifically oriented
+- Better optimized code
+- A lot of existing code
+-Easier to learn
+- More effcient mathematics
+- Easier to use and robust
+- Better diagnostics
+
+
+From <https://www.ibiblio.org/pub/languages/fortran/ch1-2.html> 
+* Reference
+https://personalpages.manchester.ac.uk/staff/david.d.apsley/lectures/fortran/index.htm
+
+http://www.chem.ox.ac.uk/fortran/fortran1.html
+* workshop
+https://www.training.cam.ac.uk/ucs/event/2418458
+https://www.nag.co.uk/content/fortran-modernization-workshop
+
+** Topics covered
+
+    Software engineering for computational science;
+    Modern Fortran standards and how to write optimized and efficient Fortran;
+    NetCDF and HDF5 scientific file formats for data sharing in Fortran;
+    GNU Automake to automate the build process;
+    pFUnit unit testing framework for testing Fortran codes;
+    Doxygen for Fortran code documentation;
+    Git version control for collaborative code development;
+    In-situ visualisation using PLplot in Fortran;
+    IEEE Floating Point Exception Handling
+    Software verification and portability using the NAG Fortran Compiler
+    Fortran interoperability with C, Python and R;
+    Introduction to parallelism for Fortran;
+    Fortran code verification using the CamFort tool.
+    Introduction to the NAG Fortran library
