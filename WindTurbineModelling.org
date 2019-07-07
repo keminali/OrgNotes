@@ -1,0 +1,27 @@
+* Extract local angle of attack on wind turbine blades
+keywords: local AOA, wind turbine
+
+1. The inverse BEM method [13, 14], which uses the pre-determined local forces to calculate
+the local induction.
+2. Using CFD data to obtain the ~annular average~ of the axial velocity (and thereby the
+induction a) at a given radial position in the rotor plane [15, 16, 17].
+3. Using CFD data to obtain the the axial velocity at a given radial position in the rotor plane
+at the location of the blade (aB). This method is similar to method (2.).
+4. Determination of AOA by comparison of high-pressure-side CP distributions of a 3D case
+with a 2D case with a known AOA .
+Methods (1.) and (4.) require sectional force coefficients and pressure distributions, respectively,
+making them suitable with experimental data where sectional force coefficients and pressure
+distributions are often the only data available. On the other hand, methods (2.) and (3.)
+require detailed  flow field information upstream and downstream of the rotor, making them
+more suitable where full rotor CFD data is available. [fn:Guntur2014]
+
+[fn:Guntur2014] 2014 S Guntur, N N Sorensen An evaluation of several methods of determining the local angle of attack on wind turbine blades
+
+** References
+2018 Eva Jost Angle of Attack (AoA), turbine,  Extracting the angle of attack on rotor blades from CFD simulations
+
+2017 Jost, Eva, et al. "Extracting the angle of attack on rotor blades from CFD simulations." Wind Energy (2017).
+
+2018 Rahimi, Hamid, et al. "Evaluation of different methods for determining the angle of attack on wind turbine blades with CFD results under axial inflow conditions." Renewable Energy 125 (2018): 866-876.
+
+

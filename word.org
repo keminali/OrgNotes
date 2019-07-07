@@ -1,0 +1,5 @@
+* resize picture in MS  Word
+https://superuser.com/questions/158626/automatically-resize-picture-image-in-word
+1. insert all images
+2. right click the first image and set the size and position
+3. selet other images and press "F4" or " C+y"

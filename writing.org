@@ -1,0 +1,1167 @@
+* TOC
+
+* Tense 
+|literature (introduction section)| present and past
+|methods | past
+|others |on going
+|background | present perfect
+|aims | past
+|method| past
+|findings| past 
+|Recommendation| present
+
+
+*** Citation and Tense
+*pattern 1*
+
+*past* - researcher activity as agent
+
+e.g. Huang (2007) investigated the causes of 
+airport delays. 
+The causes of airport delays
+were investigated by Huang (2007)
+
+*Pattern 2*
+
+Present perfect -- researcher activity not as agent
+
+e.g. The causes of airport delays have been widely 
+investigated (Hyon, 2004;huang, 2007; Marinez et al., 2010)
+
+There have been several investigations into the causes
+of airport delays (hyon 2004; huang, 2007; Martinez et al. 2010)
+
+Several reserchers have studied the causes of airport delays [fn:Johnacademic] 
+
+[fn:Johnacademic] Academic Writing for Graduate Students, 3rd Edition: Essential Skills and Tasks
+
+case 1
+
+*present*
+- Many experimental studies of THJI *have* been conducted.
+
+*past*
+Boretti et al. [18,29] *developed* a hydrogen assisted jet ignition system and
+ *investigated* its benefits on both single and multi cylinder engines. 
+They *determined* that the system *produces* a much faster combustion and 
+*could achieve* larger brake effi- ciency in comparison with a standard spark plug. 
+
+Biswas et al. [6,30] *carried* out a series of experiments in a constant volume chamber 
+to understand the mechanisms of the hot jet igni- tion. 
+They *identified* two ignition mechanisms, i.e. jet ignition and flame ignition. 
+They also investigated the ignition of H2/ air by multiple turbulent hot jets 
+considering different spark location in the pre-chamber. 
+They *found* that the spark loca- tion has a strong effect on the ignition pattern by using mul- tiple jets. Wu[fn:wang]
+
+
+case 2
+
+For decelerating jets, understanding of the entrainment process *is* even less complete, 
+partially because experimental studies oftransient jets are far fewer. 
+Nevertheless, a fewexperiments ofsingle- phase transient jets *have* shown that 
+during the deceleration phase, entrainment *can* be increased by a factor of two or more compared to quasi-steady jets.
+6, 7 One notable decelerating-jet experiment is the gravity-driven water jet studied by Johari and Paduano.6 They observed a significant increase in entrainment during deceleration, and they proposed that decreasing axial jet-flow provides less jet-fluid for the growth of large structures, so that ambient-fluid entrainment must increase to compensate. Breidenthal8 proposed a similar but converse mechanism for accelerating jets, where entrainment decreases to compensate for increasing velocity and vorticity from the jet source. Indeed, later experiments showed that accelerating jets display less entrainment than steady jets.9, 10 Recently, Breidenthal11 extended this argument to all canonical laboratory flows (except for Rayleigh-Taylor flows), in which acceleration decreases entrainment rates by narrowing engulfment tongues that survive in the flow. The relevant implication here is the converse statement: Deceleration generally causes an increase in entrainment.
+
+Phys. Fluids 24, 045106 (2012); https://doi.org/10.1063/1.3702901 Submitted:
+
+[fn:wang] Wang N , Liu J , Chang W L , et al. A numerical study of the combustion and jet characteristics of a hydrogen fueled turbulent hot-jet ignition (THJI) chamber[J]. International Journal of Hydrogen Energy, 2018.
+
+*** Tense use in the results section
+- *Present/Past tense* to *detail* the obtained results
+
+e.g. Overall, more than 70% of the insects collected *were* non-phytophagous
+
+- *Present tense* to refer to figures, tables and graphs
+https://services.unimelb.edu.au/__data/assets/pdf_file/0009/471294/Using_tenses_in_scientific_writing_Update_051112.pdf
+
+|locating diagrams|present tense(active or passive)|Figures 1 illustrates the variations of the temperature over time|
+
+
+file:figures/tense_in_results.pdf
+
+*** Tense use in the conclusions and summary
+past and present
+
+A combination of tenses to highlight past research
+and future directions
+
+In the final section of your thesis or report you
+summarise the main findings and the major implications
+of the study, point out any limitations, and offer
+suggestions for future research.
+
+ To do these things you may use a combination of tenses. Example:
+
+/Although the study *found* evidence of village and irrigation within the study area, from the data collected it
+was not possible to determine if the effects of agriculture upstream cause (or caused) higher levels of
+total nitrogen downstream. Further studies are therefore necessary to determine the effects of
+agriculture on the health of Stringybark Creek./
+
+Further Resources
+Swales, J. M. & Feak, C. B. (2004). Academic Writing for
+Graduate Students. (2nd ed.). Ann Arbor: University of
+Michigan Press. (Pages 254-256).
+ 
+ 
+
+*** References
+Swales, J. M. & Feak, C. B. (2004). Academic Writing for
+Graduate Students. (2nd ed.). Ann Arbor: University of
+Michigan Press. (Pages 254-256).
+
+http://cc.oulu.fi/~smac/TRW/tense_conclusions.htm
+http://cc.oulu.fi/~smac/TRW/tense_results.htm
+* Comparison
+
+
+* Notes
+
+
+天然，天生 
+- etc. :: used after a list to show that there are other things 
+that you could have mentioned (the abbreviation for 'et cetera'): Remember to take some paper, a pen, etc
+
+- decrease >> drop plummet, shrink, plunge, slump
+
+
+** categories
+in situations which are diffcult for physical model tests, such as turbines operating in array, large
+size turbine models, scale effects on results of laboratory models. The categories of numerical
+models include the Blade Element Momentum (BEM) method, inviscid flow model, and viscous
+flow model. These numerical models are presented in detail in the following sections.
+
+
+** Comparing
+
+** such as, for example, i.e.
+1)such as。常列举同类人或事物中的几个例子。
+其典型的表示式为a plural + such as + single instance( s) of the group to which the plural refers。
+正确使用的是: The Arts Faculty deals only with humanities subjects such as history and literature. 
+混淆使用的是: The Science Faculty deals only with the measurable such as physics and seismology.
+论文中常出现such as与and so on或etc. 连用, 这是不正确的。
+① 如 It is noted that the features such as clean cut ratio denoted by Rc , die roll height denoted by Hdr and die roll width denoted by Wdr , and so on (有的出现etc.) 
+, are better than the ones with the other models.
+应为 It is noted that the features, such as clean cut ratio denoted by Rc , die roll height denoted by Hdr and die roll width denoted by Wdr , are better than the ones with the other models. 
+当使用such as时,读者已理解后面接着的会是一些不完整的列举,因此不需加上and so on或 etc. 等。
+② 因为such as是对前面的复数名词部分起列举作用,若全部列举出,要改用namely,意思为“即”。文章中出现的He knows four languages, such as Chinese, English, Japanese and German,应将such as改成namely(或i. e. )及后面加逗号, 即He knows four languages, namely, Chinese, English, Japanese and German. 
+③ 用such as来形容复数名词( the plural)可以放在such与as中间,一般插在被列举事物与前面的名词之间。
+ 
+2)       for example。用来举例说明,由它引出介绍普遍概念的例子,使用范围要比such as自由。可以出现在句首、句末或有时可作为独立语,插在句中,不影响句子其他部分的语法关系。
+例如, Cryptography operations, for example, decryption or signing, in a given period only involve the corresponding temporary secret key without further access to the helper. 
+同样for example ( e. g. )表示泛泛地举几个例子,并没有囊括所有的实例,其中就已经包含“等等”,如果再加etc. 或and so on,就画蛇添足了。
+如论文中出现的这句话是不当的:Writing instructors focus on a number of complex skills that require extensive practice (e. g. , organization, clear expression, logical thinking, etc. 正确的为e. g. , organization, clear expression, and logical thinking.
+ 
+3) e. g.。是拉丁文exempli gratia的缩写,意思是“举个例子,比如”,等同于“for example”,目的是用例子来说明前面的观点,用法与for example相同。
+ 
+4) i.e. 
+源于拉丁语,是id est的简略形式。其意思就是“那就是说,换句话说”,等同于“that is, in other words”和“namely”,目的是用来进一步解释前面所说的观点。
+正确的用法是Use a comma to enclose ( i. e. , both before and after) the year in a month day year sequence. 而文章中出现的这句The evaluation noted that the employee had frequently exhibited irresponsible behavior ( i. e. , coming to work late, failing to complete projects) ,应该用“e. g. ”而不是用“i. e. ”,因为插入句是对“irresponsible behavior”的列举补充。
+ 
+5) etc.。是et cetera的缩写,意思是“等等”,相当于“and so on”。可用来列举事物,若要列举人,则需用et al. 或用and others。
+ 
+6) et al.。是拉丁文简写。其一为et alibi (以及其他地方) ,相当于and elsewhere;其二为et alii (以及其他人) ,相当于and others。
+
+** Conditions of Use
+
+** Historical development
+Prof. Osborne Reynolds performed experiments on flow transition to turbulence  in pipe flows at Manchester in 1883.
+
+ X X theory is proposed by Bob (author) in 2000.
+
+Fig. XX *shows/depicts*...
+
+Somebody performed experiments on ###(topic)  at ##(location) in ## (year).
+
+Like as; enhance, increase; while, whereas;varying, various ; effect, affect; include, consist of; 
+that, which; represents, is; infers, inplies; can, may 
+** Comparative Analysis
+A is lower than B
+
+monotonical 
+https://users.drew.edu/~sjamieso/Comparison.htm
+https://writingcenter.fas.harvard.edu/pages/how-write-comparative-analysis
+
+** Paragraph
+What is a paragraph?
+A paragraph is a group of related sentences about a single topic.
+
+The topic of a
+paragraph is one, and only one, idea.
+
+A paragraph has three main parts.
+1 . *Topic sentence*
+The first sentence in a paragraph is a sentence that names the topic and
+tells what the paragraph will explain about the topic. This sentence is
+called the topic sentence.
+2. *Supporting sentences*
+The middle sentences in a paragraph are called the supporting sentences.
+Supporting sentences give examples or other details about the topic.
+3. *Concluding sentence*
+The last sentence in a paragraph is called the concluding sentence.
+A concluding sentence often repeats the topic sentence in different
+words or summarizes the main points.
+
+Certain verbs MUST have objects. Some of these verbs are buy, give, have,
+like, love, need, own, place, put, spend, and want.
+e.g. They need some money.
+e.g. I don't want it.
+** Capitalization Six Rules:
+ In English, there are many mles for using capital letters. Here are six important ones:
+
+1 The first word in a sentence
+2. The Pronoun I
+e.g. My fridends and I often study together.
+
+3.  Names of people and their titles.
+King Abdullah 
+Presisent Putin
+
+- BUT NOT a title without a name.
+e.g. he's a ~k~ing
+have you met your math ~p~rofessor
+
+- Exception: A title without a name is sometimes capitalized if it refers to a specific person.
+The ~P~resident of the ~U~nited ~S~tates 
+
+
+4. Nationialities, languages, religions and ethnic groups
+Swedish, Jewish, Asian, Hispanic, Muslim
+
+5.Names of school courses with numbers. 
+Psychology 101
+
+Notes: Don't captalize school subjects except names of nationalities, languages,
+religions, and college classes with numbers.
+
+history --- ~Russian history
+math    ---- ~H~istory 101
+physics  --- ~P~hysics 352
+
+6. Specific places you could find on a map
+
+New York City
+Amazon River
+Times Square
+
+
+ 
+2. Grammar and Capitalization
+Subjects, verbs, and objects
+** Sentence Structure
+( I ) simple, (2) compound,
+(3) complex, and (4) compound-complex.
+
+A simple sentence is a sentence that has one subject-verb pair
+They laughed and cried at the same time.
+The following sentence is not a simple sentence because it has two subjectverb
+pairs.
+
+e.g.  My brother lives in New York, and my sister lives in Paris
+** Connecting
+Often you need to connect words or groups of words in a sentence. One way to
+do this is to use a connecting word. Connecting words are called conjunctions.
+There are many conjunctions in English. Two of the most common ones are and
+and or. They have different meanings.
+And joins two or more similar things in positive sentences.
+I like Chinese and Italian food.
+We have class on Mondays, Wednesdays, and Fridays.
+Or connects two or more similar things in negative sentences.
+I don't like warm milk or cold coffee.
+
+Sentence combining is a way to improve your sentence-writing skills. When you
+do a sentence-combining exercise like the Practice you just completed, you
+combine two (or more) short sentences into one longer sentence. All the long
+sentences together make a paragraph.
+** FAQ
+1. What is a paragraph?
+- sentences about a  topic
+2. Can a paragraph discuss more than one topic?
+- no
+3. What are the three parts of a paragraph?
+- topic, supporting, and conclusion sentences
+
+4. Where do you write the title of a paragraph?
+
+5. What is indenting?
+6. What are margins? Grammar and Capitalization
+7. What is a sentence?
+8. What is a subject? 
+Sentence Structure
+13. What is a simple sentence?
+14. What are four simple sentence "formulas"?
+15. What kind of ideas do you connect with and?
+16. When do you use or? (Give two answers.)
+What is a verb?
+9. Do sentences in English aiways ·have a subject? What is the only
+exception to this rule?
+l 0. Do sentences in English always have a verb? Are there any exceptions
+to this rule?
+11. Do sentences in English always have an object?
+12. What are six rules for capitalizing words in English?
+
+Writing process
+1. Prewrite to get ideas and organize them.
+2. Write the first draft.
+3. Edit: Check and revise your work.
+4. Write the final copy.
+
+Reading record, page 34
+** References:
+[1]Hofmann, Angelika H. Scientific writing and communication. Oxford Univ. Press, 2014.
+[2]First Steps in Academic Writing Student Book Level 2
+* Literature review
+** Types
+1. generized
+
+2. detailed
+
+*example of generized*
+#+begin_quote
+surface waves can adversely affect such turbines.
+For the study presented in this paper, we use the unsteady
+BEM approach as it is a rapid numerical solver enabling us
+to examine a wide range of wave variables at a low
+computational cost. 
+It has already been demonstrated that
+such approach can reasonably predict well the turbine's time
+response to free surface waves [4, 5 ,7]. 
+More comprehensive methods of Computational Fluid Dynamics
+(CFD) as LES [8] that can predict the interaction between
+the free surface wave and the turbulent wake [9] will be
+employed in a separate study for conditions of interest
+identified through the current study. A brief summary of our
+unsteady BEM approach is presented next, followed by
+results and analysis.
+#+end_quote
+
+*Examples of detailed literature*
+
+somebody (sb)  conducted XXX experiement/numerical model using xx methods. 
+
+Somebody investigated XX variable. 
+
+Somebody  concluded that XXXX (conclusion)
+#+begin_quote
+Boretti et al. [18,29] *developed* a hydrogen assisted jet ignition system and *investigated* its benefits on both single and multi cylinder engines. They *determined* that the system produces a much faster combustion and *could achieve* larger brake effi- ciency in comparison with a standard spark plug. 
+#+end_quote
+
+
+#+begin_quote
+Lunzik et al. [6] also used towing tank experiments to
+investigate the effect of small amplitude free surface waves
+on a small scale three-blades HAMCT. They concentrated on
+an “intermediate” wave length of about h/=0.34, where h is
+the undisturbed water's depth and  is the wave length. They
+also found a small effect on the time-averaged power
+coefficient Cp of the turbine, but time fluctuations were
+found, matching the passing of the wave's crest and trough
+over the turbine.
+#+end_quote
+** citation
+*In-text citation multiple authors*
+
+| Reference list                               | First in-text citation           | Subsequent citations  |
+| Taylor, B., Kotler, P., & Parker, D. (2018). | (Taylor, Kotler, & Parker, 2018) | (Taylor et al., 2018) |
+  + 
+
+** What is a literature review?
+- Goal:
+The aim of a literature review is to show your reader  that you have read, 
+and have a good grasp of, the main published work concerning a particular topic or question in your field.
+
+your review should not be simply a description of what 
+others have published in the form of a set of summaries, but should take the form of 
+a *critical discussion*, showing insight and an awareness of differing arguments, theories and approaches. 
+
+
+According to Caulley (1992) of La Trobe University, the literature review should:
+- compare  different authors' views on an issue
+- group authors who draw similar conclusions
+- criticise aspects of methodology
+- note areas in which authors are in disagreement
+- highlight exemplary studies
+- highlight gaps in research
+- show how your study relates to previous studies
+- show how your study relates to the literature in general
+- conclude by summarising what the literature says
+
+The purposes of the review are:
+- to define and limit the problem you are working on
+- to place your study in an historical perspective
+- to avoid unnecessary duplication
+- to evaluate promising research methods
+- to relate your findings to previous knowledge and suggest further research
+
+A good literature review, therefore, is critical of what has been written, 
+identifies areas of controversy, raises questions and identifies areas which need further research.
+
+** Establish a  gap
+To find concepts and approaches that are helpful, that you can build on.
+links and differences between your works and others.
+** Guide
+| Questions         |                                  |
+|-------------------+----------------------------------|
+| Topic             | This project will study          |
+| Question/Problem  | To find out...                   |
+| Significance:     | So that more will be known about |
+| Promary resources | The main data will be            |
+| Secondary sources | Additional data comes from***    |
+
+** Roadmap
+- who first laid the basic idea?
+- who did the most important work before?
+- historial line
+
+** Contents:
+- a field of knowledge 
+- key concepts
+
+
+- it’s not rewriting the book or the article. That’s a waste of time and it misses the point.
+
+So what’s the point then?
+Let’s imagine you have a text that you have just read. It’s important to understand first of all what the writer is claiming and arguing.
+ You should be able to explain to someone else in a very short space of time what the text is about.
+ Putting the text away, and then saying/writing a few sentences to summarise and synthesise what you’ve read,
+ as well as translate it into your own words.
+
+ This process of making sense of the text, of interpreting it, is important not only for your immediate understanding, 
+but also for the ways in which you can use this understanding to make your own arguments later.
+
+So the first step in noting is to write the argument and the claim of the paper in no more than three to four sentences. 
+This requires a bit of disciplined thinking. 
+
+But the sentences don’t have to be perfect, they just need to work for you.
+
+And, because the articles you read for your literature review are going to be related to your study in some way, it is also helpful to note how.
+
+*So, some questions to consider are:*
+(1) Is the text located in the same field, or another one? This is important
+ because you may want to argue that part of your contribution is to 
+bring understandings from another field into your own, or that you are doing interdisciplinary research.
+
+(2) What aspect of your topic does the text address? This is important to know 
+because if you are going to argue that *your research fills a space* you want to have a clear idea of
+ what is already there and how your work might be different.
+ Its significance lies in the particular contribution.
+
+(3) What definition is offered of the topic? It is often the case that there are
+ differing understandings of what appears to be the same thing,
+ so being able to define what you take to be the meaning of the topic –
+ and why – and who else uses this definition, if anyone – is important.
+
+(4) If the text is in the same or a different field, what concepts and language are brought 
+to bear on the topic that might be helpful to you? It is not possible for any research to
+ do everything, and so we all build on others’ work. We refer to this borrowing through citations: 
+these are the textual signposts to the things that we take as building blocks for our own research.
+
+(5) What kind of text is this? Is it theory building? A think piece? A [[https://en.wikipedia.org/wiki/Meta-analysis][meta-study]] or systematic review? 
+An empirical piece of work? How does this kind of research connect with your study?
+
+ It may be that this is a piece of research which uses the same kind of approach that you are thinking about.
+If empirical, then you will want to take note of the epistemological tradition, the methodology, 
+site, methods and sample because it may be that this is where the difference in what you are doing can be located. 
+It may be that you want to work in a different empirical tradition altogether, using an approach unlike this one, 
+in which case you need to know how your work will differ. But it may be that this is work that you want to build on.
+If it is a meta-study or a systematic review, is the conclusion helpful in creating the space for your study? 
+Or will any of the categorizations of the field or the research traditions be helpful to you 
+either to argue for the space for your work or perhaps to develop your research design?
+If it is theory building, what does this approach allow the writer to see and say?
+ What is included and excluded? How might this be helpful to you, and/or how might it help create the warrant for your study?
+
+(6) What categorisations are offered? 
+What are the key concepts and framings that are used? Are any of these useful in your work? Will you need to present some kind of critique of any of them in your literature review? Can these categorisations be expressed as key words?
+
+(7) What connections does this text make? Are there new literatures in the reference list that you need to look at? 
+Does the text offer new insights for your research?
+
+It is important when answering these  that you do not write reams.
+ It is possible to write three or four sentences about the overall argument or claim, 
+and then write a small number of phrases in answer to any of questions (1)–(7). 
+These can simply be bullet points.
+Both the sentences and bullets can be entered into any of the digital referencing systems – 
+they are then searchable and retrievable even after years. 
+I am still searching for and finding notes I entered in Endnote some fifteen years ago.
+Crucially, once you have these kinds of systematic notes you can then group the articles in different ways. 
+Texts can for example be clumped together around definitions, different aspects of the topic (themes)
+ methods, theoretical approaches or epistemological traditions.
+
+** tense: past
+
+** Structure 
+The overall structure of your review will depend largely on your own thesis or research area. 
+What you will need to do is to group together and compare and contrast the varying opinions of different writers on certain topics. 
+What you must not do is just describe what one writer says, and then go on to give a general overview of another writer, 
+and then another, and so on. 
+Your structure should be dictated instead by topic areas, controversial issues or by questions to which there are varying approaches and theories.
+ Within each of these sections, you would then discuss what the different literature argues, remembering to link this to your own purpose.
+*Linking words* are important. If you are grouping together writers with similar opinions, you would use words or phrases such as:
+
+similarly, in addition, also, again
+More importantly, if there is disagreement, you need to indicate clearly that you are aware of this by the use of linkers such as:
+however, on the other hand, conversely, nevertheless
+At the end of the review you should include a *summary* of what the literature implies, which again links to your hypothesis or main question.
+
+Writing the review
+You first need to decide what you need to read. In many cases you will be given a booklist or directed towards areas of useful published work. Make sure you use this help. With dissertations, and particularly theses, it will be more down to you to decide. It is important, therefore, to try and decide on the parameters of your research. What exactly are your objectives and what do you need to find out? In your review, are you looking at issues of theory, methodology, policy, quantitive research, or what? Before you start reading it may be useful to compile a list of the main areas and questions involved, and then read with the purpose of finding out about or answering these. Unless something comes up which is particularly important, stick to this list, as it is very easy to get sidetracked, particularly on the internet.
+A good literature review needs a clear line of argument. You therefore need to use the critical notes and comments you made whilst doing your reading to express an academic opinion. Make sure that:
+• you include a clear, short introduction which gives an outline of the review, including the main topics covered and the order of the arguments, with a brief rationale for this.
+• there is always a clear link between your own arguments and the evidence uncovered in your reading. Include a short summary at the end of each section.
+Use quotations if appropriate.
+• you always acknowledge opinions which do not agree with your thesis. If you ignore opposing viewpoints, your argument will in fact be weaker.
+
+Your review must be written in a formal, academic style. Keep your writing clear and concise, avoiding colloquialisms and personal language. You should always aim to be objective and respectful of others' opinions; this is not the place for emotive language or strong personal opinions. If you thought something was rubbish, use words such as "inconsistent", "lacking in certain areas" or "based on false assumptions"! (See Guide 1.21)
+When introducing someone's opinion, don't use "says", but instead an appropriate verb which more accurately reflects this viewpoint, such as "argues", "claims" or "states". Use the present tense for general opinions and theories, or the past when referring to specific research or experiments:
+Although Trescothick (2001) argues that attack is the best form of defence, Boycott (1969) claims that ...
+In a field study carried out amongst the homeless of Sydney, Warne (1999) found that ...
+And remember at all times to avoid plagiarising your sources. Always separate your source opinions from your own hypothesis. making sure you consistently reference the literature you are referring to. When you are doing your reading and making notes, it might be an idea to use different colours to distinguish between your ideas and those of others. (See Guide 1.13).
+  Top of page
+
+*Final checklist*
+Here is a final checklist, courtesy of the University of Melbourne:
+Selection of Sources
+
+  Have you indicated the purpose of the review? 
+  Are the parameters of the review reasonable? 
+  Why did you include some of the literature and exclude others? 
+  Which years did you exclude? 
+  Have you emphasised recent developments? 
+  Have you focussed on primary sources with only selective use of secondary sources? 
+  Is the literature you have selected relevant? 
+  Is your bibliographic data complete?
+Critical Evaluation of the Literature
+
+  Have you organised your material according to issues? 
+  Is there a logic to the way you organised the material? 
+  Does the amount of detail included on an issue relate to its importance? 
+  Have you been sufficiently critical of design and methodological issues? 
+  Have you indicated when results were conflicting or inconclusive and discussed possible reasons? 
+  Have you indicated the relevance of each reference to your research?
+Interpretation
+
+  Has your summary of the current literature contributed to the reader's understanding of the problems? 
+  Does the design of your research reflect the methodological implications of the literature review?
+Note
+
+  The literature review will be judged in the context of your completed research. 
+  The review needs to further the reader's understanding of the problem and whether it provides a rationale for your    research.
+
+** unsort
+And the purpose is to situate your study in the field – that is, to establish a space for the work you are going to do – and to find concepts and approaches that are helpful, that you can build on. It is also important to understand key debates and differences in the field so that you can position yourself in relation to them. The literature review thus typically discusses a field of knowledge production and key concepts and lines of argument within it.
+The literature review is not finished in the first year of doctoral study, and the ways in which texts are used to develop a research proposal in year one may not be the same as their use in the final thesis text when the findings and argument are known. But whether it’s early or later literature work, there is always noting to do.
+There is one major maxim about noting – it’s not rewriting the book or the article. That’s a waste of time and it misses the point.
+So what’s the point then?
+Let’s imagine you have a text that you have just read. It’s important to understand first of all what the writer is claiming and arguing. You should be able to explain to someone else in a very short space of time what the text is about. Putting the text away, and then saying/writing a few sentences means that you have to summarise and synthesise what you’ve read, as well as translate it into your own words. This process of making sense of the text, of interpreting it, is important not only for your immediate understanding, but also for the ways in which you can use this understanding to make your own arguments later.
+So the first step in noting is to write the argument and the claim of the paper in no more than three to four sentences. This requires a bit of disciplined thinking. But the sentences don’t have to be perfect, they just need to work for you.
+And, because the articles you read for your literature review are going to be related to your study in some way, it is also helpful to note how.
+So, some questions to consider are:
+(1) Is the text located in the same field, or another one? This is important because you may want to argue that part of your contribution is to bring understandings from another field into your own, or that you are doing interdisciplinary research.
+(2) What aspect of your topic does the text address? This is important to know because if you are going to argue that your research fills a space you want to have a clear idea of what is already there and how your work might be different. Its significance lies in the particular contribution.
+(3) What definition is offered of the topic? It is often the case that there are differing understandings of what appears to be the same thing, so being able to define what you take to be the meaning of the topic – and why – and who else uses this definition, if anyone – is important.
+(4) If the text is in the same or a different field, what concepts and language are brought to bear on the topic that might be helpful to you? It is not possible for any research to do everything, and so we all build on others’ work. We refer to this borrowing through citations: these are the textual signposts to the things that we take as building blocks for our own research.
+(5) What kind of text is this? Is it theory building? A think piece? A meta-study or systematic review? An empirical piece of work? How does this kind of research connect with your study? It may be that this is a piece of research which uses the same kind of approach that you are thinking about.
+If empirical, then you will want to take note of the epistemological tradition, the methodology, site, methods and sample because it may be that this is where the difference in what you are doing can be located. It may be that you want to work in a different empirical tradition altogether, using an approach unlike this one, in which case you need to know how your work will differ. But it may be that this is work that you want to build on.
+If it is a meta-study or a systematic review, is the conclusion helpful in creating the space for your study? Or will any of the categorizations of the field or the research traditions be helpful to you either to argue for the space for your work or perhaps to develop your research design?
+If it is theory building, what does this approach allow the writer to see and say? What is included and excluded? How might this be helpful to you, and/or how might it help create the warrant for your study?
+(6) What categorisations are offered? What are the key concepts and framings that are used? Are any of these useful in your work? Will you need to present some kind of critique of any of them in your literature review? Can these categorisations be expressed as key words?
+(7) What connections does this text make? Are there new literatures in the reference list that you need to look at? Does the text offer new insights for your research?
+It is important when answering these – and other questions that you may want to ask of a text – that you do not write reams. It is possible – desirable even – to write three or four sentences about the overall argument or claim, and then write a small number of phrases in answer to any of questions (1)–(7). These can simply be bullet points.
+Both the sentences and bullets can be entered into any of the digital referencing systems – they are then searchable and retrievable even after years. I am still searching for and finding notes I entered in Endnote some fifteen years ago.
+Crucially, once you have these kinds of systematic notes you can then group the articles in different ways. Texts can for example be clumped together around definitions, different aspects of the topic – we might call these themes in the literature – methods, theoretical approaches or epistemological traditions.
+In the next blog I want to talk some more about the process of grouping – or making patterns of – your noted texts.
+
+
+How to write a literature review
+
+What is a literature review?
+The aim of a literature review is to show your reader (your tutor) that you have read, and have a good grasp of, the main published work concerning a particular topic or question in your field. This work may be in any format, including online sources. It may be a separate assignment, or one of the introductory sections of a report, dissertation or thesis. In the latter cases in particular, the review will be guided by your research objective or by the issue or thesis you are arguing and will provide the framework for your further work.
+It is very important to note that your review should not be simply a description of what others have published in the form of a set of summaries, but should take the form of a critical discussion, showing insight and an awareness of differing arguments, theories and approaches. It should be a synthesis and analysis of the relevant published work, linked at all times to your own purpose and rationale.
+According to Caulley (1992) of La Trobe University, the literature review should:
+• compare and contrast different authors' views on an issue
+• group authors who draw similar conclusions
+• criticise aspects of methodology
+• note areas in which authors are in disagreement
+• highlight exemplary studies
+• highlight gaps in research
+• show how your study relates to previous studies
+• show how your study relates to the literature in general
+• conclude by summarising what the literature says
+The purposes of the review are:
+• to define and limit the problem you are working on
+• to place your study in an historical perspective
+• to avoid unnecessary duplication
+• to evaluate promising research methods
+• to relate your findings to previous knowledge and suggest further research
+A good literature review, therefore, is critical of what has been written, identifies areas of controversy, raises questions and identifies areas which need further research.
+
+
+Structure of the literature review
+The overall structure of your review will depend largely on your own thesis or research area. What you will need to do is to group together and compare and contrast the varying opinions of different writers on certain topics. What you must not do is just describe what one writer says, and then go on to give a general overview of another writer, and then another, and so on. Your structure should be dictated instead by topic areas, controversial issues or by questions to which there are varying approaches and theories. Within each of these sections, you would then discuss what the different literature argues, remembering to link this to your own purpose.
+Linking words are important. If you are grouping together writers with similar opinions, you would use words or phrases such as:
+
+similarly, in addition, also, again
+More importantly, if there is disagreement, you need to indicate clearly that you are aware of this by the use of linkers such as:
+however, on the other hand, conversely, nevertheless
+At the end of the review you should include a summary of what the literature implies, which again links to your hypothesis or main question.
+
+Writing the review
+You first need to decide what you need to read. In many cases you will be given a booklist or directed towards areas of useful published work. Make sure you use this help. With dissertations, and particularly theses, it will be more down to you to decide. It is important, therefore, to try and decide on the parameters of your research. What exactly are your objectives and what do you need to find out? In your review, are you looking at issues of theory, methodology, policy, quantitive research, or what? Before you start reading it may be useful to compile a list of the main areas and questions involved, and then read with the purpose of finding out about or answering these. Unless something comes up which is particularly important, stick to this list, as it is very easy to get sidetracked, particularly on the internet.
+A good literature review needs a clear line of argument. You therefore need to use the critical notes and comments you made whilst doing your reading to express an academic opinion. Make sure that:
+• you include a clear, short introduction which gives an outline of the review, including the main topics covered and the order of the arguments, with a brief rationale for this.
+• there is always a clear link between your own arguments and the evidence uncovered in your reading. Include a short summary at the end of each section.
+Use quotations if appropriate.
+• you always acknowledge opinions which do not agree with your thesis. If you ignore opposing viewpoints, your argument will in fact be weaker.
+
+Your review must be written in a formal, academic style. Keep your writing clear and concise, avoiding colloquialisms and personal language. You should always aim to be objective and respectful of others' opinions; this is not the place for emotive language or strong personal opinions. If you thought something was rubbish, use words such as "inconsistent", "lacking in certain areas" or "based on false assumptions"! (See Guide 1.21)
+When introducing someone's opinion, don't use "says", but instead an appropriate verb which more accurately reflects this viewpoint, such as "argues", "claims" or "states". Use the present tense for general opinions and theories, or the past when referring to specific research or experiments:
+Although Trescothick (2001) argues that attack is the best form of defence, Boycott (1969) claims that ...
+In a field study carried out amongst the homeless of Sydney, Warne (1999) found that ...
+And remember at all times to avoid plagiarising your sources. Always separate your source opinions from your own hypothesis. making sure you consistently reference the literature you are referring to. When you are doing your reading and making notes, it might be an idea to use different colours to distinguish between your ideas and those of others. (See Guide 1.13).
+  Top of page
+
+Final checklist
+Here is a final checklist, courtesy of the University of Melbourne:
+Selection of Sources
+
+  Have you indicated the purpose of the review? 
+  Are the parameters of the review reasonable? 
+  Why did you include some of the literature and exclude others? 
+  Which years did you exclude? 
+  Have you emphasised recent developments? 
+  Have you focussed on primary sources with only selective use of secondary sources? 
+  Is the literature you have selected relevant? 
+  Is your bibliographic data complete?
+Critical Evaluation of the Literature
+
+  Have you organised your material according to issues? 
+  Is there a logic to the way you organised the material? 
+  Does the amount of detail included on an issue relate to its importance? 
+  Have you been sufficiently critical of design and methodological issues? 
+  Have you indicated when results were conflicting or inconclusive and discussed possible reasons? 
+  Have you indicated the relevance of each reference to your research?
+Interpretation
+
+  Has your summary of the current literature contributed to the reader's understanding of the problems? 
+  Does the design of your research reflect the methodological implications of the literature review?
+Note
+
+  The literature review will be judged in the context of your completed research. 
+  The review needs to further the reader's understanding of the problem and whether it provides a rationale for your    research.
+
+** References
+https://libguides.bc.edu/litreview/phase1
+* References
+Academic Writing for Graduate Students, 3rd Edition: Essential Skills and Tasks
+John M. Swales & Christine B. Feak
+
+Longman Dictionary of Common Errors
+Professional Engineering
+Communication (PEC) book series,
+
+- Writing the Successful Thesis and Dissertation: Entering the Conversation 
+Academic writing: writing and reading in the disciplines
+by Giltrow, Janet, 1949
+
+Longman Academic Writing Series, Level 4: Essays
+by Oshima, Alice; Hogue, Ann; Ravitch, Lara
+2014, Fifth edition.
+STDYSKILLS, PE1408 OSH, MAINLIB
+** Corpus
+[[http://www.natcorp.ox.ac.uk/corpus/index.xml][British national Corpus]]: samples of written and spoken language
+* Abstract
+- word limit < 500
+
+** structure
+1. what you want to do
+2. How you did it
+3. What results did you get and waht conclusions can you draw
+4. what is original/contribution in your paper
+
+* Summary
+** Summary Guide
+Writing a good summary demonstrates that you clearly understand a text...and that you can communicate that understanding to your readers. A summary can be tricky to write at first because it’s tempting to include too much or too little information. But by following our easy 8-step method, you will be able to summarize texts quickly and successfully for any class or subject.
+1) Divide…and conquer. First off, skim the text you are going to summarize and divide it into sections. Focus on any headings and subheadings. Also look at any bold-faced terms and make sure you understand them before you read. 
+2) Read. Now that you’ve prepared, go ahead and read the selection. Read straight through. At this point, you don’t need to stop to look up anything that gives you trouble—just get a feel for the author’s tone, style, and main idea.
+3) Reread. Rereading should be active reading. Underline topic sentences and key facts. Label areas that you want to refer to as you write your summary. Also label areas that should be avoided because the details—though they may be interesting—are too specific. Identify areas that you do not understand and try to clarify those points. 
+4) One sentence at a time. You should now have a firm grasp on the text you will be summarizing. In steps 1–3, you divided the piece into sections and located the author’s main ideas and points. Now write down the main idea of each section in one well-developed sentence. Make sure that what you include in your sentences are key points, not minor details. 
+5) Write a thesis statement. This is the key to any well-written summary. Review the sentences you wrote in step 4. From them, you should be able to create a thesis statement that clearly communicates what the entire text was trying to achieve. If you find that you are not able to do this step, then you should go back and make sure your sentences actually addressed key points.
+6) Ready to write. At this point, your first draft is virtually done. You can use the thesis statement as the introductory sentence of your summary, and your other sentences can make up the body. Make sure that they are in order. Add some transition words (then, however, also, moreover) that help with the overall structure and flow of the summary. And once you are actually putting pen to paper (or fingers to keys!), remember these tips:
+•	Write in the present tense.
+•	Make sure to include the author and title of the work.
+•	Be concise: a summary should not be equal in length to the original text.
+•	If you must use the words of the author, cite them.
+•	Don't put your own opinions, ideas, or interpretations into the summary. The purpose of writing a summary is to accurately represent what the author wanted to say, not to provide a critique.
+7) Check for accuracy. Reread your summary and make certain that you have accurately represented the author’s ideas and key points. Make sure that you have correctly cited anything directly quoted from the text. Also check to make sure that your text does not contain your own commentary on the piece.
+8) Revise. Once you are certain that your summary is accurate, you should (as with any piece of writing) revise it for style, grammar, and punctuation. If you have time, give your summary to someone else to read. This person should be able to understand the main text based on your summary alone. If he or she does not, you may have focused too much on one area of the piece and not enough on the author’s main idea.
+Bonus Info! What are book summaries? A summary by definition is something that is comprehensive yet brief. A book summary, therefore, consists of the most important elements of a work. It retells (in condensed wording) a book’s beginning, rising action, climax, falling action, and ending. Good book summaries also capture essential elements about the central characters and the setting or settings in which the action unfolds.
+When you have read a well-written summary, you ought to be able to say in your own words what the book is generally about, who the main characters are, and where it takes place. Imagine going to a bookstore or a library. You might have forgotten the name of the book, but you can recall enough of the pertinent information to help the clerk or librarian find the book for you.
+What are chapter summaries? A chapter summary is a condensed version of the major action in a book. A chapter summary will provide key points of action in the narrative, identify primary (and sometimes secondary) characters, and convey where the action takes place. Later chapter summaries may also briefly revisit events that transpired in earlier chapters.
+Chapter summaries are useful because they can help you recall a key event or character that you need to include in an essay or a book report.
+
+
+** Roadmap
+problem statement, motivation/Goal, method, results/conclusion, contribution
+** inappropriate expression
+In recent years, *****has received great attension
+there has been great interest in ++++++
+equation, math expression
+
+** letter limit
+< 450
+
+* Introduction
+Background
+- establish your territory (say what the topic is about)
+- show why there needs to further research on your topic
+- current research (hypotheses, state the research questions
+
+-  narrow research topic
+- other's research
+- gap
+- your proposal
+- roadmap/outline/structure
+
+Structure/Stages in a thesis introduction
+
+1. state the general topic and give some background
+2. provide a review of the literature related to the topic
+3. define the terms and scope of the topic
+4. outline the current situation
+5. evaluate the current situation (advantages/ disadvantages) and identify the gap
+6. identify the importance of the proposed research
+7. state the research problem/ questions
+8. state the research aims
+9. state the hypotheses
+10. outline the order of information in the thesis
+11. outline the methodology
+
+** roadmap/outline/structure
+
+roadmap:
+#+BEGIN_SRC
+The paper proceeds as follows. Section 2 discusses background and related work. In section
+3, we explain our methodology for identifying the STA and detail evidence for why we deem
+these transactions suspicious. Sections 4 and 5 examine the data in detail, present our
+findings and show that our results are robust. Section 6 has further discussion and brief
+conclusions.
+#+END_SRC
+* Methods
+# little citation in xin bai thesis
+** equation
+  ** equation can be written as:
+
+** theory
+Introduction
+- historical development
+- derivation
+  + assumption
+  + simplification
+- appplication
+-Limits
+- Further research
+
+* Results and conclusion
+tense in the results
+** Grid convergence
+
+
+** Amplitude of Fluctuation
+
+** link your results with others
+This result *are consistent with* the former research results in Ref. [2-10]
+results are similar with others
+
+* Conclusion
+*what should be in conclusion?*
+1. *Conclusions*: concise statements about your main findings.
+related to your aims/objectives/hypothesis
+2. *contributions to our field of research*, stating/restating
+the significance of waht you have disconvered, 
+3. *Limits and further research*: limitations, where to go from here
+(can include where Not to go, if your research demonstated that
+a particular approach or avenue was not useful.
+
+Roadmaps:
+object,hypothesis,  methods, results, contribution, limit and further research
+
+
+*What should NOT be in the conclusion?*
+
+- Discussion. This should be in the Discussion section. If your thesis combines the two, use sub-headings to distinguish between them.
+- Any points that have not been mentioned in the Discussion section: your conclusions should be based only on points already raised.
+- References: it is quite unusual to include references in this section, as it is mainly a review of what has already been said.
+- Unnecessary information: your conclusion should be concise.
+
+
+What am I trying to say in my conclusion?
+
+What you are trying to say is:
+
+    What did I learn?
+    What am I proudest of?
+    What was the hardest part?
+    How did I solve the difficulty?
+
+Or, in other words:
+
+    To what extent you achieved your aims/objectives OR not: if not, why not?
+    How important and significant your results are, as well as any limitations of your research (e.g. small sample size; other variables)
+    Where the research should go from here: what are some interesting further areas to be explored based on what you have discovered or proven?
+
+** Conclusion singals
+ To conclude
+
+in conclusion
+
+to sum up
+
+to summarize
+
+in summary
+
+in brief
+
+in short
+
+indeed
+* British National Corpus
+** [[http://www.natcorp.ox.ac.uk/docs/URG/cdifbase.html][Structure]]
+- strongly influenced by the Text Encoding Initiative (TEI)
+- marked up in XML 
+- encoded ni Unicode
+
+types of tags:
+- start-tag: marking the beginning of an element
+- end-tag: marking the end of an element
+e.g.
+
+#+BEGIN_SRC
+
+<head>
+the contents of head
+</head>
+#+END_SRC
+* TODO  Book notes
+**  a scientific approach to writing for engineers and scientists
+P17
+Robert E. Berger
+
+? Does a scientific approach to the writing of technical sentences, paragraphs, and arguments exits?
+? 
+
+*How This Book Can Be Used*:
+-  a systematic approach for minimizing the probability that your
+writing will be misunderstood 
+
+-  a reference for implementing particular writing
+strategies as you prepare a document.
+
+*Focuses*
+- the mechanics of writing sentences
+- construction of paragraphs and arguments
+
+Proposals:
+- the problem
+- advancement in the state of the art
+- the qualificaitons of the investigator
+- the benefits of achieving success
+
+When conducting an experiment?
+what will be the independent and dependent variables?
+- what reasons ar ethe independent variables retained in the experiment more impotant than the ones left out?
+
+core idea + auxiliary ideas
+
+the upside-down approach
+
+- Sentence :: a complete thought.
+- Paragraph :: a coherent series of sentences that are combined to make a single
+point.
+- Premise :: a coherent series of paragraphs intended to support a particular proposition
+(e.g., whether a particular problem is worth solving, whether a particular
+technical approach will lead to solving a problem, and whether a market exists for
+a product).
+- Thesis :: a proffered position or theme (e.g., whether funding should be provided
+to carry out a research project or whether investment should be provided to commercialize
+a particular technology) that is maintained by arguing for a series of
+premises.
+***  Sentences
+an simple conventions:
+> [qualifier 1], [core], [qualifer2]
+ [clause/phrase] ]clasue] [clause/phrase]
+
+> [Qualifier 1], [Core], [Qualifer 2].
+[when] [core] [why]
+
+e.g.
+
+#+BEGIN_EXAMPLE
+As the surface temperature of the coolant increases,
+[Qualifier 1]
+the control system slows the operation of the power electronic devices,
+[Core]
+in order that the safe operating temperature of the silicon semiconductor material
+is not exceeded.
+[Qualifier 2]
+#+END_EXAMPLE
+
+common errors in sentences
+- too much auxiliary ideas (qualifiers)  which makes a sentence too long
+
+structures:
+e.g. the system slows the operation
+- the system -- subject
+- slows     -- verb
+- the operation -- direct object
+
+To make the simple sentence more satisfying by adding some *descriptive wording:*
+> The /control/ system slows the operation /of the power electronic devices./
+- control >> [[adjective]]
+- ~of the power electronic devices~ >> prepositional phrase
+
+- <<adjective>> :: words that modify,limit, or explain a noun.
+- prepositional phrase ::  apreposition + object
+- Clauses :: a subject + a predicate; a clause is not a complete thought
+   e.g. As the temperature increases
+
+an example of an introductory clause:
+> _As the temperature increases_, The control system slows the operation of the power electronic devices.
+* Paraphase
+> How to paraphase effectively.pdf
+- change some vocabulary, e.g. extremely >> very
+- change the sentence structures, e.g. test of English >> Enlish tests
+- change the grammar 
+** change the Order of Words
+If the original sentence is in the *active voice*, change it to passive or vice versa.
+1. "To improve English, you should learn new vocabulary on a daily basis."
+2. "To improve English, new vocabulary should be learned on a daily basis"
+** How to find Paraphase example/source
+If you want to see more examples of paraphrasing, one of the best ideas is to compare two
+news articles about a current event in two different newspapers.
+** Standards
+Standards
+1.	Rephrase - Use as few words as possible from the original text
+2.	Not change the meaning
+3.	Cite the paraphrase
+Without proper citation, your paraphrase could be construed as plagiarism
+**  When should you reference? 
+You need to reference every time you use another person’s work or ideas. This includes: 
+- Quotes: Using the words exactly as they appear. You must enclose the words in quotation marks “ ”. 
+- Paraphrases: Using the idea(s) but in different words. This means more than changing one or two words. 
+- Summaries: Expressing the main points in your own words. 
+
+When you paraphrase, your task is to *distill the source's ideas in your own words*.
+
+ It's not enough to change a few words here and there and leave the rest;
+ instead, you must completely restate the ideas in the passage in your own words. 
+If your own language is too close to the original, then you are plagiarizing, even if you do provide a citation.
+
+In order to make sure that you are using your own words, 
+it's a good idea to put away the source material while you write your paraphrase of it. 
+
+This way, you will force yourself to distill the point you think the author is making and articulate it in a new way. 
+Once you have done this, you should look back at the original and make sure that you have not used the same words or sentence structure.
+
+ If you do want to use some of the author's words for emphasis or clarity, you must put those words in quotation marks and provide a citation.
+
+Learn to borrow from a source without plagiarizing. 
+For more information on paraphrasing, as well as other ways to integrate sources into your paper, see the Purdue OWL handout Quoting Paraphrasing, and Summarizing. For more information about writing research papers, see our resource on this subject. Purdue students will want to make sure that they are familiar with Purdue's official academic dishonesty policy as well as any additional policies that their instructor has implemented. Another good resource for understanding plagiarism is the Statement on Plagiarism from the Council of Writing Program Administrators.
+A paraphrase is...
+•	your own rendition of essential information and ideas expressed by someone else, presented in a new form.
+•	one legitimate way (when accompanied by accurate documentation) to borrow from a source.
+•	a more detailed restatement than a summary, which focuses concisely on a single main idea.
+Paraphrasing is a valuable skill because...
+•	it is better than quoting information from an undistinguished passage.
+•	it helps you control the temptation to quote too much.
+•	the mental process required for successful paraphrasing helps you to grasp the full meaning of the original.
+6 Steps to Effective Paraphrasing
+1.	Reread the original passage until you understand its full meaning.
+2.	Set the original aside, and write your paraphrase on a note card.
+3.	Jot down a few words below your paraphrase to remind you later how you envision using this material. At the top of the note card, write a key word or phrase to indicate the subject of your paraphrase.
+4.	Check your rendition with the original to make sure that your version accurately expresses all the essential information in a new form.
+5.	Use quotation marks to identify any unique term or phraseology you have borrowed exactly from the source.
+6.	Record the source (including the page) on your note card so that you can credit it easily if you decide to incorporate the material into your paper.
+Some examples to compare
+The original passage:
+Students frequently overuse direct quotation in taking notes, and as a result they overuse quotations in the final [research] paper. Probably only about 10% of your final manuscript should appear as directly quoted matter. Therefore, you should strive to limit the amount of exact transcribing of source materials while taking notes. Lester, James D. Writing Research Papers. 2nd ed. (1976): 46-47.
+A plagiarized version:
+Students often use too many direct quotations when they take notes, resulting in too many of them in the final research paper. In fact, probably only about 10% of the final copy should consist of directly quoted material. So it is important to limit the amount of source material copied while taking notes.
+A legitimate paraphrase:
+In research papers students often quote excessively, failing to keep quoted material down to a desirable level. Since the problem usually originates during note taking, it is essential to minimize the material recorded verbatim (Lester 46-47).
+An acceptable summary:
+Students should take just a few notes in direct quotation from sources to help minimize the amount of quoted material in a research paper (Lester 46-47).
+A plagiarized version:
+Students often use too many direct quotations when they take notes, resulting in too many of them in the final research paper. In fact, probably only about 10% of the final copy should consist of directly quoted material. So it is important to limit the amount of source material copied while taking notes.
+Version 2
+Successful vs. unsuccessful paraphrases
+Paraphrasing is often defined as putting a passage from an author into “your own words.” But what are your own words? How different must your paraphrase be from the original?
+The paragraphs below provide an example by showing a passage as it appears in the source, two paraphrases that follow the source too closely, and alegitimate paraphrase.
+The student’s intention was to incorporate the material in the original passage into a section of a paper on the concept of “experts” that compared the functions of experts and nonexperts in several professions.
+The Passage as It Appears in the Source
+Critical care nurses function in a hierarchy of roles. In this open heart surgery unit, the nurse manager hires and fires the nursing personnel. The nurse manager does not directly care for patients but follows the progress of unusual or long-term patients. On each shift a nurse assumes the role of resource nurse. This person oversees the hour-by-hour functioning of the unit as a whole, such as considering expected admissions and discharges of patients, ascertaining that beds are available for patients in the operating room, and covering sick calls. Resource nurses also take a patient assignment. They are the most experienced of all the staff nurses. The nurse clinician has a separate job description and provides for quality of care by orienting new staff, developing unit policies, and providing direct support where needed, such as assisting in emergency situations. The clinical nurse specialist in this unit is mostly involved with formal teaching in orienting new staff. The nurse manager, nurse clinician, and clinical nurse specialist are the designated experts. They do not take patient assignments. The resource nurse is seen as both a caregiver and a resource to other caregivers. . . . Staff nurses have a hierarchy of seniority. . . . Staff nurses are assigned to patients to provide all their nursing care. (Chase, 1995, p. 156)
+Word-for-Word Plagiarism
+Critical care nurses have a hierarchy of roles. The nurse manager hires and fires nurses. S/hedoes not directly care for patients but does follow unusual or long-term cases. On each shift a resource nurse attends to the functioning of the unit as a whole, such as making sure beds are available in the operating room, and also has a patient assignment. The nurse clinicianorients new staff, develops policies, and provides support where needed. The clinical nurse specialist also orients new staff, mostly by formal teaching. The nurse manager, nurse clinician, and clinical nurse specialist, as the designated experts, do not take patient assignments. The resource nurse is not only a caregiver but a resource to the other caregivers. Within the staff nurses there is also a hierarchy of seniority. Their job is to give assigned patients all their nursing care.
+Why this is plagiarism
+Notice that the writer has not only “borrowed” Chase’s material (the results of her research) with no acknowledgment, but has also largely maintained the author’s method of expression and sentence structure. The phrases in red are directly copied from the source or changed only slightly in form.
+Even if the student-writer had acknowledged Chase as the source of the content, the language of the passage would be considered plagiarized because no quotation marks indicate the phrases that come directly from Chase. And if quotation marks did appear around all these phrases, this paragraph would be so cluttered that it would be unreadable.
+A Patchwork Paraphrase
+Chase (1995) describes how nurses in a critical care unit function in a hierarchy that places designated experts at the top and the least senior staff nurses at the bottom. The experts — the nurse manager, nurse clinician, and clinical nurse specialist — are not involved directly in patient care. The staff nurses, in contrast, are assigned to patients and provide all their nursing care. Within the staff nurses is a hierarchy of seniority in which the most senior can become resource nurses: they are assigned a patient but also serve as a resource to other caregivers. The experts have administrative and teaching tasks such as selecting andorienting new staff, developing unit policies, and giving hands-on support where needed.
+Why this is plagiarism
+This paraphrase is a patchwork composed of pieces in the original author’s language (in red) and pieces in the student-writer’s words, all rearranged into a new pattern, but with none of the borrowed pieces in quotation marks. Thus, even though the writer acknowledges the source of the material, the underlined phrases are falsely presented as the student’s own.
+A Legitimate Paraphrase
+In her study of the roles of nurses in a critical care unit, Chase (1995) also found a hierarchy that distinguished the roles of experts and others. Just as the educational experts described above do not directly teach students, the experts in this unit do not directly attend to patients. That is the role of the staff nurses, who, like teachers, have their own “hierarchy of seniority” (p. 156). The roles of the experts include employing unit nurses and overseeing the care of special patients (nurse manager), teaching and otherwise integrating new personnel into the unit (clinical nurse specialist and nurse clinician), and policy-making (nurse clinician). In an intermediate position in the hierarchy is the resource nurse, a staff nurse with more experience than the others, who assumes direct care of patients as the other staff nurses do, but also takes on tasks to ensure the smooth operation of the entire facility.
+Why this is a good paraphrase
+The writer has documented Chase’s material and specific language (by direct reference to the author and by quotation marks around language taken directly from the source). Notice too that the writer has modified Chase’s language and structure and has added material to fit the new context and purpose — to present the distinctive functions of experts and nonexperts in several professions.
+Shared Language
+Perhaps you’ve noticed that a number of phrases from the original passage appear in the legitimate paraphrase: critical care, staff nurses, nurse manager, clinical nurse specialist, nurse clinician, resource nurse.
+If all these phrases were in red, the paraphrase would look much like the“patchwork” example. The difference is that the phrases in the legitimate paraphrase are all precise, economical, and conventional designations that are part of the shared language within the nursing discipline (in the too-close paraphrases, they’re red only when used within a longer borrowed phrase).
+In every discipline and in certain genres (such as the empirical research report), some phrases are so specialized or conventional that you can’t paraphrase them except by wordy and awkward circumlocutions that would be less familiar (and thus less readable) to the audience.
+When you repeat such phrases, you’re not stealing the unique phrasing of an individual writer but using a common vocabulary shared by a community of scholars.
+Some Examples of Shared Language You Don’t Need to Put in Quotation Marks
+•	Conventional designations: e.g., physician’s assistant, chronic low-back pain
+•	Preferred bias-free language: e.g., persons with disabilities
+•	Technical terms and phrases of a discipline or genre: e.g., reduplication, cognitive domain, material culture, sexual harassment
+** References
+Chase, S. K. (1995). The social context of critical care clinical judgment. Heart and Lung, 24, 154-162.
+
+* writing a book in Latex
+format guide, layout and templates
+https://www.springer.com/de/authors-editors/book-authors-editors/manuscript-preparation/5636
+* APA citation style
+Using in-text citation with APA style
+APA in-text citation style uses the author's last name and the year of publication, for example: (Field, 2005). For direct quotations, include the page number as well, for example: (Field, 2005, p. 14). For sources such as websites and e-books that have no page numbers, use a paragraph number. More information on citing sources without pagination is given on the APA Style web page.
+
+Within the text of your paper, include an in-text citation when you refer to, summarize, paraphrase, or quote from another source. For every in-text citation in your paper, there must be a corresponding entry in your reference list.
+For more detailed examples of in-text citation see the Purdue Online Writing Lab (OWL) or the Research and Documentation Online guide.
+For examples of APA formats for reference lists, see our APA Quick Citation Guide.
+Using the Author/Date System
+Author's Name	Example of Usage
+Author's name part of narrative	Gass and Varonis (1984) found that the most important element in comprehending non-native speech is familiarity with the topic.
+Author's name in parentheses	One study found that the most important element in comprehending non-native speech is familiarity with the topic (Gass & Varonis, 1984).
+Multiple works (separate each work with semi-colons)	Research shows that listening to a particular accent improves comprehension of accented speech in general (Gass & Varonis, 1984; Krech Thomas, 2004).
+Direct quote, author's name part of narrative	Gass and Varonis (1984) found that “the listener’s familiarity with the topic of discourse greatly facilitates the interpretation of the entire message” (p. 85).
+Direct quote, author's name in parentheses	One study found that “the listener's familiarity with the topic of discourse greatly facilitates the interpretation of the entire message” (Gass & Varonis, 1984, p. 85).
+Note: For direct quotations of more than 40 words, display the quote as an indented block of text without quotation marks and include the authors’ names, date, and page number in parentheses at the end of the quote. For example:
+This suggests that familiarity with nonnative speech in general, although it is clearly not as important a variable as topic familiarity, may indeed have some effect. That is, prior experience with nonnative speech, such as that gained by listening to the reading, facilitates comprehension. (Gass & Varonis, 1984, p. 77)
+ 
+Works by multiple authors
+APA style has specific rules for citing works by multiple authors. Use the following chart to determine how to correctly cite works by multiple authors in text.
+Citing Works by Multiple Authors in Text
+Type of citation	First citation	Subsequent citations	First citation, 
+parenthetical format	Subsequent citations, parenthetical format
+One author	Field (2005)	Field (2005)	(Field, 2005)	(Field, 2005)
+Two authors	Gass and Varonis (1984)	Gass and Varonis (1984)	(Gass & Varonis, 1984)	(Gass & Varonis, 1984)
+Three authors	Munro, Derwing, and Sato (2006)	Munro et al. (2006)	(Munro, Derwing, & Sato, 2006)	(Munro et al., 2006)
+Four authors	Tremblay, Richer, Lachance, and Cote (2010)	Tremblay et al. (2010)	(Tremblay, Richer, Lachance, & Cote, 2010)	(Tremblay et al., 2010)
+Five authors	Hay, Elias, Fielding-Barnsley, Homel, and Freiberg (2007)	Hay et al. (2007)	(Hay, Elias, Fielding-Barnsley, Homel, & Freiberg, 2007)	(Hay et al., 2007)
+Six or more authors	Norris-Shortle et al. (2006)	Norris-Shortle et al. (2006)	(Norris-Shortle et al., 2006)	(Norris-Shortle et al., 2006)
+
+Example paragraph with in-text citation
+A few researchers in the linguistics field have developed training programs designed to improve native speakers' ability to understand accented speech (Derwing, Rossiter, & Munro, 2002; Krech Thomas, 2004). Their training techniques are based on the research described above indicating that comprehension improves with exposure to non-native speech. Derwing et al. (2002) conducted their training with students preparing to be social workers, but note that other professionals who work with non-native speakers could benefit from a similar program.
+References
+Derwing, T. M., Rossiter, M. J., & Munro, M. J. (2002). Teaching native speakers to listen to foreign-accented speech. Journal of Multilingual and Multicultural Development, 23(4), 245-259.
+
+Krech Thomas, H. (2004). Training strategies for improving listeners' comprehension of foreign-accented speech (Doctoral dissertation). University of Colorado, Boulder.
+Citing Websites: Cite websites in text as you would any other source, using the author and date if known. If the author is not known, use the title and the date as the in-text citation (for long titles just use the first few words). Your in-text citation should lead your reader to the corresponding entry in the reference list. For sources with no date use n.d. (for no date) in place of the year: (Smith, n.d.)
+Example in-text citation for website with no author:
+The term "Nittany Lion" was coined by Penn State football player Joe Mason in 1904 (All things Nittany, 2006).
+
+Example reference entry for website with no author:
+All things Nittany. (2006). Retrieved from http://www.psu.edu/ur/about/nittanymascot.html
+Example in-text citation for section of website with no author:
+The burning of tropical forests is a major cause of global warming ("Global warming 101," 2012).
+
+Example reference entry for section of a website with no author:
+Global warming 101. (2012). In Union of Concerned Scientists. Retrieved from www.ucsusa.org/global_warming/global_warming_101/
+* FAQ for project/paper
+what problem are you trying to solve?
+what are you going to do?
+what do your results mean? so what?
+why do we care about the problem and the results?
+
+
+what you want to do
+how you did it
+what results did you get and conclusions
+original idal/contribution
+
+* Proof reading from Dr. Avital
+- put "a/an/the" before a noun.
+- single verb {s}
+
+通过核磁共振的学习发现，对于一个新的领域的学习，应该从比较经典的书籍和大牛的论文开始，这样可以少走弯路，学术概念要及时做笔记，（纸质版和电子版都要有），书籍和论文最好也有纸质版的，便于做笔记。
+* Unsort
+B Provide estimated *** to a , a comes from b
+accounted for <> constitute
+Female workers constitute the majority of the labour force.
+How do difference general knowledge and reference
+插入语结构
+It is characterized by  
+
+Introduction:
+Line: need new renewable energy/ the development of different kinds of renewable technology and compare and comment/ the development of MCT, time sequence
+both methods have pros and cons under technical, economic and environmental scrutiny
+The team needs players who complement each other
+the realms of turbulence
+shedding new light on
+A brief historical outline is given in what follows
+computationally expensive
+stanchion  =tower pillar
+
+noun
+(formal) a vertical pole used to support sth
+littoral  
+lit·to·ral /ˈlɪtərəl/ n [C] 
+[Date: 1600-1700; Language: Latin; Origin: litoralis, from litus 'sea coast']
+technical an area near the coast
+the sliding mesh model is a special case of general dynamic mesh motion wherein the nodes move rigidly in a given dynamic mesh zone
+with particular interest to a****
+The aim of this project is to
+* Figure
+
+* Images for publication
+- Figure XX shows XXX.
+- XX is presented in Fig. 1
+
+[[https://www.escienceediting.org/upload/se-1-2-58.pdf][Handling digital images for publication]]
+- vector image (eps)
+- 900 ppi 4 inch
+size in gnuplot:
+size 7in, 5.25in
+** image format : vector image
+- vector image: eps
+- raster  images : Graphic  Interchange  Format  (GIF),  Joint  Photographic  Experts  Group  (JPEG),
+  Portable  Network  Graphic  (PNG),  and  Tagged  Image  File  Format  (TIFF).
+** resolution: 900 ppi 4 inch
+Resolution:the number of pixels displayed per unit length
+format: 
+| dpi | dots per inch   |
+| ppi | pixels per inch |
+|     |                 |
+
+Recommended resolution
+1) 300  dpi  for  *color  pictures*
+2)  300  to  600  dpi  for  *black  and  white  pictures*
+3)  600  to  900  dpi  for  combination  art (photo and text)
+4) 900 to 1,200 dpi for line art. 
+
+The standard figure size of most academic journals is about 86 mm (single 
+column).  The  standard  pixels  per  inch  for  line  art  is  900  to  
+1,200  ppi.  Therefore,  an  image  file  of  900  ppi  and  4  inches  is  
+of  sufficient  quality  for  most  publications;
+** Saving the Original Image File Safely
+* Linking
+
+
+However the mechanisms governing the *** remain unclear.
+IN this study, 
+the experiment reported here, **
+In this study, we investigated ***, and we found that **
+
+* What Makes a Great Paper
+After this module you will better understand:
+	• where publication fits into the research life cycle;
+	• what the essential criteria are for a good paper;
+	• how Nature journal editors define a great paper.
+
+From <https://masterclasses.nature.com/courses/28/posts/94> 
