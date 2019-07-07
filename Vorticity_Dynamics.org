@@ -1,0 +1,139 @@
+* Vorticity Dynamics                                        :vortex:
+- Vortex :: a mass of air, water, etc. that spins around very fast and pulls things into its centre (Oxford Dictionary)
+- Vortex :: [fn:Haller2005]
+- Vorticity ::  twice the angular velocity, \( \nabla \times v \)
+- Angular velocity :: \omega \( \omega = 0.5 \nabla \times v \)
+- vortex line :: a line whose tangent is everywhere parallel to the local vorticity vector
+- vortex filament :: a vortex tube whose cross-section is of infinitesimal dimensions (extremely small).
+
+vortex can be quantified by:
+-  *circulation*
+- Q-criterion
+- \lambda-2
+** Vorticity
+- Vorticity :: a vector, \omega,  twice the angular velocity, \( \omega = \nabla \times v \)
+
+*physical meaning:*
+- vorticity meansures the *solid body like rotation* of a material point, p', that neighbors the primary material point, p (panton)
+
+*Features*:
+- \nabla \cdot \omega = 0 : vorticity is divergence free
+- \nabla \times \nabla \phi =0
+
+- the existence of vorticity indicates that viscous effects are important
+
+*why does fluid particles rotate?*
+it due to unbalanced shear stress
+
+- Roughly speaking, Vorticity dynamics  offers a method to separate a flow into viscous and  inviscid effects.
+** Q-criterion-- Hunt, Wray & Moin 1988
+
+velocity gradient, \nabla v
+ \nabla v = S + \Omega
+where, S is rate-of-strain tensor, and *\Omega* is vorticity tensor
+
+
+** Vortex shedding from an airfoil in low Re flow
+S. Yarusevych, 2009, J. fluid Mech.
+On vortex shedding from an airfoil in low-Reynolds-number flows
+** Vortex vs Eddy
+- vortices don't necessarily include turbulence
+- eddy is used to describe turbulence
+
+https://www.researchgate.net/post/What_is_the_difference_between_a_vortex_and_an_eddy2
+
+ a good start for learning the subtleties of vortex flow, and the relation to coherent structures (CS).
+- Jeong and Hussain "On the identification of a vortex", J Fluid Mechanics, 285, p69-94 (1995) 
+
+
+
+
+** 2D vortex
+V_\theta = \Gamma /(2 \pi r)
+V_r = 0
+V_z = 0
+
+> Anderson 5.1
+
+** 3D vortex filaments
+vortex-filament.pdf
+
+
+** vortex flow : fourth elementary flow
+
+all the streamlines are concentric circles about a given point
+- the velocity along any given circular streamline be constant
+- velocity vary from one streamline to another inversely with distance from the common center.
+*** Feature/Property
+- *physically possible incompressible at every point*
+\[ 
+\nabla \dot \mathbf{v} = 0
+\]
+- irrotational at every point except the origin
+\[ 
+\nabla \times \mathbf{v} = 0
+\]
+
+- tangental velocity
+\[
+v_{\theta} = \frac{\Gamma}{2\pi r}
+\]
+
+
+
+** Irrotational(Free) vortex
+- potential (free) vortex flow :: a flow with circular paths around a central point
+such that the *velocity* distribution still satisfies the irrotational condition : curl(v)=0
+
+\( \nabla \times \mathbf{v}=0 \) 
+(i.e.
+the fluid particles don't rotate about their own centers but simply move on circular path.
+- no radial velocity
+
+in a cylindrical coordinate ( r, \theta, z)
+For 2D potential vortex, u_z =0, u_r =0
+\[
+u_{\theta} = \frac{1}{r} \frac{\partial \phi}{\partial \theta}
+=\frac{\partial \Psi}{\partial r}
+\]
+#+CAPTION: tangential velocity of potential vortex  vs r
+file:C:\Users\exw692\Dropbox\Emacs\figures\tangential_v_potential_vortex.png
+
+
+The origin (center) of the potential vortex is considered as a singularity point in
+the flow since the velocity goes to infinity at this point
+
+- If the contour encircles the potential vortex origin, the circulation will be non-zero. 
+- If the contour does not encircle any singularities, however, the circulation will be zero.
+
+**  Kelvin's Circulation Theorem
+>   5.2, Kundu
+
+**  Helmhotz's Vortex Theorems
+
+**  Vorticity Equation in a Nonrotating Frame
+
+**  Vortex Sheet
+
+** References
+3.14 anderson
+2.7 Pope
+G.Haller,2005,J.Fluid Mech. , an objective definition of a vortex
+
+Kundu, Pijush K., and Ira M. Cohen. Fluid Mechanics. 6th ed. Academic Press, 2015. ISBN: 9780124059351.
+
+    Chapter 5: Vorticity Dynamics
+        5.1: Introduction
+      
+        5.3: Helmhotz's Vortex Theorems
+        5.4: Vorticity Equation in a Nonrotating Frame
+        5.8: Vortex Sheet
+
+
+
+*** text books for vortex theory
+Chapter 13, incompressible flow, Panton
+3.14, 5.1 Fundamentals of  Aerodynamics, John Anderson
+Milne-Thomsen, 1952
+** footnotes
+[fn:Haller2005] G.Haller,2005,J.Fluid Mech. , an objective definition of a vortex
